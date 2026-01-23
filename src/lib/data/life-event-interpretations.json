@@ -1,0 +1,794 @@
+{
+  "EVT_001_SOC": {
+    "far_future": {
+      "affirmation": "Yolculuk hayalleri ruhunu besliyor, {planet} ufkunu şimdiden genişletiyor.",
+      "warning": "Planlarını yaparken bütçeni ve detayları gözden geçirmeyi unutma."
+    },
+    "near_future": {
+      "affirmation": "Valizler hazır mı? {planet} heyecanını ve keşif arzunu tetikliyor.",
+      "warning": "Son dakika aksiliklerine karşı esnek bir planın olsun."
+    },
+    "now": {
+      "affirmation": "Macera başlıyor! {planet} koruması altında yeni dünyalar seni bekliyor.",
+      "warning": "Anın tadını çıkarırken güvenliğini ihmal etme."
+    },
+    "recent_past": {
+      "affirmation": "Yolun yorgunluğu tatlı bir huzura dönüşüyor, {planet} anılarını parlatıyor.",
+      "warning": "Rutin hayata dönerken tatilin enerjisini korumaya çalış."
+    },
+    "far_past": {
+      "affirmation": "Gezgin ruhun demleniyor, {planet} öğrendiklerini karakterine işliyor.",
+      "warning": "Bir sonraki hedef için enerji toplamaya başla, durgunluğa kapılma."
+    }
+  },
+  "EVT_002_SOC": {
+    "far_future": {
+      "affirmation": "Yeni bir yaş, yeni bir döngü; {planet} senin için şimdiden ışık saçıyor.",
+      "warning": "Beklentilerini yüksek tut ama hayal kırıklıklarına yer bırakma."
+    },
+    "near_future": {
+      "affirmation": "Kutlama enerjisi artıyor, {planet} karizmanı ve enerjini yükseltiyor.",
+      "warning": "Organizasyondaki ufak pürüzlerin neşeni kaçırmasına izin verme."
+    },
+    "now": {
+      "affirmation": "İyi ki doğdun! {planet} bugün tüm dileklerini evrene duyuruyor.",
+      "warning": "Günün odak noktası sensin, aşırılıklardan kaçınarak tadını çıkar."
+    },
+    "recent_past": {
+      "affirmation": "Sevgi dolu mesajlar kalbinde yankılanıyor, {planet} yeni yaşını kutsuyor.",
+      "warning": "Kutlama sonrası yorgunluğunu atmak için kendine vakit ayır."
+    },
+    "far_past": {
+      "affirmation": "Yaş aldıkça olgunlaşıyorsun, {planet} bilgeliğini ruhuna mühürlüyor.",
+      "warning": "Yeni yaşındaki hedeflerine odaklan, sadece kutlamada kalma."
+    }
+  },
+  "EVT_003_SOC": {
+    "far_future": {
+      "affirmation": "Sosyal bağlar güçleniyor, {planet} samimi sohbetler için zemin hazırlıyor.",
+      "warning": "Zamanını doğru yönet, sadece keyif için sorumluluklarını aksatma."
+    },
+    "near_future": {
+      "affirmation": "Güzel bir kahve ve dost sesi; {planet} iletişimi şimdiden ısıtıyor.",
+      "warning": "Anlatacaklarını seçerken dürüst ama nazik olmayı unutma."
+    },
+    "now": {
+      "affirmation": "Paylaşılan her kelime ruhuna şifa, {planet} bağlarınızı güçlendiriyor.",
+      "warning": "Dinlemeyi de konuşmak kadar önemse, empatiyi elden bırakma."
+    },
+    "recent_past": {
+      "affirmation": "Hoş sohbetin tortusu zihninde, {planet} dostluğun kıymetini hatırlatıyor.",
+      "warning": "Konuşulanların sadece iyi yanlarını al, gereksiz eleştirilere takılma."
+    },
+    "far_past": {
+      "affirmation": "Bağlar demlendikçe güzelleşir, {planet} sosyal çevreni sağlamlaştırıyor.",
+      "warning": "İlişkilerini taze tutmak için küçük adımlar atmaya devam et."
+    }
+  },
+  "EVT_004_SOC": {
+    "far_future": {
+      "affirmation": "Evinin bereketi artıyor, {planet} misafirperverliğini ödüllendirecek.",
+      "warning": "Ev düzenine ve hazırlığına ufaktan dikkat etmeye başla."
+    },
+    "near_future": {
+      "affirmation": "Sürprizlere hazır ol! {planet} sosyal hayatına ani bir renk katıyor.",
+      "warning": "Planlarının bozulmasına sinirlenmek yerine akışa güven."
+    },
+    "now": {
+      "affirmation": "Kapın neşeye açılıyor, {planet} beklenmedik anların büyüsünü getiriyor.",
+      "warning": "Kendi sınırlarını ve enerjini korumayı, 'hayır' demeyi unutma."
+    },
+    "recent_past": {
+      "affirmation": "Hareketlilik yerini huzura bırakıyor, {planet} evindeki enerjiyi temizliyor.",
+      "warning": "Yorgunluğunu atmak için sessiz bir köşe bul ve dinlen."
+    },
+    "far_past": {
+      "affirmation": "Paylaşılan anlar maziye ekleniyor, {planet} evinin ruhunu zenginleştiriyor.",
+      "warning": "Evinin düzenini geri kazan, dağınıklığın zihnini yormasına izin verme."
+    }
+  },
+  "EVT_005_SOC": {
+    "far_future": {
+      "affirmation": "İletişim sınavları olgunlaştırır, {planet} sabrını ve sağduyunu sınıyor.",
+      "warning": "Gerginlik sinyallerini önceden fark et ve mesafeni koru."
+    },
+    "near_future": {
+      "affirmation": "Fırtına öncesi sessizlikte {planet} sana içsel huzur fısıldıyor.",
+      "warning": "Tartışmalara çekilmek yerine sessiz kalmanın gücünü hatırla."
+    },
+    "now": {
+      "affirmation": "Zor anlar geçer, asalet baki kalır; {planet} karakterini parlatıyor.",
+      "warning": "Öfkeyle söylenen sözlerin geri dönüşü yoktur, diline hakim ol."
+    },
+    "recent_past": {
+      "affirmation": "Gerginlik dağılıyor, {planet} kırılan kalpleri onarmaya başlıyor.",
+      "warning": "Gurur yapmak yerine haklılık ve mutluluk arasında seçim yap."
+    },
+    "far_past": {
+      "affirmation": "Dersler alındı, ruhun hafifledi; {planet} barışçıl bir dönem başlatıyor.",
+      "warning": "Eski defterleri tekrar açma, önündeki temiz sayfaya odaklan."
+    }
+  },
+  "EVT_006_SOC": {
+    "far_future": {
+      "affirmation": "Geçmişin güzel izleri karşına çıkabilir, {planet} nostaljiyi destekliyor.",
+      "warning": "Eskiye özlem duyarken bugünün gerçeklerini unutma."
+    },
+    "near_future": {
+      "affirmation": "Kader yolları tekrar kesiştiriyor, {planet} heyecan verici bir tesadüf hazırlıyor.",
+      "warning": "Karşılaşmaya duygusal olarak hazırlıklı ol, şaşkınlığını asaletle yönet."
+    },
+    "now": {
+      "affirmation": "Göz göze gelmek bin yıllık hikayedir, {planet} bağları tazeliyor.",
+      "warning": "Geçmişteki sorunları gündeme getirme, anın samimiyetine güven."
+    },
+    "recent_past": {
+      "affirmation": "Karşılaşmanın yankıları sürüyor, {planet} kalbinde eski bir yarayı şifalandırıyor.",
+      "warning": "Sadece özlemle hareket etme, neden uzaklaştığını da hatırla."
+    },
+    "far_past": {
+      "affirmation": "Yollar tekrar ayrılsa da izi kaldı, {planet} sosyal hafızanı güçlendiriyor.",
+      "warning": "Geçmişte yaşamayı bırak, yeni dostluklar için alan aç."
+    }
+  },
+  "EVT_007_SOC": {
+    "far_future": {
+      "affirmation": "Yeni kapılar açılmak üzere, {planet} vizyonunu ve hedeflerini büyütüyor.",
+      "warning": "Kendini nasıl ifade edeceğine dair stratejiler geliştirmeye başla."
+    },
+    "near_future": {
+      "affirmation": "Potansiyel dostlar ve ortaklar yolda, {planet} çekim gücünü artırıyor.",
+      "warning": "Kartvizitlerin ve hikayen hazır olsun, ilk izlenim önemlidir."
+    },
+    "now": {
+      "affirmation": "Sahne senin! {planet} özgüvenini ve hitabetini zirveye taşıyor.",
+      "warning": "Sadece kendinden bahsetme, başkalarının vizyonuna da ilgi göster."
+    },
+    "recent_past": {
+      "affirmation": "Kurulan bağlar meyve vermeye başladı, {planet} fırsatları ayağına getiriyor.",
+      "warning": "Tanıştığın kişilere nezaket mesajı atmayı ve takibi ihmal etme."
+    },
+    "far_past": {
+      "affirmation": "Networking meyveleri demleniyor, {planet} itibarını sağlamlaştırıyor.",
+      "warning": "Bağlantılarını sadece çıkar için değil, samimiyetle besle."
+    }
+  },
+  "EVT_008_SOC": {
+    "far_future": {
+      "affirmation": "Sesin dünyada yankılanacak, {planet} şimdiden mesajını güçlendiriyor.",
+      "warning": "Hazırlığını derinleştir, bilginin eksik kalmasına izin verme."
+    },
+    "near_future": {
+      "affirmation": "Heyecan, başarının habercisidir; {planet} sana cesaret aşılıyor.",
+      "warning": "Nefes egzersizlerine odaklan, sahne korkusunu coşkuya dönüştür."
+    },
+    "now": {
+      "affirmation": "Kelimelerin birer büyü gibi akıyor, {planet} herkesi etkilemeni sağlıyor.",
+      "warning": "Göz temasını koru ve samimiyetinden ödün verme."
+    },
+    "recent_past": {
+      "affirmation": "Başarının gururu seni sarıyor, {planet} saygınlığını artırdı.",
+      "warning": "Eleştirilere açık ol ama başarılarını da küçümseme."
+    },
+    "far_past": {
+      "affirmation": "Konuşman hala konuşuluyor, {planet} etkini kalıcı kılıyor.",
+      "warning": "Bir sonraki seviye için yeni yetenekler edinmeye odaklan."
+    }
+  },
+  "EVT_009_SOC": {
+    "far_future": {
+      "affirmation": "Gerçeğin ışığı her şeyi aydınlatır, {planet} seni dedikodudan koruyor.",
+      "warning": "Çevrendeki samimiyetsiz enerjileri önceden fark et."
+    },
+    "near_future": {
+      "affirmation": "Kulağına gelenlere değil, kalbine güven; {planet} sağduyunu artırıyor.",
+      "warning": "Söylentilere dahil olma, sessizliğin en büyük cevaptır."
+    },
+    "now": {
+      "affirmation": "Netlik her kapıyı açar, {planet} yanlış anlaşılmaları şifalandırıyor.",
+      "warning": "Doğrudan iletişim kurmaktan çekinme, aracılara izin verme."
+    },
+    "recent_past": {
+      "affirmation": "Toz duman dağılıyor, {planet} kimin gerçek dost olduğunu gösteriyor.",
+      "warning": "Kırgınlıklarını ifade et ama nefret yükünü taşıma."
+    },
+    "far_past": {
+      "affirmation": "İtibarın sınavdan başarıyla geçti, {planet} dürüstlüğünü ödüllendiriyor.",
+      "warning": "Sınırlarını yeniden çiz, benzer durumlara karşı uyanık ol."
+    }
+  },
+  "EVT_001_CAR": {
+    "far_future": {
+      "affirmation": "Kariyerinde yeni bir zirve görünüyor, {planet} şimdiden yolunu açıyor.",
+      "warning": "CV'ni ve yeteneklerini güncel tut, fırsat ansızın gelebilir."
+    },
+    "near_future": {
+      "affirmation": "Hazırlığın meyvesini verme vakti, {planet} zihnini netleştiriyor.",
+      "warning": "Profesyonel görünümüne ve tavrına ekstra özen göster."
+    },
+    "now": {
+      "affirmation": "Yeteneklerin parlıyor, {planet} görüşmede seni karizmatik kılıyor.",
+      "warning": "Dürüstlükten ödün verme ama zayıf yönlerini de gelişim alanı olarak sun."
+    },
+    "recent_past": {
+      "affirmation": "Görüşmenin etkisi olumlu seyrediyor, {planet} kapıları araladı.",
+      "warning": "Sonuç ne olursa olsun, gösterdiğin cesaretle gurur duy."
+    },
+    "far_past": {
+      "affirmation": "Yeni dönemin temelleri atıldı, {planet} profesyonel hayatını kutsuyor.",
+      "warning": "Bekleyiş sürecinde üretken kalmaya devam et, enerjini düşürme."
+    }
+  },
+  "EVT_002_CAR": {
+    "far_future": {
+      "affirmation": "Bilgin senin en büyük hazinen, {planet} odaklanmanı destekliyor.",
+      "warning": "Çalışma düzenini kur, son dakikaya bırakma riskine girme."
+    },
+    "near_future": {
+      "affirmation": "Zihnin bir kütüphane gibi düzenli, {planet} hafızanı güçlendiriyor.",
+      "warning": "Uykuna ve beslenmene dikkat et, zihnini yorma."
+    },
+    "now": {
+      "affirmation": "Kaleminden başarı akıyor, {planet} bildiklerini kağıda dökmeni sağlıyor.",
+      "warning": "Soruları dikkatli oku, panik yapmadan bildiğinden başla."
+    },
+    "recent_past": {
+      "affirmation": "Büyük bir yük kalktı, {planet} zihinsel rahatlama getiriyor.",
+      "warning": "Hatalarına odaklanmak yerine elinden geleni yaptığın için kendini kutla."
+    },
+    "far_past": {
+      "affirmation": "Emeklerin karşılığını bulacak, {planet} başarı yolunu aydınlatıyor.",
+      "warning": "Yeni hedeflere odaklanmadan önce zihnini tamamen dinlendir."
+    }
+  },
+  "EVT_003_CAR": {
+    "far_future": {
+      "affirmation": "Fikirlerin değer bulacak, {planet} stratejik zekanı parlatıyor.",
+      "warning": "Sunumunu ve argümanlarını şimdiden güçlendirmeye başla."
+    },
+    "near_future": {
+      "affirmation": "İkna kabiliyetin artıyor, {planet} kelimelerine güç katıyor.",
+      "warning": "Başkalarının görüşlerine hazırlıklı ol, yapıcı eleştiriyi kucakla."
+    },
+    "now": {
+      "affirmation": "Liderlik vasıfların devrede, {planet} seni masada otorite kılıyor.",
+      "warning": "Dinlemeyi unutma, ortak akıl en büyük güçtür."
+    },
+    "recent_past": {
+      "affirmation": "Alınan kararlar geleceğini şekillendiriyor, {planet} vizyonunu koruyor.",
+      "warning": "Verilen sözlerin ve alınan sorumlulukların takibini yap."
+    },
+    "far_past": {
+      "affirmation": "Toplantının yankıları profesyonel imajını güçlendirdi, {planet} seni destekliyor.",
+      "warning": "Uygulama aşamasında disiplini elden bırakma."
+    }
+  },
+  "EVT_004_CAR": {
+    "far_future": {
+      "affirmation": "Bolluk enerjisi kariyerine akıyor, {planet} emeğini karşılıksız bırakmayacak.",
+      "warning": "Değerini bil ve bunu uygun dille ifade etmekten çekinme."
+    },
+    "near_future": {
+      "affirmation": "Maddi artış kapıda, {planet} finansal geleceğini şimdiden parlatıyor.",
+      "warning": "Gelirin artarken harcama disiplinini bozmamaya kararlı ol."
+    },
+    "now": {
+      "affirmation": "Bereketin kutlanma vakti! {planet} bütçeni ve moralini yükseltiyor.",
+      "warning": "Bu başarıyı sadece bir başlangıç olarak gör, rehavete kapılma."
+    },
+    "recent_past": {
+      "affirmation": "Artan imkanlar yeni kapılar açıyor, {planet} sana yatırım şansı veriyor.",
+      "warning": "Ekstra kazancını hemen tüketmek yerine geleceğe tohum ek."
+    },
+    "far_past": {
+      "affirmation": "Finansal güvenin yerine geldi, {planet} refahını kalıcı kılıyor.",
+      "warning": "Standartlarını korurken tasarrufu hayatının bir parçası yap."
+    }
+  },
+  "EVT_005_CAR": {
+    "far_future": {
+      "affirmation": "Yeni bir vizyon doğuyor, {planet} yaratıcılığını en üst seviyeye taşıyor.",
+      "warning": "Detaylı bir yol haritası çizmeden yola çıkma."
+    },
+    "near_future": {
+      "affirmation": "Heyecan verici bir başlangıç yaklaşıyor, {planet} sana ilham veriyor.",
+      "warning": "Ekip arkadaşlarınla iletişimi ve görev dağılımını netleştir."
+    },
+    "now": {
+      "affirmation": "İlk adım zaferin yarısıdır, {planet} projeni koruması altına alıyor.",
+      "warning": "Mükemmeliyetçiliğe takılıp kalma, ilerlemeye odaklan."
+    },
+    "recent_past": {
+      "affirmation": "Proje şekilleniyor, {planet} emeğinin karşılığını somutlaştırıyor.",
+      "warning": "Motivasyonunu korumak için küçük başarıları kutlamayı unutma."
+    },
+    "far_past": {
+      "affirmation": "Başlangıç enerjisi disipline dönüştü, {planet} başarını garanti ediyor.",
+      "warning": "Süreçteki rutinlerin seni sıkmasına izin verme, vizyonunu hatırla."
+    }
+  },
+  "EVT_006_CAR": {
+    "far_future": {
+      "affirmation": "Yeni ve daha parlak bir yol seni bekliyor, {planet} özgürlüğünü hazırlıyor.",
+      "warning": "Ayrılmadan önce tüm finansal ve hukuki detayları netleştir."
+    },
+    "near_future": {
+      "affirmation": "Bağlarını koparma cesareti büyük kapılar açar, {planet} yanındayım diyor.",
+      "warning": "Profesyonelliğini koru, son ana kadar işini hakkıyla yap."
+    },
+    "now": {
+      "affirmation": "Özgürlük! {planet} yeni başlangıçlar için sana sonsuz alan açtı.",
+      "warning": "Gelecek korkusuna kapılma, yeteneklerine ve gökyüzüne güven."
+    },
+    "recent_past": {
+      "affirmation": "Boşalan alan yeni fırsatlarla doluyor, {planet} seni şifalandırıyor.",
+      "warning": "Kendine dinlenmek için izin ver, hemen yeni bir kaosa dalma."
+    },
+    "far_past": {
+      "affirmation": "Eski kapı kapandı, yenisi çoktan açıldı; {planet} seni ileri taşıyor.",
+      "warning": "Geçmişteki iş yerini veya kişileri eleştirmeyi bırak, önüne bak."
+    }
+  },
+  "EVT_007_CAR": {
+    "far_future": {
+      "affirmation": "Liderlik koltuğu senin için hazırlanıyor, {planet} seni olgunlaştırıyor.",
+      "warning": "Artan sorumluluklara zihinsel olarak hazırlanmaya başla."
+    },
+    "near_future": {
+      "affirmation": "Zirveye bir adım kaldı, {planet} hak ettiğin başarıyı getiriyor.",
+      "warning": "Tevazunu koru, başarını paylaşmayı bil."
+    },
+    "now": {
+      "affirmation": "Tebrikler! {planet} bugün başarını tüm dünyaya ilan ediyor.",
+      "warning": "Yeni yetkilerini adaletli ve vizyoner bir şekilde kullan."
+    },
+    "recent_past": {
+      "affirmation": "Yeni statün sana güç veriyor, {planet} saygınlığını perçinledi.",
+      "warning": "Ekibindeki dengelere dikkat et, değişimin onları korkutmasına izin verme."
+    },
+    "far_past": {
+      "affirmation": "Başarın artık senin kimliğinin bir parçası, {planet} seni koruyor.",
+      "warning": "Daha büyük hedefler için plan yapmaya başla, durma."
+    }
+  },
+  "EVT_008_CAR": {
+    "far_future": {
+      "affirmation": "Ruhun dinlenmeyi hak ediyor, {planet} sana şifa alanı açacak.",
+      "warning": "Vücudunun yorgunluk sinyallerini görmezden gelmeyi bırak."
+    },
+    "near_future": {
+      "affirmation": "Mola zamanı yaklaşıyor, {planet} pillerini şarj etmen için seni zorluyor.",
+      "warning": "İşleri delege etmeye başla, her şeyi tek başına yapamazsın."
+    },
+    "now": {
+      "affirmation": "Durmak da bir eylemdir; {planet} bugün seni sessizliğe davet ediyor.",
+      "warning": "Suçluluk hissetme, dinlenmek en büyük verimlilik yatırımıdır."
+    },
+    "recent_past": {
+      "affirmation": "Enerjin yavaş yavaş geri dönüyor, {planet} seni tazeledi.",
+      "warning": "Eski yoğunluğuna dönmek için acele etme, yavaş adımlarla ilerle."
+    },
+    "far_past": {
+      "affirmation": "Tükenmişlikten güçlenerek çıktın, {planet} artık daha dayanıklısın diyor.",
+      "warning": "Sınırlarını korumayı bir yaşam biçimi haline getir."
+    }
+  },
+  "EVT_001_LOV": {
+    "far_future": {
+      "affirmation": "Ömürlük bir bağ kuruluyor, {planet} aşkını kutsal bir boyuta taşıyor.",
+      "warning": "Hazırlıkların ruhundaki romantizmi öldürmesine izin verme."
+    },
+    "near_future": {
+      "affirmation": "Büyük gün yaklaşıyor, {planet} kalbindeki heyecanı parlatıyor.",
+      "warning": "Ufak aksiliklerin mutluluğunu gölgelemesine izin verme, sadece sevgiye odaklan."
+    },
+    "now": {
+      "affirmation": "İki ruh, tek bir yol! {planet} bugün evliliğini yıldızlara mühürlüyor.",
+      "warning": "Anın her saniyesini hafızana kazı, kalabalıklar içinde birbirinizi kaybetmeyin."
+    },
+    "recent_past": {
+      "affirmation": "Yeni hayatının ilk ışıkları, {planet} yuvanıza huzur ve bereket getiriyor.",
+      "warning": "Düzen kurma telaşında birbirinize olan nezaketi koruyun."
+    },
+    "far_past": {
+      "affirmation": "Bağınız demlendikçe kökleniyor, {planet} sevginizi ölümsüz kılıyor.",
+      "warning": "Rutinlere teslim olma, aşkınızı küçük sürprizlerle beslemeye devam et."
+    }
+  },
+  "EVT_002_LOV": {
+    "far_future": {
+      "affirmation": "Yeni bir kalp çarpıntısı yaklaşıyor, {planet} seni aşka hazırlıyor.",
+      "warning": "Kendi değerini ve sınırlarını belirlemiş olarak yola çık."
+    },
+    "near_future": {
+      "affirmation": "Tatlı bir heyecan ruhunu sarıyor, {planet} çekiciliğini artırıyor.",
+      "warning": "Doğal ol, beklentilerini minimize et ve sadece tanımaya odaklan."
+    },
+    "now": {
+      "affirmation": "Kalplerin senkronize olma vakti! {planet} ilk buluşmanı büyülüyor.",
+      "warning": "Geçmişten bahsetmeyi bırak, şimdiki anın tadını çıkar."
+    },
+    "recent_past": {
+      "affirmation": "Buluşmanın yankıları kalbinde, {planet} yeni bir hikayenin tohumunu ekti.",
+      "warning": "Aşırı analiz yapmaktan kaçın, duyguların akışına izin ver."
+    },
+    "far_past": {
+      "affirmation": "O ilk kıvılcım bir meşaleye dönüşüyor, {planet} bağınızı derinleştiriyor.",
+      "warning": "İlişki ilerledikçe kendi özgür alanını korumayı unutma."
+    }
+  },
+  "EVT_003_LOV": {
+    "far_future": {
+      "affirmation": "Geçmişten gelen bir mesaj seni şifalandırabilir, {planet} dengeyi sınıyor.",
+      "warning": "Neden 'eski' olduğunu hatırlayarak mesafeni belirle."
+    },
+    "near_future": {
+      "affirmation": "Bir ses, bir işaret gelebilir; {planet} duygusal dayanıklılığını ölçüyor.",
+      "warning": "Anlık duygularla hareket etme, mantığını devreye sok."
+    },
+    "now": {
+      "affirmation": "Sözler döküldü, {planet} sana gerçeği görme şansı verdi.",
+      "warning": "Eski yaraların tekrar açılmasına izin verme, net sınırlarını çiz."
+    },
+    "recent_past": {
+      "affirmation": "Duygusal toz bulutu dağılıyor, {planet} kalbine netlik getirdi.",
+      "warning": "Kendi yolunda ilerlemeye kararlı ol, geri dönüşlerin bedelini hatırla."
+    },
+    "far_past": {
+      "affirmation": "O defter tamamen kapandı, {planet} sana yeni bir başlangıç için güç verdi.",
+      "warning": "Artık arkana bakmayı bırak, önündeki parlak geleceğe odaklan."
+    }
+  },
+  "EVT_004_LOV": {
+    "far_future": {
+      "affirmation": "Romantizm rüzgarları esmeye başlayacak, {planet} kalbini yumuşatıyor.",
+      "warning": "Sevdiğin kişiye vakit ayırmak için planlarını şimdiden yap."
+    },
+    "near_future": {
+      "affirmation": "Büyülü bir akşam yaklaşıyor, {planet} tutkuyu ve sevgiyi körüklüyor.",
+      "warning": "Kıyafetin değil, kalbindeki samimiyet en büyük süsün olsun."
+    },
+    "now": {
+      "affirmation": "Aşkın tadını çıkarma vakti! {planet} ışığı altında sevgini fısılda.",
+      "warning": "Telefonları bir kenara bırak, sadece birbirinizin gözlerine bakın."
+    },
+    "recent_past": {
+      "affirmation": "Güzel bir gecenin huzuru ruhunda, {planet} ilişkinizi tazeledi.",
+      "warning": "Bu enerjiyi günlük hayata yaymaya çalış, sadece özel günlere hapsetme."
+    },
+    "far_past": {
+      "affirmation": "Paylaşılan anlar bağınızı güçlendirdi, {planet} sevginizi koruyor.",
+      "warning": "Sevginizi ifade etmeyi alışkanlık haline getirin, sıradanlığa izin vermeyin."
+    }
+  },
+  "EVT_005_LOV": {
+    "far_future": {
+      "affirmation": "Ruhsal bir dönüşüm kapıda, {planet} seni daha güçlü bir sen için hazırlıyor.",
+      "warning": "Duygusal değişim sinyallerini görmezden gelme, dürüst ol."
+    },
+    "near_future": {
+      "affirmation": "Bitişler yeni başlangıçların habercisidir, {planet} sana şifa hazırlıyor.",
+      "warning": "Öfkeye teslim olma, vedanı asaletle yap."
+    },
+    "now": {
+      "affirmation": "Gözyaşları ruhu temizler, {planet} seni şefkatle sarmalıyor.",
+      "warning": "Kendini suçlamayı bırak, bazen gitmek en büyük öz sevgi eylemidir."
+    },
+    "recent_past": {
+      "affirmation": "Kalbin yavaş yavaş toparlanıyor, {planet} acını hafifletiyor.",
+      "warning": "Yalnızlıktan korkma, bu süreçte en iyi dostun kendinsin."
+    },
+    "far_past": {
+      "affirmation": "Yaralar kapandı, ruhun olgunlaştı; {planet} yeni bir aşk için alan açtı.",
+      "warning": "Eski acıları bir kalkan olarak kullanma, kalbini tekrar açmaya korkma."
+    }
+  },
+  "EVT_006_LOV": {
+    "far_future": {
+      "affirmation": "Sevginin kutlanması ruhuna iyi gelecek, {planet} bağlılığı ödüllendiriyor.",
+      "warning": "Günü sadece materyal beklentilerle değil, maneviyatla planla."
+    },
+    "near_future": {
+      "affirmation": "Yıldönümü heyecanı artıyor, {planet} ortak anılarınızı parlatıyor.",
+      "warning": "Birbirinize verdiğiniz sözleri tazelemeyi unutmayın."
+    },
+    "now": {
+      "affirmation": "Geçen her yıl bir hazine, {planet} birlikteliğinizi kutsuyor.",
+      "warning": "Zorlukları nasıl aştığınızı hatırlayın ve birbirinize teşekkür edin."
+    },
+    "recent_past": {
+      "affirmation": "Kutlamanın mutluluğu sürüyor, {planet} ilişkinize taze bir nefes getirdi.",
+      "warning": "Sevginin sadece özel günlerde değil, her gün beslenmesi gerektiğini hatırla."
+    },
+    "far_past": {
+      "affirmation": "Yıllar sizi birbirinize kenetledi, {planet} köklü aşkınızı koruyor.",
+      "warning": "Birbirinize karşı olan merakınızı kaybetmeyin, keşfetmeye devam edin."
+    }
+  },
+  "EVT_007_LOV": {
+    "far_future": {
+      "affirmation": "Yeni bir yuva vizyonu şekilleniyor, {planet} huzuru evinize taşıyacak.",
+      "warning": "Ortak yaşam kurallarını ve beklentilerini açıkça konuşun."
+    },
+    "near_future": {
+      "affirmation": "Kutular toplanıyor, yeni hayat başlıyor; {planet} şimdiden bereket veriyor.",
+      "warning": "Taşınma stresinin ilişkinizi yıpratmasına izin vermeyin, sabırlı olun."
+    },
+    "now": {
+      "affirmation": "Bu çatı altında sevgi büyüyecek, {planet} yuvanızı koruma altına aldı.",
+      "warning": "Evinizi sadece eşyalarla değil, güzel enerjilerle doldurun."
+    },
+    "recent_past": {
+      "affirmation": "Yeni düzeniniz oturuyor, {planet} uyumu ve dengeyi destekliyor.",
+      "warning": "Kendi özel alanlarınızı korumaya ve birbirinize saygı duymaya devam edin."
+    },
+    "far_past": {
+      "affirmation": "Eviniz bir mabede dönüştü, {planet} aile bağlarınızı güçlendiriyor.",
+      "warning": "Evinizdeki huzuru korumak için dış dünyadaki stresleri kapıda bırakın."
+    }
+  },
+  "EVT_001_HEA": {
+    "far_future": {
+      "affirmation": "Bedenin iyileşme gücüne sahip, {planet} direncini şimdiden artırıyor.",
+      "warning": "Korkularına yenilmek yerine tıbbi sürece ve uzmanlara güven."
+    },
+    "near_future": {
+      "affirmation": "Şifa enerjisi seni sarıyor, {planet} operasyon için seni güçlendiriyor.",
+      "warning": "Zihnini pozitifte tut, vücudun zihnine itaat edecektir."
+    },
+    "now": {
+      "affirmation": "Evrenin şifalı elleri üzerinde, {planet} seni koruma altına aldı.",
+      "warning": "Sadece dinlen ve iyileşmeye odaklan, başka hiçbir şeyi dert etme."
+    },
+    "recent_past": {
+      "affirmation": "Bedenin hızla toparlanıyor, {planet} hücrelerini yeniliyor.",
+      "warning": "Sabırlı ol, iyileşme zaman alır; doktor tavsiyelerinden sapma."
+    },
+    "far_past": {
+      "affirmation": "Eski sağlığına kavuştun ve daha güçlüsün, {planet} seni kutsadı.",
+      "warning": "Bedenine olan özenini bir yaşam tarzı haline getir, ihmal etme."
+    }
+  },
+  "EVT_002_HEA": {
+    "far_future": {
+      "affirmation": "Arınma ruhuna ve bedenine hafiflik getirecek, {planet} seni bekliyor.",
+      "warning": "Beslenme düzenini yavaş yavaş değiştirmeye başla."
+    },
+    "near_future": {
+      "affirmation": "Toksinlerden kurtulma vakti, {planet} içsel temizliğini destekliyor.",
+      "warning": "Vücudunu aç bırakmak yerine doğru besinlerle beslemeye odaklan."
+    },
+    "now": {
+      "affirmation": "Her hücren nefes alıyor, {planet} hafifliğini ve canlılığını artırıyor.",
+      "warning": "Bol su içmeyi ve bedeninin sesini dinlemeyi ihmal etme."
+    },
+    "recent_past": {
+      "affirmation": "Parlayan bir cilt ve zinde bir beden; {planet} arınmanı mühürledi.",
+      "warning": "Kazandığın bu hafifliği korumak için alışkanlıklarını kalıcı kıl."
+    },
+    "far_past": {
+      "affirmation": "Detoks etkisi karakterine yansıdı, {planet} seni daha bilinçli kıldı.",
+      "warning": "Arada bir kaçamak yapabilirsin ama dengeyi bozmamaya dikkat et."
+    }
+  },
+  "EVT_003_HEA": {
+    "far_future": {
+      "affirmation": "Bağışıklığın seni koruyor, {planet} direncini yükseltecek.",
+      "warning": "Vitaminlerini al ve soğuk algınlığına karşı önlemlerini artır."
+    },
+    "near_future": {
+      "affirmation": "Vücudun mola istiyor olabilir, {planet} seni dinlenmeye davet ediyor.",
+      "warning": "Halsizliği görmezden gelme, erken önlem almak iyileşmeyi hızlandırır."
+    },
+    "now": {
+      "affirmation": "Şifa süreci devrede, {planet} bedenini nazikçe iyileştiriyor.",
+      "warning": "Kendine şefkat göster, hastalık ruhun da dinlenme ihtiyacıdır."
+    },
+    "recent_past": {
+      "affirmation": "Gücün geri dönüyor, {planet} direncini eskisinden daha sağlam yaptı.",
+      "warning": "Hemen tam kapasite çalışmaya başlama, enerjini kademeli artır."
+    },
+    "far_past": {
+      "affirmation": "Hastalık geride kaldı, ruhun güçlendi; {planet} sağlığını koruyor.",
+      "warning": "Vücudunun sınırlarını öğrendin, artık daha dikkatli olmalısın."
+    }
+  },
+  "EVT_004_HEA": {
+    "far_future": {
+      "affirmation": "Gülüşün parlayacak, {planet} sağlığını ve estetiğini destekliyor.",
+      "warning": "Randevunu erteleme, küçük sorunların büyümesine izin verme."
+    },
+    "near_future": {
+      "affirmation": "Kısa bir müdahale uzun vadeli konfor sağlar, {planet} yanındayım diyor.",
+      "warning": "Korkularını nefesinle yönet, sadece sonuca odaklan."
+    },
+    "now": {
+      "affirmation": "Sağlıklı dişler, sağlıklı bir gelecek; {planet} operasyonu kolaylaştırıyor.",
+      "warning": "Ağız bakımına dair verilen talimatları harfiyen uygula."
+    },
+    "recent_past": {
+      "affirmation": "Hassasiyet azalıyor, {planet} iyileşme sürecini hızlandırıyor.",
+      "warning": "Yediklerine ve içtiklerine bir süre daha özen göster."
+    },
+    "far_past": {
+      "affirmation": "Parlayan gülüşün özgüvenini artırıyor, {planet} seni parlatıyor.",
+      "warning": "Kontrollerini düzenli yaptırmayı bir alışkanlık haline getir."
+    }
+  },
+  "EVT_005_HEA": {
+    "far_future": {
+      "affirmation": "Zihnin durulacak, {planet} sana derin ve huzurlu bir uyku hazırlıyor.",
+      "warning": "Ekran süresini azalt ve uyku rutini oluşturmaya başla."
+    },
+    "near_future": {
+      "affirmation": "Gecenin sessizliği şifadır, {planet} zihnini susturmana yardım edecek.",
+      "warning": "Kafein alımını sınırla ve akşam saatlerinde ağır yemeklerden kaçın."
+    },
+    "now": {
+      "affirmation": "Ruhun dinlenmeyi seçiyor, {planet} seni uykunun şifalı kollarına bırakıyor.",
+      "warning": "Düşüncelerin akıp gitmesine izin ver, hiçbirini tutma."
+    },
+    "recent_past": {
+      "affirmation": "Uykunun verdiği zindelik her hücrende, {planet} seni tazeledi.",
+      "warning": "Bu düzeni korumak için disiplinli olmaya devam et."
+    },
+    "far_past": {
+      "affirmation": "Zihnin artık daha berrak, {planet} uyku kaliteni artırdı.",
+      "warning": "Yorgun olduğunda dinlenmeyi ihmal etme, vücudunu zorlama."
+    }
+  },
+  "EVT_006_HEA": {
+    "far_future": {
+      "affirmation": "Kendi değerini kutlama vakti geliyor, {planet} ruhunu şımartacak.",
+      "warning": "Suçluluk hissetmeden kendine ayıracağın bir günü planla."
+    },
+    "near_future": {
+      "affirmation": "Öz bakım bir lüks değil, ihtiyaçtır; {planet} seni tazelenmeye çağırıyor.",
+      "warning": "Dış dünyayı bir süreliğine sessize almaya hazırlan."
+    },
+    "now": {
+      "affirmation": "Bugün sadece sensin! {planet} ruhuna ve bedenine şifa akıtıyor.",
+      "warning": "Kendini gerçekten neyin mutlu ettiğini bul ve onu yap."
+    },
+    "recent_past": {
+      "affirmation": "Yenilenmiş ruhun parlıyor, {planet} enerjini dışarıya yansıtıyor.",
+      "warning": "Bu huzuru korumak için stresli ortamlardan uzak dur."
+    },
+    "far_past": {
+      "affirmation": "Ruhsal bakımın etkileri kalıcı oldu, {planet} içsel dengeni sağladı.",
+      "warning": "Kendine vakit ayırmayı ihmal ettiğinde bu günü hatırla."
+    }
+  },
+  "EVT_001_FIN": {
+    "far_future": {
+      "affirmation": "Finansal yüklerin hafifliyor, {planet} sana yeni bir nefes alanı açacak.",
+      "warning": "Borçlarını kapatmak için disiplinli bir plan oluştur."
+    },
+    "near_future": {
+      "affirmation": "Özgürlük yakın! {planet} bütçeni dengelemen için sana güç veriyor.",
+      "warning": "Gereksiz harcamalardan kaçınarak son adımı sağlam at."
+    },
+    "now": {
+      "affirmation": "Ağır bir yükten kurtuldun, {planet} finansal özgürlüğünü kutsuyor.",
+      "warning": "Boşalan bütçeni hemen yeni borçlarla doldurmamaya yemin et."
+    },
+    "recent_past": {
+      "affirmation": "Hafifliğin verdiği huzur bütçene yansıdı, {planet} geleceğini parlatıyor.",
+      "warning": "Tasarruf yapmaya ve acil durum fonu oluşturmaya odaklan."
+    },
+    "far_past": {
+      "affirmation": "Finansal karakterin güçlendi, {planet} bolluk enerjini koruyor.",
+      "warning": "Aynı hatalara düşmemek için geçmişten aldığın dersleri hatırla."
+    }
+  },
+  "EVT_002_FIN": {
+    "far_future": {
+      "affirmation": "Evrenin bolluk kapıları sana açılıyor, {planet} sürprizlere hazır olmanı istiyor.",
+      "warning": "Bolluk bilincine odaklan, kıtlık korkusunu zihninden at."
+    },
+    "near_future": {
+      "affirmation": "Beklenmedik bir bereket yolda, {planet} şansını ve kısmetini artırıyor.",
+      "warning": "Gelen kaynağı nasıl değerlendireceğine dair vizyonunu geliştir."
+    },
+    "now": {
+      "affirmation": "Şans bugün seninle! {planet} bereketi kucağına bıraktı.",
+      "warning": "Bu hediyeyi sadece tüketme, bir kısmıyla başkalarına veya geleceğine dokun."
+    },
+    "recent_past": {
+      "affirmation": "Gelen bereket hayatına renk kattı, {planet} refahını artırdı.",
+      "warning": "Hemen savurganlığa kapılma, bereketin sürekliliği için şükret."
+    },
+    "far_past": {
+      "affirmation": "Zenginleşen hayatın seni daha cömert kıldı, {planet} seni destekliyor.",
+      "warning": "Maddi kaynaklarını akıllıca yönetmeye devam et."
+    }
+  },
+  "EVT_003_FIN": {
+    "far_future": {
+      "affirmation": "Yeni bir sahip oluş sana keyif verecek, {planet} konforunu artırıyor.",
+      "warning": "Gerçekten ihtiyacın olup olmadığını kalbine sor."
+    },
+    "near_future": {
+      "affirmation": "Hayalindeki o şey için doğru an yaklaşıyor, {planet} bütçeni hazırlıyor.",
+      "warning": "Fiyat araştırması yap ve en kaliteli olana yönel."
+    },
+    "now": {
+      "affirmation": "Sahip oldukların sana hizmet ediyor, {planet} yeni edinimini kutsadı.",
+      "warning": "Alışveriş sonrası bütçe dengeni korumaya özen göster."
+    },
+    "recent_past": {
+      "affirmation": "Yeni eşyanın enerjisi hayatına girdi, {planet} tatmin duygunu artırdı.",
+      "warning": "Tüketim çılgınlığına kapılmadan elindekinin kıymetini bil."
+    },
+    "far_past": {
+      "affirmation": "Yatırımın veya alışverişin hayat kaliteni yükseltti, {planet} yanındayım diyor.",
+      "warning": "Maddi dünyaya aşırı bağlanmadan manevi huzurunu da koru."
+    }
+  },
+  "EVT_004_FIN": {
+    "far_future": {
+      "affirmation": "Kayıplar ruhsal birer sınavdır, {planet} dayanıklılığını artıracak.",
+      "warning": "Değerli eşyalarını ve kağıtlarını ekstra koruma altına al."
+    },
+    "near_future": {
+      "affirmation": "Dikkatli olman gereken bir enerji var, {planet} seni uyarıyor.",
+      "warning": "Dalgınlıktan kaçın ve güvenlik önlemlerini gözden geçir."
+    },
+    "now": {
+      "affirmation": "Gidenin yerine daha iyisi gelir, {planet} sana yeni kapılar açacak.",
+      "warning": "Kendini suçlama, bazen evren bizi yüklerimizden böyle kurtarır."
+    },
+    "recent_past": {
+      "affirmation": "Sarsıntı yerini kabule bırakıyor, {planet} kalbine huzur veriyor.",
+      "warning": "Maddi kaybın yasını tut ama hayatın akışından kopma."
+    },
+    "far_past": {
+      "affirmation": "O boşluk yeni ve daha değerli bir şeyle doldu, {planet} seni ödüllendirdi.",
+      "warning": "Daha tedbirli olmayı öğrendin, bu tecrübeyi cebine koy."
+    }
+  },
+  "EVT_005_FIN": {
+    "far_future": {
+      "affirmation": "Geleceğe ektiğin tohumlar büyüyecek, {planet} finansal zekanı parlatıyor.",
+      "warning": "Risk analizi yapmadan ve uzmanlara danışmadan hareket etme."
+    },
+    "near_future": {
+      "affirmation": "Yatırım fırsatı kapıda, {planet} doğru kararı vermen için seni destekliyor.",
+      "warning": "Duygusal değil, veriye dayalı kararlar almaya çalış."
+    },
+    "now": {
+      "affirmation": "Cesaretin kazanca dönüşecek, {planet} yatırımını koruma altına aldı.",
+      "warning": "Sabırlı ol, meyvelerin olgunlaşması zaman alacaktır."
+    },
+    "recent_past": {
+      "affirmation": "Doğru adımı atmanın huzuru, {planet} finansal geleceğini şimdiden kuruyor.",
+      "warning": "Günlük dalgalanmalara takılmadan uzun vadeli vizyonuna odaklan."
+    },
+    "far_past": {
+      "affirmation": "Ekilen tohumlar meyve vermeye başladı, {planet} bereketini artırdı.",
+      "warning": "Başarını sürdürülebilir kılmak için yeni stratejiler geliştir."
+    }
+  },
+  "EVT_006_FIN": {
+    "far_future": {
+      "affirmation": "Sürpriz masraflar seni sarsmayacak, {planet} esneklik kazanmanı istiyor.",
+      "warning": "Acil durum fonunu şimdiden küçük adımlarla oluşturmaya başla."
+    },
+    "near_future": {
+      "affirmation": "Beklenmedik bir ödeme çıkabilir, {planet} sana çözüm yolları gösterecek.",
+      "warning": "Gereksiz harcamaları kısıp bir miktar nakit ayırmanda fayda var."
+    },
+    "now": {
+      "affirmation": "Her harcama bir enerji akışıdır, {planet} bu döngüyü yeniden kuracak.",
+      "warning": "Panik yapma, her sorunun bir çözümü vardır; sakince plana odaklan."
+    },
+    "recent_past": {
+      "affirmation": "Maddi dengeler yerine oturuyor, {planet} bütçeni şifalandırıyor.",
+      "warning": "Aynı durumu yaşamamak için finansal planını daha sağlam kur."
+    },
+    "far_past": {
+      "affirmation": "O zorluk seni daha güçlü ve planlı birine dönüştürdü, {planet} yanındayım diyor.",
+      "warning": "Finansal dayanıklılığını korumak için tedbiri elden bırakma."
+    }
+  }
+}

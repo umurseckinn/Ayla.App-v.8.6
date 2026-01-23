@@ -1,0 +1,805 @@
+{
+  "Güneş": {
+    "Koç": {
+      "comment": "Güneş Koç burcunda yücelir. Cesaret, liderlik ve yeni başlangıçlar için muazzam bir enerji verir. Kendini ortaya koyma arzun tavan yapacak.",
+      "elements": {
+        "Ateş": "Enerjin tavan yapıyor, liderlik özelliklerin parlıyor. Harekete geç!",
+        "Toprak": "Pratik adımların için gereken motivasyonu buluyorsun. Somut sonuçlar yakın.",
+        "Hava": "Sosyal ilişkilerinde daha girişken ve etkileyicisin. Fikirlerini paylaş.",
+        "Su": "Duygularını eyleme dökme konusunda cesaretleniyorsun. İçindeki gücü hisset."
+      }
+    },
+    "Boğa": {
+      "comment": "Güneş Boğa'da huzur, istikrar ve maddi güven arayışını artırır. Sabırlı ve kararlı adımlarla ilerleme zamanı.",
+      "elements": {
+        "Ateş": "Hızını biraz yavaşlatıp kalıcı sonuçlara odaklanmalısın. Sabır kazandırır.",
+        "Toprak": "Kendi elementinde parlıyorsun, maddi konularda şanslısın. Değerlerine sahip çık.",
+        "Hava": "Fikirlerini somutlaştırmak için harika bir fırsat. Planlarını hayata geçir.",
+        "Su": "Duygusal güvenliğin maddi huzurla pekişiyor. Sevdiklerinle güven inşa et."
+      }
+    },
+    "İkizler": {
+      "comment": "Güneş İkizler'de iletişim, merak ve bilgi akışını canlandırır. Zihnin çok aktif ve sosyal bir dönemdesin.",
+      "elements": {
+        "Ateş": "Yaratıcılığın yeni fikirlerle besleniyor. Macera ve öğrenme bir arada.",
+        "Toprak": "Zihinsel projelerini düzene sokmak için uygun zaman. Verimliliğe odaklan.",
+        "Hava": "Kendi elementinde ışıldıyorsun. İletişim ağın genişliyor, bağ kur.",
+        "Su": "Duygularını rasyonalize etme eğiliminde olabilirsin. Kalbini de dinle."
+      }
+    },
+    "Yengeç": {
+      "comment": "Güneş Yengeç'te aile, kökler ve duygusal hassasiyeti ön plana çıkarır. Aidiyet ve koruma içgüdüsü güçleniyor.",
+      "elements": {
+        "Ateş": "Duygusal tepkilerin biraz daha dürtüsel olabilir. Sakin kalmayı dene.",
+        "Toprak": "Duygusal güvenliğin pratik bir zemine oturuyor. Evinde huzur bul.",
+        "Hava": "Geçmişten gelen fikirler zihnini meşgul edebilir. Anılarını değerlendir.",
+        "Su": "Kendi elementinde huzur buluyorsun. Sezgilerin sana en doğru yolu gösterecek."
+      }
+    },
+    "Aslan": {
+      "comment": "Güneş Aslan'da kendi evindedir. Yaratıcılık, özgüven ve yaşam sevincinin en yüksek olduğu dönem.",
+      "elements": {
+        "Ateş": "Gerçek potansiyelini sergileme zamanı. Sahne senin, parlamaktan korkma!",
+        "Toprak": "Yeteneklerini kazanca dönüştürmek için disiplinli ol. Başarı kalıcı olacak.",
+        "Hava": "Sosyal çevrende ilham verici bir figürsün. Popülerliğin artıyor.",
+        "Su": "Duygusal olarak cömert ve sıcakkanlısın. Sevgini göstermekten çekinme."
+      }
+    },
+    "Başak": {
+      "comment": "Güneş Başak'ta düzen, analiz ve hizmet etme arzusunu vurgular. Detaylara odaklanmak başarı getirecek.",
+      "elements": {
+        "Ateş": "Enerjini verimli kullanmak için planlı hareket et. Detaylar fark yaratır.",
+        "Toprak": "Verimliliğin artıyor, titiz çalışmaların meyvesini veriyor. Düzen kur.",
+        "Hava": "Eleştirel zihnin çok keskin. İletişimde yapıcı olmaya özen göster.",
+        "Su": "Pratik çözümler duygusal yüklerini hafifletiyor. Kendine iyi bak."
+      }
+    },
+    "Terazi": {
+      "comment": "Güneş Terazi'de denge, uyum ve ilişkiler odağındadır. Adalet ve estetik arayışı ön planda.",
+      "elements": {
+        "Ateş": "İlişkilerinde tutku ve uyum bir arada. Partnerinle ortak hedefler kur.",
+        "Toprak": "Sosyal ilişkilerini kalıcı ve güvenli bir temele oturtma zamanı.",
+        "Hava": "İletişim dilin zarafetle parlıyor. Anlaşmalar için mükemmel bir dönem.",
+        "Su": "Duygusal dengeni korumak için huzurlu ortamlar seç. Empati kur."
+      }
+    },
+    "Akrep": {
+      "comment": "Güneş Akrep'te derinlik, dönüşüm ve tutkuyu getirir. Gizli kalmış gerçekler gün yüzüne çıkabilir.",
+      "elements": {
+        "Ateş": "İçindeki tutku seni büyük değişimlere zorluyor. Korkularının üzerine git.",
+        "Toprak": "Derin araştırmalar maddi güvenliğini sağlamlaştırabilir. Stratejik ol.",
+        "Hava": "Zihnin gizemli konulara çekiliyor. Derin sohbetler sana iyi gelecek.",
+        "Su": "Duygusal gücün ve sezgilerin tavan yapıyor. Yeniden doğuşa hazır ol."
+      }
+    },
+    "Yay": {
+      "comment": "Güneş Yay'da özgürlük, keşif ve iyimserliği canlandırır. Ufuklarını genişletme zamanı.",
+      "elements": {
+        "Ateş": "Maceracı ruhun uyanıyor. Yeni yerler ve bilgiler keşfetmek için harika.",
+        "Toprak": "Vizyonlarını somutlaştırmak için sabırlı adımlar at. Büyük düşün.",
+        "Hava": "Felsefi tartışmalar ve öğrenme aşkı seni sosyal tutuyor. İlham ver.",
+        "Su": "Manevi bir arayış içinde olabilirsin. İçsel yolculuklar huzur getirecek."
+      }
+    },
+    "Oğlak": {
+      "comment": "Güneş Oğlak'ta sorumluluk, disiplin ve kariyer hedeflerini parlatır. Dağın zirvesine emin adımlarla tırmanma vakti.",
+      "elements": {
+        "Ateş": "Hırslarını yönetmek için strateji kur. Başarı sabırla gelecek.",
+        "Toprak": "Otoriten artıyor, hedeflerine odaklan. Ciddiyetin saygı uyandırıyor.",
+        "Hava": "Planlı ve rasyonel düşünceler zihnini netleştiriyor. Kariyer odaklı kal.",
+        "Su": "Sorumlulukların duygusal yüklerini artırabilir. Kendine mola ver."
+      }
+    },
+    "Kova": {
+      "comment": "Güneş Kova'da özgünlük, toplumsal fayda ve yenilikçi fikirleri vurgular. Sıra dışı olmanın tadını çıkar.",
+      "elements": {
+        "Ateş": "Sosyal projelerde liderlik edebilirsin. Vizyonun çevreni etkiliyor.",
+        "Toprak": "Yenilikçi fikirlerini sistemli hale getirmek için uygun zaman.",
+        "Hava": "Zihinsel özgürlüğün parlıyor. Gelecek planların için en doğru an.",
+        "Su": "Bireyselliğin duygusal bağlarını etkileyebilir. Mesafe ve samimiyet dengesi kur."
+      }
+    },
+    "Balık": {
+      "comment": "Güneş Balık'ta merhamet, hayal gücü ve teslimiyet enerjisi verir. Ruhsal bir arınma dönemindesin.",
+      "elements": {
+        "Ateş": "Yaratıcılığın sezgilerinle buluşuyor. İlham dolu eylemlerde bulun.",
+        "Toprak": "Hayallerini gerçeğe dönüştürmek için doğadan destek al. Dingin kal.",
+        "Hava": "İletişimde daha duyarlı ve anlayışlısın. Şiirsel bir dil yakalayabilirsin.",
+        "Su": "Ruhsal olarak zirvedesin. Şifa enerjisi hem sana hem çevrene iyi gelecek."
+      }
+    }
+  },
+  "Ay": {
+    "Koç": {
+      "comment": "Ay Koç'ta duyguları sabırsız ve dürtüsel kılar. İçgüdülerine güvenerek hızlı kararlar alabilirsin.",
+      "elements": {
+        "Ateş": "Duyguların alev alev. Heyecanını yaratıcı bir işe yönlendir.",
+        "Toprak": "Aceleci duygularını sakinleştirmek için fiziksel aktivite yap.",
+        "Hava": "İletişimde dürüst ve net olacaksın. Sözlerini sakınma.",
+        "Su": "Duygusal yoğunluğun seni huzursuz edebilir. Derin nefes al."
+      }
+    },
+    "Boğa": {
+      "comment": "Ay Boğa'da yücelir. Duygusal huzur, konfor ve sadakat ihtiyacı en yüksek seviyededir.",
+      "elements": {
+        "Ateş": "Duygusal dengeni korumak için doğada vakit geçir. Huzuru bulacaksın.",
+        "Toprak": "Güven duygun tavan yapıyor. Sahip olduklarının tadını çıkar.",
+        "Hava": "Fikirlerini sakin bir dille ifade et. İkna gücün yüksek.",
+        "Su": "Duygusal bağlılıkların güçleniyor. Sevdiklerine güven ver."
+      }
+    },
+    "İkizler": {
+      "comment": "Ay İkizler'de duyguları meraklı ve değişken yapar. Duygularını konuşarak paylaşmak isteyebilirsin.",
+      "elements": {
+        "Ateş": "Sosyal ortamlarda duygusal olarak besleniyorsun. Sohbet et.",
+        "Toprak": "Zihinsel karışıklığı aşmak için liste yap ve sadeleş.",
+        "Hava": "İletişim ihtiyacın çok yüksek. Sevdiklerinle haberleş.",
+        "Su": "Duygularını anlamlandırmak için yazmayı dene. Zihnin berraklaşacak."
+      }
+    },
+    "Yengeç": {
+      "comment": "Ay Yengeç'te yönetici pozisyonundadır. Şefkat, korumacılık ve derin aile bağları hissetme zamanı.",
+      "elements": {
+        "Ateş": "İç dünyana dönmek için biraz yavaşlamalısın. Duyguların rehberin.",
+        "Toprak": "Sevdiklerinle evinde huzurlu anlar paylaş. Aidiyet hissin güçlü.",
+        "Hava": "Duygusal anıların zihninde canlanıyor. Geçmişi sevgiyle an.",
+        "Su": "Duygusal derinliğin seni şifalandırıyor. Gözyaşlarından korkma."
+      }
+    },
+    "Aslan": {
+      "comment": "Ay Aslan'da duyguları cömert ve dramatik kılar. İlgi görmek ve takdir edilmek duygusal bir ihtiyaçtır.",
+      "elements": {
+        "Ateş": "Kendini özel hissetmek istiyorsun. Yaratıcılığını sergile.",
+        "Toprak": "Duygusal enerjini somut bir başarıya dönüştür. Gurur duy.",
+        "Hava": "Çevrene neşe saçıyorsun. Pozitif enerjin herkesi etkiliyor.",
+        "Su": "Kalbini sevgiye aç. Sıcakkanlılığın ilişkilerini ısıtacak."
+      }
+    },
+    "Başak": {
+      "comment": "Ay Başak'ta duyguları analizci ve düzenleyici yapar. Faydalı olma isteği huzur getirir.",
+      "elements": {
+        "Ateş": "Duygusal karmaşayı düzenleyerek aşabilirsin. Pratik ol.",
+        "Toprak": "Detaylar sana huzur veriyor. İşlerini organize et, rahatla.",
+        "Hava": "Zihnin çok titiz. İletişimde mükemmeliyetçiliği bir kenara bırak.",
+        "Su": "Başkalarına yardım etmek ruhuna şifa verecek. Destek ol."
+      }
+    },
+    "Terazi": {
+      "comment": "Ay Terazi'de duygusal denge ve uyum arayışını artırır. Yalnız kalmak yerine paylaşmak istersin.",
+      "elements": {
+        "Ateş": "İlişkilerinde dengeyi buluyorsun. Birlikte hareket etmek güç verir.",
+        "Toprak": "Sosyal çevrende uyum hakim. Nazik tavırların takdir topluyor.",
+        "Hava": "İletişimde adalet ve estetik ön planda. Uzlaşmacı ol.",
+        "Su": "Duygusal huzurun ikili ilişkilere bağlı. Sevgiyle yaklaş."
+      }
+    },
+    "Akrep": {
+      "comment": "Ay Akrep'te duyguları çok derin ve dönüştürücü kılar. Sezgiler keskinleşir, gizemler çekici gelir.",
+      "elements": {
+        "Ateş": "İçindeki güç uyanıyor. Duygusal krizleri şifaya dönüştür.",
+        "Toprak": "Sessiz ama derin adımlar atıyorsun. Stratejine güven.",
+        "Hava": "Zihnin derin gerçeklerin peşinde. Sırları çözmeye hazırsın.",
+        "Su": "Duygusal bir yenilenme içindesin. Sezgilerin seni asla yanıltmaz."
+      }
+    },
+    "Yay": {
+      "comment": "Ay Yay'da duyguları özgürlükçü ve neşeli kılar. Macera arayışı ve iyimserlik hakimdir.",
+      "elements": {
+        "Ateş": "Ruhun kanatlanıyor. Yeni deneyimler için kalbin çarpıyor.",
+        "Toprak": "Duygusal sınırlarını genişletme zamanı. Hayata güvenle bak.",
+        "Hava": "Felsefi sohbetler ve yeni bilgiler ruhuna iyi gelecek. Keşfet.",
+        "Su": "Manevi bir ferahlama içindesin. Evrenin akışına teslim ol."
+      }
+    },
+    "Oğlak": {
+      "comment": "Ay Oğlak'ta duyguları kontrollü ve ciddi yapar. Sorumluluk almak duygusal bir güven verir.",
+      "elements": {
+        "Ateş": "Duygularını hedeflerine odaklanmak için kullan. Disiplin güçtür.",
+        "Toprak": "Duygusal dayanıklılığın artıyor. Zorluklara göğüs gerebilirsin.",
+        "Hava": "Planlı hareket etmek iç huzurunu sağlayacak. Rasyonel kal.",
+        "Su": "Duygularını ifade etmekte zorlanabilirsin. Kendine şefkat göster."
+      }
+    },
+    "Kova": {
+      "comment": "Ay Kova'da duyguları bağımsız ve idealist kılar. Toplumsal konulara duyarlılık artar.",
+      "elements": {
+        "Ateş": "Arkadaş çevrende duygusal bir liderlik yapabilirsin. Vizyoner ol.",
+        "Toprak": "Sıra dışı fikirlerin duygusal güvenliğini artırıyor. Farklılaş.",
+        "Hava": "Zihinsel bir özgürlük hissi. Yenilikçi adımlar için hazırsın.",
+        "Su": "Mesafe ve samimiyet dengesini kurmak ruhuna iyi gelecek."
+      }
+    },
+    "Balık": {
+      "comment": "Ay Balık'ta duyguları evrensel ve hayalperest yapar. Empati gücü ve ruhsal duyarlılık zirvededir.",
+      "elements": {
+        "Ateş": "Hayal gücünü eyleme dökme vakti. Sanatsal ilhamları kaçırma.",
+        "Toprak": "Ruhsal huzuru sessizlikte bulacaksın. Meditasyon yap.",
+        "Hava": "Sezgisel bir iletişim kuruyorsun. Kelimelerin ötesini hisset.",
+        "Su": "Tam bir ruhsal bütünlük içindesin. Sevgiyle şifalanıyorsun."
+      }
+    }
+  },
+  "Merkür": {
+    "Koç": {
+      "comment": "Merkür Koç'ta zihni keskin ve hızlı yapar. Sözlerin ok gibi hedefe gider.",
+      "elements": {
+        "Ateş": "Fikirlerinle etrafını ateşliyorsun. Cesurca konuş.",
+        "Toprak": "Hızlı düşüncelerini somutlaştırmak için notlar al.",
+        "Hava": "Tartışmalarda çok iddialısın. Haklılığını kanıtla.",
+        "Su": "Dürtüsel sözler kalpleri kırabilir. Konuşmadan önce dur."
+      }
+    },
+    "Boğa": {
+      "comment": "Merkür Boğa'da zihni pratik ve sabırlı yapar. Kararlar yavaş ama sağlam alınır.",
+      "elements": {
+        "Ateş": "Zihnini dinlendirme ve planlama zamanı. Acele etme.",
+        "Toprak": "Mantıklı ve karlı kararlar için harika bir dönem. Odaklan.",
+        "Hava": "Fikirlerini somut kanıtlarla sunarsan başarılı olursun.",
+        "Su": "Zihnin huzurlu ve yapıcı. Sevdiklerinle güvenli bağlar kur."
+      }
+    },
+    "İkizler": {
+      "comment": "Merkür İkizler'de kendi evindedir. Zeka kıvılcımları, iletişim trafiği ve öğrenme aşkı zirve yapar.",
+      "elements": {
+        "Ateş": "Zihinsel enerjin tavan! Yeni şeyler öğrenmek için mükemmel.",
+        "Toprak": "Çok fazla fikir arasında dağılmamaya çalış. Liste yap.",
+        "Hava": "İletişim dehası gibi parlıyorsun. Herkesi etkileme vakti.",
+        "Su": "Zihnin çok hızlı ama yüzeysel olabilir. Derinleşmeyi dene."
+      }
+    },
+    "Yengeç": {
+      "comment": "Merkür Yengeç'te zihni sezgisel ve duygusal yapar. Geçmişi ve anıları düşünmek ön plandadır.",
+      "elements": {
+        "Ateş": "Zihnin içe dönük ama yaratıcı. Sezgilerine güven.",
+        "Toprak": "Ev ve aile konularında pratik kararlar alabilirsin. Anlaş.",
+        "Hava": "Duygusal zekan iletişimini güçlendiriyor. Empati yap.",
+        "Su": "Ruhsal bir iletişim dili yakalıyorsun. Sözlerin şifalı."
+      }
+    },
+    "Aslan": {
+      "comment": "Merkür Aslan'da zihni yaratıcı ve özgüvenli yapar. Fikirlerini dramatik ve etkileyici sunarsın.",
+      "elements": {
+        "Ateş": "Zihinsel olarak parlıyorsun. Projelerinle dikkat çek.",
+        "Toprak": "Fikirlerini kalıcı başarılara dönüştürme vakti. Kararlı ol.",
+        "Hava": "Sosyal çevrende konuşmalarınla ilham veriyorsun. Bağ kur.",
+        "Su": "Zihnin sıcak ve cömert. Sevgini kelimelere dök."
+      }
+    },
+    "Başak": {
+      "comment": "Merkür Başak'ta yücelir ve yönetir. Olağanüstü analiz yeteneği ve detaycılık getirir.",
+      "elements": {
+        "Ateş": "Zihnini verimli işlere odakla. Hataları düzeltme zamanı.",
+        "Toprak": "Mükemmel planlar yapabilirsin. Detaylar en büyük gücün.",
+        "Hava": "Eleştirel zihnin çok aktif. İletişimde kırıcı olmamaya bak.",
+        "Su": "Pratik düşünceler duygusal karmaşayı çözüyor. Netleş."
+      }
+    },
+    "Terazi": {
+      "comment": "Merkür Terazi'de zihni uzlaşmacı ve zarif yapar. Adaletli kararlar almak kolaylaşır.",
+      "elements": {
+        "Ateş": "İlişkilerinde diplomatik bir dil kullanıyorsun. Barış sağla.",
+        "Toprak": "Anlaşmalar için güvenli bir zemin hazırlıyorsun. Sözleş.",
+        "Hava": "İletişim dehası gibi parlıyorsun. Uyumlu çözümler üret.",
+        "Su": "Zihnin huzur arayışında. Nazik sohbetler ruhuna iyi gelecek."
+      }
+    },
+    "Akrep": {
+      "comment": "Merkür Akrep'te zihni araştırmacı ve keskin yapar. Sırları çözmek ve derinleşmek istersin.",
+      "elements": {
+        "Ateş": "Zihinsel bir dedektif gibisin. Gerçeğin peşinden git.",
+        "Toprak": "Stratejik planlar maddi güvenliğini artırabilir. Derin bak.",
+        "Hava": "Sözlerin çok etkili ve dönüştürücü. Gizemli kal.",
+        "Su": "Sezgisel zekan zirvede. İnsanların niyetlerini okuyorsun."
+      }
+    },
+    "Yay": {
+      "comment": "Merkür Yay'da zihni felsefi ve büyük düşünen yapar. Detaylar kaybolabilir ama vizyon geniştir.",
+      "elements": {
+        "Ateş": "Zihnin yeni ufuklara açılıyor. Eğitim ve seyahat planla.",
+        "Toprak": "Büyük fikirlerini gerçeğe dökmek için sabırlı ol. İlerle.",
+        "Hava": "İyimser konuşmalarınla çevrene ilham veriyorsun. Paylaş.",
+        "Su": "Zihnin inançlar ve anlam arayışında. İçsel cevaplar bul."
+      }
+    },
+    "Oğlak": {
+      "comment": "Merkür Oğlak'ta zihni disiplinli ve gerçekçi yapar. Uzun vadeli stratejiler için idealdir.",
+      "elements": {
+        "Ateş": "Zihnini kariyer hedeflerine odakla. Disiplin kazandırır.",
+        "Toprak": "Ciddi ve sağlam kararlar alma vakti. Sözüne güvenilir.",
+        "Hava": "Planlı ve rasyonel düşüncelerinle saygı uyandırıyorsun.",
+        "Su": "Zihnin biraz katı olabilir. Esnek olmayı denemelisin."
+      }
+    },
+    "Kova": {
+      "comment": "Merkür Kova'da zihni dahi ve yenilikçi yapar. Teknolojik ve toplumsal fikirler ön plandadır.",
+      "elements": {
+        "Ateş": "Sıra dışı fikirlerinle liderlik edebilirsin. Yenilik yap.",
+        "Toprak": "Gelecek planlarını sistemli hale getir. Vizyoner ol.",
+        "Hava": "Zihinsel olarak özgür ve hızlısın. Yeni dünyalar kur.",
+        "Su": "Zihnin toplumsal faydaya odaklı. İdealist kal."
+      }
+    },
+    "Balık": {
+      "comment": "Merkür Balık'ta zihni hayalperest ve sezgisel yapar. Mantık yerine ilham ve hisler konuşur.",
+      "elements": {
+        "Ateş": "Yaratıcı projelerin için ilham yağıyor. Yaz, çiz, üret.",
+        "Toprak": "Zihinsel dağınıklığı aşmak için sessiz kal. Hislerini dinle.",
+        "Hava": "İletişimde kelimeler yetmeyebilir. Kalpten konuş.",
+        "Su": "Sezgilerin zihninden daha hızlı çalışıyor. Rüyalarına bak."
+      }
+    }
+  },
+  "Venüs": {
+    "Koç": {
+      "comment": "Venüs Koç'ta aşkı heyecanlı ve avcı yapar. Tutkuların peşinden gitmek istersin.",
+      "elements": {
+        "Ateş": "Aşkta çok cesursun. İlk adımı atmaktan korkma!",
+        "Toprak": "Duygularını somut bir eylemle göster. Tutkunu yansıt.",
+        "Hava": "İlişkilerinde macera arıyorsun. Sosyalleş ve eğlen.",
+        "Su": "Aşkta sabırsızlık kalp kırabilir. Duygularını dizginle."
+      }
+    },
+    "Boğa": {
+      "comment": "Venüs Boğa'da kendi evindedir. Maddi konfor, tensel zevkler ve sadakat en önemli değerlerdir.",
+      "elements": {
+        "Ateş": "Aşkta huzur ve güven arıyorsun. Sevdiklerinle doğada ol.",
+        "Toprak": "Maddi ve manevi olarak en şanslı dönemdesin. Değerlen.",
+        "Hava": "İlişkilerini sağlam temellere oturtma vakti. Kalıcı ol.",
+        "Su": "Duygusal bağlılıkların derinleşiyor. Sevgini güvenle sun."
+      }
+    },
+    "İkizler": {
+      "comment": "Venüs İkizler'de aşkı flörtöz ve zihinsel yapar. İletişim kurmak en büyük romantizmdir.",
+      "elements": {
+        "Ateş": "Yeni insanlarla tanışmak için harika. Aşkta meraklı ol.",
+        "Toprak": "İlişkilerinde zihinsel uyum arıyorsun. Konuş ve paylaş.",
+        "Hava": "Çok çekici ve etkileyicisin. Sözlerinle herkesi büyüle.",
+        "Su": "Aşkta derinlik yerine eğlenceye odaklan. Hafifle."
+      }
+    },
+    "Yengeç": {
+      "comment": "Venüs Yengeç'te aşkı şefkatli ve korumacı yapar. Ev ve aile hayatında huzur ararsın.",
+      "elements": {
+        "Ateş": "Aşkta güvenli bir liman arıyorsun. Sevdiklerine sarıl.",
+        "Toprak": "İlişkilerini kökleştirme zamanı. Aile kurmak için uygun.",
+        "Hava": "Duygusal anıların aşk hayatını etkiliyor. Şefkatli ol.",
+        "Su": "Aşkta ruhsal bir bütünlük içindesin. Sevgiyle şifalan."
+      }
+    },
+    "Aslan": {
+      "comment": "Venüs Aslan'da aşkı cömert ve gösterişli yapar. Hayran olunmak istersin.",
+      "elements": {
+        "Ateş": "Aşkta bir yıldız gibi parlıyorsun. Sevgini haykır.",
+        "Toprak": "Değerlerini sergilemek sana güven veriyor. Kaliteli ol.",
+        "Hava": "Sosyal ortamlarda ilginin odağısın. Flörtün tadını çıkar.",
+        "Su": "Aşkta kalbin çok sıcak. Sevdiklerini şımartmayı unutma."
+      }
+    },
+    "Başak": {
+      "comment": "Venüs Başak'ta aşkı hizmet odaklı ve titiz yapar. Sevgi, yardımlaşma ve düzenle ifade edilir.",
+      "elements": {
+        "Ateş": "İlişkilerindeki pürüzleri düzeltme vakti. Pratik sevgi sun.",
+        "Toprak": "Detaylara verilen önem aşkı güçlendiriyor. Sadık kal.",
+        "Hava": "Zihinsel uyum ve yardımlaşma ön planda. Faydalı ol.",
+        "Su": "Sade ve samimi bir aşk anlayışı içindesin. Huzuru bul."
+      }
+    },
+    "Terazi": {
+      "comment": "Venüs Terazi'de kendi evindedir. Estetik, uyum, romantizm ve adalet doruktadır.",
+      "elements": {
+        "Ateş": "İlişkilerinde tam bir denge hakim. Aşkta zarafet kazanır.",
+        "Toprak": "Güzellik ve uyum arayışın maddi dünyada karşılık buluyor.",
+        "Hava": "Aşkın en romantik halini yaşıyorsun. Herkes sana hayran.",
+        "Su": "İlişkilerinde huzur ve adalet arıyorsun. Empatiyle yaklaş."
+      }
+    },
+    "Akrep": {
+      "comment": "Venüs Akrep'te aşkı çok derin, tutkulu ve bazen de krizli yapar. Sahiplenme hissi güçlüdür.",
+      "elements": {
+        "Ateş": "Aşkta 'ya hep ya hiç' diyorsun. Tutkunun esiri olma.",
+        "Toprak": "İlişkilerinde derin ve kalıcı bir dönüşüm süreci. Güçlen.",
+        "Hava": "Gizemli bir çekiciliğin var. İnsanları mıknatıs gibi çekiyorsun.",
+        "Su": "Aşkta ruhsal bir birleşme yaşıyorsun. Sezgilerine güven."
+      }
+    },
+    "Yay": {
+      "comment": "Venüs Yay'da aşkı özgürlükçü ve macera dolu yapar. Farklı kültürler ve felsefeler çekici gelir.",
+      "elements": {
+        "Ateş": "Aşkta yeni ufuklara yelken açma vakti. Maceraya atıl.",
+        "Toprak": "İlişkilerinde vizyoner ve iyimser bir enerji hakim. İlerle.",
+        "Hava": "Eğlenceli ve öğretici bir aşk anlayışı. Sosyalleş ve gez.",
+        "Su": "İlişkilerinde manevi bir anlam arıyorsun. Özgürlüğü tanı."
+      }
+    },
+    "Oğlak": {
+      "comment": "Venüs Oğlak'ta aşkı ciddi ve kalıcı yapar. Statü ve güvenilirlik ön plandadır.",
+      "elements": {
+        "Ateş": "Aşkta sorumluluk alma zamanı. Ciddi adımlar atabilirsin.",
+        "Toprak": "İlişkilerini sağlam bir temele oturtuyorsun. Gelecek kur.",
+        "Hava": "Saygınlık ve güven ilişkilerini güçlendiriyor. Kararlı ol.",
+        "Su": "Duygularını göstermekte zorlanabilirsin. Sadakatinle kanıtla."
+      }
+    },
+    "Kova": {
+      "comment": "Venüs Kova'da aşkı arkadaşça ve özgün yapar. Sıra dışı ilişkiler ilgini çekebilir.",
+      "elements": {
+        "Ateş": "Aşkta özgürlük ve bireysellik ön planda. Farklılığını kutla.",
+        "Toprak": "Sıra dışı bir değer algısı geliştiriyorsun. Yenilikçi ol.",
+        "Hava": "İlişkilerinde zihinsel özgürlük arıyorsun. Sosyal kal.",
+        "Su": "Arkadaşlıktan aşka dönüşen duygular olabilir. Açık ol."
+      }
+    },
+    "Balık": {
+      "comment": "Venüs Balık'ta yücelir. İlahi aşk, fedakarlık ve romantizmin en saf halidir.",
+      "elements": {
+        "Ateş": "Aşkta hayallerin gerçeğe dönüşebilir. Romantizme izin ver.",
+        "Toprak": "Şefkat dolu bir aşk anlayışı ruhuna şifa verecek. Sev.",
+        "Hava": "İlişkilerinde sezgisel bir uyum yakalıyorsun. Büyülen.",
+        "Su": "Aşkın en derin ve kutsal halini yaşıyorsun. Teslim ol."
+      }
+    }
+  },
+  "Mars": {
+    "Koç": {
+      "comment": "Mars Koç'ta kendi evindedir. Savaşçı ruh, inanılmaz bir enerji ve cesaret verir.",
+      "elements": {
+        "Ateş": "Durdurulamaz bir gücün var! Hedeflerine doğrudan saldır.",
+        "Toprak": "Aşırı enerjini fiziksel işlerle dengele. Acele etme.",
+        "Hava": "Rekabetçi ve iddialısın. Tartışmalarda liderliği ele al.",
+        "Su": "Öfkeni kontrol etmelisin. Enerjini spora yönlendir."
+      }
+    },
+    "Boğa": {
+      "comment": "Mars Boğa'da enerjiyi yavaş ve kararlı kılar. İnatçı bir çalışma azmi getirir.",
+      "elements": {
+        "Ateş": "Enerjini maddi hedeflerin için harca. Sabırla inşa et.",
+        "Toprak": "Dayanıklılığın tavan yapıyor. En zor işleri bitirebilirsin.",
+        "Hava": "Planlı ve yavaş ilerlemek sana kazandıracak. İnat etme.",
+        "Su": "Maddi güvenliğin için mücadele etme vakti. Güçlü dur."
+      }
+    },
+    "İkizler": {
+      "comment": "Mars İkizler'de enerjiyi zihinsel ve hareketli kılar. Kelimeler en büyük silahındır.",
+      "elements": {
+        "Ateş": "Zihinsel projeler için büyük bir hız kazanıyorsun. Başla.",
+        "Toprak": "Aynı anda çok işe bölünmemeye çalış. Odaklanma şart.",
+        "Hava": "Tartışmalarda çok hızlı ve keskinsin. Zekanı kullan.",
+        "Su": "Sinirsel gerginlikten kaçın. Zihnini susturmayı öğren."
+      }
+    },
+    "Yengeç": {
+      "comment": "Mars Yengeç'te enerjiyi duygusal ve korumacı kılar. Sevdiklerin için savaşma zamanı.",
+      "elements": {
+        "Ateş": "Duygusal tepkilerin sert olabilir. Sevdiklerini kırma.",
+        "Toprak": "Ev ve aile içindeki işleri bitirmek için büyük güç. Çalış.",
+        "Hava": "İçindeki enerjiyi sevdiklerini korumaya yönlendir. Şefkatli ol.",
+        "Su": "Duygusal dayanıklılığın artıyor. Köklerini savunma vakti."
+      }
+    },
+    "Aslan": {
+      "comment": "Mars Aslan'da enerjiyi yaratıcı ve gururlu kılar. Sahneye çıkıp kendini gösterme arzusu verir.",
+      "elements": {
+        "Ateş": "Yaratıcı bir lider gibi davranıyorsun. Sahne senin, yürü!",
+        "Toprak": "Başarılarınla gurur duyma vakti. Azimle çalış ve kazan.",
+        "Hava": "Sosyal çevrende enerjinle fark ediliyorsun. Takdir topla.",
+        "Su": "Kalbini hedeflerine koy. Tutkulu eylemler başarı getirir."
+      }
+    },
+    "Başak": {
+      "comment": "Mars Başak'ta enerjiyi verimli ve detaycı kılar. Mükemmel bir çalışma disiplini getirir.",
+      "elements": {
+        "Ateş": "Hataları düzeltmek ve düzen kurmak için büyük güç. Başla.",
+        "Toprak": "Verimlilikte zirvedesin. Liste yap ve hepsini bitir.",
+        "Hava": "Analiz yeteneğin eylemlerini hızlandırıyor. Titiz ol.",
+        "Su": "Sağlığına özen gösterme vakti. Rutinlerini iyileştir."
+      }
+    },
+    "Terazi": {
+      "comment": "Mars Terazi'de enerjiyi diplomatik ve dengeleyici kılar. Adalet için mücadele edersin.",
+      "elements": {
+        "Ateş": "İlişkilerinde dengeyi korumak için çaba harca. Adil ol.",
+        "Toprak": "Sosyal anlaşmazlıkları çözmek için enerjini kullan. Uzlaş.",
+        "Hava": "İş birliklerinde aktif rol alma vakti. Ortaklık kur.",
+        "Su": "Tartışmalardan kaçınmak yerine uyum yaratmaya odaklan."
+      }
+    },
+    "Akrep": {
+      "comment": "Mars Akrep'te kendi evindedir (geleneksel). İnanılmaz bir odaklanma, dayanıklılık ve stratejik güç verir.",
+      "elements": {
+        "Ateş": "Küllerinden doğma vakti! En büyük krizleri fırsata çevir.",
+        "Toprak": "Hedeflerine sarsılmaz bir kararlılıkla ilerliyorsun. Kazan.",
+        "Hava": "Stratejik zekan eylemlerini mükemmelleştiriyor. Derinleş.",
+        "Su": "Duygusal gücün ve iraden tavan! Sırlarını koruyarak ilerle."
+      }
+    },
+    "Yay": {
+      "comment": "Mars Yay'da enerjiyi özgürlükçü ve maceracı kılar. İnançların için aksiyon alırsın.",
+      "elements": {
+        "Ateş": "Ruhun macera için yanıyor. Yeni yerler keşfetmeye başla.",
+        "Toprak": "Vizyonlarını gerçeğe dönüştürmek için cesur adımlar at.",
+        "Hava": "İyimserliğin eylemlerini destekliyor. Çevrene ilham ver.",
+        "Su": "İnandığın değerler için savaşma vakti. Dürüst ol."
+      }
+    },
+    "Oğlak": {
+      "comment": "Mars Oğlak'ta yücelir. En yüksek disiplin, sabır ve uzun vadeli başarı enerjisidir.",
+      "elements": {
+        "Ateş": "Hırslarını yönet ve zirveye tırman. Sabır kazandıracak.",
+        "Toprak": "Kariyerinde durdurulamaz bir güçtesin. Hedefine odaklan.",
+        "Hava": "Sorumlulukların eylemlerini disipline ediyor. Ciddi kal.",
+        "Su": "Zorluklar karşısında kaya gibi sağlam durma vakti. Güçlen."
+      }
+    },
+    "Kova": {
+      "comment": "Mars Kova'da enerjiyi yenilikçi ve bağımsız kılar. Toplumsal değişim için harekete geçersin.",
+      "elements": {
+        "Ateş": "Gelecek için devrimci adımlar atma vakti. Özgürleş.",
+        "Toprak": "Sıra dışı hedeflerini sistemli hale getir. Vizyoner ol.",
+        "Hava": "Zihinsel özgürlüğün eylemlerine yansıyor. Gruplara katıl.",
+        "Su": "Toplumsal ideallerin için mücadele et. Farklılaş."
+      }
+    },
+    "Balık": {
+      "comment": "Mars Balık'ta enerjiyi sezgisel ve fedakar kılar. Sessiz ama derinden gelen bir güç vardır.",
+      "elements": {
+        "Ateş": "Yaratıcı ilhamlarını eyleme dök. Sanatla şifalan.",
+        "Toprak": "Sessizce çalışmak sana daha çok şey kazandıracak. Dinlen.",
+        "Hava": "Sezgilerin seni doğru adımlara yönlendiriyor. Hisset.",
+        "Su": "Ruhsal olarak çok güçlü bir mücadele azmi. Şifa dağıt."
+      }
+    }
+  },
+  "Jüpiter": {
+    "Koç": {
+      "comment": "Jüpiter Koç'ta şansı cesaret ve yeni başlangıçlarla getirir. Kendine güvenen kazanır.",
+      "elements": {
+        "Ateş": "Büyük fırsatlar kapında. Cesurca öne atıl, şans seninle.",
+        "Toprak": "Özgüvenini maddi başarıya dönüştürme vakti. İlerle.",
+        "Hava": "Sosyal çevrende liderliğinle parlayacaksın. Genişle.",
+        "Su": "İçindeki gücü keşfetmek ruhsal bir büyüme getirecek."
+      }
+    },
+    "Boğa": {
+      "comment": "Jüpiter Boğa'da bolluğu maddi güven ve huzurla getirir. Bereketli bir dönemdesin.",
+      "elements": {
+        "Ateş": "Maddi kaynaklarını büyütmek için harika fırsatlar. Sabırlı ol.",
+        "Toprak": "En şanslı ve bereketli dönemindesin. Tadını çıkar.",
+        "Hava": "Değerlerinle ilgili yeni ve karlı kararlar alabilirsin.",
+        "Su": "Duygusal huzurun maddi bereketle pekişiyor. Şükret."
+      }
+    },
+    "İkizler": {
+      "comment": "Jüpiter İkizler'de şansı bilgi, iletişim ve sosyallikle getirir. Öğrenme aşkın artacak.",
+      "elements": {
+        "Ateş": "Zihinsel ufukların genişliyor. Çok şey öğrenip paylaşacaksın.",
+        "Toprak": "Yeni fikirler maddi kazanç kapıları açabilir. Konuş.",
+        "Hava": "İletişimde devleşme vakti. Bilginle herkesi etkile.",
+        "Su": "Zihinsel merakın ruhuna taze bir enerji verecek."
+      }
+    },
+    "Yengeç": {
+      "comment": "Jüpiter Yengeç'te yücelir. Aile, ev ve duygusal dünyada büyük bir genişleme ve mutluluk verir.",
+      "elements": {
+        "Ateş": "İç dünyanda büyük bir huzur ve büyüme. Ailene odaklan.",
+        "Toprak": "Ev ve mülk sahibi olmak için şanslı bir dönem. Köklen.",
+        "Hava": "Duygusal zekan sosyal ilişkilerinde kapılar açıyor.",
+        "Su": "Ruhsal olarak çok zenginsin. Sevdiklerinle bütünleş."
+      }
+    },
+    "Aslan": {
+      "comment": "Jüpiter Aslan'da şansı yaratıcılık, aşk ve neşeyle getirir. Hayatın tadını çıkarma vakti.",
+      "elements": {
+        "Ateş": "Yaratıcılığın ve aşk hayatın parlıyor. Mutluluğu yakala!",
+        "Toprak": "Yeteneklerinle büyük başarılar elde edebilirsin. Özgün ol.",
+        "Hava": "Sosyal çevrende popülerliğin artıyor. Neşe saç.",
+        "Su": "Cömertliğin ve sevgin sana şans olarak dönecek."
+      }
+    },
+    "Başak": {
+      "comment": "Jüpiter Başak'ta bolluğu hizmet, düzen ve detaylarda gizli tutar. Çalışan kazanır.",
+      "elements": {
+        "Ateş": "İş hayatında büyük kolaylıklar ve fırsatlar. Titiz ol.",
+        "Toprak": "Verimliliğin artıyor, sağlığın iyileşiyor. Düzen kur.",
+        "Hava": "Analitik zekan sana karlı kapılar açacak. Planlı kal.",
+        "Su": "Başkalarına faydalı oldukça şansın artıyor. Destek ol."
+      }
+    },
+    "Terazi": {
+      "comment": "Jüpiter Terazi'de şansı ilişkiler, ortaklıklar ve adaletle getirir. Birlikten kuvvet doğar.",
+      "elements": {
+        "Ateş": "Evlilik ve ortaklıklar için en şanslı dönem. Bütünleş.",
+        "Toprak": "Sosyal ilişkilerinde adalet ve uyum sana başarı getirecek.",
+        "Hava": "İletişimde zarif ve ikna edicisin. Anlaşmalar yap.",
+        "Su": "İlişkilerinde huzur ve dengeyi buluyorsun. Şansın paylaşmakta."
+      }
+    },
+    "Akrep": {
+      "comment": "Jüpiter Akrep'te şansı derinlik, dönüşüm ve ortak kaynaklarla getirir. Büyük sırlar çözülebilir.",
+      "elements": {
+        "Ateş": "Krizleri fırsata çevirme gücün tavan! Yeniden doğ.",
+        "Toprak": "Miras veya yatırım konularında beklenmedik şanslar. Stratejik ol.",
+        "Hava": "Gizemli konuları çözmek sana büyük avantajlar sağlayacak.",
+        "Su": "Ruhsal ve sezgisel olarak devleşiyorsun. Derinleş."
+      }
+    },
+    "Yay": {
+      "comment": "Jüpiter Yay'da kendi evindedir. İnançlar, felsefe, uzak seyahatler ve büyük vizyonlar parlar.",
+      "elements": {
+        "Ateş": "Dünya senin oyun alanın! Seyahat et ve öğren. Vizyonun geniş.",
+        "Toprak": "Büyük ideallerini somutlaştırmak için evren seninle. İlerle.",
+        "Hava": "Bilginle kitlelere ilham verme vakti. İyimser kal.",
+        "Su": "Manevi olarak en yüksek mertebelere ulaşabilirsin. Teslim ol."
+      }
+    },
+    "Oğlak": {
+      "comment": "Jüpiter Oğlak'ta şansı disiplin, statü ve uzun vadeli hedeflerle getirir. Sabreden başarır.",
+      "elements": {
+        "Ateş": "Kariyerinde büyük bir yükseliş fırsatı. Sorumluluk al.",
+        "Toprak": "Hedeflerine odaklan, otoriten artıyor. Başarı kalıcı.",
+        "Hava": "Ciddi projelerin toplumsal başarı getirecek. Planlı ol.",
+        "Su": "Sorumlulukların seni büyütecek ve güçlendirecek."
+      }
+    },
+    "Kova": {
+      "comment": "Jüpiter Kova'da şansı yenilikçi fikirler, dostluklar ve ideallerle getirir. Gelecek parlak.",
+      "elements": {
+        "Ateş": "Toplumsal projelerde büyük destek görüyorsun. Özgürleş.",
+        "Toprak": "Sıra dışı hedeflerin için karlı anlaşmalar yapabilirsin.",
+        "Hava": "Dostlukların ve hayallerin sana kapılar açıyor. Bağ kur.",
+        "Su": "Bireyselliğin ve idealizmin sana şans getirecek."
+      }
+    },
+    "Balık": {
+      "comment": "Jüpiter Balık'ta kendi evindedir (geleneksel). Merhamet, spiritüel derinlik ve ilahi koruma verir.",
+      "elements": {
+        "Ateş": "Yaratıcılığın ve merhametinle devleşiyorsun. Şifa ol.",
+        "Toprak": "Ruhsal huzurun maddi dünyana da yansıyacak. Dingin kal.",
+        "Hava": "Sezgisel bilgiler hayatını kolaylaştırıyor. Kalbini dinle.",
+        "Su": "İlahi desteği her an yanında hissediyorsun. Mucizelere hazır ol."
+      }
+    }
+  },
+  "Satürn": {
+    "Koç": {
+      "comment": "Satürn Koç'ta sabır ve disiplin sınavlarını cesaret üzerinden verir. Acelecilik kaybettirir.",
+      "elements": {
+        "Ateş": "Harekete geçmeden önce strateji kurmalısın. Sabır güçtür.",
+        "Toprak": "Liderlik özelliklerini disiplinle yoğurma zamanı. Ciddi ol.",
+        "Hava": "Dürtüselliği bırakıp uzun vadeli planlar yapmalısın. Odaklan.",
+        "Su": "Cesaretini kontrol etmeyi öğreniyorsun. İçindeki öfkeyi yönet."
+      }
+    },
+    "Boğa": {
+      "comment": "Satürn Boğa'da maddi değerler ve güvenlik konularında sorumluluk getirir. Tutumluluk kazandırır.",
+      "elements": {
+        "Ateş": "Maddi kaynaklarını korumayı öğrenme vakti. Birikim yap.",
+        "Toprak": "Kalıcı ve güvenli bir gelecek inşa ediyorsun. Sabırla çalış.",
+        "Hava": "Değerlerinle ilgili ciddi sınavlar verebilirsin. Sağlam dur.",
+        "Su": "Duygusal güvenliğin maddi istikrarına bağlı. Düzen kur."
+      }
+    },
+    "İkizler": {
+      "comment": "Satürn İkizler'de iletişim ve zihinsel odaklanma konularında disiplin getirir. Sözlerin ağırlığı artar.",
+      "elements": {
+        "Ateş": "Yeni şeyler öğrenirken derinleşme vakti. Yüzeysel kalma.",
+        "Toprak": "İletişimini ciddiye al, sözleşmelerine dikkat et. Net ol.",
+        "Hava": "Zihinsel disiplinin artıyor. Ciddi eğitimler için ideal.",
+        "Su": "Zihnini susturup odaklanmayı öğreniyorsun. Yazıya dök."
+      }
+    },
+    "Yengeç": {
+      "comment": "Satürn Yengeç'te aile ve duygusal sorumluluklar üzerinden sınar. Köklerinle yüzleşme vakti.",
+      "elements": {
+        "Ateş": "Duygusal sınırlarını çizme zamanı. Ailene karşı sorumluluk al.",
+        "Toprak": "Ev hayatında düzen ve disiplin kurmalısın. Temelleri sağlamlaştır.",
+        "Hava": "Geçmişin yüklerinden kurtulmak için ciddiyet gerekiyor.",
+        "Su": "Duygusal dayanıklılığını inşa ediyorsun. Olgunlaşma zamanı."
+      }
+    },
+    "Aslan": {
+      "comment": "Satürn Aslan'da yaratıcılık ve özgüven konularında kısıtlanmalar veya sorumluluklar getirir.",
+      "elements": {
+        "Ateş": "Yeteneklerini disiplinle parlatma vakti. Emeğinle var ol.",
+        "Toprak": "Aşk hayatında ve yaratıcılıkta daha gerçekçi olmalısın.",
+        "Hava": "Takdir edilmek için daha çok çalışman gerekebilir. Sabret.",
+        "Su": "Kalbini korumayı ve duygularını yönetmeyi öğreniyorsun."
+      }
+    },
+    "Başak": {
+      "comment": "Satürn Başak'ta iş, sağlık ve rutinler üzerinden yüksek disiplin ister. Mükemmellik emek ister.",
+      "elements": {
+        "Ateş": "Çalışma hayatında çok ciddi sorumluluklar. Liste yap ve uy.",
+        "Toprak": "Verimliliğin en yüksek sınavını veriyorsun. Titiz kal.",
+        "Hava": "Sağlığına düzen getirme vakti. Alışkanlıklarını ciddiye al.",
+        "Su": "Hizmet ederken sınırlarını belirlemeyi öğreniyorsun."
+      }
+    },
+    "Terazi": {
+      "comment": "Satürn Terazi'de yücelir. İlişkilerde adalet, sorumluluk ve kalıcı bağlar kurma dönemidir.",
+      "elements": {
+        "Ateş": "Ciddi ortaklıklar ve evlilikler için sınav vakti. Sadık kal.",
+        "Toprak": "Sosyal ilişkilerini kalıcı temellere oturtuyorsun. Adil ol.",
+        "Hava": "İlişkilerinde sınırları ve kuralları belirleme zamanı. Netleş.",
+        "Su": "Yalnızlık ve birliktelik dengesini kurmayı öğreniyorsun."
+      }
+    },
+    "Akrep": {
+      "comment": "Satürn Akrep'te derin dönüşüm ve krizlerle yüzleşme gücü verir. Korkularınla baş etme vakti.",
+      "elements": {
+        "Ateş": "En derin korkularınla yüzleşip onları aşmalısın. Güçlen.",
+        "Toprak": "Ortak kaynaklar ve finansal konularda disiplin şart. Strateji kur.",
+        "Hava": "Psikolojik olarak kendini yeniden yapılandırıyorsun. Arın.",
+        "Su": "Duygusal krizleri sabırla yönetmeyi öğrenme zamanı."
+      }
+    },
+    "Yay": {
+      "comment": "Satürn Yay'da inançlar ve hayata bakış açısı üzerinden disiplin getirir. Bilgelik sabırla gelir.",
+      "elements": {
+        "Ateş": "Dünya görüşünü sağlamlaştırma vakti. Ciddi eğitimler al.",
+        "Toprak": "Büyük ideallerini gerçekleştirmek için çok çalışmalısın. İlerlemek.",
+        "Hava": "İyimserliğini gerçeklerle yoğurma zamanı. Dürüst kal.",
+        "Su": "Hayatın anlamını sorgularken derinleşiyorsun. Sabret."
+      }
+    },
+    "Oğlak": {
+      "comment": "Satürn Oğlak'ta kendi evindedir. Kariyer, otorite ve toplumsal sorumluluklarda zirve disiplindir.",
+      "elements": {
+        "Ateş": "Kariyer hedeflerine sarsılmaz bir kararlılıkla odaklan. Kazan.",
+        "Toprak": "Kendi gücünü ve otoriteni inşa ediyorsun. Sabır en büyük silahın.",
+        "Hava": "Planlı ve rasyonel adımlarla toplumsal statünü koru.",
+        "Su": "Sorumlulukların altında ezilmeden güçlü durma vakti."
+      }
+    },
+    "Kova": {
+      "comment": "Satürn Kova'da dostluklar ve idealler üzerinden sınar. Toplumsal sorumluluk alma vaktidir.",
+      "elements": {
+        "Ateş": "Gelecek hayallerini disiplinle inşa etme vakti. Özgürlük emek ister.",
+        "Toprak": "Sosyal çevrende gerçek dostları ayıklama zamanı. Seçici ol.",
+        "Hava": "Toplumsal projelerde ciddi sorumluluklar almalısın. Bağ kur.",
+        "Su": "İdeallerin için sabırla mücadele etmeyi öğreniyorsun."
+      }
+    },
+    "Balık": {
+      "comment": "Satürn Balık'ta ruhsal disiplin ve bırakma sınavları getirir. Bilinçaltını düzenleme vaktidir.",
+      "elements": {
+        "Ateş": "Ruhsal olarak kendini disipline etme vakti. Meditasyona odaklan.",
+        "Toprak": "Hayallerini gerçeğe dökmek için sabırlı ol. Sessiz kal.",
+        "Hava": "Sezgilerini rasyonel bir temele oturtma zamanı. Hislerine güven.",
+        "Su": "Bilinçaltındaki korkulardan arınmak için ciddiyetle çalış."
+      }
+    }
+  },
+  "Uranüs": {
+    "Boğa": {
+      "comment": "Uranüs Boğa'da maddi dünyada devrim yapar. Değer algın ve kazanç yolların aniden değişebilir.",
+      "elements": {
+        "Ateş": "Maddi konularda risk alma isteğin artabilir. Tedbirli ol.",
+        "Toprak": "Maddi güvenliğin sarsılabilir ama yeni kapılar açılacak. Esne.",
+        "Hava": "Değerlerinle ilgili radikal fikirler geliştireceksin. Yenilen.",
+        "Su": "Duygusal güvenliğin maddi değişimlerden etkilenebilir."
+      }
+    }
+  },
+  "Neptün": {
+    "Balık": {
+      "comment": "Neptün Balık'ta kendi evindedir. En yüksek spiritüel farkındalık ve evrensel sevgi dönemidir.",
+      "elements": {
+        "Ateş": "Yaratıcılığın ilahi bir boyuta taşınıyor. İlhamı yakala.",
+        "Toprak": "Hayal gücün maddi dünyanı şifalandırabilir. Teslim ol.",
+        "Hava": "Sezgilerin kelimelerin ötesine geçiyor. Evrenle konuş.",
+        "Su": "Ruhsal olarak zirvedesin. Şifa enerjisi her yerinde."
+      }
+    }
+  },
+  "Plüton": {
+    "Kova": {
+      "comment": "Plüton Kova'da toplumsal yapıları ve teknolojiyi kökten dönüştürür. Güç, gruplara geçer.",
+      "elements": {
+        "Ateş": "Gelecek planların kökten değişiyor. Büyük güce hazır ol.",
+        "Toprak": "Sosyal çevrendeki güç dengeleri tamamen yenileniyor. Adapte ol.",
+        "Hava": "Zihinsel bir devrim yaşıyorsun. Fikirlerin dünyayı değiştirebilir.",
+        "Su": "Toplumsal ideallerin uğruna yeniden doğuş süreci. Güçlen."
+      }
+    }
+  }
+}

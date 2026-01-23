@@ -1,0 +1,1422 @@
+{
+  "planets": {
+    "Sun": {
+      "Koç": {
+        "tr": [
+          "Öz güvenin ve liderlik vasıfların ön plana çıkıyor. Yeni başlangıçlar için cesaret bulacaksın.",
+          "İçindeki ateş parlıyor, bugün durdurulamaz bir enerjiyle dolusun.",
+          "Cesur adımlar atmak için gökyüzü seni destekliyor, inisiyatif al.",
+          "Kendini kanıtlama arzun yüksek, parlamak için doğru fırsatları kolla.",
+          "Yeni bir vizyon geliştirme ve liderliğini ortaya koyma vakti geldi."
+        ],
+        "en": [
+          "Your self-confidence and leadership qualities are coming to the fore. You'll find the courage for new beginnings.",
+          "The fire within you is shining, you're full of unstoppable energy today.",
+          "The sky supports you to take bold steps, take the initiative.",
+          "Your desire to prove yourself is high, watch for the right opportunities to shine.",
+          "It's time to develop a new vision and demonstrate your leadership."
+        ]
+      },
+      "Boğa": {
+        "tr": [
+          "Maddi güvenliğin ve konforun odağında. Sabırlı ve kararlı adımlar atabilirsin.",
+          "Toprak ana seni huzurla sarmalıyor, doğayla bağ kurmak sana iyi gelecek.",
+          "Değerlerine sahip çıkma ve kalıcı yapılar inşa etme dönemindesin.",
+          "Keyif aldığın şeyler bugün önceliğin olsun, ruhunu besle.",
+          "Finansal konularda sağlam temeller atmak için sabrını kullan."
+        ],
+        "en": [
+          "Material security and comfort are in focus. You can take patient and determined steps.",
+          "Mother earth embraces you with peace, connecting with nature will do you good.",
+          "You're in a period of protecting your values and building lasting structures.",
+          "Let the things you enjoy be your priority today, nourish your soul.",
+          "Use your patience to lay solid foundations in financial matters."
+        ]
+      },
+      "İkizler": {
+        "tr": [
+          "İletişim trafiğin artıyor. Sosyalleşmek ve yeni bilgiler öğrenmek için harika bir zaman.",
+          "Zihnin arı gibi çalışıyor, yeni fikirler ve bağlantılar kurmak için ideal.",
+          "Merakın seni hiç bilmediğin yerlere götürebilir, öğrenmeye açık ol.",
+          "Kelime oyunları ve zekice sohbetler gününe renk katacak.",
+          "Çok yönlü düşünme yeteneğin sayesinde sorunlara hızlı çözümler üretebilirsin."
+        ],
+        "en": [
+          "Your communication traffic is increasing. A great time to socialize and learn new things.",
+          "Your mind is working like a bee, ideal for new ideas and connections.",
+          "Your curiosity can take you to places you've never known, be open to learning.",
+          "Word games and witty conversations will add color to your day.",
+          "Thanks to your versatile thinking ability, you can produce quick solutions to problems."
+        ]
+      },
+      "Yengeç": {
+        "tr": [
+          "Ev ve aile konuları hassaslaşıyor. İç dünyana dönmek ve duygusal bağlarını güçlendirmek isteyebilirsin.",
+          "Köklerine duyduğun özlem artabilir, sevdiklerinle vakit geçirmek şifa verecektir.",
+          "Hassasiyetin seni daha empatik kılıyor, başkalarının duygularını kolayca anlıyorsun.",
+          "İçsel güvenliğini korumak ve ruhunu dinlendirmek için kendine alan ayır.",
+          "Ailevi meselelerde arabuluculuk yapma ve huzuru sağlama rolünü üstlenebilirsin."
+        ],
+        "en": [
+          "Home and family matters are becoming sensitive. You may want to turn inward and strengthen emotional bonds.",
+          "Your longing for your roots may increase, spending time with loved ones will be healing.",
+          "Your sensitivity makes you more empathetic, you easily understand others' feelings.",
+          "Set aside space for yourself to protect your inner security and rest your soul.",
+          "You may take on the role of mediating family matters and ensuring peace."
+        ]
+      },
+      "Aslan": {
+        "tr": [
+          "Yaratıcılığın ve parlamak arzun yüksek. Sahne senin, kendini göstermekten çekinme.",
+          "Karizmanla çevrendekileri büyüleyebilir, ilgi odağı olmaktan keyif alabilirsin.",
+          "Kalbinin sesini dinle ve tutkularının peşinden git, gökyüzü seni alkışlıyor.",
+          "Cömertliğin ve neşen bugün başkalarına da ilham verecek.",
+          "Kendi krallığını inşa etme ve yeteneklerini sergileme zamanı."
+        ],
+        "en": [
+          "Your creativity and desire to shine are high. The stage is yours, don't hesitate to show yourself.",
+          "You can enchant those around you with your charisma, you may enjoy being the center of attention.",
+          "Listen to your heart and follow your passions, the sky applauds you.",
+          "Your generosity and joy will inspire others today.",
+          "It's time to build your own kingdom and showcase your talents."
+        ]
+      },
+      "Başak": {
+        "tr": [
+          "Detaylara odaklanma ve düzen kurma zamanı. Sağlığına ve günlük rutinlerine özen göstermelisin.",
+          "Analitik zekan sayesinde karmaşık sorunları kolayca çözebilirsin.",
+          "Hizmet etme ve faydalı olma arzun seni verimli bir güne taşıyacak.",
+          "Mükemmeliyetçiliğini yapıcı işlerde kullan, küçük ayrıntılar büyük farklar yaratır.",
+          "Zihnini ve çevreni sadeleştirmek için harika bir fırsat."
+        ],
+        "en": [
+          "Time to focus on details and create order. You should pay attention to your health and daily routines.",
+          "Thanks to your analytical mind, you can easily solve complex problems.",
+          "Your desire to serve and be useful will carry you through a productive day.",
+          "Use your perfectionism in constructive work, small details make big differences.",
+          "A great opportunity to simplify your mind and environment."
+        ]
+      },
+      "Terazi": {
+        "tr": [
+          "İlişkiler ve denge arayışı ön planda. Estetik ve uyum konularında hassaslaşabilirsin.",
+          "Adalet duygunun peşinden git, dengeleri korumak bugün senin görevin.",
+          "Diplomatik tavrınla en zorlu diyalogları bile tatlıya bağlayabilirsin.",
+          "Güzelliğe ve sanata olan ilgin artıyor, ruhunu estetikle besle.",
+          "İş birlikleri ve ortaklıklar için destekleyici bir enerji altındasın."
+        ],
+        "en": [
+          "Relationships and the search for balance are at the forefront. You may become sensitive to aesthetics and harmony.",
+          "Follow your sense of justice, maintaining balance is your task today.",
+          "With your diplomatic attitude, you can smooth over even the most difficult dialogues.",
+          "Your interest in beauty and art is increasing, nourish your soul with aesthetics.",
+          "You're under supportive energy for collaborations and partnerships."
+        ]
+      },
+      "Akrep": {
+        "tr": [
+          "Derin dönüşümler ve tutkular tetikleniyor. Gizemli konulara ilgi duyabilir, sezgilerine güvenebilirsin.",
+          "Kendi derinliklerine dalmak ve gizli kalmış gerçekleri keşfetmek için güçlü bir gün.",
+          "Dönüşüm sancılı olsa da küllerinden daha güçlü doğacaksın.",
+          "Sezgilerin bir dedektif kadar keskin, olayların arkasındaki gerçeği görüyorsun.",
+          "Tutkularının peşinden kararlılıkla git, içsel gücün en büyük rehberin."
+        ],
+        "en": [
+          "Deep transformations and passions are being triggered. You may be interested in mysterious topics, trust your intuition.",
+          "A powerful day to dive into your own depths and discover hidden truths.",
+          "Even if transformation is painful, you will be reborn stronger from the ashes.",
+          "Your intuition is as sharp as a detective's, you see the truth behind events.",
+          "Follow your passions with determination, your inner strength is your greatest guide."
+        ]
+      },
+      "Yay": {
+        "tr": [
+          "Macera ve keşif isteğin artıyor. Yeni vizyonlar geliştirmek ve özgürleşmek isteyeceksin.",
+          "İyimserliğin ve neşen çevrene umut saçacak, sınırlarını aşmaya hazırlan.",
+          "Felsefi derinlik ve bilgi arayışı seni uzak diyarlara çekebilir.",
+          "Özgürlüğüne olan düşkünlüğün bugün seni yeni deneyimlere itecek.",
+          "Hayata daha geniş bir pencereden bak ve fırsatları kucakla."
+        ],
+        "en": [
+          "Your desire for adventure and discovery is increasing. You'll want to develop new visions and feel free.",
+          "Your optimism and joy will spread hope around you, prepare to exceed your limits.",
+          "Philosophical depth and the search for knowledge may draw you to distant lands.",
+          "Your love for freedom will push you to new experiences today.",
+          "Look at life from a broader window and embrace opportunities."
+        ]
+      },
+      "Oğlak": {
+        "tr": [
+          "Disiplin ve kariyer hedeflerin ciddileşiyor. Sorumluluk almaktan kaçınmamalı, uzun vadeli planlar yapmalısın.",
+          "Sabrın ve azmin seni zirveye taşıyacak, adımlarını sağlam at.",
+          "Otorite figürleriyle olan ilişkilerinde saygınlığını koruyarak ilerleyeceksin.",
+          "Gerçekçi ve somut hedefler belirle, emeklerinin karşılığını mutlaka alacaksın.",
+          "Hayatını yeniden yapılandırmak için gereken ciddiyete ve güce sahipsin."
+        ],
+        "en": [
+          "Your discipline and career goals are getting serious. Don't avoid taking responsibility, make long-term plans.",
+          "Your patience and perseverance will take you to the top, take solid steps.",
+          "You'll progress while maintaining your dignity in relationships with authority figures.",
+          "Set realistic and concrete goals, you will definitely reap the rewards of your efforts.",
+          "You have the seriousness and strength needed to restructure your life."
+        ]
+      },
+      "Kova": {
+        "tr": [
+          "Sıra dışı fikirler ve toplumsal konular gündeminde. Özgünlüğünü ortaya koymak için fırsatlar yakalayabilirsin.",
+          "Geleceği inşa eden bir vizyonla hareket ediyorsun, yeniliklere açık ol.",
+          "Bireyselliğin ve özgürlüğün bugün senin en büyük hazinen.",
+          "Toplumsal projelere katkıda bulunmak ve fark yaratmak için ideal bir gün.",
+          "Sınırları zorlayan düşüncelerinle çevreni şaşırtmaya devam edeceksin."
+        ],
+        "en": [
+          "Unconventional ideas and social issues are on the agenda. You can catch opportunities to showcase your originality.",
+          "You're moving with a vision that builds the future, be open to innovations.",
+          "Your individuality and freedom are your greatest treasures today.",
+          "An ideal day to contribute to social projects and make a difference.",
+          "You'll continue to surprise those around you with your boundary-pushing thoughts."
+        ]
+      },
+      "Balık": {
+        "tr": [
+          "Ruhanilik ve merhamet duyguların yoğunlaşıyor. Hayal gücünü kullanmak ve akışta kalmak sana iyi gelecek.",
+          "Sezgilerin ve rüyaların bugün seninle konuşuyor, iç sesine kulak ver.",
+          "Evrenle bir bütün olduğunu hissettiğin, huzurlu bir derinliktesin.",
+          "Yaratıcılığın sınırsız bir ilham kaynağından besleniyor, sanata yönel.",
+          "Şefkatli ve anlayışlı tavrınla çevrene şifa dağıtabilirsin."
+        ],
+        "en": [
+          "Your spirituality and compassion are intensifying. Using your imagination and staying in the flow will do you good.",
+          "Your intuitions and dreams are speaking to you today, listen to your inner voice.",
+          "You're in a peaceful depth where you feel at one with the universe.",
+          "Your creativity is fed by an unlimited source of inspiration, turn to art.",
+          "With your compassionate and understanding attitude, you can spread healing around you."
+        ]
+      }
+    },
+    "Moon": {
+      "Koç": {
+        "tr": [
+          "Duygusal tepkilerin hızlı ve dürtüsel olabilir. Aceleci kararlardan kaçınmalısın.",
+          "İçinde bir sabırsızlık rüzgarı esiyor, sakin kalmakta zorlanabilirsin.",
+          "Duygularını doğrudan ve dürüstçe ifade etmek isteyeceksin.",
+          "Anlık heyecanların peşinden gitme eğilimi yüksek, sonradan pişman olma.",
+          "Duygusal olarak enerjik bir başlangıç yapma isteği duyabilirsin."
+        ],
+        "en": [
+          "Your emotional reactions can be quick and impulsive. You should avoid hasty decisions.",
+          "A wind of impatience is blowing within you, you may have trouble staying calm.",
+          "You'll want to express your feelings directly and honestly.",
+          "High tendency to chase momentary excitement, don't regret it later.",
+          "You may feel the desire to make an emotionally energetic start."
+        ]
+      },
+      "Boğa": {
+        "tr": [
+          "Huzur ve güven arayışın yüksek. Keyif aldığın şeyler seni duygusal olarak besleyecektir.",
+          "Duygusal istikrar ve konfor bugün senin için her şeyden önemli.",
+          "Keyifli bir yemek veya doğa yürüyüşü ruhunu dinlendirecektir.",
+          "Sakinlik ve güvenli alanında kalmak seni mutlu edecek.",
+          "Duygusal bağlılıkların ve sadakat temaların ön planda."
+        ],
+        "en": [
+          "Your search for peace and security is high. Things you enjoy will nourish you emotionally.",
+          "Emotional stability and comfort are more important than anything else for you today.",
+          "A pleasant meal or a nature walk will rest your soul.",
+          "Staying calm and in your safe space will make you happy.",
+          "Your emotional attachments and themes of loyalty are at the forefront."
+        ]
+      },
+      "İkizler": {
+        "tr": [
+          "Zihnin çok aktif, duygularını konuşarak ifade etmek isteyebilirsin. Merakın seni yönlendirecek.",
+          "Duygusal ihtiyaçlarını entelektüel paylaşımlarla gidermek isteyeceksin.",
+          "Değişken bir ruh hali içindesin, fikirlerin hızla değişebilir.",
+          "Sosyal etkileşimler ve haberleşme ruhuna iyi gelecek.",
+          "Duygularını mantık süzgecinden geçirme eğilimindesin."
+        ],
+        "en": [
+          "Your mind is very active, you may want to express your feelings by talking. Your curiosity will guide you.",
+          "You'll want to satisfy your emotional needs through intellectual sharing.",
+          "You're in a changeable mood, your ideas can change quickly.",
+          "Social interactions and communication will be good for your soul.",
+          "You tend to filter your emotions through logic."
+        ]
+      },
+      "Yengeç": {
+        "tr": [
+          "Hassasiyetin ve korumacılığın artıyor. Sevdiklerinle vakit geçirmek ruhunu dinlendirecek.",
+          "Duygusal hafızan çok aktif, geçmişe duyduğun özlem artabilir.",
+          "Ait olma ihtiyacın dorukta, evin en güvenli limanın.",
+          "Başkalarına şefkat göstermek ve beslemek seni de iyileştirecek.",
+          "İç dünyandaki gelgitleri kabullenmek ve akışta kalmak önemli."
+        ],
+        "en": [
+          "Your sensitivity and protectiveness are increasing. Spending time with loved ones will rest your soul.",
+          "Your emotional memory is very active, your longing for the past may increase.",
+          "Your need to belong is at its peak, home is your safest harbor.",
+          "Showing compassion to others and nurturing will also heal you.",
+          "Accepting the tides in your inner world and staying in the flow is important."
+        ]
+      },
+      "Aslan": {
+        "tr": [
+          "Onaylanma ve sevilme ihtiyacın belirginleşiyor. Dramatik çıkışlar yapabilir, ilgi odağı olmak isteyebilirsin.",
+          "Duygularını gururla ve gösterişle sergilemek isteyeceksin.",
+          "Yaratıcı ve neşeli bir enerjiyle dolusun, hayata renk kat.",
+          "Sevilmek ve takdir edilmek enerjini anında yükseltecektir.",
+          "Cömert tavırlarınla sevdiklerini şaşırtabilirsin."
+        ],
+        "en": [
+          "Your need for approval and love is becoming apparent. You may make dramatic exits, wanting to be the center of attention.",
+          "You'll want to display your emotions with pride and flair.",
+          "You're full of creative and joyful energy, add color to life.",
+          "Being loved and appreciated will instantly boost your energy.",
+          "You can surprise your loved ones with your generous gestures."
+        ]
+      },
+      "Başak": {
+        "tr": [
+          "Eleştirel ve titiz bir ruh hali içindesin. Yararlı işler yaparak kendini daha iyi hissedebilirsin.",
+          "Duygusal karmaşayı düzen ve disiplinle çözmeye çalışacaksın.",
+          "Hizmet odaklı bir yaklaşım bugün ruhunu doyurabilir.",
+          "Küçük detaylar bugün gözünden kaçmıyor, mükemmeli arıyorsun.",
+          "Sağlığına ve beslenmene odaklanmak seni duygusal olarak dengeler."
+        ],
+        "en": [
+          "You're in a critical and meticulous mood. Doing useful things can make you feel better.",
+          "You'll try to resolve emotional chaos with order and discipline.",
+          "A service-oriented approach can satisfy your soul today.",
+          "Small details don't escape your notice today, you're looking for perfection.",
+          "Focusing on your health and nutrition will balance you emotionally."
+        ]
+      },
+      "Terazi": {
+        "tr": [
+          "Yalnız kalmak istemeyebilir, orta yol bulmaya çalışabilirsin. Kibarlık ve adalet bugün senin için önemli.",
+          "Uyum ve denge ihtiyacın ilişkilerini şekillendiriyor.",
+          "Estetik ve güzellik ruhunu besleyen ana kaynaklar.",
+          "Kararsızlıklar bugün biraz yorucu olabilir, iç dengeni bul.",
+          "Sosyal ortamlarda nazik ve diplomatik tavrınla parlayacaksın."
+        ],
+        "en": [
+          "You may not want to be alone, trying to find middle ground. Kindness and justice are important for you today.",
+          "Your need for harmony and balance shapes your relationships.",
+          "Aesthetics and beauty are the main sources that nourish your soul.",
+          "Indecision can be a bit tiring today, find your inner balance.",
+          "You'll shine in social settings with your gentle and diplomatic attitude."
+        ]
+      },
+      "Akrep": {
+        "tr": [
+          "Duyguların çok derin ve yoğun. Sezgilerin seni yanıltmayacak, ancak şüpheciliğe dikkat etmelisin.",
+          "Gizemli olan seni çekiyor, olayların ardındaki duyguyu hissediyorsun.",
+          "Duygusal dönüşümler için çok güçlü ve sarsıcı bir enerji altındasın.",
+          "Tutkulu bağlar kurmak ve derinleşmek istiyorsun.",
+          "Kendi karanlığınla yüzleşme ve ondan güç alma zamanı."
+        ],
+        "en": [
+          "Your emotions are very deep and intense. Your intuition won't fail you, but watch out for skepticism.",
+          "The mysterious attracts you, you feel the emotion behind events.",
+          "You're under very powerful and shaking energy for emotional transformations.",
+          "You want to form passionate bonds and go deeper.",
+          "It's time to face your own darkness and draw strength from it."
+        ]
+      },
+      "Yay": {
+        "tr": [
+          "İyimser ve neşeli bir hava içindesin. Yeni bir şeyler öğrenmek veya seyahat planı yapmak ruhuna iyi gelir.",
+          "Özgürlük arzun duygularını da kanatlandırıyor, sınırları aşmak istiyorsun.",
+          "İnançların ve felsefen bugün en büyük desteğin.",
+          "Maceracı ve keşif odaklı bir ruh haliyle dolusun.",
+          "Hayata gülümseyerek bakmak seni her zorluktan koruyacak."
+        ],
+        "en": [
+          "You're in an optimistic and cheerful mood. Learning something new or making travel plans is good for your soul.",
+          "Your desire for freedom also gives wings to your emotions, you want to cross boundaries.",
+          "Your beliefs and philosophy are your greatest support today.",
+          "You're full of an adventurous and discovery-oriented mood.",
+          "Looking at life with a smile will protect you from every difficulty."
+        ]
+      },
+      "Oğlak": {
+        "tr": [
+          "Duygularını kontrol altında tutmak isteyebilirsin. Ciddiyet ve soğukkanlılık bugün senin koruyucun.",
+          "Duygusal güvenliği başarı ve statüde arama eğilimindesin.",
+          "Sabırlı ve mesafeli tavrınla çevrendekilere güven veriyorsun.",
+          "Sorumluluklarını yerine getirmek ruhunu en çok rahatlatan şey olacak.",
+          "İçsel disiplinin ve kararlılığın bugün seni ayakta tutacak."
+        ],
+        "en": [
+          "You may want to keep your emotions under control. Seriousness and composure are your protectors today.",
+          "You tend to seek emotional security in success and status.",
+          "With your patient and distant attitude, you give confidence to those around you.",
+          "Fulfilling your responsibilities will be the most soothing thing for your soul.",
+          "Your inner discipline and determination will keep you standing today."
+        ]
+      },
+      "Kova": {
+        "tr": [
+          "Bireyselliğin ve özgürlüğün ön planda. Gruplar içinde yer almak ama mesafeni korumak isteyebilirsin.",
+          "Duygularını rasyonalize ederek daha objektif bir bakış açısı kazanabilirsin.",
+          "Sıra dışı ve yenilikçi yaklaşımlar ruhunu besliyor.",
+          "Toplumsal hassasiyetlerin ve hümanist tarafın ön planda.",
+          "Bağımsızlığına olan düşkünlüğün bugün seni özgürleştirecek."
+        ],
+        "en": [
+          "Your individuality and freedom are at the forefront. You may want to be part of groups but keep your distance.",
+          "By rationalizing your emotions, you can gain a more objective perspective.",
+          "Unconventional and innovative approaches nourish your soul.",
+          "Your social sensitivities and humanist side are prominent.",
+          "Your fondness for independence will liberate you today."
+        ]
+      },
+      "Balık": {
+        "tr": [
+          "Rüyaların ve hayallerin çok canlı. Çok hassas ve empatik bir gündesin, başkalarının enerjisinden kolay etkilenebilirsin.",
+          "Sınırsız bir merhamet ve şefkat duygusu içindesin.",
+          "Hayal dünyanda kaybolmak bugün sana ilham verebilir.",
+          "Sezgilerin en büyük rehberin, rasyonel zihni bir kenara bırak.",
+          "Evrensel sevgi ve birlik duygusuyla sarmalanmış hissediyorsun."
+        ],
+        "en": [
+          "Your dreams and imagination are very vivid. You're on a very sensitive and empathetic day, easily affected by others' energy.",
+          "You're filled with a sense of boundless compassion and tenderness.",
+          "Getting lost in your dream world can inspire you today.",
+          "Your intuition is your greatest guide, set aside the rational mind.",
+          "You feel embraced by universal love and unity."
+        ]
+      }
+    },
+    "Mercury": {
+      "Koç": {
+        "tr": [
+          "Düşüncelerin hızlı ve keskin. Sözlerinle etkileyebilir ama kırıcı olmamaya dikkat etmelisin.",
+          "Zihnin bir ok gibi hedefe odaklı, hızlı kararlar alabilirsin.",
+          "İletişimde dürüst ve doğrudan bir tavır sergileyeceksin.",
+          "Fikirlerini ateşli bir şekilde savunma eğilimindesin.",
+          "Yeni ve cesur düşünceler üretmek için harika bir enerji."
+        ],
+        "en": [
+          "Your thoughts are quick and sharp. You can impress with your words but be careful not to be hurtful.",
+          "Your mind is focused like an arrow, you can make quick decisions.",
+          "You'll display an honest and direct attitude in communication.",
+          "You tend to defend your ideas passionately.",
+          "Great energy for producing new and bold thoughts."
+        ]
+      },
+      "Boğa": {
+        "tr": [
+          "Pratik ve somut fikirlere odaklısın. Kararlarını yavaş ama emin adımlarla alacaksın.",
+          "Zihinsel süreçlerin kalıcılık ve güven odaklı ilerliyor.",
+          "Finansal planlamalar ve bütçe konuları için ideal bir zaman.",
+          "Sakin ve sabırlı bir iletişim dili kullanıyorsun.",
+          "Somut kanıtlar görmeden bir fikre inanmakta zorlanabilirsin."
+        ],
+        "en": [
+          "You're focused on practical and concrete ideas. You'll make your decisions slowly but surely.",
+          "Your mental processes are focused on permanence and trust.",
+          "An ideal time for financial planning and budget matters.",
+          "You're using a calm and patient communication style.",
+          "You may have trouble believing an idea without seeing concrete evidence."
+        ]
+      },
+      "İkizler": {
+        "tr": [
+          "Zekân parlıyor! Çok yönlü düşünebilir, aynı anda birden fazla işle ilgilenebilirsin.",
+          "İletişim kanalların sonuna kadar açık, bilgi akışı çok hızlı.",
+          "Meraklı ve araştırmacı tarafın seni yeni keşiflere götürecek.",
+          "Esprili ve zekice sohbetlerle çevrendekileri etkileyebilirsin.",
+          "Öğrenme ve öğretme aşkın bugün dorukta."
+        ],
+        "en": [
+          "Your intelligence is shining! You can think versatilely and deal with multiple tasks at once.",
+          "Your communication channels are wide open, information flows very fast.",
+          "Your curious and investigative side will lead you to new discoveries.",
+          "You can impress those around you with witty and clever conversations.",
+          "Your love for learning and teaching is at its peak today."
+        ]
+      },
+      "Yengeç": {
+        "tr": [
+          "Sezgisel düşünme tarzın hakim. Geçmişle ilgili konular veya ailevi meseleler zihnini meşgul edebilir.",
+          "Kelimelerin ardındaki duyguları hissetme yeteneğin çok güçlü.",
+          "İletişimde yumuşak ve korumacı bir dil kullanıyorsun.",
+          "Hafızan bugün çok net, eski hatıralar canlanabilir.",
+          "Kararlarını mantıktan ziyade iç sesine göre alacaksın."
+        ],
+        "en": [
+          "Your intuitive thinking style dominates. Past issues or family matters may occupy your mind.",
+          "Your ability to sense the emotions behind words is very strong.",
+          "You're using a soft and protective language in communication.",
+          "Your memory is very clear today, old memories may come alive.",
+          "You'll make your decisions according to your inner voice rather than logic."
+        ]
+      },
+      "Aslan": {
+        "tr": [
+          "Konuşmaların etkileyici ve dramatik. Fikirlerini gururla savunacak, onay bekleyeceksin.",
+          "Yaratıcı ve ilham verici bir anlatım tarzın var.",
+          "Fikirlerinle çevrende otorite kurabilir, liderlik edebilirsin.",
+          "Zihnin parlak ve gösterişli projelere odaklanmış durumda.",
+          "Kendini ifade ederken sahnedeymiş gibi hissedebilirsin."
+        ],
+        "en": [
+          "Your conversations are impressive and dramatic. You'll proudly defend your ideas, expecting approval.",
+          "You have a creative and inspiring narrative style.",
+          "You can establish authority and lead with your ideas.",
+          "Your mind is focused on brilliant and flashy projects.",
+          "You may feel like you're on stage when expressing yourself."
+        ]
+      },
+      "Başak": {
+        "tr": [
+          "Analitik yeteneğin zirvede. Hataları kolayca fark edebilir, organizasyon işlerinde başarı sağlayabilirsin.",
+          "Detaylara verdiğin önem seni mükemmel sonuçlara taşıyacak.",
+          "Pratik çözümler üretmek ve düzen kurmak için en iyi zamandasın.",
+          "Zihnin bir saat gibi tıkır tıkır ve hatasız çalışıyor.",
+          "Eleştirel ama yapıcı bir iletişim dili kullanıyorsun."
+        ],
+        "en": [
+          "Your analytical ability is at its peak. You can easily spot errors and succeed in organizational tasks.",
+          "The importance you give to details will carry you to excellent results.",
+          "You're at your best time for producing practical solutions and creating order.",
+          "Your mind is working like clockwork, smoothly and flawlessly.",
+          "You're using a critical but constructive communication style."
+        ]
+      },
+      "Terazi": {
+        "tr": [
+          "Diplomatik bir dil kullanıyorsun. Fikir ayrılıklarında arabuluculuk yapabilirsin.",
+          "Denge ve adalet zihnindeki en temel kavramlar.",
+          "Estetik ve uyumlu bir iletişim tarzıyla herkesin gönlünü alabilirsin.",
+          "Karar vermeden önce tüm seçenekleri tartma ihtiyacı duyacaksın.",
+          "Ortaklıklar ve ikili görüşmeler için çok verimli bir gün."
+        ],
+        "en": [
+          "You're using diplomatic language. You can mediate in disagreements.",
+          "Balance and justice are the most fundamental concepts in your mind.",
+          "With an aesthetic and harmonious communication style, you can win everyone's heart.",
+          "You'll feel the need to weigh all options before deciding.",
+          "A very productive day for partnerships and bilateral discussions."
+        ]
+      },
+      "Akrep": {
+        "tr": [
+          "Zihnin dedektif gibi çalışıyor. Derin araştırmalar yapabilir, sırları çözmek isteyebilirsin.",
+          "Kelimelerinle derin yaralar açabilir veya büyük şifalar sunabilirsin.",
+          "Gizemli ve okült konular bugün ilgini çekebilir.",
+          "Keskin zekan sayesinde olayların perde arkasını görüyorsun.",
+          "Sessiz ama derinden gelen güçlü fikirlerin var."
+        ],
+        "en": [
+          "Your mind works like a detective. You may want to do deep research and uncover secrets.",
+          "With your words, you can open deep wounds or offer great healing.",
+          "Mysterious and occult subjects may attract your interest today.",
+          "Thanks to your sharp mind, you see what's behind the scenes.",
+          "You have powerful ideas that come from a quiet but deep place."
+        ]
+      },
+      "Yay": {
+        "tr": [
+          "Geniş bir perspektiften bakıyorsun. Felsefi konular ve büyük planlar gündeminde olacak.",
+          "İyimser ve vizyoner düşüncelerinle çevrene umut verebilirsin.",
+          "Dürüstlüğün ve açık sözlülüğün bugün bazen patavatsızlığa kaçabilir.",
+          "Yeni bir dil öğrenmek veya uzak yerlerle ilgili haberleşmek için ideal.",
+          "Zihnin sürekli keşfetmek ve öğrenmek peşinde."
+        ],
+        "en": [
+          "You're looking from a broad perspective. Philosophical topics and big plans will be on the agenda.",
+          "With your optimistic and visionary thoughts, you can give hope to those around you.",
+          "Your honesty and frankness can sometimes come across as bluntness today.",
+          "Ideal for learning a new language or communicating about distant places.",
+          "Your mind is constantly pursuing discovery and learning."
+        ]
+      },
+      "Oğlak": {
+        "tr": [
+          "Stratejik ve ciddi bir iletişim tarzın var. İş odaklı görüşmeler için verimli bir zaman.",
+          "Zihnin disiplinli ve sonuç odaklı çalışıyor.",
+          "Uzun vadeli planlar ve kariyer hedefleri üzerine düşünmek için harika.",
+          "Mesafeli ama güven veren bir konuşma tarzın var.",
+          "Gerçekçi ve somut verilere dayalı kararlar alıyorsun."
+        ],
+        "en": [
+          "You have a strategic and serious communication style. A productive time for business-focused discussions.",
+          "Your mind works in a disciplined and result-oriented way.",
+          "Great for thinking about long-term plans and career goals.",
+          "You have a distant but confidence-inspiring speaking style.",
+          "You're making decisions based on realistic and concrete data."
+        ]
+      },
+      "Kova": {
+        "tr": [
+          "İlerici ve yenilikçi fikirler üretiyorsun. Teknolojik konular veya toplumsal değişimler ilgi alanında.",
+          "Sıra dışı ve aykırı düşüncelerine güven, fark yaratacaksın.",
+          "Bireysel özgürlüğünü savunan bir iletişim dili içindesin.",
+          "Geleceği bugünden gören bir zihin yapısıyla hareket ediyorsun.",
+          "Gruplar ve topluluklar içindeki fikir liderliğin ön planda."
+        ],
+        "en": [
+          "You're producing progressive and innovative ideas. Technology or social changes are in your area of interest.",
+          "Trust your unconventional and contrarian thoughts, you'll make a difference.",
+          "You're in a communication style that defends your individual freedom.",
+          "You're acting with a mindset that sees the future from today.",
+          "Your thought leadership within groups and communities is prominent."
+        ]
+      },
+      "Balık": {
+        "tr": [
+          "Zihnin biraz dağınık ama hayal gücün çok zengin. Şiirsel ve imgesel anlatımlara yönelebilirsin.",
+          "Sezgisel bilgi akışı rasyonel düşünceden daha önde.",
+          "Kelimelerinle hayal dünyaları inşa edebilir, başkalarına ilham verebilirsin.",
+          "Spiritüel ve mistik konular zihnini meşgul edebilir.",
+          "Empatik ve şefkatli bir iletişim tarzıyla şifa dağıtıyorsun."
+        ],
+        "en": [
+          "Your mind is a bit scattered but your imagination is very rich. You may turn to poetic and imaginative expressions.",
+          "Intuitive information flow is ahead of rational thought.",
+          "With your words, you can build dream worlds and inspire others.",
+          "Spiritual and mystical subjects may occupy your mind.",
+          "You're spreading healing with an empathetic and compassionate communication style."
+        ]
+      }
+    },
+    "Venus": {
+      "Koç": {
+        "tr": [
+          "Aşkta ve ilişkilerde heyecanlı, doğrudan ve fethedici bir enerjiyle dolusan.",
+          "Tutkularının peşinden gitmekten korkmuyor, aşkı bir macera gibi görüyorsun.",
+          "Anlık çekimler ve hızlı başlayan ilişkiler gündeminde olabilir.",
+          "Kendine olan güvenin çekiciliğini kat kat artırıyor.",
+          "İlişkilerde dürüstlük ve cesaret bugün senin için en önemli değerler."
+        ],
+        "en": [
+          "You're full of exciting, direct, and conquering energy in love and relationships.",
+          "Not afraid to pursue your passions, you see love as an adventure.",
+          "Instant attractions and quickly-starting relationships may be on the agenda.",
+          "Your self-confidence multiplies your attractiveness.",
+          "Honesty and courage in relationships are the most important values for you today."
+        ]
+      },
+      "Boğa": {
+        "tr": [
+          "Sadakat ve konfor ilişkilerinde öncelikli. Maddi değerlere ve fiziksel hazlara önem vereceksin.",
+          "Sevgi dilin dokunmak ve güven vermek üzerine kurulu.",
+          "Huzurlu ve sağlam temelli ilişkiler seni mutlu ediyor.",
+          "Estetik ve lükse olan düşkünlüğün bugün ön planda olabilir.",
+          "Doğa ile iç içe olmak ve toprağın enerjisini hissetmek ruhuna iyi gelecek."
+        ],
+        "en": [
+          "Loyalty and comfort are priorities in relationships. You'll value material things and physical pleasures.",
+          "Your love language is built on touch and giving security.",
+          "Peaceful and solidly-based relationships make you happy.",
+          "Your fondness for aesthetics and luxury may be prominent today.",
+          "Being in nature and feeling the earth's energy will be good for your soul."
+        ]
+      },
+      "İkizler": {
+        "tr": [
+          "Zihinsel uyum ve çeşitlilik arıyorsun. Sosyal flörtler ve keyifli sohbetler seni mutlu eder.",
+          "Aşkta meraklı ve oyuncu bir tavır sergileyeceksin.",
+          "İletişim kurabildiğin ve fikir paylaştığın kişiler seni cezbediyor.",
+          "Sosyal çevren hareketleniyor, yeni insanlarla tanışmak için harika.",
+          "Duygusal bağlardan ziyade zihinsel bağlara önem verme eğilimindesin."
+        ],
+        "en": [
+          "You're seeking mental compatibility and variety. Social flirtations and enjoyable conversations make you happy.",
+          "You'll display a curious and playful attitude in love.",
+          "People you can communicate with and share ideas attract you.",
+          "Your social circle is getting active, great for meeting new people.",
+          "You tend to value mental connections over emotional bonds."
+        ]
+      },
+      "Yengeç": {
+        "tr": [
+          "İlişkilerde şefkat ve aidiyet arıyorsun. Nostaljik ve korumacı bir tavır sergileyebilirsin.",
+          "Geçmişteki aşklar veya ailevi bağlar bugün hassaslaşabilir.",
+          "Sevdiğin kişiyi beslemek ve korumak seni duygusal olarak doyuruyor.",
+          "Evinde huzurlu ve romantik bir atmosfer yaratmak isteyeceksin.",
+          "Duygusal güvenlik ve derin bağlar bugün senin için her şey."
+        ],
+        "en": [
+          "You're seeking compassion and belonging in relationships. You may display a nostalgic and protective attitude.",
+          "Past loves or family bonds may become sensitive today.",
+          "Nurturing and protecting the person you love fulfills you emotionally.",
+          "You'll want to create a peaceful and romantic atmosphere at home.",
+          "Emotional security and deep bonds are everything for you today."
+        ]
+      },
+      "Aslan": {
+        "tr": [
+          "Aşkta cömert ve gösterişlisin. Beğenilmek ve takdir edilmek enerjini yükseltir.",
+          "Romantizmi bir sahne gibi yaşamak ve parlamak istiyorsun.",
+          "Karizmanla çevrendekileri büyüleyebilir, kalpleri fethedebilirsin.",
+          "Hediyeleşmek ve lüks paylaşımlar sevgi dilinin bir parçası.",
+          "Sadık ve gururlu bir partner olarak parlıyorsun."
+        ],
+        "en": [
+          "You're generous and flamboyant in love. Being admired and appreciated raises your energy.",
+          "You want to experience romance like a stage performance and shine.",
+          "With your charisma, you can enchant those around you and win hearts.",
+          "Gift-giving and luxury sharing are part of your love language.",
+          "You're shining as a loyal and proud partner."
+        ]
+      },
+      "Başak": {
+        "tr": [
+          "Sevgi dilin hizmet etmek ve faydalı olmak. Detaylara verdiğin önem ilişkilerini şekillendirecek.",
+          "İlişkilerinde titiz ve seçici davranma eğilimindesin.",
+          "Sevdiğin kişiye yardım etmek ve hayatını kolaylaştırmak seni mutlu eder.",
+          "Mütevazı ama derin bir sevgi anlayışın var.",
+          "Eleştirel tarafını törpüleyip şefkate odaklanman gereken bir gündesin."
+        ],
+        "en": [
+          "Your love language is serving and being useful. The importance you give to details will shape your relationships.",
+          "You tend to be meticulous and selective in relationships.",
+          "Helping the person you love and making their life easier makes you happy.",
+          "You have a modest but deep understanding of love.",
+          "You're on a day where you need to temper your critical side and focus on compassion."
+        ]
+      },
+      "Terazi": {
+        "tr": [
+          "Zarafet, uyum ve adalet aşk hayatında en önemli unsurlar. Romantizm için harika bir zaman.",
+          "İlişkilerinde dengeyi korumak ve huzur yaratmak senin en büyük yeteneğin.",
+          "Estetik ve sanatla ilgilenmek ruhunu besleyecek ve seni parlatacak.",
+          "Ortaklıklar ve ikili görüşmeler için çok şanslı bir enerji altındasın.",
+          "Nazik ve diplomatik tavrınla herkesin sevgisini kazanıyorsun."
+        ],
+        "en": [
+          "Elegance, harmony, and justice are the most important elements in love life. A great time for romance.",
+          "Your greatest talent is maintaining balance and creating peace in relationships.",
+          "Engaging with aesthetics and art will nourish your soul and make you shine.",
+          "You're under very lucky energy for partnerships and bilateral discussions.",
+          "With your gentle and diplomatic attitude, you're winning everyone's love."
+        ]
+      },
+      "Akrep": {
+        "tr": [
+          "Tutkulu ve derin bağlar kurma isteğindesin. Gizemli ve yoğun ilişkiler seni cezbedebilir.",
+          "Aşkta 'ya hep ya hiç' diyen sarsılmaz bir kararlılığın var.",
+          "Sezgilerin partnerinin sakladığı her şeyi hissetmeni sağlıyor.",
+          "Dönüştürücü bir sevgi gücüyle küllerinden yeniden doğuyorsun.",
+          "Gizli saklı olan her şey bugün ilgini çekebilir."
+        ],
+        "en": [
+          "You want to form passionate and deep bonds. Mysterious and intense relationships may attract you.",
+          "You have an unwavering determination that says 'all or nothing' in love.",
+          "Your intuition lets you sense everything your partner is hiding.",
+          "With a transformative power of love, you're being reborn from the ashes.",
+          "Everything secret and hidden may attract your interest today."
+        ]
+      },
+      "Yay": {
+        "tr": [
+          "Özgürlüğüne düşkün ve maceracı bir sevgi anlayışın var. Farklı kültürlerden insanlar ilgini çekebilir.",
+          "İlişkilerinde heyecan ve keşif arayışı ön planda.",
+          "İyimser ve neşeli tavrınla aşkı bir oyun gibi yaşıyorsun.",
+          "Bağımsızlığını kısıtlamayan bağlar kurmak bugün senin için önemli.",
+          "Hayata ve aşka olan inancın çevrendekilere ilham veriyor."
+        ],
+        "en": [
+          "You have a freedom-loving and adventurous understanding of love. People from different cultures may interest you.",
+          "The search for excitement and discovery is at the forefront in your relationships.",
+          "With your optimistic and cheerful attitude, you're living love like a game.",
+          "Creating bonds that don't restrict your independence is important for you today.",
+          "Your faith in life and love inspires those around you."
+        ]
+      },
+      "Oğlak": {
+        "tr": [
+          "Ciddi ve sağlam temelli ilişkiler arıyorsun. Saygınlık ve güven senin için güzellikten daha önemli.",
+          "Aşkta sabırlı ve mesafeli bir duruş sergileyebilirsin.",
+          "Sorumluluk aldığın ve gelecek vadeden bağlar seni mutlu eder.",
+          "Statü ve kariyer hedeflerinle uyumlu ilişkiler ilgini çekiyor.",
+          "Sadakatin ve dürüstlüğün bugün en büyük çekim gücün."
+        ],
+        "en": [
+          "You're looking for serious and solidly-based relationships. Respect and trust are more important than beauty for you.",
+          "You may display a patient and distant stance in love.",
+          "Bonds where you take responsibility and that promise a future make you happy.",
+          "Relationships compatible with your status and career goals interest you.",
+          "Your loyalty and honesty are your greatest attraction today."
+        ]
+      },
+      "Kova": {
+        "tr": [
+          "Sıra dışı ve arkadaşça bir yaklaşımın var. Özgürlüğünü kısıtlamayan bağlar kurmak isteyeceksin.",
+          "Bireysel alanına saygı duyulması bugün senin için her şeyden önemli.",
+          "Aşkta entelektüel paylaşımlar ve sosyal vizyon birliği arıyorsun.",
+          "Geleceğe yönelik yenilikçi fikirlerin ilişkilerini de şekillendiriyor.",
+          "Aykırı ve özgün tavrınla dikkat çekiyorsun."
+        ],
+        "en": [
+          "You have an unconventional and friendly approach. You'll want to create bonds that don't restrict your freedom.",
+          "Respect for your personal space is more important than anything for you today.",
+          "You're seeking intellectual sharing and social vision unity in love.",
+          "Your innovative ideas for the future also shape your relationships.",
+          "You're drawing attention with your contrarian and original attitude."
+        ]
+      },
+      "Balık": {
+        "tr": [
+          "Romantik, fedakâr ve hayalperestsin. Platonik aşklar veya ruhsal bağlar bugün ön planda olabilir.",
+          "Sınırsız bir şefkat ve merhametle sarmalanmış durumdasın.",
+          "Sevgini evrensel bir boyutta hissediyor ve paylaşıyorsun.",
+          "Yaratıcılığın ve ilhamın ilişkilerine sihirli bir dokunuş katıyor.",
+          "İç dünyandaki hayaller bugün gerçeğinden daha canlı gelebilir."
+        ],
+        "en": [
+          "You're romantic, self-sacrificing, and dreamy. Platonic loves or spiritual bonds may be prominent today.",
+          "You're wrapped in boundless tenderness and compassion.",
+          "You're feeling and sharing your love on a universal level.",
+          "Your creativity and inspiration add a magical touch to your relationships.",
+          "The dreams in your inner world may feel more vivid than reality today."
+        ]
+      }
+    },
+    "Mars": {
+      "Koç": {
+        "tr": ["Saf enerji ve cesaretle dolusun. İnisiyatif almaktan korkma, eyleme geçme zamanı."],
+        "en": ["You're full of pure energy and courage. Don't be afraid to take initiative, it's time to act."]
+      },
+      "Boğa": {
+        "tr": ["İnatçı ve sabırlı bir eylem gücün var. Bir şeye başladığında onu bitirmeden bırakmayacaksın."],
+        "en": ["You have a stubborn and patient action power. Once you start something, you won't let go until it's finished."]
+      },
+      "İkizler": {
+        "tr": ["Zihinsel bir mücadele içindesin. Sözlerinle savaşabilir, çok yönlü işlere enerji harcayabilirsin."],
+        "en": ["You're in a mental struggle. You can fight with your words, spending energy on versatile tasks."]
+      },
+      "Yengeç": {
+        "tr": ["Eylemlerin duygusal temellere dayanıyor. Aileni ve değerlerini korumak için harekete geçebilirsin."],
+        "en": ["Your actions are based on emotional foundations. You may act to protect your family and values."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcı projelerde ve kendini göstermede çok tutkulusun. Karizmanla liderlik edebilirsin."],
+        "en": ["You're very passionate in creative projects and showing yourself. You can lead with your charisma."]
+      },
+      "Başak": {
+        "tr": ["Verimli ve çalışkan bir dönemdesin. Teknik konularda ve detaylı işlerde enerjin çok yüksek."],
+        "en": ["You're in a productive and hardworking period. Your energy is very high in technical and detailed work."]
+      },
+      "Terazi": {
+        "tr": ["Uyum sağlamaya çalışırken enerjin düşebilir. Kararsızlıklar eylemlerini engelleyebilir."],
+        "en": ["Your energy may drop while trying to harmonize. Indecision may hinder your actions."]
+      },
+      "Akrep": {
+        "tr": ["Stratejik ve sarsılmaz bir kararlılığın var. Zorlukların üzerine korkusuzca gidebilirsin."],
+        "en": ["You have strategic and unwavering determination. You can fearlessly tackle difficulties."]
+      },
+      "Yay": {
+        "tr": ["İnançların ve ideallerin uğruna savaşıyorsun. Keşfetmek ve özgürleşmek için gereken güce sahipsin."],
+        "en": ["You're fighting for your beliefs and ideals. You have the strength to explore and become free."]
+      },
+      "Oğlak": {
+        "tr": ["Disiplinli ve planlı bir şekilde hedeflerine ilerliyorsun. Otoriteni kurmak için doğru zaman."],
+        "en": ["You're progressing toward your goals in a disciplined and planned way. The right time to establish your authority."]
+      },
+      "Kova": {
+        "tr": ["Sıra dışı yöntemlerle harekete geçiyorsun. Bağımsızlığın için mücadele edebilir, toplumsal projelere katılabilirsin."],
+        "en": ["You're taking action with unconventional methods. You can fight for your independence and join social projects."]
+      },
+      "Balık": {
+        "tr": ["Dolaylı ve sezgisel bir eylem tarzın var. Hayallerini gerçekleştirmek için içsel gücünü kullanmalısın."],
+        "en": ["You have an indirect and intuitive action style. You must use your inner strength to realize your dreams."]
+      }
+    },
+    "Jupiter": {
+      "Koç": {
+        "tr": ["Yeni girişimlerde şans senden yana. Cesaretin ödüllendirilecek, özgüvenin artacak."],
+        "en": ["Luck is on your side for new ventures. Your courage will be rewarded, your confidence will increase."]
+      },
+      "Boğa": {
+        "tr": ["Maddi konularda bereketli bir dönem. Yatırımların ve birikimlerin değer kazanabilir."],
+        "en": ["A fruitful period in material matters. Your investments and savings may gain value."]
+      },
+      "İkizler": {
+        "tr": ["Bilgi paylaşımı ve iletişim kanallarında büyüme yaşayacaksın. Merakın sana yeni kapılar açacak."],
+        "en": ["You'll experience growth in information sharing and communication channels. Your curiosity will open new doors."]
+      },
+      "Yengeç": {
+        "tr": ["Duygusal zenginlik ve ailevi konularda şanslısın. Evinde huzuru ve bolluğu bulabilirsin."],
+        "en": ["You're lucky in emotional richness and family matters. You can find peace and abundance at home."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcılığın ve özgüveninle parlıyorsun. Sahneye çıkma ve takdir görme zamanın geldi."],
+        "en": ["You're shining with your creativity and self-confidence. Your time to take the stage and be appreciated has come."]
+      },
+      "Başak": {
+        "tr": ["İş hayatında ve sağlık konularında iyileşmeler bekleyebilirsin. Düzenli çalışmanın meyvelerini toplayacaksın."],
+        "en": ["You can expect improvements in work life and health matters. You'll reap the fruits of regular work."]
+      },
+      "Terazi": {
+        "tr": ["İlişkiler ve ortaklıklar yoluyla fırsatlar gelebilir. Adalet ve denge sana şans getirecek."],
+        "en": ["Opportunities may come through relationships and partnerships. Justice and balance will bring you luck."]
+      },
+      "Akrep": {
+        "tr": ["Derin araştırmalar ve ortak finansal kaynaklarda büyüme görülebilir. Sezgilerin sana yol gösterecek."],
+        "en": ["Growth may be seen in deep research and shared financial resources. Your intuition will guide you."]
+      },
+      "Yay": {
+        "tr": ["İnançlarında derinleşme ve vizyon genişlemesi yaşayacaksın. Seyahatler ve eğitimler sana çok şey katacak."],
+        "en": ["You'll experience deepening beliefs and expanding vision. Travel and education will add much to you."]
+      },
+      "Oğlak": {
+        "tr": ["Kariyerinde ve toplumsal statünde yükselme şansı. Sabırlı çalışmaların büyük başarı getirecek."],
+        "en": ["Chance for advancement in career and social status. Your patient work will bring great success."]
+      },
+      "Kova": {
+        "tr": ["Sosyal çevreler ve teknolojik yeniliklerle büyüyeceksin. Geleceğe dair umutların yeşerecek."],
+        "en": ["You'll grow with social circles and technological innovations. Your hopes for the future will flourish."]
+      },
+      "Balık": {
+        "tr": ["Maneviyat ve sanatsal konularda büyük bir ilham kaynağı bulabilirsin. Merhametin sana şans getirecek."],
+        "en": ["You may find a great source of inspiration in spirituality and artistic matters. Your compassion will bring luck."]
+      }
+    },
+    "Saturn": {
+      "Koç": {
+        "tr": ["Kendi kimliğini inşa ederken zorlanabilirsin. Sabırlı olmayı ve acele etmemeyi öğrenmelisin."],
+        "en": ["You may struggle while building your own identity. You need to learn to be patient and not rush."]
+      },
+      "Boğa": {
+        "tr": ["Maddi değerlerin ve güvenliğin test ediliyor. Gereksiz harcamalardan kaçınmalı, tasarruf yapmalısın."],
+        "en": ["Your material values and security are being tested. You should avoid unnecessary spending and save."]
+      },
+      "İkizler": {
+        "tr": ["İletişim ve eğitimde sorumlulukların artıyor. Bilgini somutlaştırmak ve disiplinli çalışmak zorundasın."],
+        "en": ["Your responsibilities in communication and education are increasing. You must materialize your knowledge and work disciplined."]
+      },
+      "Yengeç": {
+        "tr": ["Duygusal temellerini ve aile bağlarını sağlamlaştırma zamanı. Geçmişin yüklerinden kurtulmalısın."],
+        "en": ["Time to strengthen your emotional foundations and family bonds. You must free yourself from past burdens."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcılığını ve özgüvenini disipline etmen gerekiyor. Gerçekçi hedefler belirlemeli, ciddiyetini korumalısın."],
+        "en": ["You need to discipline your creativity and self-confidence. You should set realistic goals and maintain seriousness."]
+      },
+      "Başak": {
+        "tr": ["Sağlığına ve çalışma düzenine çeki düzen vermelisin. Detaylar içinde kaybolmadan sistem kurmalısın."],
+        "en": ["You should put your health and work routine in order. You must create a system without getting lost in details."]
+      },
+      "Terazi": {
+        "tr": ["İlişkilerinde ciddi sınavlar verebilirsin. Adalet ve sorumluluk temelleri üzerine bağlar kurmalısın."],
+        "en": ["You may face serious tests in your relationships. You must build bonds on foundations of justice and responsibility."]
+      },
+      "Akrep": {
+        "tr": ["Korkularınla yüzleşme ve derin dönüşüm zamanı. Ortak kaynaklarda ve kriz yönetiminde disiplinli olmalısın."],
+        "en": ["Time to face your fears and undergo deep transformation. You must be disciplined in shared resources and crisis management."]
+      },
+      "Yay": {
+        "tr": ["İnançların ve dünya görüşün sorgulanabilir. Gerçek bilgiye ulaşmak için sabırla çalışmalısın."],
+        "en": ["Your beliefs and worldview may be questioned. You must work patiently to reach true knowledge."]
+      },
+      "Oğlak": {
+        "tr": ["Kariyerinde zirveye giden yol disiplinden geçer. Sorumlulukların ağırlaşabilir ama ödülleri de büyük olacak."],
+        "en": ["The path to the top in your career goes through discipline. Responsibilities may get heavier but rewards will also be great."]
+      },
+      "Kova": {
+        "tr": ["Gelecek planlarını ve sosyal bağlarını cidditle ele almalısın. Gruplar içindeki rolün belirginleşecek."],
+        "en": ["You should take your future plans and social connections seriously. Your role in groups will become clearer."]
+      },
+      "Balık": {
+        "tr": ["Ruhsal dünyanı ve korkularını düzene sokma zamanı. Yalnız kalarak içsel bir disiplin geliştirmelisin."],
+        "en": ["Time to put your spiritual world and fears in order. You should develop inner discipline by being alone."]
+      }
+    },
+    "Uranus": {
+      "Koç": {
+        "tr": ["Hayatında ani ve heyecan verici değişimler olabilir. Özgürlük arzun seni yeni yollara itebilir."],
+        "en": ["There may be sudden and exciting changes in your life. Your desire for freedom may push you to new paths."]
+      },
+      "Boğa": {
+        "tr": ["Maddi değerlerinde ve konfor anlayışında devrimsel değişimler yaşayabilirsin. Beklenmeyene hazır ol."],
+        "en": ["You may experience revolutionary changes in material values and comfort understanding. Be ready for the unexpected."]
+      },
+      "İkizler": {
+        "tr": ["Zihinsel olarak çok yenilikçi bir dönemdesin. Sıra dışı fikirlerinle çevreni şaşırtabilirsin."],
+        "en": ["You're in a very mentally innovative period. You may surprise those around you with unconventional ideas."]
+      },
+      "Yengeç": {
+        "tr": ["Aile ve ev hayatında alışılmadık durumlar gelişebilir. İçsel köklerini yeniden tanımlıyorsun."],
+        "en": ["Unusual situations may develop in family and home life. You're redefining your inner roots."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcılığında ve kendini ifade etme şeklinde özgünlük ön planda. Kendi kurallarını yazıyorsun."],
+        "en": ["Originality is prominent in your creativity and self-expression. You're writing your own rules."]
+      },
+      "Başak": {
+        "tr": ["Çalışma hayatında ve günlük rutinlerinde teknolojik yenilikler yapabilirsin. Düzen anlayışın değişiyor."],
+        "en": ["You can make technological innovations in work life and daily routines. Your understanding of order is changing."]
+      },
+      "Terazi": {
+        "tr": ["İlişkilerinde ve sosyal çevrende ani kopuşlar veya birleşmeler olabilir. Bağımsızlık ihtiyacın artıyor."],
+        "en": ["There may be sudden breakups or unions in your relationships and social circle. Your need for independence is increasing."]
+      },
+      "Akrep": {
+        "tr": ["Psikolojik olarak derin ve ani uyanışlar yaşayabilirsin. Ortak kaynaklarda sürpriz gelişmeler olabilir."],
+        "en": ["You may experience deep and sudden psychological awakenings. There may be surprise developments in shared resources."]
+      },
+      "Yay": {
+        "tr": ["İnançların ve hayat felsefen hızla değişiyor. Macera anlayışın yeni bir boyut kazanıyor."],
+        "en": ["Your beliefs and life philosophy are changing rapidly. Your sense of adventure is gaining a new dimension."]
+      },
+      "Oğlak": {
+        "tr": ["Kariyerinde ve toplumsal statünde beklenmedik değişimler kapıda. Hedeflerini güncelliyorsun."],
+        "en": ["Unexpected changes are at the door in your career and social status. You're updating your goals."]
+      },
+      "Kova": {
+        "tr": ["Kendi burcundaki bu enerji seni tamamen özgürleştiriyor. Topluma öncülük edecek fikirler üretebilirsin."],
+        "en": ["This energy in your own sign completely liberates you. You can produce ideas that will lead society."]
+      },
+      "Balık": {
+        "tr": ["Bilinçaltında ve ruhsal dünyanda şimşekler çakıyor. Sezgilerin seni çok farklı yerlere götürebilir."],
+        "en": ["Lightning is flashing in your subconscious and spiritual world. Your intuitions may take you to very different places."]
+      }
+    },
+    "Neptune": {
+      "Koç": {
+        "tr": ["Ruhsal ideallerin ve hayallerin için mücadele etme isteği duyabilirsin. Sezgilerin eylemlerini yönlendiriyor."],
+        "en": ["You may feel the desire to fight for your spiritual ideals and dreams. Your intuitions guide your actions."]
+      },
+      "Boğa": {
+        "tr": ["Maddi konularda gerçekçi olmakta zorlanabilirsin. Hayallerindeki bolluğa odaklanmak sana iyi gelir."],
+        "en": ["You may have trouble being realistic in material matters. Focusing on the abundance in your dreams is good for you."]
+      },
+      "İkizler": {
+        "tr": ["İletişimde daha şiirsel ve sezgisel bir dil kullanabilirsin. Zihnin hayal dünyasına kayabilir."],
+        "en": ["You may use a more poetic and intuitive language in communication. Your mind may drift to fantasy."]
+      },
+      "Yengeç": {
+        "tr": ["Duygusal derinliğin ve empatin zirve yapıyor. Aile bağlarında ruhsal bir şifalanma yaşayabilirsin."],
+        "en": ["Your emotional depth and empathy are peaking. You may experience spiritual healing in family bonds."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcılığında sınırsız bir ilham kaynağına ulaştın. Romantik hayallerin seni büyüleyebilir."],
+        "en": ["You've reached an unlimited source of inspiration in your creativity. Romantic dreams may enchant you."]
+      },
+      "Başak": {
+        "tr": ["Günlük işlerinde biraz dağınıklık olabilir ama ruhsal sağlığına odaklanmak için harika bir zaman."],
+        "en": ["There may be some disorganization in daily tasks but a great time to focus on spiritual health."]
+      },
+      "Terazi": {
+        "tr": ["İlişkilerde idealize etme eğilimin artabilir. Sanat ve estetik konularında derin bir ilham duyabilirsin."],
+        "en": ["Your tendency to idealize in relationships may increase. You may feel deep inspiration in art and aesthetics."]
+      },
+      "Akrep": {
+        "tr": ["Gizemli ve ruhsal konularda derinleşiyorsun. Dönüşümün artık daha ruhsal bir boyutta ilerliyor."],
+        "en": ["You're deepening in mysterious and spiritual matters. Your transformation is now progressing on a more spiritual level."]
+      },
+      "Yay": {
+        "tr": ["Hayat amacını sorgularken ruhsal bir vizyon kazanabilirsin. Uzaklara duyduğun özlem içsel bir yolculuğa dönüşebilir."],
+        "en": ["While questioning your life purpose, you may gain spiritual vision. Your longing for distant places may turn into an inner journey."]
+      },
+      "Oğlak": {
+        "tr": ["Kariyer hedeflerinde daha yüksek bir ideal arıyorsun. Sorumluluklarını ruhsal bir görev gibi görebilirsin."],
+        "en": ["You're seeking a higher ideal in career goals. You may see your responsibilities as a spiritual duty."]
+      },
+      "Kova": {
+        "tr": ["Toplumsal ideallerin ve insanlık vizyonun genişliyor. Evrensel bir kardeşlik duygusu içindesin."],
+        "en": ["Your social ideals and vision of humanity are expanding. You're in a sense of universal brotherhood."]
+      },
+      "Balık": {
+        "tr": ["Kendi burcunda olduğu için hayal gücün ve merhametin sınırsız. Evrenle bütünleştiğini hissedebilirsin."],
+        "en": ["Because it's in your own sign, your imagination and compassion are limitless. You may feel at one with the universe."]
+      }
+    },
+    "Pluto": {
+      "Koç": {
+        "tr": ["Kişisel gücünü yeniden tanımlıyorsun. Eski benliğin küllerinden yeniden doğuyor."],
+        "en": ["You're redefining your personal power. Your old self is being reborn from the ashes."]
+      },
+      "Boğa": {
+        "tr": ["Değerlerin ve finansal kaynakların kökten değişiyor. Güven anlayışın derinleşiyor."],
+        "en": ["Your values and financial resources are fundamentally changing. Your understanding of trust is deepening."]
+      },
+      "İkizler": {
+        "tr": ["Düşünce tarzın ve iletişim biçimin büyük bir dönüşüm geçiriyor. Kelimelerin gücünü keşfediyorsun."],
+        "en": ["Your thinking style and communication form are undergoing major transformation. You're discovering the power of words."]
+      },
+      "Yengeç": {
+        "tr": ["Köklerinle ve geçmişinle ilgili derin bir temizlik yapıyorsun. Aile dinamiklerin değişiyor."],
+        "en": ["You're doing deep cleaning regarding your roots and past. Your family dynamics are changing."]
+      },
+      "Aslan": {
+        "tr": ["Yaratıcılığın ve öz ifaden üzerinde büyük bir dönüştürücü güç hissediyorsun. Tutkuların seni yönetiyor."],
+        "en": ["You're feeling a great transformative power over your creativity and self-expression. Your passions are governing you."]
+      },
+      "Başak": {
+        "tr": ["Sağlık ve hizmet anlayışın kökten değişiyor. Hayatını daha verimli kılmak için derin kararlar alıyorsun."],
+        "en": ["Your understanding of health and service is fundamentally changing. You're making deep decisions to make your life more efficient."]
+      },
+      "Terazi": {
+        "tr": ["İlişkilerinde güç savaşlarına dikkat etmelisin. Adalet ve denge kavramların yeniden inşa ediliyor."],
+        "en": ["You should be careful about power struggles in relationships. Your concepts of justice and balance are being rebuilt."]
+      },
+      "Akrep": {
+        "tr": ["Kendi yönetici gezegeninle en derin dönüşümleri yaşıyorsun. Korkularınla yüzleşip güçleniyorsun."],
+        "en": ["With your own ruling planet, you're experiencing the deepest transformations. You're strengthening by facing your fears."]
+      },
+      "Yay": {
+        "tr": ["Hayata bakış açın ve inanç sistemin kökten sarsılıp yeniden kuruluyor. Gerçek anlamı buluyorsun."],
+        "en": ["Your perspective on life and belief system are being fundamentally shaken and rebuilt. You're finding true meaning."]
+      },
+      "Oğlak": {
+        "tr": ["Toplumsal statün ve kariyerin üzerinde yıkıcı ve yeniden yapıcı etkiler var. Otoriteni sorguluyorsun."],
+        "en": ["There are destructive and reconstructive effects on your social status and career. You're questioning your authority."]
+      },
+      "Kova": {
+        "tr": ["Toplumsal devrimlerin ve yeniliklerin bir parçasısın. Geleceği inşa eden güç seninle."],
+        "en": ["You're part of social revolutions and innovations. The power that builds the future is with you."]
+      },
+      "Balık": {
+        "tr": ["Bilinçaltındaki en derin sırlar açığa çıkıyor. Ruhsal bir ölüm ve yeniden doğum sürecindesin."],
+        "en": ["The deepest secrets in your subconscious are being revealed. You're in a process of spiritual death and rebirth."]
+      }
+    }
+  },
+  "moon_phases": {
+    "new_moon": {
+      "tr": [
+        "Yeni ay, taze başlangıçlar ve niyetler için en güçlü zamandır. Hayatında neyi başlatmak istiyorsun?",
+        "Karanlığın içinde filizlenen bir tohum gibi, niyetlerini sessizce büyütme zamanı.",
+        "Yeni bir döngü başlıyor, eskiyi geride bırak ve yeni vizyonun için alan aç.",
+        "İçsel bir yenilenme içindesin, sessizliği dinleyerek niyetlerini netleştir.",
+        "Yıldızlar bugün sana yeni bir sayfa açma şansı veriyor, kalemini eline al."
+      ],
+      "en": [
+        "The new moon is the most powerful time for fresh beginnings and intentions. What do you want to start in your life?",
+        "Like a seed sprouting in the dark, it's time to quietly grow your intentions.",
+        "A new cycle is beginning, leave the old behind and make space for your new vision.",
+        "You're in an inner renewal, clarify your intentions by listening to the silence.",
+        "The stars are giving you a chance to open a new page today, pick up your pen."
+      ]
+    },
+    "waxing_crescent": {
+      "tr": [
+        "Niyetlerin filizlenmeye başlıyor. İlk adımları atma ve planlarını eyleme geçirme zamanı.",
+        "Gökyüzündeki ince hilal, hayallerinin büyümeye başladığının bir işareti.",
+        "Cesaretini topla ve niyetlerini somutlaştırmak için küçük adımlar at."
+      ],
+      "en": [
+        "Your intentions are starting to sprout. Time to take the first steps and put your plans into action.",
+        "The thin crescent in the sky is a sign that your dreams are starting to grow.",
+        "Gather your courage and take small steps to materialize your intentions."
+      ]
+    },
+    "first_quarter": {
+      "tr": [
+        "Bazı engellerle karşılaşabilirsin. Kararlılığını koru ve eylemlerine devam et.",
+        "Denge kurma ve karar verme vakti, engelleri aşmak için içindeki gücü kullan."
+      ],
+      "en": [
+        "You may encounter some obstacles. Maintain your determination and continue your actions.",
+        "Time to establish balance and make decisions, use the strength within to overcome obstacles."
+      ]
+    },
+    "waxing_gibbous": {
+      "tr": [
+        "Detaylara odaklanma ve planlarını mükemmelleştirme süreci. Başarıya çok yakınsın.",
+        "Son hazırlıkları yap, hasat zamanı yaklaşırken eksikleri tamamla."
+      ],
+      "en": [
+        "A process of focusing on details and perfecting your plans. You're very close to success.",
+        "Make final preparations, complete deficiencies as harvest time approaches."
+      ]
+    },
+    "full_moon": {
+      "tr": [
+        "Hasat zamanı! Emeklerinin karşılığını aldığın, farkındalığın zirve yaptığı bir dönem.",
+        "Gökyüzündeki dolunay tüm gerçekleri aydınlatıyor, gizli saklı hiçbir şey kalmıyor.",
+        "Duygusal yoğunluğun zirvede, hissettiklerini kabullen ve serbest bırak."
+      ],
+      "en": [
+        "Harvest time! A period when you reap the rewards of your efforts and awareness peaks.",
+        "The full moon in the sky illuminates all truths, nothing hidden remains.",
+        "Your emotional intensity is at its peak, accept what you feel and let go."
+      ]
+    },
+    "waning_gibbous": {
+      "tr": [
+        "Deneyimlerini paylaşma ve şükretme zamanı. Elindekileri değerlendir ve yay.",
+        "Öğrendiklerini başkalarına anlatarak bilgeliğini çoğaltma vakti."
+      ],
+      "en": [
+        "Time to share your experiences and give thanks. Appreciate what you have and spread it.",
+        "Time to multiply your wisdom by sharing what you've learned with others."
+      ]
+    },
+    "last_quarter": {
+      "tr": [
+        "Bırakma ve serbest kalma süreci. Artık sana hizmet etmeyen alışkanlıklarından kurtulmalısın.",
+        "Ruhsal bir temizlik içindesin, affet ve özgürleş."
+      ],
+      "en": [
+        "A process of letting go and becoming free. You must get rid of habits that no longer serve you.",
+        "You're in a spiritual cleansing, forgive and become free."
+      ]
+    },
+    "waning_crescent": {
+      "tr": [
+        "Dinlenme ve içe dönüş zamanı. Bir sonraki döngü için enerjini topla ve kendini hazırla.",
+        "Sessizliğin gücünü keşfet, ruhunu dinlendir ve teslimiyetin tadını çıkar."
+      ],
+      "en": [
+        "Time for rest and turning inward. Gather your energy and prepare yourself for the next cycle.",
+        "Discover the power of silence, rest your soul and enjoy the surrender."
+      ]
+    }
+  },
+  "impacts": {
+    "positive": {
+      "Sun": {
+        "tr": [
+          "Bugün parlama zamanın! Enerjin çevrendekilere de ilham verecek.",
+          "Özgüvenin zirvede, karizmanla her kapıyı açabilirsin.",
+          "Hayat enerjin bugün o kadar yüksek ki, zorluklar önünde eğiliyor."
+        ],
+        "en": [
+          "It's your time to shine today! Your energy will inspire those around you.",
+          "Your confidence is at its peak, you can open any door with your charisma.",
+          "Your life energy is so high today that difficulties bow before you."
+        ]
+      },
+      "Moon": {
+        "tr": [
+          "Duygusal olarak dengedesin. Sezgilerin sana en doğru yolu gösterecektir.",
+          "İç huzurun bugün en büyük hazinen, ruhunla barış içindesin."
+        ],
+        "en": [
+          "You're emotionally balanced. Your intuitions will show you the right path.",
+          "Your inner peace is your greatest treasure today, you're at peace with your soul."
+        ]
+      },
+      "Mercury": {
+        "tr": [
+          "Zihnin çok berrak, anlaşmalar ve görüşmeler için harika bir fırsat.",
+          "İletişim yeteneğin bugün bir sihir gibi, herkesi ikna edebilirsin."
+        ],
+        "en": [
+          "Your mind is very clear, a great opportunity for agreements and discussions.",
+          "Your communication ability is like magic today, you can convince anyone."
+        ]
+      },
+      "Venus": {
+        "tr": [
+          "Aşk ve güzellik kapını çalıyor. Kendini şımartmak için ideal bir gün.",
+          "İlişkilerinde uyum ve sevgi rüzgarları esiyor, mutluluğun tadını çıkar."
+        ],
+        "en": [
+          "Love and beauty are knocking on your door. An ideal day to pamper yourself.",
+          "Harmony and love winds are blowing in your relationships, enjoy your happiness."
+        ]
+      },
+      "Mars": {
+        "tr": [
+          "Cesaretin ve eylem gücün zirvede. Durma, harekete geç!",
+          "İçindeki tutku seni hedeflerine doğru bir ok gibi fırlatacak."
+        ],
+        "en": [
+          "Your courage and action power are at their peak. Don't stop, take action!",
+          "The passion within you will launch you like an arrow toward your goals."
+        ]
+      },
+      "Jupiter": {
+        "tr": [
+          "Şans rüzgarları arkanda. Büyük düşün ve adımlarını güvenle at.",
+          "Bolluk ve bereket kapıları sonuna kadar açılıyor, fırsatları kucakla."
+        ],
+        "en": [
+          "Lucky winds are behind you. Think big and take your steps with confidence.",
+          "The doors of abundance and prosperity are opening wide, embrace opportunities."
+        ]
+      },
+      "Saturn": {
+        "tr": [
+          "Disiplinin meyvelerini topluyorsun. Kalıcı ve sağlam yapılar kurabilirsin.",
+          "Sorumluluk aldıkça güçlendiğini ve saygınlık kazandığını göreceksin."
+        ],
+        "en": [
+          "You're reaping the fruits of your discipline. You can build lasting and solid structures.",
+          "You'll see that you grow stronger and gain respect as you take responsibility."
+        ]
+      },
+      "Uranus": {
+        "tr": [
+          "Beklenmedik fırsatlar ve özgürleştirici fikirler bugün seninle.",
+          "Sıra dışı yeteneklerin bir anda parlayabilir, şaşırtmaya hazır ol."
+        ],
+        "en": [
+          "Unexpected opportunities and liberating ideas are with you today.",
+          "Your unconventional talents may suddenly shine, be ready to surprise."
+        ]
+      },
+      "Neptune": {
+        "tr": [
+          "İlham perilerin iş başında! Sanatsal ve ruhsal çalışmalar için harika bir gün.",
+          "Sezgilerin bugün sana geleceğin kapılarını fısıldayarak açıyor."
+        ],
+        "en": [
+          "Your inspiration fairies are at work! A great day for artistic and spiritual endeavors.",
+          "Your intuitions are whispering to open the doors of the future for you today."
+        ]
+      },
+      "Pluto": {
+        "tr": [
+          "Kendi gücünü keşfediyorsun. Dönüşüm sancılı olsa da sonuç muhteşem olacak.",
+          "Küllerinden yeniden doğma gücün bugün dorukta, her şeyi iyileştirebilirsin."
+        ],
+        "en": [
+          "You're discovering your own power. Even if transformation is painful, the result will be magnificent.",
+          "Your power to be reborn from the ashes is at its peak today, you can heal everything."
+        ]
+      }
+    },
+    "negative": {
+      "Sun": {
+        "tr": [
+          "Bugün ego çatışmalarına dikkat et. Kendi değerini başkalarının onayında arama.",
+          "İçindeki öfkeyi kontrol etmelisiniz, parlamak isterken yakıcı olmayın."
+        ],
+        "en": [
+          "Watch out for ego conflicts today. Don't seek your value in others' approval.",
+          "You must control the anger within, don't be burning while trying to shine."
+        ]
+      },
+      "Moon": {
+        "tr": [
+          "Hassasiyetin artabilir, alınganlık yapmamaya çalış. İç dünyanda huzur ara.",
+          "Duygusal gelgitler bugün seni yorabilir, sakinleşmeye odaklan."
+        ],
+        "en": [
+          "Your sensitivity may increase, try not to be touchy. Seek peace in your inner world.",
+          "Emotional tides may tire you today, focus on calming down."
+        ]
+      },
+      "Mercury": {
+        "tr": [
+          "Yanlış anlaşılmalar ve teknolojik aksaklıklara karşı hazırlıklı ol.",
+          "Zihnin bugün biraz dağınık olabilir, önemli kararları ertele."
+        ],
+        "en": [
+          "Be prepared for misunderstandings and technological glitches.",
+          "Your mind may be a bit scattered today, postpone important decisions."
+        ]
+      },
+      "Venus": {
+        "tr": [
+          "İlişkilerde değer görmediğini hissedebilirsin. Öz sevgine odaklanmalısın.",
+          "Maddi konularda gereksiz harcamalardan kaçınmalı, bütçeni korumalısın."
+        ],
+        "en": [
+          "You may feel unvalued in relationships. You should focus on self-love.",
+          "Avoid unnecessary spending in material matters, protect your budget."
+        ]
+      },
+      "Mars": {
+        "tr": [
+          "Öfke kontrolü bugün çok önemli. Enerjini yıkıcı değil, yapıcı işlere yönlendir.",
+          "Sabırsızlığın kazalara ve hatalara neden olabilir, yavaşla."
+        ],
+        "en": [
+          "Anger control is very important today. Direct your energy to constructive, not destructive, tasks.",
+          "Your impatience may cause accidents and mistakes, slow down."
+        ]
+      },
+      "Jupiter": {
+        "tr": [
+          "Aşırı özgüven ve riskli harcamalardan kaçınmalısın. Gerçekçi kal.",
+          "Büyük vaatler vermekten kaçın, yerine getiremeyebilirsin."
+        ],
+        "en": [
+          "You should avoid overconfidence and risky spending. Stay realistic.",
+          "Avoid making big promises, you may not be able to fulfill them."
+        ]
+      },
+      "Saturn": {
+        "tr": [
+          "Engellenmiş ve kısıtlanmış hissedebilirsin. Bu sınavın sabrını ölçtüğünü unutma.",
+          "Sorumlulukların bugün omuzlarına çok ağır gelebilir, pes etme."
+        ],
+        "en": [
+          "You may feel blocked and restricted. Remember this test measures your patience.",
+          "Responsibilities may feel too heavy on your shoulders today, don't give up."
+        ]
+      },
+      "Uranus": {
+        "tr": [
+          "Ani gerilimler ve plansız değişimler seni yorabilir. Esnek kalmaya çalış.",
+          "Teknolojik aksaklıklar ve şok edici haberler gününü karıştırabilir."
+        ],
+        "en": [
+          "Sudden tensions and unplanned changes may tire you. Try to stay flexible.",
+          "Technological glitches and shocking news may disrupt your day."
+        ]
+      },
+      "Neptune": {
+        "tr": [
+          "Gerçeklerden kaçma eğilimi veya kafa karışıklığı yaşayabilirsin. Aldanmalara dikkat.",
+          "Hayal kırıklıkları ve belirsizlikler bugün moralini bozabilir."
+        ],
+        "en": [
+          "You may experience a tendency to escape reality or confusion. Beware of deceptions.",
+          "Disappointments and uncertainties may dampen your spirits today."
+        ]
+      },
+      "Pluto": {
+        "tr": [
+          "Krizler ve baskı altında hissedebilirsin. Eski kalıpları yıkmak zorunlu hale gelebilir.",
+          "Güç savaşları ve manipülasyonlara karşı dikkatli olmalısın."
+        ],
+        "en": [
+          "You may feel under pressure and crises. Breaking old patterns may become mandatory.",
+          "You should be careful about power struggles and manipulations."
+        ]
+      }
+    },
+    "neutral": {
+      "Sun": {
+        "tr": ["Sıradan bir gün. Kendi rutinine odaklanmak sana huzur verecek."],
+        "en": ["An ordinary day. Focusing on your routine will bring you peace."]
+      },
+      "Moon": {
+        "tr": ["Duyguların akışta, ne çok yüksek ne çok düşük. Gözlemci kalmayı dene."],
+        "en": ["Your emotions are flowing, neither too high nor too low. Try to remain observant."]
+      },
+      "Mercury": {
+        "tr": ["Olağan iletişim trafiği. Bilgi alışverişinde bulunmak için uygun."],
+        "en": ["Normal communication traffic. Suitable for exchanging information."]
+      },
+      "Venus": {
+        "tr": ["İlişkilerinde sükunet hakim. Mevcut dengeni korumaya devam et."],
+        "en": ["Calm prevails in your relationships. Continue maintaining your current balance."]
+      },
+      "Mars": {
+        "tr": ["Kontrollü bir enerjiye sahipsin. İşlerini yavaş ama emin adımlarla hallet."],
+        "en": ["You have controlled energy. Handle your tasks slowly but surely."]
+      },
+      "Jupiter": {
+        "tr": ["Küçük fırsatlar çıkabilir. Gözlerini açık tut ama acele etme."],
+        "en": ["Small opportunities may arise. Keep your eyes open but don't rush."]
+      },
+      "Saturn": {
+        "tr": ["Sorumlulukların farkındasın. Günlük işlerini planlı bir şekilde yürüt."],
+        "en": ["You're aware of your responsibilities. Carry out daily tasks in a planned manner."]
+      },
+      "Uranus": {
+        "tr": ["Küçük sürprizler olabilir ama dengeni bozmayacak. Yeniliklere açık ol."],
+        "en": ["Small surprises may occur but won't disturb your balance. Be open to innovations."]
+      },
+      "Neptune": {
+        "tr": ["Biraz dalgın olabilirsin. Hayal kurmak için kendine zaman ayır."],
+        "en": ["You may be a bit distracted. Take time to daydream."]
+      },
+      "Pluto": {
+        "tr": ["İçsel bir dönüşüm sessizce devam ediyor. Değişime direnme."],
+        "en": ["An inner transformation continues quietly. Don't resist change."]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ayla</string>
+    <string name="title_activity_main">Ayla</string>
+    <string name="package_name">com.ayla.app</string>
+    <string name="custom_url_scheme">com.ayla.app</string>
+</resources>

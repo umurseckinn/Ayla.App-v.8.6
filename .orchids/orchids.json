@@ -1,0 +1,43 @@
+{
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  "projectId": "5024c61a-7633-4f81-ab84-3e4d705583b9",
+  "createdAt": 1767184359002,
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+=======
+  "projectId": "ca6f6250-7cd5-4e20-9b0e-d7338a8059c2",
+  "createdAt": 1768161446694,
+>>>>>>> Stashed changes
+  "version": "1.0",
+  "startupCommands": [
+    "bun install; bun run dev"
+  ]
+}

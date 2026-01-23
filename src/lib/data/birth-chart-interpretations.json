@@ -1,0 +1,62 @@
+{
+  "Koç": {
+    "sun": "Güneş Koç burcunda size bitmek bilmeyen bir yaşam enerjisi ve cesaret verir. Hayata karşı atak, öncü ve dürüst bir tavır sergilersiniz; liderlik özellikleriniz doğuştan gelir. Karşılaştığınız engelleri aşmak için gereken motivasyonu içinizde her zaman bulursunuz ve adalet duygunuz oldukça gelişmiştir.",
+    "moon": "Ay Koç burcunda duygusal dünyanızın oldukça hareketli ve dışa dönük olduğunu gösterir. Duygularınızı anında ve filtresiz yaşarsınız; bir şeye üzüldüğünüzde veya sevindiğinizde bunu saklamanız imkansızdır. Sabırsızlık ve heyecan, duygusal tepkilerinizin temelinde yer alır.",
+    "rising": "Yükselen Koç olarak dış dünyaya karşı enerjik, kendinden emin ve mücadeleci bir imaj çizersiniz. İnsanlar sizi ilk gördüğünde canlılığınızı ve kararlılığınızı fark ederler. Yeni başlangıçlar yapmaktan çekinmeyen, hızlı karar veren ve harekete geçmeyi seven birisiniz."
+  },
+  "Boğa": {
+    "sun": "Güneş Boğa'da size sabır, güvenilirlik ve sarsılmaz bir irade bahşeder. Yaşamda huzur, konfor ve maddi güven arayışındasınızdır; doğa ve estetik olan her şey ilginizi çeker. Değer verdiğiniz şeyleri koruma içgüdünüz yüksektir ve başladığınız işi sonuna kadar götürme azmine sahipsinizdir.",
+    "moon": "Ay Boğa'da duygusal anlamda oldukça dengeli, huzurlu ve sabit bir yapıda olduğunuzu işaret eder. Güvende hissetmek sizin için her şeyden önemlidir ve konfor alanınızdan çıkmak sizi huzursuz edebilir. Sadakat duygunuz çok güçlüdür ve sevdiklerinize derin bir bağlılık hissedersiniz.",
+    "rising": "Yükselen Boğa size sakin, kararlı ve güven veren bir dış görünüş kazandırır. Hareketlerinizde aceleci değilsinizdir ve estetik algınız dış dünyaya yansıyan duruşunuzda kendini belli eder. İnsanlar üzerinde huzurlu ve sağlam bir intiba bırakırsınız."
+  },
+  "İkizler": {
+    "sun": "Güneş İkizler'de zihninizi sürekli aktif, meraklı ve iletişim odaklı kılar. Öğrenmeye duyduğunuz açlık sizi farklı ilgi alanlarına sürükler; adaptasyon yeteneğiniz sayesinde her ortama kolayca uyum sağlarsınız. Konuşkan, neşeli ve entelektüel yönünüzle sosyal çevrelerin aranan ismisinizdir.",
+    "moon": "Ay İkizler'de duygularınızı zihninizle analiz etme eğiliminde olduğunuzu gösterir. Hissettiklerinizi kelimelere dökmek sizin için en iyi terapi yöntemidir; değişken ruh haliniz sizi zaman zaman kararsızlığa itebilir. Meraklı yapınız duygusal dünyanızda da yeni deneyimler aramanıza neden olur.",
+    "rising": "Yükselen İkizler olarak dış dünyaya karşı meraklı, hareketli ve konuşkan bir imaj sergilersiniz. Genç ruhlu ve enerjik duruşunuzla insanların dikkatini çekersiniz. Bilgi alışverişi ve sosyal etkileşim hayatınızın merkezindedir."
+  },
+  "Yengeç": {
+    "sun": "Güneş Yengeç'te size derin bir hassasiyet, şefkat ve koruyucu bir ruh verir. Aile bağları ve ev hayatı sizin için kutsaldır; sevdiklerinizi korumak için elinizden gelen her şeyi yaparsınız. Sezgileriniz çok güçlüdür ve insanların duygularını kelimelere dökmeden bile anlayabilirsiniz.",
+    "moon": "Ay Yengeç'te kendi evindedir ve size muazzam bir duygusal derinlik ve empati yeteneği verir. Geçmişe, anılara ve köklere çok değer verirsiniz; duygusal güvenliğiniz tehlikeye girdiğinde kabuğunuza çekilme eğiliminiz vardır. Anaç ve besleyici yönünüzle çevrenizdekilere huzur verirsiniz.",
+    "rising": "Yükselen Yengeç size yumuşak, hassas ve güven veren bir duruş kazandırır. İnsanlar size baktığında kendilerini güvende hissederler ve size kolayca açılabilirler. Dış dünyaya karşı ilk tepkiniz genellikle çekingen ama korumacı bir tavırdır."
+  },
+  "Aslan": {
+    "sun": "Güneş Aslan'da size özgüven, yaratıcılık ve karizmatik bir liderlik vasfı yükler. Hayat sahnesinde parlamak, takdir edilmek ve sevilmek istersiniz; cömertliğiniz ve koruyucu tavrınızla tanınırsınız. Sıcakkanlı ve neşeli doğanız çevrenizdeki insanları mıknatıs gibi çeker.",
+    "moon": "Ay Aslan'da duygusal dünyanızın gururlu, coşkulu ve onaylanma ihtiyacıyla dolu olduğunu gösterir. Sevginizi büyük jestlerle göstermeyi seversiniz ve aynı ilginin size de gösterilmesini beklersiniz. İçinizde hiç büyümeyen yaratıcı bir çocuk vardır ve bu yönünüz sizi çok sempatik kılar.",
+    "rising": "Yükselen Aslan size etkileyici, görkemli ve kendinden emin bir dış görünüş verir. Girdiğiniz her ortamda fark edilirsiniz; saçlarınız ve dik duruşunuz imzanız gibidir. İnsanlar üzerinde doğal bir otorite ve saygınlık uyandırırsınız."
+  },
+  "Başak": {
+    "sun": "Güneş Başak'ta size analitik bir zihin, titizlik ve hizmet etme arzusu kazandırır. Pratik çözümler üretmekte üzerinize yoktur; detaylara verdiğiniz önem yaptığınız işlerin mükemmel olmasını sağlar. Yardımsever, alçakgönüllü ve düzenli yapınızla hayatın karmaşasına nizam getirirsiniz.",
+    "moon": "Ay Başak'ta duygularınızı kontrol altında tutma ve her şeyi mantık süzgecinden geçirme eğiliminde olduğunuzu gösterir. Kendinizi faydalı hissettiğiniz anlarda duygusal olarak tatmin olursunuz. Eleştirel yönünüz bazen kendinize ve başkalarına karşı fazla sert olmanıza neden olabilir.",
+    "rising": "Yükselen Başak size temiz, düzenli ve ciddi bir dış görünüş kazandırır. Gözlemci yapınız sayesinde çevrenizdeki detayları anında fark edersiniz. İnsanlar sizi güvenilir, işine sadık ve metodik biri olarak tanırlar."
+  },
+  "Terazi": {
+    "sun": "Güneş Terazi'de size adalet duygusu, estetik anlayışı ve uyum arayışı verir. İlişkiler hayatınızın merkezindedir; yalnız kalmak yerine paylaşmayı ve ortak hareket etmeyi tercih edersiniz. Zarif, diplomatik ve barışçıl doğanızla çatışmaları önlemekte ustasınızdır.",
+    "moon": "Ay Terazi'de duygusal huzurunuzun ilişkilerdeki dengeye bağlı olduğunu gösterir. Huzursuz ortamlardan kaçarsınız ve her zaman orta yolu bulmaya çalışırsınız. Estetik ve güzellik duygusal dünyanızı besleyen en önemli unsurlardır.",
+    "rising": "Yükselen Terazi size zarif, çekici ve nazik bir imaj kazandırır. İnsanlarla olan iletişiminizde çok kibarsınızdır ve dış görünüşünüze her zaman özen gösterirsiniz. Çevrenizde uyumlu ve estetik bir atmosfer yaratmak istersiniz."
+  },
+  "Akrep": {
+    "sun": "Güneş Akrep'te size muazzam bir irade, derinlik ve dönüştürücü bir güç verir. Gizemli olan her şey ilginizi çeker ve yüzeysel olan hiçbir şeyle yetinmezsiniz. Sadakat sizin için hayati önem taşır; sevdiğiniz kişilere sonuna kadar bağlı kalır ama ihaneti asla unutmazsınız.",
+    "moon": "Ay Akrep'te duyguların en derin, en tutkulu ve en yoğun haliyle yaşandığını gösterir. Sezgileriniz o kadar güçlüdür ki insanların gizli niyetlerini anında sezebilirsiniz. Duygusal dünyanızda büyük değişimler ve dönüşümler yaşamaya yatkınsınızdır.",
+    "rising": "Yükselen Akrep size gizemli, etkileyici ve karizmatik bir duruş verir. Bakışlarınızla insanların ruhunun derinliklerine nüfuz ediyormuşsunuz hissi uyandırırsınız. Kontrollü, ketum ama bir o kadar da güçlü bir imaj sergilersiniz."
+  },
+  "Yay": {
+    "sun": "Güneş Yay'da size özgürlük tutkusu, iyimserlik ve macera dolu bir ruh verir. Yeni yerler keşfetmek, farklı kültürler tanımak ve hayatın anlamını sorgulamak temel motivasyonunuzdur. Neşeli, açık sözlü ve vizyoner yapınızla çevrenize ilham verirsiniz.",
+    "moon": "Ay Yay'da duygusal özgürlüğün sizin için her şeyden önemli olduğunu gösterir. Sınırlandığını hissettiğiniz anlarda uzaklaşma ihtiyacı duyarsınız. İyimser doğanız sayesinde en zor anlarda bile umudunuzu kaybetmez, her deneyimden bir ders çıkarmaya çalışırsınız.",
+    "rising": "Yükselen Yay size enerjik, güler yüzlü ve sportif bir dış görünüş kazandırır. Hayata pozitif bakan, meraklı ve açık fikirli bir imaj sergilersiniz. Doğal ve samimi tavırlarınızla insanların güvenini kolayca kazanırsınız."
+  },
+  "Oğlak": {
+    "sun": "Güneş Oğlak'ta size disiplin, sabır ve yüksek bir görev bilinci yükler. Kariyer ve toplumsal statü sizin için önemlidir; hedeflerinize ulaşmak için çok çalışmaktan asla çekinmezsiniz. Olgun, güvenilir ve sağlam karakterinizle çevrenizde bir kaya gibi durursunuz.",
+    "moon": "Ay Oğlak'ta duygularınızı kontrol etme ve ciddiye alma eğiliminde olduğunuzu gösterir. Duygusal güvenliğinizi başarı ve somut sonuçlar üzerinden kurarsınız. Sorumluluk bilinciniz o kadar yüksektir ki bazen dinlenmeyi ve eğlenmeyi ihmal edebilirsiniz.",
+    "rising": "Yükselen Oğlak size ciddi, mesafeli ve profesyonel bir imaj kazandırır. Yaşınızdan daha olgun bir duruş sergilersiniz ve ilk bakışta otorite figürü olarak algılanabilirsiniz. Kararlı ve planlı hareketlerinizle güven verirsiniz."
+  },
+  "Kova": {
+    "sun": "Güneş Kova'da size özgünlük, bağımsızlık ve hümanist bir bakış açısı verir. Toplumsal normlara uymak yerine kendi kurallarınızı koymayı ve yenilikçi fikirler üretmeyi seversiniz. Arkadaşlıklar ve sosyal gruplar hayatınızda önemli bir yer tutar; herkesin iyiliği için çalışmaktan keyif alırsınız.",
+    "moon": "Ay Kova'da duygularınızı entelektüelleştirme ve olaylara objektif bir mesafeden bakma eğiliminde olduğunuzu gösterir. Özgürlüğünüze olan düşkünlüğünüz duygusal bağlarınızda da kendini belli eder. Sıra dışı ve yenilikçi duygusal tepkilerinizle şaşırtıcı olabilirsiniz.",
+    "rising": "Yükselen Kova size orijinal, modern ve biraz da mesafeli bir dış görünüş kazandırır. Farklı tarzınız ve entelektüel duruşunuzla dikkat çekersiniz. İnsanlar sizi ilerici, özgür ruhlu ve arkadaş canlısı biri olarak tanırlar."
+  },
+  "Balık": {
+    "sun": "Güneş Balık'ta size sınırsız bir hayal gücü, şefkat ve ruhsal bir derinlik verir. Evrensel bir sevgi ve empati duygusuyla dolusunuzdur; başkalarının acılarını kendi acınız gibi hissedebilirsiniz. Sanatsal yönünüz ve sezgileriniz sizi dünyevi gerçekliğin ötesine taşır.",
+    "moon": "Ay Balık'ta duygusal hassasiyetin en yüksek noktada olduğunu gösterir. Ruh haliniz çevrenizdeki enerjilere göre anında değişebilir; adeta bir sünger gibi başkalarının duygularını emersiniz. Hayal kurmak ve kendi iç dünyanıza çekilmek sizin için en büyük ihtiyaçtır.",
+    "rising": "Yükselen Balık size rüya gibi, yumuşak ve gizemli bir dış görünüş verir. Bakışlarınızdaki derinlik ve naif duruşunuzla insanların şefkat duygusunu uyandırırsınız. Akışta kalmayı seven, hassas ve sanatsal bir imaj sergilersiniz."
+  }
+}

@@ -1,0 +1,63 @@
+name: Build iOS (Unsigned)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          check-latest: true
+
+      - name: Check Node Version
+        run: |
+          echo "Node version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Web App
+        run: npm run static:build
+
+      - name: Sync Capacitor
+        run: npx cap sync ios
+
+      - name: Build Unsigned Archive
+        run: |
+          cd ios/App
+          xcodebuild -project App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath built_app \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            clean build
+
+      - name: Package IPA
+        run: |
+          cd ios/App/built_app/Build/Products/Release-iphoneos
+          mkdir Payload
+          cp -r App.app Payload/
+          zip -r ayla-unsigned.ipa Payload
+          mv ayla-unsigned.ipa $GITHUB_WORKSPACE/
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ayla-unsigned-ipa
+          path: ayla-unsigned.ipa
+          retention-days: 5

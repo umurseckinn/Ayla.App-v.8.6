@@ -1,0 +1,690 @@
+{
+  "interpretations": {
+    "sun": {
+      "aries": {
+        "title": "Ateşli Bir Lider",
+        "titleEn": "A Fiery Leader",
+        "text": "Senin ruhun, her zaman en önde olmayı ve yeni yollar açmayı arzuluyor. İçindeki bitmek bilmeyen enerji, çevrendekileri harekete geçiren bir kıvılcım gibi. Ancak bazen o kadar hızlı gidiyorsun ki, arkandakilerin sana yetişip yetişemediğini kontrol etmeyi unutuyorsun. Cesaretin senin en büyük hazinen! ♈🔥",
+        "textEn": "Your soul always desires to be at the forefront and blaze new trails. The endless energy within you is like a spark that ignites those around you. However, sometimes you move so fast that you forget to check if others can keep up with you. Your courage is your greatest treasure! ♈🔥",
+        "keywords": ["Cesur", "Öncü", "Sabırsız"],
+        "keywordsEn": ["Brave", "Pioneer", "Impatient"]
+      },
+      "taurus": {
+        "title": "Sadık ve Kararlı Ruh",
+        "titleEn": "A Loyal and Determined Soul",
+        "text": "Dünyayı beş duyunla algılıyorsun; güzellik, konfor ve güven senin için her şeyden önemli. Bir kaya kadar sağlam ve güvenilirsin. Değişim bazen seni korkutsa da, bir şeye kök saldığında onu kimse yerinden oynatamaz. Sabrın, en büyük gücün. ♉🌱",
+        "textEn": "You perceive the world through your five senses; beauty, comfort, and security are everything to you. You are as solid and reliable as a rock. Though change sometimes scares you, once you take root in something, no one can move you. Patience is your greatest strength. ♉🌱",
+        "keywords": ["Güvenilir", "Sabırlı", "Keyifçi"],
+        "keywordsEn": ["Reliable", "Patient", "Pleasure-seeking"]
+      },
+      "gemini": {
+        "title": "Meraklı Bir Kaşif",
+        "titleEn": "A Curious Explorer",
+        "text": "Zihnin her zaman bir kelebek gibi çiçekten çiçeğe konuyor. Bilgiye olan açlığın ve iletişim yeteneğin seni her ortamın parlayan yıldızı yapıyor. Sıkılmak senin için en büyük düşman! Çevrendeki herkes seninle konuşurken zamanın nasıl geçtiğini anlamıyor. ♊🦋",
+        "textEn": "Your mind is always like a butterfly, flitting from flower to flower. Your hunger for knowledge and communication skills make you the shining star of every environment. Boredom is your greatest enemy! Everyone around you loses track of time when talking with you. ♊🦋",
+        "keywords": ["Zeki", "Esnek", "Konuşkan"],
+        "keywordsEn": ["Intelligent", "Flexible", "Talkative"]
+      },
+      "cancer": {
+        "title": "Duygusal Bir Koruyucu",
+        "titleEn": "An Emotional Protector",
+        "text": "Senin kalbin okyanuslar kadar derin ve şefkatli. Sevdiklerini korumak için sert bir kabuk örsen de, içerideki o yumuşacık ve hassas kalbi Ayla hemen görüyor. Geçmişe olan bağlılığın ve sezgilerin seni benzersiz kılıyor. ♋🐚",
+        "textEn": "Your heart is as deep and compassionate as the oceans. Though you build a hard shell to protect your loved ones, Ayla immediately sees the soft and sensitive heart within. Your connection to the past and your intuition make you unique. ♋🐚",
+        "keywords": ["Hassas", "Anaç", "Sadık"],
+        "keywordsEn": ["Sensitive", "Nurturing", "Loyal"]
+      },
+      "leo": {
+        "title": "Yaratıcı Bir Kral/Kraliçe",
+        "titleEn": "A Creative King/Queen",
+        "text": "Girdiğin her ortamda güneş gibi parlıyorsun. Cömertliğin ve yaşama sevincin bulaşıcı. Kendini ifade etmek senin için bir ihtiyaç. Gururun bazen seni zorlasa da, o kocaman kalbinle her türlü zorluğun üstesinden gelebilirsin. ♌👑",
+        "textEn": "You shine like the sun in every environment you enter. Your generosity and joy for life are contagious. Self-expression is a necessity for you. Though your pride sometimes challenges you, with that big heart of yours, you can overcome any difficulty. ♌👑",
+        "keywords": ["Cömert", "Görkemli", "Öz güvenli"],
+        "keywordsEn": ["Generous", "Magnificent", "Confident"]
+      },
+      "virgo": {
+        "title": "Mükemmeliyetçi Bir Hizmetçi",
+        "titleEn": "A Perfectionist Helper",
+        "text": "Detayların efendisisin! Senin gözünden hiçbir şey kaçmaz. Dünyayı daha düzenli ve iyi bir yer haline getirmek için durmadan çalışıyorsun. Analitik zekan ve pratik çözümlerinle herkesin imdadına yetişen gizli bir kahramansın. ♍✨",
+        "textEn": "You are the master of details! Nothing escapes your eye. You work tirelessly to make the world a more orderly and better place. With your analytical mind and practical solutions, you are a hidden hero who comes to everyone's aid. ♍✨",
+        "keywords": ["Titiz", "Analitik", "Yararlı"],
+        "keywordsEn": ["Meticulous", "Analytical", "Helpful"]
+      },
+      "libra": {
+        "title": "Zarif Bir Diplomat",
+        "titleEn": "An Elegant Diplomat",
+        "text": "Hayatında denge ve uyum arayışı hiç bitmiyor. Adalet duygun ve estetik bakış açın seni çok özel biri yapıyor. Yalnız kalmaktan pek hoşlanmazsın, çünkü ruhun paylaştıkça çoğalıyor. Zarafetinle kapıları açamayacağın yer yok. ♎⚖️",
+        "textEn": "Your search for balance and harmony in life never ends. Your sense of justice and aesthetic perspective make you a very special person. You don't really like being alone because your soul grows when shared. There is no door that your elegance cannot open. ♎⚖️",
+        "keywords": ["Uyumlu", "Zarif", "Adil"],
+        "keywordsEn": ["Harmonious", "Elegant", "Fair"]
+      },
+      "scorpio": {
+        "title": "Gizemli Bir Dönüşümcü",
+        "titleEn": "A Mysterious Transformer",
+        "text": "Senin bakışların bile ruhun derinliklerine iniyor. Yüzeysel olan hiçbir şey seni tatmin etmez; her şeyin en dibine inmek, gerçeği bulmak istersin. Küllerinden doğmak senin doğanda var. Tutkun, en büyük yakıtın. ♏🦂",
+        "textEn": "Even your gaze penetrates the depths of the soul. Nothing superficial satisfies you; you want to get to the bottom of everything, to find the truth. Rising from the ashes is in your nature. Your passion is your greatest fuel. ♏🦂",
+        "keywords": ["Tutkulu", "Derin", "Dayanıklı"],
+        "keywordsEn": ["Passionate", "Deep", "Resilient"]
+      },
+      "sagittarius": {
+        "title": "Özgür Ruhlu Bir Filozof",
+        "titleEn": "A Free-Spirited Philosopher",
+        "text": "Hayat senin için bitmek bilmeyen bir macera! Yeni yerler görmek, yeni fikirler keşfetmek senin ruhunun gıdası. İyimserliğin ve dürüstlüğünle insanlara ilham veriyorsun. Sınırlar sadece senin aşman için var. ♐🏹",
+        "textEn": "Life is an endless adventure for you! Seeing new places and discovering new ideas is food for your soul. You inspire people with your optimism and honesty. Boundaries exist only for you to overcome. ♐🏹",
+        "keywords": ["Maceracı", "İyimser", "Dobra"],
+        "keywordsEn": ["Adventurous", "Optimistic", "Frank"]
+      },
+      "capricorn": {
+        "title": "Disiplinli Bir Zirve Yolcusu",
+        "titleEn": "A Disciplined Summit Climber",
+        "text": "Dağın en tepesine çıkmak için gereken sabır ve disiplin sende fazlasıyla var. Sorumluluk almaktan asla kaçmazsın. Zaman senin lehine çalışıyor; yaşlandıkça gençleşen ve güçlenen bir ruhun var. Başarın, alın terinin eseri. ♑🏔️",
+        "textEn": "You have more than enough patience and discipline to reach the top of the mountain. You never shy away from taking responsibility. Time works in your favor; you have a spirit that grows younger and stronger with age. Your success is the result of your hard work. ♑🏔️",
+        "keywords": ["Hırslı", "Gerçekçi", "Planlı"],
+        "keywordsEn": ["Ambitious", "Realistic", "Methodical"]
+      },
+      "aquarius": {
+        "title": "Sıra Dışı Bir Vizyoner",
+        "titleEn": "An Extraordinary Visionary",
+        "text": "Sen gelecekte yaşıyorsun! Herkesin baktığı ama göremediği o farklı açıyı sen her zaman yakalarsın. Özgürlüğüne düşkünlüğün ve insancıl yaklaşımlarınla toplumun bir adım önündesin. Benzersiz olmak senin imzan. ♒🛸",
+        "textEn": "You live in the future! You always catch that different angle that everyone looks at but cannot see. With your love of freedom and humanitarian approaches, you are one step ahead of society. Being unique is your signature. ♒🛸",
+        "keywords": ["Yenilikçi", "Özgür", "Entelektüel"],
+        "keywordsEn": ["Innovative", "Free", "Intellectual"]
+      },
+      "pisces": {
+        "title": "Rüya Gören Bir Ruh",
+        "titleEn": "A Dreaming Soul",
+        "text": "Gerçek dünya ile hayal dünyası arasındaki o ince çizgide dans ediyorsun. Sezgilerin o kadar güçlü ki, bazen olacakları önceden hissediyorsun. Empati yeteneğin seni dünyanın en anlayışlı insanlarından biri yapıyor. ♓🌊",
+        "textEn": "You dance on that thin line between the real world and the dream world. Your intuition is so strong that sometimes you sense what will happen beforehand. Your empathy makes you one of the most understanding people in the world. ♓🌊",
+        "keywords": ["Hayalperest", "Şefkatli", "Sezgisel"],
+        "keywordsEn": ["Dreamer", "Compassionate", "Intuitive"]
+      }
+    },
+    "moon": {
+      "aries": {
+        "title": "Duygusal Bir Havai Fişek",
+        "titleEn": "An Emotional Firework",
+        "text": "Hislerin aniden parlar ve söner. Bir şeye üzüldüğünde veya sevindiğinde bunu saklaman imkansızdır. Duygusal dünyanda dürüstlük ve hız esastır. Sabırsızlığın bazen kalbini yorsa da, cesur hislerin seni her zaman ileri taşır. 🌙♈",
+        "textEn": "Your feelings suddenly flare up and fade. When you're sad or happy about something, it's impossible to hide it. Honesty and speed are essential in your emotional world. Though your impatience sometimes tires your heart, your brave feelings always carry you forward. 🌙♈",
+        "keywords": ["Hevesli", "Dobra", "Hızlı"],
+        "keywordsEn": ["Eager", "Frank", "Fast"]
+      },
+      "taurus": {
+        "title": "Huzur Arayan Kalp",
+        "titleEn": "A Peace-Seeking Heart",
+        "text": "Duygusal güvenliğin senin için her şeydir. Sevdiğin yemekler, yumuşak battaniyeler ve sadık dostlar senin ruhunu besler. Duyguların kolay kolay sarsılmaz ama bir kere kırıldığında onarılması zaman alır. Sadakatin eşsizdir. 🌙♉",
+        "textEn": "Emotional security is everything to you. Your favorite foods, soft blankets, and loyal friends nourish your soul. Your feelings aren't easily shaken, but once broken, they take time to repair. Your loyalty is unmatched. 🌙♉",
+        "keywords": ["Sakin", "Sadık", "Konfor Düşkünü"],
+        "keywordsEn": ["Calm", "Loyal", "Comfort-loving"]
+      },
+      "gemini": {
+        "title": "Konuşan Duygular",
+        "titleEn": "Talking Emotions",
+        "text": "Hislerini kelimelere dökerek rahatlarsın. Duygusal dünyan oldukça hareketli ve değişkendir. Merakın duygularını da besler; her şeyi anlamak ve analiz etmek istersin. Bazen hissetmek yerine düşünmeyi tercih ediyorsun. 🌙♊",
+        "textEn": "You find relief by putting your feelings into words. Your emotional world is quite active and changeable. Your curiosity also feeds your emotions; you want to understand and analyze everything. Sometimes you prefer thinking over feeling. 🌙♊",
+        "keywords": ["Değişken", "Zeki", "Sosyal"],
+        "keywordsEn": ["Changeable", "Intelligent", "Social"]
+      },
+      "cancer": {
+        "title": "Okyanus Kadar Derin",
+        "titleEn": "As Deep as the Ocean",
+        "text": "Senin hislerin, başkalarının gerçeklerinden bile daha güçlü. Sevdiklerini koruma içgüdün inanılmaz. Ama bazen kabuğuna çekilip küsüyorsun, Ayla bunu hemen anlar. Evin ve ailen senin güvenli limanın. 🌙♋",
+        "textEn": "Your feelings are stronger than others' realities. Your instinct to protect your loved ones is incredible. But sometimes you retreat into your shell and sulk, Ayla notices this immediately. Your home and family are your safe harbor. 🌙♋",
+        "keywords": ["Koruyucu", "Hassas", "Anaç"],
+        "keywordsEn": ["Protective", "Sensitive", "Nurturing"]
+      },
+      "leo": {
+        "title": "Gururlu ve Cömert Kalp",
+        "titleEn": "A Proud and Generous Heart",
+        "text": "Sevilmek ve takdir edilmek senin ruhunun gıdasıdır. Duygularını dramatik ve görkemli bir şekilde yaşarsın. Kalbin o kadar geniştir ki, sevdiklerin için yapmayacağın şey yoktur. İlgi görmediğinde ise güneş tutulması yaşamış gibi hissedersin. 🌙♌",
+        "textEn": "Being loved and appreciated is food for your soul. You experience your emotions in a dramatic and magnificent way. Your heart is so wide that there's nothing you wouldn't do for your loved ones. When you don't receive attention, you feel like you've experienced a solar eclipse. 🌙♌",
+        "keywords": ["Sıcakkanlı", "Cömert", "İlgi Seven"],
+        "keywordsEn": ["Warm-hearted", "Generous", "Attention-loving"]
+      },
+      "virgo": {
+        "title": "Analitik Duygular",
+        "titleEn": "Analytical Emotions",
+        "text": "Hislerini bile bir düzene sokmak istersin. Sevdiğin insanlara faydalı olmak, onlara hizmet etmek senin için en büyük sevgi gösterisidir. Endişeli yapın bazen seni yorsa da, pratik zekanla her duygusal krizi çözebilirsin. 🌙♍",
+        "textEn": "You want to organize even your feelings. Being useful to and serving the people you love is your greatest display of love. Though your anxious nature sometimes tires you, with your practical mind you can solve any emotional crisis. 🌙♍",
+        "keywords": ["Yardımsever", "Pratik", "Evhamlı"],
+        "keywordsEn": ["Helpful", "Practical", "Anxious"]
+      },
+      "libra": {
+        "title": "Uyumlu Ruh",
+        "titleEn": "A Harmonious Soul",
+        "text": "Duygusal dengeni korumak için çevrendeki huzura ihtiyaç duyarsın. İlişkilerin senin aynandır. Tartışmalardan kaçmak için bazen kendi isteklerini bastırabilirsin. Güzellik ve sanat, kalbinin en iyi ilacıdır. 🌙♎",
+        "textEn": "You need peace around you to maintain your emotional balance. Relationships are your mirror. Sometimes you suppress your own desires to avoid arguments. Beauty and art are the best medicine for your heart. 🌙♎",
+        "keywords": ["Uyumlu", "Nazik", "Kararsız"],
+        "keywordsEn": ["Harmonious", "Kind", "Indecisive"]
+      },
+      "scorpio": {
+        "title": "Yoğun ve Gizemli Hisler",
+        "titleEn": "Intense and Mysterious Feelings",
+        "text": "Duygularını ya siyah ya beyaz yaşarsın; senin için gri diye bir renk yok. Sezgilerin o kadar keskin ki, insanların sakladığı her şeyi hissedebilirsin. Tutkun ve sadakatin çok derindir, ama ihaneti asla unutmazsın. 🌙♏",
+        "textEn": "You experience your emotions as either black or white; there's no gray for you. Your intuition is so sharp that you can sense everything people hide. Your passion and loyalty are very deep, but you never forget betrayal. 🌙♏",
+        "keywords": ["Derin", "Gizemli", "Tutkulu"],
+        "keywordsEn": ["Deep", "Mysterious", "Passionate"]
+      },
+      "sagittarius": {
+        "title": "Özgür Duygular",
+        "titleEn": "Free Emotions",
+        "text": "Duygusal olarak kısıtlanmak senin en büyük korkun. Macera ve keşif hissettikçe mutlu olursun. İçindeki bitmek bilmeyen iyimserlik, en karanlık günlerde bile seni ayağa kaldırır. Hislerin bir göçebe gibi hep yeni ufuklar arar. 🌙♐",
+        "textEn": "Being emotionally restricted is your greatest fear. You feel happy when experiencing adventure and discovery. The endless optimism within you lifts you up even on the darkest days. Your feelings, like a nomad, always seek new horizons. 🌙♐",
+        "keywords": ["İyimser", "Özgürlükçü", "Neşeli"],
+        "keywordsEn": ["Optimistic", "Freedom-loving", "Cheerful"]
+      },
+      "capricorn": {
+        "title": "Olgun ve Kontrollü Kalp",
+        "titleEn": "A Mature and Controlled Heart",
+        "text": "Duygularını dışarıya yansıtmaktan pek hoşlanmazsın; dışarıdan soğuk görünsen de içeride çok sorumlu ve sadık bir kalp var. Güvende hissetmek için başarıya ihtiyaç duyarsın. Kendi ayaklarının üzerinde durmak senin için en büyük huzur kaynağıdır. 🌙♑",
+        "textEn": "You don't really like expressing your emotions outwardly; though you may appear cold on the outside, there's a very responsible and loyal heart inside. You need success to feel secure. Standing on your own feet is your greatest source of peace. 🌙♑",
+        "keywords": ["Ciddi", "Güvenilir", "Disiplinli"],
+        "keywordsEn": ["Serious", "Reliable", "Disciplined"]
+      },
+      "aquarius": {
+        "title": "Bağımsız Ruh",
+        "titleEn": "An Independent Soul",
+        "text": "Duyguların bile bir mantık süzgecinden geçer. Herkes gibi hissetmek zorunda değilsin! Arkadaşlıkların senin için romantizmden bile daha önemli olabilir. Toplumsal meselelere duyarlı ama bireysel alanına çok düşkünsün. 🌙♒",
+        "textEn": "Even your emotions pass through a filter of logic. You don't have to feel like everyone else! Friendships can be even more important to you than romance. You're sensitive to social issues but very attached to your personal space. 🌙♒",
+        "keywords": ["Farklı", "Hümanist", "Mesafeli"],
+        "keywordsEn": ["Different", "Humanitarian", "Distant"]
+      },
+      "pisces": {
+        "title": "Empati Denizi",
+        "titleEn": "An Ocean of Empathy",
+        "text": "Dünyanın tüm acılarını ve sevinçlerini kalbinde hissedebilirsin. Sınırların o kadar belirsiz ki, bazen başkalarının duygularını kendininkiyle karıştırıyorsun. Hayal gücün senin en güvenli sığınağın. Çok şefkatlisin. 🌙♓",
+        "textEn": "You can feel all the pains and joys of the world in your heart. Your boundaries are so unclear that sometimes you confuse others' emotions with your own. Your imagination is your safest refuge. You are very compassionate. 🌙♓",
+        "keywords": ["Şefkatli", "Hayalperest", "Ruhsal"],
+        "keywordsEn": ["Compassionate", "Dreamer", "Spiritual"]
+      }
+    },
+    "mercury": {
+      "aries": {
+        "title": "Hızlı ve Öfkeli Zihin",
+        "titleEn": "A Fast and Fierce Mind",
+        "text": "Senin zihnin bir yarış arabası gibi çalışıyor! Aklına geleni anında söylüyorsun. Harika bir pratik zekan var ama bazen frene basmayı unutup karşındakini kırabiliyorsun. Biraz yavaşlamaya ne dersin? 🏎️💨",
+        "textEn": "Your mind works like a race car! You say what comes to your mind instantly. You have a great practical mind, but sometimes you forget to hit the brakes and might hurt others. How about slowing down a bit? 🏎️💨",
+        "keywords": ["Hızlı", "Dobra", "Sabırsız"],
+        "keywordsEn": ["Fast", "Frank", "Impatient"]
+      },
+      "taurus": {
+        "title": "Sakin ve Kararlı Düşünür",
+        "titleEn": "A Calm and Determined Thinker",
+        "text": "Bir kararı vermeden önce onu 40 kere ölçüp biçersin. Senin zihnin bahçesini eken bir çiftçi gibi; yavaş ama sağlam ürün verir. Öğrendiğin hiçbir şeyi asla unutmazsın. Pratik çözümler üretmekte üstüne yok. 🌳🧠",
+        "textEn": "Before making a decision, you measure it forty times. Your mind is like a farmer tending a garden; slow but yielding solid results. You never forget anything you learn. No one beats you at producing practical solutions. 🌳🧠",
+        "keywords": ["Pratik", "İnatçı", "Sağlamcı"],
+        "keywordsEn": ["Practical", "Stubborn", "Thorough"]
+      },
+      "gemini": {
+        "title": "Bilgi Avcısı",
+        "titleEn": "A Knowledge Hunter",
+        "text": "Aynı anda on farklı şey düşünmek senin için çocuk oyuncağı! Kelimelerle dans ediyorsun. Her konuda bir fikrin var ve bunları paylaşmaktan büyük keyif alıyorsun. Zihnin asla uyumayan bir şehir gibi. 📚🗣️",
+        "textEn": "Thinking about ten different things at once is child's play for you! You dance with words. You have an opinion on every topic and take great pleasure in sharing them. Your mind is like a city that never sleeps. 📚🗣️",
+        "keywords": ["Zeki", "Hızlı", "Çok Yönlü"],
+        "keywordsEn": ["Intelligent", "Fast", "Versatile"]
+      },
+      "cancer": {
+        "title": "Hafıza Şampiyonu",
+        "titleEn": "A Memory Champion",
+        "text": "Sen sadece mantığınla değil, kalbinle düşünüyorsun. Geçmişi, kokuları ve duyguları asla unutmazsın. İletişimin çok nazik ve koruyucudur. İnsanlar seninle konuşurken kendilerini evlerinde gibi hissederler. 🏠💭",
+        "textEn": "You think not only with your logic but also with your heart. You never forget the past, scents, and emotions. Your communication is very gentle and protective. People feel at home when talking with you. 🏠💭",
+        "keywords": ["Sezgisel", "Duygusal", "Hatırlatıcı"],
+        "keywordsEn": ["Intuitive", "Emotional", "Reminiscent"]
+      },
+      "leo": {
+        "title": "Yaratıcı Sözcü",
+        "titleEn": "A Creative Spokesperson",
+        "text": "Konuştuğunda herkes seni dinlesin istersin. Hitabet yeteneğin çok güçlüdür. Düşüncelerini renkli ve etkileyici bir şekilde aktarırsın. Fikirlerin konusunda bazen biraz inatçı olabilirsin ama her zaman yaratıcısın. 🎭🌟",
+        "textEn": "When you speak, you want everyone to listen to you. Your oratory skill is very strong. You convey your thoughts in a colorful and impressive way. You can be a bit stubborn about your ideas sometimes, but you're always creative. 🎭🌟",
+        "keywords": ["Etkileyici", "Öz güvenli", "Yaratıcı"],
+        "keywordsEn": ["Impressive", "Confident", "Creative"]
+      },
+      "virgo": {
+        "title": "Analiz Ustası",
+        "titleEn": "A Master Analyst",
+        "text": "Zihnin mükemmel çalışan bir saat gibi. Her şeyi parçalarına ayırıp incelemek ve en verimli hale getirmek senin işin. Detaylarda boğulmamaya dikkat etmelisin ama o keskin zekanla çözemeyeceğin sorun yok. 🔍📉",
+        "textEn": "Your mind is like a perfectly working clock. Breaking everything down into parts, examining and making it most efficient is your job. You need to be careful not to drown in details, but with that sharp mind, there's no problem you can't solve. 🔍📉",
+        "keywords": ["Titiz", "Mantıklı", "Düzenli"],
+        "keywordsEn": ["Meticulous", "Logical", "Organized"]
+      },
+      "libra": {
+        "title": "Diplomatik Zihin",
+        "titleEn": "A Diplomatic Mind",
+        "text": "Karar vermek senin için dünyanın en zor işi olabilir, çünkü her zaman 'diğer tarafı' da düşünüyorsun. Kelimelerin çok nazik ve ikna edicidir. Adaleti ve uyumu arayan bir düşünce yapın var. ⚖️🤝",
+        "textEn": "Making decisions might be the hardest thing in the world for you because you always consider 'the other side' too. Your words are very kind and persuasive. You have a mindset that seeks justice and harmony. ⚖️🤝",
+        "keywords": ["Nazik", "Kararsız", "Adil"],
+        "keywordsEn": ["Kind", "Indecisive", "Fair"]
+      },
+      "scorpio": {
+        "title": "Dedektif Zihin",
+        "titleEn": "A Detective Mind",
+        "text": "Söylenmeyeni duymak, gizleneni görmek senin uzmanlık alanın. Yüzeysel konuşmalar seni sıkar; sen derinlere, en karanlık sırların olduğu yere inmek istersin. Sözlerin bazen iğneleyici olabilir ama her zaman gerçektir. 🕵️‍♂️🌑",
+        "textEn": "Hearing the unspoken and seeing the hidden is your area of expertise. Superficial conversations bore you; you want to go deep, to where the darkest secrets are. Your words can sometimes be stinging but are always true. 🕵️‍♂️🌑",
+        "keywords": ["Derin", "Stratejik", "Keskin"],
+        "keywordsEn": ["Deep", "Strategic", "Sharp"]
+      },
+      "sagittarius": {
+        "title": "Geniş Vizyonlu Düşünür",
+        "titleEn": "A Broad-Visioned Thinker",
+        "text": "Büyük resmi görmek senin için çok kolay. Küçük detaylar yerine felsefeler ve vizyonlarla ilgilenirsin. Çok dürüstsün, bazen patavatsızlığa varan bir doğruluğun var. Zihnin hep uzak ufuklarda geziyor. 🏹🌍",
+        "textEn": "Seeing the big picture is very easy for you. You're interested in philosophies and visions rather than small details. You're very honest, sometimes to the point of being blunt. Your mind always wanders on distant horizons. 🏹🌍",
+        "keywords": ["Açık Sözlü", "Filozof", "Meraklı"],
+        "keywordsEn": ["Outspoken", "Philosophical", "Curious"]
+      },
+      "capricorn": {
+        "title": "Strateji Uzmanı",
+        "titleEn": "A Strategy Expert",
+        "text": "Düşüncelerin çok ayakları yere basan ve gerçekçidir. Boş konuşmaktan hoşlanmazsın; her sözünün bir ağırlığı ve amacı olmalı. Planlı ve disiplinli bir zihin yapısına sahipsin. Başarıya giden yolu adım adım çizersin. 🏗️📈",
+        "textEn": "Your thoughts are very grounded and realistic. You don't like idle talk; every word of yours must have weight and purpose. You have a planned and disciplined mindset. You draw the path to success step by step. 🏗️📈",
+        "keywords": ["Ciddi", "Planlı", "Disiplinli"],
+        "keywordsEn": ["Serious", "Methodical", "Disciplined"]
+      },
+      "aquarius": {
+        "title": "Dahi Zihin",
+        "titleEn": "A Genius Mind",
+        "text": "Herkesin 'A' dediği yerde senin 'Z' demen çok normal. Sıra dışı fikirlerinle insanları şaşırtmayı seviyorsun. Zihnin bir bilim kurgu filmi gibi çalışıyor. Toplumsal meseleler hakkında dertleşmek seni besler. ⚡🧪",
+        "textEn": "It's completely normal for you to say 'Z' where everyone else says 'A'. You love surprising people with your extraordinary ideas. Your mind works like a sci-fi movie. Discussing social issues nourishes you. ⚡🧪",
+        "keywords": ["Orijinal", "Objektif", "İsyankar"],
+        "keywordsEn": ["Original", "Objective", "Rebellious"]
+      },
+      "pisces": {
+        "title": "Şairane Düşünceler",
+        "titleEn": "Poetic Thoughts",
+        "text": "Düşüncelerin bir sis bulutu gibi bazen belirsiz ama her zaman çok sanatsal ve sezgiseldir. Mantıktan ziyade hayal gücünle yol alırsın. Sözlerinle insanları iyileştirebilir, onlara umut verebilirsin. 🎨🧜‍♀️",
+        "textEn": "Your thoughts are sometimes unclear like a fog, but always very artistic and intuitive. You navigate with imagination rather than logic. With your words, you can heal people and give them hope. 🎨🧜‍♀️",
+        "keywords": ["Hayalperest", "Telepatik", "Yumuşak"],
+        "keywordsEn": ["Dreamer", "Telepathic", "Gentle"]
+      }
+    },
+    "venus": {
+      "aries": {
+        "title": "Aşkta İlk Adım",
+        "titleEn": "First Move in Love",
+        "text": "Aşk senin için bir fetihtir! Birinden hoşlandığında bunu saklamazsın, doğrudan hamle yaparsın. İlişkilerinde tutku ve heyecan her zaman taze kalmalı. Sıkıcı ve rutin bir ilişki sana göre değil. 💖🏹",
+        "textEn": "Love is a conquest for you! When you like someone, you don't hide it, you make a direct move. Passion and excitement must always stay fresh in your relationships. A boring and routine relationship is not for you. 💖🏹",
+        "keywords": ["Tutkulu", "Girişken", "Sabırsız"],
+        "keywordsEn": ["Passionate", "Assertive", "Impatient"]
+      },
+      "taurus": {
+        "title": "Sadık ve Keyifçi Sevgili",
+        "titleEn": "A Loyal and Pleasure-Loving Partner",
+        "text": "Sevgi senin için dokunmak, güzel yemekler yemek ve güvenli hissetmektir. İlişkilerinde çok sadıksın ve huzur ararsın. Konforlu bir ev ortamında sevdiğinle vakit geçirmek senin için en büyük mutluluktur. 🍫🛋️",
+        "textEn": "For you, love is about touch, delicious food, and feeling secure. You are very loyal in relationships and seek peace. Spending time with your loved one in a comfortable home environment is your greatest happiness. 🍫🛋️",
+        "keywords": ["Duyusal", "Sadık", "Sahiplenici"],
+        "keywordsEn": ["Sensual", "Loyal", "Possessive"]
+      },
+      "gemini": {
+        "title": "Zihinsel Aşk",
+        "titleEn": "Mental Love",
+        "text": "Senin için aşk, harika bir sohbetle başlar. Zekasına hayran olmadığın birine aşık olman çok zordur. İlişkilerinde özgürlük ve çeşitlilik istersin. Flörtöz yapınla her zaman ilgi odağısın. 📱💌",
+        "textEn": "For you, love starts with a great conversation. It's very hard for you to fall in love with someone whose intelligence you don't admire. You want freedom and variety in your relationships. With your flirtatious nature, you're always the center of attention. 📱💌",
+        "keywords": ["Sosyal", "Eğlenceli", "Değişken"],
+        "keywordsEn": ["Social", "Fun", "Changeable"]
+      },
+      "cancer": {
+        "title": "Şefkatli Yuva",
+        "titleEn": "A Compassionate Nest",
+        "text": "Sevdiğin insanı kanatlarının altına almak istersin. Senin için sevgi, güvenli bir liman inşa etmektir. Çok romantik ve hassassın. Geçmişteki anılarına ve sevdiklerine çok bağlısın. 🧸💞",
+        "textEn": "You want to take the person you love under your wings. For you, love is building a safe harbor. You are very romantic and sensitive. You are very attached to your past memories and loved ones. 🧸💞",
+        "keywords": ["Romantik", "Anaç", "Hassas"],
+        "keywordsEn": ["Romantic", "Nurturing", "Sensitive"]
+      },
+      "leo": {
+        "title": "Görkemli Aşk",
+        "titleEn": "Magnificent Love",
+        "text": "Aşkı bir kraliyet töreni gibi yaşamayı seviyorsun! Cömert hediyeler, büyük jestler ve gurur duyulacak bir partner... Sevildiğini hissettiğinde dünyanın en sadık ve sıcak insanı olursun. 💎🦁",
+        "textEn": "You love to experience love like a royal ceremony! Generous gifts, grand gestures, and a partner to be proud of... When you feel loved, you become the most loyal and warm person in the world. 💎🦁",
+        "keywords": ["Cömert", "Sadık", "Dramatik"],
+        "keywordsEn": ["Generous", "Loyal", "Dramatic"]
+      },
+      "virgo": {
+        "title": "Hizmet Eden Sevgi",
+        "titleEn": "Love Through Service",
+        "text": "Sevdiğin kişi için bir şeyler yapmak, onun hayatını kolaylaştırmak senin sevgi dilindir. İlişkilerinde bazen fazla eleştirel olabilirsin ama bu sadece mükemmeli istediğin içindir. Çok sadık bir partnersin. 🧺🧼",
+        "textEn": "Doing things for the person you love, making their life easier, is your love language. You can sometimes be too critical in relationships, but that's only because you want perfection. You are a very loyal partner. 🧺🧼",
+        "keywords": ["Yardımsever", "Titiz", "Mütevazı"],
+        "keywordsEn": ["Helpful", "Meticulous", "Modest"]
+      },
+      "libra": {
+        "title": "Aşkın Sanatı",
+        "titleEn": "The Art of Love",
+        "text": "Uyum, güzellik ve denge... Senin ilişkilerinde aradığın üç temel taş. Yalnız kalmaktan hoşlanmazsın ve her zaman orta yolu bulmaya çalışırsın. Çok zarif ve estetik bir sevgi anlayışın var. 🌹🥂",
+        "textEn": "Harmony, beauty, and balance... The three cornerstones you seek in relationships. You don't like being alone and always try to find the middle ground. You have a very elegant and aesthetic understanding of love. 🌹🥂",
+        "keywords": ["Uyumlu", "Zarif", "Romantik"],
+        "keywordsEn": ["Harmonious", "Elegant", "Romantic"]
+      },
+      "scorpio": {
+        "title": "Ya Hep Ya Hiç",
+        "titleEn": "All or Nothing",
+        "text": "Aşkı en derin ve karanlık yanlarıyla bile kabul edersin. Bağlılığın o kadar güçlüdür ki bazen takıntılı hale gelebilirsin. Tutku senin için oksijen gibidir. Ruhsal bir birleşme ararsın. 🦂🔥",
+        "textEn": "You accept love even with its deepest and darkest sides. Your attachment is so strong that you can sometimes become obsessive. Passion is like oxygen for you. You seek a spiritual union. 🦂🔥",
+        "keywords": ["Yoğun", "Sadık", "Kıskanç"],
+        "keywordsEn": ["Intense", "Loyal", "Jealous"]
+      },
+      "sagittarius": {
+        "title": "Macera Arkadaşı",
+        "titleEn": "Adventure Companion",
+        "text": "Seninle olan bir ilişki, bitmek bilmeyen bir dünya turu gibidir! Partnerinin sana yeni ufuklar açmasını istersin. Özgürlüğüne çok düşkünsün, bu yüzden kısıtlayıcı ilişkilerden hemen kaçarsın. ✈️🌟",
+        "textEn": "A relationship with you is like an endless world tour! You want your partner to open new horizons for you. You are very attached to your freedom, so you immediately flee from restrictive relationships. ✈️🌟",
+        "keywords": ["Özgür Ruhlu", "Dürüst", "Neşeli"],
+        "keywordsEn": ["Free-spirited", "Honest", "Cheerful"]
+      },
+      "capricorn": {
+        "title": "Ciddi ve Kalıcı İlişkiler",
+        "titleEn": "Serious and Lasting Relationships",
+        "text": "Aşkta oyunlara yer yok! Sen geleceği olan, sağlam temelli ilişkiler ararsın. Sevdiğine karşı çok sorumlu ve sadıksın. Duygularını göstermen zaman alabilir ama gösterdiğinde bu gerçektir. 🏰🤝",
+        "textEn": "No room for games in love! You seek relationships with a future, built on solid foundations. You are very responsible and loyal to your loved one. It may take time for you to show your feelings, but when you do, it's genuine. 🏰🤝",
+        "keywords": ["Mesafeli", "Güvenilir", "Sabırlı"],
+        "keywordsEn": ["Reserved", "Reliable", "Patient"]
+      },
+      "aquarius": {
+        "title": "Sıra Dışı Sevgi",
+        "titleEn": "Extraordinary Love",
+        "text": "Senin için aşk, öncelikle çok iyi bir arkadaşlıktır. Klasik ilişki kalıplarından nefret edersin. Bağımsızlığına çok düşkünsün ve partnerinin de öyle olmasını istersin. Çok orijinal bir tarzın var. 👽🌈",
+        "textEn": "For you, love is first and foremost a very good friendship. You hate classic relationship patterns. You are very attached to your independence and want your partner to be the same. You have a very original style. 👽🌈",
+        "keywords": ["Bağımsız", "Arkadaş Canlısı", "Farklı"],
+        "keywordsEn": ["Independent", "Friendly", "Different"]
+      },
+      "pisces": {
+        "title": "Sonsuz Şefkat",
+        "titleEn": "Infinite Compassion",
+        "text": "Kendini aşkın içinde kaybetmeyi seviyorsun. Sınırsız bir sevgin ve empati yeteneğin var. Çok romantik ve fedakarsın. Partnerini idealleştirme eğilimin seni bazen hayal kırıklığına uğratabilir. 🌊🦄",
+        "textEn": "You love to lose yourself in love. You have boundless love and empathy. You are very romantic and self-sacrificing. Your tendency to idealize your partner can sometimes lead to disappointment. 🌊🦄",
+        "keywords": ["Fedakar", "Romantik", "Hassas"],
+        "keywordsEn": ["Self-sacrificing", "Romantic", "Sensitive"]
+      }
+    },
+    "mars": {
+      "aries": {
+        "title": "Saf Enerji",
+        "titleEn": "Pure Energy",
+        "text": "Mars kendi evinde! Çok güçlü, cesur ve hızlısın. Bir şeye karar verdiğinde kimse önünde duramaz. Mücadele etmekten ve rekabetten büyük keyif alırsın. Öfken saman alevi gibidir, çabuk parlar çabuk söner. ⚔️💥",
+        "textEn": "Mars is at home! You are very strong, brave, and fast. When you decide on something, no one can stand in your way. You take great pleasure in struggle and competition. Your anger is like a flash fire, quick to flare up and quick to die down. ⚔️💥",
+        "keywords": ["Cesur", "Atılgan", "Sabırsız"],
+        "keywordsEn": ["Brave", "Bold", "Impatient"]
+      },
+      "taurus": {
+        "title": "Dayanıklı Savaşçı",
+        "titleEn": "A Resilient Warrior",
+        "text": "Senin enerjin yavaş ama durdurulamaz bir tank gibidir. Hedefine ulaşmak için gereken sabra fazlasıyla sahipsin. Fiziksel gücün ve dayanıklılığın yüksektir. Bir şeye başladığında onu mutlaka bitirirsin. 🐂🧱",
+        "textEn": "Your energy is like a slow but unstoppable tank. You have more than enough patience to reach your goal. Your physical strength and endurance are high. When you start something, you definitely finish it. 🐂🧱",
+        "keywords": ["İnatçı", "Sabırlı", "Güçlü"],
+        "keywordsEn": ["Stubborn", "Patient", "Strong"]
+      },
+      "gemini": {
+        "title": "Kelimelerin Savaşı",
+        "titleEn": "The Battle of Words",
+        "text": "Enerjini zihinsel alanlarda harcarsın. Tartışmalarda çok hızlı ve zekice karşılık verirsin. Ellerini kullanma becerin yüksektir. Aynı anda birçok işle uğraşmak seni yormaz, aksine besler. ⌨️🗣️",
+        "textEn": "You spend your energy in mental areas. You respond very quickly and cleverly in debates. Your skill with your hands is high. Dealing with many tasks at once doesn't tire you, it nourishes you. ⌨️🗣️",
+        "keywords": ["Hızlı", "Huzursuz", "Çok Yönlü"],
+        "keywordsEn": ["Fast", "Restless", "Versatile"]
+      },
+      "cancer": {
+        "title": "Koruyucu Enerji",
+        "titleEn": "Protective Energy",
+        "text": "Enerjin duygularına göre değişir. Sevdiklerini korumak söz konusu olduğunda bir aslana dönüşebilirsin. Doğrudan çatışma yerine dolaylı yolları tercih edersin. Evin için çalışmak seni motive eder. 🛡️🦀",
+        "textEn": "Your energy changes according to your emotions. When it comes to protecting your loved ones, you can turn into a lion. You prefer indirect ways rather than direct confrontation. Working for your home motivates you. 🛡️🦀",
+        "keywords": ["Savunmacı", "Duygusal", "Azimli"],
+        "keywordsEn": ["Defensive", "Emotional", "Determined"]
+      },
+      "leo": {
+        "title": "Sahne Senin",
+        "titleEn": "The Stage is Yours",
+        "text": "Yaratıcı projelerde ve liderlik rollerinde enerjin zirveye çıkar. Çok cömert ve gururlu bir savaşçısın. Takdir edilmek senin en büyük yakıtındır. Hayat enerjin ve karizmanla kitleleri etkileyebilirsin. 🦁🎬",
+        "textEn": "Your energy peaks in creative projects and leadership roles. You are a very generous and proud warrior. Being appreciated is your greatest fuel. With your life energy and charisma, you can influence the masses. 🦁🎬",
+        "keywords": ["Karizmatik", "Gururlu", "Yaratıcı"],
+        "keywordsEn": ["Charismatic", "Proud", "Creative"]
+      },
+      "virgo": {
+        "title": "Hassas İşçilik",
+        "titleEn": "Precise Craftsmanship",
+        "text": "Enerjini verimli ve düzenli bir şekilde kullanırsın. Dağınıklık ve plansızlık senin enerjini tüketir. Çok çalışkan ve detaycısın. Teknik beceriler gerektiren işlerde mükemmeller yaratırsın. 🛠️📏",
+        "textEn": "You use your energy efficiently and orderly. Messiness and lack of planning drain your energy. You are very hardworking and detail-oriented. You create perfection in jobs requiring technical skills. 🛠️📏",
+        "keywords": ["Çalışkan", "Titiz", "Pratik"],
+        "keywordsEn": ["Hardworking", "Meticulous", "Practical"]
+      },
+      "libra": {
+        "title": "Barışçıl Savaşçı",
+        "titleEn": "A Peaceful Warrior",
+        "text": "Çatışmalardan nefret edersin ve enerjini dengeyi sağlamak için harcarsın. Adalet için savaşmak seni motive eder. Karar verirken çok zorlanabilirsin çünkü kimseyi kırmak istemezsin. ⚖️🕊️",
+        "textEn": "You hate conflicts and spend your energy maintaining balance. Fighting for justice motivates you. You may struggle greatly when making decisions because you don't want to hurt anyone. ⚖️🕊️",
+        "keywords": ["Diplomatik", "Kararsız", "Zarif"],
+        "keywordsEn": ["Diplomatic", "Indecisive", "Elegant"]
+      },
+      "scorpio": {
+        "title": "Yıkılmaz İrade",
+        "titleEn": "Indestructible Will",
+        "text": "Mars burada çok derin ve stratejiktir. Sessizce beklersin ve doğru an geldiğinde hedefini tam on ikiden vurursun. Çok dayanıklı ve odaklısın. Duygusal krizleri aşma gücün inanılmazdır. 🦂🌑",
+        "textEn": "Mars here is very deep and strategic. You wait quietly and when the right moment comes, you hit your target dead center. You are very resilient and focused. Your power to overcome emotional crises is incredible. 🦂🌑",
+        "keywords": ["Stratejik", "Odaklı", "Dayanıklı"],
+        "keywordsEn": ["Strategic", "Focused", "Resilient"]
+      },
+      "sagittarius": {
+        "title": "Maceracı Enerji",
+        "titleEn": "Adventurous Energy",
+        "text": "Yeni şeyler keşfetmek ve öğrenmek senin için en büyük aksiyondur. Özgürlüğün kısıtlandığında enerjin düşer. Çok iyimser ve heveslisin. İnançların uğruna sonuna kadar savaşabilirsin. 🏹🏔️",
+        "textEn": "Discovering and learning new things is the greatest action for you. Your energy drops when your freedom is restricted. You are very optimistic and eager. You can fight to the end for your beliefs. 🏹🏔️",
+        "keywords": ["Hevesli", "Özgürlükçü", "Doğrudan"],
+        "keywordsEn": ["Eager", "Freedom-loving", "Direct"]
+      },
+      "capricorn": {
+        "title": "Zirveye Odaklı",
+        "titleEn": "Summit-Focused",
+        "text": "Mars burada yücelir! Çok disiplinli, sabırlı ve hırslısın. Enerjini uzun vadeli hedeflerin için tasarruflu kullanırsın. Başarı ve statü senin için en büyük motivasyondur. Çok güvenilir bir lider olursun. 🏔️💼",
+        "textEn": "Mars is exalted here! You are very disciplined, patient, and ambitious. You use your energy sparingly for long-term goals. Success and status are your greatest motivation. You become a very reliable leader. 🏔️💼",
+        "keywords": ["Hırslı", "Disiplinli", "Sabırlı"],
+        "keywordsEn": ["Ambitious", "Disciplined", "Patient"]
+      },
+      "aquarius": {
+        "title": "Sıra Dışı Eylem",
+        "titleEn": "Extraordinary Action",
+        "text": "Klasik yöntemler sana göre değil! Enerjini toplumsal değişim ve yenilikçi projeler için harcarsın. Çok bağımsızsın ve kendi kurallarına göre oynamayı seversin. Zihinsel özgürlük senin için savaşmaya değerdir. ⚡🛰️",
+        "textEn": "Classic methods are not for you! You spend your energy on social change and innovative projects. You are very independent and love to play by your own rules. Mental freedom is worth fighting for. ⚡🛰️",
+        "keywords": ["Yenilikçi", "Bağımsız", "İsyankar"],
+        "keywordsEn": ["Innovative", "Independent", "Rebellious"]
+      },
+      "pisces": {
+        "title": "Sessiz Güç",
+        "titleEn": "Silent Power",
+        "text": "Enerjin bir akış gibidir; bazen çok güçlü bazen çok durgun. Hayallerin ve ideallerin uğruna çalışmak seni mutlu eder. Çok fedakarsın. Sanatsal ve ruhsal alanlarda çok başarılı olabilirsin. 🌊🎨",
+        "textEn": "Your energy is like a flow; sometimes very strong, sometimes very calm. Working for your dreams and ideals makes you happy. You are very self-sacrificing. You can be very successful in artistic and spiritual fields. 🌊🎨",
+        "keywords": ["Hassas", "Hayalperest", "Fedakar"],
+        "keywordsEn": ["Sensitive", "Dreamer", "Self-sacrificing"]
+      }
+    },
+    "jupiter": {
+      "aries": {
+        "title": "Cesur Şans",
+        "titleEn": "Brave Fortune",
+        "text": "Şansın, yeni bir şeye başlama cesaretini gösterdiğinde açılıyor. Liderlik ettiğin her konuda büyüme potansiyelin var. Öz güvenin senin en büyük hazinen. 🍀♈",
+        "textEn": "Your luck opens up when you show the courage to start something new. You have growth potential in every area you lead. Your self-confidence is your greatest treasure. 🍀♈",
+        "keywords": ["Girişimci", "Cesur", "Şanslı"],
+        "keywordsEn": ["Entrepreneurial", "Brave", "Lucky"]
+      },
+      "taurus": {
+        "title": "Bereketli Şans",
+        "titleEn": "Abundant Fortune",
+        "text": "Maddi dünyada büyüme ve bolluk seninle. Sabırlı olduğunda ve doğayla bağ kurduğunda şansın artıyor. Yaşamın keyiflerini paylaşmak seni zenginleştiriyor. 💰♉",
+        "textEn": "Growth and abundance in the material world are with you. Your luck increases when you are patient and connect with nature. Sharing life's pleasures enriches you. 💰♉",
+        "keywords": ["Bereketli", "Sabırlı", "Konforlu"],
+        "keywordsEn": ["Abundant", "Patient", "Comfortable"]
+      },
+      "gemini": {
+        "title": "Bilgiyle Gelen Büyüme",
+        "titleEn": "Growth Through Knowledge",
+        "text": "Öğrendiğin her yeni bilgi sana yeni kapılar açıyor. İletişim ve yazma yeteneğinle büyük başarılara imza atabilirsin. Zihinsel çeşitlilik senin şansını artırıyor. 📚♊",
+        "textEn": "Every new piece of knowledge you learn opens new doors for you. With your communication and writing skills, you can achieve great success. Mental variety increases your luck. 📚♊",
+        "keywords": ["Çok Yönlü", "Meraklı", "Konuşkan"],
+        "keywordsEn": ["Versatile", "Curious", "Talkative"]
+      },
+      "cancer": {
+        "title": "Ruhsal Bolluk",
+        "titleEn": "Spiritual Abundance",
+        "text": "Jüpiter burada çok mutlu! Evin, ailen ve sevdiklerin sana en büyük şansı getiriyor. Empati ve şefkat gösterdikçe hayatın güzelleşiyor. Çok koruyucusun. 🏠♋",
+        "textEn": "Jupiter is very happy here! Your home, family, and loved ones bring you the greatest luck. As you show empathy and compassion, your life becomes more beautiful. You are very protective. 🏠♋",
+        "keywords": ["Şefkatli", "Huzurlu", "Bereketli"],
+        "keywordsEn": ["Compassionate", "Peaceful", "Abundant"]
+      },
+      "leo": {
+        "title": "Görkemli Şans",
+        "titleEn": "Magnificent Fortune",
+        "text": "Yaratıcılığın ve cömertliğin sana kapıları açıyor. Sahne ışıkları altında büyüyorsun. Yaşama sevincin ve sıcaklığın çevrendeki herkesi besliyor. 🌟♌",
+        "textEn": "Your creativity and generosity open doors for you. You grow under the spotlight. Your joy for life and warmth nourish everyone around you. 🌟♌",
+        "keywords": ["Cömert", "Yaratıcı", "Neşeli"],
+        "keywordsEn": ["Generous", "Creative", "Cheerful"]
+      },
+      "virgo": {
+        "title": "Çalışarak Büyüme",
+        "titleEn": "Growth Through Work",
+        "text": "Şansın, detaylara verdiğin önem ve başkalarına ettiğin hizmette gizli. Sağlıklı yaşam ve düzen konularında uzmanlaşarak büyüyebilirsin. Çok pratiksin. 🔍♍",
+        "textEn": "Your luck is hidden in the attention you give to details and the service you provide to others. You can grow by specializing in healthy living and organization. You are very practical. 🔍♍",
+        "keywords": ["Titiz", "Pratik", "Yararlı"],
+        "keywordsEn": ["Meticulous", "Practical", "Helpful"]
+      },
+      "libra": {
+        "title": "İlişkilerle Gelen Şans",
+        "titleEn": "Fortune Through Relationships",
+        "text": "Doğru ortaklıklar ve uyumlu ilişkiler seni zirveye taşıyor. Adalet ve diplomasi yeteneğinle her türlü sorunu çözebilirsin. Zarafetin senin anahtarın. ⚖️♎",
+        "textEn": "The right partnerships and harmonious relationships carry you to the top. With your sense of justice and diplomatic ability, you can solve any problem. Your elegance is your key. ⚖️♎",
+        "keywords": ["Uyumlu", "Adil", "Sosyal"],
+        "keywordsEn": ["Harmonious", "Fair", "Social"]
+      },
+      "scorpio": {
+        "title": "Dönüşümle Gelen Güç",
+        "titleEn": "Power Through Transformation",
+        "text": "Derin araştırmalar ve ruhsal dönüşümler sana en büyük zenginliği getiriyor. Başkalarının kaynaklarını yönetme yeteneğin güçlüdür. Çok dirençlisin. 🦂♏",
+        "textEn": "Deep research and spiritual transformations bring you the greatest wealth. Your ability to manage others' resources is strong. You are very resilient. 🦂♏",
+        "keywords": ["Derin", "Güçlü", "Sezgisel"],
+        "keywordsEn": ["Deep", "Powerful", "Intuitive"]
+      },
+      "sagittarius": {
+        "title": "Sonsuz Ufuklar",
+        "titleEn": "Infinite Horizons",
+        "text": "Jüpiter kendi evinde! Şansın her zaman seninle. Yolculuklar, felsefe ve yabancı kültürler seni büyütüyor. İyimserliğin en büyük koruyucun. 🌍♐",
+        "textEn": "Jupiter is at home! Luck is always with you. Travel, philosophy, and foreign cultures help you grow. Your optimism is your greatest protector. 🌍♐",
+        "keywords": ["Maceracı", "Bilge", "Şanslı"],
+        "keywordsEn": ["Adventurous", "Wise", "Lucky"]
+      },
+      "capricorn": {
+        "title": "Disiplinli Başarı",
+        "titleEn": "Disciplined Success",
+        "text": "Büyük hedeflere ulaşmak için gereken sabır ve strateji sende var. Toplumsal statü ve kariyer alanında kalıcı bir büyüme sağlayabilirsin. Çok ciddişin. 🏔️♑",
+        "textEn": "You have the patience and strategy needed to reach great goals. You can achieve lasting growth in social status and career areas. You are very serious. 🏔️♑",
+        "keywords": ["Hırslı", "Disiplinli", "Sabırlı"],
+        "keywordsEn": ["Ambitious", "Disciplined", "Patient"]
+      },
+      "aquarius": {
+        "title": "İnsanlıkla Büyüme",
+        "titleEn": "Growth Through Humanity",
+        "text": "Topluma faydalı işler yaptığında ve özgün fikirlerini paylaştığında şansın parlıyor. Geleceği okuma yeteneğin çok güçlüdür. Çok özgürsün. ⚡♒",
+        "textEn": "Your luck shines when you do things beneficial to society and share your original ideas. Your ability to read the future is very strong. You are very free. ⚡♒",
+        "keywords": ["Orijinal", "Vizyoner", "Hümanist"],
+        "keywordsEn": ["Original", "Visionary", "Humanitarian"]
+      },
+      "pisces": {
+        "title": "İlahi Şans",
+        "titleEn": "Divine Fortune",
+        "text": "İnancın ve hayal gücün sana mucizeler getiriyor. Sanatsal ve ruhsal alanlarda sınırsız bir büyüme potansiyelin var. Çok şefkatlisin. 🌊♓",
+        "textEn": "Your faith and imagination bring you miracles. You have unlimited growth potential in artistic and spiritual fields. You are very compassionate. 🌊♓",
+        "keywords": ["Ruhsal", "Şefkatli", "Yaratıcı"],
+        "keywordsEn": ["Spiritual", "Compassionate", "Creative"]
+      }
+    },
+    "ascendant": {
+      "aries": {
+        "title": "Dinamik ve Cesur",
+        "titleEn": "Dynamic and Brave",
+        "text": "Dışarıdan çok enerjik, girişken ve bazen biraz sert görünebilirsin. İnsanlar senin yanındayken harekete geçmek zorunda hissederler. Çok doğal bir liderlik karizman var. ♈⚡",
+        "textEn": "From the outside, you may appear very energetic, assertive, and sometimes a bit harsh. People feel compelled to take action when they're with you. You have a very natural leadership charisma. ♈⚡",
+        "keywords": ["Hızlı", "Cesur", "Doğrudan"],
+        "keywordsEn": ["Fast", "Brave", "Direct"]
+      },
+      "taurus": {
+        "title": "Huzurlu ve Sabit",
+        "titleEn": "Peaceful and Stable",
+        "text": "İnsanlar seni ilk gördüğünde güven verirsin. Sakin ses tonun ve özenli tarzınla dikkat çekersin. Kaliteye ve konfora önem verdiğin her halinden bellidir. ♉🌳",
+        "textEn": "People feel trust when they first see you. You draw attention with your calm tone and careful style. It's evident from everything about you that you value quality and comfort. ♉🌳",
+        "keywords": ["Güvenilir", "Zarif", "Sabırlı"],
+        "keywordsEn": ["Reliable", "Elegant", "Patient"]
+      },
+      "gemini": {
+        "title": "Canlı ve Meraklı",
+        "titleEn": "Lively and Curious",
+        "text": "Sürekli hareket halindesin ve konuşmaya hazırsın! İnsanlar sendeki o genç ve zeki enerjiyi hemen hisseder. İletişim kurmak senin için nefes almak gibi. ♊🦋",
+        "textEn": "You're constantly in motion and ready to talk! People immediately sense that young and intelligent energy in you. Communication is like breathing for you. ♊🦋",
+        "keywords": ["Zeki", "Esnek", "Konuşkan"],
+        "keywordsEn": ["Intelligent", "Flexible", "Talkative"]
+      },
+      "cancer": {
+        "title": "Yumuşak ve Şefkatli",
+        "titleEn": "Soft and Compassionate",
+        "text": "İnsanlar seni ilk gördüğünde bir güven ve sıcaklık hissederler. Yüz hatların ve tarzın çok yumuşaktır. Hassasiyetini saklamaya çalışsan da sezgilerin dışarı sızar. ♋🐚",
+        "textEn": "People feel a sense of trust and warmth when they first see you. Your facial features and style are very soft. Even though you try to hide your sensitivity, your intuition seeps out. ♋🐚",
+        "keywords": ["Hassas", "Koruyucu", "Anaç"],
+        "keywordsEn": ["Sensitive", "Protective", "Nurturing"]
+      },
+      "leo": {
+        "title": "Görkemli ve Sıcak",
+        "titleEn": "Magnificent and Warm",
+        "text": "Girdiğin her ortamda tüm gözler sana döner! Saçların, gülüşün ve dik duruşunla adeta bir güneş gibisin. Çok cömert ve kendinden emin bir duruşun var. ♌👑",
+        "textEn": "All eyes turn to you in every environment you enter! With your hair, smile, and upright posture, you're like a sun. You have a very generous and confident presence. ♌👑",
+        "keywords": ["Karizmatik", "Cömert", "Görkemli"],
+        "keywordsEn": ["Charismatic", "Generous", "Magnificent"]
+      },
+      "virgo": {
+        "title": "Temiz ve Düzenli",
+        "titleEn": "Clean and Organized",
+        "text": "Dışarıdan çok titiz, dikkatli ve mütevazı görünürsün. Gözlem yeteneğin o kadar güçlüdür ki insanlar senin yanında kendilerini biraz incelenmiş hissedebilir. ♍✨",
+        "textEn": "From the outside, you appear very meticulous, careful, and modest. Your observation skills are so strong that people may feel a bit examined around you. ♍✨",
+        "keywords": ["Titiz", "Analitik", "Yalın"],
+        "keywordsEn": ["Meticulous", "Analytical", "Simple"]
+      },
+      "libra": {
+        "title": "Zarif ve Çekici",
+        "titleEn": "Elegant and Attractive",
+        "text": "Estetik ve uyum senin dış dünyadaki imzan. Çok nazik ve güleryüzlüsün. İnsanlar senin yanındayken kendilerini çok konforlu hissederler. Zarafetin büyüleyici. ♎🌹",
+        "textEn": "Aesthetics and harmony are your signature in the outer world. You are very kind and smiley. People feel very comfortable around you. Your elegance is enchanting. ♎🌹",
+        "keywords": ["Zarif", "Uyumlu", "Nazik"],
+        "keywordsEn": ["Elegant", "Harmonious", "Kind"]
+      },
+      "scorpio": {
+        "title": "Manyetik ve Derin",
+        "titleEn": "Magnetic and Deep",
+        "text": "Bakışlarınla insanları adeta hipnotize edebilirsin. Çok gizemli ve güçlü bir enerjin var. İnsanlar senden hem çekinir hem de sana hayranlık duyarlar. Çok kontrollüsün. ♏🦂",
+        "textEn": "You can almost hypnotize people with your gaze. You have a very mysterious and powerful energy. People both fear you and admire you. You are very controlled. ♏🦂",
+        "keywords": ["Gizemli", "Güçlü", "Manyetik"],
+        "keywordsEn": ["Mysterious", "Powerful", "Magnetic"]
+      },
+      "sagittarius": {
+        "title": "Neşeli ve Maceracı",
+        "titleEn": "Cheerful and Adventurous",
+        "text": "Gülüşünle odayı aydınlatıyorsun! İnsanlar senin yanında kendilerini özgür ve mutlu hissederler. Çok dürüst ve doğrudan bir tarzın var. Hep bir yolculuk halindesin. ♐🏹",
+        "textEn": "You light up the room with your smile! People feel free and happy around you. You have a very honest and direct style. You're always on a journey. ♐🏹",
+        "keywords": ["İyimser", "Özgür", "Hevesli"],
+        "keywordsEn": ["Optimistic", "Free", "Eager"]
+      },
+      "capricorn": {
+        "title": "Ciddi ve Kararlı",
+        "titleEn": "Serious and Determined",
+        "text": "İnsanlar seni ilk gördüğünde saygı duyarlar. Çok olgun, disiplinli ve mesafeli bir duruşun var. Zamanla açılan ama her zaman güven veren bir karakterin var. ♑💼",
+        "textEn": "People respect you when they first see you. You have a very mature, disciplined, and distant posture. You have a character that opens up over time but always inspires trust. ♑💼",
+        "keywords": ["Olgun", "Ciddi", "Güvenilir"],
+        "keywordsEn": ["Mature", "Serious", "Reliable"]
+      },
+      "aquarius": {
+        "title": "Farklı ve Orijinal",
+        "titleEn": "Different and Original",
+        "text": "Tarzınla ve düşüncelerinle her zaman 'başka' olduğunu hissettirirsin. İnsanlar senin ne yapacağını asla tahmin edemez. Çok arkadaş canlısı ama mesafeli bir enerjin var. ♒🛰️",
+        "textEn": "With your style and thoughts, you always make people feel you're 'different'. People can never predict what you'll do. You have a very friendly but distant energy. ♒🛰️",
+        "keywords": ["Orijinal", "Bağımsız", "Zeki"],
+        "keywordsEn": ["Original", "Independent", "Intelligent"]
+      },
+      "pisces": {
+        "title": "Rüya Gibi ve Yumuşak",
+        "titleEn": "Dreamy and Soft",
+        "text": "Bakışların sanki başka dünyalara bakıyor gibi... Çok şefkatli, sanatsal ve biraz kırılgan bir imajın var. İnsanlar senin yanında huzur bulur. Çok sezgiselsin. ♓🌊",
+        "textEn": "Your gaze seems to look at other worlds... You have a very compassionate, artistic, and somewhat fragile image. People find peace around you. You are very intuitive. ♓🌊",
+        "keywords": ["Hayalperest", "Şefkatli", "Sanatsal"],
+        "keywordsEn": ["Dreamer", "Compassionate", "Artistic"]
+      }
+    }
+  }
+}
