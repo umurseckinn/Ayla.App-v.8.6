@@ -108,6 +108,7 @@
         "tailwindcss-animate": "^1.0.7",
         "three": "^0.178.0",
         "vaul": "^1.1.2",
+        "xlsx": "^0.18.5",
         "zod": "^4.1.12"
     },
     "devDependencies": {
