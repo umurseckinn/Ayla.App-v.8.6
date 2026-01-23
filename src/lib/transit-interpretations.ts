@@ -48,148 +48,1829 @@ export function formatHouseNumber(house: number, language: 'tr' | 'en' = 'tr'): 
   return `The ${house}${suffix} House`;
 }
 
-export const PLANET_HOUSE_INTERPRETATIONS: Record<string, Record<number, { tr: string; en: string }>> = {
+export const PLANET_HOUSE_INTERPRETATIONS: Record<string, Record<number, { tr: string; en: string; positive?: string[]; negative?: string[]; neutral?: string[] }>> = {
   "Güneş": {
-    1: { tr: "Kişisel enerjinin ve özgüvenin parladığı bir dönemdesin. Kendini daha net ifade edebilir, yeni başlangıçlar için gereken cesareti bulabilirsin.", en: "A period when your personal energy and confidence shine. You can express yourself more clearly and find the courage for new beginnings." },
-    2: { tr: "Maddi değerler ve özsaygı konuları ön planda. Gelirlerini artırmak veya yeteneklerini paraya dönüştürmek için odaklanabilirsin.", en: "Material values and self-esteem are in focus. You can focus on increasing your income or turning your talents into money." },
-    3: { tr: "İletişim, yakın çevre ve kısa yolculuklar hareketleniyor. Yeni bir şeyler öğrenmek veya fikirlerini paylaşmak için harika bir zaman.", en: "Communication, close environment and short trips are getting active. A great time to learn new things or share your ideas." },
-    4: { tr: "Ev, aile ve köklerinle ilgili konular odağında. İç dünyana dönmek, evinde huzur aramak ve aile bağlarını güçlendirmek isteyebilirsin.", en: "Home, family and root issues are in focus. You may want to turn to your inner world, seek peace at home and strengthen family ties." },
-    5: { tr: "Yaratıcılık, aşk ve eğlence zamanı! Hobilerine vakit ayırabilir, kalbinin sesini dinleyebilir ve hayatın tadını çıkarabilirsin.", en: "Time for creativity, love and fun! You can spend time on your hobbies, listen to your heart and enjoy life." },
-    6: { tr: "Günlük rutinlerin, iş hayatın ve sağlığınla ilgilenme vakti. Düzen kurmak, alışkanlıklarını iyileştirmek sana iyi gelecek.", en: "Time to take care of your daily routines, work life and health. Establishing order and improving your habits will do you good." },
-    7: { tr: "İlişkiler ve ortaklıklar aynası önündesin. Partnerinle veya yakın arkadaşlarınla olan bağlarını dengelemek, iş birliklerine odaklanmak önem kazanıyor.", en: "In front of the mirror of relationships and partnerships. Balancing your bonds with your partner or close friends and focusing on collaborations becomes important." },
-    8: { tr: "Dönüşüm, ortak kaynaklar ve derin tutkular gündemde. Korkularınla yüzleşmek ve hayatındaki fazlalıklardan arınmak için güçlü bir enerjin var.", en: "Transformation, shared resources and deep passions are on the agenda. A powerful energy to face your fears and purify yourself from excesses in your life." },
-    9: { tr: "Ufuklarını genişletme vaktindesin. Eğitim, seyahat veya felsefi konularla ilgilenebilir, hayata daha geniş bir pencereden bakabilirsin.", en: "Time to expand your horizons. You can engage with education, travel or philosophical topics, and look at life from a broader perspective." },
-    10: { tr: "Kariyer ve toplumsal statünle ilgili parladığın bir dönemdesin. Hedeflerine odaklanabilir, başarılarınla dikkat çekebilirsin.", en: "A period when you shine regarding career and social status. You can focus on your goals and attract attention with your achievements." },
-    11: { tr: "Sosyal çevre, arkadaşlıklar ve gelecek planları aktifleşiyor. Gruplar içinde aktif rol alabilir, hayallerine bir adım daha yaklaşabilirsin.", en: "Social circle, friendships and future plans are becoming active. You can take an active role in groups and get one step closer to your dreams." },
-    12: { tr: "Geri çekilme, dinlenme ve ruhsal arınma dönemindesin. Bilinçaltını temizlemek, meditasyon yapmak ve iç huzurunu bulmak için ideal bir zaman.", en: "A period of withdrawal, rest and spiritual purification. Ideal for cleansing your subconscious, meditating and finding inner peace." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Şu an çevrendeki insanlardan harika destekler alabileceğin, fırsatların önüne kırmızı halıyla serildiği bir süreçtesin. Sosyal çevrende parladığın ve yeteneklerini sergilemekten çekinmediğin için işlerin tıkır tıkır ilerliyor. Küçük ama etkili adımlar atarak geleceğini sağlam temellere oturtuyorsun. İçindeki o yaratıcı enerjiyi bir hobiye ya da projeye yönlendirirsen sonuçlarına şaşırabilirsin.",
+        "Hayatının en akışta olduğu, her şeyin kendiliğinden hallolduğu o büyülü dönemlerden birindesin. Fiziksel sağlığın ve enerjin yerinde, bu da seni çok daha çekici ve ikna edici kılıyor. Hiç zorlanmadan isteklerini elde edebilir, şansın yardımıyla kapalı kapıları kolayca açabilirsin. Tadını çıkar, çünkü evren şu an seni her konuda destekliyor ve arkanda duruyor.",
+      ],
+      negative: [
+        "Biraz gergin misin ne? Sanki egonla dış dünyanın beklentileri arasında sıkışıp kalmış gibisin. Kendini ifade etmek isterken yanlış anlaşılmalar yaşayabilir, otorite figürleriyle gereksiz sürtüşmelere girebilirsin. Bu dönemde \"ben\" demek yerine biraz daha \"biz\" demeye odaklanmalı ve öfke kontrolüne dikkat etmelisin. Enerjini içsel bir savaşa harcamak yerine, eksiklerini tamamlamak için kullanmalısın.",
+        "Tüm enerjin ikili ilişkilere ve karşındaki insanlara kaymış durumda. Kendi isteklerinle partnerinin veya ortağının beklentileri arasında bir denge kurman gerekiyor. Aynada gördüğün kişiyi değil de, başkalarının sende ne gördüğünü çok önemsediğin için biraz yorgun düşebilirsin. Kendi merkezinizde kalmayı başarırsan, bu karşıtlık sana harika bir farkındalık kazandıracaktır.",
+      ],
+      neutral: [
+        "Canım, adeta küllerinden yeniden doğduğun bir dönemdesin! Güneş senin birinci evinde parlıyorken etrafına inanılmaz bir ışık ve enerji saçıyorsun. Kendine olan güvenin tavan yapmış durumda, girdiğin her ortamda tüm gözler senin üzerinde olacak. Hayatında yeni bir sayfa açmak, imajını tazelemek için bundan daha iyi bir zaman bulamazdın; sahne senin!",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Maddi konularda çevrenden veya yeteneklerinden gelen desteklerle rahatlayacağın bir süreçtesin. Yatırım yapmak veya bir mülk edinmek gibi fikirlerin varsa, uygun fırsatlarla karşılaşabilirsin. Kendi özgüvenin arttıkça cüzdanın da dolmaya başlayacak, çünkü sen kendine değer verdikçe evren de sana değer veriyor. Ufak tefek ama bereketli kazançlar kapıda!",
+        "Finansal anlamda altın çağını yaşıyorsun diyebiliriz, paranın sana gelişi çok kolaylaştı. Sahip olduğun kaynakları büyütmek, birikim yapmak veya lüks ihtiyaçlarını karşılamak için harika bir akış var. Kendi yeteneklerine olan güvenin sana yeni kazanç kapıları açıyor. Maddi güvenlik hissi ruhuna da çok iyi gelecek, kendini çok daha sağlamda hissedeceksin.",
+      ],
+      negative: [
+        "Harcamalar kontrolden çıkabilir, aman cüzdanına sahip çık! Kendini ispatlamak veya mutsuzluğunu bastırmak için gereksiz alışverişler yapma eğilimindesin. Finansal konularda otorite figürleriyle veya bankalarla sıkıntılar yaşanabilir. Bu dönemde riskli yatırımlardan uzak durmalı ve \"ayağını yorganına göre uzat\" prensibini benimsemelisin.",
+        "\"Benim param\" ile \"bizim paramız\" (veya başkalarının kaynakları) arasında bir çekişme yaşanabilir. Ortaklı kazançlar veya borç-alacak dengesini kurmakta zorlanabilirsin. Kendi değerini başkalarının sana ne kadar verdiğiyle ölçmemeye çalış. Maddi konularda dengeyi bulmak için biraz daha stratejik ve paylaşımcı olman gerekebilir.",
+      ],
+      neutral: [
+        "Para konuları senin için bir numaralı gündem maddesi ve bu konuda şansın parlıyor! Kendi değerinin farkına vardığın ve yeteneklerinden para kazanmaya odaklandığın bir dönemdesin. Finansal durumunu iyileştirmek için büyük adımlar atabilir, terfi veya zam gibi güzel haberler alabilirsin. Harcamaların artsa bile, parayı kendine çekme gücün oldukça yüksek.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İletişim kanallarının ardına kadar açık olduğu, fırsatların bir telefon uzağında olduğu bir süreçtesin. Yeni projeler başlatmak veya fikirlerini geniş kitlelere duyurmak için sosyal çevrenden harika destekler alabilirsin. Zihinsel enerjin çok yüksek, bu da seni öğrenme ve öğretme konusunda çok başarılı kılıyor. Kısa bir seyahat planı sana beklenmedik ve güzel kapılar açabilir.",
+        "Zihninin pırıl pırıl olduğu, kelimelerinin sihirli bir değnek gibi kapıları açtığı bir dönemdesin. Kardeşlerinle, kuzenlerinle veya yakın çevrenle olan ilişkilerin sana büyük bir neşe ve destek getiriyor. Kendini yazılı veya sözlü olarak ifade etmek senin için çok doğal ve etkileyici hale geldi. Yeni bir eğitime başlamak veya kısa bir seyahate çıkmak ruhuna çok iyi gelecek, şansın bol olsun!",
+      ],
+      negative: [
+        "Fikirlerini ifade ederken biraz fazla sert veya buyurgan olabilirsin, bu da yakın çevrenle gerginliklere yol açabilir. Zihinsel olarak çok huzursuz hissedebilir, aynı anda on işe yetişmeye çalışırken hiçbirini bitiremeyebilirsin. Trafikte veya kısa yolculuklarda dikkatli olmalı, öfke kontrolünü elden bırakmamalısın. Otorite figürleriyle iletişim kurarken üslubuna ekstra özen göstermen gereken bir dönem.",
+        "Fikirlerin ve planların, uzaklardaki hedeflerin veya farklı dünya görüşleriyle çatışabilir. Yakın çevrendeki meseleler yüzünden asıl odaklanman gereken büyük resmi kaçırıyor olabilirsin. İletişimde \"ben haklıyım\" demek yerine, karşı tarafın ne demek istediğini anlamaya çalışmalısın. Zihinsel bir denge kurmak için çok fazla detayda boğulmamaya ve objektif kalmaya özen göster.",
+      ],
+      neutral: [
+        "Zihninin ışıl ışıl parladığı, fikirlerinle çevreni aydınlattığın bir dönemdesin! Konuşmalarınla ve yazılarınla dikkat çekiyor, yakın çevrende sözü geçen biri haline geliyorsun. Kardeşlerinle veya komşularınla olan ilişkilerin güçlenebilir, onlardan büyük destekler görebilirsin. Kısa yolculuklar ve yeni eğitimler için harika bir enerji var; merak ettiğin her şeyi öğrenmek için sahneye çık!",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Evindeki huzuru artıracak, ailenle bağlarını güçlendirecek fırsatlarla karşılaşabilirsin. Evinle ilgili yapmak istediğin küçük değişiklikler veya dekorasyon fikirleri için bütçe ve destek bulman çok kolay olacak. Geçmişten gelen bazı meselelerin tatlıya bağlanması ruhunu hafifletebilir. Gayrimenkul işleriyle ilgileniyorsan, şanslı ve karlı gelişmeler yaşayabileceğin bir süreçtesin.",
+        "Ailenle tam bir uyum ve mutluluk içinde olduğun, kendini güvende hissettiğin şahane bir dönem. Köklerinden aldığın güçle dış dünyada daha emin adımlar atıyorsun. Ev almak, satmak veya evini güzelleştirmek için evren sana tüm kapıları açıyor. İçsel bir şifalanma yaşıyorsun; geçmişin yüklerinden arınıp geleceğe çok daha umutla ve neşeyle baktığın bir süreçtesin, tadını çıkar.",
+      ],
+      negative: [
+        "Dış dünyadaki sorumluluklarınla ev hayatın arasında büyük bir çatışma yaşanabilir. Kariyerinde parlamak isterken ailenin beklentilerini karşılayamamak seni vicdanen yorabilir. Ev içinde otorite figürleriyle (özellikle baba veya eş) ego savaşlarına girmemeye özen göstermelisin. İç dünyanda bir huzursuzluk hissedebilirsin; bu dönemi taşınma veya büyük tadilatlar için kullanmak yerine, içsel öfkeni yönetmeye çalışarak geçirmelisin.",
+        "Tüm dikkatin kariyerin ve toplumsal statün üzerindeyken, evin ve ailen \"beni de gör\" diye bağırıyor olabilir. İş ve özel hayat dengesini kurmak bu dönemin en büyük sınavı olacak. Başarıya odaklanırken köklerini ve seni sen yapan değerleri ihmal etmemelisin. Hem evde hem de işte dengeyi sağlamak için biraz daha esnek ve anlayışlı olman gerekebilir; bu karşıtlık sana önceliklerini belirlemeyi öğretecek.",
+      ],
+      neutral: [
+        "Tüm ilgin ve enerjin evine, ailene ve iç dünyana yönelmiş durumda. Kendi kalene çekilmek, köklerinle ilgilenmek ve evinde vakit geçirmek sana her zamankinden daha fazla güç veriyor. Aile içindeki otoriten artabilir veya babanla ilgili konular gündeme gelebilir. Geleceğini sağlam temellere oturtmak için planlar yapmak ve içsel huzurunu inşa etmek için harika bir dönem; merkezinde kalmayı başaracaksın.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden gelen desteklerle yaratıcı projelerini hayata geçirmek için harika bir zaman. Aşk hayatında flörtöz ve heyecan verici bir akış var; yeni insanlarla tanışmak sana çok iyi gelecek. Yeteneklerini sergilemek için önüne çıkan küçük fırsatları değerlendirirsen, büyük bir popülerlik kazanabilirsin. Hobilerini bir işe dönüştürmek veya sadece onlardan keyif almak için enerjin çok uygun.",
+        "Hayat resmen bir kutlama gibi akıyor! Kendini o kadar doğal ve neşeli ifade ediyorsun ki, herkes senin bu pozitif enerjine kapılıyor. Aşkta şansın çok açık, aradığın romantizmi zahmetsizce hayatına çekebilirsin. Yaratıcılık gerektiren işlerde ilham perileri her an yanında; ürettiğin her şey takdir görecek. Tadını çıkar, çünkü bu dönemde attığın her adım sana mutluluk ve başarı olarak geri dönecek.",
+      ],
+      negative: [
+        "Egonla arzuların arasında bir çatışma olabilir; dikkat çekmek isterken itici bir tavır sergileyebilirsin. Aşk hayatında \"benim istediğim olsun\" inadı yüzünden gereksiz gerilimler yaşanabilir. Kumar gibi riskli işlerden ve aşırı harcamalardan bu dönemde uzak durmalısın, şansın biraz kapalı olabilir. Çocuklarla veya hobilerinle ilgili bazı engeller canını sıkabilir, ama bu sadece sabrını ölçen bir test.",
+        "Kendi zevklerinle sosyal çevrenin veya arkadaş grubunun beklentileri arasında kalabilirsin. Sen eğlenmek isterken arkadaşların seni ciddi işlere veya toplumsal meselelere çekmeye çalışabilir. Aşk hayatında partnerinle sosyal çevren arasındaki dengeyi kurmakta zorlanabilirsin. Bireysel mutluluğunla \"biz\" olma hali arasındaki ince çizgiyi bulursan, bu süreç sana çok şey öğretir.",
+      ],
+      neutral: [
+        "Sahne senin tatlım! Hayatın en renkli, en keyifli ve en \"ben buradayım\" dediğin dönemine giriyorsun. Aşk hayatında yıldızın parlıyor, yaratıcılığın tavan yapmış durumda ve girdiğin her ortamda dikkatleri üzerine çekiyorsun. Eğer çocukların varsa onlarla gurur duyacağın gelişmeler yaşayabilir, yoksa içindeki çocuğu şımartacak hobiler edinebilirsin. Kendini ifade etmekten, eğlenmekten ve risk almaktan çekinme; şu an evrenin gözbebeğisin!",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında sana destek olacak fırsatlarla karşılaştığın, işlerinin tıkır tıkır ilerlediği bir süreçtesin. Sağlığınla ilgili yeni bir beslenme düzenine veya spor programına başlamak için çevrenden harika motivasyonlar alabilirsin. İş arkadaşlarınla olan uyumlu ilişkin, çalışma ortamını çok daha keyifli hale getiriyor. Küçük ama etkili dokunuşlarla günlük hayatını çok daha organize ve verimli bir hale getireceksin.",
+        "İş hayatında zahmetsiz bir başarı ve takdir görme dönemi yaşıyorsun. Sağlık sorunların varsa hızla iyileştiğin, kendini fiziksel olarak çok enerjik hissettiğin bir süreçtesin. Günlük işlerini o kadar büyük bir keyifle ve kolaylıkla hallediyorsun ki, kendine ayıracak çok fazla vaktin kalıyor. İş yerinde liderlik vasıfların ön plana çıkıyor ve herkes senin tecrübelerinden faydalanmak istiyor.",
+      ],
+      negative: [
+        "İş yükün altında eziliyor gibi hissedebilirsin; omuzlarındaki sorumluluklar sağlığını olumsuz etkileyebilir. İş yerinde otorite figürleriyle veya iş arkadaşlarınla ego çatışmalarına girmeye çok müsaitsin. \"Her şeyi ben yapmalıyım\" diyerek kendine aşırı yüklenme, aksi halde tükenmişlik sendromu kapını çalabilir. Bu dönemde sağlığına ekstra dikkat etmeli ve dinlenme zamanlarını bir görev gibi ciddiye almalısın.",
+        "Tüm enerjin başkalarına hizmet etmeye ve işine odaklanmışken, özel hayatın ve ruhsal dünyan ihmal ediliyor olabilir. \"İş mi, ben mi?\" ikilemini sık sık yaşayabilir, dinlenmekle çalışmak arasında denge kurmakta zorlanabilirsin. Sağlığınla ilgili sinyalleri görmezden gelmemeli, bedenin \"dur\" dediğinde onu dinlemelisin. Dengeyi bulursan, bu karşıtlık sana hem profesyonel hem de kişisel bir olgunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "Çalışma hayatında yıldızının parladığı, verimliliğinin tavan yaptığı bir dönemdesin! Günlük rutinlerini düzene sokmak, sağlığına odaklanmak ve iş arkadaşların arasında otoriteni kurmak için harika bir enerji var. Kendini işine adamış hissediyorsun ve gösterdiğin bu çaba üstlerin tarafından fark edilecek. Detaylara hakimiyetin sayesinde en zor projeleri bile başarıyla tamamlayabilirsin; sahne senin, çalışkanlığınla parla!",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden veya arkadaş gruplarından gelen desteklerle ilişkilerinde çok tatlı bir uyum yakalıyorsun. Yeni insanlarla tanışmak, tanıştırılmak ve bu yolla hayatına değer katacak ortaklıklar kurmak için şahane bir akış var. Partnerinle birlikte sosyal ortamlarda parlıyorsunuz ve herkes sizin bu uyumunuza hayran kalıyor. Küçük ama etkili iletişim kanalları sayesinde ilişkilerindeki pürüzleri kolayca giderip, geleceğe dair güzel sözler verebilirsin.",
+        "İlişkilerinde tam bir \"altın çağ\" yaşıyorsun; sevgi ve uyum zahmetsizce hayatına akıyor. Partnerinle veya ortağınla arandaki güven o kadar sağlam ki, birlikte aşamayacağınız hiçbir engel yok. İkna kabiliyetin ve karizman sayesinde her türlü anlaşmayı lehine çevirebilir, yeni ve uzun soluklu sözleşmelere imza atabilirsin. Kendini başkalarının gözünde çok değerli ve özel hissettiğin, ruhunun aynada gülümsediği bir süreçtesin.",
+      ],
+      negative: [
+        "Kendi egonla partnerinin veya ortağının istekleri arasında bir güç savaşı yaşanabilir. \"Benim dediğim mi senin dediğin mi?\" kavgası ilişkilerindeki huzuru kaçırabilir, otorite figürleriyle birebir çatışmalara girebilirsin. Karşındaki insanların seni kısıtladığını veya gölgelediğini hissederek hırçınlaşabilirsin. Bu dönemde \"haklı çıkmaya\" çalışmak yerine \"mutlu olmaya\" odaklanmalı ve köprüleri yıkmadan önce iki kez düşünmelisin.",
+        "Tüm odağın karşındaki insana kaymış durumda; kendini onun üzerinden tanımlama eğilimindesin. Bu karşıtlık sana \"ben kimim?\" ve \"ilişkide nerede duruyorum?\" sorularını sordurarak büyük farkındalık kazandırabilir. Eğer dengeleri koruyamazsan partnerin baskın çıkabilir veya sen kendini feda edebilirsin. Kendini kaybetmeden \"biz\" olmayı öğrenmen gereken, aynanın diğer yüzüyle tanıştığın bir dönem.",
+      ],
+      neutral: [
+        "Tüm ilgin ve enerjin ikili ilişkilerine, partnerine veya ortağına yönelmiş durumda. Hayatında biri varsa onunla parladığın, yoksa çok karizmatik ve etkileyici birinin hayatına girmesi an meselesi olan bir dönemdesin. İnsanlarla kurduğun birebir diyaloglarda ışığınla herkesi büyülüyorsun; \"ben\" yerine \"biz\" demenin tadını çıkarıyorsun. Danışmanlık almak veya bir ortaklık kurmak için evren sana tüm ışıkları yeşil yakıyor; birlikten kuvvet doğacak!",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Finansal destekler veya miras konularında şanslı kapıların açıldığı, beklediğin ödemelerin bir bir geldiği bir süreçtesin. Psikolojik olarak kendini çok güçlü hissediyorsun ve gizli kalmış karmaşık meseleleri çözmek senin için çocuk oyuncağı haline geliyor. Başkalarının imkanlarından ve networklerinden faydalanarak kendi projelerini devasa boyutlara taşıma şansı yakalayabilirsin. Küçük ama etkili dış yardımlar sayesinde hayatındaki krizleri birer başarı hikayesine dönüştüreceksin.",
+        "Maddi ve manevi olarak büyük bir dönüşümün meyvelerini topladığın, şansın su gibi aktığı bir dönemdesin. Başkalarının kaynaklarından (eş, ortak, banka) zahmetsizce yararlanabilir ve büyük, karlı yatırımlara imza atabilirsin. Psikolojik derinliğin ve sarsılmaz duruşun sana muazzam bir karizma katıyor ve insanların sana olan güvenini pekiştiriyor. Hayatın krizli dönemlerini o kadar asilce yönetiyorsun ki, her zorluktan daha da zenginleşerek çıkıyorsun; tebrikler!",
+      ],
+      negative: [
+        "Kendi bireysel egonla ortaklaşa kaynaklar veya borçlar arasında büyük bir çatışma yaşanabilir; \"benim param\" kavgası huzurunu kaçırabilir. Otorite figürleriyle finansal konularda veya miras meselelerinde sert ve yıpratıcı sürtüşmelere girebilirsin. İçsel bir huzursuzluk ve her olayı bir ölüm-kalım meselesiymiş gibi hissettiğin krizler seni zihnen yorabilir. Bu dönemde riskli yatırımlardan kaçınmalı ve başkalarının parasına çok güvenmeden, kendi ayaklarının üzerinde durmalısın.",
+        "Kendi özdeğerin ve kazancınla başkalarının kaynakları arasında hassas bir denge kurman gereken bir dönem. \"Benim kazandığım mı yoksa bize ait olan mı?\" sorusu finansal gündemini ve ilişkilerini belirleyebilir. Partnerinin maddi durumu senin hayat standartlarını doğrudan etkileyebilir ve bu sende bir bağımlılık veya baskı hissi yaratabilir. Kendi maddi bağımsızlığını korurken paylaşımcı olmayı öğrenmen gereken, derin bir finansal terazi üzerindesin.",
+      ],
+      neutral: [
+        "Tüm ilgin ve enerjin başkalarının kaynaklarına, miraslara, borçlara veya hayatın gizemli yanlarına yönelmiş durumda. Kendi gücünü keşfetmek için derin bir psikolojik krizden geçiyor olabilirsin ama bu süreç seni küllerinden yeniden doğuracak. Ortaklı paralar, eşin geliri veya banka işlerinde parladığın ama bir o kadar da büyük sorumluluk aldığın bir dönem. Ruhsal bir dönüşüm yaşıyorsun; artık yüzeysel olan hiçbir şey kalbini tatmin etmeye yetmeyecek.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrenin veya kardeşlerinin desteğiyle uzaklardaki hedeflerine ulaşmanı sağlayacak çok tatlı fırsatlar yakalayacaksın. İletişim becerilerin sayesinde yurt dışı projelerinde veya hukuksal süreçlerde işlerini kolayca yoluna koyabilirsin. Küçük seyahatler veya kısa eğitimler, vizyonunu genişletecek büyük kapıların anahtarı olacak. Pozitif enerjin ve meraklı yapın sayesinde yeni kültürlerden insanlarla tanışabilir ve hayatına çok kıymetli bilgiler katabilirsin.",
+        "Hayatının en \"akışta\" ve şanslı dönemlerinden birini yaşıyorsun; evren sana tüm dünyayı altın tepside sunuyor sanki! Yurt dışı işleri, yüksek lisans başvuruları veya hukuksal davalar zahmetsizce ve tamamen senin lehine sonuçlanacak. Kendine olan güvenin ve pozitif bakış açın sayesinde her türlü engeli birer basamak olarak kullanıp zirveye tırmanıyorsun. Uzaklara yapacağın bir yolculuk ruhuna o kadar iyi gelecek ki, döndüğünde kendini tamamen yenilenmiş ve bilgeleşmiş hissedeceksin; tadını çıkar!",
+      ],
+      negative: [
+        "İnançlarınla veya hayat felsefenle otorite figürleri arasında bir çatışma yaşanabilir; \"benim doğrum mu senin doğrun mu?\" kavgası canını sıkabilir. Uzak yolculuklarda veya akademik işlerde beklenmedik engeller ve gecikmelerle karşılaşabilir, sabrının test edildiğini hissedebilirsin. Dar görüşlü insanlarla tartışmaya girmek yerine, kendi vizyonunu esnetmeye ve daha geniş bir açıdan bakmaya çalışmalısın. Bu dönemde hukuksal konularda veya büyük imzalarda acele etmemeli, her detayı iki kez kontrol etmelisin.",
+        "Yakın çevrendeki detaylarla uzaklardaki büyük hedeflerin arasında bir denge kurman gereken bir süreçtesin. Sürekli bir yerlere gitme arzunla günlük sorumlulukların arasındaki çekişme seni zihinsel olarak yorabilir. İnançların konusunda başkalarıyla fikir ayrılığına düşebilir ve \"doğruyu\" kanıtlama çabasına girebilirsin. Bu karşıtlık, sana hem bugünü yaşamayı hem de geleceği planlamayı öğreten, vizyonunu dengeleyen bir pusula görevi görüyor.",
+      ],
+      neutral: [
+        "Ufkunun pırıl pırıl açıldığı, bilgelik ve keşif dolu harika bir döneme giriyorsun; sahne şimdi uzak diyarlarda ve derin fikirlerde! Yüksek öğrenim, yurt dışı bağlantılı işler veya akademik projelerde yıldızının parladığı ve otorite kazandığın bir süreçtesin. Hayata bakış açın genişliyor, yeni felsefeler ve inançlarla ruhunu zenginleştiriyorsun; adeta bir bilge gibi çevreni aydınlatıyorsun. Uzak bir seyahat veya yeni bir eğitim planı hayatının akışını tamamen değiştirebilir, bu ışıklı yolu takip et canım!",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden ve arkadaşlarından gelecek çok kıymetli desteklerle kariyer basamaklarını hızla tırmanıyorsun. Kariyer hedeflerin için ihtiyacın olan o referans veya destekleyici haber, bir telefon uzağında olabilir. Yeteneklerini sergilemekten çekinmediğin için üstlerin seninle çalışmaktan büyük keyif alıyor ve sana yeni fırsatlar sunuyor. Küçük ama etkili bu başarı rüzgarı, seni çok daha büyük ve kalıcı hedeflere taşıyacak bir motivasyon kaynağı olacak.",
+        "Kariyerinde zahmetsiz bir yükseliş ve muazzam bir takdir görme dönemi yaşıyorsun; her şey senin lehine işliyor! Başarıların kendiliğinden toplum önünde konuşuluyor ve sen hiçbir çaba sarf etmeden otorite figürü haline geliyorsun. Kariyer hedeflerin ve kişisel arzuların tam bir uyum içinde olduğu için çok huzurlu ve mutlusun. Bu altın dönemde atacağın her imza, kuracağın her iş sana hayat boyu sürecek bir saygınlık ve maddi güç getirecektir; ışığın hiç sönmesin!",
+      ],
+      negative: [
+        "Egonla kariyer sorumlulukların arasında bir çatışma yaşanabilir; \"ben ne istiyorum?\" ile \"iş ne bekliyor?\" savaşı seni yorabilir. Üstlerinle veya otorite figürleriyle (özellikle babanla) ego savaşlarına girmek başarılarını gölgeleyebilir, dikkatli ol. Toplum önündeki imajın zedelenebilir veya attığın adımlar yanlış anlaşılabilir; bu dönemde biraz daha alçakgönüllü kalmanda fayda var. Başarıya giden yolda önüne çıkan bu engeller aslında senin liderlik vasıflarını test eden sert ama öğretici birer sınavdır.",
+        "Tüm enerjin kariyerine ve toplum önündeki imajına kaymışken, ailen ve evin \"beni de gör\" diye bağırıyor olabilir. İş ve özel hayat dengesini kurmak bu dönemin en büyük sınavı olacak; başarıya odaklanırken köklerini ihmal etmemelisin. \"Dışarıdaki ben mi yoksa evdeki ben mi daha gerçek?\" sorusu kafanı karıştırabilir. Dengeyi bulursan, bu karşıtlık sana hem profesyonel hem de kişisel bir olgunluk kazandıracak ve her iki alanda da parlamanı sağlayacaktır.",
+      ],
+      neutral: [
+        "İşte beklediğin an! Kariyerinin zirvesinde parladığın, tüm gözlerin senin üzerinde olduğu ve otoriteni ilan ettiğin muazzam bir dönemdesin. Toplumsal statün yükseliyor, üstlerin tarafından takdir ediliyor ve başarılarınla herkesin saygısını kazanıyorsun. Hedeflerine ulaşmak için gereken o muazzam enerji ve ışık seninle; adeta sahnede tek başınasın. Bu parıltılı süreçte istediğin terfiyi alabilir veya kendi imparatorluğunu kurmak için en büyük adımı atabilirsin; yürü kim tutar seni!",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrenin ve kardeşlerinin desteğiyle sosyal çevrende yeni ve etkili kapılar açıyorsun. Gelecek projelerin için gereken o küçük ama önemli referans her an gelebilir. Arkadaşlarınla kurduğun uyumlu bağlar, seni hedeflerine bir adım daha yaklaştırıyor. İletişim becerilerin sayesinde grup çalışmalarında parlıyor ve herkesin takdirini kazanıyorsun; şansın açık!",
+        "Hayallerinin ve dostluklarının en \"akışta\" olduğu, mucizevi bir dönemdesin! Sosyal çevren sana öyle fırsatlar sunuyor ki, her kapı zahmetsizce önünde açılıyor. Gelecek ideallerin için evren seni her koldan destekliyor ve kendini dünyanın en şanslı kişisi gibi hissediyorsun. Arkadaşlarınla yaptığın iş birlikleri seni zirveye taşıyacak; bu sevgi dolu akışın tadını çıkar!",
+      ],
+      negative: [
+        "Arkadaşlarınla veya içinde bulunduğun gruplarla ego savaşlarına girmeye müsaitsin, aman dikkat! Hayallerine ulaşmak isterken otorite figürleriyle ters düşebilir veya \"ben haklıyım\" inadıyla dostlarını kırabilirsin. Sosyal çevrende yanlış anlaşılabilir ve imajının zedelendiğini hissederek hırçınlaşabilirsin. Bu dönemde bireysel hırslarını bir kenara bırakıp toplumsal uyuma odaklanman senin yararına olacaktır.",
+        "Kendi yaratıcılığın ve bireysel aşkın ile arkadaş grubunun beklentileri arasında kalabilirsin. \"Benim mutluluğum mu yoksa grubun idealleri mi?\" ikilemi seni duygusal olarak yorabilir. Partnerinle arkadaşların arasındaki dengeyi kurmakta zorlanabilirsin. Bu karşıtlık, sana hem bireysel parlamayı hem de ekip içinde uyumlu olmayı öğreten sosyal bir sınavdır.",
+      ],
+      neutral: [
+        "Sosyal çevrende bir yıldız gibi parladığın, dostların arasında liderlik ettiğin harika bir dönem! Gelecek planların için harika destekler alabilir ve hayallerini gerçeğe dönüştürecek o büyük adımı atabilirsin. Arkadaş grupları içinde sözü geçen, sevilen ve ilham veren biri haline geliyorsun. Sahne senin; sosyal hayatta aktif ol ve bu parlak enerjiyi ideallerine ulaşmak için kullan canım!",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal çalışmalarından veya yalnız geçirdiğin vakitlerden gelen huzurlu bir enerjiyle hayatını güzelleştiriyorsun. Gizli destekler, beklenmedik iyilikler veya perde arkasındaki referanslar sayesinde işlerin tıkır tıkır ilerliyor. İç dünyanda yakaladığın o barış, dış görünüşüne de yumuşak bir ışık ve karizma katıyor. Küçük meditasyonlar veya ruhsal hobiler, seni dış dünyadaki büyük başarılarına hazırlayacak gizli güç kaynağın olacak; sezgilerine güven!",
+        "Ruhsal anlamda tam bir aydınlanma ve \"akışta\" olma dönemi yaşıyorsun; evren seni görünmez bir pelerinle koruyor sanki! Yalnız kaldığında gelen o muazzam ilham ve yaratıcılık, seni dış dünyada her zamankinden daha karizmatik ve bilge kılıyor. Gizli kalmış her türlü işin zahmetsizce ve senin lehine sonuçlandığı, içsel huzurunun zirve yaptığı bir süreçtesin. Kendini ilahi bir güce teslim ettiğinde, her kapının senin için kendiliğinden açıldığını şaşkınlıkla izleyeceksin; ışığın kalbinde parlıyor!",
+      ],
+      negative: [
+        "Kendi iç dünyandaki korkularınla dış dünyadaki egon arasında bir çatışma yaşanabilir; \"kendimi gizlemeli miyim yoksa göstermeli miyim?\" savaşı seni yorabilir. Gizli düşmanlıklarla veya arkandan çevrilen işlerle karşılaşabilir, kendini yalnız ve enerjisiz hissedebilirsin. Otorite figürleriyle olan ilişkilerinde bazı kısıtlamalar veya belirsizlikler canını sıkabilir. Bu dönemde çok fazla ön planda olmaya çalışmak yerine, eksiklerini tamamlamak için biraz geri çekilmek senin yararına olacaktır.",
+        "Kendi bireysel görünürlüğünle ruhunun derinliklerindeki saklanma arzusu arasında bir denge kurman gerekiyor. İnsanların seni nasıl gördüğüyle senin kendini nasıl hissettiğin arasında bir uçurum olabilir ve bu seni zihnen yorabilir. \"Dışarıdaki ben miyim yoksa içerideki mi?\" sorusuyla boğuşurken, hem sosyal olmayı hem de ruhunu dinlendirmeyi öğrenmelisin. Dengeyi bulursan, bu karşıtlık sana çok derin bir öz farkındalık ve ruhsal olgunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "Ruhunun en derin köşelerinde bir yolculuğa çıktığın, enerjini iç dünyaya yönelttiğin bir dönemdesin canım. Sahne ışıkları şu an dışarıda değil, senin kalbinin içinde yanıyor; kendi başına kalarak şifalanma zamanın. Gizli kalmış yeteneklerini keşfedebilir, perde arkasından yönettiğin işlerde büyük başarılar elde edebilirsin. Egonu bir kenara bırakıp ruhuna odaklandığında, dış dünyada hiç bulamadığın o gerçek otoriteyi ve özgüveni kendi içinde keşfedeceksin.",
+      ],
+    },
   },
   "Ay": {
-    1: { tr: "Duyguların çok yoğun ve dışa dönük. Hassasiyetin artabilir, sezgilerine güvenerek hareket etmek isteyebilirsin.", en: "Your emotions are very intense and outward. Your sensitivity may increase, and you may want to act by trusting your intuition." },
-    2: { tr: "Maddi konularda kendini güvende hissetme ihtiyacın artıyor. Duygusal huzuru sahiplendiğin değerlerde bulabilirsin.", en: "The need to feel secure in material matters is increasing. You can find emotional peace in the values you own." },
-    3: { tr: "Zihnin ve duyguların iç içe geçmiş durumda. İletişim kurarken daha empatik olabilir, yakın çevrendeki insanların duygusal ihtiyaçlarına odaklanabilirsin.", en: "Your mind and emotions are intertwined. You can be more empathetic when communicating and focus on the emotional needs of people in your close circle." },
-    4: { tr: "Ait olma ihtiyacın dorukta. Ailenle vakit geçirmek ve evinde huzurlu bir köşe yaratmak ruhuna iyi gelecek.", en: "Your need to belong is at its peak. Spending time with your family and creating a peaceful corner in your home will be good for your soul." },
-    5: { tr: "Duygularını yaratıcı yollarla ifade etmek isteyebilirsin. Aşkta daha romantik ve çocuksu bir enerji hakim olabilir.", en: "You may want to express your emotions in creative ways. A more romantic and childlike energy may dominate in love." },
-    6: { tr: "Hizmet etme ve başkalarına yardımcı olma isteğin ön planda. Küçük ayrıntılarla ilgilenmek seni duygusal olarak rahatlatabilir.", en: "The desire to serve and help others is in the foreground. Dealing with small details can emotionally comfort you." },
-    7: { tr: "İlişkilerinde duygusal denge arıyorsun. Sevdiklerinden destek görmek ve onlarla derin bağlar kurmak bugünlerde çok önemli.", en: "You're looking for emotional balance in your relationships. Getting support from loved ones and building deep connections with them is very important these days." },
-    8: { tr: "Derin duygular ve gizemli konular seni çekiyor. Duygusal krizleri aşmak ve yenilenmek için sezgilerin rehberin olsun.", en: "Deep emotions and mysterious subjects attract you. Let your intuition guide you to overcome emotional crises and renew yourself." },
-    9: { tr: "Ruhsal olarak özgürleşme arzun var. Yeni bakış açıları kazanmak ve inançlarını sorgulamak sana huzur verebilir.", en: "Desire for spiritual liberation. Gaining new perspectives and questioning your beliefs can bring you peace." },
-    10: { tr: "Duygularını profesyonel hayatına yansıtabilirsin. Toplum önündeki imajın ve kariyerin duygusal motivasyonunla şekilleniyor.", en: "You can reflect your emotions in your professional life. Your public image and career are shaped by your emotional motivation." },
-    11: { tr: "Arkadaşlıklarında duygusal paylaşımlar artıyor. Geleceğe dair umutların seni heyecanlandırabilir.", en: "Emotional sharing in your friendships is increasing. Your hopes for the future can excite you." },
-    12: { tr: "Yalnız kalmak ve iç dünyana dalmak isteyebilirsin. Rüyaların rehberlik edebilir, spiritüel çalışmalar için çok uygun bir süreçtesin.", en: "You may want to be alone and dive into your inner world. Your dreams can guide, very suitable for spiritual work." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Duygusal anlamda kendini çok huzurlu ve dengede hissettiğin bir zamandasın. Ailenle veya yakın çevrendeki kadın figürleriyle olan ilişkilerin sana güç veriyor. İç dünyandaki huzur, dış görünüşüne de yumuşak ve sempatik bir hava katıyor. Küçük seyahatler veya evde yapacağın ufak değişiklikler ruhuna çok iyi gelecektir.",
+        "Sezgilerinin seni asla yanıltmadığı, adeta hayatın ritmiyle dans ettiğin bir dönemdesin. İnsanlarla empatik bağlar kurmak senin için çok kolay, bu da popülariteni artırıyor. Evinle veya köklerinle ilgili çözülmesi gereken konular varsa, şimdi el atarsan her şey tereyağından kıl çeker gibi hallolur. İçsel huzurun yüzüne yansıyor, bugünlerde çok daha sempatik görünüyorsun.",
+      ],
+      negative: [
+        "Ah canım, duygularınla mantığın resmen savaş halinde! İç dünyanda fırtınalar koparken dışarıya sakin görünmeye çalışmak seni çok yoruyor olabilir. Özellikle beslenme alışkanlıklarına ve mide sağlığına dikkat etmen gereken bir dönem, çünkü stres direkt oraya vuruyor. Geçmişteki meselelerin bugünkü neşeni kaçırmasına izin verme, derin bir nefes al ve geçeceğini bil.",
+        "Başkalarının ihtiyaçlarını kendi ihtiyaçlarının önüne koyma eğilimindesin. Özellikle partnerinle olan ilişkinde \"ben ne istiyorum?\" sorusunu sormayı unutmamalısın. Duygusal iniş çıkışların partnerinle olan iletişimini etkileyebilir, dengeyi bulmakta zorlanabilirsin. Kendi kabuğuna çekilmekle sosyalleşmek arasındaki ince çizgiyi korumaya çalış.",
+      ],
+      neutral: [
+        "Duyguların şelale olmuş akıyor, her şeyi en derinden hissediyorsun. Bu dönemde sezgilerin o kadar güçlü ki, kimin ne düşündüğünü daha onlar ağzını açmadan anlayabilirsin. Ancak çok hassas olduğun için dışarıdan gelen tepkilere gereğinden fazla kırılabilirsin. Biraz kendine şefkat göster, modun çok çabuk değişebilir ama bu senin ruhsal derinliğinden kaynaklanıyor.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sezgilerini kullanarak para kazanabileceğin harika bir dönemdesin. İçinden bir ses \"şunu al\" veya \"şuraya yatırım yap\" diyorsa, ona kulak vermen sana kazanç getirebilir. İnsanlarla kurduğun samimi bağlar, iş hayatında sana maddi avantajlar sağlıyor. Evinde huzurlu bir ortam yaratmak için yapacağın küçük harcamalar sana kat kat mutluluk olarak geri dönecek.",
+        "Maddi kaynakların zahmetsizce aktığı, bereketli bir süreçtesin. Ailenin, özellikle de kadın figürlerin desteğini arkanda hissederek finansal olarak güçlenebilirsin. Gayrimenkul, gıda veya evle ilgili işlerden kazanç elde etmek için harika bir zaman. İçsel huzurun ve maddi durumun birbirini besliyor, bu da sana büyük bir özgüven kazandırıyor.",
+      ],
+      negative: [
+        "Duygusal iniş çıkışların yüzünden gereksiz harcamalar yapmaya çok meyillisin, aman dikkat! \"Bunu hak ettim\" diyerek aldığın o pahalı şeyler, ay sonunda bütçeni sarsabilir. Kendini güvende hissetmek için paraya tutunmaya çalışsan da, kontrol dışı masraflar huzurunu kaçırabilir. Bu dönemde finansal kararlar alırken mantığını devreye sokmalı ve ani tepkilerden kaçınmalısın.",
+        "Kendi ihtiyaçlarınla başkalarına (eşin, ortağın veya bankalar) karşı olan maddi sorumlulukların arasında denge kurman gerekiyor. \"Benim param\" ve \"ortak bütçe\" konularında bazı gerilimler yaşanabilir. Duygusal tatmini dışsal maddelerde aramak yerine, kendi iç değerlerine odaklanmalısın. Borç-alacak dengesini korumaya çalışırken biraz yorulabilirsin ama bu sana finansal disiplini öğretecek.",
+      ],
+      neutral: [
+        "Cüzdanınla duyguların arasında görünmez bir bağ var sanki. Moralın bozuk olduğunda kendini alışveriş yaparken, mutlu olduğunda ise para biriktirirken bulabilirsin. Maddi güvenliğe olan ihtiyacın bu dönemde çok artmış durumda, kendini garantiye almadan huzur bulamıyorsun. Aileden gelen maddi destekler veya evle ilgili harcamalar da bu sürecin bir parçası olabilir.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç sesinin ve sezgilerinin sana rehberlik ettiği, yakın çevrenle uyum içinde olduğun bir süreç. Yazmak, günlük tutmak veya dertleşmek sana ilaç gibi gelecek; duygularını kelimelere dökmek seni şifalandıracak. Küçük yolculuklar veya mahallendeki sosyal etkileşimler moralini yükseltebilir. İnsanlarla kurduğun o yumuşak bağ sayesinde sorunları daha büyümeden çözebiliyorsun.",
+        "İletişimin en akışta olduğu, herkesin seni sevgiyle dinlediği bir dönem. Sezgisel olarak kimin neye ihtiyacı olduğunu biliyor ve doğru kelimeleri seçiyorsun. Öğrenme kapasiten çok yüksek, özellikle ilham veren konulara odaklanırsan harika sonuçlar alabilirsin. Yakın çevrenden göreceğin duygusal destek, kendine olan güvenini tazeleyecek ve seni çok mutlu edecek.",
+      ],
+      negative: [
+        "Zihinsel bir huzursuzluk içindesin, sanki düşüncelerin kafanın içinde birbiriyle kavga ediyor. Yakın çevrendeki kadın figürlerle veya kardeşlerinle yanlış anlaşılmalara bağlı duygusal gerginlikler yaşanabilir. Duygusal tepkilerini kontrol edemeyip sonradan pişman olacağın şeyler söyleme riskin var. Biraz sessiz kalmak ve iç dünyana yönelmek, bu fırtınalı dönemi atlatmana yardımcı olur.",
+        "Duygusal ihtiyaçlarınla rasyonel gerçekler arasında bir köprü kurman gerekiyor. Yakın çevrendeki insanların dertlerini dinlemekten kendi fikirlerine odaklanamıyor olabilirsin. Fikir ayrılıklarını kişisel algılamamaya çalış, çünkü bu dönemde herkes biraz fazla hassas. İçsel huzurunu korumak için gün içinde kendine sessiz anlar yaratmalı ve zihnini boşaltmalısın.",
+      ],
+      neutral: [
+        "Duyguların düşüncelerine o kadar karışmış durumda ki, mantıklı karar vermekte zorlanabilirsin. Çok hassas bir iletişim diline sahipsin; çevrendekilerin ruh halini anında seziyorsun. Kardeşlerinle veya yakın dostlarınla derin, duygusal paylaşımlar yapabileceğin bir dönem. Ancak dedikodulara veya gereksiz duygusal polemiklere girmemeye dikkat et, zihnin çok çabuk dağılabilir.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç dünyanda huzuru yakaladığın, sevdiklerinle yumuşacık bağlar kurduğun bir dönem. Evini güzelleştirmek, aile büyüklerini ziyaret etmek veya çocukluk hatıralarını tazelemek sana büyük bir keyif verecek. Duygusal ihtiyaçlarını dile getirmekten çekinmiyorsun ve bu samimiyet karşılığını buluyor. Küçük ev toplantıları veya aile sofraları ruhunu şifalandırmak için harika bir fırsat sunuyor.",
+        "Duygusal anlamda tam bir doyum ve denge içindesin; sanki evren seni sarmalıyor. Ailenle olan ilişkilerin kendiliğinden şifalanıyor ve geçmişin yüklerinden özgürleşiyorsun. Gayrimenkul işlerinde veya taşınma konularında sezgilerin seni en doğru adrese götürecektir. İçindeki ses sana \"her şey yolunda\" diyor ve sen de bu güvenle hayatın tadını çıkarıyorsun.",
+      ],
+      negative: [
+        "Evinin içinde veya ruhunun derinliklerinde bir türlü huzur bulamıyor gibisin. Geçmişten gelen bazı duygusal travmalar veya aile içi meseleler seni bugünlerde biraz hırpalayabilir. \"Nereye aitim?\" sorusu kafanı kurcalarken, kendini bir yere sığamıyormuş gibi hissedebilirsin. Bu dönemde aşırı alınganlık yapmamaya çalışmalı ve içindeki o huzursuz çocuğu şefkatle sakinleştirmelisin.",
+        "Dış dünyadaki kariyer hedeflerinle evdeki sorumlulukların arasında duygusal bir git-gel yaşıyorsun. Başkalarına karşı güçlü görünmeye çalışırken içten içe sadece diz çökmek ve ağlamak isteyebilirsin. Bu karşıtlık, sana hem profesyonel hem de özel hayatında duygusal dürüstlüğün önemini öğretiyor. Kendine ayırman gereken vakti başkalarına harcadığın için yorgun düşebilirsin, dengeyi kurmalısın.",
+      ],
+      neutral: [
+        "Ruhunun en derin, en çocuksu haliyle baş başasın. Evinde vakit geçirmek, yemek yapmak veya sadece köşene çekilip hayal kurmak sana ilaç gibi geliyor. Ailenle, özellikle de annenle olan bağların çok vurgulu; onlardan besleniyor ama bir o kadar da duygusal yük alıyorsun. Kendini güvende hissetme ihtiyacın çok yüksek, bu yüzden dış dünyadan kaçıp kendi güvenli limanına sığınmak isteyebilirsin.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sevdiklerinle duygusal bir uyum içinde olduğun, keyifli ve huzurlu bir süreçtesin. Hobilerinle ilgilenmek veya çocuklarla vakit geçirmek sana ihtiyacın olan o taze enerjiyi verecek. Aşk hayatında nazik ve romantik rüzgarlar esiyor; duygularını ifade etmekte hiç zorlanmıyorsun. Küçük kutlamalar veya yaratıcı projeler için evren seni duygusal olarak tam destekliyor.",
+        "Duygusal anlamda tam bir doyum içindesin; sanki hayat sana en güzel şarkısını söylüyor. Aşkta aradığın o derin bağı zahmetsizce bulabilir, partnerinle ruhsal bir bütünleşme yaşayabilirsin. Çocuklarla ilgili konularda şansın çok açık, onlardan gelen haberler içini ısıtacak. Yaratıcı projelerin için ilham perileri her an yanında, sadece kalbinin sesini dinle ve üretmeye devam et.",
+      ],
+      negative: [
+        "İç dünyandaki huzursuzluk, aşk hayatına veya çocuklarla olan ilişkine yansıyabilir. \"Seviliyorum mu?\" şüphesiyle partnerini duygusal olarak darlayabilir, gereksiz kıskançlık krizleri yaşayabilirsin. Yaratıcılığını konuşturmak istesen de modun düşük olduğu için elin hiçbir işe gitmeyebilir. Bu dönemde duygusal açlığını eğlenceyle veya riskli işlerle doyurmaya çalışmak seni daha fazla yorabilir, biraz içe dönmelisin.",
+        "Sosyal çevrendeki sorumluluklarınla kendi bireysel keyiflerin arasında duygusal bir denge kurman gerekiyor. Arkadaş grubunla vakit geçirmek isterken aşk hayatındaki pürüzler seni aşağı çekebilir. \"Ben ne istiyorum?\" ile \"Başkaları benden ne bekliyor?\" ikilemi seni biraz yorabilir. Duygusal ihtiyaçlarını açıkça dile getirmeli ve hem kendine hem de sevdiklerine adil bir zaman dilimi ayırmalısın.",
+      ],
+      neutral: [
+        "Duyguların adeta bir lunapark treninde gibi; bir an çok neşeli, bir an çok hüzünlü olabilirsin. Aşk hayatında derin bir aidiyet ve şefkat arayışındasın, partnerine karşı anaç veya babacan tavırlar sergileyebilirsin. Yaratıcı uğraşlarında sezgilerin sana rehberlik ediyor, içindeki çocuğu beslemek ruhuna çok iyi gelecek. Ancak flörtlerinde çok çabuk bağlanma veya aşırı alınganlık gösterme riskine karşı dikkatli olmalısın.",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Günlük işlerini büyük bir sezgisel güçle ve kolaylıkla hallettiğin, keyifli bir süreçtesin. Sağlığınla ilgili yeni ve yumuşak alışkanlıklar edinmek (bitki çayları, meditasyon gibi) sana çok iyi gelecek. İş yerinde kurduğun sempatik bağlar sayesinde işlerin tıkır tıkır ilerliyor ve herkes sana destek olmaya çalışıyor. Küçük evcil hayvanlarla ilgilenmek veya yaşam alanını düzenlemek ruhunu inanılmaz şifalandıracaktır.",
+        "İş ve özel hayatın arasında o muazzam dengeyi bulduğun, huzur dolu bir dönemdesin. Günlük rutinlerin sana yük değil, aksine bir terapi gibi geliyor; ev işlerini veya ofis görevlerini büyük bir keyifle yapıyorsun. Sağlığınla ilgili olumlu gelişmeler yaşayabilir, bedeninin ihtiyaçlarını sezgisel olarak anlayabilirsin. İş yerinde sevilen ve aranan birisin, yarattığın o sıcak atmosfer herkesin verimliliğini artırıyor.",
+      ],
+      negative: [
+        "Duygusal huzursuzluğun iş hayatına ve sağlığına \"stres\" olarak yansıyabilir, aman dikkat! İş arkadaşlarınla aranda alınganlıklardan kaynaklanan küçük ama can sıkıcı gerginlikler yaşanabilir. Günlük rutinlerini organize etmekte zorlanabilir, \"yetişemiyorum\" hissiyle panik yapabilirsin. Bu dönemde beslenme alışkanlıklarına ve uykuna ekstra özen göstermeli, duygusal açlığını iş yaparak bastırmamaya çalışmalısın.",
+        "Kendi iç dünyandaki derin duygusal ihtiyaçlarınla dışarıdaki \"yapılması gerekenler\" listesi çatışıyor. Sen sadece dinlenmek ve köşene çekilmek isterken, bitmek bilmeyen ev işleri veya ofis sorumlulukları seni yorabilir. Ruhsal sağlığınla fiziksel enerjin arasındaki teraziyi iyi kurman gereken bir süreçtesin. Başkalarına hizmet etmekten yorulup kendi ihtiyaçlarını unutmamaya, \"hayır\" demeyi öğrenmeye odaklanmalısın.",
+      ],
+      neutral: [
+        "Çalışma ortamında ve günlük rutinlerinde çok hassas ve duygusal olduğun bir dönemdesin. İş arkadaşlarınla aranda ailevi bir bağ kurmak isteyebilir, onlara annelik veya babalık yaparken bulabilirsin kendini. Ruh halin, o günkü iş verimliliğini ve sağlığını (özellikle mideni) doğrudan etkiliyor; bu yüzden iç huzurunu koruman çok önemli. Evinde veya ofisinde huzurlu bir köşe yaratmak, duygusal dalgalanmalarını dindirmene yardımcı olacaktır.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Partnerinle veya yakın arkadaşlarınla aranda yumuşacık, sempatik ve destekleyici bir akış var. Duygularını ifade etmekte hiç zorlanmıyorsun ve karşılığında büyük bir anlayış görüyorsun. Yeni insanlarla tanışmak veya mevcut ilişkini bir adım öteye taşımak için evren seni duygusal olarak destekliyor. Küçük sosyal etkinlikler veya baş başa yemekler, aranızdaki bağı hiç olmadığı kadar güçlendirecek ve seni çok huzurlu hissettirecek.",
+        "İlişkilerinde tam bir duygusal doyum ve huzur dönemi; sanki partnerinle ruh ikizi olduğunuzu bir kez daha anlıyorsun. Hiç konuşmadan bile birbirinizi anlayabildiğiniz bu süreçte, evlilik veya ciddi ortaklıklar için harika bir zemin var. Çevrendeki insanlardan gelen sevgi ve şefkat, kendine olan güvenini tazeleyerek seni çok mutlu ediyor. Hayatın sana sunduğu bu romantik ve güvenli akışın tadını doyasıya çıkar, hak ettin!",
+      ],
+      negative: [
+        "İç dünyandaki huzursuzluk ve alınganlık, ikili ilişkilerine yansıyıp gereksiz gerilimlere yol açabilir. Partnerinin seni anlamadığını düşünüp kabuğuna çekilebilir ya da tam tersi, aşırı duygusal tepkiler verebilirsin. Ailevi meselelerin ilişkin üzerindeki baskısını hissedebilir, iki taraf arasında denge kurmakta zorlanabilirsin. Bu dönemde olayları kişiselleştirmemeli ve duygularının fırtınası dinmeden önemli kararlar almamalısın.",
+        "Kendi içsel ihtiyaçlarınla partnerinin beklentileri arasında gidip geldiğin bir duygusal terazi üzerindesin. Başkalarını mutlu etmeye çalışırken kendi duygusal boşluğunu ihmal edebilir ve bu yüzden içten içe kırgınlık yaşayabilirsin. Bu süreçte partnerin her zamankinden daha talepkar olabilir, sen ise sadece kendi kabuğuna çekilmek isteyebilirsin. Dengeyi bulmak için duygularını açıkça paylaşmalı ve \"hayır\" demenin de sevgiye dahil olduğunu unutmamalısın.",
+      ],
+      neutral: [
+        "İlişkilerinde duygusal güvenlik ihtiyacının tavan yaptığı, partnerine adeta ruhsal olarak kenetlendiğin bir dönemdesin. Ruh halin partnerinin tavırlarına göre çok çabuk değişebilir, bu yüzden ilişkinde bir \"duygusal ayna\" görevi görüyorsun. Karşındaki insana annelik veya babalık yapma isteğin ağır basabilir, ancak kendi ihtiyaçlarını söylemeyi unutmamalısın. Yeni bir ortaklık veya evlilik kararı alırken mantığından çok sezgilerine güvenme eğilimindesin.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Duygusal krizlerini muazzam bir soğukkanlılıkla yönettiğin, içsel bir barış yakaladığın huzurlu bir süreçtesin. Aileden veya eşten gelecek küçük ama çok anlamlı maddi destekler ruhuna ve cüzdanına çok iyi gelecek. Sezgilerin sayesinde finansal kararlar alırken hiç hata yapmıyor, paranın bereketini ve geliş hızını artırabiliyorsun. Küçük bir ruhsal çalışma veya terapi, senin her zamankinden çok daha hızlı bir şekilde hafiflemeni ve yenilenmeni sağlayacak.",
+        "Duygusal derinliğinin ve sezgilerinin sana muazzam bir huzur getirdiği, ruhsal olarak şifalandığın bir dönemdesin. Başkalarının kaynaklarından gelen beklenmedik bereket seni maddi olarak rahatlatıyor ve geleceğe dair güvenini perçinliyor. Ruhsal anlamda gerçek bir \"yeniden doğuş\" yaşıyorsun; geçmişin tüm yüklerini ve travmalarını bırakmak senin için çok kolaylaştı. Sevdiklerinle kurduğun o derin bağ, hayatındaki tüm maddi krizleri bir çırpıda eritmene yardımcı oluyor.",
+      ],
+      negative: [
+        "İç dünyanda fırtınalar koparken dışarıya hiçbir şey belli etmemeye çalışmak seni duygusal olarak tamamen tüketiyor olabilir. Maddi kaygılar veya paylaşılan kaynaklardaki pürüzler uykularını kaçırabilir ve seni çevrene karşı aşırı alıngan yapabilir. \"Güvende miyim?\" endişesiyle partnerini veya ortaklarını darlayabilir, gereksiz kıskançlık krizleriyle ilişkini yorabilirsin. Bu dönemde duygusal tepkilerini kontrol etmeli ve kriz anlarında mantığına sığınarak sakinleşmeye çalışmalısın.",
+        "Kendi duygusal konforunla başkalarının bitmek bilmeyen krizleri arasında sıkışmış hissedebilirsin; birileri sürekli senden medet umuyor olabilir. Maddi konularda \"benim param\" ve \"ortak bütçe\" arasında duygusal bir çekişme yaşanabilir ve bu seni yorabilir. Partnerinin duygusal iniş çıkışları senin de günlük huzurunu kaçırabilir ve dengeyi kurmakta zorlanabilirsin. Kendi iç huzurunu korumak için başkalarının dramlarına fazla kapılmamaya ve sınırlarını çizmeye özen göstermelisin.",
+      ],
+      neutral: [
+        "Duyguların en derin, en gizemli ve en yoğun olduğu bir ruhsal sarmalın içindesin; adeta bir içsel detoks yaşıyorsun. Sezgilerin o kadar keskin ki, insanların en gizli niyetlerini daha onlar konuşmadan anlıyor ve ona göre gardını alıyorsun. Ortaklaşa harcamalar veya aileden gelen maddi konular duygusal huzurunu bu dönemde doğrudan etkileyebilir. İçindeki korkularla yüzleşmek ve onları sonsuza dek şifalandırmak için evren sana harika bir fırsat sunuyor; korkma ve derine in.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Duygularını ifade etmek ve ruhunu beslemek için çıkacağın küçük seyahatler sana beklediğinden çok daha büyük bir huzur getirecek. Yakın çevrendeki kadın figürlerin veya kardeşlerinin desteğiyle yurt dışı hayallerine bir adım daha yaklaşıyorsun. Yeni bir eğitim veya hobi kursu ruhuna o kadar iyi gelecek ki, içindeki o meraklı çocuğu yeniden uyandıracaksın. Sezgisel olarak doğru bilgiye ulaştığın ve hayatın tadını farklı bakış açılarıyla çıkardığın çok sempatik bir süreçtesin.",
+        "Ruhunun en derinlerinde müthiş bir huzur ve \"evindeymişsin\" hissiyle dolu, çok şanslı bir dönemdesin. Uzak yolculuklar, yabancı diller veya yüksek öğrenim konularında işlerin su gibi akıyor ve sana muazzam bir duygusal tatmin sağlıyor. Sezgilerin o kadar güçlü ki, hayatın anlamını sanki bir anda keşfetmiş gibi hissediyor ve bu bilgelikle çevrene ışık saçıyorsun. Hayalindeki o seyahat veya eğitim fırsatı ayağına kadar gelecek; evren seni şefkatle destekliyor, tadını doya doya çıkar!",
+      ],
+      negative: [
+        "İç dünyandaki huzursuzluk ve alınganlık, uzak yolculuklarda veya eğitim hayatında bazı aksaklıklara ve gerginliklere yol açabilir. İnançların veya hayat felsefen yüzünden ailenle veya sevdiklerinle ters düşebilir, kendini yalnız ve anlaşılmamış hissedebilirsin. \"Gitmek mi zor kalmak mı?\" ikilemi seni duygusal olarak yorabilir ve odaklanma sorunu yaşamana neden olabilir. Bu dönemde duygusal tepkilerini kontrol etmeli ve büyük kararlar vermeden önce içindeki fırtınanın dinmesini beklemelisin.",
+        "Günlük hayatın duygusal ihtiyaçlarıyla ruhunun derinliklerindeki büyük keşif arzusu arasında bir denge kurman gerekiyor. Yakın çevrendeki insanların dertleri seni uzaklardaki hedeflerinden alıkoyuyor gibi hissedebilir ve bu sende bir sıkışmışlık yaratabilir. \"Buraya mı aitim yoksa oraya mı?\" sorusu uykularını kaçırabilir ama bu süreç sana aidiyetin mekanlarda değil kalbinde olduğunu öğretecek. Kendi duygusal sınırlarını korurken ufuklarını genişletmeye devam etmelisin.",
+      ],
+      neutral: [
+        "Duygusal huzuru uzak diyarlarda, farklı kültürlerde veya derin felsefi arayışlarda bulduğun bir dönemdesin; ruhun özgürlük diye haykırıyor! Yabancı ülkeler veya yeni inanç sistemleri sana ana kucağı gibi sıcak gelebilir ve kendini oralara ait hissedebilirsin. Eğitim hayatında veya hukuksal konularda sezgilerin sana en doğru yolu gösterecektir, iç sesini mutlaka dinle. Ancak çok fazla hayallere dalıp gerçeklerden kopma riskine karşı dikkatli olmalı, duygusal güvenliğini sadece mekanlara bağlamamalısın.",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında sezgilerinin seni en doğru noktaya taşıdığı, çok huzurlu bir akıştasın. Aile içindeki kadın figürlerin veya yakın dostlarının desteğiyle kariyerinde beklediğin o kapı nazikçe açılabilir. Toplum önünde çok sempatik ve güven verici bir imaj çiziyorsun, bu da iş görüşmelerinde seni bir adım öne çıkarıyor. Küçük adımlarla ama duygusal bir tatminle hedeflerine ilerlemek ruhuna çok iyi gelecek.",
+        "Kariyerinde tam bir duygusal doyum ve zahmetsiz bir popülerlik dönemi yaşıyorsun! Toplum önündeki imajın o kadar şefkatli ve anaç/babacan ki, herkes sana güvenmek ve seninle çalışmak istiyor. Kadınlardan veya aileden gelen büyük destekler sayesinde hayalindeki pozisyona kolayca ulaşabilirsin. Sezgilerin bir pusula gibi çalışıyor; hangi projenin tutacağını veya kime güvenmen gerektiğini çok iyi biliyorsun, tadını çıkar!",
+      ],
+      negative: [
+        "İç dünyandaki huzursuzluk ve evdeki sorumlulukların, kariyerindeki başarılarını gölgelemeye çalışıyor gibi. \"İş mi, aile mi?\" ikileminde kalmak seni duygusal olarak çok yorabilir ve toplum önünde fevri tepkiler vermene neden olabilir. Üstlerinle veya otorite figürleriyle alınganlıktan kaynaklanan sürtüşmeler yaşamaya müsaitsin. Bu dönemde profesyonel kararlar alırken duygularını bir kenara bırakmalı ve derin bir nefes alarak mantığına güvenmelisin.",
+        "Tüm enerjin toplum önündeki başarılarına odaklanmışken, iç dünyan ve mahremiyetin \"beni unutma\" diyor. Kariyerindeki yoğunluk yüzünden evindeki huzuru veya kendi içsel ihtiyaçlarını ihmal ediyor olabilirsin. \"Başarı her şey mi?\" sorusu kafanı kurcalarken, dışarıdaki imajınla evdeki halin arasında bir köprü kurman gerekecek. Dengeyi bulursan, bu süreç sana çok derin bir aidiyet ve özgüven kazandıracaktır.",
+      ],
+      neutral: [
+        "Kariyerinde duygularınla hareket ettiğin, toplum önünde çok şeffaf olduğun bir dönemdesin canım. İnsanlar senin ruh halini dışarıdan hemen anlayabiliyor, bu da sana bazen çok sempatik bazen de fazla kırılgan bir hava katıyor. Kariyerinde halkla ilişkiler, beslenme veya kadınlara yönelik alanlarda büyük bir popülerlik yakalayabilirsin. Ancak modun düştüğünde işine odaklanmakta zorlanabilirsin, profesyonel hayatınla duygularını ayırmayı öğrenmelisin.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden ve yakın dostlarından gelen yumuşacık bir destekle ruhunu beslediğin bir dönemdesin. Grup içindeki kadın figürlerle kurduğun sempatik bağlar, sana gelecek planlarında çok tatlı fırsatlar sunabilir. Küçük sosyal etkinlikler veya samimi sohbetler, hayallerine giden yolda sana ihtiyacın olan o moral motivasyonu fazlasıyla verecek. İçindeki sezgisel güç, hangi arkadaşının sana gerçekten iyi geleceğini fısıldıyor; onu dinle!",
+        "Dostlarınla tam bir ruhsal uyum ve huzur içinde olduğun, şahane bir akıştasın! Hayallerine giden yolda evren sanki sevdiklerini senin için birer yardımcı olarak görevlendirmiş gibi. Grup çalışmalarında o kadar empatik ve sevgi dolusun ki, herkes seninle aynı amaç uğruna koşmak için yarışıyor. Sezgilerinin seni en doğru hayale ve en güvenilir dosta götürdüğü bu süreçte, toplumsal yardımlaşma konularında da çok başarılı olabilirsin.",
+      ],
+      negative: [
+        "Sosyal çevrende alınganlıklardan kaynaklanan küçük ama can sıkıcı krizler yaşanabilir, aman dikkat! Arkadaşlarının seni dışladığını veya anlamadığını düşünüp kabuğuna çekilme riskin var. Gelecek planlarınla ilgili yaşadığın duygusal huzursuzluk, grup içindeki tavırlarına \"soğukluk\" olarak yansıyabilir. Bu dönemde sosyal ortamlarda çok fazla hassasiyet göstermemeli ve başkalarının onayını beklemek yerine kendi iç huzuruna odaklanmalısın.",
+        "Kendi iç dünyandaki derin duygusal ihtiyaçlarınla sosyal grubunun beklentileri arasında bir denge kurman gerekiyor. Sen köşende dinlenmek isterken arkadaşlarının bitmek bilmeyen talepleri seni duygusal olarak yorabilir. \"Benim mutluluğum mu yoksa grubun neşesi mi?\" ikileminde kalabilirsin. Dengeyi bulmak için hayır demeyi öğrenmeli ve sosyal hayatındaki popülerliğinin iç huzurunu çalmasına izin vermemelisin.",
+      ],
+      neutral: [
+        "Arkadaş çevrende adeta bir \"liman\" gibisin, herkes derdini anlatmak için sana koşuyor. Duygusal güvenliğini sosyal gruplara ait hissederek sağlıyorsun, ancak arkadaşlarınla arandaki bağ çok çabuk değişebilen bir havaya sahip. Grup içinde bir anne veya baba figürü üstlenmek seni mutlu etse de, başkalarının duygusal yükünü taşımaktan bazen yorulabilirsin. Hayallerin çok değişken; bugün istediğin bir şeyi yarın unutabilirsin, sezgilerini hayallerine rehber etmelisin.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal çalışmalarından veya yalnız vakit geçirdiğin anlardan gelen yumuşacık bir huzurla hayatını dengeliyorsun. Gizli kalmış duygusal destekler veya kadın figürlerden gelen perde arkası yardımlar ruhuna ilaç gibi gelecek. Sezgilerin bir pusula gibi çalışıyor; kimin sana iyi geleceğini veya hangi olayın arkasında ne olduğunu daha onlar yaşanmadan hissedebiliyorsun. Küçük ruhsal ritüeller veya yazmak, içindeki o derin huzuru dış dünyana da yansıtmanı sağlayacaktır.",
+        "Ruhsal anlamda tam bir doyum ve \"ilahi şefkat\" içindesin; sanki evren seni pamuklara sarıp sarmalıyor. Yalnızlık senin için bir ceza değil, en büyük ilham ve huzur kaynağı haline gelmiş durumda; sezgilerin zirvede! Rüyalarından gelen rehberlik sayesinde hayatındaki pürüzleri zahmetsizce halledebiliyorsun. İçsel huzurun dışına o kadar güzel yansıyor ki, insanlar sadece senin yanında bulunarak bile şifa bulduklarını hissediyorlar; ruhun parlıyor!",
+      ],
+      negative: [
+        "İç dünyandaki huzursuzluk ve bilinçaltındaki korkular, uykularını kaçırabilir ve seni duygusal olarak çok tüketebilir. Geçmişten gelen bazı duygusal travmalar bugününü gölgelemeye çalışabilir ve seni çevrene karşı aşırı alıngan yapabilir. Gizli kalmış meseleler yüzünden kendini yalnız ve güvensiz hissedebilirsin; stres direkt midene veya uyku düzenine vurabilir. Bu dönemde duygusal tepkilerini kontrol etmeli ve içindeki fırtına dinmeden önemli kararlar almamaya özen göstermelisin.",
+        "Günlük hayatın duygusal koşturmacasıyla ruhunun derinliklerindeki yalnızlık ihtiyacı arasında bir terazi kurman gerekiyor. Başkalarının dertlerini dinlemekten kendi ruhunu ihmal edebilir ve içten içe bir boşluk hissedebilirsin. \"Dışarıya mı ait olmalıyım yoksa kendime mi?\" ikilemi seni duygusal olarak yorabilir. Dengeyi bulmak için gün içinde kendine sessiz anlar yaratmalı ve başkalarının duygusal yüklerini kendi yükünmüş gibi taşımaktan vazgeçmelisin.",
+      ],
+      neutral: [
+        "Duygularının en derin, en gizemli ve en sezgisel olduğu bir ruhsal sarmalın içindesin; adeta bir içsel detoks yaşıyorsun. Rüyaların o kadar canlı ve mesaj dolu ki, gece uykunda bile şifalanmaya devam ediyorsun. Yalnız kalmak sana ana kucağı gibi güvenli geliyor ama aşırı melankoliye ve geçmişe tutunma riskine karşı dikkatli olmalısın. İçindeki o hassas çocuğu dış dünyadan korurken, ona şefkat göstermek ve kendi duygusal derinliğinde huzur bulmak için en doğru zamandasın.",
+      ],
+    },
   },
   "Merkür": {
-    1: { tr: "Zihnin çok aktif, fikirlerini paylaşmak için sabırsızlanıyorsun. Kendini ifade etme yeteneğin parlıyor.", en: "Your mind is very active, you're eager to share your ideas. Your ability to express yourself is shining." },
-    2: { tr: "Finansal planlamalar ve bütçe konuları zihnini meşgul edebilir. Yeni gelir kapıları için stratejiler geliştirebilirsin.", en: "Financial planning and budget issues may occupy your mind. You can develop strategies for new income sources." },
-    3: { tr: "İletişim trafiğin artıyor. Kısa seyahatler, eğitimler ve yazışmalar için çok hareketli bir dönemdesin.", en: "Your communication traffic is increasing. A very active period for short trips, trainings and correspondence." },
-    4: { tr: "Aile içi iletişim ve evle ilgili kararlar ön planda. Geçmişi yad etmek veya evdeki düzeni konuşmak isteyebilirsin.", en: "Family communication and home-related decisions are in the foreground. You may want to reminisce about the past or discuss the order at home." },
-    5: { tr: "Yaratıcı fikirler havada uçuşuyor! Hobilerin veya aşk hayatınla ilgili zihinsel olarak çok aktif ve oyuncu bir enerjin var.", en: "Creative ideas are flying around! You have a very active and playful mental energy regarding your hobbies or love life." },
-    6: { tr: "İş yerindeki detaylar ve günlük iş akışı zihnini yorabilir. Liste yapmak ve planlı hareket etmek seni rahatlatacaktır.", en: "Details at work and daily workflow may tire your mind. Making lists and acting planned will relax you." },
-    7: { tr: "İlişkilerde diyalog kurma zamanındasın. Partnerinle veya ortağınla önemli konuları masaya yatırabilir, anlaşmalar yapabilirsin.", en: "Time for dialogue in relationships. You can put important issues on the table with your partner or associate and make agreements." },
-    8: { tr: "Derin ve araştırmacı bir zihin yapısındasın. Gizemli konuları çözmek, finansal stratejiler kurmak için ideal bir zaman.", en: "A deep and investigative mind structure. An ideal time to solve mysterious issues and build financial strategies." },
-    9: { tr: "Yeni şeyler öğrenme ve felsefi tartışmalar yapma isteğin var. Uzak yerlerle ilgili haberler alabilir veya eğitim planlayabilirsin.", en: "Desire to learn new things and have philosophical discussions. You may receive news about distant places or plan education." },
-    10: { tr: "Kariyerindeki hedeflerin üzerine konuşma ve plan yapma vaktindesin. Otorite figürleriyle iletişim kurmak için destekleyici bir enerji var.", en: "Time to talk and plan about your career goals. A supportive energy for communicating with authority figures." },
-    11: { tr: "Arkadaşlarınla fikir alışverişi yapmak ve geleceğini planlamak seni heyecanlandırıyor. Sosyal projelerde aktif olabilirsin.", en: "Exchanging ideas with friends and planning your future excites you. You can be active in social projects." },
-    12: { tr: "Zihnin biraz karışık veya içe dönük olabilir. Yazı yazmak veya günlük tutmak bilinçaltındaki fikirleri açığa çıkarabilir.", en: "Your mind may be a bit confused or introverted. Writing or keeping a journal can reveal subconscious ideas." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni fikirlerin, ilginç haberlerin ve keyifli sohbetlerin kapını çaldığı bir süreçtesin. Zihinsel olarak çok uyanıksın ve önüne çıkan fırsatları hemen kavrayıp lehine çevirebiliyorsun. Çevrendeki insanlarla kurduğun iletişim sana yeni kapılar açabilir. Kısa yolculuklar veya eğitimle ilgili konular gündemindeyse çok verimli sonuçlar alabilirsin.",
+        "İletişim becerilerinin zirvesindesin, herkesi ikna edebilecek bir hitabet gücüne sahipsin. Zihinsel bir berraklık içindesin ve problemleri çözmek senin için çocuk oyuncağı. Eğitim, ticaret veya yazışmalarla ilgili her türlü konuda şans senden yana. Kendini çok akıcı ve zeki hissediyorsun, bu enerjiyi yarım kalan işlerini bitirmek için kullan.",
+      ],
+      negative: [
+        "Aklından geçenlerle söylediklerin bazen birbirini tutmayabilir, aman dikkat! Düşüncesizce söylediğin bir söz ya da aceleyle attığın bir mesaj başına iş açabilir. Odaklanma sorunu yaşayabilir veya evrak işlerinde küçük hatalar yapabilirsin. Bu dönemde önemli kararlar almadan önce iki kez düşünmeli ve sözleşmeleri dikkatli okumalısın.",
+        "Zihinsel enerjin tamamen başkalarıyla kurduğun diyaloğa odaklanmış durumda. Fikir alışverişi yapmak sana çok şey katabilir ama başkalarının fikirlerine çok fazla takılıp kendi yolundan sapmamalısın. Karşındaki kişilerle tartışmaya girmek yerine, onları anlamaya çalışmak sana yeni bakış açıları kazandıracak. Söz düellolarına girmemeye, daha çok dinlemeye odaklan.",
+      ],
+      neutral: [
+        "Zihnin adeta bir işlemci gibi hızlı çalışıyor, dilinden dökülen her kelime altın değerinde! Kendini ifade etme yeteneğin tavan yapmış durumda; yazmak, konuşmak veya sunum yapmak için harika bir zaman. Çok meraklısın ve sürekli yeni bir şeyler öğrenmek istiyorsun. Hareketli yapın sayesinde birçok işi aynı anda bitirebilirsin ama biraz yavaşlamayı da unutma.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni fikirler ve pratik çözümler sayesinde maddi durumunu iyileştirecek fırsatlar yakalayabilirsin. Yakın çevrenden alacağın bir tüyo veya okuduğun bir bilgi sana karlı bir kapı açabilir. İletişim yeteneklerin sayesinde beklediğin ödemeleri daha kolay tahsil edebilirsin. Zihinsel becerilerini paraya dönüştürmek için çok uygun bir zaman, sadece harekete geç!",
+        "Maddi konularda zihninin çok berrak olduğu ve stratejik kararlar alabildiğin bir süreçtesin. Ticari anlaşmalar, kontratlar ve satış-pazarlama işlerinde şans senden yana. Eğitim veya seyahat planların için gerekli olan finansal kaynağı kolayca yaratabilirsin. İnsanları ikna etme kabiliyetin sayesinde hak ettiğin zammı veya ödemeyi talep etmek için en doğru zamandasın.",
+      ],
+      negative: [
+        "Hesap hatalarına ve iletişim kazalarına bağlı maddi kayıplara karşı uyanık olmalısın. Önemli bir evrakı imzalamadan önce iki kez oku, çünkü gözden kaçan küçük bir detay bütçeni sarsabilir. Fikirlerinle kazançların arasında bir uyumsuzluk olabilir, yani planladığın işler beklediğin geliri getirmeyebilir. Bu dönemde büyük riskler almaktan ziyade, mevcut durumunu korumaya odaklanmalısın.",
+        "Finansal konularda başkalarıyla fikir ayrılığına düşebilirsin; senin değerlerinle karşındakilerin değerleri çatışabilir. Ortaklı işlerde veya eşinle para yönetimi konusunda çok fazla konuşma ve tartışma dönebilir. Bilgi kirliliği yüzünden yanlış yatırımlar yapma riskine karşı dikkatli olmalısın. Dinlemeyi öğrenmek ve objektif kalmak, bu dönemi finansal olarak karlı kapatmanı sağlar.",
+      ],
+      neutral: [
+        "Zihnin sürekli \"nasıl daha fazla kazanırım?\" sorusuna yanıt arıyor ve buluyor da! Ticari zekanın zirvede olduğu, pazarlık yapma ve karlı anlaşmalar imzalama konusunda çok yetenekli olduğun bir dönem. Yazışmalar, eğitimler veya teknolojik araçlar üzerinden yeni gelir kapıları açabilirsin. Ancak çok fazla küçük harcama yaparak bütçeni dağıtmamaya da dikkat etmelisin.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İletişim kanallarının ardına kadar açık olduğu, fırsatların bir telefon veya mesajla kapına geldiği bir süreçtesin. Yakın çevrendeki insanlarla kurduğun bağlar, sana iş hayatında veya eğitiminde beklenmedik kapılar açabilir. Kısa yolculuklar sırasında tanışacağın kişiler vizyonunu genişletebilir. Zihinsel olarak çok berraksın, yarım kalan yazılarını veya projelerini tamamlamak için bu destekleyici enerjiyi mutlaka kullanmalısın.",
+        "Düşüncelerinle eylemlerinin tam bir uyum içinde olduğu, şahane bir akıştasın. Sınavlar, mülakatlar veya önemli konuşmalar için evren seni destekliyor; zihnindekileri en etkileyici şekilde ifade edebileceksin. Öğrenme kapasiten o kadar yüksek ki, karmaşık konuları bile bir çırpıda kavrayabilirsin. Bu dönemde çıkacağın kısa seyahatler sana sadece keyif değil, aynı zamanda çok kıymetli bilgiler de kazandıracak.",
+      ],
+      negative: [
+        "Zihin karmaşası ve iletişim kazalarına karşı çok dikkatli olman gereken bir dönem. Yanlış kişiye atılan mesajlar veya yanlış anlaşılan mailler başını ağrıtabilir; göndermeden önce mutlaka iki kez oku. Kardeşlerinle veya komşularınla incir çekirdeğini doldurmayacak meseleler yüzünden gereksiz tartışmalara girebilirsin. Odaklanma sorunu yaşayabileceğin için bu dönemde büyük imzalar atmaktan kaçınman veya uzman görüşü alman senin yararına olur.",
+        "Fikirlerinle başkalarının beklentileri arasında bir köprü kurmakta zorlanabilirsin. Kendi doğrularınla çevrendeki insanların sunduğu bilgiler çatışabilir, bu da zihinsel bir yorgunluk yaratabilir. Tartışmalarda \"haklı çıkmak\" yerine \"anlamaya çalışmak\" stratejisini izlersen bu süreci çok daha kazançlı atlatırsın. Bilgi kirliliğine dikkat etmeli, her duyduğuna inanmadan önce kaynaklarını iyi araştırmalısın.",
+      ],
+      neutral: [
+        "\"Tatlı dil yılanı deliğinden çıkarır\" sözü tam da senin için söylenmiş gibi! Zihninin en aktif olduğu, kelimelerin adeta dans ederek ağzından döküldüğü bir dönemdesin. Yeni bir dil öğrenmek, kitap yazmaya başlamak veya önemli bir sunum yapmak için bundan daha iyi bir zaman olamazdı. Çevrendeki herkes senin pratik zekana ve çözüm odaklı yapına hayran kalacak; sadece çok fazla konuşup enerjini tüketmemeye dikkat et.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Aile içindeki sorunları tatlı dille çözmek, küslükleri bitirmek için harika bir zaman. Evinle ilgili teknik işleri halletmek, kira sözleşmesi imzalamak veya yeni bir mülk araştırmak için zihnin çok net çalışıyor. Yakın çevrenden veya kardeşlerinden evle ilgili konularda çok mantıklı destekler alabilirsin. Fikirlerini ailenle paylaşmak, aranızdaki anlayışı ve güveni hiç olmadığı kadar artıracak.",
+        "Zihninle ruhunun tam bir uyum içinde olduğu, huzurlu bir akıştasın. Ailenle yaptığın derin ve anlamlı sohbetler sana yeni perspektifler kazandırabilir. Geçmişteki bir meseleyi mantıklı bir şekilde analiz edip sonunda zihninde özgürleşebilirsin. Gayrimenkul yatırımları veya evden yürütülen projeler için şans senden yana; zekanı köklerinden aldığın güçle birleştiriyorsun.",
+      ],
+      negative: [
+        "Ev içinde \"sen öyle dedin, ben böyle anladım\" tartışmaları havada uçuşabilir. Aile büyükleriyle fikir ayrılıkları yaşaman ve kendini anlatmakta zorlanman mümkün. Zihinsel enerjin o kadar dağınık ki, evdeki basit işleri bile organize etmekte zorlanabilirsin. Bu dönemde büyük kararlar almaktan kaçınmalı ve özellikle evrak işlerinde çok dikkatli olmalısın; yanlış anlamalar canını sıkabilir.",
+        "İş yerindeki yoğun trafik ve toplantılar, evdeki sessizlik ihtiyacınla çakışıyor. \"Kime cevap vereceğim?\" şaşkınlığı yaşarken hem evde hem işte bazı detayları kaçırabilirsin. Kariyerinle ilgili aldığın haberler evdeki düzenini değiştirmene neden olabilir. Dengeyi bulmak için önceliklerini yazılı hale getirmeli ve zihnini tek bir yöne odaklamaya çalışmalısın.",
+      ],
+      neutral: [
+        "Evin şu an adeta bir ofise veya kütüphaneye dönmüş durumda! Ailenle sürekli bir şeyler tartışıyor, geçmişi konuşuyor veya evden yürüttüğün işlere odaklanıyorsun. Zihnin köklerinle ve çocukluğunla meşgul; belki de aile ağacını araştırmak veya eski fotoğrafları düzenlemek istiyorsun. Çok fazla düşünmek uykularını kaçırabilir, zihnini biraz susturup evindeki sessizliğin tadını çıkarmayı denemelisin.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrenden alacağın ilginç fikirler, yaratıcı projelerine yeni bir boyut kazandırabilir. Flörtleşmekten ve yeni insanlarla tanışmaktan büyük zevk alacağın, iletişimin su gibi aktığı bir süreçtesin. Çocuklarla veya gençlerle yapacağın sohbetler sana beklenmedik kapılar açabilir veya ufkunu genişletebilir. Zihinsel olarak çok uyanıksın; stratejik oyunlarda veya hobilerinde başarıyı yakalaman an meselesi.",
+        "Fikirlerinin ve yaratıcılığının takdir topladığı, zihinsel enerjinin en yüksek olduğu dönemdesin. Aşk mektupları yazmak, flörtünle derin ve zevkli sohbetler etmek için harika bir akış var. Eğitim veya öğretimle ilgili bir hobin varsa, bu süreçte büyük ilerlemeler kaydedebilirsin. Kendini ifade etme yeteneğin o kadar pürüzsüz ki, en karmaşık konuları bile bir oyun neşesiyle anlatıp herkesi ikna edebilirsin.",
+      ],
+      negative: [
+        "Aşk hayatında veya çocuklarla olan iletişiminde \"dilin kemiği yok\" dedirtecek durumlar yaşanabilir. Yanlış anlaşılan bir espri veya düşüncesizce söylenmiş bir söz, sevdiğinle aranda soğuk rüzgarlar estirebilir. Zihnin o kadar dağınık ki, yaratıcı işlerine odaklanmakta ve bitirmekte zorlanabilirsin. Bu dönemde riskli yatırımlar veya spekülatif oyunlar konusunda çok dikkatli olmalı, mantığını duygularına kurban etmemelisin.",
+        "Gelecek planlarınla şu anki zevklerin arasında bir fikir çatışması yaşayabilirsin. Sosyal çevrenden gelen mantıklı öneriler, senin romantik ve eğlenceli dünyana biraz \"soğuk\" gelebilir. İletişimde dengeyi bulmak için hem kendi arzularını dinlemeli hem de dışarıdan gelen objektif bilgilere kulak vermelisin. Tartışmalarda inatçı olmak yerine esnek davranırsan, bu süreçten çok şey öğrenerek çıkarsın.",
+      ],
+      neutral: [
+        "Zihnin adeta bir oyun parkı gibi; çok yaratıcı, eğlenceli ve hareketli fikirlerle dolusun! Flörtlerinde zekanla ve esprilerinle herkesi kendine hayran bıraktığın, kelimelerinle büyülediğin bir dönemdesin. Yeni hobiler edinmek veya zihinsel oyunlarla vakit geçirmek sana büyük keyif verecek. Eğer yazıyorsan veya konuşuyorsan, bu süreçte ortaya çıkaracağın eserler çok ses getirebilir; zekanı parlatma zamanı!",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Pratik zekan sayesinde günlük hayattaki karmaşaları tereyağından kıl çeker gibi hallediyorsun. İş yerindeki arkadaşlarınla kurduğun akıcı iletişim, sana yeni projelerin veya kolaylıkların kapısını açabilir. Teknik becerilerini geliştirmek veya yeni bir cihaz/yazılım öğrenmek için çok uygun bir süreçtesin. Küçük ayrıntılarda gizli olan büyük fırsatları fark ederek iş hayatında bir adım öne geçebilirsin.",
+        "İş hayatında zekanı ve yeteneklerini en verimli şekilde sergilediğin, takdir topladığın bir dönem. Karmaşık sistemleri analiz etmek, düzen kurmak ve planlama yapmak senin için çocuk oyuncağı haline geldi. Sağlık konularında bilinçli kararlar alıyor ve bedenine çok iyi bakıyorsun. Sözlerinle iş arkadaşların üzerinde etkileyici bir otorite kurabilir, çözüm odaklı yapınla herkesin kahramanı olabilirsin.",
+      ],
+      negative: [
+        "Zihin dağınıklığı ve iletişim kazaları yüzünden iş hayatında bazı aksaklıklar yaşanabilir; \"kafa gitti\" dediğin anlara dikkat! Evrak işlerinde hatalar yapabilir veya yanlış kişiye yanlış mesajlar gönderebilirsin. Sağlığınla ilgili evhamlı düşüncelere kapılmaya müsaitsin, her küçük belirtiyi devasa bir sorun sanma. Bu dönemde önemli kararlar almadan önce listeler yapmalı ve her şeyi iki kez kontrol etmelisin.",
+        "Büyük hayallerinle ve vizyonunla, günlük hayatın küçük ve sıkıcı detayları arasında bir fikir ayrılığı yaşıyorsun. \"Ben büyük işler için yaratıldım ama şu an dosya düzenliyorum\" diyerek modunu düşürme; bu detaylar seni başarıya götüren basamaklar. İletişimde başkalarının fikirlerine çok takılabilir, kendi mantığını devre dışı bırakabilirsin. Zihinsel bir denge kurmak için hem büyük resmi görmeli hem de bugünün görevlerini ihmal etmemelisin.",
+      ],
+      neutral: [
+        "Zihnin adeta bir İsviçre saati gibi çalışıyor; detaylara o kadar hakimsin ki hiçbir hata gözünden kaçmıyor! İş yerinde iletişim trafiğin çok yoğun, sürekli yazışıyor, plan yapıyor ve sorun çözüyorsun. Sağlığınla ilgili araştırmalar yapmak, yeni bir diyet veya egzersiz programı tasarlamak için harika bir zaman. Çok fazla düşünmekten zihnini yormamaya dikkat et, arada bir fişi çekip dinlenmeyi de ihmal etme.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevren veya kardeşlerin aracılığıyla hayatına yeni ve ilginç insanlar girebilir, karlı ortaklıkların temeli atılabilir. Partnerinle arandaki küçük pürüzleri tatlı dille ve mantıklı bir yaklaşımla kolayca hallediyorsun. İletişim becerilerin sayesinde ikili ilişkilerinde arabulucu rolü üstlenebilir ve herkesin takdirini kazanabilirsin. Zihinsel paylaşımların yoğun olduğu bu süreç, aşk hayatına da taze ve entelektüel bir heyecan katacak.",
+        "İkili ilişkilerinde zihinsel bir berraklık ve muazzam bir anlaşma kapasitesi içindesin. Partnerinle geleceğe dair stratejik planlar yapmak veya birlikte bir projeye başlamak için bundan daha iyi bir zaman olamaz. Karşındaki insanları ikna etme ve ortak paydada buluşma yeteneğin tavan yapmış durumda. Her türlü yazışma, anlaşma ve ciddi konuşma senin lehine sonuçlanacak; aklınla ilişkilerini yönetme zamanı!",
+      ],
+      negative: [
+        "\"Sen öyle dedin, ben böyle anladım\" tartışmalarının ilişkini yorduğu bir dönem olabilir, aman dikkat! Partnerinle fikir ayrılıkları yaşayabilir ve birbirinizi dinlemek yerine sadece kendi doğrunuzu savunabilirsiniz. Önemli evrakları imzalarken veya söz verirken iki kez düşünmelisin, çünkü yanlış anlaşılmalar ileride başını ağrıtabilir. Zihnindeki karmaşayı partnerine yansıtmamaya çalışmalı ve iletişimde netlikten ödün vermemelisin.",
+        "Kendi düşüncelerine o kadar odaklanmışsın ki, partnerinin ne demek istediğini bazen kaçırıyor olabilirsin. Fikirlerin karşındaki kişi tarafından sorgulanabilir ve bu durum sende bir zihinsel savunma refleksi yaratabilir. Karşındaki insanların fikirlerinden beslenmeyi öğrenirsen bu karşıtlık sana çok büyük bir vizyon katacaktır. Söz düellolarına girmek yerine, \"biz ne düşünüyoruz?\" sorusuna odaklanmak ilişkini kurtaracaktır.",
+      ],
+      neutral: [
+        "İlişkilerinde iletişimin su gibi aktığı, her konuyu konuşarak çözebildiğin harika bir dönem! Partnerinle zihinsel bir uyum içindesin; birlikte plan yapmak, seyahat etmek veya yeni şeyler öğrenmek size büyük keyif veriyor. Yeni bir iş ortaklığına imza atmak veya önemli sözleşmeler yapmak için zekanın en parlak olduğu zamandasın. Kelimelerin o kadar ikna edici ki, karşındaki herkesi kolayca kendi yanına çekebilir ve ilişkini çok daha akılcı bir temele oturtabilirsin.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Finansal pürüzleri çözmek için gereken o pratik tüyoya veya kilit bilgiye sonunda zahmetsizce ulaşıyorsun. Ortaklaşa işlerde iletişim kanallarının açık ve dürüst olması sana beklediğin kazancı ve huzuru getirecek. Yakın çevrenden veya kardeşlerinden alacağın mantıklı tavsiyeler sayesinde miras veya borç konularını kolayca organize edebilirsin. Zihinsel olarak krizleri fırsata çevirme yeteneğin sayesinde, kimsenin göremediği o karlı detayları fark edip öne geçeceksin.",
+        "Zekanın en derin, en stratejik ve en keskin çalıştığı dönemdesin; karmaşık finansal problemleri çocuk oyuncağı gibi çözüyorsun. Ortaklıklarda ve miras konularında yapılan tüm anlaşmalar ve yazışmalar tamamen senin lehine sonuçlanacak. Psikolojik olarak kendini çok net ifade edebiliyor ve karşındaki insanların gizli niyetlerini akıl yoluyla anında çözebiliyorsun. Yazılı ve sözlü iletişimdeki bu derinlik, sana hem maddi büyük kazanç hem de çevrende sarsılmaz bir itibar getirecek.",
+      ],
+      negative: [
+        "Maddi konularda yanlış anlaşılmalar ve hatalı hesaplamalar yüzünden canın epey sıkılabilir; evrak işlerinde ekstra dikkatli olmalısın. Gizli kalması gereken bir bilginin istemeden açığa çıkması veya bir sırrın ifşa olması ilişkilerinde büyük gerginlik yaratabilir. Zihnin sürekli kötü senaryolara ve şüphelere odaklanabilir, bu da seni gereksiz bir zihinsel kaygıya sürükleyebilir. Bu dönemde büyük finansal riskler almadan önce mutlaka bir uzmana danışmalı ve sakin kalmaya çalışmalısın.",
+        "Kendi fikirlerinle başkalarının (ortakların, bankaların veya eşin) rasyonel gerçekleri arasında bir söz düellosu yaşanabilir. Maddi konularda sürekli bir fikir alışverişi, sorgulama ve pazarlık içindesin ama ortak bir paydada buluşmak vakit alabilir. Başkalarının manipülatif fikirleri seni kendi mantığından uzaklaştırabilir; söylenenlerin alt metnine dikkat etmelisin. Dengeyi bulmak için önce kendi elindeki verileri kontrol etmeli, sonra başkalarını objektif bir şekilde dinlemelisin.",
+      ],
+      neutral: [
+        "Zihnin adeta usta bir dedektif gibi çalışıyor; gizli saklı kalmış her şeyi araştırmak, sormak ve çözmek istiyorsun. Finansal yazışmalar, borçlar, vergiler veya karmaşık miras konularında çok fazla kafa yorduğun bir dönemdesin. Derin ve anlamlı konuşmalar yapmak sana çok şey katabilir ama takıntılı ve şüpheci düşüncelere karşı uyanık olmalısın. Zekanı başkalarının kaynaklarını yönetmek veya psikolojik analizler yapmak için kullanırsan bu süreçten çok kazançlı çıkarsın.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrendeki iletişim trafiği, sana uzaklardaki hedeflerinle ilgili çok tatlı kapılar açıyor. Yeni bir sertifika programına başlamak veya yurt dışı bağlantılı bir iş için gereken o kilit maili atmak için harika bir süreçtesin. Zihinsel olarak çok uyanıksın ve farklı kültürlerden insanlarla kurduğun bağlar sana beklediğinden daha büyük fırsatlar getirebilir. Küçük seyahatler, büyük fikirlerin tohumlarını atacaktır.",
+        "Zekanın en parlak ve en vizyoner olduğu dönemdesin; karmaşık felsefi konuları bile su gibi anlıyorsun! Yurt dışı projelerin, yayıncılık işlerin veya yüksek öğrenim başvuruların zahmetsizce onaylanabilir. Kelimelerinle bir bilge gibi etrafındakileri ikna edebilir ve hayata bakış açınla takdir toplayabilirsin. Zihinsel bir berraklık içindesin; bu akış seni hem akademik hem de ruhsal anlamda zirveye taşıyacak.",
+      ],
+      negative: [
+        "Fikirlerinle büyük ideallerin arasında bir karmaşa yaşanabilir; detaylarda boğulurken büyük resmi kaçırıyor olabilirsin. Hukuksal yazışmalarda veya akademik işlerde \"kafa dağınıklığı\" yüzünden hatalar yapma riskin var, dikkat et. İnançların konusunda başkalarıyla gereksiz söz düellolarına girmemeli, esnek olmaya çalışmalısın. Bu dönemde uzak yolculuklarda bilet ve rezervasyon hatalarına karşı uyanık olmanı öneririm.",
+        "Günlük hayatın pratik detaylarıyla ruhunun derinliklerindeki büyük sorular arasında bir çekişme var. Yakın çevrendeki dedikodular veya küçük işler, senin o büyük vizyonuna odaklanmanı engelliyor olabilir. Fikir alışverişinde \"benim bildiğim tek doğru\" demek yerine, başkalarının dünyasına da kulak vermen gerekiyor. Bu karşıtlık, sana hem bilgiyi toplamanı hem de onu bilgelikle dağıtmanı öğretecek bir köprüdür.",
+      ],
+      neutral: [
+        "Zihnin uzak diyarlarla ve yüksek bilgilerle o kadar meşgul ki, adeta bir bilgi avcısı gibisin! Yabancı diller öğrenmek veya akademik bir kariyere adım atmak için harika bir zaman. Fikirlerinle geniş kitleleri etkileyebilir ve vizyonunu herkese kabul ettirebilirsin. Yeni bir eğitim veya seyahat planı zihnini pırıl pırıl açacak; bu entelektüel enerjiyi mutlaka değerlendir canım!",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrenin referansları ve kurduğun akıllıca iletişim sayesinde kariyerinde yeni kapılar açılıyor. İş hayatında pratik çözümler ürettiğin için üstlerin tarafından takdir ediliyor ve daha fazla sorumluluk alıyorsun. Sözleşmeler, toplantılar ve yazışmalar su gibi akıyor; beklediğin o onay maili her an gelebilir. Küçük ama stratejik hamlelerle toplumsal statünü sağlamlaştıracağın, zihinsel olarak çok uyanık bir süreçtesin.",
+        "Kariyerinde zekanın ve hitabetinin zirvesindesin; herkesi sadece konuşarak ikna edebilirsin! Stratejik planların ve projelerin otorite figürleri tarafından tam not alıyor ve takdir ediliyorsun. Eğitim, ticaret veya yayıncılıkla ilgili bir işin varsa bu dönemde büyük bir çıkış yakalaman an meselesi. Zihinsel bir berraklık içindesin; toplumsal statünü zekanla yükseltmek senin için çocuk oyuncağına dönüştü.",
+      ],
+      negative: [
+        "İş yerinde iletişim kazalarına ve yanlış anlaşılmalara karşı çok dikkatli olmalısın canım. Üstlerine verdiğin cevaplar veya attığın bir mesaj yanlış yere çekilebilir ve itibarını zedeleyebilir. Zihnin o kadar dağınık ki, detayları kaçırmak kariyerinde küçük krizlere neden olabilir. Bu dönemde önemli kararlar almadan önce listeler yapmalı ve her evrakı iki kez okumalısın; dilinin kemiği olsun!",
+        "Kendi fikirlerinle kariyerindeki beklentiler arasında bir denge kurman gerekiyor. İş yerindeki dedikodular veya küçük detaylar senin büyük başarılarını engellemeye çalışıyor olabilir. Fikir alışverişinde otorite figürleriyle zıtlaşmak yerine, ortak bir dil bulmaya odaklanmalısın. Bu süreç sana hem bugünün pratik işlerini halletmeyi hem de gelecekteki büyük hedeflerini unutmamayı öğreten zihinsel bir sınavdır.",
+      ],
+      neutral: [
+        "Kariyerinde kelimelerinle ve zekanla devrim yaptığın bir dönemdesin! Toplum önünde konuşmak, yazmak veya sunum yapmak için harika bir enerji var; herkes senin entelektüel birikimine hayran kalacak. İş hayatında sürekli seyahat edebilir, birden fazla projeyi aynı anda yönetebilirsin. Gençlerle ilgili işlerde veya ticaret, iletişim alanlarında otoriteni ilan etme zamanın geldi; aklın en büyük silahın!",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrendeki akıllıca bağlantılar, sana hayallerini gerçekleştirecek çok stratejik kapılar açıyor. Arkadaşlarınla yapacağın kısa ve öz sohbetlerden beklemediğin kadar parlak fikirler çıkabilir. Grup içindeki yazışmalar, toplantılar ve organizasyonlar su gibi akıyor; herkes senin pratik zekana hayran kalıyor. Küçük ama etkili bu zihinsel akış, seni büyük toplumsal projelere veya hayalindeki o kariyere hızla taşıyacaktır.",
+        "Zekanın ve vizyonunun sosyal çevrende alkışlandığı, muazzam bir akıştasın! Hayallerini kelimelere dökme ve başkalarını bu hayallere ikna etme yeteneğin tavan yapmış durumda. Arkadaşlarınla birlikte yürüttüğün projeler, zihinsel uyumunuz sayesinde beklediğinden çok daha hızlı sonuç veriyor. Her türlü teknolojik yenilik veya dijital platform, sana gelecek hedeflerin için muazzam avantajlar sağlayacaktır; aklınla parlıyorsun!",
+      ],
+      negative: [
+        "Sosyal çevrende dedikodulara ve iletişim kazalarına karşı çok uyanık olmalısın canım! Yanlış anlaşılan bir mesaj veya düşüncesizce söylenmiş bir fikir, arkadaş grubunda gerginliklere yol açabilir. Gelecek planlarınla ilgili zihnin o kadar dağınık ki, hangi hayaline odaklanacağını şaşırıp enerjini tüketebilirsin. Bu dönemde önemli bir sözleşme veya toplumsal bir imza atmadan önce mutlaka güvendiğin birinden fikir almalısın.",
+        "Kendi yaratıcı fikirlerinle sosyal grubunun rasyonel gerçekleri arasında bir fikir düellosu yaşanabilir. Sen \"böyle olsun\" derken arkadaşların \"ama şu detay var\" diyerek canını sıkabilir. Tartışmalarda haklı çıkmaya çalışmak yerine, farklı bakış açılarından beslenmeyi denersen bu süreç sana çok büyük bir vizyon katar. Zihinsel bir denge kurmak için hem kendi sesini dinlemeli hem de grubun kolektif aklına saygı göstermelisin.",
+      ],
+      neutral: [
+        "Sosyal çevrende zekanın ve fikirlerinin havada uçuştuğu, adeta bir bilgi köprüsü olduğun bir dönemdesin! Arkadaşlarınla sürekli yeni projeler konuşuyor, derneklerde veya kulüplerde aktif roller üstleniyorsun. Zihnin gelecek planlarınla o kadar meşgul ki, her gün yeni bir hayal kurup onu organize ediyorsun. İletişim yeteneğin sayesinde sosyal çevreni genişletmek ve önemli networkler kurmak senin için çocuk oyuncağına dönüştü!",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Gizli bir bilgiye veya çözülmesi gereken karmaşık bir meseleye sezgilerin ve zekan sayesinde zahmetsizce ulaşıyorsun. Perde arkasındaki iletişim kanalların çok akıcı; beklemediğin birinden gelen bir mesaj işlerini kolayca yoluna koyabilir. Zihinsel olarak çok berraksın ve rüyalarından veya iç sesinden gelen tüyoları başarıyla hayatına entegre ediyorsun. Küçük ama etkili bu zihinsel akış, seni büyük ruhsal keşiflere ve huzurlu bir zihne taşıyacaktır.",
+        "Zekanın en derin, en yaratıcı ve en vizyoner çalıştığı muazzam bir akıştasın; kelimelerinle ruhlara dokunuyorsun! Bilinçaltını analiz etmek, meditasyon veya ruhsal eğitimler için zihinsel kapasiten zirvede. Gizli kalmış karmaşık problemleri çocuk oyuncağı gibi çözebilir ve perde arkasındaki anlaşmalardan büyük zaferler elde edebilirsin. Zihinsel bir berraklık içindesin; bu derinlik sana hem ruhsal bir şifalanma hem de çevrende sarsılmaz bir itibar getirecek!",
+      ],
+      negative: [
+        "Zihin karmaşası, unutkanlık ve kendi kendine kurduğun senaryolar yüzünden canın epey sıkılabilir, aman dikkat! Gizli düşmanlıklar veya arkandan çevrilen sözler yüzünden zihnen çok yorulabilir ve kime güveneceğini şaşırabilirsin. Önemli bir bilgiyi yanlış yerde paylaşmak veya bir sırrı ifşa etmek başını ağrıtabilir; bu dönemde dilinin kemiği olsun. Büyük kararlar vermeden önce zihnindeki sisi dağıtmalı ve mantığını her zamankinden daha çok devreye sokmalısın.",
+        "Günlük hayatın pratik yazışmalarıyla ruhunun derinliklerindeki gizli düşünceler arasında bir çekişme yaşanabilir. Sen sessiz kalmak isterken sürekli konuşman ve birilerine bir şeyler anlatman gerekebilir, bu da zihnini yorabilir. Fikir alışverişinde başkalarının senin gizli niyetlerini sorguladığını hissedebilir ve savunmaya geçebilirsin. Dengeyi bulmak için hem dürüst bir iletişim kurmalı hem de zihninin en mahrem köşelerini sadece kendine saklamayı bilmelisin.",
+      ],
+      neutral: [
+        "Zihnin adeta bir şairin veya bir mistiğin zihni gibi çalışıyor; kelimelerin ötesindeki anlamları keşfettiğin bir dönemdesin. Düşüncelerini kağıda dökmek, gizli araştırmalar yapmak veya bilinçaltını analiz etmek sana çok şey katacaktır. Ancak çok fazla kendi içine dönmek zihnini bulandırabilir ve gerçek dünyadan kopmana neden olabilir; takıntılı düşüncelere dikkat! Zekanı perde arkasındaki işleri organize etmek veya ruhsal yazılar yazmak için kullanırsan bu süreçten çok kazançlı çıkarsın.",
+      ],
+    },
   },
   "Venüs": {
-    1: { tr: "Çekiciliğinin ve ışıltının arttığı bir dönemdesin. Kendini sevmek, stilinde değişiklikler yapmak ve hayattan keyif almak için harika.", en: "A period when your attractiveness and sparkle increase. Great for loving yourself, making changes in your style and enjoying life." },
-    2: { tr: "Maddi kazançlar ve konfor arayışı içindesin. Kendini şımartmak isteyebilir, değerli eşyalara ilgi duyabilirsin.", en: "Search for material gains and comfort. You may want to pamper yourself and be interested in valuable items." },
-    3: { tr: "Yakın çevrenle olan ilişkilerinde uyum ve güzellik hakim. Tatlı dilinle herkesi etkileyebilir, keyifli sohbetler edebilirsin.", en: "Harmony and beauty dominate in your relationships with your close environment. You can impress everyone with your sweet talk and have pleasant conversations." },
-    4: { tr: "Evinde huzur ve estetik arıyorsun. Ailenle keyifli vakit geçirmek veya evini güzelleştirmek ruhuna iyi gelecek.", en: "You're looking for peace and aesthetics in your home. Spending quality time with your family or beautifying your home will be good for your soul." },
-    5: { tr: "Aşk, romantizm ve yaratıcılık dorukta! Hayatın eğlenceli yanlarına odaklanabilir, flörtöz ve neşeli hissedebilirsin.", en: "Love, romance and creativity at their peak! You can focus on the fun sides of life, feel flirtatious and cheerful." },
-    6: { tr: "İş ortamında uyum ve keyifli bir iş akışı var. Sağlığına ve öz bakımına daha fazla özen göstermek isteyebilirsin.", en: "Harmony and pleasant workflow in the work environment. You may want to pay more attention to your health and self-care." },
-    7: { tr: "İlişkilerde denge, uyum ve sevgi zamanı. Mevcut ilişkilerini güçlendirmek veya yeni bir aşka yelken açmak için çok destekleyici bir süreç.", en: "Time for balance, harmony and love in relationships. Very supportive for strengthening existing relationships or setting sail for a new love." },
-    8: { tr: "Tutku ve derin duygusal bağlar ön planda. Maddi ortaklıklarda veya paylaşılan değerlerde şanslı bir dönem olabilir.", en: "Passion and deep emotional bonds are in the foreground. It may be a lucky period in material partnerships or shared values." },
-    9: { tr: "Uzak yerlerden gelen aşk veya yabancı kültürlerle ilgili keyifli gelişmeler var. Hayata olan inancın ve sevgin artıyor.", en: "Love from distant places or pleasant developments related to foreign cultures. Your faith in life and love is increasing." },
-    10: { tr: "Kariyerinde parladığın ve takdir edildiğin bir dönemdesin. Otorite figürleriyle ilişkilerin güzelleşebilir, başarıların keyif verebilir.", en: "A period when you shine and are appreciated in your career. Your relationships with authority figures may improve, your achievements may be enjoyable." },
-    11: { tr: "Sosyal çevrende popülerliğin artıyor. Arkadaşlarınla keyifli etkinliklere katılabilir, hayallerine sevgiyle odaklanabilirsin.", en: "Your popularity in your social circle is increasing. You can participate in pleasant activities with friends and focus on your dreams with love." },
-    12: { tr: "Ruhsal olarak kendini sevme ve şifalanma vaktindesin. Gizli kalmış güzellikleri keşfedebilir, iç dünyanda huzuru bulabilirsin.", en: "Time for spiritual self-love and healing. You can discover hidden beauties and find peace in your inner world." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal ilişkilerinde nezaketin ve sempatikliğinle ön planda olduğun çok tatlı bir dönemdesin. Arkadaş çevrenden veya yeni tanıştığın kişilerden beklemediğin iltifatlar ve küçük hediyeler alabilirsin. Tarzında yapacağın ufak dokunuşlar, çevrende büyük bir hayranlık uyandıracaktır. Aşk kapını nazikçe çalabilir ya da mevcut ilişkinde romantizm rüzgarları esmeye başlayabilir. Kendini çok değerli ve sevilmeye layık hissettiğin bu enerjinin tadını çıkar.",
+        "Hayatının en zahmetsizce güzelleştiği, adeta bir peri masalı gibi hissettiğin dönemlerden birindesin. Güzellik, sanat ve aşk konularında şans kendiliğinden ayağına geliyor. İnsanları ikna etmek için sadece gülümsemen bile yeterli oluyor; karizman o kadar doğal ki! Maddi anlamda da küçük ama keyifli kazançlar elde edebilirsin. Kendini hem içsel hem de fiziksel olarak tam bir uyum içinde hissettiğin bu bereketli dönemi doyasıya yaşa.",
+      ],
+      negative: [
+        "Biraz fazla mı aynaya bakıyorsun acaba? Bu dönemde özdeğerini sadece dış görünüşüne veya başkalarının onayına bağlama riskin var. Lüks harcamalara ve şekerli gıdalara karşı zaafın artabilir, sonradan pişman olacağın alışverişler yapmamaya dikkat etmelisin. İlişkilerinde kendini ifade ederken fazla talepkar veya tembel bir tutum sergileyebilirsin. İçindeki gerçek güzelliği dışarıya yansıtmakta zorlandığın bu süreci, öz sevgi çalışmalarıyla dengelemelisin.",
+        "Tüm ilgin ikili ilişkilerde \"biz\" olmaya kaymış durumda ama kendi tarzından ödün veriyor olabilirsin. Partnerinin veya ortağının estetik anlayışına uyum sağlamaya çalışırken kendi özgünlüğünü kaybetmemelisin. Başkalarının seni sevmesi için aşırı taviz vermeye meyillisin, bu da seni içten içe yorabilir. Dengeyi bulursan, bu karşıtlık sana ilişkiler üzerinden kendini keşfetme ve çok çekici bir aura kazanma şansı verir. Kendi değerini başkasının gözünde arama, o zaten içinde!",
+      ],
+      neutral: [
+        "Adeta bir güzellik iksiri içmiş gibisin tatlım! Venüs yükseleninde parlarken etrafına inanılmaz bir zarafet, estetik ve sevgi enerjisi yayıyorsun. İnsanlar seninle vakit geçirmekten, sadece yüzüne bakmaktan bile huzur buluyorlar. Diplomatik yeteneklerin tavan yapmış durumda; şu an çözemeyeceğin hiçbir ikili ilişki krizi yok. Kendini şımartmak, yeni kıyafetler almak veya imajında estetik değişiklikler yapmak için muazzam bir zaman.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren ve arkadaşların aracılığıyla eline güzel fırsatlar veya hediyeler geçebilir. Sanatsal yeteneklerini veya estetik bakış açını kullanarak ek kazançlar elde etmen mümkün. Maddi konularda çok huzurlu bir akış var, büyük çabalar sarf etmeden ihtiyaçlarını karşılayabiliyorsun. Küçük birikimler yapmak veya yatırım tavsiyeleri almak için çok keyifli bir zaman.",
+        "Hayatın tadını çıkardığın ve maddi anlamda tam bir konfor içinde olduğun bir dönem. Beklenmedik yerlerden gelen paralar, hediyeler veya karlı ortaklıklar gündeminde olabilir. Güzellik, sanat veya dekorasyon işleriyle uğraşıyorsan kazancın katlanarak artabilir. Kendini çok değerli ve sevilmiş hissettiğin için bu enerji cüzdanına da bereket olarak yansıyor.",
+      ],
+      negative: [
+        "Aşırı harcama yapma isteği ve lükse olan düşkünlüğün bütçeni zorlayabilir. \"Zevklerim için her şeye değer\" diyerek yaptığın harcamalar sonradan pişmanlık yaratabilir. İlişkilerindeki huzursuzluğu alışverişle kapatmaya çalışıyor olabilirsin, buna dikkat et. Bu dönemde finansal dengeni korumak için duygusal açlığını para harcayarak doyurmamaya çalışmalısın.",
+        "İlişkilerinle cüzdanın arasında bir denge savaşı var sanki. Partnerinin harcamaları veya ortak giderler senin kendi birikimlerini etkileyebilir. \"Sevgi mi önemli para mı?\" ikilemine düşebileceğin durumlar yaşanabilir. Maddi konularda aşırı cömert davranarak kendini suistimal ettirmemeye, kendi değerini başkalarının onayıyla ölçmemeye özen göster.",
+      ],
+      neutral: [
+        "Mıknatıs gibisin, parayı ve güzellikleri kendine çekiyorsun! Maddi anlamda çok şanslı olduğun, beklediğin paraların kolayca geldiği bir dönemdesin. Kendini şımartmak, lüks harcamalar yapmak ve dış görünüşüne yatırım yapmak isteyebilirsin. Özdeğer duygun tavan yapmış durumda; sen kendine değer verdikçe dünya da sana cömert davranıyor.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yakın çevrendeki insanlardan göreceğin nezaket ve destek seni çok mutlu edecek. Sanatsal bir kursa başlamak veya yaratıcı bir hobi edinmek için harika bir enerji var; zihnin güzelliklere odaklanmış durumda. Çevrenle kurduğun uyumlu ilişkiler sayesinde hayatın günlük akışı çok daha kolay ve keyifli hale geliyor. Küçük ama seni gülümsetecek haberler alabilirsin, sevginin ve dostluğun tadını çıkar.",
+        "İletişimin ve sevginin en güzel halini yaşadığın, adeta bir şiir tadında günlerdesin. Kardeşlerinle veya yakın dostlarınla olan ilişkilerin sana büyük bir huzur ve neşe veriyor. Yazmak, çizmek veya herhangi bir sanat dalıyla ilgilenmek ruhuna çok iyi gelecek; yaratıcılığın tavan yapmış durumda. Etrafına yaydığın bu pozitif enerji sayesinde çözülmez denilen sorunları sadece gülümsemenle ve tatlı dilinle halledebilirsin.",
+      ],
+      negative: [
+        "Sosyal ilişkilerinde yüzeysellik veya dedikodu yüzünden bazı sıkıntılar yaşanabilir. Sevdiğin insanlarla aranda iletişim kopuklukları olabilir; yanlış anlaşılan bir iltifat bile gerginliğe yol açabilir. Bu dönemde lüks tüketime veya estetik müdahalelere karşı biraz temkinli olmalısın, çünkü kararların kalıcı olmayabilir. Duygularını ifade ederken samimiyetten ödün vermemeye çalış, aksi halde samimiyetsizlikle suçlanabilirsin.",
+        "Kendi zevklerinle yakın çevrenin değerleri arasında bir denge kurman gerekebilir. Sosyal ortamlarda çok fazla vakit geçirip asıl odaklanman gereken eğitim veya iş konularını ihmal edebilirsin. İkili ilişkilerde söylenen sözlerin arkasındaki duyguyu anlamaya çalışırken kafa karışıklığı yaşaman mümkün. Paylaşımcı olmak güzeldir ama bu süreçte kendi fikirlerinin de en az başkalarınınki kadar değerli olduğunu unutmamalısın.",
+      ],
+      neutral: [
+        "Ağzından bal damlıyor desek yeridir; herkes seninle vakit geçirmek ve sohbet etmek istiyor! Sosyal çevrende çok popüler olduğun, kardeşlerin ve yakın akrabalarınla arandaki buzların eridiği bir dönemdesin. Yazılı veya sözlü olarak kendini o kadar estetik ifade ediyorsun ki, bu durum aşk hayatına da olumlu yansıyabilir. Kısa yolculuklar sırasında çok keyifli tesadüflerle karşılaşabilir, yeni ve kalıcı dostluklar kurabilirsin.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Küçük ama zarif dokunuşlarla yaşam alanını güzelleştireceğin, keyifli bir süreçtesin. Ailenle veya akrabalarınla yapacağın kısa ve tatlı ziyaretler moralini çok yükseltecek. Maddi anlamda ailenden göreceğin küçük destekler veya hediyeler seni şaşırtabilir. İlişkilerinde güven aradığın ve bu güveni ev ortamında bulduğun, kalbinin pır pır ettiği günlerdesin.",
+        "Ruhunun en derinlerinde müthiş bir sevgi ve aidiyet hissiyle dolusun. Ailenle olan ilişkilerin adeta bir peri masalı gibi pürüzsüz ilerliyor, onlardan büyük bir manevi destek alıyorsun. Ev almak, evlenmek veya aileye yeni bir üyenin katılması gibi kutlanacak haberler kapıda olabilir. İçsel güzelliğin dışına yansıyor, herkes senin bu huzurlu ve ışıklı halini konuşuyor.",
+      ],
+      negative: [
+        "Evin için yaptığın harcamalar bütçeni biraz aşabilir, lüks tutkuna dikkat etmelisin! Aile içindeki kadın figürlerle estetik anlayışınız veya değer yargılarınız yüzünden sürtüşmeler yaşanabilir. Kendini evinde huzursuz hissedip bu boşluğu alışverişle veya aşırı yemekle doldurmaya çalışabilirsin. Sevgini gösterme biçimin ailen tarafından \"yetersiz\" veya \"yüzeysel\" bulunabilir, biraz daha derine inmelisin.",
+        "Sosyal hayattaki popülerliğin ve aşk trafiğin, evdeki sorumluluklarınla çatışıyor. Dışarıda \"hayatın tadını çıkaralım\" derken, evde ilgi bekleyen aile bireyleri seni biraz vicdan azabına sürükleyebilir. İlişkinde dengeyi bulmak için partnerini ev ortamına daha fazla dahil etmeyi deneyebilirsin. Bu süreçte kendi konforunla başkalarının beklentileri arasında adil bir terazi kurman gerekecek.",
+      ],
+      neutral: [
+        "Evin şu an senin için yeryüzündeki en güzel yer; resmen oraya aşıksın! Evini dekore etmek, çiçeklerle süslemek veya sevdiklerine şahane sofralar kurmak seni çok mutlu ediyor. Aile içinde sevgi rüzgarları esiyor, küslükler yerini kucaklaşmalara bırakıyor. Kendini köklerine bağlı ve çok değerli hissettiğin bir dönem; evinde huzur, cüzdanında bereket var.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal ortamlarda zarafetinle dikkat çektiğin ve yeni, keyifli arkadaşlıklar kurduğun bir süreçtesin. Aşk hayatında uyum ve nezaket hakim; küçük ama anlamlı hediyeler veya sürprizlerle mutlu olabilirsin. Yaratıcı hobilerin için harcayacağın vakit sana sadece huzur değil, aynı zamanda estetik bir tatmin de getirecek. Hayatın sana sunduğu küçük güzellikleri fark edip onlardan büyük mutluluklar devşirebileceğin bir zamandasın.",
+        "Tam bir \"pembe bulutlar\" dönemi yaşıyorsun tatlım; aşk hayatın bir film sahnesi kadar romantik ve pürüzsüz! Sanatsal bir üretimin varsa, bu dönemde parlayabilir ve büyük takdir toplayabilirsin. Çocuklarla olan ilişkilerin sana muazzam bir huzur ve neşe veriyor. Kendini o kadar güzel ve sevgi dolu hissediyorsun ki, bu enerji tüm çevrene yayılıyor ve seni hayatın en şanslı kişisi kılıyor.",
+      ],
+      negative: [
+        "Zevk ve eğlenceye olan düşkünlüğün cüzdanını ve ilişkilerini biraz yorabilir. \"Aşk her şeye değer\" diyerek aşırı lüks harcamalar yapabilir veya değerini bilmeyen insanlara gereğinden fazla ilgi gösterebilirsin. Duygusal ilişkilerinde yüzeysellik veya tatminsizlik hissetmen mümkün; bu boşluğu alışverişle doldurmaya çalışmamalısın. Estetik kararlar vermek için (saç kestirmek, estetik operasyon vb.) pek uygun bir zaman değil, biraz beklemeni öneririm.",
+        "Sosyal çevrenin beklentileriyle senin özel aşk hayatın arasında bir çekişme yaşanabilir. Arkadaşlarınla vakit geçirmek isterken partnerinle ilgilenememek seni iki arada bir derede bırakabilir. İlişkinde dengeyi bulmak için partnerini sosyal çevrene dahil etmeyi veya önceliklerini netleştirmeyi denemelisin. Sevilme ihtiyacın çok yüksek olsa da, kendi değerini başkalarının onayına bağlamamaya özen göster.",
+      ],
+      neutral: [
+        "İşte beklediğin o büyüleyici dönem! Aşkın, güzelliğin ve zevkin doruklarındasın; adeta bir mıknatıs gibi romantizmi kendine çekiyorsun. Sanatsal yeteneklerin parlıyor, lükse ve konfora olan düşkünlüğün artıyor. Hayatın tadını çıkarmak, flört etmek ve eğlenmek için bundan daha şanslı bir zaman olamazdı. Kendini çok değerli hissettiğin bu süreçte, kalbinin kapılarını sonuna kadar açabilirsin; aşk kapıda!",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında küçük ama seni çok mutlu edecek jestlerle karşılaşabilirsin; belki bir hediye, belki de beklediğin o küçük zam haberi! Günlük rutinlerini keyifli hale getirecek yeni yöntemler buluyor, çalışırken bile eğlenmenin bir yolunu keşfediyorsun. Sağlığınla ilgili yapacağın küçük ve masrafsız güzellikler (doğal maskeler, yürüyüşler) sana harika sonuçlar verecek. Sosyal ilişkilerin sayesinde iş yükünün hafiflediğini hissedeceğin bir zamandasın.",
+        "İş hayatında tam bir konfor ve huzur dönemi; her şey zahmetsizce ve en güzel haliyle ilerliyor. İş arkadaşlarınla aranda harika bir sinerji var, birlikte çalışmaktan ve üretmekten büyük keyif alıyorsunuz. Sağlığın mükemmel seviyede, bedenine gösterdiğin sevgi sana enerji ve ışıltı olarak geri dönüyor. Günlük rutinlerini o kadar estetik ve verimli bir hale getirdin ki, etrafındaki herkes sana imrenerek bakıyor.",
+      ],
+      negative: [
+        "İş yerindeki ilişkilerde yüzeysellik veya dedikodu yüzünden bazı tatsızlıklar yaşanabilir, aman tarafsız kalmaya çalış! Tembelliğe olan meyilin yüzünden işlerini biriktirebilir ve sonra büyük bir stres altına girebilirsin. Sağlığın için zararlı olan yiyeceklere (şeker, hamur işi) karşı zaafın artabilir, \"bir kereden bir şey olmaz\" diyerek düzenini bozma. Bu dönemde iş ortamında kendini sevdirmek için aşırı fedakarlık yapmaktan kaçınmalısın.",
+        "İkili ilişkilerindeki romantizm beklentinle, iş hayatının getirdiği sert gerçekler arasında kalabilirsin. Partnerin ilgi beklerken senin işlerinle meşgul olman aranızda küçük pürüzler yaratabilir. \"Hem güzel olayım hem de çok çalışayım\" derken kendini fiziksel olarak hırpalayabilirsin. Dengeyi bulmak için iş ve özel hayat arasındaki sınırı keskin bir şekilde çizmeli ve her iki tarafa da hak ettiği değeri vermelisin.",
+      ],
+      neutral: [
+        "İş yerin adeta bir güzellik salonuna veya huzur bahçesine dönüşmüş durumda; orada olmaktan büyük zevk alıyorsun! İş arkadaşlarınla ilişkilerin çok tatlı, ofiste aşk rüzgarları bile esebilir veya çok sevileceğin bir pozisyona gelebilirsin. Sağlığına kavuşmak için estetik dokunuşlar, spa seansları veya keyifli diyetler sana çok iyi gelecek. Günlük hayatını güzelleştirmek, masanı çiçeklerle süslemek ve huzurla çalışmak için harika bir enerji var.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren sayesinde ilişkilerinde çok keyifli kapılar açılıyor; arkadaş ortamında tanışacağın biri kalbini çalabilir. Partnerinle birlikte sosyal aktivitelere katılmak ve ortak hobiler edinmek aranızdaki bağı inanılmaz tatlılaştırıyor. Maddi konularda partnerinden veya ortaklarından beklediğin destekler zahmetsizce geliyor. Hayatın sana sunduğu bu estetik ve huzurlu akış, ikili ilişkilerindeki tüm gerginlikleri bir çırpıda yok ediyor.",
+        "Aşk hayatında ve ortaklıklarında tam bir \"altın dokunuş\" yaşıyorsun; her şey hayal ettiğinden bile daha güzel ilerliyor. Partnerinle arandaki güven ve sevgi o kadar sağlam ki, kendinizi dünyanın en şanslı çifti gibi hissediyorsunuz. Sanatsal ortaklıklar veya güzellik sektörüyle ilgili işlerde muazzam başarılar ve kazançlar elde edebilirsin. İçindeki sevgi dışına o kadar güzel yansıyor ki, çevrendeki herkes senin bu mutlu enerjinden pay almak istiyor.",
+      ],
+      negative: [
+        "İlişkilerinde değer görmek ve sevilmek istiyorsun ama bu beklentin karşındakiler tarafından karşılanmıyor gibi hissedebilirsin. Lükse ve keyfe olan düşkünlüğün partnerinle aranda bütçe tartışmalarına yol açabilir. \"Sevilmek için kendimi mi feda etmeliyim?\" sorusu kafanı karıştırırken, ilişkinde yüzeysellikten kaçınmalısın. Bu dönemde yeni bir aşka yelken açmak veya estetik operasyon yaptırmak için pek uygun bir zaman değil, biraz beklemeni öneririm.",
+        "Kendi zevklerin ve bireysel isteklerinle partnerinin konfor beklentileri arasında bir çekişme yaşanabilir. Başkalarını memnun etmeye çalışırken kendi özdeğerini unutmamalı ve \"hayır\" diyebilmelisin. İlişkinde dengeyi bulmak için aşırı cömertlikten veya tam tersi, aşırı talepkarlıktan kaçınman gerekiyor. Bu karşıtlık, sana ilişkide hem \"ben\" kalabilmeyi hem de \"biz\" olmayı öğreten estetik bir sınavdır.",
+      ],
+      neutral: [
+        "İşte aşkın ve uyumun zirvesi! Partnerinle aranda o büyüleyici romantizm rüzgarları esiyor, ilişkinde tam bir bahar havası var. Eğer bekarsan, hayatına çok çekici, nazik ve tam da istediğin gibi biri girebilir; evlilik teklifleri için en şanslı dönemdesin. Ortaklıklardan maddi kazanç elde etmek ve çevrende hayranlık uyandırmak senin için çok kolay. Güzelliğinle ve zarafetinle herkesi büyülüyorsun, bu aşk dolu dönemin keyfini sonuna kadar sür!",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden veya partnerinden gelecek finansal sürprizler ve küçük jestler seni bu dönemde çok mutlu edecek. İlişkilerindeki pürüzleri nezaketle, paylaşımcı bir tavırla ve sevgiyle kökten çözmeyi başarıyorsun. Ortaklı harcamalarda beklediğin kolaylıklar ve indirimler ayağına kadar geliyor, bu da sana büyük bir konfor sağlıyor. Estetik bir dönüşüm, ruhsal bir iyileşme veya kişisel bakım için yapacağın harcamalar sana kat kat mutluluk olarak geri dönecek.",
+        "Finansal ve duygusal anlamda tam bir ilahi koruma ve bolluk içindesin; sanki hayat sana en gizli hazinelerini sunmak için yarışıyor. Başkalarının imkanlarını kullanmak, kredi çekmek veya miras yoluyla zenginleşmek için harika bir akış var. Aşk hayatında o kadar derin, sadık ve huzurlu bir bağ kuruyorsun ki, bu birliktelik seni her anlamda zenginleştirip dönüştürüyor. Krizleri güzellikle, zarafetle ve sevgiyle yönetme yeteneğin, seni çevrendeki en şanslı ve en çekici kişi kılıyor; ışığın parlıyor!",
+      ],
+      negative: [
+        "Maddi konularda \"keyfim için her şeyi harcarım\" tarzındaki dürtüsel yaklaşımın bütçeni sarsabilir; lükse olan aşırı zaafına dikkat etmelisin. Ortaklaşa paralarda partnerinle aranda zevkler, değerler ve öncelikler yüzünden tatsız tartışmalar çıkabilir. İlişkilerinde çok derin bir sevgi ve tutku beklerken küçük hayal kırıklıkları yaşayabilir veya kıskançlık krizleriyle huzurunu bozabilirsin. Bu dönemde finansal dengeni sıkı korumalı ve sevgini ispatlamak için boyundan büyük harcamalardan kaçınmalısın.",
+        "Kendi bireysel lükslerin ve isteklerinle başkalarına karşı olan maddi sorumlulukların arasında bir denge kurman gereken bir dönem. Partnerinin kontrolsüz harcamaları veya ortak borçlar senin kişisel konforunu kısıtlayabilir ve bu sende içten içe bir huzursuzluk yaratabilir. \"Sevgi her sorunu çözer mi?\" yoksa \"Para her ilişkiyi belirler mi?\" ikilemini bu ara sık sık yaşayabilirsin. Dengeyi bulmak için paylaşımcı ve cömert olurken kendi özdeğerini ve finansal sınırlarını korumayı da asla ihmal etmemelisin.",
+      ],
+      neutral: [
+        "Maddi ve manevi olarak adeta bir mıknatıs gibisin; başkalarının kaynaklarından, miraslardan veya hediyelerden yana şansın çok açık! İlişkilerinde çok derin, tutkulu ve gizemli bir çekim yaşıyorsun; aşk senin için gerçek bir dönüşüm hikayesine dönüşüyor. Finansal krizlerin tatlılıkla çözüldüğü, borçların hiç zorlanmadan ödendiği çok bereketli bir süreçtesin. Kendini çok çekici, karizmatik ve değerli hissettiğin bu dönemde, hayatın gizli hazineleri sana her kapıyı açacak; tadını doya doya çıkar!",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren sayesinde vizyonunu genişletecek ve seni çok mutlu edecek insanlarla tanışabilirsin. Yeni bir hobi veya eğitim, aşk hayatına hiç beklemediğin bir heyecan ve estetik katabilir. Yabancı dillerde veya hukuksal konularda işlerin nezaketle ve kolaylıkla hallolduğu tatlı bir süreçtesin. Hayatın sana sunduğu bu kültürel ve romantik fırsatları değerlendir; ruhun yeni keşiflerle güzelleşecek.",
+        "Aşkın, huzurun ve şansın uzaklardan sana doğru aktığı muazzam bir akıştasın! Yurt dışı bağlantılı işlerden veya akademik başarılardan büyük bir manevi ve maddi tatmin elde edebilirsin. Hayata bakış açın o kadar sevgi dolu ve pozitif ki, evren sana hayalindeki o muhteşem yolculuğu altın tepside sunabilir. Kendini her konuda korunmuş ve çok değerli hissettiğin, ruhunun kanatlandığı bir süreçtesin; tadını çıkar!",
+      ],
+      negative: [
+        "Zevklerin ve konfor arayışın, yüksek ideallerinle veya inançlarınla çatışabilir; \"hayatın tadını mı çıkarmalıyım yoksa derinleşmeli miyim?\" ikilemi seni yorabilir. Uzak seyahatlerde lüks harcamalar yüzünden bütçeni sarsabilir veya beklediğin o konforu bulamayabilirsin. İlişkilerinde farklı dünya görüşleri yüzünden küçük ama can sıkıcı gerilimler yaşanabilir. Bu dönemde her parlayan seyahati veya eğitimi altın sanma, biraz daha seçici olmalısın.",
+        "Yakın çevrendeki sevgi bağlarınla uzaklardaki özgürlük arzun arasında bir denge kurman gerekiyor. Partnerin seninle vakit geçirmek isterken senin aklın hep \"başka yerlerde\" olabilir. Maddi konularda küçük kazançlarla büyük yatırımlar arasında bir terazi kurmalısın. Bu süreç sana hem elindekinin kıymetini bilmeyi hem de hayallerinden vazgeçmemeyi öğreten estetik bir sınav sunuyor.",
+      ],
+      neutral: [
+        "Uzak diyarlarda aşk seni bekliyor olabilir mi? Farklı kültürlerden insanlarla tanışmak, yabancı bir dilin melodisinde huzur bulmak için harika bir dönemdesin. Estetik anlayışın genişliyor; belki de sanat için uzak bir yolculuğa çıkmak isteyeceksin. İnançların ve hayata bakışın sevgiyle harmanlanıyor; adeta hayata aşık bir bilge gibi parlıyorsun. Maddi anlamda yurt dışı veya eğitim kanallı beklemediğin güzellikler kapını çalabilir!",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal ilişkilerin ve nezaketin sayesinde kariyerinde çok tatlı ve karlı fırsatlar yakalayacaksın. Arkadaş çevrenden gelecek bir referans veya bir davette tanışacağın biri, senin toplumsal statünü yükseltebilir. İş yerinde uyum ve huzur hakim; küçük jestlerle çalışma ortamını güzelleştiriyor ve herkesin gözbebeği oluyorsun. Maddi anlamda kariyerinden gelen küçük ama seni çok mutlu edecek artışlar veya hediyeler kapıda!",
+        "Kariyerinde zahmetsiz bir güzellik ve başarı dönemi yaşıyorsun; sanki evren senin için kırmızı halı sermiş! Toplum önündeki imajın o kadar estetik ve ikna edici ki, insanlar seninle iş yapmak için yarışıyor. Sanatsal yeteneklerin veya diplomatik tavrın sayesinde kariyerinde zirveye çok huzurlu bir şekilde tırmanıyorsun. Maddi ve manevi olarak kendini çok değerli hissettiğin, başarının en zarif halini yaşadığın bir süreçtesin.",
+      ],
+      negative: [
+        "Toplum önünde \"beğenilme\" arzun, iş disiplininin önüne geçebilir ve tembellik yapmana neden olabilir. Kariyerinde yüzeysellikle suçlanabilir veya ilişkilerin yüzünden itibarını riske atabilirsin. Üstlerinle aranda estetik anlayışı veya değer yargıları yüzünden küçük ama can sıkıcı gerilimler yaşanabilir. Bu dönemde kariyerine yatırım yapmak yerine lüks harcamalara kaçma eğilimindesin, dengeyi kurmalısın tatlım.",
+        "İş yerindeki popülerliğinle evdeki konforun arasında bir denge kurman gerekiyor. Sen kariyerinde \"hayatın tadını çıkaralım\" derken, ailevi sorumluluklar veya köklerin seni aşağı çekiyor olabilir. \"Başarı mı huzur mu?\" ikilemini sık sık yaşayabilir, partnerinle kariyerin arasında kalabilirsin. Sevgini ve enerjini dengeli dağıtırsan, bu karşıtlık sana her iki alanda da estetik bir olgunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "Kariyerinde tam bir \"parlama\" dönemi; herkes sana hayranlıkla bakıyor! Zarafetin, diploman ve estetik bakış açın sayesinde en zorlu kapılar bile önünde kendiliğinden açılıyor. Üstlerinle arandaki bağ çok güçlü, hatta iş ortamında çok etkileyici bir romantizm veya çok karlı bir ortaklık doğabilir. Toplum önünde çok sevildiğin, itibarının tavan yaptığı ve maddi anlamda ödüllendirildiğin bu şahane dönemin tadını çıkar; güzellik seninle!",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Arkadaş çevrenden gelen nazik destekler ve küçük jestler sayesinde kendini çok değerli hissettiğin bir süreçtesin. Gelecek planların için ihtiyacın olan o estetik dokunuş veya maddi yardım, bir dostunun eliyle sana ulaşabilir. Sosyal hayatta çok uyumlu ve keyifli bir enerjin var, bu da yeni ve kaliteli insanlar tanımanı sağlıyor. Hayatın sana sunduğu bu sosyal güzellikleri değerlendir; bir arkadaş toplantısı hayatının seyrini değiştirebilir!",
+        "Dostluğun ve sevginin en saf, en bereketli halini yaşadığın muazzam bir dönemdesin! Hayallerine giden yolda arkadaşların senin için en büyük şans kaynağı haline geliyor; onlarla el birliğiyle her şeyi başarabilirsin. Sosyal çevrende o kadar nazik ve sevgi dolusun ki, her girdiğin ortamda barış rüzgarları estiriyorsun. Maddi ve manevi olarak arkadaşlıklardan gelen bu büyük destek, seni hayallerindeki o huzurlu geleceğe altın tepside taşıyor.",
+      ],
+      negative: [
+        "Sosyal ilişkilerinde yüzeysellik veya çıkar çatışmaları yüzünden bazı tatsızlıklar yaşanabilir, dikkat et. Arkadaşlarına kendini sevdirmek için aşırı harcamalar yapabilir veya değerini bilmeyen gruplar içinde vaktini tüketebilirsin. Aşk hayatınla arkadaş çevren arasında kalmak seni yorabilir ve huzurunu kaçırabilir. Bu dönemde \"herkes beni sevsin\" demek yerine, gerçek ve kaliteli dostluklara odaklanman seni finansal ve duygusal krizlerden korur.",
+        "Kendi özel aşk hayatınla sosyal çevrenin beklentileri arasında bir denge kurman gerekiyor. Partnerin baş başa kalmak isterken arkadaşlarının seni her yere çağırması küçük gerilimlere yol açabilir. \"Benim zevkim mi yoksa grubun eğlencesi mi?\" ikilemini sık sık yaşayabilirsin. Sevgini ve vaktini dengeli dağıtmayı başarırsan, bu karşıtlık sana hem sosyal hem de romantik anlamda bir olgunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "Sosyal çevrenin en popüler, en sevilen ve en çekici ismi sensin; herkes seninle vakit geçirmek için yarışıyor! Arkadaş ortamında tanışacağın biriyle çok romantik bir aşk doğabilir veya dostların aracılığıyla maddi kazanç elde edebilirsin. Hayallerine ulaşmak için güzelliğini ve zarafetini kullanıyorsun ve evren sana her türlü kolaylığı sunuyor. Toplumsal davetlerin, düğünlerin ve eğlencenin aranan ismi olduğun bu şahane dönemin tadını çıkar!",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yalnız geçirdiğin vakitlerde veya ruhsal çalışmalarında kendini çok değerli ve sevilmiş hissettiğin huzurlu bir süreçtesin. Gizli kalmış iyilikler, isimsiz hediyeler veya beklemediğin birinden gelen manevi destekler ruhuna ilaç gibi gelecek. Sanatsal yeteneklerini perde arkasında geliştirmek ve kendini dış dünyaya hazırlamak için harika bir zaman. Küçük ama seni çok mutlu edecek bu ruhsal akış, kalbindeki tüm yaraları nezaketle ve sevgiyle iyileştirecektir.",
+        "Ruhsal ve duygusal anlamda adeta ilahi bir koruma altındasın; aşkın en saf ve en şefkatli halini yaşıyorsun! Gizli kalmış her türlü güzelliğin zahmetsizce hayatına aktığı, maddi ve manevi olarak kendini çok zengin hissettiğin bir dönem. Yalnız kaldığında gelen o muazzam sanatsal ilham, seni dış dünyada her zamankinden daha estetik ve çekici kılıyor. Hayatın sana sunduğu bu gizli ve bereketli akışın tadını çıkar; sevginle tüm dünyayı şifalandıracak güçtesin!",
+      ],
+      negative: [
+        "İlişkilerinde hayal kırıklıkları, sırlar veya imkansız aşklar yüzünden duygusal bir kriz yaşayabilirsin, aman kalbine sahip çık! Sevgi beklentin karşılanmadığında kendini bir kurban gibi hissedip aşırı harcama yapmaya veya yalnızlığa gömülmeye müsaitsin. Gizli saklı meseleler yüzünden itibarının zedelenmesinden korkabilir ve ilişkilerinde yüzeysellikten kaçamayabilirsin. Bu dönemde kendi özdeğerini başkalarının sevgisine bağlamamalı ve içindeki boşluğu maddeyle doldurmaya çalışmamalısın.",
+        "İlişkilerindeki somut beklentilerinle ruhunun derinliklerindeki platonik veya gizli arzuların arasında bir denge kurman gerekiyor. Partnerin ilgi beklerken senin kendi dünyana çekilme isteğin küçük pürüzlere yol açabilir. \"Aşkım gerçek mi yoksa bir illüzyon mu?\" sorusu kafanı karıştırırken, sevgini dengeli dağıtmayı öğrenmelisin. Dengeyi bulursan, bu karşıtlık sana hem romantik hem de ruhsal anlamda muazzam bir olgunluk ve derinlik kazandıracaktır.",
+      ],
+      neutral: [
+        "Ruhunun en derinlerinde gizli bir aşk veya sanatsal bir ilhamla dolup taştığın, çok romantik bir dönemdesin. Sevgin o kadar derin ve koşulsuz ki, adeta bir azize veya aziz gibi etrafına şefkat saçıyorsun. Gizli kalmış bir ilişkiden veya perde arkasındaki bir ortaklıktan büyük bir maddi ve manevi mutluluk elde edebilirsin. Estetik anlayışın o kadar ruhsal ki, ürettiğin her şey insanları büyüleyebilir; içindeki o gizli hazineyi keşfet ve tadını çıkar!",
+      ],
+    },
   },
   "Mars": {
-    1: { tr: "Enerjin ve motivasyonun çok yüksek! Harekete geçmek, liderlik etmek ve hedeflerine odaklanmak için sabırsızlanıyorsun.", en: "Your energy and motivation are very high! You're eager to take action, lead and focus on your goals." },
-    2: { tr: "Maddi kaynaklarını artırmak için büyük bir çaba içinde olabilirsin. Harcamalar konusunda dürtüsel davranmamaya dikkat etmelisin.", en: "You may be making a big effort to increase your material resources. Be careful not to act impulsively about spending." },
-    3: { tr: "Zihinsel olarak çok iddialı ve hızlısın. Tartışmalara açık bir enerjin var, kelimelerini seçerken dikkatli olmalısın.", en: "You're mentally very assertive and fast. An energy open to arguments, you should be careful when choosing your words." },
-    4: { tr: "Ev ve aile içindeki hareketlilik artıyor. Tadilat işleri veya ailevi konularda mücadele etmen gereken durumlar oluşabilir.", en: "Activity within home and family is increasing. Situations may arise where you need to struggle with renovation work or family issues." },
-    5: { tr: "Aşkta ve yaratıcılıkta tutkulu bir dönemdesin. Risk almaktan çekinmeyebilir, enerjini hobilerine yönlendirebilirsin.", en: "A passionate period in love and creativity. You may not hesitate to take risks and channel your energy into your hobbies." },
-    6: { tr: "İş hayatında çok çalışman gereken, tempolu bir süreçtesin. Sağlığına dikkat etmeli, aşırı yorgunluktan kaçınmalısın.", en: "A fast-paced process where you need to work hard in business life. You should pay attention to your health and avoid excessive fatigue." },
-    7: { tr: "İlişkilerde gerginlik veya rekabet söz konusu olabilir. Orta yolu bulmak ve enerjini iş birliğine yönlendirmek önemli olacak.", en: "There may be tension or competition in relationships. Finding middle ground and channeling your energy into cooperation is important." },
-    8: { tr: "Derin değişimler ve dönüşümler için büyük bir güce sahipsin. Finansal krizleri yönetmek veya korkularınla yüzleşmek için cesaretin var.", en: "Great power for deep changes and transformations. You have the courage to manage financial crises or face your fears." },
-    9: { tr: "İnandığın değerler için savaşma vaktindesin. Eğitim veya seyahat planlarında aksiyon alabilir, maceracı hissedebilirsin.", en: "Time to fight for the values you believe in. You can take action in education or travel plans and feel adventurous." },
-    10: { tr: "Kariyerinde hırslı ve azimlisin. Hedeflerine ulaşmak için çok çalışabilir, otorite figürleriyle mücadele edebilirsin.", en: "You're ambitious and determined in your career. You can work hard to reach your goals and struggle with authority figures." },
-    11: { tr: "Gelecek planların için harekete geçme zamanı. Sosyal çevrende liderlik yapabilir, gruplar içinde enerjinle dikkat çekebilirsin.", en: "Time to take action for your future plans. You can lead in your social circle and attract attention with your energy within groups." },
-    12: { tr: "Gizli düşmanlıklara veya içsel huzursuzluklara dikkat etmelisin. Enerjini ruhsal çalışmalara veya yardım faaliyetlerine yönlendirmek iyi gelebilir.", en: "Beware of hidden enmities or inner unrest. Channeling your energy into spiritual work or charity activities may be good." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Hedeflerine ulaşmak için gereken motivasyonu ve kararlılığı çok sağlıklı bir şekilde sergiliyorsun. Çevrendeki insanlar senin bu dinamik ve enerjik yapından ilham alıyor, sana destek olmak istiyorlar. Kendi sınırlarını çizmek ve \"hayır\" demek senin için her zamankinden daha kolay hale geldi. Fiziksel gücün ve dayanıklılığın yerinde; yarım bıraktığın işleri bitirmek için harika bir süreçtesin. Cesaretinle ve doğrudan tavrınla istediğin kapıları bir bir açacaksın.",
+        "Tam bir verimlilik makinesine dönüştüğün, enerjinin su gibi akıp başarıya dönüştüğü bir süreçtesin. Fiziksel çekiciliğin ve maskülen/aktif enerjin o kadar dengeli ki, herkes liderliğini kabul ediyor. Bir işi başlatmak, risk almak ve sonuçlandırmak senin için çocuk oyuncağı. Kendine olan güvenin rakiplerini bile hayran bırakacak cinsten; zafer senin elinde. Sağlığın ve dayanıklılığın zirvede, bu güçlü akışı hayatını dönüştürmek için kullan.",
+      ],
+      negative: [
+        "Barut fıçısı gibi gezdiğin o günlere hoş geldin canım, biraz sakin olmalısın! Egonla dış dünya arasında sürekli bir sürtünme var ve sanki herkes seni kışkırtmaya çalışıyormuş gibi hissedebilirsin. Trafikte, ikili tartışmalarda ve ev kazalarında ekstra dikkatli olman gereken bir dönem. Öfkeni kontrol edemezsen hem sağlığına zarar verebilir hem de kalıcı kalp kırıklıklarına neden olabilirsin. Bu yoğun enerjiyi yoğun bir çalışma temposuyla veya sporla deşarj etmeyi denemelisin.",
+        "Dışarıdan gelen saldırgan veya rekabetçi tavırlarla uğraşmak zorunda kalabilirsin, canım. Karşındaki insanlar seni kışkırtabilir ya da partnerinle aranda \"kim daha güçlü\" savaşı çıkabilir. Bu karşıtlık sana aslında kendi içindeki bastırılmış öfkeyi yansıtıyor olabilir. Kavgaya girmek yerine stratejik davranmalı ve enerjini korumalısın. Orta yolu bulmak zor olsa da, bu süreç sana kriz yönetimini ve rakiplerinle baş etmeyi en iyi şekilde öğretecek.",
+      ],
+      neutral: [
+        "İçinde sönmek bilmeyen bir volkan var sanki, enerjin patlamaya hazır! Mars senin birinci evindeyken çok girişken, cesur ama bir o kadar da sabırsız olabilirsin. Fiziksel olarak çok aktifleşeceğin, spora başlamak veya bir projeyi başlatmak için gereken o \"motor gücünü\" hissettiğin bir dönem. Ancak aceleci tavırların sakarlıklara ve ani öfke patlamalarına neden olabilir. Enerjini birilerine kızmak yerine, fiziksel bir aktiviteye kanalize edersen devrim yaratabilirsin.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Maddi hedeflerine ulaşmak için gereken o itici gücü sonunda buldun! Enerjin çok yerinde ve bu enerjiyi kazanca dönüştürmek için stratejik adımlar atıyorsun. El becerilerin veya hızlı karar alma yeteneğin sayesinde önüne çıkan fırsatları nakde çevirebilirsin. Kendine olan güvenin arttıkça cüzdanın da canlanıyor, harekete geçmekten korkma.",
+        "Finansal mücadelelerin meyvelerini toplama zamanı! Çabalarının karşılığını zahmetsizce aldığın, maddi gücünün arttığı bir süreçtesin. Yatırım yapmak, mülk sahibi olmak veya mevcut kaynaklarını büyütmek için evren seni destekliyor. İçindeki girişimci ruhu serbest bırak, çünkü şu an attığın her adım sana bereket olarak geri dönecek.",
+      ],
+      negative: [
+        "Finansal konularda aceleci kararlar ve gereksiz riskler başını ağrıtabilir. Beklenmedik tamir masrafları veya ani ödemeler bütçeni bir anda sarsabilir, bu yüzden yedek akçeni hazır tutmalısın. Para yüzünden sevdiklerinle veya ortaklarınla sert tartışmalara girmeye çok meyillisin. Bu gerginliği spor yaparak veya fiziksel bir hobiyle atmaya çalış, yoksa acısı cüzdanından çıkabilir.",
+        "Kendi kazancınla başkalarına olan borçların veya ortak giderlerin arasında ciddi bir gerilim hattı var. Parayı kontrol etme arzun, partnerinle veya bankalarla olan ilişkinde güç savaşlarına neden olabilir. \"Benim param\" kavgasına girmek yerine, kaynakları nasıl ortak yönetebileceğine odaklanmalısın. Harcamalarında dengeyi bulamazsan, başkalarının kaynaklarına bağımlı kalma riskiyle karşılaşabilirsin.",
+      ],
+      neutral: [
+        "Para kazanma hırsın tavan yapmış durumda, adeta bir savaşçı gibi kaynaklarını savunuyorsun. Çok çalışıp çok kazanabileceğin bir dönem olsa da, paranın geldiği gibi gitme hızı seni şaşırtabilir; dürtüsel harcamalara çok açıksın. Kendi işini kurmak veya fiziksel emekle kazanç sağlamak için harika bir enerji. Ancak \"benim\" dediğin şeyler için başkalarıyla çatışmamaya, agresifleşmemeye dikkat etmelisin.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Zihinsel projelerini hayata geçirmek için gereken o müthiş motivasyona ve hıza sahipsin. Yakın çevrendeki sorunları çözmek için inisiyatif alabilir ve herkesin saygısını kazanabilirsin. Kısa sürede çok fazla bilgi edinip bunları pratiğe dökmek senin için çok kolay olacak. Kendi fikirlerini savunurken sergilediğin o cesur duruş, sana yeni eğitim veya ticaret kapıları açabilir.",
+        "Zihinsel keskinliğinin ve kararlılığının zirvesinde olduğun, her türlü tartışmadan zaferle çıkacağın bir dönem. İkna kabiliyetin o kadar yüksek ki, fikirlerini en inatçı insanlara bile kabul ettirebilirsin. Eğitimde veya ticari işlerinde çok hızlı ve doğru kararlar alarak rakiplerinin önüne geçiyorsun. Enerjin çok verimli; yarım kalan tüm yazılarını ve projelerini bir çırpıda bitirebilirsin.",
+      ],
+      negative: [
+        "Aman dikkat! Sözlerinle istemeden kalp kırabilir, yakın çevrendeki insanlarla sert polemiklere girebilirsin. Sabırsızlığın yüzünden eğitim hayatında hatalar yapabilir veya önemli detayları gözden kaçırabilirsin. Zihinsel bir gerginlik içindesin, bu da seni trafikte veya günlük diyaloglarda çok huzursuz yapabilir. Öfkeni kelimelere dökmek yerine, fiziksel bir aktiviteyle deşarj olmayı denemelisin.",
+        "Başkalarından gelecek sözel saldırılara veya eleştirilere karşı tetikte olman gereken bir süreç. Yakın çevrendeki insanlar senin fikirlerini sorgulayabilir ve seni bir güç savaşına çekmeye çalışabilir. Sabrının test edildiği bu günlerde, hemen tepki vermek yerine stratejik davranmayı öğrenmelisin. Dengeyi bulamazsan, kardeşlerinle veya komşularınla aranda kalıcı kırgınlıklar oluşabilir, sakin kal canım.",
+      ],
+      neutral: [
+        "Zihinsel enerjin o kadar yüksek ki, kelimelerin birer kılıç gibi keskin olabilir! Tartışmalarda çok savunmacı veya saldırgan bir tutum sergileyebilir, kardeşlerinle rekabete girebilirsin. Çok hızlı öğreniyorsun ama çabuk sıkılıyorsun; enerjini bir hobine veya araştırmana verirsen harika sonuçlar alırsın. Trafikte ve kısa yolculuklarda aceleci davranmamalı, güvenliğini ön planda tutmalısın.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Evindeki sorunları çözmek ve projelerini hayata geçirmek için gereken o müthiş motivasyona sahipsin. Fiziksel olarak çok aktifsin; evi boyamak, düzenlemek veya spor alanına dönüştürmek sana çok iyi gelecek. Ailenle el birliği vererek zor bir işin altından kolayca kalkabilirsiniz. Geçmişten gelen korkularınla yüzleşmek ve onları yenmek için içindeki savaşçıyı uyandırmanın tam vakti.",
+        "İçsel gücünün ve kararlılığının zirvesindesin; aileni ve evini koruma içgüdün sana büyük bir enerji veriyor. Zorlu aile meselelerini çözmek için gereken cesarete sahipsin ve bu konuda liderlik ediyorsun. Gayrimenkul alım satımı gibi konularda hızlı ve isabetli kararlar alarak karlı çıkabilirsin. Evindeki hareketlilik sana yorgunluk değil, aksine büyük bir canlılık ve motivasyon getiriyor.",
+      ],
+      negative: [
+        "Ev ortamında adeta bir barut fıçısı gibisin, her an bir patlama yaşanabilir. Aile içi otorite savaşları, geçmişten gelen öfkelerin gün yüzüne çıkması seni çok yorabilir. Taşınma, tadilat veya mülkiyet konularında beklediğin sonuçlar gelmeyince asabiyetin artabilir. Bu dönemde enerjini fiziksel işlere vererek boşaltmalı, sevdiklerinle konuşurken kelimelerini özenle seçmelisin.",
+        "Kariyerindeki mücadeleler ve hırsın, evdeki huzurunu tehdit ediyor olabilir. İş yerindeki gerginliği eve taşımamaya çalışmalısın, aksi halde sığınacak limanın olan yuvanda da fırtınalar kopabilir. \"Dışarıda savaş, içeride barış\" dengesini kurmakta zorlandığın bir süreçtesin. Kendi isteklerinle ailenin ihtiyaçları çatıştığında, fevri davranmak yerine stratejik bir geri çekilme yapman daha faydalı olabilir.",
+      ],
+      neutral: [
+        "Evin içinde tam bir \"harekat\" havası var; ya tadilat yapıyorsun ya da yerinde duramıyorsun! Enerjin çok yüksek ama bu enerjiyi doğru kanalize edemezsen aile içi tartışmalar ve sert çıkışlar kaçınılmaz olur. Ev kazalarına karşı ekstra dikkatli olman gereken, kesici ve yakıcı aletlerden uzak durman gereken bir dönem. Kendi bağımsızlığını ev içinde ilan etmek isterken kalp kırmamaya özen göstermelisin.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yaratıcı projelerini hayata geçirmek ve hobilerinle ilgili somut adımlar atmak için müthiş bir motivasyona sahipsin. Flört hayatında heyecan verici ve dinamik bir akış var; cesaretin sayesinde yeni kapılar açılıyor. Fiziksel aktiviteler, spor veya dans etmek ruhuna çok iyi gelecek ve enerjini dengeleyecektir. Hedeflerine ulaşmak için gereken o itici gücü içinde hissediyorsun, durma ve ilerle!",
+        "Yaşam sevincinin ve fiziksel gücünün zirvesindesin! Aşkta aradığın o tutkulu ve heyecan verici deneyimleri yaşamak için şartlar çok uygun. Yaratıcılığını bir savaşçı disipliniyle birleştirip harika işler ortaya koyabilirsin. Kendine olan güvenin o kadar yüksek ki, girdiğin her ortamda liderliğini ve çekiciliğini konuşturuyorsun. Tadını çıkar, bu enerji seni her konuda zafere taşıyacak nitelikte.",
+      ],
+      negative: [
+        "Aşk hayatında ego savaşları ve sert tartışmalar yaşanabilir; \"benim dediğim olacak\" inadı kalplerini kırabilir. Çocuklarla olan ilişkinde sabrın çok çabuk tükenebilir, ani tepkiler vermekten kaçınmalısın. Enerjin çok yüksek ama bu enerjiyi yanlış yöne, yani kavgaya veya riskli yatırımlara harcama eğilimindesin. Kazalara ve sakarlıklara karşı bu ara ekstra dikkatli olmalı, öfkeni dindirecek yollar bulmalısın.",
+        "Kendi isteklerinle sosyal grubunun hedefleri arasında ciddi bir rekabet veya gerginlik oluşabilir. Takım çalışmalarında \"ben\" demen hoş karşılanmayabilir, bu da seni hırçınlaştırabilir. Aşk hayatında partnerinin sosyal hayatına veya arkadaşlarına karşı bir kıskançlık veya tepki geliştirebilirsin. Enerjini başkalarıyla savaşmak yerine, kendi özgünlüğünü kabul ettirmek için daha stratejik kullanmaya çalış.",
+      ],
+      neutral: [
+        "Tutku tavan yapmış durumda! Aşk hayatında çok iddialı, avcı ve girişken olduğun bir dönemdesin; istediğini almak için harekete geçmekten çekinmiyorsun. Ancak bu yoğun enerji bazen tartışmalara ve gereksiz risklere de davetiye çıkarabilir. Kumar, borsa veya ekstrem sporlar gibi konularda fazla cesur davranıp kayıp yaşama riskin var, enerjini yaratıcı bir hobiye kanalize etmek en doğrusu olacaktır.",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Çalışma hayatındaki sorunları çözmek için gereken o müthiş motivasyona ve cesarete sahipsin. Zorlu projelerin altına elini taşın altına koymaktan çekinmiyorsun ve bu durum üstlerin tarafından takdirle karşılanıyor. Sağlığın için yeni bir fitness programına başlamak veya beslenme düzenini disipline sokmak için harika bir zaman. Pratik zekanı ve fiziksel gücünü birleştirerek günlük rutinlerini çok daha verimli bir hale getirebilirsin.",
+        "İş hayatında tam bir verimlilik makinesine dönüştüğün, her şeyin tıkır tıkır işlediği bir süreçtesin. Fiziksel dayanıklılığın çok yüksek, bu da en ağır iş yüklerinin bile altından kolayca kalkmanı sağlıyor. Ameliyat veya tedavi süreçlerin varsa iyileşme hızın seni bile şaşırtabilir. Kendine olan güvenin ve kararlılığın sayesinde günlük hayatındaki tüm pürüzleri tek tek temizliyorsun, zafer senin!",
+      ],
+      negative: [
+        "İş yerinde \"barut fıçısı\" gibi gezdiğin bir dönem olabilir, en ufak bir aksaklık seni çileden çıkarabilir. İş arkadaşlarınla veya emrinde çalışanlarla sert çatışmalara girmeye çok müsaitsin, bu da çalışma ortamını huzursuz edebilir. Stres kaynaklı baş ağrılarına veya ateşli hastalıklara karşı dikkatli olmalısın, bedenin sana \"yavaşla\" diyor. Öfkeni işine değil, fiziksel bir aktiviteye yönlendirerek bu dönemi daha hasarsız atlatabilirsin.",
+        "Başkalarıyla olan rekabetin veya açık düşmanlıkların günlük rutinlerini ve iş huzurunu bozabilir. Sen işine odaklanmak isterken, birilerinin sana engel olduğunu veya seni kışkırttığını hissedebilirsin. Bu süreçte enerjini \"onlar ne yapıyor\" yerine \"ben ne yapmalıyım\" kısmına odaklaman gerekiyor. İkili ilişkilerdeki gerginliği iş ortamına taşımamaya çalış, dengeyi kurmak için stratejik bir geri çekilme yapabilirsin.",
+      ],
+      neutral: [
+        "İş yerinde adeta bir atom karınca gibisin, enerjin bitmek tükenmek bilmiyor! Ancak bu yoğun tempo seni bazen aşırı sabırsız ve kavgacı yapabilir; iş arkadaşlarınla \"kim daha hızlı\" yarışına girip kalp kırmamaya dikkat etmelisin. Fiziksel olarak çok aktif olduğun bir dönem ama aceleci tavırların küçük sakarlıklara veya kesiklere yol açabilir. Enerjini biriktirmek yerine, her gün düzenli spor yaparak bu baskıyı tahliye etmelisin.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ortaklıklarında ve ikili ilişkilerinde sorunları çözmek için gereken o cesur adımı sonunda atıyorsun. Partnerinle birlikte harekete geçmek, seyahat etmek veya bir projeyi başlatmak için enerji çok destekleyici. Karşındaki insan seni motive ediyor ve durağanlıktan kurtarıyor; bu dinamizm aranızdaki bağı güçlendiriyor. İletişimde dürüst ve doğrudan bir tavır sergilemen, beklediğin o güven ortamını hızla inşa etmeni sağlayacak.",
+        "İlişkilerinde tam bir uyum ve ortak bir tempo yakalamış durumdasın; partnerinle adeta aynı ritimde dans ediyorsun. Birlikte aldığınız kararları hızla hayata geçirebilir, fiziksel aktiviteler veya seyahatlerle aranızdaki bağı daha da canlandırabilirsiniz. Karşındaki kişi sana hem güç veriyor hem de seni her konuda yürekten destekliyor. Bu dinamik enerjiyi uzun vadeli hedefleriniz için kullanmak size büyük bir başarı ve zafer getirecektir.",
+      ],
+      negative: [
+        "İlişkilerinde tam bir barut fıçısı dönemindesin, en ufak bir kıvılcım büyük bir patlamaya neden olabilir. Partnerinle veya ortağınla ego savaşlarına girmek, birbirinizi suçlamak enerjinizi boşa tüketecektir. Bu dönemde açık düşmanlıklarla karşılaşabilir veya haksızlığa uğradığını hissederek fevri tepkiler verebilirsin. Sabırlı olmayı ve öfkeni dindirmeyi öğrenmen gereken, sinirlerinin resmen test edildiği bir süreçten geçiyorsun.",
+        "Kendi isteklerinle partnerinin dayatmaları arasında kalmış hissedebilirsin, bir taraf sürekli bastırıyor gibi. Karşı taraftan gelen agresif tepkiler aslında senin içindeki bastırılmış bir öfkenin aynası olabilir. Uzlaşma sağlamak bu dönemde zor olsa da, birbirinizin sınırlarına saygı duyarak orta yolu bulabilirsiniz. Rekabeti bırakıp iş birliğine odaklanmazsanız, köprüleri tamamen yıkma noktasına gelebilirsiniz, aman dikkat!",
+      ],
+      neutral: [
+        "İlişkilerinde tutku ve adrenalin tavan yapmış durumda ama bu durum \"ya hep ya hiç\" havası yaratabilir. Partnerinle ya çok büyük işlere imza atacaksın ya da incir çekirdeğini doldurmayacak konularda büyük kavgalar edeceksiniz. Karşındaki insanların sana meydan okuduğunu hissedebilirsin; bu enerjiyi ortak bir hedefe yönlendirirseniz yıkılmaz bir takım olursunuz. Rekabetçi ruhunu partnerine değil, dış dünyaya karşı kullanmaya özen göster canım.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Finansal krizleri çözmek ve beklediğin ödemeleri hızlandırmak için gereken o müthiş motivasyonu sonunda buldun! Stratejik adımlar atarak başkalarının kaynaklarını kendi lehine kullanabilir, karlı yatırımlar yapabilirsin. Psikolojik olarak korkularınla yüzleşme ve onları yenme konusunda çok cesursun; adeta ruhsal bir temizlik yapıyorsun. Küçük ama etkili müdahalelerle hayatındaki düğümleri bir bir çözdüğün, enerjini çok verimli kullandığın bir süreçtesin.",
+        "Krizleri yönetme ve dönüştürme konusunda tam bir ustasın; zorluklar seni korkutmak yerine daha da güçlendiriyor! Ortaklaşa kazançlar, tazminatlar veya banka kredileri konusunda işlerin tıkır tıkır ilerlediği, şansın senden yana olduğu bir dönem. Kararlılığın ve sarsılmaz iraden sayesinde imkansız görülen finansal engelleri bile birer birer aşıyorsun. Tutku dolu ve derin ilişkiler kurmak, ruhsal anlamda güçlenmek için evren seni her koldan destekliyor; zafer senin!",
+      ],
+      negative: [
+        "Finansal konularda veya miras meselelerinde çok sert çatışmalar ve güç savaşları yaşanabilir, aman sakinliğini koru! Partnerinle veya ortaklarınla \"bu para kimin?\" kavgasına girmek ilişkini ciddi şekilde zedeleyebilir. Beklenmedik vergi borçları veya ani masraflar canını sıkabilir, bu dönemde riskli hiçbir yatırıma girmemelisin. İçsel bir öfke ve huzursuzluk hissedebilirsin; bu yoğun enerjiyi birilerine boşaltmak yerine fiziksel bir aktiviteyle deşarj etmek en doğrusu olacaktır.",
+        "Kendi bireysel çabalarınla başkalarının sana dayattığı finansal yükümlülükler arasında ciddi bir çekişme var. Partnerinin veya ortağının harcamaları ya da borçları senin enerjini ve huzurunu çalıyor olabilir. Karşı taraftan gelen agresif çıkışlar aslında seni kendi gücünü eline almaya zorlayan bir ayna görevi görüyor. Dengeyi bulmak için sınırlarını çok net çizmeli ve kimsenin senin kaynaklarını sömürmesine izin vermeden uzlaşma yolları aramamalısın.",
+      ],
+      neutral: [
+        "İçindeki tutku ve arzu o kadar yüksek ki, adeta patlamaya hazır bir volkan gibisin! Maddi konularda, özellikle ortaklaşa paralarda veya borçlarda çok girişken ve hatta biraz saldırgan olabilirsin; hakkını almak için savaşmaktan çekinmiyorsun. Fiziksel olarak ameliyatlar veya ani yaralanmalara karşı bu dönemde dikkatli olmalı, enerjini krizleri çözmeye odaklamalısın. Cinsel enerjin ve hayatın gizemlerine olan merakın seni çok derin ve dönüştürücü deneyimlere sürükleyebilir, dengeyi korumaya çalış.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Hedeflerine ulaşmak ve vizyonunu gerçeğe dönüştürmek için gereken o cesur adımı sonunda atıyorsun! Yakın çevrenden alacağın destekle uzaklardaki bir projeyi veya eğitimi hızla hayata geçirebilirsin. Hukuksal konularda veya akademik işlerde stratejik ve hızlı kararlar alarak rakiplerinin önüne geçiyorsun. Fiziksel enerjin çok yerinde; yeni kültürleri keşfetmek için yapacağın seyahatler seni inanılmaz motive edip canlandıracak.",
+        "Yaşam enerjinin ve vizyoner gücünün zirvesindesin; istediğin her türlü kapıyı cesaretinle açıyorsun! Yurt dışı işleri, yayıncılık veya yüksek eğitim konularında işlerin tam istediğin hızda ve başarıyla ilerliyor. Kendine olan güvenin o kadar yüksek ki, en zorlu felsefi tartışmalardan veya hukuksal mücadelelerden bile alnının akıyla çıkıyorsun. Hayat sana \"harekete geç ve dünyayı fethet\" diyor; bu dinamik ve şanslı akışı sonuna kadar kullan!",
+      ],
+      negative: [
+        "Fikir ayrılıkları ve inanç çatışmaları yüzünden otorite figürleriyle veya yabancılarla sert tartışmalara girebilirsin. Uzak yolculuklarda aksilikler, gecikmeler veya trafikte yaşanan gerginlikler canını epey sıkabilir. Akademik işlerde veya hukuksal süreçlerde sabırsızlığın yüzünden hatalar yapma riskin var; \"hızlı olan kazanır\" deme, dikkatli ol. Öfkeni dindirmeli ve enerjini birilerini ikna etmek yerine kendi içsel disiplinini kurmaya harcamalısın.",
+        "Yakın çevrendeki küçük çatışmalar, uzaklardaki büyük hedeflerine odaklanmanı engellemeye çalışıyor olabilir. Sen büyük oynamak isterken birileri seni sürekli detaylarla ve dedikodularla aşağı çekmeye çalışabilir. Sabrının zorlandığı bu dönemde, enerjini başkalarıyla savaşmak yerine kendi vizyonunu korumak için kullanmalısın. Bu karşıtlık, sana hem stratejik bir savunma yapmayı hem de hedeflerinden sapmamayı öğretecek.",
+      ],
+      neutral: [
+        "İnançların ve ideallerin için savaşmaya hazır bir şövalye gibisin; enerjin çok yüksek ve yerinde duramıyorsun! Uzak yolculuklara çıkmak, macera dolu sporlar yapmak veya akademik alanda rakiplerine meydan okumak için harika bir motivasyon var. Ancak bu yoğun enerji seni bazen fanatik veya fazla kavgacı yapabilir; \"tek doğru benimki\" demekten kaçınmalısın. Enerjini yeni şeyler keşfetmeye ve vizyonunu genişletmeye harcarsan, bu dönemden büyük bir zaferle çıkarsın.",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Hedeflerine ulaşmak için gereken o muazzam itici gücü sonunda buldun! Kariyerindeki sorunları cesaretle çözüyor ve rakiplerinin önüne hızla geçiyorsun. Üstlerinden alacağın destekle büyük bir projeyi başlatabilir veya fiziksel güç gerektiren işlerde mucizeler yaratabilirsin. Kararlılığın ve dinamizmin toplum önünde çok karizmatik bir lider profili çizmeni sağlıyor; durma, ilerle!",
+        "Kariyerinde tam bir verimlilik ve zafer dönemindesin; her adımın başarıya çıkıyor! Fiziksel ve zihinsel gücün o kadar yerinde ki, en ağır projelerin altından bile çocuk oyuncağı gibi kalkıyorsun. Toplum önünde liderlik vasıflarınla parlıyorsun ve insanlar senin cesaretine hayran kalarak arkandan geliyor. Zahmetsizce gelen bu başarı ve güç, seni hayal ettiğin o sarsılmaz pozisyona taşıyacaktır; tebrikler!",
+      ],
+      negative: [
+        "Kariyerinde tam bir \"barut fıçısı\" dönemindesin; üstlerinle veya otorite figürleriyle her an bir patlama yaşayabilirsin. \"Benim dediğim olacak\" inadı itibarını zedeleyebilir ve seni toplum önünde hırçın biri gibi gösterebilir. İş hayatındaki gerginlik sağlığını veya aile huzurunu da olumsuz etkileyebilir, aman dikkat! Bu yoğun enerjiyi birileriyle savaşmak yerine, çok zorlu bir işi bitirmek için kullanırsan krizi fırsata çevirebilirsin.",
+        "Kariyerindeki hırslarınla evdeki huzurun arasında büyük bir gerilim hattı var. İş yerindeki öfkeni eve taşıyabilir veya evdeki krizler yüzünden işine odaklanamayabilirsin. \"Dışarıdaki savaş mı içerideki barış mı?\" sorusu seni yorarken, her iki tarafı da idare etmekte zorlanabilirsin. Enerjini dengeli kullanmalı ve hem işine hem de köklerine hak ettikleri saygıyı göstererek dengeyi kurmalısın.",
+      ],
+      neutral: [
+        "Kariyerinde adeta bir savaşçı gibisin; hırsın ve enerjin dağları devirecek güçte! Kendi imparatorluğunu kurmak veya en tepeye tırmanmak için önüne çıkan tüm engelleri yakıp yıkmaya hazırsın. Ancak bu yoğun enerji otorite figürleriyle çok sert çatışmalara ve ego savaşlarına da davetiye çıkarabilir. Aceleci davranmak yerine enerjini stratejik bir liderliğe dönüştürürsen, bu dönemden büyük bir zafer ve rütbeyle çıkarsın.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Gelecek hedeflerine ulaşmak için gereken o müthiş motivasyonu ve cesur adımı sosyal çevrenin desteğiyle atıyorsun! Arkadaşlarınla birlikte spor yapmak, seyahate çıkmak veya bir projeyi başlatmak için enerji çok uygun. Kararlılığın grup içinde takdir ediliyor ve insanlar senin peşinden gelmek için can atıyor. Küçük ama stratejik hamlelerle rakiplerinin önüne geçiyor ve hayallerine giden yolda engelleri tek tek deviriyorsun; durma, ilerle!",
+        "Sosyal hayatında ve ekip çalışmalarında tam bir zafer ve verimlilik dönemindesin; her adımın başarıya çıkıyor! Arkadaşlarınla aranda muazzam bir uyum ve ortak bir tempo var, birlikte dağları devirebilirsiniz. Gelecek ideallerin için savaşma gücün o kadar yüksek ki, önündeki hiçbir engel sana karşı duramıyor. Kendine olan güvenin ve sarsılmaz iraden sayesinde sosyal çevrende gerçek bir kahraman ve lider olarak parlıyorsun; tebrikler!",
+      ],
+      negative: [
+        "Sosyal çevrende tam bir \"barut fıçısı\" dönemindesin; arkadaşlarınla veya içinde bulunduğun gruplarla her an patlak verecek kavgalara dikkat! \"Senin hedefin yanlış\" diyenlere karşı aşırı agresif tepkiler verebilir ve dostluklarını tehlikeye atabilirsin. Gelecek planlarınla ilgili yaşadığın sabırsızlık seni fevri kararlar almaya itebilir. Bu yoğun enerjiyi birileriyle savaşmak yerine, çok zorlu bir ekip işini bitirmek için kullanırsan krizi başarıya dönüştürebilirsin.",
+        "Kendi bireysel tutkularınla arkadaş grubunun hedefleri arasında ciddi bir rekabet veya gerginlik oluşabilir. \"Benim aşkım mı yoksa arkadaşlarım mı?\" veya \"Kendi projem mi yoksa grubun işi mi?\" arasında sıkışıp kalabilirsin. Karşı taraftan gelen agresif çıkışlar aslında senin içindeki bastırılmış hırsın bir aynası olabilir. Dengeyi bulmak için rekabeti bırakıp iş birliğine odaklanmalı ve sınırlarını kırmadan korumayı öğrenmelisin.",
+      ],
+      neutral: [
+        "Sosyal çevrende adeta bir enerji patlaması yaşıyorsun; grupları harekete geçiren, liderlik eden o ateşli kişi sensin! Hayallerine ulaşmak için büyük bir hırsla ve cesaretle saldırıyorsun ama bu durum bazen arkadaşlarınla sert çatışmalara da yol açabilir. \"Benim dediğim hedef doğru\" inadıyla dostlarını kırmamaya, rekabetçi ruhunu grup içine değil dış dünyaya yöneltmeye dikkat etmelisin. Enerjini toplumsal bir amaç uğruna harcarsan yıkılmaz bir otorite kurarsın.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Bilinçaltındaki korkularınla yüzleşmek ve onları yenmek için gereken o müthiş motivasyonu sonunda buldun! Perde arkasında yürüttüğün işlerde stratejik ve cesur adımlar atarak rakiplerinin önüne sessizce geçiyorsun. Fiziksel olarak kendini yenilemek ve ruhsal bir disiplin kurmak için enerjin çok uygun ve destekleyici. Küçük ama etkili bu enerji akışı, seni dış dünyadaki büyük zaferlerine hazırlayacak gizli ve sarsılmaz güç kaynağın olacak; cesur ol!",
+        "Ruhsal ve fiziksel gücünün zirvesindesin; krizleri sessizce ve büyük bir ustalıkla yönetiyorsun! Perde arkasından yürüttüğün her iş zahmetsizce zafere ulaşıyor ve sen hiçbir çaba sarf etmeden rakiplerini etkisiz hale getiriyorsun. Kendine olan güvenin ve sarsılmaz iraden sayesinde bilinçaltındaki tüm pürüzleri tek tek temizleyip özgürleşiyorsun. Hayat sana \"sessizce ilerle ve dünyayı fethet\" diyor; bu dinamik ve korunmuş akışın tadını doya doya çıkar!",
+      ],
+      negative: [
+        "İç dünyanda fırtınalar koparken dışarıya bir şey belli etmemeye çalışmak seni fiziksel olarak tamamen tüketebilir, dikkat et! Gizli düşmanlıklarla, arkandan çevrilen işlerle veya bastırılmış öfke patlamalarıyla karşılaşman mümkün. Kazalara, sakarlıklara ve uyku sorunlarına karşı bu ara ekstra uyanık olmalı, içindeki o barutu dindirmelisin. Bu dönemde birileriyle savaşmak yerine, kendi iç disiplinini kurmaya ve sabırlı olmaya odaklanman senin en büyük kurtarıcın olacaktır.",
+        "Kendi bireysel çabalarınla başkalarının senden gizlediği niyetler arasında ciddi bir gerilim hattı var. Sen harekete geçmek isterken birileri seni perde arkasından engellemeye çalışıyor gibi hissedebilirsin. \"Açık bir savaş mı yoksa gizli bir savunma mı?\" ikilemi seni yorarken, enerjini dengeli kullanmayı öğrenmelisin. Bu karşıtlık, sana hem stratejik bir geri çekilme yapmayı hem de hedeflerinden sapmadan dik durmayı öğretecek bir irade sınavıdır.",
+      ],
+      neutral: [
+        "İçindeki o yoğun enerjiyi ve öfkeyi bastırmaya çalıştığın, adeta \"gizli bir savaşçı\" gibi hareket ettiğin bir dönemdesin. Enerjin dışarıya değil, bilinçaltına akıyor; bu da seni bazen huzursuz ve uykusuz bırakabilir. Gizli kalmış işleri bitirmek, perde arkasından operasyonlar yönetmek veya ruhsal anlamda büyük bir disiplin kurmak için harika bir zaman. Bastırılmış duygularının patlamasına izin vermeden, bu yoğun enerjiyi fiziksel bir aktiviteye veya zorlu bir projeye yönlendirmelisin.",
+      ],
+    },
   },
   "Jüpiter": {
-    1: { tr: "Büyük bir genişleme ve şans dönemindesin. Özgüvenin artıyor, hayata karşı daha iyimser ve cesur adımlar atabilirsin.", en: "A period of great expansion and luck. Your confidence is increasing, you can take more optimistic and bold steps towards life." },
-    2: { tr: "Maddi bolluk ve bereket kapıları açılıyor. Gelirlerini artırmak ve değerlerini büyütmek için fırsatlarla karşılaşabilirsin.", en: "Doors of material abundance and prosperity are opening. You may encounter opportunities to increase your income and grow your values." },
-    3: { tr: "Öğrenme ve iletişim alanında büyük fırsatların var. Yeni bir eğitime başlamak veya fikirlerini geniş kitlelere yaymak için ideal bir zaman.", en: "Great opportunities in learning and communication. Ideal for starting a new education or spreading your ideas to large audiences." },
-    4: { tr: "Aile ve ev hayatında huzur, bolluk ve neşe var. Evini büyütmek veya aile bağlarını güçlendirmek için çok destekleyici bir enerji.", en: "Peace, abundance and joy in family and home life. Very supportive for expanding your home or strengthening family ties." },
-    5: { tr: "Aşk, yaratıcılık ve çocuklarla ilgili konularda büyük şansın var. Hayattan aldığın keyif artıyor, yaratıcı projelerin parlayabilir.", en: "Great luck in matters of love, creativity and children. Your enjoyment of life is increasing, your creative projects may shine." },
-    6: { tr: "İş hayatında kolaylıklar ve sağlıkta iyileşme var. Günlük rutinlerini daha verimli hale getirebilir, çalışma ortamında destek görebilirsin.", en: "Ease in business life and improvement in health. You can make your daily routines more efficient and get support in the work environment." },
-    7: { tr: "İlişkilerde ve ortaklıklarda büyüme ve şans zamanı. Evlilik veya önemli iş birlikleri için kapıların açıldığı bir dönemdesin.", en: "Growth and luck in relationships and partnerships. A period when doors open for marriage or important collaborations." },
-    8: { tr: "Ortaklaşa kazanımlarda ve ruhsal dönüşümde derin bir genişleme var. Miras veya yatırım konularında şanslı olabilirsin.", en: "A deep expansion in joint gains and spiritual transformation. You may be lucky in inheritance or investment matters." },
-    9: { tr: "Hayata bakış açını değiştirecek büyük fırsatlara sahipsin. Uzun seyahatler, yüksek eğitim ve felsefi derinlik kazanma vakti.", en: "Great opportunities that will change your perspective on life. Time for long journeys, higher education and gaining philosophical depth." },
-    10: { tr: "Kariyerinde zirveye giden yol açılıyor. Toplum önündeki statün artabilir, başarılarınla büyük takdir toplayabilirsin.", en: "The path to the top in your career is opening. Your public status may increase, you may gather great appreciation with your achievements." },
-    11: { tr: "Sosyal çevren genişliyor, hayallerine ulaşmanı sağlayacak yeni insanlarla tanışabilirsin. Geleceğe güvenle bakma vaktindesin.", en: "Your social circle is expanding, you may meet new people who will help you reach your dreams. Time to look to the future with confidence." },
-    12: { tr: "Ruhsal koruma ve içsel zenginlik içindesin. Bilinçaltındaki blokajların çözüldüğü ve ilahi bir desteği hissettiğin bir dönem.", en: "Spiritual protection and inner wealth. A period when your subconscious blockages are resolved and you feel divine support." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni fırsatların, eğitim şanslarının ve seyahatlerin ayağına kadar geldiği bir süreçtesin. Hayata çok daha pozitif ve geniş bir pencereden baktığın için, karşılaştığın sorunları bile birer şansa dönüştürebiliyorsun. Çevrendeki bilge kişilerden veya uzak akrabalardan harika destekler görebilirsin. İçindeki macera ruhunu serbest bırak, çünkü şu an attığın her küçük adım gelecekte sana büyük başarılar getirecek. Vizyoner tarafın parlıyor, planlarını büyük tutmaktan çekinme.",
+        "Evrenin en şanslı kişisi kim mi? Kesinlikle sensin! Hiçbir çaba sarf etmeden kapıların önünde açıldığı, sağlığının ve neşesinin tavan yaptığı muazzam bir akıştasın. İnsanlara verdiğin bilgelik dolu tavsiyeler sayesinde toplum önünde saygınlığın artıyor. Uzun yolculuklar, yüksek öğrenim veya yabancılarla ilgili işlerinde mucizeler yaşayabilirsin. İçsel huzurun ve dış başarının tam uyum içinde olduğu bu harika zamanın tadını doya doya çıkar, her şeyi hak ettin.",
+      ],
+      negative: [
+        "Özgüvenin tavan yapmış ama bu bazen \"ukalalık\" sınırına dayanıyor olabilir, dikkatli ol tatlım. Gereksiz bir iyimserlikle boyundan büyük riskler alabilir veya yapamayacağın sözler verebilirsin. Maddi ve fiziksel anlamda aşırıya kaçma (harcama veya yeme-içme) eğilimin seni biraz yorabilir. \"Her şeyi ben bilirim\" tavrından uzaklaşıp mütevazı kalmayı başarırsan, bu kare açının getirdiği enerjiyi büyük bir hırsa ve başarıya dönüştürebilirsin. Sınırlarını bilmek bu dönemin anahtarı.",
+        "Karşındaki insanlardan (eş, ortak, çevre) çok büyük beklentiler içine girebilirsin ve bu da bazen hayal kırıklığı yaratabilir. Onların sunduğu fırsatlar aslında çok büyük olabilir ama senin bu fırsatları nasıl değerlendirdiğin önemli. \"Ben\" ve \"Biz\" arasındaki dengeyi kurarken aşırı cömertlikten veya abartılı vaatlerden kaçınmalısın. Başkalarının şansından beslenmek yerine, onlarla birlikte büyümeyi öğreniyorsun. Bu karşıtlık sana doğru ortaklıkları seçme konusunda çok büyük dersler verecek.",
+      ],
+      neutral: [
+        "Şans meleği omuzuna konmuş durumda, hayatına bolluk ve bereket yağıyor! Kendini her zamankinden daha özgüvenli, neşeli ve bilge hissettiğin muazzam bir büyüme dönemindesin. Her türlü girişimin için evren sana tüm kapıları sonuna kadar açıyor; adeta dokunduğun altın oluyor. Fiziksel olarak genişleme (kilo alma) eğilimi olsa da, karizman ve auran o kadar büyük ki herkes sana çekiliyor. Bu şanslı dönemi sadece eğlence için değil, vizyonunu genişletmek ve geleceğini inşa etmek için kullanmalısın.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Küçük yatırımların büyük kazançlara dönüştüğü, finansal anlamda nefes aldığın bir süreçtesin. Eğitim, ticaret veya yurt dışı bağlantılı işlerden güzel gelirler elde edebilirsin. Çevrendeki insanların sana sunduğu fırsatlar, maddi güvenliğini pekiştirmene yardımcı olacak. İçsel bir huzur ve tatmin duygusu içindesin, bu da hayatına daha fazla güzellik çekmeni sağlıyor.",
+        "Zahmetsiz bir zenginleşme ve maddi huzur dönemi yaşıyorsun. Evren sanki el birliği yapmış, seni her konuda destekliyor ve önüne altın fırsatlar seriyor. Taşınmaz mallar, miraslar veya büyük yatırımlardan yana şansın çok açık. Kendi değerinin o kadar farkındasın ki, bu asil duruşun etrafındaki herkesi etkiliyor ve sana kapıları açıyor.",
+      ],
+      negative: [
+        "Gereksiz bir iyimserlikle boyundan büyük harcamalar yapmaya kalkabilirsin, aman dikkat! \"Bir şey olmaz, hallederiz\" diyerek girdiğin borçlar ileride seni sıkıştırabilir. Maddi konularda sınırlarını bilmemek veya kapasitenin üzerinde riskler almak bu dönemin en büyük tuzağı. Şansına çok güvenip tedbiri elden bırakma, abartılı vaatlere karşı uyanık ol.",
+        "Maddi dünyada çok büyük beklentilerin var ama bunları dengelemek bu dönemde biraz zor olabilir. Paylaşılan kaynaklar veya ortaklıklardan gelen paralar konusunda aşırı beklenti içine girmek hayal kırıklığı yaratabilir. Kendi kazancınla başkalarının sana sundukları arasında bir terazi kurman gerekiyor. Cömertliğin suistimal edilmesine izin verme ama cimrilik de yapma; denge senin anahtarın.",
+      ],
+      neutral: [
+        "Bolluk ve bereket kapıları sonuna kadar açılıyor, cüzdanın resmen bayram ediyor! Finansal anlamda büyük bir büyüme, şans ve genişleme dönemindesin; para sana en beklemediğin yerlerden akabilir. Özgüvenin o kadar yüksek ki, bu enerji seni her türlü maddi konuda kazançlı çıkarıyor. Sadece çok fazla \"nasıl olsa gelir\" diyerek aşırı lükse ve savurganlığa kaçmamaya dikkat et, bu şansın kıymetini bil.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni bir dil öğrenmek, bir eğitime katılmak veya kısa bir seyahate çıkmak için evren seni tam destekliyor. Yakın çevrendeki tesadüfler seni çok karlı ve vizyoner kapılara götürebilir. İletişim becerilerin sayesinde insanlarla çok kolay bağ kuruyor ve onlara umut aşılıyorsun. Küçük birikimlerin büyük bilgilere dönüştüğü, zihinsel olarak çok huzurlu bir akıştasın.",
+        "Zahmetsizce öğreniyor, kelimelerinle mucizeler yaratıyor ve çevrende bir ışık gibi dolaşıyorsun. Yüksek öğrenim, hukuksal konular veya yazım işlerinde şans senden yana; beklediğin o güzel haber her an gelebilir. Kardeşlerinle olan ilişkilerin sana muazzam bir huzur ve aidiyet hissi veriyor. Hayata bakış açın o kadar pozitif ki, karşılaştığın her sorunu bir bilge edasıyla ve kolaylıkla çözüyorsun.",
+      ],
+      negative: [
+        "Her şeyi biraz abartma eğiliminde olabilirsin; \"bir biliyorsam bin anlatırım\" demen bazen kafa karıştırabilir. Yapabileceğinden daha büyük sözler verip sonra zihinsel bir yükün altında kalmamaya dikkat etmelisin. Eğitim veya seyahat konularında çok büyük beklentiler içine girmek, küçük aksaklıklarda moralini bozabilir. Biraz daha mütevazı ve detaycı olursan, bu genişleme enerjisini lehine çevirebilirsin.",
+        "Büyük hayallerinle günlük hayatın pratik bilgileri arasında bir terazi kurman gereken bir dönem. Başkalarının inançları veya fikirleri senin doğrularınla çatışabilir; bu süreçte \"ben her şeyi biliyorum\" dememek en iyisi. Eğitimde veya ticarette çok fazla riske girmek yerine, elindeki bilgiyi sağlamlaştırmalısın. Dengeyi bulursan, bu karşıtlık sana çok geniş bir dünya görüşü ve entelektüel derinlik kazandıracaktır.",
+      ],
+      neutral: [
+        "Zihnin bolluk ve bereketle dolup taşıyor; her yeni bilgi sana yeni bir fırsat gibi geliyor! Eğitim hayatında büyük başarılar elde edebilir, yurt dışı bağlantılı projelerde adından söz ettirebilirsin. Kardeşlerinden veya yakın çevrenden göreceğin destekler hayatını inanılmaz kolaylaştıracak. Konuşmaların o kadar bilgece ki, etrafındaki herkes senin rehberliğine ihtiyaç duyuyor; şansın çok açık!",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Gayrimenkul işlerinde veya ailevi meselelerde şans senden yana. Küçük bir dokunuşla evini güzelleştirebilir, aile büyüklerinden beklemediğin güzel haberler alabilirsin. Geçmişle barışmak ve içsel huzuru bulmak için evren sana çok nazik fırsatlar sunuyor. Bu dönemde kuracağın sağlam temeller, gelecekte seni çok daha büyük başarılara taşıyacak.",
+        "Ruhunun en derinlerinde müthiş bir koruma kalkanı altındasın sanki. Aile bağların o kadar güçlü ve destekleyici ki, kendini hiç olmadığın kadar güvende hissediyorsun. Miras, mülk edinme veya aile yadigarlarıyla ilgili çok kısmetli gelişmeler yaşayabilirsin. İçsel huzurun yüzüne yansıyor; bu enerjiyle hem evinde hem de sosyal hayatında parlıyorsun.",
+      ],
+      negative: [
+        "Evinde her şeyi abartma eğilimindesin; ya çok fazla eşya alıyorsun ya da aile içindeki her olayı devasa bir mesele haline getiriyorsun. \"Daha fazlasına ihtiyacım var\" diyerek huzurunu kaçırma, elindekilerin kıymetini bilmekte zorlanabilirsin. Aile içindeki iyimserliğin bazen gerçeklerden kopmana neden olabilir, ayaklarını yere sağlam basmaya çalış. Masrafların artabilir ama bu süreç sana manevi olarak olgunlaşmayı öğretecek.",
+        "Kariyerindeki büyük hedeflerinle evdeki konforun arasında bir denge kurman gerekiyor. Dış dünyada çok başarılı olup eve geldiğinde boşluk hissetmemek için sevdiklerine daha fazla vakit ayırmalısın. \"Daha uzağa, daha yükseğe\" gitme isteğin köklerini ihmal etmene sebep olabilir. Paylaşımcı ve mütevazı kalmayı başarırsan, bu karşıtlık sana hem evde hem işte devasa bir başarı getirebilir.",
+      ],
+      neutral: [
+        "Evine bolluk, bereket ve neşe geliyor canım! Ailenin genişlediği, evinde huzurun ve konforun tavan yaptığı harika bir dönemdesin. Belki daha büyük bir eve taşınma fikri doğabilir ya da ailenden büyük bir maddi/manevi destek görebilirsin. İç dünyanda hissettiğin o derin güven duygusu, dışarıdaki tüm kapıları sana açacak bir iyimserliğe dönüşüyor; tadını çıkar!",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren sayesinde aşk hayatında veya yaratıcı işlerinde çok tatlı kapılar açılıyor. Küçük riskler alarak büyük keyifler elde edebileceğin, şansın yan yollardan sana göz kırptığı bir süreçtesin. Yeni bir hobiye başlamak veya sanatsal bir eğitime katılmak vizyonunu inanılmaz genişletecektir. İyimserliğin ve nezaketin sayesinde her türlü zorluğu bir oyun neşesiyle aşabilirsin.",
+        "Hayatın tadını en saf ve en görkemli haliyle çıkardığın muazzam bir dönem yaşıyorsun! Aşk kendiliğinden kapını çalıyor, yaratıcılığın su gibi akıyor ve şans her konuda senin elinden tutuyor. Kendini ifade ederken o kadar doğal bir özgüven sergiliyorsun ki, insanlar sana hayran kalmaktan kendini alamıyor. Çocuklarla ilgili konular, tatiller ve eğlence için hayatının en verimli ve bereketli zamanlarından birindesin, tadını doya doya çıkar!",
+      ],
+      negative: [
+        "Her şeyi biraz abartıyor olabilirsin tatlım, \"fazla mal göz çıkarmaz\" dersen cüzdanın ve kalbin biraz yorulabilir! Aşkta aşırı iyimser davranıp gerçekleri görmezden gelme riskin var, karşındaki kişiyi olduğundan çok daha büyük bir kahraman gibi görebilirsin. Eğlenceye ve lükse ayırdığın bütçe kontrolden çıkabilir, bu yüzden keyif alırken sınırlarını bilmen çok önemli. Şansına çok güvenip büyük riskler (kumar, spekülatif yatırımlar) almaktan bu dönemde kaçınmalısın.",
+        "Toplumsal hedeflerinle bireysel mutluluğun arasında bir denge savaşı veriyorsun. Arkadaş grupların içinde çok popüler olabilirsin ama bu durum özel aşk hayatına ayırdığın vaktin çalınmasına neden olabilir. \"Herkesi mutlu edeyim\" derken kendi içindeki o yaratıcı çocuğu ihmal etmemelisin. Cömertliğini ve neşeni dengeli dağıtırsan, bu karşıtlık sana sosyal hayatta devasa bir büyüme getirecektir.",
+      ],
+      neutral: [
+        "Canım, aşk hayatında tam bir \"talih kuşu\" dönemindesin! Kalbin o kadar büyük ve neşeli ki, hayatına harika fırsatlar ve insanlar çekiyorsun; adeta bir mutluluk mıknatısı gibisin. Yaratıcı projelerin için devasa destekler alabilir, hobilerini profesyonel bir boyuta taşıyabilirsin. Eğer çocuk sahibi olmayı düşünüyorsan veya çocukların varsa, onlardan gelecek büyük bir başarı haberiyle gururlanabilirsin; evren sana \"gül ve eğlen\" diyor!",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Günlük işlerini hallederken karşına çıkan küçük fırsatlar büyük kapıların anahtarı olabilir. İş arkadaşlarınla kurduğun o pozitif ve geniş vizyonlu bağlar, sana kariyerinde hiç beklemediğin destekler getirecek. Sağlık rutinlerini daha keyifli hale getirecek yeni yöntemler (belki bir yoga kampı veya sağlıklı yaşam kursu) keşfedebilirsin. İyimserliğin sayesinde çalışma ortamındaki herkesin enerjisini yükseltiyor ve takdir topluyorsun.",
+        "İş hayatında tam bir \"altın dokunuş\" dönemindesin; dokunduğun her iş bereketleniyor ve başarıya ulaşıyor. Sağlığın mükemmel bir dengede, kendini her zamankinden daha enerjik ve hayat dolu hissediyorsun. İş yerindeki pozisyonun güçleniyor, insanlar senin bilgelik dolu tavsiyelerine her zamankinden daha çok ihtiyaç duyuyor. Evren seni hem fiziksel hem de profesyonel anlamda tam destekliyor, bu konforlu akışın tadını çıkar.",
+      ],
+      negative: [
+        "İş yükünü ve sorumluluklarını biraz fazla abartıyor olabilirsin; \"her şeyi ben yaparım\" diyerek boyundan büyük işlere kalkışma. Gereksiz bir iyimserlikle günlük planlarını çok doldurup sonra hiçbirine yetişememek seni strese sokabilir. Sağlık konusunda \"bir şey olmaz\" diyerek ihmalkar davranmamalı, düzenli kontrollerini yaptırmalısın. Harcamaların ve iş masrafların kontrolden çıkabilir, bu süreçte biraz daha ayağın yere sağlam basmalı.",
+        "Büyük hayallerin ve toplumsal ideallerin, günlük hayatın küçük detaylarıyla çatışıyor olabilir. Sen dünyayı kurtarmak isterken önündeki dosya yığınları sana engel gibi görünebilir. Başkalarına yardım etme arzun o kadar yüksek ki, kendi sağlığını ve düzenini ihmal etme riskin var. \"Hizmet\" ve \"vizyon\" arasındaki dengeyi bulamazsan, kendini bir boşlukta hissedebilirsin; önce kendi bardağını doldurmalısın.",
+      ],
+      neutral: [
+        "İş hayatında bolluk ve bereket kapıları ardına kadar açılıyor, adeta iş yerinin koruyucu meleği gibisin! Yeni iş fırsatları, terfiler veya mevcut işinde büyük kolaylıklar yaşayacağın harika bir dönem. Sağlığınla ilgili konularda şans senden yana; şifa bulmak ve bedenini yenilemek için en doğru zamandasın. Sadece \"nasıl olsa iyiyim\" diyerek yeme içmeyi fazla abartmamaya ve karaciğerini yormamaya dikkat etmelisin.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren aracılığıyla kuracağın yeni ortaklıklar sana maddi ve manevi harika kazanç kapıları açacak. Partnerinle birlikte yapacağınız seyahatler veya katılacağınız eğitimler vizyonunuzu inanılmaz geliştirecek. İlişkilerinde genel bir uyum ve hoşgörü hakim; küçük pürüzleri gülüp geçerek aşabiliyorsunuz. Karşındaki kişilerden gelen nazik destekler sayesinde geleceğe dair çok daha umutlu ve özgüvenli bakmaya başlıyorsun.",
+        "İlişkilerinde adeta bir peri masalı yaşıyorsun; her şey zahmetsizce, neşeyle ve bollukla ilerliyor. Partnerinle olan uyumun çevrendeki herkes tarafından takdir ediliyor ve size gıptayla bakılıyor. Ortaklık kurmak, sözleşme imzalamak veya bir ilişkiyi resmiyete dökmek için hayatının en şanslı zamanlarından biri. İçindeki güven duygusu ikili ilişkilerine yansıyor ve sana hayalindeki o huzurlu birliği altın tepside sunuyor.",
+      ],
+      negative: [
+        "İlişkilerinde beklentilerini o kadar yükselttin ki, partnerin ne yaparsa yapsın sana yetmiyor gibi gelebilir. \"Daha fazlasını istiyorum\" derken elindeki huzuru kaçırmamaya, partnerini gereksiz taleplerle yormamaya dikkat etmelisin. Abartılı vaatlere veya şansına çok güvenip girilen riskli ortaklıklara karşı temkinli olman gereken bir dönem. Mütevazı kalmayı başarırsan, bu genişleme enerjisi seni yine de bir adım öne taşıyacaktır.",
+        "Kendi özgürlük alanınla partnerinin büyüme arzusu arasında bir çekişme yaşanabilir. Karşı taraftan gelen büyük vaatlerin ne kadar gerçekçi olduğunu sorgulaman gerekebilir; her parlayan şey altın olmayabilir. İlişkide çok fazla verici olup sonra duygusal boşluğa düşme riskine karşı dengeyi iyi kurmalısın. Bu karşıtlık, sana ilişkideki alma-verme dengesini ve kendi sınırlarını korumayı öğretecek önemli bir derstir.",
+      ],
+      neutral: [
+        "Şansın en açık olduğu yer ikili ilişkilerin; hayatına bolluk ve neşe getirecek bir partner veya ortak girebilir! Mevcut ilişkinde evlilik kararı alabilir ya da partnerinin şansı sayesinde senin de hayatın bir anda güzelleşebilir. Danışmanlık işlerinde veya hukuksal süreçlerde büyük başarılar elde edeceğin, vizyonunun inanılmaz genişlediği bir dönem. Etrafındaki insanlar sana karşı çok cömert davranıyor, bu bereketli ve neşeli sürecin tadını çıkar.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Başkalarının imkanlarından ve networklerinden faydalanarak kendi maddi durumunu iyileştirebileceğin çok zarif fırsatlar yakalayacaksın. Borçlarını yapılandırmak veya karlı bir kredi çekmek için evren sana tüm kapıları açıyor. Sezgilerin o kadar kuvvetli ki, hangi yatırımın sana kazandıracağını veya kimin dürüst olduğunu anında seziyorsun. Ruhsal çalışmalar veya terapi için harika bir zaman; küçük adımlarla büyük bir içsel huzura ve maddi ferahlığa kavuşacaksın.",
+        "Maddi ve manevi olarak tam bir \"korunma\" ve \"genişleme\" içindesin; sanki görünmez bir el seni tüm krizlerden çekip alıyor. Başkalarının parasıyla zenginleşmek, büyük ortaklıklar kurmak veya miras yoluyla varlık edinmek için hayatının en bereketli zamanındasın. Ruhsal derinliğin ve hayata bakış açın o kadar değişti ki, artık hiçbir zorluk seni yıldıramıyor. İçindeki bu sarsılmaz inanç ve güven duygusu, sana hayal bile edemeyeceğin maddi ve manevi kapıları ardına kadar açacak!",
+      ],
+      negative: [
+        "\"Nasıl olsa para geliyor\" diyerek başkalarının kaynaklarını harcarken aşırıya kaçabilirsin, aman cüzdanına sahip çık! Finansal konularda gereksiz bir iyimserlikle boyundan büyük borçların altına girmek ileride seni zorlayabilir. Miras veya ortaklık meselelerinde beklentilerini çok yüksek tutman hayal kırıklığına neden olabilir; gerçekçi kalmalısın. Şansına çok güvenip riskli işlere girmek yerine, elindekini korumaya ve paylaşımcı olmaya odaklanırsan bu dönemi karlı kapatırsın.",
+        "Kendi kişisel özgürlüğün ve inançlarınla başkalarının paylaşılan değerleri arasında bir denge kurman gerekiyor. Partnerinin veya ortaklarının büyük vaatleri seni heyecanlandırabilir ama bu vaatlerin ne kadar sağlam olduğunu iyi araştırmalısın. Cömertliğin ve yardımseverliğin başkaları tarafından suistimal edilme riskine karşı uyanık olmalı, sınırlarını bilmelisin. Bu karşıtlık, sana hem paylaşmayı hem de kendi bireysel haklarını korumayı öğreten devasa bir farkındalık sınavıdır.",
+      ],
+      neutral: [
+        "Canım, finansal anlamda adeta \"turnayı gözünden vurduğun\" bir dönemdesin! Miras, nafaka, sigorta ödemeleri veya eşin kazancı gibi konularda beklemediğin kadar büyük ve bereketli fırsatlar kapına gelebilir. Psikolojik olarak muazzam bir büyüme ve iyileşme yaşıyorsun; hayatın gizemlerini çözmek sana büyük bir bilgelik katıyor. Ruhsal anlamda korunduğunu hissettiğin bu süreçte, en derin krizlerden bile devasa bir zenginleşme ile çıkacaksın; şansın daim olsun!",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Çevrendeki insanların desteği ve küçük tesadüfler sayesinde vizyonunu genişletecek harika fırsatlar yakalayacaksın. Yeni bir dil öğrenmek veya uzaklardaki bir dostunu ziyaret etmek sana beklediğinden çok daha büyük bir şans kapısı açabilir. Eğitim hayatında veya hukuksal süreçlerde işlerin çok tatlı bir uyumla hallolduğu bir dönemdesin. İyimserliğin ve nezaketin, sana uzak diyarlardan çok bereketli ve neşeli haberler getirecektir.",
+        "Hayat sana adeta bir \"bilgelik ve şans\" maskesi takmış; her adımın bir mucizeye dönüşüyor! Yüksek öğrenim, yurt dışı seyahatleri veya ruhsal yolculuklar için hayatının en verimli ve bereketli dönemini yaşıyorsun. Zahmetsizce gelen başarılar, genişleyen bir sosyal çevre ve sarsılmaz bir iyimserlik içindesin. Evren seni tüm dünyayla buluşturmak için el birliği yapmış durumda; ufkunu en uzağa dik ve bu büyüleyici akışın tadını çıkar!",
+      ],
+      negative: [
+        "\"Her şeyi biliyorum\" yanılgısına düşerek öğrenmeye kapılarını kapatma riskin var, aman dikkat! İnançların veya felsefen konusunda aşırıya kaçabilir, başkalarına karşı fazla vaaz verir gibi bir tutum sergileyebilirsin. Uzak yolculuklarda veya eğitim masraflarında bütçeni aşan harcamalar yapman mümkün; biraz daha ölçülü olmalısın. Şansına çok güvenip riskli hukuksal işlere girmek yerine, ayaklarını yere sağlam basarak ilerlersen bu genişleme enerjisinden yine de karlı çıkarsın.",
+        "Yakın çevrendeki bilgi kirliliğiyle uzaklardaki gerçek bilgelik arasında bir denge kurman gerekiyor. Sürekli bir şeyler öğrenmek istiyorsun ama odağını dağıttığın için hiçbirinde derinleşemiyor olabilirsin. İnançların konusunda başkalarıyla fikir ayrılığı yaşamak sana yeni perspektifler katabilir, tartışmalardan kaçma ama esnek kal. Bu süreç sana \"az ama öz\" bilginin ne kadar kıymetli olduğunu ve büyük vizyonu günlük hayata nasıl entegre edeceğini öğretecek.",
+      ],
+      neutral: [
+        "İşte evine hoş geldin! Jüpiter kendi evinde ve sana hayatının en büyük şanslarını, bilgeliklerini ve bolluklarını sunmak için burada. Yurt dışı kapıları sonuna kadar açılıyor, akademik kariyerinde devasa başarılar seni bekliyor ve hayata bakış açın muazzam bir derinlik kazanıyor. Yayıncılık, hukuk veya inançlarla ilgili konularda \"dokunduğun altın oluyor\" diyebiliriz. Bu süreçte öğreneceğin her şey seni gelecekte büyük bir otorite yapacak; evrenin en şanslı kişisi sensin!",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevren ve networklerin sayesinde kariyerinde inanılmaz kolaylıklar ve fırsatlarla karşılaşacaksın. Yeni bir iş ortaklığı veya beklediğin o büyük proje, bir arkadaşının referansıyla sana gelebilir. Kariyer hedeflerin için ihtiyacın olan eğitimi veya desteği zahmetsizce bulacağın çok keyifli bir akıştasın. İyimserliğin ve nezaketin sayesinde toplum önünde herkesin sevdiği ve güvendiği bir otorite figürüne dönüşüyorsun.",
+        "Kariyerinde zahmetsizce gelen devasa bir başarı ve mutluluk dönemindesin; her şey senin için mükemmel organize edilmiş gibi! Toplum önünde sarsılmaz bir itibarın var ve her adımın alkışlarla karşılanıyor. Yurt dışı bağlantılı işler, eğitim veya yayıncılık alanlarında kariyerinde zirveye ulaşıyorsun. Kendine olan güvenin ve evrene olan inancın sana hayalindeki o muazzam statüyü altın tepside sunuyor; tadını çıkar!",
+      ],
+      negative: [
+        "Kariyerinde beklentilerini o kadar yükselttin ki, gerçeklerden kopma riski yaşıyorsun; aman dikkat! \"Ben her şeyi yaparım\" diyerek boyundan büyük sorumluluklar alıp sonra altında ezilme ihtimalin var. Otorite figürlerine karşı fazla iyimser veya ukala bir tavır sergilemek itibarını zedeleyebilir. Şansına çok güvenip büyük riskler almak yerine, mütevazı kalarak ilerlersen bu büyüme enerjisini yine de lehine çevirebilirsin.",
+        "Kariyerindeki büyük hedeflerinle ailevi değerlerin veya içsel huzurun arasında bir denge kurman gerekiyor. Dışarıda çok başarılı olup herkesi mutlu ederken, evin içinde bir boşluk veya yetersizlik hissi yaşayabilirsin. \"Daha fazlası\" diye koşarken köklerini ve seni sen yapan değerleri ihmal etmemelisin. Cömertliğini ve vizyonunu hem işine hem de özel hayatına dengeli dağıtırsan, bu süreç sana gerçek bir bilgelik katacaktır.",
+      ],
+      neutral: [
+        "İşte büyük başarıların ve bolluğun vakti geldi; kariyerinde \"altın çağı\" yaşıyorsun! Jüpiter sana toplum önünde muazzam bir büyüme, şans ve saygınlık vaat ediyor; dokunduğun her iş bereketleniyor. Terfiler, ödüller veya yeni ve devasa iş teklifleri için en şanslı dönemindesin. Vizyonun o kadar geniş ki, herkes senin bilgeliğine ve liderliğine ihtiyaç duyuyor; evren seni alkışlıyor canım!",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrendeki küçük tesadüfler ve arkadaşlarından gelen referanslar sayesinde gelecek hedeflerine giden yolda devasa kapılar açılıyor. Yeni tanışacağın insanlar vizyonunu genişletecek ve sana çok karlı kapılar aralayacaktır. İyimserliğin ve hoşgörün sayesinde her türlü grupta sevilip sayılan, \"şanslı kişi\" olarak anılan biri haline geliyorsun. Küçük desteklerle büyük hayallerini inşa edeceğin bu keyifli akışın tadını doyasıya çıkar!",
+        "Hayallerinin ve dostluklarının en \"altın\" dönemindesin; her şey zahmetsizce, neşeyle ve bollukla ilerliyor! Arkadaşlarınla olan uyumun ve birbirinize kattığınız şans, çevrendeki herkes tarafından gıptayla izleniyor. Toplumsal amaçlar uğruna yaptığın her iş sana kat kat bereket ve saygınlık olarak geri dönecek. Kendini her konuda korunmuş ve desteklenmiş hissettiğin bu muazzam süreçte, hayalindeki o büyük hedefi gerçekleştirmek için en şanslı zamanındasın!",
+      ],
+      negative: [
+        "Sosyal çevrende beklentilerini o kadar yükselttin ki, \"arkadaşlarım beni her yere taşır\" yanılgısına düşebilirsin, dikkat! \"Daha fazla çevre, daha fazla popülerlik\" derken gerçek dostlukları ihmal edebilir veya gereksiz gruplar içinde vaktini dağıtabilirsin. Gelecek planlarında aşırı iyimser davranıp riskli adımlar atmamaya, bütçeni aşan sosyal harcamalar yapmamaya özen göstermelisin. Mütevazı kalmayı başarırsan, bu genişleme enerjisi seni yine de bir adım öne taşıyacaktır.",
+        "Kendi bireysel keyiflerinle sosyal sorumlulukların veya arkadaş çevrenin büyüme arzusu arasında bir denge kurman gerekiyor. \"Herkesi mutlu edeyim\" derken kendi özel vaktinden ve mutluluğundan çalıyor olabilirsin. Arkadaşlarından gelen abartılı vaatlerin ne kadar gerçekçi olduğunu iyi sorgulamalı, her parlayan grubu altın sanmamalısın. Dengeyi bulursan, bu karşıtlık sana hem bireysel hem de toplumsal anlamda devasa bir olgunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "İşte büyük hayallerin gerçekleşme vakti! Jüpiter sana sosyal çevren aracılığıyla muazzam bolluk, şans ve vizyon katıyor; arkadaş çevren adeta bir fırsat denizi gibi. Çok güçlü, bilge ve yardımsever dostlar hayatına girerek seni hayal bile edemeyeceğin noktalara taşıyabilir. Toplumsal projelerde, derneklerde veya vakıflarda büyük başarılar elde edeceğin bu bereketli dönemde, neyi dilersen gerçek olma ihtimali çok yüksek; evren seni alkışlıyor!",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal dünyandan ve bilinçaltı çalışmalarından gelen pozitif enerjiyle hayatına çok tatlı fırsatlar çekiyorsun. Gizli kalmış iyilikler veya perde arkasındaki güçlü kişilerin desteği sayesinde işlerin mucizevi bir şekilde halloluyor. Sezgilerin o kadar kuvvetli ki, hangi adımın seni huzura götüreceğini bir bilge gibi biliyorsun. Küçük meditasyonlar veya ruhsal hobiler, sana beklemediğin kadar büyük ve bereketli kapılar açacaktır; evren seni gizlice destekliyor!",
+        "Ruhsal ve maddi anlamda tam bir ilahi akış içindesin; sanki her şey senin ruhsal huzurun için organize edilmiş! Yalnız kaldığında gelen o muazzam bilgelik ve şans, seni her türlü zorluk karşısında yenilmez kılıyor. Perde arkasındaki işlerin, miras veya ortaklı kazançların zahmetsizce senin lehine sonuçlandığı harika bir süreçtesin. Kendini her konuda korunmuş ve çok değerli hissettiğin bu muazzam akışta, hayatın anlamını keşfedip zirveye ulaşacaksın; tadını çıkar!",
+      ],
+      negative: [
+        "Ruhsal konularda veya yardımlaşma işlerinde aşırıya kaçıp kendi sınırlarını ihmal edebilirsin, aman dikkat! \"Herkesi ben kurtarırım\" diyerek kendi enerjini ve maddi kaynaklarını hesapsızca dağıtma riskin var. Gizli bir düşmanlığı veya arkandan çevrilen bir işi aşırı iyimserlikle görmezden gelmek ileride canını sıkabilir. Şansına çok güvenip riskli işlere girmek yerine, ayaklarını yere sağlam basarak ve mütevazı kalarak ilerlersen bu genişleme enerjisini lehine çevirebilirsin.",
+        "Dış dünyadaki büyük başarılarınla iç dünyandaki manevi ihtiyaçların arasında bir denge kurman gerekiyor. Toplum önünde çok parlayıp herkese şans dağıtırken, kendi ruhsal boşluğunu ihmal etmemelisin. \"Daha fazlası\" diye koşarken içindeki o sessiz huzuru ve köklerini unutma riskin var. Dengeyi bulursan, bu karşıtlık sana hem profesyonel hem de ruhsal anlamda devasa bir bilgelik ve doygunluk kazandıracaktır.",
+      ],
+      neutral: [
+        "İşte gerçek bir \"koruyucu melek\" dönemi! Jüpiter Neptün (12. Ev)inde sana ilahi bir koruma, muazzam bir ruhsal büyüme ve gizli şanslar vaat ediyor. En zor anlarında bile bir elin seni çekip kurtardığını fark edecek ve evrene olan inancın sarsılmaz hale gelecek. Ruhsal çalışmalar, meditasyon veya yardım işlerinde büyük bir otorite ve huzur elde edeceğin bu bereketli süreçte, iç dünyandaki zenginlik dış hayatını da güzelleştirecektir; adeta kutsanmış gibisin!",
+      ],
+    },
   },
   "Satürn": {
-    1: { tr: "Kişisel disiplin ve sorumluluk alma vaktindesin. Kendini yeniden yapılandırıyor, daha ciddi ve olgun kararlar alıyorsun.", en: "Time for personal discipline and taking responsibility. You're restructuring yourself, making more serious and mature decisions." },
-    2: { tr: "Maddi konularda tutumluluk ve uzun vadeli planlama dönemindesin. Kaynaklarını korumayı ve sabırla inşa etmeyi öğreniyorsun.", en: "A period of frugality and long-term planning in material matters. You're learning to protect your resources and build with patience." },
-    3: { tr: "İletişimde ve yakın çevrende sınırlar çizme zamanındasın. Ciddi eğitimler veya zihinsel odaklanma gerektiren işler gündemde.", en: "Time to draw boundaries in communication and close environment. Serious trainings or jobs requiring mental focus are on the agenda." },
-    4: { tr: "Ailevi sorumluluklar ve köklerle ilgili sınavların var. Ev hayatında düzen kurmak ve geçmişle yüzleşmek seni güçlendirecek.", en: "Family responsibilities and tests related to roots. Establishing order in home life and confronting the past will strengthen you." },
-    5: { tr: "Aşkta ve yaratıcılıkta ciddiyet zamanı. Hobilerini disiplinle ele alabilir, ilişkilerinde daha gerçekçi beklentiler içine girebilirsin.", en: "Seriousness in love and creativity. You can approach your hobbies with discipline and have more realistic expectations in relationships." },
-    6: { tr: "İş hayatında çok çalışma ve verimlilik sınavındasın. Sağlığına düzen getirmeli ve rutinlerini sabırla yönetmelisin.", en: "Hard work and efficiency test in business life. You should bring order to your health and manage your routines with patience." },
-    7: { tr: "İlişkilerde test edilme dönemindesin. Gerçek bağları korumak, sorumluluk almak ve ilişkilerini sağlam temellere oturtmak önemli.", en: "A period of testing in relationships. Protecting real bonds, taking responsibility and putting relationships on solid foundations is important." },
-    8: { tr: "Finansal paylaşımlarda ve derin dönüşümlerde kısıtlanmalar veya sorumluluklar var. Maddi korkularınla yüzleşip onları aşma vakti.", en: "Restrictions or responsibilities in financial sharing and deep transformations. Time to face and overcome your material fears." },
-    9: { tr: "İnançlarını ve hayata bakışını sağlamlaştırma zamanındasın. Uzun vadeli eğitimler veya felsefi bir olgunluk kazanma süreci.", en: "Time to solidify your beliefs and outlook on life. Long-term trainings or a process of gaining philosophical maturity." },
-    10: { tr: "Kariyerinde zirveye ulaşmak için sabırla çalışma vaktindesin. Otorite figürleriyle ilişkilerinde sorumlulukların artabilir.", en: "Time to work patiently to reach the top in your career. Your responsibilities in relationships with authority figures may increase." },
-    11: { tr: "Sosyal çevrende gerçek dostları ayıklama ve gelecek planlarını disiplinle ele alma sürecindesin. Toplumsal sorumlulukların artabilir.", en: "Process of sorting out true friends in your social circle and handling future plans with discipline. Your social responsibilities may increase." },
-    12: { tr: "Bilinçaltındaki korkularla yüzleşme ve ruhsal bir arınma zamanı. Yalnızlığın getirdiği olgunlukla iç dünyanı yapılandırma vakti.", en: "Confronting subconscious fears and spiritual purification. Time to structure your inner world with the maturity brought by solitude." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Kariyerinde ve kişisel hedeflerinde yavaş ama çok sağlam adımlarla ilerlediğin bir dönemdesin. Otorite figürlerinden veya yaşça büyük kişilerden alacağın tavsiyeler senin için altın değerinde olabilir. Disiplinli ve planlı yapın sayesinde işleri tıkır tıkır yoluna koyuyorsun; herkes senin güvenilirliğine hayran kalıyor. Küçük ama emin adımlarla geleceğini inşa ettiğin bu süreçte, sabrının meyvelerini toplamaya başlıyorsun. Statünü sağlamlaştırmak için harika bir zaman.",
+        "Hayatındaki taşların tam olarak yerine oturduğu, emeklerinin karşılığını saygınlık olarak aldığın bir dönemdesin. O kadar ağırbaşlı, güvenilir ve sağlam bir imaj çiziyorsun ki herkes seninle iş yapmak istiyor. Uzun vadeli hedeflerin için attığın tohumlar artık boy vermeye başladı; başarı senin için artık bir şans değil, bir sonuç. Kendini çok dengeli, kontrollü ve sarsılmaz hissediyorsun. Hayat seni ödüllendiriyor çünkü sen disiplini ve sabrı en iyi şekilde öğrendin.",
+      ],
+      negative: [
+        "Kendini bir duvarın önünde gibi hissediyor olabilirsin; ne yapsan bir engele çarpıyorsun sanki. Özgüveninin sarsıldığı, kendini yetersiz veya yalnız hissettiğin depresif anlar kapını çalabilir. Otorite figürleriyle (baba, patron) yaşayacağın gerginlikler seni yorabilir ve üzerindeki baskıyı artırabilir. Ancak unutma canım, Satürn sana sadece \"eksiklerini tamamla\" diyor. Sabırlı olmalı, kendini suçlamayı bırakmalı ve sorumluluklarını ertelemeden yerine getirmeye odaklanmalısın.",
+        "İlişkilerindeki ciddi sorumluluklar veya partnerinin mesafeli tavırları seni bu dönemde kısıtlanmış hissettirebilir. \"Ben ne istiyorum, o ne bekliyor?\" kavgası içinde kendi kişiliğinden ödün veriyor gibi hissedebilirsin. Başkaları seni yargılıyormuş veya engelliyormuş gibi gelebilir; bu aslında senin kendi sınırlarını koyma sınavındır. Yalnızlık korkusuyla başkalarına boyun eğmek yerine, ilişkilerinde sağlam ve net kurallar koymayı öğrenmelisin. Ciddi ve yorucu bir süreç ama seni çok güçlendirecek.",
+      ],
+      neutral: [
+        "Omuzlarında dünyanın yükü varmış gibi hissedebilirsin; ciddiyet ve sorumluluk sınavındasın. Satürn yükseleninde gezerken seni her zamankinden daha olgun, mesafeli ve belki biraz da \"gri\" gösteriyor olabilir. Hayat seni kısıtlıyormuş gibi hissetse de aslında seni disipline sokuyor ve kalıcı bir başarı için temel atmanı sağlıyor. Sağlığına (özellikle kemik ve dişlerine) dikkat etmeli ve dinlenmeyi ihmal etmemelisin. Bu süreç geçici ama kazandıracağı karakter gücü ömür boyu kalıcı olacak.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Maddi konularda yavaş ama emin adımlarla ilerlediğin, sağlam yatırımlar yaptığın bir dönem. Yaşça büyük kişilerden veya otorite figürlerinden alacağın finansal tavsiyeler çok işine yarayabilir. Gereksiz harcamalardan kaçınarak geleceğini inşa ediyorsun ve bu disiplin sana büyük bir iç huzuru veriyor. Sabrının meyvelerini küçük ama düzenli kazançlarla toplamaya başlıyorsun.",
+        "Finansal hayatında taşların yerine oturduğu, emeklerinin karşılığını somut bir şekilde aldığın bir dönem. Gayrimenkul yatırımı yapmak veya uzun vadeli birikim planları oluşturmak için harika bir zaman. Maddi disiplinin sana getirdiği o güven duygusuyla geleceğe umutla bakıyorsun. Hayat seni kısıtlamıyor, aksine sana kalıcı ve sarsılmaz bir kale inşa etme şansı veriyor.",
+      ],
+      negative: [
+        "Maddi sorumlulukların omuzlarına ağır geldiği, kendini parasız veya kısıtlanmış hissettiğin bir süreç olabilir. Beklediğin ödemeler gecikebilir veya geçmişteki hatalı harcamaların faturası önüne gelebilir. Özdeğer duygunun maddi durumuna endeksli olması seni biraz depresif hissettirebilir. Bu bir öğrenme süreci; harcamalarını reorganize etmeli ve gerçekçi hedefler belirlemelisin.",
+        "Kendi maddi bağımsızlığını kurmak isterken başkalarına olan borçların veya ortak sorumlulukların seni aşağı çekiyor olabilir. \"Benim param\" ve \"ortak sorumluluklar\" arasında sıkışıp kalmış hissedebilirsin. Bankalarla, vergilerle veya miras konularıyla ilgili zorlayıcı ve ciddi gündemler oluşabilir. Bu dönemde esnek olmayı öğrenmeli ve finansal yüklerini başkalarıyla adil bir şekilde paylaşmanın yollarını bulmalısın.",
+      ],
+      neutral: [
+        "Kemerleri sıkma vakti geldi; finansal anlamda bir sınavdan geçiyor olabilirsin. Para kazanmak için her zamankinden daha fazla çalışman ve disiplinli olman gereken bir dönemdesin. Bu süreç seni kısıtlanmış hissettirse de aslında sana paranın kıymetini ve kalıcı değerler yaratmayı öğretiyor. Sabırlı olursan, bu dönemin sonunda çok daha sağlam bir maddi temele sahip olacaksın.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Geleceğini inşa etmek için çok sağlam, gerçekçi ve disiplinli adımlar attığın bir süreçtesin. Otorite figürlerinden veya yaşça büyük kardeşlerden alacağın mantıklı tavsiyeler hayatını çok kolaylaştıracak. Eğitimde yavaş ama çok emin adımlarla ilerliyorsun; öğrendiğin her şey ömür boyu seninle kalacak. Zihinsel dayanıklılığın o kadar yüksek ki, en karmaşık problemleri bile sabırla çözebilirsin.",
+        "Zihninin en olgun, en sağlam ve en bilge olduğu dönemlerden birini yaşıyorsun; sözlerin herkes tarafından saygı görüyor. Uzun süredir emek verdiğin bir yazı, proje veya eğitim kalıcı bir başarıya dönüşebilir. Kardeşlerinle veya yakın çevrenle aranda sarsılmaz bir güven bağı kuruluyor; onlara bir kaya gibi yaslanabilirsin. Sorumlulukların artık sana yük değil, başarıya giden sağlam birer basamak gibi geliyor; hak ettiğin saygınlığı topluyorsun.",
+      ],
+      negative: [
+        "Zihinsel bir blokaj yaşıyor gibi hissedebilirsin; sanki kelimeler boğazında düğümleniyor. Eğitim hayatında veya kardeşlerinle olan ilişkilerinde büyük sorumluluklar seni yorabilir ve kendini yalnız hissedebilirsin. \"Beni kimse anlamıyor\" düşüncesiyle içine kapanabilir, iletişim kurmaktan kaçınabilirsin. Bu bir olgunlaşma sınavı; pes etmek yerine eksiklerini tamamlamalı ve gerçeklerin üzerine kararlılıkla gitmelisin.",
+        "İlişkilerindeki ciddi sorumluluklar veya başkalarının soğuk tavırları senin iletişimini gölgeleyebilir. Sen fikirlerini paylaşmak isterken karşında duvar gibi insanlar bulabilir veya eleştirilere maruz kalabilirsin. \"Doğru anlaşılıyor muyum?\" endişesi seni zihnen yorabilir; kendini ispatlamak için çok fazla efor sarf edebilirsin. Bu süreçte sınırlarını çizmeyi ve başkalarının ciddiyetini kendi üzerine bir yük olarak almamayı öğrenmelisin.",
+      ],
+      neutral: [
+        "Zihinsel olarak çok ciddi, disiplinli ama bir o kadar da ağır bir yükün altındasın sanki. Öğrenmek bu dönemde senin için bir keyif değil, bir görev haline gelmiş olabilir; çok çalışman gerekebilir. Kardeşlerinle veya yakın çevrenle olan ilişkilerinde bir soğukluk veya mesafe hissedebilirsin. Bu süreç seni kısıtlanmış hissettirse de aslında sana zihnini disipline etmeyi ve kalıcı bilgiler edinmeyi öğretiyor; sabırlı ol.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Geleceğini inşa etmek için çok sağlam ve disiplinli adımlar attığın bir süreçtesin. Ailenden gelen geleneksel değerleri modern hayatınla çok iyi harmanlıyorsun. Gayrimenkul yatırımı yapmak veya uzun vadeli bir ev düzeni kurmak için destekleyici bir enerji var. Sorumluluklarını bilerek ilerlemek sana içsel bir huzur ve \"ben hallederim\" güveni kazandırıyor.",
+        "Maddi ve manevi olarak kendini en güvenli hissettiğin dönemlerden birindesin. Ailenden gelen destekler kalıcı ve sarsılmaz, bu da sana geleceğe dair büyük bir güven veriyor. Disiplinli ve planlı yapın sayesinde ev içindeki tüm işleri tıkır tıkır hallediyorsun. Emeklerinin karşılığını somut bir şekilde (belki bir tapu, belki bir miras) alma zamanın geldi.",
+      ],
+      negative: [
+        "İç dünyanda bir \"duvar\" örülmüş gibi hissedebilirsin; ne dışarı çıkabiliyorsun ne de birini içeri alabiliyorsun. Aile içindeki disiplin veya kısıtlamalar seni bunaltabilir, otorite figürleriyle arana soğukluk girebilir. Geçmişin yükleri bugününü gölgelemeye çalışsa da pes etme. Bu dönem, senin kendi ayakların üzerinde durmayı ve duygusal sınırlarını çizmeyi öğrenme zamanın.",
+        "Kariyerindeki sorumluluklar o kadar yoğun ki, ev hayatın tamamen aksıyor olabilir. Dışarıda \"başarılı\" görünmeye çalışırken iç dünyanda büyük bir yorgunluk ve yalnızlık hissedebilirsin. Evin ve işin arasındaki bu gerilim seni ciddi kararlar almaya itebilir. Kendi ihtiyaçlarını başkalarının beklentileri için feda etmemeli, dengeyi kurmak için hayır demeyi öğrenmelisin.",
+      ],
+      neutral: [
+        "Omuzlarında ailenin ve evin yükünü her zamankinden daha ağır hissediyor olabilirsin. Belki bir aile büyüğünün bakımıyla ilgilenmen gerekiyor, belki de evin fiziksel eksikleri seni yoruyor. Bu dönemde kendini biraz yalnız ve kısıtlanmış hissetmen normal; geçmişin hesaplaşmaları zihnini meşgul edebilir. Ancak sabırlı olursan, bu süreç seni duygusal olarak çok daha dayanıklı ve olgun biri haline getirecektir.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yaratıcılığını ve yeteneklerini disiplinli bir şekilde kullanarak somut başarılar elde edeceğin bir dönem. Hobilerin yavaş yavaş bir işe veya yan gelire dönüşebilir; otorite figürlerinden bu konuda tam destek görebilirsin. Aşk hayatında daha olgun ve ne istediğini bilen bir duruş sergiliyorsun, bu da seni çok daha güvenilir kılıyor. Küçük ama emin adımlarla mutluluğunu inşa ediyorsun, emeklerinin karşılığını almak üzeresin.",
+        "Aşkta ve yaratıcılıkta en sağlam, en sarsılmaz temelleri attığın şahane bir süreçtesin. İlişkinde güven ve sadakat ön planda, partnerinle geleceğe dair ciddi ve umut verici adımlar atabilirsiniz. Yaratıcı projelerin otorite figürleri tarafından takdir ediliyor ve uzun vadeli bir başarıya dönüşüyor. Kendini her konuda çok kontrollü ve başarılı hissediyorsun, hayatın sana sunduğu ödülleri hak ederek almanın gururunu yaşıyorsun.",
+      ],
+      negative: [
+        "Keyif alman gereken konularda üzerinde büyük bir baskı ve kısıtlanmışlık hissediyor olabilirsin. Aşk hayatında sorumluluklar romantizmin önüne geçebilir veya partnerinle aranda aşılması zor mesafeler (duygusal veya fiziksel) oluşabilir. \"Ben neden eğlenemiyorum?\" diye sorgularken, içindeki yaratıcılığın prangalandığını hissedebilirsin. Bu bir olgunlaşma sınavı; pes etmek yerine disiplini elden bırakmamalı ve gerçek mutluluğun emek istediğini kabul etmelisin.",
+        "Sosyal çevrendeki ciddi sorumluluklar veya arkadaşlarınla olan mesafeli ilişkilerin, senin özel neşeni gölgeliyor olabilir. Sen sadece eğlenmek ve aşkını yaşamak isterken, toplumsal görevlerin veya gelecek kaygıların seni aşağı çekiyor. \"Bireysel zevklerim mi yoksa toplumsal beklentiler mi?\" ikileminde kalabilirsin. Bu süreçte sınırlarını çizmeyi öğrenmeli ve başkalarının ciddiyetinin senin içindeki çocuğu öldürmesine izin vermemelisin.",
+      ],
+      neutral: [
+        "Eğlence ve aşk hayatında \"ciddiyet\" rüzgarları esiyor; artık sadece keyif almak sana yetmiyor, kalıcı bir şeyler arıyorsun. Aşkta hayal kırıklığı yaşamamak için duvarlarını çok yükseltmiş olabilirsin, bu da dışarıdan soğuk görünmene neden olabilir. Yaratıcı işlerinde bir tıkanıklık hissedebilirsin ama bu aslında seni daha disiplinli çalışmaya zorlayan bir süreç. Sabırlı olursan, bu dönemin sonunda çok sağlam bir hobiye veya ömürlük bir aşka sahip olabilirsin.",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında yavaş ama çok sağlam adımlarla kalıcı bir başarı inşa ediyorsun. Otorite figürlerinden alacağın desteklerle günlük rutinlerini çok daha profesyonel bir seviyeye taşıyabilirsin. Sağlığınla ilgili verdiğin disiplinli kararların (düzenli uyku, diyet gibi) meyvelerini toplamaya başlıyorsun. Sabrının ve çalışkanlığının ödüllendirildiği, geleceğini garanti altına aldığın çok güvenli bir süreçtesin.",
+        "Çalışma hayatında otoritenin ve düzenin tavan yaptığı, emeklerinin somut karşılığını aldığın bir dönem. İş yerindeki her şey bir saat gibi tıkır tıkır işliyor ve sen bu düzenin mimarı olarak büyük saygı görüyorsun. Sağlığınla ilgili uzun süredir devam eden bir sorunun kalıcı bir disiplinle çözülmesi mümkün. Hayatını o kadar iyi organize ettin ki, sorumluluklar artık sana yük değil, birer başarı basamağı gibi geliyor.",
+      ],
+      negative: [
+        "İş yerindeki kurallar ve baskılar seni boğuyormuş gibi hissedebilirsin; ne yapsan bir engele çarpıyor gibisin. Sağlık sorunların (belki kronik bir yorgunluk) günlük yaşam kaliteni düşürebilir ve moralini bozabilir. \"Neden bu kadar çok çalışıyorum ama karşılığını alamıyorum?\" diye sorgularken bulabilirsin kendini. Bu bir sabır testi; isyan etmek yerine eksiklerini tamamlamaya odaklanırsan, bu dar boğazdan çok daha güçlü çıkarsın.",
+        "İlişkilerindeki ciddi sorumluluklar iş hayatını, işindeki disiplin ise özel hayatını gölgeleyebilir. Partnerinin beklentileri ile iş yerindeki görevlerin arasında sıkışıp kalmış ve her iki tarafa da yetişemiyor gibisin. Bu karşıtlık seni duygusal olarak tüketebilir ve sağlığını (özellikle stres kaynaklı) olumsuz etkileyebilir. Sınırlarını çizmeyi ve hem kendine hem de başkalarına \"hayır\" diyebilmeyi öğrenmen gereken, zor ama öğretici bir süreç.",
+      ],
+      neutral: [
+        "Omuzlarında dünyanın yükü varmış gibi hissedebilirsin; iş hayatında disiplin ve ağır sorumluluk sınavındasın. Bu dönemde işlerini çok daha ciddiye alman, hata yapmamaya çalışman ve sabırlı olman gerekiyor. Sağlığınla ilgili (özellikle kemik, diş veya dizler) bazı kısıtlanmalar yaşayabilirsin, bedeninin sana verdiği \"dur\" uyarılarını ciddiye almalısın. Zorlayıcı olsa da bu süreç sana paha biçilemez bir iş disiplini ve dayanıklılık kazandıracak.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İlişkilerinde yavaş ama çok sağlam temeller attığın, güvenin her şeyin önüne geçtiği güvenli bir dönemdesin. Partnerinle veya ortağınla uzun vadeli, disiplinli planlar yapabilir ve bunları başarıyla hayata geçirebilirsiniz. Otorite figürlerinden ilişkilerine dair alacağın mantıklı tavsiyeler bu süreçte sana çok yardımcı olacak. Sabırlı ve dürüst tavrın sayesinde, ikili ilişkilerinde sarsılmaz bir saygınlık ve bağlılık kazanıyorsun.",
+        "İkili ilişkilerinde tam bir olgunluk ve denge dönemindesin; partnerinle aranda sarsılmaz bir güven var. Ortaklıkların ve ciddi birlikteliklerin meyvelerini toplama zamanı; emeklerinin karşılığını sadakat olarak alıyorsun. Sözleşmeler, resmi evraklar ve evlilik gibi konularda sistemli ilerlemek sana büyük bir iç huzuru getiriyor. Kendini çok güvende hissediyorsun ve bu sağlam duruşun partnerine de büyük bir güven aşılıyor.",
+      ],
+      negative: [
+        "İlişkilerinde kendini adeta bir duvarın önünde gibi hissedebilirsin; iletişim kopuklukları ve soğukluk canını sıkabilir. Partnerinin üzerindeki baskısı veya kısıtlamaları seni ilişkiden soğutabilir ya da ağır sorumluluklar altında ezilebilirsin. \"Bu ilişki nereye gidiyor?\" sorgulamaları seni biraz karamsar ve depresif hissettirebilir. Bu bir dayanıklılık testi; eğer bu zorlu virajı dürüstçe dönerseniz, ilişkiniz eskisinden çok daha sağlam olacaktır.",
+        "Başkalarından gelen soğukluk, mesafe veya eleştiriler seni bu dönemde kendi içine kapatabilir. Partnerinle aranda \"kim daha haklı\" kavgası değil de, \"kim daha çok yük taşıyor\" tartışması çıkabilir. Sosyal hayatındaki popülerliğinle evdeki sorumlulukların arasındaki uçurum seni duygusal olarak yorabilir. Bu karşıtlık sana sınır koymayı ve başkalarının ciddiyetini kendi üzerine bir yük olarak almamayı öğretecek, dayanıklı olmalısın.",
+      ],
+      neutral: [
+        "İlişkilerinde ciddi bir \"sınav\" dönemindesin; artık sadece sevgi değil, sorumluluk ve sadakat ön planda. Mevcut ilişkinde pürüzler varsa bunlar iyice görünür hale gelebilir ve kalıcı kararlar alman gerekebilir. Eğer bekarsan, hayatına senden yaşça büyük veya çok olgun, ciddi bir partner girebilir. Bu süreç seni biraz yalnız ve kısıtlanmış hissettirse de, aslında sana ömürlük bir bağın nasıl kurulacağını öğretiyor; sabırlı ol.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Maddi konularda yavaş ama çok emin adımlarla kalıcı bir güven ortamı inşa ediyorsun. Borçlarını düzenlemek, uzun vadeli yatırımlar yapmak veya emeklilik planları oluşturmak için harika bir destekleyici enerji var. Otorite figürlerinden veya aile büyüklerinden miras ve ortak kaynaklar konusunda çok mantıklı ve kalıcı destekler alabilirsin. Psikolojik olarak kendini çok dayanıklı ve kontrollü hissettiğin bu süreçte, hayatın krizlerini büyük bir bilgelikle yönetiyorsun.",
+        "Maddi ve manevi olarak hayatındaki tüm pürüzlerin yerli yerine oturduğu, çok güvenli bir limandasın. Uzun süredir uğraştığın bir miras veya borç konusu kalıcı ve senin lehine bir çözüme kavuşabilir. Finansal disiplinin sayesinde geleceğini garanti altına alacak sağlam bir mülk veya yatırım sahibi olabilirsin. Psikolojik olarak yaşadığın bu sarsılmaz güç ve olgunluk, seni her türlü kriz karşısında yenilmez bir lider haline getiriyor; emeklerin karşılık buluyor.",
+      ],
+      negative: [
+        "Finansal bir darboğazdan geçiyor olabilirsin; beklediğin paralar gecikebilir veya paylaşılan kaynaklarda ciddi engellerle karşılaşabilirsin. Ölüm, kayıp veya dönüşüm gibi ağır konular zihnini meşgul edebilir ve seni biraz depresif bir ruh haline sokabilir. Ortaklıklarda güven sorunları yaşanabilir ve \"hakkım yeniyor mu?\" düşüncesi seni yorabilir. Bu bir dayanıklılık testi; disiplini elden bırakmamalı ve finansal yükümlülüklerini her zamankinden daha ciddi bir şekilde ele almalısın.",
+        "Kendi kazancınla başkalarına olan borçların veya ortak sorumlulukların arasında sıkışıp kalmış ve nefes alamıyor gibi hissedebilirsin. Partnerinle veya ortağınla para yüzünden aranıza soğukluk girebilir ve birbirinizi kısıtlanmış hissedebilirsiniz. Maddi konularda çok sert kararlar almanız gerekebilir ve bu durum seni duygusal olarak tüketebilir. Sınırlarını çizmeyi ve hem kendine hem de başkalarına karşı dürüst bir finansal planlama yapmayı öğrenmen gereken zorlu bir süreçtesin.",
+      ],
+      neutral: [
+        "Finansal sorumlulukların ve borçların omuzlarında ağır bir yük gibi hissedildiği ciddi bir dönemden geçiyorsun. Miras, vergi veya eşin maddi durumuyla ilgili kısıtlamalar yaşayabilir, kemerleri sıkmak zorunda kalabilirsin. Bu süreç seni psikolojik olarak biraz zorlayabilir ve derin korkularınla yüzleşmek zorunda bırakabilir; ama pes etme. Sabırlı ve disiplinli olursan, bu dönemin sonunda finansal olarak çok daha sağlam ve köklü bir yapı inşa etmiş olacaksın; olgunlaşıyorsun.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Vizyonunu ve geleceğini inşa etmek için çok sağlam, disiplinli ve kalıcı adımlar attığın bir dönemdesin. Otorite figürlerinden alacağın destekle akademik kariyerini veya yurt dışı bağlantılarını çok profesyonel bir seviyeye taşıyabilirsin. Hukuksal konularda yavaş ama emin adımlarla gelen kalıcı bir zafer söz konusu olabilir. Sabrın ve çalışkanlığın sayesinde, hayata bakış açını çok daha bilgece ve gerçekçi bir temele oturtuyorsun.",
+        "Zihninin ve vizyonunun en olgun, en sağlam ve en başarılı olduğu dönemlerden birindesin. Uzun süredir emek verdiğin bir akademik çalışma veya hukuksal dava kalıcı ve senin lehine bir başarıyla sonuçlanabilir. Hayata bakış açın o kadar gerçekçi ve güven verici ki, insanlar senin rehberliğine her zamankinden daha çok ihtiyaç duyuyor. Sorumlulukların artık sana yük değil, birer itibar basamağı gibi geliyor; hak ettiğin saygınlığı toplama zamanın geldi!",
+      ],
+      negative: [
+        "Zihinsel bir blokaj yaşıyor gibi hissedebilirsin; inançların ve hayata bakış açın seni kısıtlıyor veya karamsarlığa sürüklüyor olabilir. Yüksek eğitimde engellerle karşılaşabilir veya uzak seyahat planlarının iptal olmasıyla moralini bozabilirsin. \"Neden her şey bu kadar zor?\" diye sorgularken, aslında hayattan ne beklediğini ciddiyetle düşünmen gerekiyor. Bu bir dayanıklılık testi; isyan etmek yerine eksik bilgilerini tamamlamaya odaklanırsan, bu dar boğazdan çok daha bilgece çıkarsın.",
+        "Yakın çevrendeki sığ düşünceler ve günlük sorumluluklar, senin o büyük vizyonunu ve özgürleşme arzunu kısıtlıyor olabilir. \"Burada kalıp hizmet mi etmeliyim yoksa uzaklara mı gitmeliyim?\" ikilemi seni duygusal olarak yorabilir. İnançların konusunda başkalarından sert eleştiriler veya mesafeli tavırlar görebilirsin. Bu karşıtlık, sana hem gerçeklerden kopmamayı hem de hayallerini bir disiplin çerçevesinde korumayı öğretecek zorlu bir öğretmendir.",
+      ],
+      neutral: [
+        "Hayata bakış açın ve inançların büyük bir disiplin ve sınav sürecinden geçiyor; artık yüzeysel fikirler sana yetmiyor. Uzak yolculuklar veya yüksek eğitim konularında kısıtlanmalar, gecikmeler veya ağır sorumluluklar yaşayabilirsin. Bu süreç seni biraz yorgun ve \"gri\" hissettirse de, aslında sana sarsılmaz bir zihinsel yapı ve gerçek bir uzmanlık kazandırıyor. Sabırlı olursan, bu dönemin sonunda inançların ve bilgin üzerinde yıkılmaz bir kale inşa etmiş olacaksın.",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Kariyer basamaklarını yavaş ama çok emin adımlarla tırmandığın, sağlam bir güven inşa ettiğin dönemdesin. Otorite figürlerinden alacağın disiplinli destekler ve tavsiyeler sayesinde statünü profesyonel bir seviyeye taşıyorsun. Uzun vadeli hedeflerin için yaptığın planlar tıkır tıkır işliyor ve sabrının meyvelerini toplamaya başlıyorsun. Çalışkanlığın toplum önünde \"güvenilir insan\" imajını pekiştiriyor ve seni vazgeçilmez kılıyor.",
+        "Emeklerinin karşılığını somut bir şekilde, saygınlık ve terfi olarak aldığın muazzam bir dönemdesin. Kariyerinde attığın her adım o kadar sağlam ki, kimse senin otoriteni sorgulayamıyor bile. Disiplinli ve planlı yapın sayesinde iş dünyasında vazgeçilmez bir isim haline geliyorsun. Sabrının meyvelerini toplarken, geleceğini garanti altına alacak uzun vadeli başarılara imza atıyorsun; hak ettin!",
+      ],
+      negative: [
+        "Kariyerinde bir \"duvarın\" önünde duruyor gibi hissedebilirsin; ne yapsan bir engele veya kısıtlamaya çarpıyor gibisin. Otorite figürleriyle (patronun, baban) yaşayacağın gerilimler seni duygusal olarak yorabilir ve statünü korumakta zorlanabilirsin. \"Neden bu kadar çok çalışıyorum da karşılığını alamıyorum?\" diye sorgularken bulabilirsin kendini. Bu bir dayanıklılık testi; isyan etmek yerine eksiklerini tamamlamalı ve zamanın senin en büyük sınavın olduğunu unutmamalısın.",
+        "Dış dünyadaki başarıların ile iç dünyandaki huzurun arasında çok sert bir çekişme var. Kariyerindeki ağır sorumluluklar seni evinden ve sevdiklerinden uzaklaştırabilir, bu da üzerinde büyük bir baskı yaratır. \"Başarı için her şeyi feda etmeli miyim?\" sorusuyla boğuşurken kendini biraz yalnız hissedebilirsin. Bu süreçte sınırlarını çizmeyi ve hem işine hem de ruhuna vakit ayırmayı öğrenmen gerekiyor.",
+      ],
+      neutral: [
+        "Omuzlarında kariyerinin ve toplumsal statünün tüm ağırlığını hissettiğin, çok ciddi bir sınav dönemindesin. Artık sadece çalışmak yetmiyor; disiplinli, sabırlı ve kusursuz olman gerekiyor. Üstlerinden gelen baskılar veya artan sorumluluklar seni biraz yalnız ve kısıtlanmış hissettirse de pes etme. Eğer bu zorlu yolu dürüstçe ve azimle yürürsen, bu dönemin sonunda ömür boyu yıkılmayacak bir kariyer kalesi inşa etmiş olacaksın.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Arkadaş çevrenden alacağın disiplinli ve mantıklı desteklerle gelecek hedeflerini sağlam bir temele oturtuyorsun. Yaşça büyük veya tecrübeli dostların tavsiyeleri, bu dönemde senin için altın değerinde olacak. Grup çalışmalarında gösterdiğin sabır ve ciddiyet sayesinde saygınlığın artıyor ve \"güvenilir lider\" imajın pekişiyor. Küçük ama emin adımlarla hayallerini inşa ettiğin bu süreçte, emeklerinin kalıcı bir başarıya dönüştüğünü göreceksin.",
+        "Dostlukların ve toplumsal statün adına en güvenli, en sarsılmaz dönemlerden birindesin canım! Uzun süredir emek verdiğin bir grup projesi veya toplumsal bir amaç kalıcı bir başarıya ve saygınlığa ulaşıyor. Arkadaşlarınla aranda o kadar sağlam bir güven var ki, kimse sizi yıkamıyor; birbirinize her konuda disiplinli bir destek veriyorsunuz. Hayallerin artık birer illüzyon değil, somut ve korunmuş gerçeklere dönüşüyor; hak ettiğin o sağlam geleceği kucaklama zamanın geldi!",
+      ],
+      negative: [
+        "Sosyal çevrende kendini dışlanmış, kısıtlanmış veya ağır sorumluluklar altında ezilmiş hissedebilirsin. \"Arkadaşlıklar mı yük, hedeflerim mi ulaşılmaz?\" sorgulamaları seni biraz karamsar bir ruh haline sokabilir. Grup içinde otorite figürleriyle veya yaşlı üyelerle yaşayacağın gerilimler moralini bozabilir. Bu bir dayanıklılık testi; isyan etmek yerine ilişkilerindeki sınırlarını çizmeli ve hayallerin için gereken eksik disiplini tamamlamaya odaklanmalısın.",
+        "Bireysel mutluluğun ve yaratıcılığın ile arkadaş çevrenin ciddi talepleri arasında sıkışıp kalmış hissedebilirsin. Sen sadece hayatın tadını çıkarmak isterken, sosyal grupların veya gelecek kaygılarının seni aşağı çekmesi uykularını kaçırabilir. Arkadaşlarınla arana soğukluk girebilir veya birbirinizi kısıtlanmış hissedebilirsiniz. Bu karşıtlık, sana hem bireysel sınırlarını korumayı hem de toplumsal sorumluluklarını ihmal etmemeyi öğreten sert ama bilge bir öğretmendir.",
+      ],
+      neutral: [
+        "Sosyal çevrende ve arkadaşlık ilişkilerinde \"ciddiyet\" sınavından geçtiğin, gerçek dostu sahtesinden ayırdığın bir dönemdesin. Artık sadece eğlenmek yetmiyor, güven ve sadakat arıyorsun; bu da arkadaş çevreni biraz daraltmana neden olabilir. Gelecek hayallerin için çok daha disiplinli, sabırlı ve gerçekçi planlar yapman gereken bir süreçtesin. Biraz yalnız hissedebilirsin ama bu süreç sana ömürlük dostluklar ve sarsılmaz bir gelecek inşa etmeyi öğretiyor.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal dünyanı ve iç huzurunu inşa etmek için çok sağlam, disiplinli ve kalıcı adımlar attığın bir dönemdesin. Yalnız başına yürüttüğün işler veya gizli projeler otorite figürleri tarafından takdir ediliyor ve yavaş yavaş meyvelerini veriyor. Sezgilerini bir disiplin çerçevesinde kullanmayı öğreniyorsun, bu da seni dış dünyadaki krizlere karşı sarsılmaz kılıyor. Sabrın ve çalışkanlığın sayesinde, ruhun için en güvenli ve huzurlu limanı kendi ellerinle inşa ediyorsun.",
+        "Ruhsal anlamda en olgun, en sağlam ve en başarılı olduğun dönemlerden birindesin canım! Uzun süredir emek verdiğin bir bilinçaltı çalışması veya yalnız yürüttüğün bir proje kalıcı bir başarıya ve saygınlığa ulaşıyor. İç dünyandaki o sarsılmaz disiplin, seni dış dünyadaki her türlü fırtınaya karşı yenilmez bir kale gibi koruyor. Sorumlulukların artık sana yük değil, birer ruhsal itibar basamağı gibi geliyor; hak ettiğin o derin huzuru kucaklama zamanın geldi!",
+      ],
+      negative: [
+        "Ruhsal anlamda bir \"duvarın\" önünde duruyor gibi hissedebilirsin; içsel korkuların ve karamsarlığın seni boğuyor olabilir. Gizli düşmanlıklar veya geçmişin hataları bugününü kısıtlamaya çalışabilir, kendini yalnız ve çaresiz hissedebilirsin. \"Neden bu kadar huzursuzum?\" diye sorgularken bulabilirsin kendini; uyku sorunları ve kronik yorgunluk seni yorabilir. Bu bir dayanıklılık testi; isyan etmek yerine eksik bilgilerini tamamlamalı ve ruhunu iyileştirmek için profesyonel destek almaktan çekinmemelisin.",
+        "Dış dünyadaki görünürlüğün ve disiplininle iç dünyandaki gizli korkuların ve kaçış arzun arasında sert bir çekişme var. Sen sahnede parlamak isterken, geçmişin yükleri veya ruhsal yorgunluğun seni aşağı çekmeye çalışabilir. İnsanlarla arana soğukluk girebilir veya kendini her iki dünyaya da ait değilmişsin gibi hissedebilirsin. Bu karşıtlık, sana hem gerçeklerden kopmamayı hem de ruhunu bir disiplin çerçevesinde korumayı öğreten bilge ama zorlu bir öğretmendir.",
+      ],
+      neutral: [
+        "Ruhunun en derin köşelerinde ciddi bir disiplin ve arınma sürecinden geçtiğin, \"karmik\" bir sınav dönemindesin. Bilinçaltındaki korkularınla yüzleşmek, geçmişin yüklerinden özgürleşmek için yalnız kalmalı ve sabırlı olmalısın. Bu süreç seni biraz yorgun, kısıtlanmış ve melankolik hissettirse de pes etme; çünkü bu aslında senin ruhsal olgunluğunu inşa ediyor. Eğer bu zorlu yolu dürüstçe yürürsen, dönemin sonunda yıkılmaz bir içsel kale ve sarsılmaz bir ruhsal disiplin kazanmış olacaksın.",
+      ],
+    },
   },
   "Uranüs": {
-    1: { tr: "Kişiliğinde ve dış görünüşünde ani, devrim niteliğinde değişimler var. Özgürleşme arzun çok yüksek, herkesi şaşırtabilirsin.", en: "Sudden, revolutionary changes in your personality and appearance. Your desire for liberation is very high, you can surprise everyone." },
-    2: { tr: "Maddi kaynaklarında beklenmedik dalgalanmalar veya yeni gelir kapıları var. Değer algın tamamen değişebilir.", en: "Unexpected fluctuations in your material resources or new income sources. Your perception of value may change completely." },
-    3: { tr: "Zihninde şimşekler çakıyor! Alışılmadık fikirler, ani haberler ve yakın çevrende sürpriz gelişmeler yaşanabilir.", en: "Lightning in your mind! Unusual ideas, sudden news and surprise developments in your close environment may occur." },
-    4: { tr: "Ev ve aile hayatında beklenmedik değişimler var. Taşınma veya aile içindeki eski kalıpların yıkılması söz konusu olabilir.", en: "Unexpected changes in home and family life. Moving or breaking old patterns within the family may be involved." },
-    5: { tr: "Aşkta heyecan verici ve sıra dışı gelişmeler var. Yaratıcılığında sınır tanımayan, özgün bir döneme giriyorsun.", en: "Exciting and extraordinary developments in love. You're entering an original period where your creativity knows no bounds." },
-    6: { tr: "İş hayatında ve günlük rutinlerinde ani değişiklikler var. Teknolojik yeniliklere adapte olabilir veya çalışma şeklini değiştirebilirsin.", en: "Sudden changes in business life and daily routines. You may adapt to technological innovations or change the way you work." },
-    7: { tr: "İlişkilerde ani başlangıçlar veya bitişler var. Özgürlük ihtiyacın partnerinle olan bağlarını yeniden tanımlamana neden olabilir.", en: "Sudden beginnings or endings in relationships. Your need for freedom may cause you to redefine your bonds with your partner." },
-    8: { tr: "Ortak finansal konularda veya derin duygusal krizlerde beklenmedik şifalanmalar ve değişimler var. Hayata bakışın kökten değişebilir.", en: "Unexpected healings and changes in joint financial matters or deep emotional crises. Your outlook on life may change radically." },
-    9: { tr: "İnançlarında ve hayata bakışında ani aydınlanmalar var. Alışılmadık seyahatler veya farklı kültürlerle tanışma vakti.", en: "Sudden enlightenments in your beliefs and outlook on life. Time for unusual travels or meeting different cultures." },
-    10: { tr: "Kariyerinde beklenmedik bir yön değişikliği veya teknolojik bir atılım var. Toplumsal imajın bir anda değişebilir.", en: "An unexpected change of direction or technological breakthrough in your career. Your public image may change suddenly." },
-    11: { tr: "Sosyal çevrende ve arkadaşlıklarında radikal değişimler var. Gelecek hayallerin bir anda bambaşka bir boyuta taşınabilir.", en: "Radical changes in your social circle and friendships. Your future dreams may suddenly move to a completely different dimension." },
-    12: { tr: "Bilinçaltında ani uyanışlar ve ruhsal özgürleşme var. Rüyaların veya sezgilerin sana şok edici gerçekler fısıldayabilir.", en: "Sudden awakenings in the subconscious and spiritual liberation. Your dreams or intuition may whisper shocking truths to you." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Hayatına aniden giren yaratıcı fikirler ve teknolojik yenilikler sayesinde çok heyecanlı bir süreçtesin. Yeni bir hobi, sıra dışı bir çevre veya dijital bir proje senin vizyonunu bir anda genişletebilir. Zihinsel olarak çok uyanıksın ve önüne çıkan ilginç fırsatları lehine çevirmekte hiç zorlanmıyorsun. Çevrendeki insanların \"nasıl düşündü bunu?\" diyeceği dahi işler yapabilirsin. Küçük ama sarsıcı olmayan tatlı sürprizlerin hayatına renk katmasına izin ver.",
+        "Özgürlüğün ve orijinalliğin en pürüzsüz halini yaşıyorsun; sanki hayat sana \"kendin ol ve parla\" diyor. Sıra dışı yeteneklerin toplum tarafından zahmetsizce kabul ediliyor ve büyük takdir topluyorsun. Hiç beklemediğin anda gelen mucizevi fırsatlar sayesinde hayatın bir anda çok daha modern ve heyecanlı bir yöne evrilebilir. Kendini kalıplardan kurtulmuş, hafiflemiş ve yenilenmiş hissettiğin bu muazzam akışın tadını çıkar. Karizman o kadar \"farklı\" ki, girdiğin her ortamda dahi muamelesi göreceksin.",
+      ],
+      negative: [
+        "Sinirlerin yay gibi gerilmiş olabilir, içsel bir huzursuzluk seni esir alabilir. Beklenmedik şoklara, ani plan değişikliklerine ve teknolojik aksaklıklara karşı hazırlıklı olman gereken bir dönem. \"Her şeyi bırakıp gitmek istiyorum\" tarzındaki isyankar duyguların, yanlış kararlar almana neden olabilir. Otorite figürleriyle ve kurallarla çatışmaya çok müsaitsin, bu da başını ağrıtabilir. Sabit kalmaya direndikçe sarsılacağın bu süreci, esnek olmayı öğrenerek atlatmalısın.",
+        "Başkalarının (partnerin, ortağın) öngörülemez ve şok edici tavırları senin tüm dengeni sarsabilir. \"Tam her şey yolunda\" derken, birileri hayatına girip tüm kurallarını değiştirebilir veya aniden çıkıp seni yalnız bırakabilir. Bu karşıtlık sana esnek olmayı ve başkalarına bağımlı kalmadan kendi merkezinde durabilmeyi öğretmek için geliyor. İlişkilerinde bağımsızlık savaşları yaşanabilir; \"ben\" ve \"biz\" dengesini kurmak bu elektrikli havada oldukça zor olabilir. Sürpriz partnerliklere veya ani kopuşlara hazırlıklı ol.",
+      ],
+      neutral: [
+        "Adeta elektrik çarpmış gibi hissediyorsun; hayatında devrim yapma zamanın geldi! Uranüs birinci evinde geçerken dış görünüşünü, tarzını ve hayat felsefeni aniden değiştirmek isteyebilirsin. Çok sıra dışı, asi ve dahi bir enerji yayıyorsun; insanlar senin bu öngörülemez yapına hem şaşırıyor hem de hayran kalıyorlar. Rutin olan her şeyi yıkıp geçmek isteyeceksin, bu da bazen huzursuzluk yaratabilir. Özgürlüğüne o kadar düşkünsün ki, seni kısıtlamaya çalışan herkesle köprüleri bir saniyede yakabilirsin; sürprizlere hazır ol!",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni teknolojiler, dijital platformlar veya sıra dışı fikirler sayesinde maddi durumunu iyileştirecek fırsatlar yakalayabilirsin. Hiç beklemediğin bir anda gelecek küçük bir teklif, bütçeni bir anda canlandırabilir ve seni çok heyecanlandırabilir. Zihinsel olarak çok uyanıksın ve modern yatırım araçlarından karlı çıkma potansiyelin oldukça yüksek. Finansal hayata bakış açın yenileniyor, bu taze enerji sana bereket getiriyor.",
+        "Maddi konularda adeta sihirli bir değnek değmiş gibi, özgürleştiğin ve zahmetsizce kazanç elde ettiğin bir süreçtesin. Sıra dışı yeteneklerin veya modern projelerin sana hayal bile edemeyeceğin kapıları açabilir. Beklenmedik yerlerden gelen nakit akışı sayesinde üzerindeki maddi baskıların bir anda uçup gittiğini göreceksin. Evren seni şaşırtmaya devam ediyor ve bu sefer gelen her sürpriz cüzdanını daha da dolduruyor, tadını çıkar!",
+      ],
+      negative: [
+        "Finansal konularda aniden patlak veren krizler ve öngörülemez masraflar uykularını kaçırabilir. Planlarının bir anda altüst olmasına hazırlıklı olmalı ve mutlaka bir acil durum fonu bulundurmalısın. Para yüzünden sevdiklerinle veya ortaklarınla aniden yolları ayırma noktasına gelebilirsin, fevri kararlardan kaçın. Sabit kalmaya direndikçe sarsılacağın bu dönemde, finansal olarak esnek olmalı ve ani risklerden uzak durmalısın.",
+        "Başkalarının finansal istikrarsızlığı senin maddi güvenliğini doğrudan etkileyebilir; bir gün çok zengin, bir gün çok kısıtlı hissedebilirsin. Ortaklıklardaki ani değişimler senin de harcama düzenini bozabilir ve seni huzursuz edebilir. \"Kendi param mı yoksa ortak gelecek mi?\" ikileminde kalabilir ve maddi bağımsızlık savaşı verebilirsin. Bu süreç sana her koşulda kendi merkezinde kalmayı ve değişen finansal şartlara hızla uyum sağlamayı öğretecektir.",
+      ],
+      neutral: [
+        "Finansal hayatında tam bir devrim yaşanıyor; her an her şey değişebilir, hazırlıklı ol! Beklenmedik bir anda büyük bir para gelebileceği gibi, aniden büyük bir masraf da çıkabilir; istikrar bu dönemde pek mümkün değil. Alışılmışın dışında, teknolojik veya çok orijinal yöntemlerle para kazanma yolları keşfedebilirsin. Özgürleşme arzun çok yüksek, bu yüzden seni kısıtlayan tüm maddi bağlardan aniden kopmak isteyebilirsin.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni teknolojiler, ilginç insanlar veya modern fikirler sayesinde ufkunu bir anda genişletecek fırsatlar yakalayacaksın. Yakın çevrenden gelecek sürpriz bir haber, senin için harika bir eğitim veya ticaret kapısı açabilir. Zihinsel olarak çok uyanıksın ve önüne çıkan ani fırsatları lehine çevirmekte hiç zorlanmıyorsun. Küçük seyahatlerin sırasında tanışacağın sıra dışı kişiler, hayatına taze bir enerji ve ilham katacak.",
+        "Zihinsel prangalarından adeta sihirli bir değnekle kurtulduğun, yaratıcılığının tavan yaptığı harika bir süreçtesin. Öğrenme hızın o kadar arttı ki, herkes senin bu dahi gibi çalışan beynine hayran kalarak bakıyor. Beklenmedik seyahatlerden veya orijinal fikirlerden muazzam kazançlar ve keyifler elde edebilirsin. Hayatına giren sıra dışı insanlar sana bambaşka dünyaların kapısını aralıyor; bu ilham dolu akışın tadını çıkar!",
+      ],
+      negative: [
+        "Sinirlerin yay gibi gerilmiş olabilir, zihnindeki o ani hız seni fiziksel olarak da yorabilir. Beklenmedik plan değişiklikleri, bozulan elektronik aletler veya kardeşlerinle aniden çıkan tartışmalar canını sıkabilir. \"Ben özgürüm\" deme isteğin iletişim kurarken seni fazla asabi veya huzursuz gösterebilir. Bu dönemde ani kararlar vermemeli ve zihnini sakinleştirecek yöntemler (meditasyon, doğa yürüyüşü) bulmalısın.",
+        "Başkalarının ani ve şok edici fikirleri senin zihinsel dengeni sarsabilir; kime inanacağını şaşırabilirsin. Yakın çevrendeki insanların öngörülemez tavırları yüzünden günlük planların sık sık altüst olabilir. İletişimde bağımsızlık savaşları yaşanabilir; \"benim fikrim mi senin sürprizin mi?\" çekişmesi seni yorabilir. Bu süreç sana her koşulda kendi merkezinde kalmayı ve değişen şartlara hızla uyum sağlamayı öğretecek bir denge sınavıdır.",
+      ],
+      neutral: [
+        "Zihninde adeta şimşekler çakıyor; deha ile delilik arasında ince bir çizgidesin! Hiç beklenmedik fikirler, ani seyahatler veya kardeşlerinle ilgili şok edici haberler gündemine gelebilir. Teknolojiye, dijital dünyaya veya sıra dışı konulara merakın tavan yapmış durumda. Geleneksel öğrenme yöntemleri sana sıkıcı gelebilir; sen kendi özgün yolunu çizmek ve zihinsel olarak özgürleşmek istiyorsun.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Evinle ilgili teknolojik yenilikler veya ilginç dekorasyon fikirleri hayatına renk katacak. Ailenden gelen modern bir bakış açısı, senin bir sorununu kökten çözebilir. İç dünyanda \"aydınlanma\" yaşadığın, eski kalıpları nazikçe geride bıraktığın bir dönem. Sürpriz bir mülk veya ev haberi seni çok heyecanlandırabilir ve hayatına taze bir enerji getirebilir.",
+        "Geçmişin yüklerinden adeta sihirli bir değnek değmiş gibi özgürleştiğin bir süreçtesin. Ev hayatında modern ve alışılmadık düzenlemeler sana müthiş bir ferahlık getiriyor. Ailenle olan ilişkilerin daha arkadaşça ve baskısız bir boyuta taşınıyor. Beklenmedik yerlerden gelen mülk veya taşınma fırsatları hayatını bir anda güzelleştirebilir; evren seni şaşırtmaya devam ediyor.",
+      ],
+      negative: [
+        "Huzur ararken kendini bir kaosun ortasında bulabilirsin; planlanmamış taşınmalar veya aile içi ani tartışmalar can sıkıcı olabilir. Evindeki elektrikli aletlere ve tesisata bu ara ekstra dikkat etmelisin, beklenmedik arızalar çıkabilir. Özgürleşme isteğin ailen tarafından \"sorumsuzluk\" olarak algılanabilir. Sabit kalmaya çalıştıkça hayat seni sarsabilir, en iyisi akışa ve değişime biraz daha dirençsiz yaklaşmak.",
+        "Kariyerindeki ani değişimler ev hayatını, evindeki sarsıntılar ise işini etkiliyor olabilir. \"Nereye aitim?\" sorusunu çok sık sorabilir, kendini hiçbir yere ait hissetmeyebilirsin. Yerleşik düzene geçmekle özgürce gezmek arasında büyük bir içsel çatışma var. Bu süreç sana esnek olmayı ve köklerin aslında içinde olduğunu anlamayı öğretecek.",
+      ],
+      neutral: [
+        "Evinde ve iç dünyanda devrim rüzgarları esiyor! Hiç beklemediğin bir anda taşınma kararı alabilir, evinin dekorasyonunu tamamen değiştirmek isteyebilirsin. Aile yapında sarsıcı ama özgürleştirici değişimler yaşanabilir. Geleneksel olan her şeye baş kaldırıyorsun; kendi özgün yaşam alanını kurmak için her şeyi yıkıp yeniden yapma cesaretine sahipsin.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrenden gelecek sürpriz bir tanışma, aşk hayatına hiç beklemediğin bir heyecan katabilir tatlım. Yeni teknolojiler veya sıra dışı hobiler üzerinden kuracağın bağlar, sana yaratıcı anlamda büyük kapılar açacak. Flörtlerinde her zamankinden daha özgür ve arkadaşça bir hava hakim, bu da seni çok daha çekici kılıyor. Çocukların varsa, onlarla birlikte modern ve eğlenceli aktiviteler yapmak aranızdaki bağı inanılmaz tazeleyecektir. Zihnin çok hızlı çalışıyor, önüne çıkan fırsatları değerlendirmek için tereddüt etme.",
+        "Hayatına adeta sihirli bir değnek değmiş gibi, aşkta ve yaratıcılıkta özgürleştiğin muazzam bir süreçtesin! Hiç beklemediğin bir anda gelen şanslı tesadüfler sayesinde hayalindeki o heyecan verici deneyimi yaşayabilirsin. Yaratıcı projelerin herkes tarafından orijinal ve dahi işi olarak görülüp büyük takdir toplayacaktır. Çocuklarla olan ilişkinde o kadar modern ve anlayışlısın ki, onların en yakın arkadaşı haline geliyorsun. Evren seni şaşırtmaya devam ediyor ve bu sefer gelen her sürpriz seni çok daha mutlu bir insan yapıyor.",
+      ],
+      negative: [
+        "Aşk hayatında beklenmedik krizler ve ani kopuşlar sabrını zorlayabilir; sanki her şey bir pamuk ipliğine bağlı gibi. Heyecan ararken çok riskli işlere veya spekülatif yatırımlara girip maddi-manevi kayıplar yaşama riskin var, aman dikkat! Çocuklarla olan iletişiminde sabrının bir anda tükendiğini hissedebilir ve gereksiz asabiyet sergileyebilirsin. Yaratıcılığın tıkandığını hissettiğin bu süreçte, kendini zorlamak yerine biraz geri çekilmek sana iyi gelecektir. Sabit kalmaya direndikçe sarsılacağın bu dönemde, esnek olmayı öğrenmelisin.",
+        "Sosyal çevrenin beklentileriyle senin bireysel eğlence anlayışın arasında büyük bir uçurum oluşabilir. Partnerinin bağımsızlık isteği veya senin özgürlük arzun, ilişkinde ani dalgalanmalara ve huzursuzluklara yol açabilir. \"Benim mutluluğum mu yoksa grubun idealleri mi?\" ikilemi seni zihinsel olarak yorabilir. Riskli yatırımlarda başkalarının sözüne güvenmek yerine kendi mantığına sığınman gereken bir dönem. Dengeyi kuramazsan, hem arkadaşlarınla hem de sevdiklerinle aranda telafisi zor gerginlikler yaşanabilir.",
+      ],
+      neutral: [
+        "Aşk hayatında adeta yıldırım çarpmış gibi ani ve sarsıcı gelişmelere hazırlıklı olmalısın canım! Hiç tarzın olmayan birine bir anda aşık olabilir ya da monoton giden ilişkini bir saniyede bitirme kararı alabilirsin. Yaratıcılığın dahi seviyesinde, kimsenin cesaret edemediği orijinal projeler üretiyorsun. Çocuklarla olan ilişkinde özgürlükçü bir tavır takınabilirsin ama bu durum bazen aranızda kopukluklara neden olabilir. Hayatın sana sunduğu bu \"elektrikli\" sürprizlere açık ol, rutin senin için bitti!",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında teknolojik yenilikler veya sıra dışı fikirler sayesinde büyük kolaylıklar yaşayacağın bir dönem. Günlük rutinlerini çok daha pratik ve modern bir hale getirecek sürpriz destekler alabilirsin. Sağlığınla ilgili alternatif tıp veya yeni nesil beslenme yöntemlerinden harika sonuçlar alabilirsin. Zihninin çok hızlı ve yaratıcı çalıştığı bu süreçte, önüne çıkan ani fırsatları lehine çevirmekte hiç zorlanmayacaksın.",
+        "İş hayatında ve sağlığında özgürleştiğin, zahmetsizce yenilendiğin bir süreçtesin. Günlük rutinlerini o kadar akıllıca organize ettin ki, artık kendine ayıracak çok daha fazla modern ve kaliteli vaktin var. İş yerinde yaptığın yenilikler herkes tarafından dahi işi olarak görülüyor ve takdir topluyorsun. Sağlığınla ilgili radikal ama çok olumlu değişimler yaşayabilir, kendini hiç olmadığın kadar canlı ve zinde hissedebilirsin.",
+      ],
+      negative: [
+        "İş yerinde beklenmedik kaoslar ve ani krizler sabrını zorlayabilir; planlarının bir anda altüst olmasına hazırlıklı olmalısın. İş arkadaşlarınla veya teknolojik aletlerle ilgili yaşanan aksaklıklar günlük akışını bozabilir ve seni çok gerebilir. Sağlığında ani enerji düşüşleri veya huzursuzluk hissedebilirsin, bu yüzden stres yönetimini öğrenmen şart. Sabit kalmaya direndikçe işlerin daha da karıştığını görebilirsin, esnek olmaya çalışmalısın.",
+        "Başkalarının hayatındaki ani değişimler senin günlük rutinlerini ve iş düzenini doğrudan etkileyebilir. Ortaklıklardaki istikrarsızlık, senin çalışma temponu bir gün çok hızlandırıp bir gün tamamen durdurabilir. \"Kendi düzenim mi yoksa başkalarına uyum sağlamak mı?\" ikileminde kalabilirsin. Bu süreç sana hem kendi merkezinde kalmayı hem de hayatın getirdiği sürprizlere karşı esnek olmayı öğretecek.",
+      ],
+      neutral: [
+        "İş hayatında ve günlük rutinlerinde tam bir devrim içindesin! Klasik çalışma saatleri veya monoton işler artık sana göre değil; aniden iş değiştirmek ya da çalışma yöntemini tamamen dijitalleştirmek isteyebilirsin. Sağlığınla ilgili olarak ise sinir sistemine ve ani gelişen küçük rahatsızlıklara dikkat etmelisin. Özgürleşme arzun çok yüksek, bu yüzden kimsenin sana ne yapacağını söylemesine tahammülün yok, kendi düzenini kurma zamanın!",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İlişkilerinde taze bir nefes aldığın, partnerinle birlikte yeni ve heyecan verici şeyler denediğin bir dönem. Sosyal çevrenden gelecek sürpriz bir tanışma veya teklif hayatını bir anda güzelleştirebilir. Geleneksel olmayan ortaklıklardan veya modern projelerden beklemediğin kadar karlı çıkabilirsin. İletişimdeki bu özgür ve yaratıcı akış, partnerinle olan bağını çok daha modern ve baskısız bir boyuta taşıyor.",
+        "İlişkilerinde aradığın o heyecan verici ama aynı zamanda huzurlu özgürlüğü bulduğun harika bir süreçtesin. Partnerinle olan bağın o kadar orijinal ve sağlam ki, dışarıdakilerin ne dediği umrunuzda bile değil. Yeni teknolojiler veya sıra dışı hobiler üzerinden kuracağın ortaklıklar sana büyük başarılar getirecek. Hayatına giren sıra dışı insanlar ufkunu açıyor ve seni kalıplarından kurtarıyor; bu ilham verici akışın tadını çıkar.",
+      ],
+      negative: [
+        "İkili ilişkilerinde beklenmedik şoklara ve ani kopuşlara hazırlıklı olmalısın; sanki her şey bir pamuk ipliğine bağlı. Partnerinle aranda bağımsızlık savaşları çıkabilir, birbirinize olan tahammülünüzün azaldığını hissedebilirsiniz. \"Ben özgürüm\" deme isteğin partnerin tarafından bencillik olarak algılanabilir ve gerginlik tırmanabilir. Ani kararlar vermekten kaçınmalı, bu elektrikli havada öfkeyle hareket edip sonradan pişman olmamalısın.",
+        "Karşındaki kişilerin öngörülemez tavırları senin tüm dengeni sarsabilir; bir gün çok yakın, bir gün çok uzak olabilirler. İlişkinde istikrar ararken sürekli değişimle karşılaşmak seni yorabilir ama aynı zamanda müthiş bir esneklik kazandırır. Partnerinin hayatındaki ani değişiklikler senin de düzenini etkiliyor olabilir ve buna uyum sağlaman gerekebilir. Kendi merkezinde kalmayı başarırsan, başkalarının yarattığı kaosun seni teğet geçtiğini göreceksin.",
+      ],
+      neutral: [
+        "İlişkilerinde devrim niteliğinde bir dönem; aniden aşık olabilir ya da bir ilişkiyi tek celsede bitirebilirsin! Rutin giden her şeyden sıkıldığın için partnerinden daha fazla özgürlük ve heyecan talep ediyorsun. Karşına çıkacak olan kişiler sıra dışı, dahi veya biraz uçarı karakterler olabilir. Hayatında \"asla yapmam\" dediğin ortaklıklara girebilirsin; sürprizlere açık ol ama köprüleri yıkarken iki kez düşün tatlım.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Finansal krizleri çözmek için karşına çıkan teknolojik veya sıra dışı fırsatlar hayatını bir anda kolaylaştıracak. Beklenmedik yerlerden gelecek küçük ama etkili maddi destekler sayesinde borçlarından özgürleşebilirsin. Sezgilerinin ve rüyalarının sana rehberlik ettiği, hayatın gizemli yanlarını keşfettiğin çok heyecan verici bir dönemdesin. Modern yatırım araçlarından veya dijital projelerden beklemediğin kadar karlı çıkabilir, hayatına taze bir enerji katabilirsin.",
+        "Maddi ve manevi krizlerden adeta sihirli bir değnek değmiş gibi, özgürleşerek ve güçlenerek çıkıyorsun! Beklenmedik yerlerden gelen miraslar veya finansal fırsatlar hayatını bir anda çok daha modern ve konforlu bir hale getirebilir. Psikolojik olarak \"aydınlanma\" yaşadığın, geçmişin yüklerinden ve korkularından bir çırpıda kurtulduğun harika bir süreçtesin. Hayatın sana sunduğu bu sıra dışı ve bereketli akışın tadını çıkar; artık hiçbir şey eskisi gibi olmayacak ve bu seni çok mutlu edecek!",
+      ],
+      negative: [
+        "Finansal konularda ve ortaklaşa paralarda aniden patlak veren krizler uykularını kaçırabilir; planlarının bir anda çökmesine hazırlıklı olmalısın. Ortaklıklardaki istikrarsızlık veya partnerinin ani harcamaları senin de dengeni sarsabilir ve seni çok gerebilir. Psikolojik olarak huzursuz ve gergin hissedebilir, hayatındaki her şeyi bir anda yakıp yıkmak isteyebilirsin. Sabit kalmaya direndikçe işlerin daha da karıştığını görebilirsin; bu süreçte esnek olmalı ve ani kararlar vermeden önce derin bir nefes almalısın.",
+        "Başkalarının hayatındaki ani ve sarsıcı değişimler senin maddi güvenliğini ve iç huzurunu doğrudan etkileyebilir. Partnerinin finansal durumundaki dalgalanmalar yüzünden bir gün çok zengin, bir gün çok kısıtlı hissedebilirsin. \"Kendi param mı yoksa ortak gelecek mi?\" ikileminde kalabilir ve ilişkilerinde bağımsızlık savaşı verebilirsin. Bu süreç sana her koşulda kendi merkezinde kalmayı ve değişen şartlara hızla uyum sağlamayı öğreten elektrikli bir sınavdır.",
+      ],
+      neutral: [
+        "Finansal hayatında ve iç dünyanda \"şok\" etkisi yaratacak ani değişimlere hazırlıklı olmalısın; her şey bir anda tersyüz olabilir! Hiç beklemediğin bir anda bir miras konabilir veya mevcut bir ortaklık aniden bitebilir; sürprizlere açık ol. Psikolojik olarak çok sıra dışı ve aydınlatıcı deneyimler yaşayabilir, eski kalıplarından bir saniyede özgürleşebilirsin. Rutin olan her şeyi yıkıp geçmek istediğin bu süreçte, riskli yatırımlardan ve ani kararlardan uzak durmalı, değişimin getirdiği özgürlüğün tadını çıkarmalısın.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Yeni teknolojiler, dijital platformlar veya sıra dışı insanlar aracılığıyla vizyonunu genişletecek harika fırsatlar yakalayacaksın. Uzak seyahatlerin veya eğitimin için beklemediğin, modern ve teknolojik destekler alabilirsin. Zihninin çok hızlı ve dahi gibi çalıştığı bu süreçte, önüne çıkan ani kapıları lehine çevirmekte hiç zorlanmayacaksın. Hayatına giren \"garip\" ama zeki insanlar, sana bambaşka bir dünyanın kapılarını aralayacak; ışığa doğru yürü!",
+        "Zihinsel prangalarından adeta sihirli bir değnekle kurtulduğun, deha pırıltılarıyla dolu harika bir süreçtesin! Uzak yolculuklar veya yabancı kültürler sana hayal bile edemeyeceğin kadar özgür ve yaratıcı bir alan sunuyor. Sıra dışı bir eğitim veya keşif sayesinde hayatının amacını bir saniyede bulabilir ve bu vizyonla herkesi büyüleyebilirsin. Evren seni şaşırtmaya devam ediyor ve bu sefer gelen her sürpriz seni çok daha modern, özgür ve mutlu bir insan yapıyor!",
+      ],
+      negative: [
+        "İnançların veya akademik planların konusunda aniden patlak veren krizler uykularını kaçırabilir; her şeyin altüst olmasına hazır olmalısın. Uzak yolculuklarda elektrikli aletlerle ilgili sorunlar, ani iptaller veya hava muhalefeti gibi öngörülemez aksaklıklar yaşanabilir. \"Ben özgürüm\" deme isteğin hukuksal konularda veya okul hayatında başına iş açabilir, dikkatli ol. Sabit kalmaya direndikçe sarsılacağın bu dönemde, esnek olmak ve ani kararlar vermeden önce durmak senin tek kurtarıcın.",
+        "Yakın çevrendeki ani değişimler senin o büyük gelecek planlarını ve vizyonunu sarsabilir. \"Kendi doğrum mu yoksa çevrenin sürprizleri mi?\" arasında gidip gelirken odaklanmakta zorluk çekebilirsin. İnançların konusunda başkalarıyla yaşayacağın ani polemikler seni provoke edebilir; sakin kalmayı başarmalısın. Bu süreç sana her koşulda kendi özgün fikirlerini savunmayı ama başkalarının ani çıkışlarına karşı da esnek olmayı öğretecek.",
+      ],
+      neutral: [
+        "Hayata bakış açında ve inançlarında devrim niteliğinde, ani bir uyanış yaşıyorsun! Hiç beklemediğin bir anda yurt dışına taşınma kararı alabilir veya geleneksel tüm fikirlerini bir kenara itip sıra dışı felsefelere yönelebilirsin. Uzak yolculuklarda çok ilginç, sarsıcı ama özgürleştirici deneyimler seni bekliyor olabilir. Statükoya baş kaldırdığın bu dönemde, zihinsel özgürlüğün için her türlü riski almaya hazırsın; sürprizlere açık ol tatlım!",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında teknolojik yenilikler ve sıra dışı fikirler sayesinde rakiplerinin önüne hızla geçiyorsun. Sosyal çevrenden gelecek sürpriz bir destek, kariyerinde beklediğin o modern kapıyı açmanı sağlayabilir. Zihninin çok hızlı çalıştığı bu süreçte, önüne çıkan fırsatları lehine çevirmekte hiç zorlanmayacaksın. Küçük ama etkili bu değişimler, toplumsal statünü çok daha modern ve havalı bir noktaya taşıyacak.",
+        "Kariyerinde zahmetsizce gelen bir özgürlük ve başarı dönemi yaşıyorsun! Sıra dışı yeteneklerin toplum tarafından alkışlanıyor ve sen en modern haliyle parlıyorsun. İş hayatında yaptığın yenilikler sana hem itibar hem de büyük bir heyecan katıyor. Hayatına giren dahi ruhlu insanlar, kariyer yolculuğunda sana hayal bile edemeyeceğin kapılar açacak; bu ilham dolu akışın tadını çıkar!",
+      ],
+      negative: [
+        "Kariyerinde beklenmedik şoklara ve ani krizlere hazırlıklı olmalısın; planların bir anda altüst olabilir. Otorite figürleriyle bağımsızlık savaşına girmek toplum önündeki imajını sarsabilir, fevri kararlardan kaçınmalısın. \"Ben özgürüm\" deme isteğin iş yerinde huzursuzluk yaratabilir ve seni zor durumda bırakabilir. Sabit kalmaya direndikçe sarsılacağın bu dönemde, esnek olmak tek kurtarıcın olacak.",
+        "Ev ve aile hayatındaki ani değişimler, kariyer hedeflerini doğrudan etkileyebilir ve dengeni sarsabilir. \"Nereye aitim?\" sorusunu çok sık sorabilir, kendini ne işine ne de evine tam olarak verebilirsin. Bu süreç sana hem yerleşik düzeni korumayı hem de yeniliklere açık olmayı öğreten elektrikli bir sınavdır. Kendi merkezinde kalmayı başarırsan, başkalarının yarattığı kaosun seni teğet geçtiğini göreceksin.",
+      ],
+      neutral: [
+        "Kariyerinde adeta bir devrim rüzgarı esiyor, her an her şey değişebilir! Aniden iş değiştirebilir, hiç aklında olmayan bir sektöre geçebilir veya kendi işini kurmak için her şeyi yıkıp geçebilirsin. Statükoya baş kaldırdığın bu dönemde, toplum seni \"sıra dışı ve dahi\" biri olarak görecek. Sürprizlere hazır ol, çünkü bu dönemde gelen değişimler seni özgürleştirmek için geliyor.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Zihninin çok hızlı çalıştığı bu dönemde, yeni teknolojiler ve modern fikirler sayesinde hayallerine giden kestirme yollar keşfedeceksin. Arkadaş çevrenden gelecek sürpriz bir teklif veya tanışma, vizyonunu bir anda genişletip seni çok heyecanlandırabilir. Sosyal hayatta çok yaratıcı ve özgür bir enerjin var, bu da seni her türlü modern toplulukta \"parlayan zekâ\" yapıyor. Küçük ama etkili bu değişimler, gelecek hedeflerini çok daha modern bir noktaya taşıyacaktır.",
+        "Sosyal hayatında tam bir özgürlük ve dâhilik dönemi yaşıyorsun; hayallerin adeta sihirli bir değnekle gerçeğe dönüşüyor! Sıra dışı arkadaşlıkların sana sağladığı vizyon sayesinde dünyayı başka bir gözle görmeye başlıyorsun. Grup çalışmalarında yaptığın teknolojik yenilikler veya orijinal fikirler herkes tarafından alkışlanıyor. Hayatın sana sunduğu bu modern ve heyecan verici akış, seni gelecekteki o özgür hedeflerine zahmetsizce uçuracak; tadını çıkar!",
+      ],
+      negative: [
+        "Sosyal çevrende ve arkadaş gruplarında ani, şok edici kopuşlara veya krizlere hazırlıklı olmalısın canım. \"Ben özgürüm\" deme isteğin grup içinde huzursuzluk yaratabilir ve insanların senden uzaklaşmasına neden olabilir. Hayallerinle ilgili planların bir anda altüst olabilir; elektrikli aletlerle veya dijital işlerle ilgili aksaklıklar canını sıkabilir. Sabit kalmaya direndikçe sarsılacağın bu dönemde, esnek olmalı ve ani kararlar vermeden önce durup derin bir nefes almalısın.",
+        "Kendi yaratıcı bireyselliğinle sosyal çevrenin sarsıcı değişimleri arasında bir denge kurman gerekiyor. Sen \"benim tarzım bu\" derken arkadaş grubunun ani ve tuhaf talepleri dengeni bozabilir. Aşk hayatındaki heyecanlar sosyal çevrende dedikodulara veya şaşkınlıklara yol açabilir. Bu süreç sana her koşulda kendi merkezinde kalmayı ve başkalarının yarattığı sosyal kaosun seni sürüklemesine izin vermemeyi öğretecek bir denge sınavıdır.",
+      ],
+      neutral: [
+        "Kendi evinde (Uranüs'ün evi) devrim yapıyorsun! Sosyal çevren aniden değişebilir, hayatına çok sıra dışı, dahi veya asi ruhlu insanlar girebilir. Geleneksel arkadaşlıklar artık seni tatmin etmiyor; hayallerinde ve ideallerinde tamamen orijinal ve teknolojik bir yöne savrulabilirsin. Sürprizlere hazır ol, çünkü bu dönemde kuracağın bir grup veya katılacağın bir organizasyon hayatını kökten ve özgürleştirici bir şekilde değiştirebilir.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal dünyanda ve yalnız geçirdiğin vakitlerde gelen deha pırıltıları sayesinde hayatını bir anda güzelleştiriyorsun. Gizli kalmış modern bir fırsat veya teknolojik bir destek, işlerini perde arkasından sessizce yoluna koyabilir. Zihninin çok hızlı çalıştığı bu süreçte, rüyalarından veya iç sesinden gelen sıra dışı tüyoları başarıyla hayatına entegre ediyorsun. Küçük ama etkili bu değişimler, ruhunu çok daha özgür ve yenilikçi bir noktaya taşıyacaktır; ışığa doğru yürü!",
+        "Ruhsal prangalarından adeta sihirli bir değnekle kurtulduğun, deha pırıltılarıyla dolu harika bir süreçtesin! Yalnızlık senin için bir hapishane değil, hayal bile edemeyeceğin kadar özgür ve yaratıcı bir laboratuvara dönüşmüş durumda. Sıra dışı bir ruhsal uyanış sayesinde hayatının amacını bir saniyede bulabilir ve bu vizyonla herkesi büyüleyebilirsin. Evren seni şaşırtmaya devam ediyor ve bu sefer gelen her sürpriz seni çok daha modern, özgür ve mutlu bir insan yapıyor!",
+      ],
+      negative: [
+        "Bilinçaltındaki ani krizler ve korkular uykularını kaçırabilir; planlarının bir anda altüst olmasına hazırlıklı olmalısın. Gizli düşmanlıkların aniden patlak vermesi veya sarsıcı bir sırrın açığa çıkması dengeni bozabilir. \"Ben özgürüm\" deme isteğin toplumdan gizli yürüttüğün işlerde başına iş açabilir, dikkatli ol. Sabit kalmaya direndikçe sarsılacağın bu dönemde, esnek olmalı ve ani kararlar vermeden önce içindeki fırtınanın dinmesini beklemelisin.",
+        "Dış dünyadaki ani değişimler senin o huzurlu iç dünyanı sarsabilir ve odağını dağıtabilir. \"Kendi doğrum mu yoksa hayatın sürprizleri mi?\" arasında gidip gelirken odaklanmakta zorluk çekebilirsin. Gizli kalmış konular hakkında başkalarıyla yaşayacağın ani polemikler seni provoke edebilir; sakin kalmayı başarmalısın. Bu süreç sana her koşulda kendi özgün fikirlerini savunmayı ama hayatın ani çıkışlarına karşı da esnek olmayı öğretecek bir denge sınavıdır.",
+      ],
+      neutral: [
+        "Bilinçaltında devrim niteliğinde, ani bir uyanış yaşıyorsun; sanki ruhunda şimşekler çakıyor! Hiç beklemediğin bir anda gizli kalmış bir yeteneğin açığa çıkabilir veya geleneksel tüm inançlarını bir kenara itip sıra dışı felsefelere yönelebilirsin. Rüyaların çok sarsıcı ama özgürleştirici mesajlar taşıyor olabilir; sürprizlere hazır ol! Statükoya baş kaldırdığın bu dönemde, zihinsel özgürlüğün için her türlü riski almaya hazırsın ve bu seni çok modern bir ruhsal boyuta taşıyacak.",
+      ],
+    },
   },
   "Neptün": {
-    1: { tr: "Sezgilerinin ve hayal gücünün arttığı, daha hassas ve ruhsal hissettiğin bir dönemdesin. Kimliğinde bir belirsizlik veya gizem oluşabilir.", en: "A period when your intuition and imagination increase, you feel more sensitive and spiritual. Uncertainty or mystery may form in your identity." },
-    2: { tr: "Maddi konularda bulanıklık veya idealist yaklaşımların var. Harcamalarında dikkatli olmalı, hayallerin peşinden koşarken gerçekleri unutmamalısın.", en: "Blur or idealistic approaches in material matters. You should be careful about your spending and not forget reality while chasing your dreams." },
-    3: { tr: "Zihinsel olarak daha yaratıcı ve hayalperestsin. İletişimde yanlış anlaşılmalar olabilir, ancak sanatsal yeteneklerin parlıyor.", en: "You're mentally more creative and dreamy. There may be misunderstandings in communication, but your artistic talents are shining." },
-    4: { tr: "Aile ve ev hayatında duygusal bir derinlik veya bazı belirsizlikler var. Evinde huzur ve ruhsal bir liman arıyorsun.", en: "Emotional depth or some uncertainties in family and home life. You're looking for peace and a spiritual harbor in your home." },
-    5: { tr: "Aşkta romantizm ve idealizm dorukta. Sanatsal projelere ilham akıyor, ancak flörtlerinde gerçekçi olmayı unutmamalısın.", en: "Romance and idealism at their peak in love. Inspiration flows to artistic projects, but you shouldn't forget to be realistic in your flirtations." },
-    6: { tr: "İş ortamında biraz dağınıklık veya hizmet etme arzusu var. Sağlığına daha şefkatli yaklaşmalı, alternatif yöntemlere ilgi duyabilirsin.", en: "Some disorganization in the work environment or desire to serve. You should approach your health more compassionately and may be interested in alternative methods." },
-    7: { tr: "İlişkilerde aşırı fedakarlık veya idealize etme eğilimin var. Partnerinle ruhsal bir bağ kurmak istiyorsun, ancak sınırlarını korumalısın.", en: "Tendency for excessive sacrifice or idealization in relationships. You want to establish a spiritual bond with your partner, but you should protect your boundaries." },
-    8: { tr: "Derin duygusal paylaşımlarda ve ortak kaynaklarda spiritüel bir dönüşüm var. Maddi konularda daha sezgisel hareket edebilirsin.", en: "Spiritual transformation in deep emotional sharing and shared resources. You can act more intuitively in material matters." },
-    9: { tr: "Hayata karşı daha ruhsal ve evrensel bir bakış açısına sahipsin. Uzak yerlere özlem duyabilir, mistik konularla ilgilenebilirsin.", en: "A more spiritual and universal perspective towards life. You may long for distant places and be interested in mystical topics." },
-    10: { tr: "Kariyerinde hayallerini gerçekleştirme arzun var. Toplum önünde daha yaratıcı ve vizyoner bir imaj çizebilirsin.", en: "Desire to realize your dreams in your career. You can draw a more creative and visionary image in public." },
-    11: { tr: "Sosyal çevrende idealleri olan insanlarla bir araya gelme vaktindesin. Arkadaşlıklarında ruhsal paylaşımlar artıyor.", en: "Time to gather with people who have ideals in your social circle. Spiritual sharing in your friendships is increasing." },
-    12: { tr: "Bilinçaltının derinliklerine dalmak ve ilahi bir huzur bulmak için harika bir dönem. Meditasyon ve rüyalar rehberin olacak.", en: "Great for diving into the depths of your subconscious and finding divine peace. Meditation and dreams will be your guide." }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç sesinin sana fısıldadığı o yaratıcı ve ruhsal tınıları hayata yansıtmak için harika bir dönemdesin. Sanatsal yeteneklerin parlıyor, rüyaların sana rehberlik ediyor ve çevrene karşı muazzam bir empatiyle yaklaşıyorsun. Yumuşacık, sempatik ve şifa veren bir enerji yaydığın için insanlar sana sığınmak istiyor. Meditasyon, yoga veya ruhsal çalışmalar için en verimli zamanındasın. Küçük ama ilahi dokunuşların hayatındaki pürüzleri nasıl zahmetsizce erittiğini şaşkınlıkla izleyeceksin.",
+        "Ruhunun en saf ve en şefkatli halini dış dünyaya o kadar doğal yansıtıyorsun ki, adeta ilahi bir koruma altındasın. Hayatındaki her şey zahmetsizce, sanki görünmez bir el tarafından senin için düzenleniyor gibi akıyor. Sanatsal bir üretimin varsa bu dönemde başyapıtlarını ortaya koyabilirsin. Karizman o kadar ruhsal ve derin ki, kelimelere dökülmeyen bir hayranlık topluyorsun. İçsel huzurun yüzüne yansıyor, bugünlerde çok daha sempatik ve huzurlu görünüyorsun; bu büyülü akışın tadını çıkar.",
+      ],
+      negative: [
+        "Kendini bir karmaşanın içinde kaybolmuş hissedebilirsin; kime güveneceğini, nereye ait olduğunu bilememek seni yorabilir. \"Hayır\" demekte zorlandığın için başkalarının senin enerjini sömürmesine veya seni suistimal etmesine izin verebilirsin. Alkol, ilaç veya gerçeklikten uzaklaştıran bağımlılıklara karşı çok uyanık olman gereken bir dönem. İmajınla ilgili verdiğin kararlar sonradan hayal kırıklığı yaratabilir, bu yüzden bu ara büyük değişikliklerden kaçınmalısın. Kendi sınırlarını çizmek bu sisli havadaki tek pusulan olacak.",
+        "Karşındaki insanların (partner, ortak) belirsiz, dağınık veya hayalperest tavırları senin kafanı iyice karıştırabilir. Birilerini kurtarmaya çalışırken kendi gerçeklerini ve hedeflerini tamamen unutma riskin var, dikkat et tatlım. İlişkilerinde idealize ettiğin kişilerin aslında göründükleri gibi olmadığını fark edip hayal kırıklığı yaşayabilirsin. Bu karşıtlık sana empati kurarken sınır koymayı ve başkalarının hayalleriyle kendi gerçeklerin arasındaki köprüyü sağlam kurmayı öğretecek. Gözündeki pembe gözlükleri çıkarıp gerçekleri sevgiyle kabul etme zamanı.",
+      ],
+      neutral: [
+        "Sanki bir sis perdesinin arkasından dünyaya bakıyor gibisin; o kadar mistik ve buğulu bir auran var ki! İnsanlar senin gerçekte kim olduğunu anlamakta zorlanıyor ama bu gizem seni daha da çekici kılıyor. Sezgilerin tavan yapmış durumda, başkalarının acılarını kendi içinde hissedebilirsin; adeta bir şifacı enerjisi yayıyorsun. Ancak gerçeklerden kopma, hayal dünyasında kaybolma ve kurban rolüne bürünme riskin var. İmajında çok yumuşak ve romantik değişiklikler yapabilirsin ama önemli kararlar verirken ayaklarını yere sağlam basmaya çalışmalısın.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sezgilerinin sana rehberlik ettiği, finansal kararlarında iç sesini dinleyerek karlı çıktığın bir dönemdesin. Maddi konularda beklemediğin yerlerden gelecek manevi destekler veya isimsiz yardımlar ruhuna ilaç gibi gelecek. Ruhsal çalışmaların veya yaratıcı hobilerin sana ek kazanç kapıları açabilir. Küçük ama anlamlı mucizelerin cüzdanına sızdığını fark edeceksin; evren seni gizlice ama şefkatle destekliyor.",
+        "Maddi ve manevi anlamda tam bir ilahi akış ve bereket içindesin; sanki parayı değil, huzuru çekiyorsun. Yaratıcılık gerektiren bir işin varsa bu dönemde kazancın hayal ettiğinden bile daha yüksek olabilir. Hiç beklemediğin yerlerden gelen nafakalar, sigorta ödemeleri veya destekler seni çok şaşırtacak. Kendini o kadar değerli ve korunmuş hissediyorsun ki, bu içsel zenginlik hayatına daha fazla maddi fırsatı zahmetsizce çekiyor.",
+      ],
+      negative: [
+        "Maddi konularda hayal kırıklıkları, belirsizlikler veya gizli kalmış borçlar canını epey sıkabilir. Kime güveneceğini şaşırabilir, verdiğin borçları geri alamamanın üzüntüsünü yaşayabilirsin. Finansal planların bir illüzyondan ibaret olduğunu fark edip moralini bozabilirsin; \"nereye gitti bunca para?\" sorusu kafanı kurcalayabilir. Bu dönemde gerçeklerden kaçmak yerine finansal tablolarınla yüzleşmeli ve netlikten asla ödün vermemelisin.",
+        "Kendi maddi gerçeklerinle başkalarının (eş, ortak) belirsiz veya kaotik finansal durumları arasında kalabilirsin. Birilerini maddi olarak kurtarmaya çalışırken kendi güvenliğini tamamen tehlikeye atma riskin var, dikkat et tatlım. \"Para her şey mi?\" yoksa \"Maneviyat mı önemli?\" ikilemi seni yorarken harcamalarında dengeyi kaybedebilirsin. Ayaklarını yere sağlam basmalı ve başkaları için kendini maddi olarak kurban etmeden önce kendi sınırlarını korumalısın.",
+      ],
+      neutral: [
+        "Finansal konularda tam bir sis bulutu içindesin; paranın nereden gelip nereye gittiğini anlamakta zorlanabilirsin. Cömertliğin ve idealizmin o kadar yüksek ki, ihtiyacı olanlara yardım ederken kendi bütçeni tamamen ihmal edebilirsin. Dolandırılma veya maddi konularda suistimal edilme riskine karşı gözlerini dört açmalı, hiçbir imza işini netleştirmeden yapmamalısın. Sanat veya ruhsal işlerle uğraşıyorsan ilhamın paraya dönüşebilir ama maddi gerçeklikten kopmamaya çalış.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç sesinin sana rehberlik ettiği, rüyalarından veya hayallerinden ilham alarak yazdığın pürüzsüz bir dönem. Yakın çevrenle aranda telepatik bir bağ var gibi; kimin neye ihtiyacı olduğunu konuşmadan hissediyorsun. Sanatsal eğitimler veya ruhsal çalışmalar için zihinsel enerjin çok uygun ve ilham dolu. Küçük bir seyahat veya doğada geçireceğin vakit, zihnindeki tüm karmaşayı eritecek ve seni şifalandıracaktır.",
+        "Kelimelerinle büyü yaptığın, ruhlara dokunduğun ve hayallerini zahmetsizce ifade ettiğin bir süreçtesin. Yazmak, çizmek veya müzikle ilgilenmek ruhuna o kadar iyi gelecek ki, ortaya çıkan eserler herkesi hayran bırakabilir. Kardeşlerinle veya yakın çevrenle olan ilişkilerin o kadar şefkatli ve huzurlu ki, kendini ilahi bir koruma altında hissediyorsun. Sezgilerinin seni asla yanıltmadığı bu dönemde, hayatın gizemlerini anlamak senin için çocuk oyuncağı.",
+      ],
+      negative: [
+        "Zihnin biraz dumanlı olabilir, kime güveneceğini veya hangi bilginin doğru olduğunu anlamakta zorlanabilirsin. Yanlış anlaşılmalar, kaybolan eşyalar veya unutulan sözler yüzünden yakın çevrenle aranda karmaşa yaşanabilir. Dedikodulara veya sana gerçeği söylemeyen insanlara karşı uyanık olmalı, mantığını devre dışı bırakmamalısın. Bu dönemde büyük kararlar vermekten kaçınmalı, zihnindeki sisi dağıtmak için biraz sessiz kalmaya çalışmalısın.",
+        "Başkalarının kafa karıştırıcı veya yanıltıcı fikirleri senin zihinsel huzurunu kaçırmaya çalışabilir. \"Benim mantığım mı yoksa onların hayal dünyası mı?\" ikileminde kalabilir, kendini bir illüzyonun içinde hissedebilirsin. İletişimde çok fazla fedakarlık yapıp kendi düşüncelerini feda etme riskin var, buna dikkat etmelisin. Ayaklarını yere sağlam basmalı ve başkaları için kendi zihinsel netliğinden ödün vermeden empati kurmayı öğrenmelisin.",
+      ],
+      neutral: [
+        "Zihnin adeta bir sis perdesinin arkasında; hayal gücün muazzam ama gerçekleri görmekte zorlanabilirsin. Çok şiirsel, yumuşak ve sezgisel bir iletişim diline sahipsin; kelimelerinle insanları büyüleyebilir veya onları şifalandırabilirsin. Ancak önemli belgeleri imzalarken veya sözler verirken çok dikkatli olmalısın, çünkü detayları gözden kaçırmaya müsaitsin. Rüyaların ve sezgilerin sana mantığından daha çok şey anlatıyor; bugünlerde onlara kulak ver canım.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç sesinin sana rehberlik ettiği, ailenle telepatik bağlar kurduğun yumuşacık bir dönem. Evinde huzurlu, meditatif bir atmosfer yaratmak ruhuna çok iyi gelecek. Sanatsal yeteneklerini evine yansıtabilir, orayı bir sanat galerisine dönüştürebilirsin. Geçmişteki kırgınlıkları affetmek ve ruhsal bir şifalanma yaşamak için evren seni destekliyor.",
+        "Ruhunun en derinlerinde ilahi bir huzur hissediyorsun; sanki evren seni şefkatle kucaklıyor. Ailenle arandaki bağlar koşulsuz sevgi üzerine kurulu ve bu sana muazzam bir manevi güç veriyor. Deniz kenarında bir ev hayalin varsa veya evinde huzurlu bir köşe yaratmak istiyorsan, şartlar kendiliğinden oluşabilir. Sezgilerin o kadar güçlü ki, evindeki negatif enerjiyi anında sezip temizleyebiliyorsun.",
+      ],
+      negative: [
+        "Ev ve aile konularında bir sis bulutu içindesin; kimin ne dediği, neyin doğru olduğu belirsiz. Aile içinde sırlar veya hayal kırıklıkları gün yüzüne çıkabilir, kime güveneceğini şaşırabilirsin. Ev alım satım işlerinde dolandırılma riskine veya imza atarken eksik bilgilere karşı çok uyanık olmalısın. İçsel huzursuzluğun fiziksel sağlığını etkileyebilir, bu yüzden gerçeklerden kaçmak yerine onlarla yüzleşmeye çalışmalısın.",
+        "Toplumsal imajınla gerçek iç dünyan arasında büyük bir uçurum olabilir. Dışarıya \"her şey mükemmel\" derken evde yalnızlık veya kafa karışıklığı yaşıyor olabilirsin. Kariyerindeki belirsizlikler evdeki güvenliğini sarsabilir ya da tam tersi yaşanabilir. Kendi gerçeğine dürüst olmayı ve hayallerinle sorumlulukların arasında bir köprü kurmayı öğrenmen gereken bir dönem.",
+      ],
+      neutral: [
+        "Evin senin için adeta büyülü bir sığınak haline gelmiş durumda. Ruhsal çalışmalar yapmak, hayallere dalmak veya yaratıcı uğraşlarla ilgilenmek için harika ama gerçeklerden kopma riskin var. Evinle ilgili su tesisatı sorunlarına veya gizli kalmış meselelere dikkat etmelisin. Aileni idealize edebilir, onlara dair gerçekleri görmekte zorlanabilirsin; biraz daha rasyonel kalmaya çalış.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İç sesinin ve sezgilerinin aşk hayatında sana harika yollar fısıldadığı, çok romantik bir süreçtesin. Sevdiklerinle aranda derin bir empati ve şefkat bağı var; bu huzurlu akış ruhunu dinlendiriyor. Yaratıcı uğraşlarında ilham perileri her an yanında, sadece kalbinin sesini dinle ve üretmeye başla. Çocuklarla ilgili konularda merhametli ve yumuşak tavrın, tüm sorunları zahmetsizce eritecektir. Küçük ama anlamlı mucizelerin hayatına sızdığını fark edeceksin; evren seni şefkatle destekliyor.",
+        "Aşkın en saf, en kutsal ve en dokunaklı halini yaşadığın büyüleyici bir dönemdesin! Partnerinle aranda o kadar derin bir ruhsal bağ var ki, dünyadan tamamen soyutlanmış gibi hissedebilirsiniz. Sanatın her dalında muazzam bir ilham ve başarı seni bekliyor; ürettiğin her şey insanları büyüleyebilir. Çocuklarla olan ilişkin sana cennetten bir köşe gibi huzur veriyor, onlardan gelen sevgiyle şifalanıyorsun. Kendini ilahi bir koruma altında hissettiğin bu muazzam akışın tadını doyasıya çıkar, hak ettin!",
+      ],
+      negative: [
+        "Aşk hayatında pembe gözlüklerin biraz buğulanmış olabilir mi tatlım? Karşındaki insanı olduğundan çok farklı görüp sonrasında ağır hayal kırıklıkları yaşama riskin oldukça yüksek. Gizli saklı meseleler, platonik aşklar veya aldatılma/aldanma gibi durumlar bu dönemde canını sıkabilir. Spekülatif yatırımlarda \"kesin kazanırım\" diye düşünmek seni yanıltabilir, maddi kayıplara karşı uyanık olmalısın. Çocuklarla olan ilişkinde belirsizlikler ve hayal kırıklıkları yaşanabilir; gerçeklerle yüzleşmekten korkmamalısın.",
+        "Sosyal hayattaki ideallerinle özel aşk hayatındaki gerçekler arasında bir sis bulutu oluşabilir. Başkalarını kurtarmaya çalışırken kendi mutluluğunu ve yaratıcı enerjini feda etme riskin var, dikkat et. Partnerinin senden gizlediği şeyler olabilir ya da sen sevgini hayali bir karakter üzerinden yaşıyor olabilirsin. \"Mantığım mı yoksa duygularım mı?\" savaşı seni yorsa da, bu süreç sana gerçek sevgiyi sahtesinden ayırmayı öğretecek. Ayaklarını yere sağlam basmalı ve başkaları için kendini kurban etmeden önce kendi sınırlarını korumalısın.",
+      ],
+      neutral: [
+        "Aşk hayatında tam bir peri masalı yaşıyorsun ama ayakların yerden fazla kesilmiş olabilir, dikkat et canım! Karşındaki kişiyi bir ilah gibi görüp kusurlarını fark etmeyebilir, sonunda hayal kırıklığı yaşama riskine düşebilirsin. Sanatsal ilhamın o kadar güçlü ki, bu dönemde ortaya koyacağın eserler ruhları şifalandıracak kadar derin olabilir. Çocuklarla aranda kelimelere dökülmeyen, telepatik bir bağ kurulabilir. Ancak kumarda veya borsa gibi işlerde \"sezgilerime güveniyorum\" diyerek kayıp yaşamamaya özen göstermeli, gerçeklerden kopmamalısın.",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş ortamında sezgilerinin sana rehberlik ettiği, çalışma arkadaşlarınla telepatik bir uyum yakaladığın bir dönem. Yardıma ihtiyacı olanlara el uzatmak ve hizmet etmek sana büyük bir manevi tatmin ve huzur veriyor. Sağlığınla ilgili doğal yöntemlerden, yoga veya meditasyondan inanılmaz fayda görebilirsin. Küçük ama anlamlı mucizelerin günlük hayatına sızdığını fark edeceksin, ruhun şifalanıyor.",
+        "İş hayatında tam bir teslimiyet ve huzur içindesin; sanki her şey görünmez bir el tarafından senin için düzenleniyor. Yaratıcılık gerektiren bir işin varsa ilhamın zirvesindesin, ortaya koyduğun eserler insanları büyüleyebilir. Sağlığında tam bir şifalanma süreci yaşıyorsun, bedeninin ve ruhunun ihtiyaçlarını çok iyi anlıyorsun. Günlük hayatın adeta bir masal gibi akıyor; fedakarlıkların sana kat kat bereket olarak geri dönüyor.",
+      ],
+      negative: [
+        "İş yerinde hayal kırıklıkları veya gizli kalmış meseleler canını sıkabilir; kime güveneceğini bilmekte zorlanabilirsin. Verilen sözlerin tutulmaması veya işlerin planlandığı gibi gitmemesi seni zihinsel olarak yorabilir. Sağlık konusunda ilaçlara veya kimyasallara karşı her zamankinden daha hassas olabilirsin, yanlış teşhis riskine karşı dikkatli olmalısın. Gerçeklerden kaçmak yerine onlarla yüzleşmek seni bu kaotik enerjiden kurtaracaktır.",
+        "İlişkilerindeki ideallerinle günlük hayatın sert gerçekleri arasında bir denge kurman gerekiyor. Karşındaki insanı fazla mükemmel görüp onun için kendi düzenini ve sağlığını ihmal ediyor olabilirsin. İş yerindeki karmaşa ikili ilişkilerine yansıyabilir veya partnerin senin iş hayatına dair kafanı karıştırabilir. Ayaklarını yere sağlam basmalı ve başkaları için kendini kurban etmeden önce sınırlarını çizmelisin.",
+      ],
+      neutral: [
+        "İş hayatında bir sis bulutu içinde gibisin; hedeflerin net olmayabilir veya çalışma arkadaşlarına karşı aşırı fedakar davranabilirsin. Sağlığınla ilgili teşhisi zor, daha çok psikolojik veya alerjik kökenli hassasiyetler yaşaman mümkün. Günlük rutinlerini organize etmekte zorlanabilir, hayallere dalıp gitmekten işlerini biriktirebilirsin. Bu dönemi yaratıcı işlerle veya ruhsal çalışmalarla ilgilenerek geçirirsen, belirsizliği bir ilhama dönüştürebilirsin.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İlişkilerinde sezgisel bir bağ ve derin bir empati kurduğun, ruhunu dinlendiren bir dönemdesin. Partnerinle kelimelere dökülmeyen bir anlayış içindesiniz; onun ne hissettiğini konuşmadan bile seziyorsun. Sanatsal veya ruhsal ortaklıklar kurmak için evren sana harika ve ilham dolu fırsatlar sunuyor. Karşındaki insanlara gösterdiğin şefkat ve merhamet, sana kat kat sevgi olarak geri dönüyor; adeta ruhsal bir şifalanma yaşıyorsun.",
+        "İlişkilerinde adeta ilahi bir koruma altındasın; aşkın en saf, en şefkatli ve en dokunaklı halini yaşıyorsun. Partnerinle arandaki bağ o kadar derin ki, birlikteyken dünyadan tamamen soyutlanmış gibi hissedebilirsiniz. Sanatçılar, şifacılar veya ruhsal derinliği olan kişilerle kuracağın ortaklıklar sana hayat boyu sürecek bir vizyon katacak. Kendini başkalarının sevgisinde huzurla bulduğun, hayallerindeki o kutsal birliğe en çok yaklaştığın şahane bir dönem.",
+      ],
+      negative: [
+        "İkili ilişkilerinde bir karmaşanın içinde kaybolmuş hissedebilirsin; kimin dürüst olduğunu anlamak bu ara çok zor. Partnerinle aranda belirsizlikler, sırlar veya hayal kırıklıkları baş gösterebilir ve bu seni duygusal olarak yorabilir. Kendini bir kurban gibi hissedip başkaları için aşırı fedakarlık yapma eğilimindesin ama bu durum seni tüketebilir. Gözündeki o romantik perdeyi aralamalı ve karşındaki insanı olduğu gibi görmeye cesaret etmelisin; yoksa suistimal edilebilirsin.",
+        "Karşındaki kişilerin kurban rolü üstlenmesi veya zayıflıkları senin omuzlarına büyük bir yük bindirebilir. Başkalarını kurtarmaya çalışırken kendi gerçekliğini ve sorumluluklarını tamamen unutma riskin var, dikkat et! İlişkilerindeki belirsizlikler iş hayatını veya sağlığını olumsuz etkilemeye başlayabilir. Ayaklarını yere her zamankinden daha sağlam basmalı ve başkalarının senin enerjini sömürmesine izin vermeden empati kurmayı öğrenmelisin.",
+      ],
+      neutral: [
+        "İlişkilerinde pembe bir bulutun içindesin; partnerini adeta bir ilah gibi görüyor ve kusurlarını fark etmiyorsun. Bu yüksek romantizm ruhuna çok iyi gelse de, gerçeklerden kopma ve hayal kırıklığı yaşama riskin var. Gizli saklı meseleler veya partnerine dair yanlış anlaşılmalar bu süreçte gündeme gelebilir; sezgilerini mutlaka mantığınla harmanlamalısın. Ruh eşini bulduğunu düşünebilirsin ama bu kişinin gerçekten kim olduğunu anlamak için biraz zamana ve netliğe ihtiyacın var.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Finansal krizleri çözmek için sezgilerinin sana fısıldadığı o yumuşak yolları izlemekten çekinme; evren seni gizlice destekliyor. Başkalarından gelecek manevi destekler veya beklenmedik küçük maddi yardımlar ruhuna ilaç gibi gelecek. Ruhsal anlamda çok derin bir empati ve şifalanma yaşıyorsun; geçmişteki travmaları affederek özgürleşmek senin için çok kolaylaştı. Sevdiklerinle kurduğun o telepatik bağ sayesinde, hayatındaki tüm pürüzleri nezaketle ve sevgiyle eritebileceğin bir zamandasın.",
+        "Finansal ve ruhsal anlamda adeta ilahi bir akış içindesin; her şey senin iyiliğin için sessizce organize ediliyor sanki. Miras, sigorta veya ortaklı kazançlar konusunda zahmetsizce ve mucizevi bir şekilde gelen bereket seni çok şaşırtacak. Ruhsal olarak tam bir şifalanma ve \"yeniden doğuş\" süreci yaşıyorsun; hayallerindeki o derin huzura kavuşuyorsun. İçindeki o büyük merhamet ve sevgi gücü, hayatındaki tüm krizli alanları birer birer birer iyileştirip ışıkla dolduruyor; tadını çıkar!",
+      ],
+      negative: [
+        "Maddi konularda ve ortaklıklarda hayal kırıklıkları veya gizli kalmış borçlar canını çok sıkabilir; kime güveneceğini şaşırabilirsin. Verilen sözlerin tutulmaması veya miras meselelerindeki karmaşa seni duygusal olarak çok yorabilir ve belirsizlik hissi yaratabilir. Kurban rolüne bürünmekten ve başkalarının krizlerini kendi üzerine almaktan kaçınmalısın, aksi halde enerjin tamamen tükenebilir. Gözündeki o pembe perdeyi aralamalı ve finansal gerçeklerle yüzleşmekten korkmamalısın; netlik senin kurtarıcın olacak.",
+        "Kendi maddi gerçeklerinle başkalarının yarattığı hayal dünyası veya belirsizlikler arasında denge kurman gerekiyor. Partnerinin maddi durumundaki karmaşa senin de hayat standartlarını etkileyebilir ve seni bir \"kurtarıcı\" pozisyonuna sokabilir. \"Kendi ayaklarımın üzerinde mi durmalıyım yoksa bu kaosa teslim mi olmalıyım?\" sorusu kafanı karıştırabilir. Ayaklarını yere sağlam basmalı ve başkaları için kendini maddi-manevi kurban etmeden önce kendi sınırlarını korumayı öğrenmelisin.",
+      ],
+      neutral: [
+        "Finansal konularda ve hayatın gizemli yanlarında tam bir sis bulutu içindesin; gerçeklerle hayaller birbirine karışmış durumda. Ortaklaşa paralarda veya miras meselelerinde dolandırılma veya suistimal edilme riskine karşı gözlerini dört açmalısın. Psikolojik olarak çok hassas ve ruhsal dünyayla bağlantıda olduğun bir dönem; rüyaların ve sezgilerin çok güçlü olabilir. Bu belirsizliği sanata veya ruhsal şifaya yönlendirirsen harika sonuçlar alırsın ama maddi imzalarda mutlaka bir uzmana danışmalısın.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal çalışmalar, meditasyon veya sanatsal eğitimler aracılığıyla vizyonunu muazzam bir şefkatle genişletiyorsun. Uzak diyarlardan gelen manevi haberler veya ruhsal rehberlikler sana ihtiyacın olan o iç huzuru getirecek. İnançların konusunda çok daha kabullenici ve sevgi dolu bir noktadasın; bu enerji seni çevrende bir \"şifacı\" gibi gösteriyor. Küçük ama mucizevi tesadüfler, senin hayatın anlamını zahmetsizce keşfetmeni sağlayacak; kalbinin sesini dinle.",
+        "Hayatın gizemli ve ruhsal yanlarıyla tam bir uyum içindesin; sanki evren sana en kutsal sırlarını fısıldıyor. Uzaklara yapacağın yolculuklar tam bir ruhsal arınma ve ilham kaynağına dönüşecek, döndüğünde başka bir insan olacaksın. Sanatçılar, şifacılar veya ruhsal derinliği olan kişilerle kuracağın bağlar vizyonunu sonsuza dek değiştirebilir. İçindeki o büyük merhamet ve inanç gücü, hayatındaki tüm engelleri birer mucizeye dönüştürüp yolunu ışıkla aydınlatıyor!",
+      ],
+      negative: [
+        "Akademik işlerde, hukuksal konularda veya inançlarınla ilgili büyük bir hayal kırıklığı ve kafa karışıklığı yaşayabilirsin. \"Neye inanmalıyım?\" sorusu içinde kaybolabilir, kurban rolüne bürünen yanlış \"rehberlerin\" peşinden gitme riskine düşebilirsin. Uzak seyahatlerde dolandırılma veya suistimal edilme riskine karşı gözlerini dört açmalı, hiçbir şeye körü körüne inanmamalısın. Gerçeklerden kaçmak yerine onlarla yüzleşmek, bu belirsizliğin seni yutmasını engelleyecek tek yoldur.",
+        "Yakın çevrendeki karmaşa ve belirsizlikler, senin o yüce hayallerini ve vizyonunu gölgelemeye çalışıyor olabilir. Başkalarının kurban rollerini üstlenmekten kendi ruhsal yolculuğuna odaklanamıyor ve yorgun düşüyor olabilirsin. \"Mantığım mı yoksa sezgilerim mi?\" savaşı seni zihnen yorsa da, bu süreç sana ikisini harmanlamayı öğretecek. Ayaklarını yere sağlam basmalı ve başkalarının hayal dünyasında kaybolmadan kendi hakikatini aramaya devam etmelisin.",
+      ],
+      neutral: [
+        "Hayata bakış açında tam bir sis bulutu içindesin; adeta mistik ve ruhsal bir yolculuğun tam ortasındasın. Yüksek ideallerin çok güçlü ama gerçeklerden kopma ve \"hayalperestlik\" tuzağına düşme riskin var, dikkat et. Uzak yolculuklar senin için ruhsal bir şifalanma aracı olabilir ama pasaport, vize gibi teknik detayları gözden kaçırmamaya çalışmalısın. Sezgilerin çok kuvvetli; belki de rüyaların sana gelecekteki vizyonun hakkında çok önemli sırlar fısıldayacak.",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Kariyerinde sezgilerinin sana rehberlik ettiği ve işlerini büyük bir nezaketle hallettiğin bir dönemdesin. Sosyal çevrenden gelecek manevi destekler, statünü yükseltmek için ihtiyacın olan o \"ilahi yardımı\" sana getirebilir. İnsanlara yardım ettiğin bir işin varsa bu süreçte büyük bir takdir görecek ve ruhsal olarak şifalanacaksın. Küçük ama anlamlı mucizelerin kariyer yolunda karşına çıktığını fark edeceksin; evren seni gizlice destekliyor.",
+        "Kariyerinde adeta ilahi bir akış içindesin; sanki her şey senin için en güzel hayalleri gerçekleştirmek üzere düzenlenmiş. Sanatçılar, şifacılar veya tasarımcılar için kariyerinin en verimli ve ilham dolu dönemi olabilir. Toplum önünde o kadar şefkatli ve etkileyici bir duruşun var ki, insanlar senin büyüne kapılmaktan kendini alamıyor. Zahmetsizce gelen bu başarı ve ruhsal tatmin, seni hayallerindeki o kutsal zirveye taşıyor; tadını çıkar!",
+      ],
+      negative: [
+        "İş hayatında hayal kırıklıkları ve belirsizlikler canını epey sıkabilir; kime güveneceğini şaşırabilirsin. Toplum önündeki imajın hakkında asılsız dedikodular çıkabilir veya verdiğin sözleri tutmakta zorlanabilirsin. Kariyer hedeflerinin bir illüzyondan ibaret olduğunu düşünüp motivasyonunu kaybedebilirsin. Bu dönemde gerçeklerden kaçmak yerine onlarla yüzleşmeli ve imza atarken her detayı iki kez kontrol etmelisin.",
+        "Kariyer hedeflerinle iç dünyandaki karmaşa arasında bir denge kurman gerekiyor. İş hayatında \"kurtarıcı\" rolü üstlenmekten kendi sorumluluklarını ihmal edebilir ve yorgun düşebilirsin. Ailevi sırlar veya evdeki belirsizlikler kariyerindeki başarını gölgeleyebilir. Ayaklarını yere sağlam basmalı ve başkaları için kendini kurban etmeden önce kendi statünü korumayı öğrenmelisin.",
+      ],
+      neutral: [
+        "Kariyerinde tam bir sis bulutu içindesin; hedeflerin belirsiz olabilir veya hayallerindeki işe kavuşmak için yanıp tutuşuyor olabilirsin. Toplum önünde çok karizmatik ve gizemli bir imaj çiziyorsun ama gerçekte ne yapmak istediğine karar vermekte zorlanıyorsun. Sanatsal veya ruhsal bir işin varsa ilhamın tavan yapar; ancak kurumsal dünyadaysan dolandırılma riskine karşı uyanık olmalısın. Sezgilerin bir pusula gibi çalışıyor, mantığından çok ruhunun sesini dinleme zamanın geldi.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Sosyal çevrende sezgisel bir bağ ve derin bir empati kurduğun, ruhunu dinlendiren çok tatlı bir dönemdesin. Arkadaşlarından gelen manevi destekler, hayallerine giden yolda sana ihtiyacın olan o \"ilahi motivasyonu\" verecek. Yardıma ihtiyacı olan gruplara el uzatmak sana büyük bir manevi tatmin sağlayabilir. Küçük ama mucizevi tesadüfler, senin idealindeki o dostla tanışmanı veya hayalindeki o kapının nazikçe açılmasını sağlayacaktır.",
+        "Dostluklarında ve hayallerinde adeta ilahi bir koruma altındasın; aşkın ve şefkatin en kolektif halini yaşıyorsun! Arkadaşlarınla arandaki bağ o kadar ruhsal ki, konuşmadan bile birbirinizi anlayıp ortak idealler uğruna akabiliyorsunuz. Ruhsal derinliği olan gruplar veya sanat toplulukları sana hayal bile edemeyeceğin kapılar açabilir. Kendini sevilmiş, desteklenmiş ve dünyanın bir parçası hissettiğin bu muazzam akışta, en büyük hayaline bir mucizeyle ulaşabilirsin!",
+      ],
+      negative: [
+        "Sosyal çevrende belirsizlikler, sırlar veya hayal kırıklıkları uykularını kaçırabilir; kime dürüst olacağını bilemeyebilirsin. Arkadaşlarının kurban rollerini üstlenip kendi enerjini tüketme riskin var, dikkat et! Gelecek planların bir sis bulutunun içinde kaybolmuş gibi hissedebilir ve hedefsizlik duygusuyla yorulabilirsin. Gözündeki o romantik perdeyi aralamalı ve sosyal çevrendeki gerçekleri olduğu gibi görmeye cesaret etmelisin; yoksa suistimal edilebilirsin.",
+        "Bireysel zevklerin ve gerçeklerinle arkadaş çevrenin belirsiz hayalleri arasında bir denge kurman gerekiyor. \"Onları mı kurtarmalıyım yoksa kendi mutluluğuma mı bakmalıyım?\" ikilemi seni duygusal olarak yorabilir. Sosyal çevrendeki karmaşa özel hayatını gölgeleyebilir ve enerjini sömürebilir. Ayaklarını yere her zamankinden daha sağlam basmalı ve başkalarının hayal dünyasında kaybolmadan kendi somut hedeflerini korumaya devam etmelisin.",
+      ],
+      neutral: [
+        "Arkadaş çevrende tam bir sis bulutu içindesin; adeta bir \"idealist\" veya \"kurban\" rolü üstlenebilirsin. Dostlarını çok fazla mükemmelleştirip hayal kırıklığı yaşama riskin var, kime güveneceğini sezgilerinle değil mantığınla da kontrol etmelisin. Hayallerin o kadar büyük ve ruhsal ki, bazen gerçek dünyadan kopup illüzyonlara dalabilirsin. Sanatsal veya ruhsal topluluklar içinde kendini huzurlu hissedebilirsin ama maddi paylaşımlarda sınırlarını net çizmezsen suistimal edilebilirsin.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ruhsal çalışmalarından ve yalnızlığından gelen yumuşacık bir şefkatle hayatını muazzam bir huzurla dengeliyorsun. Perde arkasındaki manevi rehberler veya sezgilerin, sana ihtiyacın olan o iç huzuru zahmetsizce getirecek. İnançların konusunda çok daha kabullenici bir noktadasın; bu enerji seni çevrende bir \"sessiz şifacı\" gibi gösteriyor. Küçük ama mucizevi tesadüfler, senin hayatın anlamını sessizce keşfetmeni sağlayacak; kalbinin sesini dinle ve akışa bırak!",
+        "Ruhunun en derinlerinde ilahi bir huzur hissediyorsun; sanki evren seni şefkatle kucaklıyor ve tüm yaralarını sarıyor. Yalnızlığın senin için en kutsal ibadet ve ilham kaynağına dönüşmüş durumda; rüyaların sana cennetten mesajlar getiriyor sanki. Sanatçılar veya şifacılar için ruhsal derinliğin zirve yaptığı, yaratıcılığın su gibi aktığı muazzam bir süreç. İçindeki o büyük merhamet ve inanç gücü, hayatındaki tüm engelleri birer mucizeye dönüştürüp yolunu ışıkla aydınlatıyor; tadını çıkar!",
+      ],
+      negative: [
+        "Bilinçaltında büyük bir hayal kırıklığı ve kafa karışıklığı yaşayabilirsin; kimin dürüst olduğunu anlamak bu ara çok zor. \"Neye inanmalıyım?\" sorusu içinde kaybolabilir, kurban rolüne bürünen yanlış düşüncelerin peşinden gitme riskine düşebilirsin. Gizli saklı meselelerde dolandırılma veya suistimal edilme riskine karşı gözlerini dört açmalı, hiçbir şeye körü körüne inanmamalısın. Gerçeklerden kaçmak yerine onlarla yüzleşmek, bu ruhsal belirsizliğin seni yutmasını engelleyecek tek yoldur.",
+        "Dış dünyadaki sorumluluklarınla ruhunun derinliklerindeki kaçış arzun arasında bir denge kurman gerekiyor. Başkalarının kurban rollerini üstlenmekten kendi ruhsal yolculuğuna odaklanamıyor ve enerjini tamamen tüketiyor olabilirsin. \"Mantığım mı yoksa sezgilerim mi?\" savaşı seni yorsa da, bu süreç sana ikisini harmanlamayı öğretecek. Ayaklarını yere sağlam basmalı ve başkalarının hayal dünyasında kaybolmadan kendi somut gerçeklerini korumaya devam etmelisin.",
+      ],
+      neutral: [
+        "Kendi evinde (Balık burcu/Neptün (12. Ev)'in sahibi) tam bir teslimiyet ve mistik bir yolculuğun tam ortasındasın; adeta bir şifa denizinde yüzüyorsun. Yüksek ideallerin çok güçlü ama gerçeklerden tamamen kopma ve \"kurban\" rolüne bürünme riskin var, dikkat et. Rüyaların, sezgilerin ve sanatsal ilhamın o kadar kuvvetli ki, sanki evrenin tüm sırları senin kalbine fısıldanıyor. Bu büyüleyici belirsizliği sanata, şifaya veya meditasyona yönlendirirsen, dünyada eşi benzeri olmayan bir ruhsal huzura kavuşursun.",
+      ],
+    },
   },
   "Plüton": {
-    1: { tr: "Kişiliğinde ve hayatında köklü bir dönüşüm sürecindesin. Gücünü yeniden keşfediyor, eski benliğini geride bırakıyorsun.", en: "A process of radical transformation in your personality and life. You're rediscovering your power and leaving your old self behind." },
-    2: { tr: "Maddi değerlerinde ve özsaygında derin bir değişim var. Finansal olarak güçlenmek veya tamamen yeni bir sistem kurmak üzeresin.", en: "A deep change in your material values and self-esteem. You're about to become financially stronger or establish a completely new system." },
-    3: { tr: "Düşünce yapın ve iletişim şeklin kökten değişiyor. Gizli kalmış bilgileri açığa çıkarabilir, sözlerinle büyük etki yaratabilirsin.", en: "Your way of thinking and communication style is radically changing. You can reveal hidden information and create a big impact with your words." },
-    4: { tr: "Ev, aile ve en derin köklerinle ilgili büyük bir dönüşüm var. Geçmişteki travmaları şifalandırmak ve temellerini yeniden atmak için güçlü bir enerji.", en: "A major transformation regarding home, family and your deepest roots. A powerful energy for healing past traumas and laying your foundations again." },
-    5: { tr: "Aşkta ve yaratıcılıkta derin, tutkulu ve dönüştürücü bir süreçtesin. Hobilerin veya aşk hayatın hayatında büyük bir iz bırakabilir.", en: "A deep, passionate and transformative process in love and creativity. Your hobbies or love life can leave a big mark on your life." },
-    6: { tr: "İş hayatında ve günlük rutinlerinde büyük bir değişim ve güçlenme sürecindesin. Sağlığını kökten iyileştirmek için iraden çok güçlü.", en: "A process of great change and empowerment in business life and daily routines. Your will is very strong for radically improving your health." },
-    7: { tr: "İlişkilerinde güç savaşları veya derin dönüşümler var. Mevcut bağların tamamen değişebilir veya hayatına çok etkileyici biri girebilir.", en: "Power struggles or deep transformations in your relationships. Your existing bonds may change completely or someone very impressive may enter your life." },
-    8: { tr: "Dönüşümün kalbindesin. Finansal paylaşımlarda ve ruhsal derinlikte büyük bir güç ve yenilenme vakti.", en: "You're in the heart of transformation. A time of great power and renewal in financial sharing and spiritual depth." },
-    9: { tr: "Hayata dair inançlarının ve dünya görüşünün tamamen değiştiği bir dönemdesin. Derin araştırmalar ve ruhsal yolculuklar seni bekliyor.", en: "A period when your beliefs about life and worldview completely change. Deep research and spiritual journeys await you." },
-    10: { tr: "Kariyerinde büyük bir güç ve otorite kazanma veya tamamen yön değiştirme sürecindesin. Toplumsal statün kökten değişebilir.", en: "A process of gaining great power and authority in your career or completely changing direction. Your social status may change radically." },
-    11: { tr: "Sosyal çevrende ve gelecek planlarında büyük bir dönüşüm var. Gruplar içinde büyük bir etki yaratabilir, hayallerine bir adım daha yaklaşabilirsin.", en: "A major transformation in your social circle and future plans. You can create a big impact within groups and get one step closer to your dreams." },
-    12: { tr: "Bilinçaltındaki en karanlık korkularınla yüzleşip onları dönüştürme vaktindesin. Ruhsal olarak küllerinden yeniden doğuyorsun.", en: "Time to face and transform your darkest subconscious fears. You're spiritually rising from your ashes." }
-  }
+    1: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İçindeki o gizli gücü ve iradeyi çok stratejik ve yapıcı bir şekilde kullandığın harika bir dönemdesin. Karizman sessiz ama çok etkileyici; insanlar senin bu kararlı ve derin duruşuna güvenerek arkandan geliyorlar. Hayatındaki krizli alanları (sağlık, iş veya tarz) kökten temizlemek ve iyileştirmek için gereken cesarete sahipsin. Küçük dokunuşlarla hayatında büyük dönüşümler yaratabilir ve gizli müttefiklerinden harika destekler görebilirsin. Kendi gücünü keşfetmek seni her zamankinden daha saygın kılıyor.",
+        "Muazzam bir yenilenme ve güçlenme süreci yaşıyorsun; adeta bir kaplan gibi dayanıklı ve karizmatiksin! En zorlu krizlerden bile daha da güçlenerek çıkıyor, hayatındaki her şeyi sarsılmaz bir kontrolle yönetiyorsun. Fiziksel sağlığın ve enerjin inanılmaz bir rejenerasyon (yenilenme) kapasitesine sahip. İnsanları etkileme ve yönetme yeteneğin doğal bir şekilde ortaya çıkıyor; sözlerin ve duruşunla herkesin üzerinde derin bir iz bırakıyorsun. Bu sarsılmaz gücü, hem kendine hem de dünyaya fayda sağlamak için kullanmanın tam zamanı.",
+      ],
+      negative: [
+        "İçindeki \"ya hep ya hiç\" diyen o yıkıcı sesle mücadele etmen gereken zorlayıcı bir süreç olabilir. Otorite figürleriyle, sistemle veya kendi karanlık yanlarınla yaşayacağın güç savaşları seni duygusal olarak hırpalayabilir. Manipülatif tavırlara maruz kalabilir veya farkında olmadan başkalarına baskı yapabilirsin. Bu dönemde bastırdığın her şey (öfke, korku, kıskançlık) bir anda gün yüzüne çıkıp seni dönüştürmek isteyecek. Yıkmak yerine, içindeki o yoğun enerjiyi dönüştürmeye ve küllerinden doğmaya odaklanmalısın.",
+        "Karşındaki insanların senin üzerindeki yoğun kontrol arzusu veya manipülatif tavırlarıyla baş etmek zorunda kalabilirsin. \"Güç bende mi yoksa onlarda mı?\" sorusu ikili ilişkilerinin ana gündem maddesi haline gelebilir. Partnerinle veya ortağınla yaşayacağın derin krizler aslında seni sen yapan değerleri sorgulatmak için geliyor. Bu süreçte dik durmayı, kendi gücünü başkasına teslim etmemeyi öğreniyorsun. İlişkilerin üzerinden yaşadığın bu \"ölüm ve yeniden doğum\" döngüsü, seni çok daha dayanıklı ve bilge bir karaktere dönüştürecek.",
+      ],
+      neutral: [
+        "Küllerinden yeniden doğmaya hazır mısın? Plüton birinci evinde gezerken seni köklü ve geri dönüşü olmayan bir değişime zorluyor. Çok derin, gizemli ve sarsılmaz bir karizma kazandın; girdiğin her ortamda sessiz bir otorite kuruyorsun. Eski tüm alışkanlıkların, korkuların ve imajın yıkılıyor ki yerine çok daha güçlü bir sen gelebilsin. Bu süreç krizli ve yorucu olabilir ama sonunda bambaşka bir güç ve kontrol kapasitesine sahip olacaksın. Gücünü başkalarını ezmek için değil, kendini dönüştürmek için kullanmayı öğreniyorsun.",
+      ],
+    },
+    2: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde maddi kaynaklarını çok verimli bir şekilde yönettiğin bir dönemdesin. Gizli müttefiklerden veya güçlü kişilerden alacağın destekle finansal durumunu kökten iyileştirecek bir adım atabilirsin. Krizleri fırsata çevirme yeteneğin sayesinde, kimsenin göremediği o karlı yatırım detaylarını fark edip öne geçeceksin. Kendi özdeğerini keşfettiğin bu süreçte, maddi başarıların sana büyük bir itibar kazandıracak.",
+        "Finansal hayatında muazzam bir kontrol ve güçlenme süreci yaşıyorsun; başarı senin için artık bir kader! En karmaşık maddi problemleri bile büyük bir soğukkanlılıkla çözüyor, her krizi bir servet kaynağına dönüştürüyorsun. Karizman ve sarsılmaz iraden sayesinde maddi dünyada sessiz ama çok etkili bir lider haline geliyorsun. Hayatını adeta yeniden inşa ettiğin bu süreçte, kazançların sana ömür boyu sürecek bir sarsılmaz güven getirecektir; tebrikler!",
+      ],
+      negative: [
+        "Maddi konularda otorite figürleriyle veya sistemle çok ağır güç savaşlarına ve baskılara maruz kalabilirsin. \"Ya hep ya hiç\" tarzındaki yıkıcı harcamalar veya riskli yatırımlar seni finansal bir uçuruma sürükleyebilir, dikkat! Para yüzünden kontrolü kaybetme veya manipüle edilme korkusu uykularını kaçırabilir. Bu dönemde takıntılı hırslardan uzak durmalı ve finansal gücünü başkalarını ezmek için değil, kendi güvenliğini inşa etmek için kullanmalısın.",
+        "Kendi kazancınla başkalarının (partner, ortak veya bankalar) senin üzerindeki yoğun maddi baskısı arasında kalabilirsin. \"Güç bende mi yoksa onlarda mı?\" sorusu finansal gündemini belirlerken, mülkiyet kavgaları veya miras krizleri canını sıkabilir. Başkalarının manipülatif tavırlarına karşı dik durmayı ve kendi maddi sınırlarını sarsılmaz bir şekilde korumayı öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan gerçek bir maddi özgürlüğe ulaşamayacağını öğretecek.",
+      ],
+      neutral: [
+        "Maddi dünyanda ve özdeğer algında geri dönüşü olmayan, çok köklü bir dönüşüm süreci yaşıyorsun. Paraya olan bakış açın tamamen değişiyor; artık yüzeysel kazançlar değil, gerçek bir maddi güç elde etmek istiyorsun. Eski tüm harcama alışkanlıkların ve değerlerin yıkılıyor ki yerine çok daha sarsılmaz bir finansal yapı kurabilesin. Bu süreç zorlayıcı olabilir ama sonunda maddi anlamda küllerinden yeniden doğmuş, çok daha dirençli biri olacaksın.",
+      ],
+    },
+    3: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde iletişim dünyasında sessiz ama çok etkili bir güç kazanıyorsun. Yakın çevrenden gelecek gizli destekler veya güçlü referanslar, eğitiminde veya ticaretinde sana büyük kapılar açabilir. Karmaşık problemleri kökten çözme yeteneğin tavan yapmış durumda; kimsenin cesaret edemediği gerçekleri söyleyebilirsin. Zihinsel bir yenilenme yaşıyorsun, bu da seni her türlü tartışmada yenilmez bir konuma taşıyor.",
+        "Zihinsel enerjinin ve ikna kabiliyetinin doruğunda olduğun, kelimelerinle dünyayı yerinden oynatabileceğin bir dönem. Söylediğin her söz o kadar etkileyici ve karizmatik ki, insanlar senin bu derin otoriten önünde saygıyla eğiliyor. Eğitimde veya ticarette muazzam bir kontrol ve yenilenme gücüne sahipsin; krizleri birer başarı basamağına dönüştürüyorsun. Kendi içindeki gerçek gücü fikirlerinle keşfettiğin bu süreçte, toplumsal anlamda da büyük bir etki yaratabilirsin.",
+      ],
+      negative: [
+        "Zihninde takıntılı düşünceler veya kontrol etme arzusu uykularını kaçırabilir, aman dikkat! Kardeşlerinle veya yakın çevrendeki otorite figürleriyle çok ağır güç savaşlarına ve sözel krizlere girmeye müsaitsin. \"Benim dediğim olacak\" inadı iletişim kanallarını tıkayabilir ve seni yalnızlaştırabilir. Bu dönemde yıkıcı olmak yerine dönüşmeyi tercih etmeli, içindeki o yoğun enerjiyi derin bir araştırmaya veya şifaya kanalize etmelisin.",
+        "Başkalarının senin fikirlerin üzerindeki yoğun baskısı veya manipülasyonu seni zihinsel olarak yorabilir. Yakın çevrendeki insanların senin üzerindeki kontrol arzusu, seni büyük bir savunma savaşına ve dönüşüme zorluyor. \"Benim düşüncem mi yoksa onların hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve zihinsel sınırlarını korumayı öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan gerçek bir zihinsel özgürlüğe ulaşamayacağını fısıldıyor.",
+      ],
+      neutral: [
+        "Kelimelerinin birer atom bombası kadar güçlü olduğu, zihinsel bir dönüşüm sürecine girdin canım. Sözlerinle birini yıkabilir veya küllerinden yeniden doğmasını sağlayabilirsin; bu gücü çok dikkatli kullanmalısın. Gizli kalmış sırları açığa çıkarmak, derin araştırmalar yapmak ve köklü değişimler yaratmak için muazzam bir iradeye sahipsin. Kardeşlerinle veya yakın çevrenle olan ilişkilerinde \"ya tam teslimiyet ya tam kopuş\" yaşanabilir; her şey çok derin ve yoğun.",
+      ],
+    },
+    4: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Ailenden gelen gizli bir destek veya miras gibi bir konu hayatını olumlu yönde dönüştürebilir. Psikolojik olarak çok güçlü olduğun, geçmişin travmalarını başarıyla şifalandırdığın bir dönemdesin. Evindeki enerjiyi dönüştürmek, köklü temizlikler yapmak sana büyük bir hafiflik hissettirecek. İçindeki sarsılmaz irade sayesinde ailevi krizleri fırsata çevirmeyi başaracaksın.",
+        "Kendi köklerinden ve ailenden gelen muazzam bir güçle hayatını yeniden inşa ediyorsun. Gayrimenkul veya aile işleri üzerinden büyük bir finansal ve manevi güç elde edebilirsin. İçsel dünyanda yaşadığın bu kararlı değişim, tüm hayatına sarsılmaz bir güven duygusu olarak yansıyor. Geçmişi tamamen arkanda bırakıp, geleceğe hükmedebilecek bir iradeyle yoluna devam ediyorsun.",
+      ],
+      negative: [
+        "Aile içinde güç savaşları ve manipülasyonlar seni canından bezdirebilir. \"Benim dediğim olacak\" diyen otorite figürleriyle büyük çatışmalar yaşaman mümkün. Ev hayatında bir şeyler zorla değişiyor gibi hissedebilirsin ve bu sende bir \"köşeye sıkışmışlık\" hissi yaratabilir. Bu süreçte kendi gölge yanlarınla yüzleşmeli ve yıkıcı öfkeden uzak durarak enerjini dönüştürmeye odaklanmalısın.",
+        "Kariyerindeki güç arayışın, aile hayatında krizlere neden olabilir. Dış dünyada kontrolü ele almaya çalışırken evdeki kontrolü tamamen kaybediyor gibi hissedebilirsin. Aile içindeki baskılar seni iş hayatında daha hırslı yapabilir ama bu hırs seni tüketmemeli. Gücü nerede aradığını sorgulaman gereken, dengeyi bulamazsan her iki tarafı da yıkıma sürükleyebilecek bir süreç; dönüşüme izin ver.",
+      ],
+      neutral: [
+        "Köklerinde ve aile yapında çok derin, geri dönülemez bir dönüşüm süreci yaşıyorsun. Geçmişin karanlık sırları gün yüzüne çıkabilir ve bu seni tamamen değiştirebilir. Evinle ilgili büyük bir yıkım ve yeniden yapım (fiziksel veya manevi) gündeme gelebilir. İçindeki gücü keşfetmek için korkularınla yüzleşiyorsun; bu süreç zorlayıcı olsa da sonunda küllerinden yeniden doğacaksın.",
+      ],
+    },
+    5: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde aşk hayatında ve hobilerinde büyük bir güç kazanıyorsun tatlım. Yaratıcı projelerin için perde arkasından gelen güçlü destekler, hedeflerine ulaşmanı inanılmaz kolaylaştıracaktır. İlişkilerinde krizleri yönetme yeteneğin tavan yapmış durumda; pürüzleri kökten çözmeyi başarıyorsun. Çocukların varsa, onların hayatındaki büyük bir dönüşüme rehberlik edebilir ve aranızdaki bağı kopmaz bir hale getirebilirsin. Kendine olan güvenin o kadar etkileyici ki, karizmanla herkesi sessizce büyülüyorsun.",
+        "Aşkta ve yaratıcılıkta muazzam bir yenilenme ve güçlenme süreci yaşıyorsun; tutkunun zirvesindesin! Partnerinle arandaki bağ o kadar köklü ve sarsılmaz ki, birlikte her türlü krizin üstesinden güçlenerek gelebilirsiniz. Yaratıcı potansiyelin bir yanardağ gibi patlıyor; ortaya koyduğun işler hem maddi hem de manevi büyük bir başarı getirecektir. Çocuklarla olan ilişkinde sarsılmaz bir otorite ve sevgi dengesi kuruyorsun, onlara hayatın en derin derslerini öğretiyorsun. Kendi içindeki gerçek gücü keşfettiğin bu süreçte, hayatın en büyük hazinelerine ulaşmaya çok yakınsın!",
+      ],
+      negative: [
+        "Aşk hayatında baskı, manipülasyon ve güç savaşları seni duygusal olarak çok tüketebilir; kendini bir hapishanede gibi hissedebilirsin. Sevdiklerine karşı aşırı kontrolcü olma isteğin, tam tersine onların senden uzaklaşmasına neden olabilir. Yaratıcı işlerinde bir tıkanıklık hissedebilir, \"hep ya da hiç\" tarzındaki yıkıcı düşüncelerle enerjini bloke edebilirsin. Çocuklarla yaşayacağın güç çatışmaları kalıcı kırgınlıklara yol açabilir, aman kelimelerini seçerek konuş! Bu dönemde yıkıcı olmak yerine, içindeki o yoğun öfkeyi dönüştürmeye ve şifalanmaya odaklanmalısın.",
+        "Sosyal çevrendeki güçlü figürlerin veya arkadaş gruplarının senin aşk hayatın üzerindeki baskısını hissedebilirsin. \"Kendi mutluluğum mu yoksa başkalarının hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve sınırlarını korumayı öğrenmelisin. Partnerinle aranda paylaşılamayan güç dengeleri ve manipülatif tavırlar uykularını kaçırabilir. Riskli yatırımlarda büyük kayıp yaşamamak için hırslarına yenik düşmemeli, her adımı iki kez düşünmelisin. Bu karşıtlık, sana bireysel zevklerini savunurken toplumsal baskılara nasıl direneceğini fısıldayan sert ama bilge bir sınavdır.",
+      ],
+      neutral: [
+        "Aşk hayatında \"ya tam teslimiyet ya tam kopuş\" yaşayacağın, çok yoğun ve tutkulu bir dönüşüm dönemindesin. Sevdiğin kişiye karşı takıntılı bir tutum sergileyebilir, ilişkini bir güç savaşına çevirebilirsin; kıskançlık krizlerine dikkat! Yaratıcılığın o kadar derin ve karanlık bir güç taşıyor ki, ürettiklerinle insanları dönüştürebilirsin. Çocuklarla olan ilişkinde çok baskın bir tavır takınman aranızda krizlere neden olabilir. Bu süreç, sana aşkta gerçek gücün kontrolde değil, dürüstlük ve ruhsal dönüşümde olduğunu öğretecek.",
+      ],
+    },
+    6: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İş hayatında stratejik yeteneklerin sayesinde büyük bir gizli gücü elinde tutuyorsun. Günlük hayatındaki pürüzleri kökünden çözecek destekler alabilir ve verimliliğini inanılmaz artırabilirsin. Sağlığınla ilgili konularda çok güçlü bir irade sergileyerek bedensel dönüşümünü başarıyla yönetebilirsin. Krizleri fırsata çevirme yeteneğin sayesinde iş yerinde vazgeçilmez bir otorite haline geliyorsun.",
+        "İş hayatında ve sağlığında muazzam bir kontrol ve yenilenme gücüne sahipsin. En zorlu işleri bile büyük bir soğukkanlılıkla hallediyor, etrafındaki her şeyi olumlu yönde dönüştürüyorsun. Kronikleşmiş sağlık sorunların varsa, bu dönemde köklü bir iyileşme ve güçlenme yaşayabilirsin. Karizman ve disiplinin sayesinde çalışma ortamında sessiz ama çok etkili bir lider haline geliyorsun, başarı kaçınılmaz!",
+      ],
+      negative: [
+        "İş yerinde otorite figürleriyle yaşayacağın güç savaşları seni duygusal ve fiziksel olarak çok tüketebilir. \"Hep ya da hiç\" tarzındaki yaklaşımın günlük hayatını bir savaş alanına çevirebilir, bu da sağlığını olumsuz etkileyebilir. Takıntılı düşüncelerden ve iş arkadaşlarınla rekabet etmekten vazgeçmelisin, aksi halde enerjin bloke olabilir. Bu dönemde yıkıcı olmak yerine, içindeki o yoğun enerjiyi dönüştürmeye ve şifalanmaya odaklanmalısın.",
+        "Başkalarından gelen yoğun baskı veya manipülasyonlar senin iş düzenini ve sağlığını tehdit edebilir. Partnerinle veya ortağınla olan güç savaşları, günlük huzurunu kaçırıp seni strese sokabilir. \"Kontrol bende mi yoksa onlarda mı?\" sorusuyla boğuşurken kendi sınırlarını belirlemeyi öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan iş hayatında tam bir başarı kazanamayacağını hatırlatıyor.",
+      ],
+      neutral: [
+        "Çalışma hayatında ve günlük rutinlerinde çok köklü, geri dönüşü olmayan bir değişim yaşıyorsun. İş yerindeki güç savaşları veya manipülasyonlarla yüzleşebilir, kendi gücünü eline almayı öğrenebilirsin. Sağlığınla ilgili derin bir temizlik ve yenilenme süreci içindesin; kötü alışkanlıklardan kurtulmak için en doğru zaman. Bu süreç zorlayıcı olabilir ama sonunda küllerinden yeniden doğmuş, çok daha dirençli bir sen ortaya çıkacak.",
+      ],
+    },
+    7: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "İlişkilerinde stratejik bir güç kazanıyorsun; partnerinle birlikte çok derin ve etkileyici projelere imza atabilirsin. Karşındaki insanlardan gelen gizli destekler veya güçlü referanslar sayesinde hedeflerine beklediğinden çok daha hızlı ulaşacaksın. İlişkinde krizleri yönetme yeteneğin tavan yapmış durumda, pürüzleri kökten çözmeyi kolayca başarıyorsun. Dönüştürücü ve tutku dolu bir bağ kurmak için evren seni sarsılmaz bir irade ve çekim gücüyle destekliyor.",
+        "İlişkilerinde muazzam bir yenilenme ve güçlenme süreci yaşıyorsun; partnerin senin bu hayattaki en büyük destekçin ve gücün haline geliyor. Birlikte aldığınız kararlar sadece hayatınızı değil, çevrenizi de dönüştürecek kadar etkili ve karizmatik olabilir. Aranızdaki bağ o kadar köklü ve sarsılmaz ki, dışarıdan gelen hiçbir saldırı size zarar veremez. Kendi içindeki gerçek gücü partnerinin aynalığıyla keşfettiğin, tutkunun zirve yaptığı bir dönemdesin.",
+      ],
+      negative: [
+        "İkili ilişkilerinde baskı, kıskançlık ve manipülasyon hat safhada olabilir; kendini duygusal bir hapishanede gibi hissedebilirsin. Partnerinle aranda ölümüne bir güç savaşı çıkabilir ve bu durum seni psikolojik olarak çok hırpalayabilir. \"Ya benim dediğim ya da biter\" tarzındaki keskin yaklaşımlar bu dönemde sadece yıkım getirecektir. Kendi gölge yanlarınla yüzleşmeli ve yıkıcı öfkeni dindirmek için derin bir içsel analiz yapmaya odaklanmalısın.",
+        "Karşındaki kişilerin senin üzerindeki yoğun kontrol arzusu seni ciddi bir savunma pozisyonuna sokabilir. Başkalarının hırsları ve krizleri senin günlük huzurunu ve dinginliğini tamamen kaçırıyor olabilir. \"Benim gücüm mü yoksa onun gücü mü?\" çatışmasında kendinden taviz vermemeyi ve dik durmayı öğrenmelisin. Bu karşıtlık, sana ilişkideki güç dengesini kurmadan kendi kişisel otoriteni tam olarak inşa edemeyeceğini fısıldıyor.",
+      ],
+      neutral: [
+        "İlişkilerinde \"ya tam birleşim ya da tam kopuş\" yaşayacağın, çok yoğun ve derin bir dönüşüm dönemindesin. Partnerinle arandaki güç savaşları ve yüksek tutku seni hem yorabilir hem de küllerinden yeniden doğurabilir. İlişkide kontrolü ele alma isteğin büyük krizlere neden olabilir; manipülasyondan ve baskıdan uzak durmalısın. Bu süreç, sana ikili ilişkilerde gerçek gücün kontrolde değil, dürüstlük ve teslimiyette olduğunu öğretecek.",
+      ],
+    },
+    8: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde finansal krizleri büyük bir başarıya dönüştürme gücüne sahipsin. Başkalarının kaynaklarından gelecek gizli ve çok güçlü destekler sayesinde maddi durumunu kökten değiştirebilirsin. Psikolojik olarak kendini yenilediğin ve en derin korkularını bile birer güce dönüştürdüğün muazzam bir süreçtesin. Kriz yönetimi yeteneğin tavan yapmış durumda; kimsenin cesaret edemediği işlerden sen zaferle çıkacaksın!",
+        "Maddi ve manevi olarak muazzam bir kontrol ve yenilenme gücüne sahipsin; hayatının en köklü ve olumlu dönüşümünü yaşıyorsun! Ortaklı kazançlar veya miras yoluyla elde edeceğin büyük güç, sana hayal ettiğin o sarsılmaz güveni getirecek. Psikolojik olarak o kadar dayanıklı ve karizmatiksin ki, etrafındaki herkes senin bu sessiz ama derin otoriten önünde saygıyla eğiliyor. Krizleri zahmetsizce fırsata çeviriyor ve hayatını adeta küllerinden yeniden, çok daha görkemli bir şekilde inşa ediyorsun; tebrikler!",
+      ],
+      negative: [
+        "Ortaklaşa paralarda, miraslarda veya vergilerde çok ağır güç savaşları ve baskılarla karşılaşabilirsin; kendini köşeye sıkışmış hissedebilirsin. Otorite figürleriyle veya bankalarla yaşayacağın krizler seni duygusal ve fiziksel olarak çok tüketebilir. \"Ya hep ya hiç\" tarzındaki yıkıcı yaklaşımlardan kaçınmalı, enerjini intikam almak yerine dönüşmek için kullanmalısın. Bu dönemde takıntılı düşünceler uykularını kaçırabilir; derin bir içsel analiz yapmalı ve karanlık yanlarınla yüzleşerek aydınlığa çıkmaya çalışmalısın.",
+        "Başkalarından gelen yoğun baskı, manipülasyon veya finansal krizler senin iç huzurunu ve maddi dengeni ciddi şekilde tehdit edebilir. Partnerinle veya ortaklarınla \"güç kimde?\" savaşına girmek seni psikolojik olarak yorabilir ve huzurunu kaçırabilir. \"Kendi kontrolüm mü yoksa başkalarının hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve sınırlarını korumayı öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan ve kendi gölge yanlarınla barışmadan gerçek bir maddi başarıya ulaşamayacağını fısıldıyor.",
+      ],
+      neutral: [
+        "Finansal hayatında ve ruhunun en derin köşelerinde geri dönüşü olmayan, çok sarsıcı ve köklü bir dönüşüm yaşıyorsun. Güç savaşları, miras kavgaları veya büyük borçlarla yüzleşerek kendi içindeki gerçek gücü keşfetme zamanın geldi. Eski olan her şey yıkılıyor ki yerine çok daha sarsılmaz ve derin bir yapı kurabilesin; bu süreç zorlayıcı olsa da seni küllerinden yeniden doğuracak. Manipülasyondan ve takıntılı düşüncelerden uzak durmalı, bu yoğun enerjiyi kendini şifalandırmak için kullanmalısın.",
+      ],
+    },
+    9: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde vizyonunu gerçeğe dönüştürecek çok güçlü ve gizli destekler alacaksın. Yurt dışı projelerinde veya hukuksal mücadelelerde \"gizli kahraman\" gibi hareket ederek büyük zaferler kazanabilirsin. Psikolojik olarak kendini çok güçlü hissettiğin bu dönemde, hayatın en karanlık sırlarını bile birer bilgi kaynağına dönüştürüyorsun. Küçük ama etkili müdahalelerle akademik kariyerinde veya inançlarında muazzam bir otorite kuracaksın.",
+        "Vizyonun ve hayata bakış açın sayesinde muazzam bir ruhsal ve toplumsal güce sahip olduğun bir dönemdesin. Yabancı kültürler, yüksek eğitim veya felsefe kanalıyla hayatını kökten ve çok olumlu yönde dönüştürecek fırsatlar yakalıyorsun. Arandaki o derin ve sarsılmaz inanç, seni her türlü zorluk karşısında yenilmez bir lider ve bilge haline getiriyor. Kendi içindeki gerçek gücü keşfettiğin bu süreçte, vizyonunla sadece kendi hayatını değil dünyayı bile değiştirebilirsin!",
+      ],
+      negative: [
+        "İnançların veya akademik planların yüzünden otorite figürleriyle çok ağır güç savaşları ve baskılarla karşılaşabilirsin. \"Benim doğrum mutlak doğrudur\" inadı seni büyük krizlere sürükleyebilir ve çevrende düşmanlıklar yaratabilir. Uzak seyahatlerde veya hukuksal süreçlerde manipülasyon ve baskı altında kalabilir, kendini köşeye sıkışmış hissedebilirsin. Yıkıcı olmak yerine dönüşmeye odaklanmalı ve içindeki o karanlık hırsı daha yapıcı bir vizyona kanalize etmelisin.",
+        "Yakın çevrendeki insanların senin üzerindeki yoğun kontrol arzusu ve baskısı, senin özgürleşme ve büyüme arzunla çatışıyor. \"Kendi vizyonum mu yoksa başkalarının hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve sınırlarını korumayı öğrenmelisin. İnançların konusunda başkalarından gelen manipülatif saldırılar seni yorsa da aslında seni daha kararlı kılıyor. Bu karşıtlık, sana kendi hakikatini savunmadan gerçek bir ruhsal özgürlüğe ulaşamayacağını fısıldıyor.",
+      ],
+      neutral: [
+        "Hayata bakış açında ve inançlarında \"ölüp ölüp dirildiğin\" çok derin ve sarsıcı bir dönüşüm süreci yaşıyorsun. Eski tüm felsefelerin yıkılıyor; artık gerçeğin en derin ve en çıplak haline ulaşmak için her şeyi sorguluyorsun. Yurt dışı işlerinde veya akademik alanda çok büyük bir güç elde edebilirsin ama bu süreç krizli ve yorucu olabilir. Kendi içindeki o sarsılmaz iradeyi keşfettiğinde, dünyayı yerinden oynatacak bir vizyona ve güce sahip olacaksın; korkma ve derinleş.",
+      ],
+    },
+    10: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde kariyerinde muazzam bir güç kazanıyorsun. Sosyal çevrenden gelecek çok güçlü ve gizli referanslar, seni hayal ettiğin o sarsılmaz pozisyona taşıyabilir. Krizleri yönetme yeteneğin tavan yapmış durumda; kimsenin cesaret edemediği işlerin altından zaferle çıkıyorsun. Küçük ama etkili müdahalelerle toplumsal statünü bir beton gibi sağlamlaştıracağın bir süreçtesin.",
+        "Kariyerinde muazzam bir kontrol ve yenilenme gücüne sahipsin; başarı senin için artık bir kader gibi! En zorlu projeleri bile büyük bir soğukkanlılıkla yönetiyor ve etrafındaki her şeyi olumlu yönde dönüştürüyorsun. Karizman ve sarsılmaz iraden sayesinde toplum önünde vazgeçilmez bir lider haline geldin. Hayatını adeta yeniden inşa ettiğin bu süreçte, başarının en derin ve en güçlü halini yaşıyorsun; tebrikler!",
+      ],
+      negative: [
+        "Otorite figürleriyle ve üstlerinle çok ağır güç savaşlarına girmeye müsaitsin, aman dikkat! Kariyerinde manipülasyon ve baskı altında kalabilir veya kontrolü elinde tutmak isterken her şeyi yıkabilirsin. Toplum önündeki imajın krizli durumlardan dolayı zarar görebilir; takıntılı hırslardan uzak durmalısın. Bu dönemde yıkıcı olmak yerine dönüşmeyi tercih etmeli ve öfkeni yapıcı bir liderliğe kanalize etmelisin.",
+        "Aile içindeki krizler veya köklerinden gelen yoğun baskı, kariyerindeki otoriteni sarsmaya çalışabilir. \"Dışarıdaki gücüm mü yoksa içerdeki huzurum mu?\" savaşı seni psikolojik olarak tüketebilir. Karşındaki insanların manipülasyonlarına karşı dik durmayı ve sınırlarını korumayı öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan gerçek bir toplumsal başarıya ulaşamayacağını öğretiyor.",
+      ],
+      neutral: [
+        "Kariyerinde ve toplumsal statünde geri dönüşü olmayan, devasa bir dönüşüm yaşıyorsun. Güç savaşlarıyla yüzleşebilir, kendi otoriteni ilan etmek için küllerinden yeniden doğman gerekebilir. Toplum önündeki imajın tamamen değişiyor; artık çok daha güçlü, derin ve etkileyici bir karakter sergiliyorsun. Bu süreç zorlayıcı olsa da, sonunda tüm dünyaya gerçek gücünü kanıtlayacaksın; manipülasyondan uzak dur, dürüstçe yönet.",
+      ],
+    },
+    11: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde sosyal çevrende muazzam bir gizli güç ve saygınlık kazanıyorsun. Arkadaşlarından gelecek çok güçlü ve gizli referanslar, seni hayal ettiğin o sarsılmaz geleceğe beklediğinden çok daha hızlı taşıyabilir. Krizleri yönetme yeteneğin grup içinde seni vazgeçilmez kılıyor; herkes senin derinliğinden ve gücünden etkileniyor. Küçük ama etkili müdahalelerle gelecek hedeflerini bir beton gibi sağlamlaştıracağın bir süreçtesin.",
+        "Sosyal çevrende ve hayallerinde muazzam bir kontrol ve yenilenme gücüne sahipsin; başarı senin için artık bir kader! Arkadaşlarınla kurduğun o derin ve sarsılmaz bağlar, sana her türlü zorluğu aşma gücü veriyor. Toplumsal amaçlar uğruna yaptığın çalışmalar seni sessiz ama çok etkili bir lider haline getirmiş durumda. Hayatını ve geleceğini adeta küllerinden yeniden inşa ettiğin bu süreçte, hayallerinin en görkemli halini yaşıyorsun; tebrikler!",
+      ],
+      negative: [
+        "Sosyal çevrende otorite figürleriyle veya baskıcı gruplarla çok ağır güç savaşlarına girmeye müsaitsin, aman dikkat! \"Benim ideallerim mutlak doğrudur\" inadı dostluklarını yıkabilir ve seni sosyal hayatta yalnızlaştırabilir. Manipülasyon ve kıskançlık krizleri grup içinde huzurunu kaçırabilir; bu dönemde kontrolü elinde tutmak isterken her şeyi yıkma riskin var. Yıkıcı olmak yerine dönüşmeyi tercih etmeli ve içindeki o yoğun enerjiyi toplumsal bir şifa için kullanmaya odaklanmalısın.",
+        "Bireysel tutkularınla sosyal çevrenin üzerindeki yoğun baskısı ve manipülasyonu arasında ciddi bir gerilim hattı var. Arkadaşlarının senin hayatını kontrol etme arzusu seni huzursuz edebilir ve bağımsızlık savaşı vermene neden olabilir. \"Kendi gücüm mü yoksa grubun hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve sınırlarını korumayı öğrenmelisin. Bu karşıtlık, sana ilişkilerindeki güç dengesini kurmadan gerçek bir toplumsal özgürlüğe ulaşamayacağını fısıldıyor.",
+      ],
+      neutral: [
+        "Sosyal çevrende ve arkadaşlık ilişkilerinde geri dönüşü olmayan, çok derin ve krizli bir dönüşüm yaşıyorsun. Güç savaşları, manipülasyonlar veya büyük grup krizleri seni kendi içindeki gerçek gücü keşfetmeye zorlayabilir. Eski dostlukların yıkılıp yerine çok daha sarsılmaz ve derin bağların kurulduğu bir süreçtesin. Hayallerin o kadar güçlü ve dönüştürücü ki, toplumu bile etkileyecek bir otorite kurma potansiyeline sahipsin; hırsını dürüstlükle dengele.",
+      ],
+    },
+    12: {
+      tr: "Bu transit hayatınızda önemli etkiler yaratabilir.",
+      en: "This transit may have significant effects on your life.",
+      positive: [
+        "Stratejik zekan ve sarsılmaz iraden sayesinde bilinçaltındaki korkularını muazzam bir güce dönüştürüyorsun. Perde arkasındaki işlerinde veya gizli planlarında \"sessiz otorite\" gibi hareket ederek büyük ve kalıcı zaferler kazanabilirsin. Psikolojik olarak kendini çok güçlü hissettiğin bu dönemde, hayatın en karanlık sırlarını bile birer şifa kaynağına dönüştürüyorsun. Küçük ama etkili müdahalelerle ruhsal dünyanda ve gizli işlerinde muazzam bir otorite kuracağın bir süreçtesin.",
+        "Ruhsal dünyanda ve bilinçaltında muazzam bir kontrol ve yenilenme gücüne sahipsin; içsel bir şifa mucizesi yaşıyorsun! Kendi içindeki gerçek gücü keşfettiğin bu süreçte, korkuların senin en büyük müttefikin haline gelmiş durumda. Perde arkasından yürüttüğün her iş sessiz ama yıkılmaz bir başarıyla sonuçlanıyor; karizman ve derinliğin herkesi büyülüyor. Hayatını adeta ruhunun derinliklerinden yeniden inşa ettiğin bu süreçte, sarsılmaz bir iç huzuruyla zaferini kutlayacaksın!",
+      ],
+      negative: [
+        "Bilinçaltındaki korkuların veya gizli düşmanlıklar yüzünden çok ağır güç savaşları ve baskılarla karşılaşabilirsin. \"Kontrol bende olmalı\" inadı seni içsel bir krize sürükleyebilir ve uykularını tamamen kaçırabilir. Manipülasyon ve baskı altında kalabilir, kendini ruhsal bir hapishanede gibi hissedebilirsin; yıkıcı düşüncelerden uzak durmalısın. Yıkıcı olmak yerine dönüşmeye odaklanmalı ve içindeki o karanlık hırsı daha yapıcı bir ruhsal vizyona kanalize etmelisin.",
+        "Dış dünyadaki görünür gücünle bilinçaltındaki yoğun manipülasyon ve krizler arasında ciddi bir gerilim hattı var. Başkalarının senin üzerindeki yoğun kontrol arzusu seni huzursuz edebilir ve ruhsal bir savunma savaşı vermene neden olabilir. \"Kendi kontrolüm mü yoksa geçmişin hegemonyası mı?\" sorusuyla boğuşurken dik durmayı ve sınırlarını korumayı öğrenmelisin. Bu karşıtlık, sana kendi gölge yanlarınla barışmadan ve güç dengesini kurmadan gerçek bir ruhsal özgürlüğe ulaşamayacağını fısıldıyor.",
+      ],
+      neutral: [
+        "Bilinçaltının en karanlık köşelerinde \"ölüp ölüp dirildiğin\", çok derin ve sarsıcı bir dönüşüm süreci yaşıyorsun canım. Eski tüm korkuların, travmaların ve sırların yıkılıyor; artık gerçeğin en derin ve en çıplak haline ulaşmak için her şeyi sorguluyorsun. Perde arkasından yürüttüğün işlerde veya ruhsal alanda çok büyük bir güç elde edebilirsin ama bu süreç krizli ve yorucu olabilir. Kendi içindeki o sarsılmaz iradeyi keşfettiğinde, dünyayı yerinden oynatacak bir ruhsal güce sahip olacaksın; korkma ve derinleş!",
+      ],
+    },
+  },
 };
+
 
 const RETROGRADE_PLANET_WARNINGS: Record<string, { tr: string; en: string }> = {
   "Merkür": { tr: "Merkür retrosu iletişimde aksaklıklar, teknolojik sorunlar ve geçmişten gelen meseleleri tetikleyebilir. Yeni kararlar alırken iki kez düşünmelisin.", en: "Mercury retrograde can trigger communication disruptions, technological problems and issues from the past. Think twice when making new decisions." },
@@ -223,26 +1904,45 @@ export function getPlanetTransitInterpretation(planet: string, house: number | n
       : `${planet} şu an ${houseLabel}'nde ve ${sign} burcunda ilerliyor.`;
   }
 
-  const houseInterp = houseInterpData[language];
-  let result = houseInterp;
+  // Determine specific text based on effect
+  let specificText = "";
+  if (effect === 'positive' && houseInterpData.positive && houseInterpData.positive.length > 0) {
+    const idx = Math.floor(Math.random() * houseInterpData.positive.length);
+    specificText = houseInterpData.positive[idx];
+  } else if (effect === 'negative' && houseInterpData.negative && houseInterpData.negative.length > 0) {
+    const idx = Math.floor(Math.random() * houseInterpData.negative.length);
+    specificText = houseInterpData.negative[idx];
+  } else if (effect === 'neutral' && houseInterpData.neutral && houseInterpData.neutral.length > 0) {
+    const idx = Math.floor(Math.random() * houseInterpData.neutral.length);
+    specificText = houseInterpData.neutral[idx];
+  }
+
+  // Fallback to generic if no specific text
+  let result = specificText || houseInterpData[language];
   
   if (isRetrograde) {
     const retroWarning = RETROGRADE_PLANET_WARNINGS[planet];
     result = language === 'en' 
-      ? `[RETRO] ${result} However, the planet's retrograde motion may bring up issues from the past in these matters. ${retroWarning?.en || ""}`
-      : `[RETRO] ${result} Ancak gezegenin retro hareketi, bu konularda geçmişten gelen meseleleri tekrar gündeme getirebilir. ${retroWarning?.tr || ""}`;
-  } else if (effect === "positive") {
-    result = language === 'en' 
-      ? `[POSITIVE] ${result} With this support from the sky, your luck is open, you can take steps with confidence.`
-      : `[POZİTİF] ${result} Gökyüzünün bu desteğiyle şansın açık, adımlarını güvenle atabilirsin.`;
-  } else if (effect === "negative") {
-    result = language === 'en' 
-      ? `[ATTENTION] ${result} This interaction may cause challenges in ${houseLabel} matters. You should be prepared for psychological struggles during this period. You should do inner work and avoid impulsive decisions to manage this tension.`
-      : `[DİKKAT] ${result} Bu etkileşim, ${houseLabel} konularında zorluklar yaşamana neden olabilir. Bu dönemde psikolojik süreçlerdeki zorlanmalara karşı hazırlıklı olmalısın. Bu gerilimi yönetmek için içsel çalışma yapmalı ve fevri kararlardan kaçınmalısın.`;
-  } else if (effect === "neutral") {
-    result = language === 'en' 
-      ? `${result} This interaction requires you to be careful in ${houseLabel} matters. During this period, you should take conscious steps to maintain balance and be cautious against possible fluctuations.`
-      : `${result} Bu etkileşim, ${houseLabel} konularında dikkatli olmanı gerektirir. Bu dönemde dengeyi korumak için bilinçli adımlar atmalı ve olası dalgalanmalara karşı temkinli olmalısın.`;
+      ? `[RETRO] ${result} ${retroWarning?.en || ""}`
+      : `[RETRO] ${result} ${retroWarning?.tr || ""}`;
+  } else if (!specificText) {
+    // Only apply generic wrappers if we fell back to general text (to preserve old behavior for missing data)
+    // But for new rich text, we probably don't want the "With this support..." boilerplate if the text is already rich?
+    // User asked to match specific data. If specific text is used, return it directly.
+    // If generic text is used (fallback), apply old wrappers.
+    if (effect === "positive") {
+        result = language === 'en' 
+        ? `[POSITIVE] ${result} With this support from the sky, your luck is open, you can take steps with confidence.`
+        : `[POZİTİF] ${result} Gökyüzünün bu desteğiyle şansın açık, adımlarını güvenle atabilirsin.`;
+    } else if (effect === "negative") {
+        result = language === 'en' 
+        ? `[ATTENTION] ${result} This interaction may cause challenges in ${houseLabel} matters. You should be prepared for psychological struggles during this period.`
+        : `[DİKKAT] ${result} Bu etkileşim, ${houseLabel} konularında zorluklar yaşamana neden olabilir. Bu dönemde psikolojik süreçlerdeki zorlanmalara karşı hazırlıklı olmalısın.`;
+    } else if (effect === "neutral") {
+        result = language === 'en' 
+        ? `${result} This interaction requires you to be careful in ${houseLabel} matters.`
+        : `${result} Bu etkileşim, ${houseLabel} konularında dikkatli olmanı gerektirir.`;
+    }
   }
   
   return capitalize(result);
