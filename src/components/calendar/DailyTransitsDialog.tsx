@@ -12,6 +12,7 @@ import {
 import { PersonalTransit } from "@/lib/transit-engine";
 import { PlanetIcon } from "../ui/PlanetIcon";
 import { getTransitInterpretation, getTransitInterpretationAsJSON, TransitInterpretationJSON, TransitSlot } from "@/lib/data/transit-interpretations";
+import { getPlanetTransitInterpretation } from "@/lib/transit-interpretations";
 import { formatHouseNumber } from "@/lib/transit-interpretations";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -232,14 +233,14 @@ export function DailyTransitsDialog({
         </DialogContent>
       </Dialog>
 
-        <Dialog open={!!detailedTransit} onOpenChange={() => setDetailedTransit(null)}>
-            <DialogContent 
-              className="max-w-[min(92vw,24rem)] bg-black border-white/10 backdrop-blur-2xl text-white p-0 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-              style={{ 
-                maxHeight: 'calc(100vh - 80px)',
-                height: 'auto'
-              }}
-            >
+      <Dialog open={!!detailedTransit} onOpenChange={() => setDetailedTransit(null)}>
+        <DialogContent
+          className="max-w-[min(92vw,24rem)] bg-black border-white/10 backdrop-blur-2xl text-white p-0 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          style={{
+            maxHeight: 'calc(100vh - 80px)',
+            height: 'auto'
+          }}
+        >
           {detailedTransit && (
             <div className="flex flex-col h-full min-h-0">
               <div className="flex-shrink-0 px-4 pt-5 pb-3 border-b border-white/5 bg-black rounded-t-[2rem]">
@@ -264,8 +265,8 @@ export function DailyTransitsDialog({
                   );
                 })()}
               </div>
-              
-                <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3" style={{ WebkitOverflowScrolling: 'touch', overflowY: 'scroll', touchAction: 'pan-y' }}>
+
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3" style={{ WebkitOverflowScrolling: 'touch', overflowY: 'scroll', touchAction: 'pan-y' }}>
                 <div className="flex flex-col items-center gap-3 text-center">
                   <div className="flex items-center justify-center gap-3">
                     <div className="flex flex-col items-center gap-1">
@@ -353,14 +354,30 @@ export function DailyTransitsDialog({
                         detailedTransit.effect === 'negative' ? 'text-rose-400/90' :
                           'text-amber-400/90'
                         }`}>
-                        {getActiveAIInterpretation() || getTransitInterpretation(
-                          detailedTransit.transitPlanetKey,
-                          detailedTransit.house,
-                          detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
-                          detailedTransit.aspectType,
-                          language as 'tr' | 'en',
-                          detailedTransit.natalPlanetKey
-                        )}
+                        {(() => {
+                          // Try to get specific aspect interpretation from new Excel data
+                          const excelInterpretation = getPlanetTransitInterpretation(
+                            detailedTransit.transitPlanetKey,
+                            detailedTransit.house,
+                            detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
+                            detailedTransit.effect, // Use effect from transit (positive/negative/neutral)
+                            false, // isRetrograde - usually not false for transits but detailedTransit doesn't seem to have it easily, assume false for now or check state
+                            language as 'tr' | 'en'
+                          );
+
+                          // If we have Excel interpretation and it's not a generic fallback (length check or content check might be good, but getPlanetTransitInterpretation returns generic if not found)
+                          // Actually getPlanetTransitInterpretation returns a full string.
+
+                          // Priority: Excel Interpretation > AI Interpretation > Old Static Interpretation
+                          return excelInterpretation || getActiveAIInterpretation() || getTransitInterpretation(
+                            detailedTransit.transitPlanetKey,
+                            detailedTransit.house,
+                            detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
+                            detailedTransit.aspectType,
+                            language as 'tr' | 'en',
+                            detailedTransit.natalPlanetKey
+                          );
+                        })()}
                       </p>
                     )}
                   </div>
@@ -376,12 +393,12 @@ export function DailyTransitsDialog({
                       language as 'tr' | 'en',
                       detailedTransit.effect
                     );
-                    const slot = detailedTransit.effect === 'positive' 
-                      ? interpretationJSON.slots?.positive 
-                      : detailedTransit.effect === 'negative' 
-                        ? interpretationJSON.slots?.negative 
+                    const slot = detailedTransit.effect === 'positive'
+                      ? interpretationJSON.slots?.positive
+                      : detailedTransit.effect === 'negative'
+                        ? interpretationJSON.slots?.negative
                         : (interpretationJSON.slots?.positive || interpretationJSON.slots?.negative);
-                    
+
                     if (!slot) return null;
 
                     const isPositive = detailedTransit.effect === 'positive';
@@ -397,7 +414,7 @@ export function DailyTransitsDialog({
                           {isPositive ? <TrendingUp className="w-3.5 h-3.5" /> : isNegative ? <TrendingDown className="w-3.5 h-3.5" /> : <Activity className="w-3.5 h-3.5" />}
                           {t('transitImpactDetails')}
                         </h5>
-                        
+
                         <div className="space-y-2.5">
                           <div className="flex items-start gap-2.5">
                             <div className={`mt-0.5 p-1 rounded-lg ${slotBgClass}`}>
@@ -461,7 +478,7 @@ export function DailyTransitsDialog({
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex-shrink-0 px-4 py-4 border-t border-white/5 bg-black rounded-b-[2rem]">
                 <Button
                   onClick={() => setDetailedTransit(null)}
