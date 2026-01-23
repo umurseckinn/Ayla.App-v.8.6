@@ -71,6 +71,7 @@ import { getTransitInterpretation, getTransitInterpretationAsJSON } from "@/lib/
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { DailyTransitsDialog } from "../calendar/DailyTransitsDialog";
 import { SettingsDialog } from "../settings/SettingsDialog";
+import { AppActionsDialog } from "./AppActionsDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Settings } from "lucide-react";
 
@@ -354,6 +355,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             </button>
 
             <div className="flex items-center gap-2">
+              <AppActionsDialog />
               <SettingsDialog />
               <button
                 onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}

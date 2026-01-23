@@ -191,7 +191,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
               <Sparkles className="w-4 h-4" />
               <h4 className="text-[10px] font-black uppercase tracking-widest">{t('aboutSystem')}</h4>
             </div>
-            <p className="text-white text-[16px] leading-relaxed font-serif italic text-justify font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
+            <p className="text-white text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
               {t('aboutSystemDesc')}
             </p>
           </motion.div>
@@ -433,7 +433,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     <BookOpen className="w-4 h-4" />
                     <h4 className="text-[10px] font-black uppercase tracking-widest">{t('characterAnalysis')}</h4>
                   </div>
-                  <p className="text-white text-[16px] leading-relaxed font-serif text-justify italic font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
+                  <p className="text-white text-[16px] leading-relaxed font-serif text-left italic font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
                     {selectedArchetype.description}
                   </p>
                 </div>
