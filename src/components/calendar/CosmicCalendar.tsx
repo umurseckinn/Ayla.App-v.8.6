@@ -57,6 +57,7 @@ import { LifeEventsSelector } from "@/components/dashboard/LifeEventsSelector";
 import { PersonalTransit, getPlanetEmoji } from "@/lib/transit-engine";
 import { ASPECT_INTERPRETATIONS, TRANSIT_COMBINATION_INTERPRETATIONS } from "@/lib/data/transit-aspect-interpretations";
 import { getTransitInterpretation } from "@/lib/data/transit-interpretations";
+import { getCosmicComment } from "@/lib/cosmic-comments";
 import { getPlanetDailyEffect, EffectType } from "@/lib/data/planet-daily-effects";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 
@@ -1221,13 +1222,24 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
                       detailedTransit.effect === 'negative' ? 'text-rose-600/90' :
                         'text-amber-400/90'
                       }`}>
-                      {getActiveAIInterpretation() || getTransitInterpretation(
-                        detailedTransit.transitPlanetKey,
-                        detailedTransit.house,
-                        detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
-                        detailedTransit.aspectType,
-                        language as 'tr' | 'en'
-                      )}
+                      {(() => {
+                        const cosmicComment = getCosmicComment(
+                          detailedTransit.transitPlanetKey,
+                          detailedTransit.house,
+                          detailedTransit.aspectType,
+                          language as 'tr' | 'en'
+                        );
+
+                        if (cosmicComment) return cosmicComment;
+
+                        return getActiveAIInterpretation() || getTransitInterpretation(
+                          detailedTransit.transitPlanetKey,
+                          detailedTransit.house,
+                          detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
+                          detailedTransit.aspectType,
+                          language as 'tr' | 'en'
+                        );
+                      })()}
                     </p>
                   )}
                 </div>

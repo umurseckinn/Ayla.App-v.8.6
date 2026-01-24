@@ -3,25 +3,29 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Star, Share2, Mail, X, Gift, Heart } from "lucide-react";
+import { Star, Share2, Mail, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function AppActionsDialog() {
     const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [hoverRating, setHoverRating] = useState(0);
 
-    const handleRateUs = () => {
-        // Platform specific logic would go here.
-        // For web, maybe redirect to a store link or show a thank you.
+    const openStore = () => {
         if (navigator.userAgent.match(/Android/i)) {
             window.open("market://details?id=com.ayla_app_v8.app", "_blank");
         } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            // Replace with actual App Store ID when available
             window.open("https://apps.apple.com/app/idYOUR_APP_ID", "_blank");
         } else {
             window.open("https://play.google.com/store/apps/details?id=com.ayla_app_v8.app", "_blank");
         }
+    };
+
+    const handleRateUs = (starIndex: number) => {
+        setRating(starIndex);
+        openStore();
     };
 
     const handleShare = async () => {
@@ -36,8 +40,9 @@ export function AppActionsDialog() {
                 console.log('Error sharing', error);
             }
         } else {
-            // Fallback
-            console.log('Web Share API not supported');
+            // Fallback copy to clipboard
+            navigator.clipboard.writeText(window.location.href);
+            // Optional: Show toast
         }
     };
 
@@ -56,80 +61,103 @@ export function AppActionsDialog() {
                     <Star className="w-6 h-6" />
                 </Button>
             </DialogTrigger>
-            <DialogContent showCloseButton={false} className="max-w-xs w-[85%] bg-black/80 backdrop-blur-xl border border-mystic-gold/20 text-mystic-gold p-0 overflow-hidden shadow-[0_0_50px_rgba(255,215,0,0.1)] rounded-[2rem]">
-                <div className="flex flex-col">
-                    {/* Header */}
-                    <div className="p-5 flex items-center justify-between z-10 bg-gradient-to-b from-white/5 to-transparent border-b border-white/5">
-                        <div className="flex items-center gap-2">
-                            <h2 className="text-lg font-mystic text-mystic-gold drop-shadow-[0_0_10px_rgba(255,215,0,0.3)] tracking-widest uppercase">
-                                Ayla
-                            </h2>
+            <DialogContent 
+                showCloseButton={false} 
+                className="max-w-xs w-[85%] bg-black border border-mystic-gold/30 text-mystic-gold p-0 overflow-hidden shadow-[0_0_50px_rgba(255,215,0,0.15)] rounded-[2rem] flex flex-col h-auto min-h-[500px]"
+            >
+                {/* Header Actions - Absolute Top Right */}
+                <div className="absolute top-4 right-4 flex items-center gap-2 z-50">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={handleShare}
+                        className="rounded-full w-8 h-8 text-mystic-gold/60 hover:text-mystic-gold hover:bg-mystic-gold/10 transition-all"
+                        title={t('shareApp')}
+                    >
+                        <Share2 className="w-4 h-4" />
+                    </Button>
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={handleContact}
+                        className="rounded-full w-8 h-8 text-mystic-gold/60 hover:text-mystic-gold hover:bg-mystic-gold/10 transition-all"
+                        title={t('contactUs')}
+                    >
+                        <Mail className="w-4 h-4" />
+                    </Button>
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-full w-8 h-8 text-mystic-gold/60 hover:text-red-400 hover:bg-red-400/10 transition-all ml-1"
+                    >
+                        <X className="w-5 h-5" />
+                    </Button>
+                </div>
+
+                {/* Title - Centered Top */}
+                <div className="w-full text-center pt-16 pb-2 z-20 relative">
+                    <h2 className="text-xl font-mystic text-mystic-gold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                        Bizi Değerlendir
+                    </h2>
+                </div>
+
+                {/* Content Container */}
+                <div className="flex-1 flex flex-col relative">
+                    {/* Ayla Image - Background/Integrated */}
+                    <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none">
+                         <img 
+                            src="/assets/ayla/ayla.png" 
+                            alt="Ayla" 
+                            className="w-full h-full object-contain object-bottom scale-125 translate-y-[10%]"
+                        />
+                    </div>
+                    
+                    {/* Gradient Overlay for Text Readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0 h-full w-full opacity-80" />
+
+                    {/* Interactive Elements */}
+                    <div className="relative z-10 flex-1 flex flex-col justify-end items-center px-6 pb-8 gap-6">
+                        
+                        {/* Stars */}
+                        <div className="flex gap-2" onMouseLeave={() => setHoverRating(0)}>
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <motion.button
+                                    key={star}
+                                    whileHover={{ scale: 1.2 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => handleRateUs(star)}
+                                    onMouseEnter={() => setHoverRating(star)}
+                                    className="relative focus:outline-none"
+                                >
+                                    <Star 
+                                        className={`w-8 h-8 transition-all duration-300 ${
+                                            star <= (hoverRating || rating)
+                                                ? "fill-mystic-gold text-mystic-gold drop-shadow-[0_0_8px_rgba(255,215,0,0.6)]" 
+                                                : "text-mystic-gold/30 fill-transparent"
+                                        }`}
+                                        strokeWidth={1.5}
+                                    />
+                                </motion.button>
+                            ))}
                         </div>
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => setIsOpen(false)}
-                            className="rounded-full hover:bg-white/10 w-8 h-8 text-white/50 hover:text-white"
-                        >
-                            <X className="w-5 h-5" />
-                        </Button>
-                    </div>
 
-                    <div className="p-4 space-y-3">
-                        {/* Rate Us */}
-                        <Button
-                            variant="ghost"
-                            onClick={handleRateUs}
-                            className="w-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white justify-between h-16 rounded-2xl px-4 border border-white/5 group"
-                        >
-                            <div className="flex items-center gap-3 text-left">
-                                <div className="w-10 h-10 rounded-full bg-mystic-gold/10 flex items-center justify-center text-mystic-gold group-hover:scale-110 transition-transform flex-shrink-0">
-                                    <Star className="w-5 h-5 fill-mystic-gold/20" />
-                                </div>
-                                <div>
-                                    <span className="font-medium text-sm block text-mystic-gold">{t('rateUs')}</span>
-                                    <span className="text-[10px] text-white/50 block font-normal">{t('rateUsDesc')}</span>
-                                </div>
+                        {/* Comment Area */}
+                        <div className="w-full relative group">
+                            <textarea 
+                                className="w-full h-24 bg-black/60 backdrop-blur-md border border-mystic-gold/30 rounded-xl p-4 text-sm text-mystic-gold placeholder:text-mystic-gold/50 focus:outline-none focus:border-mystic-gold/60 transition-all resize-none shadow-lg"
+                                placeholder="Düşüncelerinizi paylaşın..."
+                            />
+                            <div className="absolute bottom-3 right-3">
+                                <Button 
+                                    size="sm" 
+                                    onClick={openStore}
+                                    className="h-7 text-xs bg-mystic-gold text-black hover:bg-mystic-gold/90 border border-mystic-gold font-semibold"
+                                >
+                                    Gönder
+                                </Button>
                             </div>
-                        </Button>
-
-                        {/* Share */}
-                        <Button
-                            variant="ghost"
-                            onClick={handleShare}
-                            className="w-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white justify-between h-16 rounded-2xl px-4 border border-white/5 group"
-                        >
-                            <div className="flex items-center gap-3 text-left">
-                                <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform flex-shrink-0">
-                                    <Share2 className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <span className="font-medium text-sm block text-indigo-300">{t('shareApp')}</span>
-                                    <span className="text-[10px] text-white/50 block font-normal">{t('shareAppDesc')}</span>
-                                </div>
-                            </div>
-                        </Button>
-
-                        {/* Contact */}
-                        <Button
-                            variant="ghost"
-                            onClick={handleContact}
-                            className="w-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white justify-between h-16 rounded-2xl px-4 border border-white/5 group"
-                        >
-                            <div className="flex items-center gap-3 text-left">
-                                <div className="w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform flex-shrink-0">
-                                    <Mail className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <span className="font-medium text-sm block text-rose-300">{t('contactUs')}</span>
-                                    <span className="text-[10px] text-white/50 block font-normal">{t('contactUsDesc')}</span>
-                                </div>
-                            </div>
-                        </Button>
-                    </div>
-
-                    <div className="px-4 pb-6 pt-2 flex justify-center opacity-40">
-                        <Gift className="w-4 h-4 text-mystic-gold animate-pulse" />
+                        </div>
                     </div>
                 </div>
             </DialogContent>

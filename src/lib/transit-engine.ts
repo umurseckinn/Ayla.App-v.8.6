@@ -40,13 +40,28 @@ export function getPlanetEmoji(key: string): string {
   return PLANET_EMOJIS[key.toLowerCase()] || "✨";
 }
 
+export const NATAL_HOUSE_RULERS: Record<number, string> = {
+  1: "mars",
+  2: "venus",
+  3: "mercury",
+  4: "moon",
+  5: "sun",
+  6: "mercury",
+  7: "venus",
+  8: "pluto",
+  9: "jupiter",
+  10: "saturn",
+  11: "uranus",
+  12: "neptune"
+};
+
 export function calculatePersonalTransits(
   targetDate: Date,
   natalPositions: Record<string, PlanetPosition>,
   natalHouses: { house: number; longitude: number; sign?: string }[]
 ): PersonalTransit[] {
   const transits = calculateTransits(targetDate);
-  const activeTransits: PersonalTransit[] = [];
+  const uniqueTransits = new Map<string, PersonalTransit>();
 
   const transitPlanets = transits.planets;
   const natalPlanetKeys = Object.keys(natalPositions);
@@ -99,25 +114,40 @@ export function calculatePersonalTransits(
           const house = houseData?.house || 1;
           const houseSign = houseData?.sign || "Koç";
 
-            // Capitalize first letter helper
-            const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
-            const tKey = capitalize(tPlanet.planetKey);
-            const nKeyNormalized = capitalize(nKey);
+          // Capitalize first letter helper
+          const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+          const tKey = capitalize(tPlanet.planetKey);
+          
+          // Determine House Ruler logic for filtering duplicate house transits
+          const rulerKeyRaw = NATAL_HOUSE_RULERS[house] || "sun";
+          const rulerKeyCapitalized = capitalize(rulerKeyRaw);
+          
+          // Try to find the ruler planet in natalPositions to get correct localized name if available
+          const rulerNatalKey = natalPlanetKeys.find(k => k.toLowerCase() === rulerKeyRaw.toLowerCase()) || rulerKeyCapitalized;
+          const rulerPlanetData = natalPositions[rulerNatalKey];
+          // Use ruler name if found, otherwise fallback to capitalized key
+          const rulerName = rulerPlanetData ? rulerPlanetData.planet : rulerKeyCapitalized; 
 
-            activeTransits.push({
+          // Create a unique key based on TransitPlanet + House + Aspect
+          // This ensures only one card per aspect type in a specific house for a specific transit planet
+          const uniqueKey = `${tKey}-${house}-${aspect.type}`;
+
+          if (!uniqueTransits.has(uniqueKey)) {
+             uniqueTransits.set(uniqueKey, {
               transitPlanet: tPlanet.planet,
               transitPlanetKey: tKey,
-              natalPlanet: nPlanet.planet,
-              natalPlanetKey: nKeyNormalized,
+              natalPlanet: rulerName, // Override with House Ruler Name
+              natalPlanetKey: rulerKeyCapitalized, // Override with House Ruler Key
               aspectType: aspect.type,
               aspectSymbol: aspect.symbol,
-            orb: Math.round(currentOrb * 100) / 100,
-            state,
-            exactHitDate,
-            house,
-            houseSign,
-            effect: aspect.effect
-          });
+              orb: Math.round(currentOrb * 100) / 100,
+              state,
+              exactHitDate,
+              house,
+              houseSign,
+              effect: aspect.effect
+            });
+          }
           
           break; // Match only one aspect per pair
         }
@@ -125,5 +155,5 @@ export function calculatePersonalTransits(
     }
   }
 
-  return activeTransits;
+  return Array.from(uniqueTransits.values());
 }

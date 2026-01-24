@@ -178,7 +178,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                 </p>
               )}
 
-              {step < 5 && step !== 3 && (
+              {step < 5 && step !== 3 && step !== 4 && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

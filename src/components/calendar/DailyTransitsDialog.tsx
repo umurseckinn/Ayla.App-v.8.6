@@ -13,6 +13,7 @@ import { PersonalTransit } from "@/lib/transit-engine";
 import { PlanetIcon } from "../ui/PlanetIcon";
 import { getTransitInterpretation, getTransitInterpretationAsJSON, TransitInterpretationJSON, TransitSlot } from "@/lib/data/transit-interpretations";
 import { getPlanetTransitInterpretation } from "@/lib/transit-interpretations";
+import { getCosmicComment } from "@/lib/cosmic-comments";
 import { formatHouseNumber } from "@/lib/transit-interpretations";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -355,6 +356,16 @@ export function DailyTransitsDialog({
                           'text-amber-400/90'
                         }`}>
                         {(() => {
+                          // Try to get interpretation from cosmic comments (transit-pop-up.json)
+                          const cosmicComment = getCosmicComment(
+                            detailedTransit.transitPlanetKey,
+                            detailedTransit.house,
+                            detailedTransit.aspectType,
+                            language as 'tr' | 'en'
+                          );
+
+                          if (cosmicComment) return cosmicComment;
+
                           // Try to get specific aspect interpretation from new Excel data
                           const excelInterpretation = getPlanetTransitInterpretation(
                             detailedTransit.transitPlanetKey,
@@ -365,10 +376,7 @@ export function DailyTransitsDialog({
                             language as 'tr' | 'en'
                           );
 
-                          // If we have Excel interpretation and it's not a generic fallback (length check or content check might be good, but getPlanetTransitInterpretation returns generic if not found)
-                          // Actually getPlanetTransitInterpretation returns a full string.
-
-                          // Priority: Excel Interpretation > AI Interpretation > Old Static Interpretation
+                          // Priority: Cosmic Comment > Excel Interpretation > AI Interpretation > Old Static Interpretation
                           return excelInterpretation || getActiveAIInterpretation() || getTransitInterpretation(
                             detailedTransit.transitPlanetKey,
                             detailedTransit.house,

@@ -10,7 +10,7 @@ type Language = 'tr' | 'en';
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (key: keyof TranslationKeys) => string;
+    t: (key: keyof TranslationKeys, params?: Record<string, string | number | ReactNode>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

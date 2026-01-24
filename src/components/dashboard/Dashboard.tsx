@@ -68,6 +68,7 @@ import { UserLifeEvent, calculateLifeEventImpact, LIFE_EVENTS } from "@/lib/data
 import { generateHighDimensionalGuidance, getActiveLifeEvents, GuidanceData } from "@/lib/dynamic-affirmation-service";
 import { PersonalTransit } from "@/lib/transit-engine";
 import { getTransitInterpretation, getTransitInterpretationAsJSON } from "@/lib/data/transit-interpretations";
+import { getCosmicComment } from "@/lib/cosmic-comments";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { DailyTransitsDialog } from "../calendar/DailyTransitsDialog";
 import { SettingsDialog } from "../settings/SettingsDialog";
@@ -492,7 +493,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
                         return (
                           <div
-                            key={`planet-${planet.planet}-${planet.sign}-${i}`}
+                            key={`planet-${planet.planet || 'unknown'}-${i}`}
                             onClick={() => handlePlanetClick(planet)}
                             className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border ${borderClass} hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] ${shadowClass}`}
                           >
@@ -902,7 +903,12 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                           detailedTransit.effect === 'negative' ? 'text-rose-600/90' :
                             'text-amber-400/90'
                           }`}>
-                          {getTransitInterpretation(
+                          {getCosmicComment(
+                            detailedTransit.transitPlanetKey,
+                            detailedTransit.house,
+                            detailedTransit.aspectType,
+                            language as 'tr' | 'en'
+                          ) || getTransitInterpretation(
                             detailedTransit.transitPlanetKey,
                             detailedTransit.house,
                             detailedTransit.houseSign || (language === 'en' ? "Aries" : "Koç"),
