@@ -7,9 +7,19 @@ import { Star, Share2, Mail, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function AppActionsDialog() {
+export function AppActionsDialog({ open, onOpenChange }: { open?: boolean; onOpenChange?: (open: boolean) => void }) {
     const { t } = useLanguage();
-    const [isOpen, setIsOpen] = useState(false);
+    const [internalOpen, setInternalOpen] = useState(false);
+    
+    const isOpen = open !== undefined ? open : internalOpen;
+    const handleOpenChange = (newOpen: boolean) => {
+        if (onOpenChange) {
+            onOpenChange(newOpen);
+        } else {
+            setInternalOpen(newOpen);
+        }
+    };
+
     const [rating, setRating] = useState(0);
     const [hoverRating, setHoverRating] = useState(0);
 
@@ -51,7 +61,7 @@ export function AppActionsDialog() {
     };
 
     return (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <Dialog open={isOpen} onOpenChange={handleOpenChange}>
             <DialogTrigger asChild>
                 <Button
                     variant="ghost"
@@ -88,7 +98,7 @@ export function AppActionsDialog() {
                     <Button
                         variant="ghost"
                         size="icon"
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => handleOpenChange(false)}
                         className="rounded-full w-8 h-8 text-mystic-gold/60 hover:text-red-400 hover:bg-red-400/10 transition-all ml-1"
                     >
                         <X className="w-5 h-5" />

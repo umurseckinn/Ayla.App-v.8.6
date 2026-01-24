@@ -20,7 +20,8 @@ import {
   Target,
   Lightbulb,
   TrendingUp,
-  TrendingDown
+  TrendingDown,
+  Crown
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -75,6 +76,7 @@ import { SettingsDialog } from "../settings/SettingsDialog";
 import { AppActionsDialog } from "./AppActionsDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Settings } from "lucide-react";
+import { PremiumModal } from "../premium/PremiumModal";
 
 
 
@@ -132,10 +134,29 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const [detailedTransit, setDetailedTransit] = useState<PersonalTransit | null>(null);
   const [isDailyTransitsOpen, setIsDailyTransitsOpen] = useState(false);
   const [transitPlanetFilter, setTransitPlanetFilter] = useState<string | null>(null);
-  const [isCosmicAgendaOpen, setIsCosmicAgendaOpen] = useState(false);
+  const [isCosmicAgendaOpen, setIsCosmicAgendaOpen] = useState(true);
   const [isGuidanceOpen, setIsGuidanceOpen] = useState(true);
   const [isRetrogradesOpen, setIsRetrogradesOpen] = useState(true);
   const [isDailyTransitsOpenSection, setIsDailyTransitsOpenSection] = useState(true);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [showRateUsModal, setShowRateUsModal] = useState(false);
+
+  useEffect(() => {
+    const hasSeen = safeLocalStorage.getItem("hasSeenPremiumOffer");
+    if (!hasSeen) {
+      const timer = setTimeout(() => {
+        setShowPremiumModal(true);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handlePremiumClose = () => {
+    setShowPremiumModal(false);
+    safeLocalStorage.setItem("hasSeenPremiumOffer", "true");
+    // Open Rate Us modal after Premium closes
+    setTimeout(() => setShowRateUsModal(true), 500);
+  };
 
 
   const [selectedTransit, setSelectedTransit] = useState<{
@@ -344,20 +365,31 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
     return (
       <div className="px-[clamp(0.75rem,4vw,1rem)] pt-[calc(clamp(0.75rem,4vw,1rem)+var(--sat))] space-y-[clamp(0.75rem,3vw,1rem)] pb-[calc(56px+env(safe-area-inset-bottom)+1.5rem)]">
         <div id="tutorial-guidance" className="space-y-2">
-          <div className="flex items-center justify-between px-1 mb-1">
-            <button
-              onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
-              className="flex flex-col relative z-10 text-left group flex-1"
-            >
-              <h1 className="text-[clamp(1.25rem,4vw,1.5rem)] font-mystic gold-text">{t('greeting')} {currentProfile?.name || t('dear')},</h1>
-              <p className="text-muted-foreground font-serif text-[clamp(0.75rem,2.5vw,0.875rem)] italic mt-0.5 opacity-80">
-                {t('dailyRitualDesc')}
-              </p>
-            </button>
-
-            <div className="flex items-center gap-2">
-              <AppActionsDialog />
+          <div className="flex flex-col gap-2 px-1 mb-1">
+            {/* Buttons Row */}
+            <div className="flex items-center justify-end gap-2 w-full">
+              <Button
+                onClick={() => setShowPremiumModal(true)}
+                className="h-8 px-3 bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#FFD700] text-indigo-950 font-black text-xs rounded-lg shadow-[0_0_10px_rgba(184,134,11,0.4)] border border-white/20 transition-all flex items-center gap-1.5"
+              >
+                <Crown className="w-3.5 h-3.5" />
+                PREMIUM
+              </Button>
+              <AppActionsDialog open={showRateUsModal} onOpenChange={setShowRateUsModal} />
               <SettingsDialog />
+            </div>
+
+            {/* Greeting Row */}
+            <div className="flex items-center justify-between w-full">
+              <button
+                onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
+                className="flex flex-col relative z-10 text-left group flex-1"
+              >
+                <h1 className="text-[clamp(1.25rem,4vw,1.5rem)] font-mystic gold-text">{t('greeting')} {currentProfile?.name || t('dear')},</h1>
+                <p className="text-muted-foreground font-serif text-[clamp(0.75rem,2.5vw,0.875rem)] italic mt-0.5 opacity-80">
+                  {t('dailyRitualDesc')}
+                </p>
+              </button>
               <button
                 onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
                 className="p-1"
@@ -641,6 +673,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
   return (
     <div className="w-full min-h-screen relative">
+      <PremiumModal isOpen={showPremiumModal} onClose={handlePremiumClose} />
       {/* Background layer - edge-to-edge */}
       <div className="fixed inset-0 bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple -z-10" />
 
