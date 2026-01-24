@@ -252,8 +252,13 @@ export function PlanetTransitModal({
                     ) : (
                       <div className="flex items-center justify-center gap-2">
                         <div className="relative z-10 w-14 h-14 flex items-center justify-center">
-                          <div className="w-full h-full p-1">
-                            <PlanetIcon name={planetKey} className={`w-full h-full filter drop-shadow-[0_0_30px_${colorHex}80]`} />
+                          <div className="w-full h-full p-1 flex items-center justify-center">
+                            <PlanetIcon 
+                              name={planetKey} 
+                              className={`w-full h-full filter drop-shadow-[0_0_30px_${colorHex}80] ${
+                                planetKey === "Saturn" ? "scale-[1.5]" : ""
+                              }`} 
+                            />
                           </div>
                         </div>
                         <div className="relative z-10 w-14 h-14 flex items-center justify-center">

@@ -95,7 +95,12 @@ export function NatalPlanetModal({
                     animate={{ scale: 1, opacity: 1 }}
                     className="relative z-10 w-24 h-24 flex items-center justify-center p-2"
                   >
-                    <PlanetIcon name={planetName} className="w-full h-full filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]" />
+                    <PlanetIcon 
+                      name={planetName} 
+                      className={`w-full h-full filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)] ${
+                        (planetName === "Satürn" || planetName === "Saturn") ? "scale-[1.8]" : ""
+                      }`} 
+                    />
                   </motion.div>
 
                   <motion.div 
