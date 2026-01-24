@@ -13,21 +13,16 @@ export function PlanetIcon({ name, className }: PlanetIconProps) {
   const imageUrl = PLANET_IMAGES[name] || PLANET_IMAGES["Güneş"];
 
   return (
-    <div 
+    <img 
+      src={imageUrl} 
+      alt={name}
       className={cn(
-        "relative flex items-center justify-center overflow-hidden aspect-square rounded-full bg-transparent",
+        "object-contain",
         className
       )}
-    >
-      <img 
-        src={imageUrl} 
-        alt={name}
-        className="w-full h-full object-cover rounded-full"
-        style={{
-          imageRendering: "crisp-edges",
-          transform: "scale(1.1)", // Slight zoom to ensure clean edges
-        }}
-      />
-    </div>
+      style={{
+        imageRendering: "crisp-edges",
+      }}
+    />
   );
 }

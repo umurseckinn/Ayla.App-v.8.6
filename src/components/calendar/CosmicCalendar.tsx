@@ -329,7 +329,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-sm bg-black border-white/10 backdrop-blur-2xl text-white overflow-y-auto max-h-[90vh] custom-scrollbar rounded-[2rem]">
+      <DialogContent className="max-w-sm bg-black border-white/10 backdrop-blur-2xl text-white overflow-y-auto max-h-[90vh] custom-scrollbar rounded-[2rem] overscroll-contain">
         <DialogHeader>
 
           <DialogTitle className="font-mystic text-xl text-mystic-gold flex items-center justify-between">
@@ -573,7 +573,13 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                   </div>
 
                   {selectedCategory && (
-                    <div className="grid grid-cols-1 gap-2 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <motion.div
+                      key={selectedCategory}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="grid grid-cols-1 gap-2"
+                    >
                       {LIFE_EVENTS.filter(e => {
                         const isFuture = new Date(dateKey).getTime() > new Date().setHours(0, 0, 0, 0);
                         if (isFuture) {
@@ -604,7 +610,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                           </button>
                         );
                       })}
-                    </div>
+                    </motion.div>
                   )}
                 </motion.div>
               )}
