@@ -533,7 +533,7 @@ function DayDetailDialog({
                                 key={`influence-${inf.planet}-${inf.effect}-${i}`}
                                 onClick={() => {
                                   if (isLocked) {
-                                    onShowPremium();
+                                    onShowAd(planetKey);
                                   } else {
                                     onOpenDailyTransits(personalTransits, planetKey);
                                   }
