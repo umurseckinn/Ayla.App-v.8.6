@@ -25,6 +25,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { PremiumModal } from "../premium/PremiumModal";
 import { AdContentPopup } from "../ads/AdContentPopup";
 import { useProfile } from "@/hooks/useProfile";
+import { PersistenceManager } from "@/lib/persistence";
 
 interface PersonData {
   full_name: string;
@@ -228,7 +229,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
       return;
     }
 
-    if (subscriptionStatus !== 'premium') {
+    if (subscriptionStatus !== 'premium' && !PersistenceManager.isContentUnlocked('love-compatibility')) {
       setShowAdPopup(true);
       return;
     }
@@ -277,6 +278,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
 
   const handleAdComplete = () => {
     setShowAdPopup(false);
+    PersistenceManager.unlockContent('love-compatibility');
     proceedCalculate();
   };
 

@@ -18,6 +18,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { LOCAL_TAROT_CARDS } from "@/lib/tarot-cards-data";
 import { PremiumModal } from "../premium/PremiumModal";
 import { AdContentPopup } from "../ads/AdContentPopup";
+import { PersistenceManager } from "@/lib/persistence";
 // TarotCard type matches LOCAL_TAROT_CARDS structure
 interface TarotCard {
   name: string;
@@ -75,6 +76,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
 
   const handleAdComplete = () => {
     setShowAdPopup(false);
+    PersistenceManager.unlockContent('tarot-reading');
     if (selectedCards.length === 3) {
       onSpend(100);
       setPhase("result");
@@ -176,7 +178,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
     setSelectedCards(newSelected);
 
     if (newSelected.length === 3) {
-      if (subscriptionStatus !== 'premium') {
+      if (subscriptionStatus !== 'premium' && !PersistenceManager.isContentUnlocked('tarot-reading')) {
         setShowAdPopup(true);
         return;
       }

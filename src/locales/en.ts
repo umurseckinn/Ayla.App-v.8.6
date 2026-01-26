@@ -139,12 +139,8 @@ You have the right to apply to the data controller to learn whether your persona
     Sky: "Sky",
 
     // Feature Grid
-    dailyEnergy: "Daily Energy",
-    dailyEnergyDesc: "Track your cosmic flow",
     smartTarot: "Smart Tarot",
     smartTarotDesc: "Whisper of the cards",
-    dreamDictionary: "Dream Dictionary",
-    dreamDictionaryDesc: "Your subconscious guide",
     compatibilityAnalysis: "Compatibility Analysis",
     compatibilityAnalysisDesc: "Love of the stars",
     starsWhispering: "The stars are whispering for you today...",

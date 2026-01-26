@@ -857,7 +857,9 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
   const [unlockedDays, setUnlockedDays] = useState<string[]>([]);
 
   useEffect(() => {
-    setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+    const allUnlocked = PersistenceManager.getUnlockedContent();
+    setUnlockedPlanets(allUnlocked.filter(id => !id.startsWith('day-')));
+    setUnlockedDays(allUnlocked.filter(id => id.startsWith('day-')).map(id => id.replace('day-', '')));
   }, []);
 
   const handleShowPremium = () => {
@@ -872,11 +874,13 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
 
   const handleAdComplete = () => {
     if (adTarget) {
+      PersistenceManager.unlockContent(adTarget);
+      const allUnlocked = PersistenceManager.getUnlockedContent();
+      
       if (adTarget.startsWith('day-')) {
-        setUnlockedDays(prev => [...prev, adTarget.replace('day-', '')]);
+        setUnlockedDays(allUnlocked.filter(id => id.startsWith('day-')).map(id => id.replace('day-', '')));
       } else {
-        PersistenceManager.unlockContent(adTarget);
-        setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+        setUnlockedPlanets(allUnlocked.filter(id => !id.startsWith('day-')));
       }
       setAdTarget(null);
     }

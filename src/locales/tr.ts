@@ -139,12 +139,8 @@ b) İşlenmişse buna ilişkin bilgi talep etme hakkına sahipsiniz.`,
     Sky: "Gökyüzü",
 
     // Feature Grid
-    dailyEnergy: "Günlük Enerjin",
-    dailyEnergyDesc: "Kozmik akışını takip et",
     smartTarot: "Akıllı Tarot",
     smartTarotDesc: "Kartların fısıltısı",
-    dreamDictionary: "Rüya Sözlüğü",
-    dreamDictionaryDesc: "Bilinçaltı rehberin",
     compatibilityAnalysis: "Uyum Analizi",
     compatibilityAnalysisDesc: "Yıldızların aşkı",
     starsWhispering: "Yıldızlar bugün senin için fısıldıyor...",
