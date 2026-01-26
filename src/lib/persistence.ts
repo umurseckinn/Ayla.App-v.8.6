@@ -92,17 +92,17 @@ export const PersistenceManager = {
 
   isContentUnlocked: (contentId: string): boolean => {
     const state = getPersistentState();
-    if (state.isPremium) return true;
+    // We rely on subscriptionStatus context for premium check, 
+    // this function should only check for specific content unlocks (ads/points)
     
     const timestamp = state.unlockedContent[contentId];
     if (!timestamp) return false;
     
     if (isToday(timestamp)) {
       return true;
-    } else {
-      // Lazy cleanup could happen here too, but getUnlockedContent handles it nicely
-      return false;
     }
+    
+    return false;
   },
 
   // Helper to preserve data during reset

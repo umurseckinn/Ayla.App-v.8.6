@@ -197,8 +197,12 @@ export function DailyTransitsDialog({
                       <button
                         key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                         onClick={() => {
-                          if (subscriptionStatus !== 'premium' && onShowPremium) {
-                            onShowPremium();
+                          if (isLocked && !initialPlanetFilter) {
+                            if (onShowAd) {
+                              onShowAd(transit.transitPlanetKey);
+                            } else if (onShowPremium) {
+                              onShowPremium();
+                            }
                             return;
                           }
 

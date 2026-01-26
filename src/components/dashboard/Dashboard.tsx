@@ -281,10 +281,10 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   }, [profileId, profileBirthDate, profileBirthTime, profileBirthPlace, profileLatitude, profileLongitude, userLifeEvents, activeTab, refreshTrigger, userSunSign, language, currentProfile?.moon_sign]);
 
   const handlePlanetClick = (planet: any) => {
-    const planetKey = Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
+    const planetKey = planet.planetKey || Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
 
-    // Access Control: Sun and Moon are free. Others require Premium or Ad Unlock.
-    const isFreePlanet = planetKey === 'Sun' || planetKey === 'Moon';
+    // Access Control: Sun is free (Moon Phase is handled separately). Others require Premium or Ad Unlock.
+    const isFreePlanet = planetKey === 'Sun';
     const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || PersistenceManager.isContentUnlocked(planetKey);
 
     if (!isUnlocked) {
@@ -558,7 +558,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                       </div>
 
                       {currentTransits.planets.map((planet, i) => {
-                        const planetKey = Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
+                        const planetKey = planet.planetKey || Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
                         const planetTransits = personalTransits.filter(t => t.transitPlanetKey === planetKey);
                         const posCount = planetTransits.filter(t => t.effect === 'positive').length;
                         const negCount = planetTransits.filter(t => t.effect === 'negative').length;
@@ -568,7 +568,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const shadowClass = effectType === "positive" ? "shadow-[0_0_30px_rgba(52,211,153,0.15)]" : effectType === "negative" ? "shadow-[0_0_30px_rgba(251,113,133,0.15)]" : "shadow-[0_0_30px_rgba(251,191,36,0.15)]";
 
                         // Access Control Check
-                        const isFreePlanet = planetKey === 'Sun' || planetKey === 'Moon';
+                        const isFreePlanet = planetKey === 'Sun';
                         const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || unlockedPlanets.includes(planetKey);
 
                         return (

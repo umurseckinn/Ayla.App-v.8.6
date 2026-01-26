@@ -70,14 +70,31 @@ export function SettingsDialog() {
     const handleReset = () => {
         try {
             // Backup persistent data
-            const persistentData = localStorage.getItem("ayla_persistent_store");
+            const persistentDataStr = localStorage.getItem("ayla_persistent_store");
             
             safeLocalStorage.clear();
             sessionStorage.clear();
             
-            // Restore persistent data
-            if (persistentData) {
-                localStorage.setItem("ayla_persistent_store", persistentData);
+            // Restore persistent data but clear unlocked content
+            if (persistentDataStr) {
+                try {
+                    const persistentData = JSON.parse(persistentDataStr);
+                    // Clear unlocked content so user has to watch ads again
+                    if (persistentData.unlockedContent) {
+                        persistentData.unlockedContent = {};
+                    }
+                    // Reset premium status in persistent store as well, to sync with profile reset
+                    persistentData.isPremium = false;
+
+                    // Handle old format if exists
+                    if (persistentData.unlockedContentIds) {
+                         delete persistentData.unlockedContentIds;
+                    }
+                    
+                    localStorage.setItem("ayla_persistent_store", JSON.stringify(persistentData));
+                } catch (parseError) {
+                    console.error("Failed to parse persistent data during reset", parseError);
+                }
             }
             
             window.location.reload();

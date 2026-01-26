@@ -411,14 +411,19 @@ function DayDetailDialog({
                           .filter(t => transitFilters.includes(t.effect || "neutral"))
                           .map((transit, i) => {
                             const statusLabel = getTransitStatusLabel(date, transit);
+                            const isLocked = subscriptionStatus !== 'premium' && !['Sun', 'Moon'].includes(transit.transitPlanetKey) && !unlockedPlanets.includes(transit.transitPlanetKey);
 
                             return (
                               <button
                                 key={`transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  if (subscriptionStatus !== 'premium' && onShowPremium) {
-                                    onShowPremium();
+                                  if (isLocked) {
+                                    if (onShowAd) {
+                                      onShowAd(transit.transitPlanetKey);
+                                    } else if (onShowPremium) {
+                                      onShowPremium();
+                                    }
                                     return;
                                   }
                                   onOpenDetailedTransit(transit);
@@ -428,7 +433,7 @@ function DayDetailDialog({
                                     'border-amber-400 shadow-amber-400/20'
                                   }`}
                               >
-                                <div className={`w-full h-full flex flex-col items-center justify-center`}>
+                                <div className={`w-full h-full flex flex-col items-center justify-center ${isLocked ? 'blur-sm opacity-50' : ''}`}>
                                   <div className="flex items-center gap-3 w-full justify-center -mt-2">
                                     <div className="w-10 h-10">
                                       <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
@@ -452,6 +457,13 @@ function DayDetailDialog({
                                       }`}>{formatHouseNumber(transit.house, language)}</span>
                                   </div>
                                 </div>
+                                {isLocked && (
+                                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
+                                    <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
+                                      <PlayCircle className="w-6 h-6 text-white" />
+                                    </div>
+                                  </div>
+                                )}
                               </button>
                             );
                           })
