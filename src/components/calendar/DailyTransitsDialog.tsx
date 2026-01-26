@@ -198,7 +198,7 @@ export function DailyTransitsDialog({
                       <button
                         key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                         onClick={() => {
-                          if (isLocked && !initialPlanetFilter) {
+                          if (isLocked) {
                             if (onShowPremium) {
                               onShowPremium();
                             }
