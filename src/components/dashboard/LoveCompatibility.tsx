@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -25,7 +25,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { PremiumModal } from "../premium/PremiumModal";
 import { AdContentPopup } from "../ads/AdContentPopup";
 import { useProfile } from "@/hooks/useProfile";
-import { PersistenceManager } from "@/lib/persistence";
+
 
 interface PersonData {
   full_name: string;
@@ -193,6 +193,15 @@ export function LoveCompatibility({ profile }: { profile: any }) {
   const [selectedHouse, setSelectedHouse] = useState<HouseCompatibility | null>(null);
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [isWaitingForPremium, setIsWaitingForPremium] = useState(false);
+
+  // Auto-open logic
+  useEffect(() => {
+    if (subscriptionStatus === 'premium' && isWaitingForPremium && step === "input" && inputStep === 3) {
+      setIsWaitingForPremium(false);
+      proceedCalculate();
+    }
+  }, [subscriptionStatus, isWaitingForPremium, step, inputStep]);
 
   const [person1Data, setPerson1Data] = useState<PersonData>({
     full_name: "",
@@ -229,7 +238,8 @@ export function LoveCompatibility({ profile }: { profile: any }) {
       return;
     }
 
-    if (subscriptionStatus !== 'premium' && !PersistenceManager.isContentUnlocked('love-compatibility')) {
+    if (subscriptionStatus !== 'premium') {
+      setIsWaitingForPremium(true);
       setShowAdPopup(true);
       return;
     }
@@ -278,7 +288,6 @@ export function LoveCompatibility({ profile }: { profile: any }) {
 
   const handleAdComplete = () => {
     setShowAdPopup(false);
-    PersistenceManager.unlockContent('love-compatibility');
     proceedCalculate();
   };
 
@@ -409,6 +418,9 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                 setShowAdPopup(false);
                 setShowPremiumModal(true);
               }}
+              title={language === 'en' ? 'Love Compatibility' : 'Aşk Uyumu'}
+              backgroundImage="/Aşk uyumu ad pop up.png"
+              imageClassName="object-center"
             />
 
             <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />

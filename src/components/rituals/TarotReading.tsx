@@ -18,7 +18,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { LOCAL_TAROT_CARDS } from "@/lib/tarot-cards-data";
 import { PremiumModal } from "../premium/PremiumModal";
 import { AdContentPopup } from "../ads/AdContentPopup";
-import { PersistenceManager } from "@/lib/persistence";
+
 // TarotCard type matches LOCAL_TAROT_CARDS structure
 interface TarotCard {
   name: string;
@@ -73,10 +73,20 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
   const [aiInterpretation, setAiInterpretation] = useState<string | null>(null);
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [isWaitingForPremium, setIsWaitingForPremium] = useState(false);
+
+  // Auto-open logic when premium is acquired
+  useEffect(() => {
+    if (subscriptionStatus === 'premium' && isWaitingForPremium && selectedCards.length === 3 && phase === "selecting") {
+      setIsWaitingForPremium(false);
+      onSpend(100);
+      setPhase("result");
+      getInterpretation(selectedCards);
+    }
+  }, [subscriptionStatus, isWaitingForPremium, selectedCards, phase]);
 
   const handleAdComplete = () => {
     setShowAdPopup(false);
-    PersistenceManager.unlockContent('tarot-reading');
     if (selectedCards.length === 3) {
       onSpend(100);
       setPhase("result");
@@ -178,7 +188,8 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
     setSelectedCards(newSelected);
 
     if (newSelected.length === 3) {
-      if (subscriptionStatus !== 'premium' && !PersistenceManager.isContentUnlocked('tarot-reading')) {
+      if (subscriptionStatus !== 'premium') {
+        setIsWaitingForPremium(true);
         setShowAdPopup(true);
         return;
       }
@@ -283,6 +294,9 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
               setShowAdPopup(false);
               setShowPremiumModal(true);
             }}
+            title="Tarot"
+            backgroundImage="/Tarot ad pop-up.png"
+            imageClassName="object-center"
           />
 
           <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />

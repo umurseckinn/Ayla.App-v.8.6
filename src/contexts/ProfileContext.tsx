@@ -61,9 +61,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
         setSubscriptionState(status);
         
         // Update persistent store
-        if (status === 'premium') {
-            PersistenceManager.setPremiumStatus(true);
-        }
+        PersistenceManager.setPremiumStatus(status === 'premium');
 
         if (profile) {
             await updateProfile({ subscription_status: status });

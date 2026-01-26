@@ -13,9 +13,12 @@ interface AdContentPopupProps {
   onClose: () => void;
   onOpenPremium?: () => void;
   onWatchAd: () => void;
+  title?: string;
+  backgroundImage?: string;
+  imageClassName?: string;
 }
 
-export function AdContentPopup({ isOpen, onClose, onOpenPremium, onWatchAd }: AdContentPopupProps) {
+export function AdContentPopup({ isOpen, onClose, onOpenPremium, onWatchAd, title, backgroundImage, imageClassName }: AdContentPopupProps) {
   const { language } = useLanguage();
   const [showPremiumModal, setShowPremiumModal] = useState(false);
 
@@ -25,13 +28,13 @@ export function AdContentPopup({ isOpen, onClose, onOpenPremium, onWatchAd }: Ad
   };
 
   const content = language === 'en' ? {
-    title: "Unlock Content",
+    title: title || "Unlock Content",
     description: "Watch a short ad or get Premium to access this content.",
     premiumBtn: "Get Premium",
     adBtn: "Watch Ad & Access",
     skip: "Skip"
   } : {
-    title: "İçeriği Aç",
+    title: title || "İçeriği Aç",
     description: "Bu içeriğe erişmek için kısa bir reklam izle veya Premium al.",
     premiumBtn: "Premium'u Edin",
     adBtn: "Reklamı İzle ve İçeriğe Eriş",
@@ -61,9 +64,9 @@ export function AdContentPopup({ isOpen, onClose, onOpenPremium, onWatchAd }: Ad
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
                 <img
-                  src="/ad pop-up.png"
+                  src={backgroundImage || "/ad pop-up.png"}
                   alt="Ad Popup Background"
-                  className="w-full h-full object-cover object-top"
+                  className={`w-full h-full object-cover ${imageClassName || 'object-top'}`}
                 />
                 {/* Gradient Overlay for text readability at the bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent top-[30%]" />

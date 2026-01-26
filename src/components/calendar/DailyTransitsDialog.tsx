@@ -151,12 +151,6 @@ export function DailyTransitsDialog({
   };
 
   const handleTransitClick = (transit: PersonalTransit) => {
-    const isUnlocked = ['Sun', 'Moon'].includes(transit.transitPlanetKey) || unlockedPlanets.includes(transit.transitPlanetKey);
-    
-    if (subscriptionStatus !== 'premium' && !isUnlocked && onShowPremium) {
-      onShowPremium();
-      return;
-    }
     setDetailedTransit(transit);
   };
 
@@ -203,23 +197,19 @@ export function DailyTransitsDialog({
                       <button
                         key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                         onClick={() => {
-                          if (initialPlanetFilter && subscriptionStatus !== 'premium' && onShowPremium) {
+                          if (subscriptionStatus !== 'premium' && onShowPremium) {
                             onShowPremium();
                             return;
                           }
 
-                          if (isLocked && onShowAd) {
-                            onShowAd(transit.transitPlanetKey);
-                          } else {
-                            handleTransitClick(transit);
-                          }
+                          handleTransitClick(transit);
                         }}
                         className={`p-3 rounded-2xl border flex flex-col items-center justify-center gap-1 transition-all min-h-[130px] relative overflow-hidden bg-black shadow-lg ${transit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
                         transit.effect === 'negative' ? 'border-rose-500 shadow-rose-500/20' :
                           'border-amber-400 shadow-amber-400/20'
                         }`}
                     >
-                      <div className={`w-full h-full flex flex-col items-center justify-center gap-1 transition-all duration-300 ${isLocked ? 'blur-sm opacity-50' : ''}`}>
+                      <div className={`w-full h-full flex flex-col items-center justify-center gap-1 transition-all duration-300 ${isLocked && !initialPlanetFilter ? 'blur-sm opacity-50' : ''}`}>
                         <div className="flex items-center gap-2 w-full justify-center text-[8px] font-black uppercase tracking-wide">
                           <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
                             transit.effect === 'negative' ? 'text-rose-400/80' :
@@ -254,7 +244,7 @@ export function DailyTransitsDialog({
                             }`}>{formatHouseNumber(transit.house, language)}</span>
                         </div>
                       </div>
-                      {isLocked && (
+                      {isLocked && !initialPlanetFilter && (
                         <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
                           <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
                             <PlayCircle className="w-6 h-6 text-white" />

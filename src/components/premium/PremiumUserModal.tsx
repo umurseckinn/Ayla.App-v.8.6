@@ -16,10 +16,8 @@ export function PremiumUserModal({ isOpen, onClose }: PremiumUserModalProps) {
   const { language } = useLanguage();
 
   const content = language === 'en' ? {
-    accessText: "You have access to Premium content",
     continueBtn: "Continue"
   } : {
-    accessText: "Premium içeriklere erişim hakkına sahipsiniz",
     continueBtn: "Devam Et"
   };
 
@@ -56,13 +54,6 @@ export function PremiumUserModal({ isOpen, onClose }: PremiumUserModalProps) {
             {/* Content Section */}
             <div className="relative z-10 flex flex-col h-full p-6 justify-end space-y-6 pb-12">
               
-              {/* Access Text */}
-              <div className="text-center px-4">
-                <h2 className="text-xl font-bold italic text-[#D4AF37] drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] leading-relaxed">
-                  {content.accessText}
-                </h2>
-              </div>
-
               {/* Continue Button */}
               <Button
                   onClick={onClose}

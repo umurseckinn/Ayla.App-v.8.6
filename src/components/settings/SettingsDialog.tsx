@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Settings, User, X, ChevronDown, ChevronLeft, Save, AlertTriangle, LogOut, Shield, ChevronRight, FileText } from "lucide-react";
+import { Settings, User, X, ChevronDown, ChevronLeft, Save, AlertTriangle, LogOut, Shield, ChevronRight, FileText, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useProfile } from "@/hooks/useProfile";
@@ -20,7 +20,7 @@ type SettingsView = "main" | "profile" | "legal" | "privacy" | "kvkk";
 export function SettingsDialog() {
     const { language, setLanguage, t } = useLanguage();
     const [isOpen, setIsOpen] = React.useState(false);
-    const { profile, updateProfile } = useProfile();
+    const { profile, updateProfile, setSubscriptionStatus, subscriptionStatus } = useProfile();
     const [currentView, setCurrentView] = useState<SettingsView>("main");
     const [showResetConfirm, setShowResetConfirm] = useState(false);
 
@@ -33,10 +33,10 @@ export function SettingsDialog() {
     // Initialize edit form when opening edit mode
     const handleStartEdit = () => {
         if (profile) {
-            setEditName(profile.name || "");
-            setEditDate(profile.birthDate?.split('T')[0] || "");
-            setEditTime(profile.birthTime || "");
-            setEditLocation(profile.birthPlace || "");
+            setEditName(profile.full_name || profile.name || "");
+            setEditDate(profile.birth_date?.split('T')[0] || profile.birthDate?.split('T')[0] || "");
+            setEditTime(profile.birth_time || profile.birthTime || "");
+            setEditLocation(profile.birth_place || profile.birthPlace || "");
         }
         setCurrentView("profile");
     };
@@ -54,9 +54,13 @@ export function SettingsDialog() {
 
         await updateProfile({
             name: editName,
+            full_name: editName,
             birthDate: editDate,
+            birth_date: editDate,
             birthTime: editTime,
-            birthPlace: editLocation
+            birth_time: editTime,
+            birthPlace: editLocation,
+            birth_place: editLocation
         });
 
         toast.success(t('saveSuccess'));
@@ -154,6 +158,7 @@ export function SettingsDialog() {
                                 <ResetConfirmContent
                                     key="reset"
                                     t={t}
+                                    language={language}
                                     onConfirm={handleReset}
                                     onCancel={() => setShowResetConfirm(false)}
                                 />
@@ -164,14 +169,17 @@ export function SettingsDialog() {
                                     language={language}
                                     setLanguage={setLanguage}
                                     profile={profile}
-                                    onEditProfile={handleReset}
+                                    onEditProfile={handleStartEdit}
                                     onLegal={() => setCurrentView("legal")}
                                     onReset={() => setShowResetConfirm(true)}
+                                    setSubscriptionStatus={setSubscriptionStatus}
+                                    subscriptionStatus={subscriptionStatus}
                                 />
                             ) : currentView === "profile" ? (
                                 <EditProfileContent
                                     key="profile"
                                     t={t}
+                                    language={language}
                                     editName={editName}
                                     setEditName={setEditName}
                                     editDate={editDate}
@@ -205,7 +213,21 @@ export function SettingsDialog() {
 
 // --- Sub-components ---
 
-function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onLegal, onReset }: any) {
+function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onLegal, onReset, setSubscriptionStatus, subscriptionStatus }: any) {
+    const handleRestorePurchase = async () => {
+        await setSubscriptionStatus('premium');
+        toast.success(language === 'en' ? 'Purchases restored successfully' : 'Satın alımlar başarıyla geri yüklendi');
+    };
+
+    const handleCancelPremium = async () => {
+        if (subscriptionStatus !== 'premium') {
+            toast.error(language === 'en' ? 'You do not have a premium membership' : 'Premium üyeliğiniz bulunmamaktadır');
+            return;
+        }
+        await setSubscriptionStatus('free');
+        toast.success(language === 'en' ? 'Premium membership cancelled' : 'Premium üyelik iptal edildi');
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -283,8 +305,23 @@ function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onL
                 <FAQItem question="Ayla?" answer={t('introDesc')} />
             </Section>
 
-            {/* Reset Profile */}
-            <div className="pt-2 pb-6">
+            {/* Account Actions */}
+            <div className="space-y-3 pt-2 pb-6">
+                {/* Restore Purchase */}
+                <Button
+                    variant="ghost"
+                    onClick={handleRestorePurchase}
+                    className="w-full bg-black hover:bg-black/90 text-[#D4AF37] justify-start h-14 rounded-2xl px-4 group border border-transparent hover:border-[#D4AF37]/20 transition-all"
+                >
+                    <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <RefreshCw className="w-5 h-5" />
+                    </div>
+                    <div className="text-left">
+                        <span className="block font-medium">{language === 'en' ? 'Restore Purchase' : 'Satın Almayı Geri Yükle'}</span>
+                    </div>
+                </Button>
+
+                {/* Reset Profile */}
                 <Button
                     variant="ghost"
                     onClick={onReset}
@@ -300,12 +337,37 @@ function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onL
                         </span>
                     </div>
                 </Button>
+
+                {/* Cancel Premium */}
+                <Button
+                    variant="ghost"
+                    onClick={handleCancelPremium}
+                    className="w-full bg-black hover:bg-black/90 text-red-600 justify-start h-14 rounded-2xl px-4 group border border-transparent hover:border-red-600/20 transition-all"
+                >
+                    <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <X className="w-5 h-5" />
+                    </div>
+                    <div className="text-left">
+                        <span className="block font-medium">{language === 'en' ? 'Cancel Premium Membership' : 'Premium Üyeliğini İptal Et'}</span>
+                    </div>
+                </Button>
             </div>
         </motion.div>
     );
 }
 
-function EditProfileContent({ t, editName, setEditName, editDate, setEditDate, editTime, setEditTime, editLocation, setEditLocation, onSave }: any) {
+function EditProfileContent({ t, language, editName, setEditName, editDate, setEditDate, editTime, setEditTime, editLocation, setEditLocation, onSave }: any) {
+    const [dateInputType, setDateInputType] = useState('text');
+
+    const getFormattedDate = (dateStr: string) => {
+        if (!dateStr) return "";
+        const [year, month, day] = dateStr.split('-');
+        if (!year || !month || !day) return dateStr;
+        return language === 'tr' 
+            ? `${day}.${month}.${year}` 
+            : `${month}/${day}/${year}`;
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -326,10 +388,13 @@ function EditProfileContent({ t, editName, setEditName, editDate, setEditDate, e
                 <div className="space-y-2">
                     <Label className="text-white/70 text-xs uppercase tracking-wider">{t('birthDate')}</Label>
                     <Input
-                        type="date"
-                        value={editDate}
+                        type={dateInputType}
+                        value={dateInputType === 'date' ? editDate : getFormattedDate(editDate)}
                         onChange={(e) => setEditDate(e.target.value)}
+                        onFocus={() => setDateInputType('date')}
+                        onBlur={() => setDateInputType('text')}
                         className="bg-white/5 border-white/10 text-white focus:border-mystic-gold/50 h-12 rounded-xl"
+                        placeholder={language === 'tr' ? 'GG.AA.YYYY' : 'MM/DD/YYYY'}
                     />
                 </div>
                 <div className="space-y-2">
@@ -416,7 +481,7 @@ function TextContent({ content }: { content: string }) {
     );
 }
 
-function ResetConfirmContent({ t, onConfirm, onCancel }: any) {
+function ResetConfirmContent({ t, language, onConfirm, onCancel }: any) {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -428,9 +493,13 @@ function ResetConfirmContent({ t, onConfirm, onCancel }: any) {
                 <AlertTriangle className="w-12 h-12 text-rose-500" />
             </div>
             <div className="space-y-3">
-                <h3 className="text-xl font-bold text-white">{t('confirmResetTitle')}</h3>
+                <h3 className="text-xl font-bold text-white">
+                    {language === 'en' ? 'Attention!' : 'Dikkat!'}
+                </h3>
                 <p className="text-white/60 text-sm max-w-[260px] mx-auto leading-relaxed">
-                    {t('confirmResetMessage')}
+                    {language === 'en' 
+                        ? 'Warning: If you reset your profile, your premium membership will not be available in the new profile.' 
+                        : 'Premium üyeliğiniz profilinizi sıfırladığınız takdirde yeni açtığınız profilde olmayacaktır.'}
                 </p>
             </div>
             <div className="flex flex-col gap-3 w-full max-w-[260px] pt-4">
@@ -438,14 +507,14 @@ function ResetConfirmContent({ t, onConfirm, onCancel }: any) {
                     onClick={onConfirm}
                     className="w-full bg-rose-600 hover:bg-rose-700 text-white h-12 rounded-xl shadow-[0_0_20px_rgba(225,29,72,0.4)] transition-all transform hover:scale-105"
                 >
-                    {t('resetProfile')}
+                    {language === 'en' ? 'Continue' : 'Devam Et'}
                 </Button>
                 <Button
                     variant="ghost"
                     onClick={onCancel}
                     className="w-full hover:bg-white/5 text-white/50 hover:text-white h-12 rounded-xl"
                 >
-                    {t('cancel')}
+                    {language === 'en' ? 'Go Back' : 'Geri Dön'}
                 </Button>
             </div>
         </motion.div>
