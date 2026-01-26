@@ -31,7 +31,9 @@ import {
   ArrowUpRight,
   Trash2,
   Trash,
-  Loader2
+  Loader2,
+  Lock,
+  PlayCircle
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -72,6 +74,9 @@ import { PLANET_IMAGES } from "@/lib/constants";
 import { PlanetIcon } from "../ui/PlanetIcon";
 import { DailyTransitsDialog } from "./DailyTransitsDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PremiumModal } from "@/components/premium/PremiumModal";
+import { AdContentPopup } from "@/components/ads/AdContentPopup";
+import { PersistenceManager } from "@/lib/persistence";
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
 
@@ -106,9 +111,28 @@ interface DayDetailDialogProps {
   onHappinessChange: () => void;
   onOpenDailyTransits: (transits: PersonalTransit[], planetFilter?: string | null) => void;
   onOpenDetailedTransit: (transit: PersonalTransit) => void;
+  subscriptionStatus?: string;
+  onShowPremium: () => void;
+  onShowAd: (planetKey: string) => void;
+  unlockedPlanets: string[];
 }
 
-function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvents, onEventsUpdate, onHappinessChange, onOpenDailyTransits, onOpenDetailedTransit }: DayDetailDialogProps) {
+function DayDetailDialog({ 
+  date, 
+  energy, 
+  profile, 
+  isOpen, 
+  onClose, 
+  userLifeEvents, 
+  onEventsUpdate, 
+  onHappinessChange, 
+  onOpenDailyTransits, 
+  onOpenDetailedTransit,
+  subscriptionStatus,
+  onShowPremium,
+  onShowAd,
+  unlockedPlanets
+}: DayDetailDialogProps) {
   const { t, language } = useLanguage();
   const [feelings, setFeelings] = useState("");
   const [happiness, setHappiness] = useState(50); // 0-100
@@ -393,6 +417,10 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                                 key={`transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                                 onClick={(e) => {
                                   e.stopPropagation();
+                                  if (subscriptionStatus !== 'premium' && onShowPremium) {
+                                    onShowPremium();
+                                    return;
+                                  }
                                   onOpenDetailedTransit(transit);
                                 }}
                                 className={`p-3 rounded-2xl border flex flex-col items-center justify-center gap-2 transition-all min-h-[110px] relative overflow-hidden bg-black shadow-lg ${transit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
@@ -400,27 +428,29 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                                     'border-amber-400 shadow-amber-400/20'
                                   }`}
                               >
-                                <div className="flex items-center gap-3 w-full justify-center -mt-2">
-                                  <div className="w-10 h-10">
-                                    <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
+                                <div className={`w-full h-full flex flex-col items-center justify-center`}>
+                                  <div className="flex items-center gap-3 w-full justify-center -mt-2">
+                                    <div className="w-10 h-10">
+                                      <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
+                                    </div>
+                                    <span className={`text-3xl font-bold drop-shadow-[0_0_8px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                                      transit.effect === 'negative' ? 'text-rose-500' :
+                                        'text-amber-400'
+                                      }`}>{transit.aspectSymbol}</span>
+                                    <div className="w-10 h-10">
+                                      <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
+                                    </div>
                                   </div>
-                                  <span className={`text-3xl font-bold drop-shadow-[0_0_8px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                    transit.effect === 'negative' ? 'text-rose-500' :
-                                      'text-amber-400'
-                                    }`}>{transit.aspectSymbol}</span>
-                                  <div className="w-10 h-10">
-                                    <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
+                                  <div className="flex w-full justify-between items-center text-[10px] px-3 absolute bottom-2 left-0 right-0">
+                                    <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                                      transit.effect === 'negative' ? 'text-rose-500' :
+                                        'text-amber-400'
+                                      }`}>{statusLabel}</span>
+                                    <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                                      transit.effect === 'negative' ? 'text-rose-500' :
+                                        'text-amber-400'
+                                      }`}>{formatHouseNumber(transit.house, language)}</span>
                                   </div>
-                                </div>
-                                <div className="flex w-full justify-between items-center text-[10px] px-3 absolute bottom-2 left-0 right-0">
-                                  <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                    transit.effect === 'negative' ? 'text-rose-500' :
-                                      'text-amber-400'
-                                    }`}>{statusLabel}</span>
-                                  <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                    transit.effect === 'negative' ? 'text-rose-500' :
-                                      'text-amber-400'
-                                    }`}>{formatHouseNumber(transit.house, language)}</span>
                                 </div>
                               </button>
                             );
@@ -496,29 +526,46 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
 
                             const displayPlanetName = getPlanetDisplayName(inf.planet);
 
+                            const isLocked = subscriptionStatus !== 'premium' && !['Sun', 'Moon'].includes(planetKey) && !unlockedPlanets.includes(planetKey);
+
                             return (
                               <button
                                 key={`influence-${inf.planet}-${inf.effect}-${i}`}
-                                onClick={() => onOpenDailyTransits(personalTransits, planetKey)}
-                                className={`p-4 rounded-xl border flex gap-4 items-start transition-all bg-black text-left w-full hover:scale-[1.02] active:scale-95 ${borderClass}`}
+                                onClick={() => {
+                                  if (isLocked) {
+                                    onShowAd(planetKey);
+                                  } else {
+                                    onOpenDailyTransits(personalTransits, planetKey);
+                                  }
+                                }}
+                                className={`p-4 rounded-xl border transition-all bg-black text-left w-full hover:scale-[1.02] active:scale-95 ${borderClass} relative overflow-hidden`}
                               >
-                                <div className="relative shrink-0">
-                                  <div className={`w-14 h-14 filter drop-shadow-[0_0_8px_currentColor] ${textClass}`}>
-                                    <PlanetIcon name={planetKey} className="w-full h-full" />
+                                <div className={`flex gap-4 items-start transition-all duration-300 ${isLocked ? 'blur-sm opacity-50' : ''}`}>
+                                  <div className="relative shrink-0">
+                                    <div className={`w-14 h-14 filter drop-shadow-[0_0_8px_currentColor] ${textClass}`}>
+                                      <PlanetIcon name={planetKey} className="w-full h-full" />
+                                    </div>
+                                    {inf.isRetrograde && (
+                                      <div className="absolute -top-1 -right-1 bg-rose-500 text-[10px] font-black px-1.5 rounded-sm shadow-[0_0_10px_rgba(225,29,72,0.5)]">℞</div>
+                                    )}
                                   </div>
-                                  {inf.isRetrograde && (
-                                    <div className="absolute -top-1 -right-1 bg-rose-500 text-[10px] font-black px-1.5 rounded-sm shadow-[0_0_10px_rgba(225,29,72,0.5)]">℞</div>
-                                  )}
-                                </div>
-                                <div className="space-y-1.5 flex-1">
-                                  <div className="flex items-center justify-between">
-                                    <p className={`text-base font-black uppercase tracking-tight ${textClass}`}>{displayPlanetName}</p>
-                                    <p className={`text-[10px] font-black opacity-60 bg-white/5 px-2 py-0.5 rounded border border-white/10 ${textClass}`}>{inf.position}</p>
+                                  <div className="space-y-1.5 flex-1">
+                                    <div className="flex items-center justify-between">
+                                      <p className={`text-base font-black uppercase tracking-tight ${textClass}`}>{displayPlanetName}</p>
+                                      <p className={`text-[10px] font-black opacity-60 bg-white/5 px-2 py-0.5 rounded border border-white/10 ${textClass}`}>{inf.position}</p>
+                                    </div>
+                                    <p className={`text-[12px] leading-relaxed font-medium ${textClass} opacity-90`}>
+                                      {getPlanetDailyEffect(planetKey, effectType as EffectType, language as 'tr' | 'en') || inf.interpretation}
+                                    </p>
                                   </div>
-                                  <p className={`text-[12px] leading-relaxed font-medium ${textClass} opacity-90`}>
-                                    {getPlanetDailyEffect(planetKey, effectType as EffectType, language as 'tr' | 'en') || inf.interpretation}
-                                  </p>
                                 </div>
+                                {isLocked && (
+                                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
+                                    <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
+                                      <PlayCircle className="w-6 h-6 text-white" />
+                                    </div>
+                                  </div>
+                                )}
                               </button>
                             );
                           })
@@ -680,7 +727,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden pt-4 pb-6"
                   >
-                    <div className="relative space-y-12 px-4 py-4">
+                    <div className="relative space-y-4 px-4 py-4">
                       <div className="relative flex justify-between items-center h-16">
                         {Object.entries(EMOJI_IMAGES).map(([key, img], index) => {
                           const zoneMin = index * 20;
@@ -699,7 +746,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                                 y: isActive ? -6 : 0
                               }}
                               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                              className="w-14 h-14 relative flex items-center justify-center transition-all duration-300"
+                              className="w-[3.15rem] h-[3.15rem] relative flex items-center justify-center transition-all duration-300"
                             >
                               <img
                                 src={img}
@@ -712,7 +759,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                       </div>
 
                       <div className="relative">
-                        <div className="relative h-[clamp(3rem,8vw,4rem)] px-2">
+                        <div className="relative h-[clamp(2.7rem,7.2vw,3.6rem)] px-2">
                           <div
                             className="absolute inset-x-2 inset-y-0 rounded-full overflow-hidden pointer-events-none opacity-70 border border-white/10"
                             style={{
@@ -742,7 +789,7 @@ function DayDetailDialog({ date, energy, profile, isOpen, onClose, userLifeEvent
                               <SliderPrimitive.Range className="absolute h-full bg-transparent" />
                             </SliderPrimitive.Track>
                             <SliderPrimitive.Thumb
-                              className="block h-[clamp(2.5rem,6vw,3rem)] w-[clamp(2.5rem,6vw,3rem)] rounded-full border border-white/20 bg-mystic-gold/90 shadow-[0_0_15px_rgba(212,175,55,0.5)] ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing hover:scale-110 transition-transform"
+                              className="block h-[clamp(2.25rem,5.4vw,2.7rem)] w-[clamp(2.25rem,5.4vw,2.7rem)] rounded-full border border-white/20 bg-mystic-gold/90 shadow-[0_0_15px_rgba(212,175,55,0.5)] ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing hover:scale-110 transition-transform"
                               aria-label="Happiness Level"
                             />
                           </SliderPrimitive.Root>
@@ -802,6 +849,39 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
   const [detailedTransit, setDetailedTransit] = useState<PersonalTransit | null>(null);
   const [aiInterpretations, setAiInterpretations] = useState<Record<string, string>>({});
   const [loadingAI, setLoadingAI] = useState<string | null>(null);
+
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [showAdPopup, setShowAdPopup] = useState(false);
+  const [adTarget, setAdTarget] = useState<string | null>(null);
+  const [unlockedPlanets, setUnlockedPlanets] = useState<string[]>([]);
+  const [unlockedDays, setUnlockedDays] = useState<string[]>([]);
+
+  useEffect(() => {
+    setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+  }, []);
+
+  const handleShowPremium = () => {
+    if (PersistenceManager.getPremiumStatus()) return;
+    setShowPremiumModal(true);
+  };
+
+  const handleShowAd = (planetKey: string) => {
+    setAdTarget(planetKey);
+    setShowAdPopup(true);
+  };
+
+  const handleAdComplete = () => {
+    if (adTarget) {
+      if (adTarget.startsWith('day-')) {
+        setUnlockedDays(prev => [...prev, adTarget.replace('day-', '')]);
+      } else {
+        PersistenceManager.unlockContent(adTarget);
+        setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+      }
+      setAdTarget(null);
+    }
+    setShowAdPopup(false);
+  };
 
   const fetchAIInterpretation = async (transit: PersonalTransit) => {
     const key = `${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${transit.house}`;
@@ -1065,30 +1145,51 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
               new Date().getMonth() === currentMonth &&
               new Date().getFullYear() === currentYear;
 
+            const date = new Date(currentYear, currentMonth, day);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            date.setHours(0, 0, 0, 0);
+            
+            const isFuture = date > today;
+            const isLocked = isFuture && profile?.subscription_status !== 'premium' && !unlockedDays.includes(formatDateToKey(date));
+
             return (
               <motion.button
                 key={day}
-                onClick={() => setSelectedDay(day)}
-                className={`aspect-square rounded-lg flex flex-col items-center justify-center text-sm transition-all relative ${selectedDay === day
+                onClick={() => {
+                  if (isLocked) {
+                    handleShowPremium();
+                  } else {
+                    setSelectedDay(day);
+                  }
+                }}
+                className={`aspect-square rounded-lg flex flex-col items-center justify-center text-sm transition-all relative overflow-hidden ${selectedDay === day
                   ? 'ring-2 ring-mystic-gold'
                   : isToday
                     ? 'ring-1 ring-white/30'
                     : ''
                   }`}
                 style={{
-                  backgroundColor: getInterpolatedEnergyColor(energy, 0.3)
+                  backgroundColor: isLocked ? '#000000' : getInterpolatedEnergyColor(energy, 0.3)
                 } as any}
                 whileTap={{ scale: 0.95 }}
               >
-                {eventData && (
-                  <span className="absolute -top-1 -right-1 text-xs">{eventData.icon}</span>
-                )}
-                <span className={`font-medium ${isToday ? 'text-mystic-gold' : 'text-white'}`}>
-                  {day}
-                </span>
-                {!loading && (
-                  <span className="text-[8px] text-white/60">{energy}%</span>
-                )}
+                <div className={`flex flex-col items-center justify-center w-full h-full relative`}>
+                  {isLocked && (
+                    <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40">
+                      <Lock className="w-5 h-5 text-white/70" />
+                    </div>
+                  )}
+                  {eventData && !isLocked && (
+                    <span className="absolute -top-1 -right-1 text-xs">{eventData.icon}</span>
+                  )}
+                  <span className={`font-medium ${isToday ? 'text-mystic-gold' : 'text-white'} ${isLocked ? 'opacity-50' : ''}`}>
+                    {day}
+                  </span>
+                  {!loading && !isLocked && (
+                    <span className="text-[8px] text-white/60">{energy}%</span>
+                  )}
+                </div>
               </motion.button>
             );
           })}
@@ -1115,6 +1216,10 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
             onOpenDetailedTransit={(transit) => {
               setDetailedTransit(transit);
             }}
+            subscriptionStatus={profile?.subscription_status}
+            onShowPremium={handleShowPremium}
+            onShowAd={handleShowAd}
+            unlockedPlanets={unlockedPlanets}
           />
         )}
 
@@ -1153,6 +1258,10 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
         transits={personalTransits}
         initialPlanetFilter={transitPlanetFilter}
         profile={profile}
+        subscriptionStatus={profile?.subscription_status}
+        onShowPremium={handleShowPremium}
+        onShowAd={handleShowAd}
+        unlockedPlanets={unlockedPlanets}
       />
 
       <Dialog open={!!detailedTransit} onOpenChange={() => setDetailedTransit(null)}>
@@ -1308,6 +1417,21 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
           )}
         </DialogContent>
       </Dialog>
+
+      <PremiumModal 
+        isOpen={showPremiumModal} 
+        onClose={() => setShowPremiumModal(false)} 
+      />
+
+      <AdContentPopup
+        isOpen={showAdPopup}
+        onClose={() => setShowAdPopup(false)}
+        onWatchAd={handleAdComplete}
+        onOpenPremium={() => {
+          setShowAdPopup(false);
+          setShowPremiumModal(true);
+        }}
+      />
     </div>
   );
 }

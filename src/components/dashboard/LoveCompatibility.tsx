@@ -22,6 +22,9 @@ import { BirthDateWheel } from "@/components/ui/astrology-inputs/BirthDateWheel"
 import { BirthTimeSlider } from "@/components/ui/astrology-inputs/BirthTimeSlider";
 import { CosmicLocationInput } from "@/components/ui/astrology-inputs/CosmicLocationInput";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PremiumModal } from "../premium/PremiumModal";
+import { AdContentPopup } from "../ads/AdContentPopup";
+import { useProfile } from "@/hooks/useProfile";
 
 interface PersonData {
   full_name: string;
@@ -74,8 +77,17 @@ function HouseDetailModal({
   partnerName: string;
 }) {
   const { t } = useLanguage();
+  const { subscriptionStatus } = useProfile();
   const colors = getScoreColorHelper(house.score);
   const aylaGuide = generateAylaGuide(house.houseNumber, house.person1Sign, house.person2Sign, house.score);
+
+  // Security check - though parent handles it, double check here
+  const isUnlocked = subscriptionStatus === 'premium' || house.houseNumber === 1 || house.houseNumber === 2;
+  
+  if (!isUnlocked) {
+    onClose();
+    return null;
+  }
 
   return (
     <motion.div
@@ -171,12 +183,15 @@ function HouseDetailModal({
 
 export function LoveCompatibility({ profile }: { profile: any }) {
   const { t, language } = useLanguage();
+  const { subscriptionStatus } = useProfile();
   const [step, setStep] = useState<"input" | "loading" | "result">("input");
   const [inputStep, setInputStep] = useState(0);
   const [loadingText, setLoadingText] = useState("");
   const [useUserProfile, setUseUserProfile] = useState(true);
   const [synastryResult, setSynastryResult] = useState<SynastryResult | null>(null);
   const [selectedHouse, setSelectedHouse] = useState<HouseCompatibility | null>(null);
+  const [showAdPopup, setShowAdPopup] = useState(false);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
 
   const [person1Data, setPerson1Data] = useState<PersonData>({
     full_name: "",
@@ -213,6 +228,15 @@ export function LoveCompatibility({ profile }: { profile: any }) {
       return;
     }
 
+    if (subscriptionStatus !== 'premium') {
+      setShowAdPopup(true);
+      return;
+    }
+
+    proceedCalculate();
+  };
+
+  const proceedCalculate = async () => {
     setStep("loading");
 
     try {
@@ -249,6 +273,11 @@ export function LoveCompatibility({ profile }: { profile: any }) {
       toast.error(t('calculationError'));
       setStep("input");
     }
+  };
+
+  const handleAdComplete = () => {
+    setShowAdPopup(false);
+    proceedCalculate();
   };
 
   const nextInputStep = () => {
@@ -369,6 +398,18 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                 {t('useMyProfile')}
               </Button>
             )}
+
+            <AdContentPopup
+              isOpen={showAdPopup}
+              onClose={() => setShowAdPopup(false)}
+              onWatchAd={handleAdComplete}
+              onOpenPremium={() => {
+                setShowAdPopup(false);
+                setShowPremiumModal(true);
+              }}
+            />
+
+            <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />
           </motion.div>
         )}
 
@@ -462,8 +503,8 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                       <div key={key} className={`${colors.bg} p-4 rounded-2xl border ${colors.border} backdrop-blur-md`}>
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-[9px] uppercase tracking-widest text-white/50">
-                            {t(key)}
-                          </span>
+                          {t(key as any)}
+                        </span>
                           <span className={`text-xs font-bold ${colors.text}`}>{value}%</span>
                         </div>
                         <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
@@ -488,6 +529,8 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   <div className="flex overflow-x-auto pb-6 gap-4 no-scrollbar -mx-8 px-8 snap-x">
                     {synastryResult.houseCompatibility.map((house, i) => {
                       const colors = getScoreColorHelper(house.score);
+                      const isUnlocked = subscriptionStatus === 'premium' || house.houseNumber === 1 || house.houseNumber === 2;
+                      
                       return (
                         <motion.div
                           key={i}
@@ -495,10 +538,16 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: i * 0.1 }}
                           className="flex-shrink-0 w-[280px] snap-center cursor-pointer"
-                          onClick={() => setSelectedHouse(house)}
+                          onClick={() => {
+                            if (isUnlocked) {
+                              setSelectedHouse(house);
+                            } else {
+                              setShowPremiumModal(true);
+                            }
+                          }}
                         >
-                          <Card className={`p-6 bg-void-black/60 ${colors.border} border backdrop-blur-xl h-full flex flex-col justify-between group hover:scale-[1.02] transition-all ${colors.glow}`}>
-                            <div className="space-y-4">
+                          <Card className={`p-6 bg-void-black/60 ${colors.border} border backdrop-blur-xl h-full flex flex-col justify-between group hover:scale-[1.02] transition-all ${colors.glow} relative overflow-hidden`}>
+                            <div className={`space-y-4 ${!isUnlocked ? "blur-md opacity-60 pointer-events-none" : ""}`}>
                               <div className="flex justify-between items-start">
                                 <div className="flex items-center gap-3">
                                   <div className="relative">
@@ -531,6 +580,16 @@ export function LoveCompatibility({ profile }: { profile: any }) {
 
                               <p className={`text-[9px] ${colors.text} opacity-40 text-center pt-2`}>{t('tapForDetails')}</p>
                             </div>
+
+                            {!isUnlocked && (
+                              <div className="absolute inset-0 flex items-center justify-center z-10">
+                                <img 
+                                  src="/Premium symbol.png" 
+                                  alt="Premium Content" 
+                                  className="w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] animate-pulse"
+                                />
+                              </div>
+                            )}
                           </Card>
                         </motion.div>
                       );

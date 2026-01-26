@@ -40,6 +40,7 @@ import { AYLA_IMAGE as CONSTANT_AYLA_IMAGE } from "@/lib/constants";
 import { PlanetIcon } from "../ui/PlanetIcon";
 import { NatalPlanetModal } from "./NatalPlanetModal";
 import { NatalSignModal } from "./NatalSignModal";
+import { PremiumModal } from "@/components/premium/PremiumModal";
 import { getNatalPlanetInterpretation } from "@/lib/natal-interpretations";
 import { SIGN_INTERPRETATIONS } from "@/lib/sign-interpretations";
 import { getEnergyDescription } from "@/lib/energy-potential-service";
@@ -141,7 +142,7 @@ const getTranslatedElement = (element: string, lang: string): string => {
 };
 
 export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
-  const { profile } = useProfile();
+  const { profile, subscriptionStatus } = useProfile();
   const { t, language } = useLanguage();
   const [chartData, setChartData] = useState<any>(null);
   const [birthChartProfile, setBirthChartProfile] = useState<BirthChartProfile | null>(null);
@@ -151,6 +152,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
   const [monthlyForecast, setMonthlyForecast] = useState<string>("");
   const [activeTab, setActiveTab] = useState<"overview" | "planets" | "houses" | "interpretation" | "energy">("overview");
   const [selectedPlanet, setSelectedPlanet] = useState<{ name: string; sign: string } | null>(null);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [selectedSign, setSelectedSign] = useState<string | null>(null);
   const [selectedHouse, setSelectedHouse] = useState<number | null>(null);
   const [openAccordion, setOpenAccordion] = useState<string | null>("sun");
@@ -208,6 +210,21 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
   const sunInterp = ZODIAC_INTERPRETATIONS[chartData.sunSign];
   const moonInterp = ZODIAC_INTERPRETATIONS[chartData.moonSign];
   const risingInterp = ZODIAC_INTERPRETATIONS[chartData.risingSign];
+
+  const handlePlanetSelection = (planetKey: string, planetName: string, planetData: any) => {
+    // Sun and Moon are always accessible, others require premium
+    const isFreePlanet = planetKey === 'sun' || planetKey === 'moon';
+    
+    if (!isFreePlanet && subscriptionStatus !== 'premium') {
+      setShowPremiumModal(true);
+      return;
+    }
+
+    setSelectedPlanet({
+      name: planetName,
+      sign: typeof planetData === 'object' ? planetData.sign : planetData
+    });
+  };
 
     const renderOverview = () => {
       const sunSignKey = signMap[chartData.sunSign] || "aries";
@@ -311,34 +328,41 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
         { nameKey: "Uranus", key: "uranus" },
         { nameKey: "Neptune", key: "neptune" },
         { nameKey: "Pluto", key: "pluto" },
-      ].map((planet) => (
-        <Card
-          key={planet.key}
-          className="p-3 bg-white/5 border-mystic-gold/20 flex flex-col items-center text-center cursor-pointer hover:bg-white/10 transition-colors"
-          onClick={() => {
-            const planetData = chartData.planets[planet.key as keyof typeof chartData.planets];
-            setSelectedPlanet({
-              name: t(planet.nameKey as keyof typeof import('@/locales/tr').tr),
-              sign: typeof planetData === 'object' ? planetData.sign : planetData
-            });
-          }}
-        >
-          <div className="w-10 h-10 mb-2">
-            <PlanetIcon name={t(planet.nameKey as keyof typeof import('@/locales/tr').tr)} className="w-full h-full" />
-          </div>
-          <p className="text-white/50 text-[10px] uppercase">{t(planet.nameKey as keyof typeof import('@/locales/tr').tr)}</p>
-          <div className="flex items-center gap-1">
-            <p className="text-mystic-gold font-mystic text-sm">
-              {(() => {
-                const planetData = chartData.planets[planet.key as keyof typeof chartData.planets];
-                const sign = typeof planetData === 'object' ? planetData.sign : planetData;
-                return getTranslatedSign(sign, language);
-              })()}
-            </p>
-          </div>
-
-        </Card>
-      ))}
+      ].map((planet) => {
+        const isFreePlanet = planet.key === 'sun' || planet.key === 'moon';
+        const isLocked = subscriptionStatus !== 'premium' && !isFreePlanet;
+        
+        return (
+          <Card
+            key={planet.key}
+            className={`p-3 bg-white/5 border-mystic-gold/20 flex flex-col items-center text-center cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden`}
+            onClick={() => {
+              const planetData = chartData.planets[planet.key as keyof typeof chartData.planets];
+              handlePlanetSelection(
+                planet.key,
+                t(planet.nameKey as keyof typeof import('@/locales/tr').tr),
+                planetData
+              );
+            }}
+          >
+            <div className={`w-full flex flex-col items-center`}>
+              <div className="w-10 h-10 mb-2">
+                <PlanetIcon name={t(planet.nameKey as keyof typeof import('@/locales/tr').tr)} className="w-full h-full" />
+              </div>
+              <p className="text-white/50 text-[10px] uppercase">{t(planet.nameKey as keyof typeof import('@/locales/tr').tr)}</p>
+              <div className="flex items-center gap-1">
+                <p className="text-mystic-gold font-mystic text-sm">
+                  {(() => {
+                    const planetData = chartData.planets[planet.key as keyof typeof chartData.planets];
+                    const sign = typeof planetData === 'object' ? planetData.sign : planetData;
+                    return getTranslatedSign(sign, language);
+                  })()}
+                </p>
+              </div>
+            </div>
+          </Card>
+        );
+      })}
     </motion.div>
   );
 
@@ -355,20 +379,38 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
         {Object.entries(interpretation.houses).map(([num, text]) => {
           const houseIndex = Number(num) - 1;
           const houseSign = birthChartProfile?.houses[houseIndex] || "";
+          const isLocked = subscriptionStatus !== 'premium' && (Number(num) !== 1 && Number(num) !== 9);
 
           return (
               <Card
                 key={num}
-                className="p-4 bg-white/5 border-mystic-gold/20 cursor-pointer hover:bg-white/10 transition-colors"
-                onClick={() => setSelectedHouse(selectedHouse === Number(num) ? null : Number(num))}
+                className={`p-4 bg-white/5 border-mystic-gold/20 cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden ${isLocked ? 'opacity-90' : ''}`}
+                onClick={() => {
+                  if (isLocked) {
+                    setShowPremiumModal(true);
+                  } else {
+                    setSelectedHouse(selectedHouse === Number(num) ? null : Number(num));
+                  }
+                }}
               >
-                <div className="flex items-center justify-between">
+                <div className={`flex items-center justify-between ${isLocked ? 'blur-sm select-none' : ''}`}>
                     <div className="flex items-center gap-4">
                       <ZodiacImage sign={houseSign} size={40} className="shrink-0" />
                       <p className="text-white font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
                     </div>
                 </div>
-              {selectedHouse === Number(num) && (
+
+                {isLocked && (
+                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                    <img 
+                      src="/Premium symbol.png" 
+                      alt="Premium" 
+                      className="w-12 h-12 object-contain animate-pulse drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
+                    />
+                  </div>
+                )}
+
+              {!isLocked && selectedHouse === Number(num) && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
@@ -421,26 +463,45 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           const signKey = signMap[cat.sign] || "aries";
           const data = (astroKnowledge.interpretations as any)[cat.planet]?.[signKey];
           const isOpen = openAccordion === cat.id;
+          const isLocked = subscriptionStatus !== 'premium' && (cat.id !== 'sun' && cat.id !== 'moon');
 
           if (!data) return null;
 
           return (
-            <Card key={cat.id} className="overflow-hidden bg-white/5 border-mystic-gold/20">
+            <Card key={cat.id} className={`overflow-hidden bg-white/5 border-mystic-gold/20 relative ${isLocked ? 'opacity-90' : ''}`}>
               <button
-                onClick={() => setOpenAccordion(isOpen ? null : cat.id)}
+                onClick={() => {
+                  if (isLocked) {
+                    setShowPremiumModal(true);
+                  } else {
+                    setOpenAccordion(isOpen ? null : cat.id);
+                  }
+                }}
                 className="w-full p-4 flex items-center justify-between text-left transition-colors hover:bg-white/5"
               >
-                <div className="flex items-center gap-4">
+                <div className={`flex items-center gap-4 ${isLocked ? 'blur-sm select-none' : ''}`}>
                   <ZodiacImage sign={cat.sign} size={40} className="shrink-0" />
                   <div>
                     <p className="text-white font-mystic">{cat.label}</p>
                   </div>
                 </div>
-                {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
+                {!isLocked && (
+                  isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />
+                )}
               </button>
 
+              {isLocked && (
+                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                  <img 
+                    src="/Premium symbol.png" 
+                    alt="Premium" 
+                    className="w-12 h-12 object-contain animate-pulse drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
+                  />
+                </div>
+              )}
+
               <AnimatePresence>
-                {isOpen && (
+                {!isLocked && isOpen && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -653,6 +714,12 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             onPlanetClick={(planetName) => {
               const config = PLANET_DATA_CONFIG.find(p => t(p.nameKey as keyof typeof import('@/locales/tr').tr) === planetName);
               if (config) {
+                const isFreePlanet = config.key === 'sun' || config.key === 'moon';
+                if (!isFreePlanet && subscriptionStatus !== 'premium') {
+                  setShowPremiumModal(true);
+                  return;
+                }
+
                 const planetData = chartData.planets[config.key as keyof typeof chartData.planets];
                 setActiveTab("planets");
                 setSelectedPlanet({
@@ -720,6 +787,11 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           isOpen={selectedEnergyType !== null}
           onClose={() => setSelectedEnergyType(null)}
           energyType={selectedEnergyType || 'mental'}
+        />
+
+        <PremiumModal 
+          isOpen={showPremiumModal} 
+          onClose={() => setShowPremiumModal(false)} 
         />
       </div>
     </motion.div>

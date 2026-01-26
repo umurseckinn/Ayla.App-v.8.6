@@ -65,8 +65,17 @@ export function SettingsDialog() {
 
     const handleReset = () => {
         try {
+            // Backup persistent data
+            const persistentData = localStorage.getItem("ayla_persistent_store");
+            
             safeLocalStorage.clear();
             sessionStorage.clear();
+            
+            // Restore persistent data
+            if (persistentData) {
+                localStorage.setItem("ayla_persistent_store", persistentData);
+            }
+            
             window.location.reload();
         } catch (e) {
             console.error("Reset error:", e);

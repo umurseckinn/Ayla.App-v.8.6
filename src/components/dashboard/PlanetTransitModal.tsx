@@ -195,6 +195,7 @@ export function PlanetTransitModal({
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              key="transit-modal-content"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

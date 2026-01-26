@@ -4,7 +4,11 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { safeLocalStorage } from "@/lib/safe-utils";
+import { X } from "lucide-react";
+import { useProfileContext } from "@/contexts/ProfileContext";
+import { PersistenceManager } from "@/lib/persistence";
 
 // Inline icons to avoid import issues
 const CheckIcon = ({ className }: { className?: string }) => (
@@ -37,8 +41,20 @@ const SparklesIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export function PremiumModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export function PremiumModal({ isOpen, onClose, onPurchaseSuccess }: { isOpen: boolean; onClose: () => void; onPurchaseSuccess?: () => void }) {
   const { language } = useLanguage();
+  const { setSubscriptionStatus } = useProfileContext();
+
+  const handlePurchase = async () => {
+      // Simulate successful purchase
+      PersistenceManager.setPremiumStatus(true);
+      await setSubscriptionStatus('premium');
+      if (onPurchaseSuccess) {
+        onPurchaseSuccess();
+      } else {
+        onClose();
+      }
+  };
 
   const features = language === 'en' ? [
     "One-time payment, lifetime validity",
@@ -51,20 +67,24 @@ export function PremiumModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   ];
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-[2px] p-4"
-        >
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="p-0 border-none bg-transparent shadow-none max-w-none w-full h-full flex items-center justify-center pointer-events-none" showCloseButton={false}>
+        <DialogTitle className="sr-only">Premium</DialogTitle>
+        <div className="pointer-events-auto w-full flex items-center justify-center p-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             className="w-full max-w-sm relative rounded-[2rem] overflow-hidden shadow-2xl bg-indigo-950/50 border border-mystic-gold/30 flex flex-col h-[80vh] max-h-[650px]"
           >
+            {/* Close Button */}
+            <button 
+              onClick={onClose} 
+              className="absolute top-4 right-4 z-50 p-2 text-white/70 hover:text-white transition-colors bg-black/20 hover:bg-black/40 rounded-full backdrop-blur-sm"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0">
               <img
@@ -129,10 +149,10 @@ export function PremiumModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                   </p>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-white/40 text-lg font-bold line-through decoration-rose-500/80 decoration-2">
-                      ₺800
+                      {language === 'en' ? '$20' : '₺800'}
                     </span>
                     <span className="text-2xl font-black text-mystic-gold drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-                      ₺600
+                      {language === 'en' ? '$13.85' : '₺600'}
                     </span>
                   </div>
                 </div>
@@ -146,7 +166,7 @@ export function PremiumModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                   transition={{ delay: 0.7 }}
                 >
                   <Button
-                    onClick={onClose}
+                    onClick={handlePurchase}
                     className="w-full h-12 bg-[#B8860B] hover:bg-[#DAA520] text-indigo-950 font-black text-base tracking-wide rounded-xl shadow-[0_0_15px_rgba(184,134,11,0.4)] border-t border-white/20 transform active:scale-95 transition-all"
                   >
                     <div className="flex items-center gap-2">
@@ -169,8 +189,8 @@ export function PremiumModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
 
             </div>
           </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }

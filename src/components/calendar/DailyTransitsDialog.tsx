@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, X, ChevronDown, Loader2 } from "lucide-react";
+import { Sparkles, X, ChevronDown, Loader2, PlayCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -26,6 +26,10 @@ interface DailyTransitsDialogProps {
   transits: PersonalTransit[];
   initialPlanetFilter?: string | null;
   profile?: any;
+  subscriptionStatus?: string;
+  onShowPremium?: () => void;
+  onShowAd?: (planetKey: string) => void;
+  unlockedPlanets?: string[];
 }
 
 export function DailyTransitsDialog({
@@ -34,7 +38,11 @@ export function DailyTransitsDialog({
   date,
   transits,
   initialPlanetFilter,
-  profile
+  profile,
+  subscriptionStatus,
+  onShowPremium,
+  onShowAd,
+  unlockedPlanets = []
 }: DailyTransitsDialogProps) {
   const { t, language } = useLanguage();
   const [filters, setFilters] = useState<string[]>(["positive", "neutral", "negative"]);
@@ -142,6 +150,16 @@ export function DailyTransitsDialog({
     return loadingAI === key;
   };
 
+  const handleTransitClick = (transit: PersonalTransit) => {
+    const isUnlocked = ['Sun', 'Moon'].includes(transit.transitPlanetKey) || unlockedPlanets.includes(transit.transitPlanetKey);
+    
+    if (subscriptionStatus !== 'premium' && !isUnlocked && onShowPremium) {
+      onShowPremium();
+      return;
+    }
+    setDetailedTransit(transit);
+  };
+
   return (
     <>
       <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -179,48 +197,70 @@ export function DailyTransitsDialog({
               {filteredTransits.length > 0 ? (
                 filteredTransits.map((transit, i) => {
                   const statusLabel = getTransitStatusLabel(date, transit);
+                  const isLocked = subscriptionStatus !== 'premium' && !['Sun', 'Moon'].includes(transit.transitPlanetKey) && !unlockedPlanets.includes(transit.transitPlanetKey);
+
                   return (
-                    <button
-                      key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
-                      onClick={() => setDetailedTransit(transit)}
-                      className={`p-3 rounded-2xl border flex flex-col items-center justify-center gap-1 transition-all min-h-[130px] relative overflow-hidden bg-black shadow-lg ${transit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
+                      <button
+                        key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
+                        onClick={() => {
+                          if (initialPlanetFilter && subscriptionStatus !== 'premium' && onShowPremium) {
+                            onShowPremium();
+                            return;
+                          }
+
+                          if (isLocked && onShowAd) {
+                            onShowAd(transit.transitPlanetKey);
+                          } else {
+                            handleTransitClick(transit);
+                          }
+                        }}
+                        className={`p-3 rounded-2xl border flex flex-col items-center justify-center gap-1 transition-all min-h-[130px] relative overflow-hidden bg-black shadow-lg ${transit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
                         transit.effect === 'negative' ? 'border-rose-500 shadow-rose-500/20' :
                           'border-amber-400 shadow-amber-400/20'
                         }`}
                     >
-                      <div className="flex items-center gap-2 w-full justify-center text-[8px] font-black uppercase tracking-wide">
-                        <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
-                          transit.effect === 'negative' ? 'text-rose-400/80' :
-                            'text-amber-400/80'
-                          }`}>{PLANET_KEY_TO_NAME[transit.transitPlanetKey]?.substring(0, 4) || transit.transitPlanetKey.substring(0, 4)}</span>
-                        <span className="text-white/30">×</span>
-                        <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
-                          transit.effect === 'negative' ? 'text-rose-400/80' :
-                            'text-amber-400/80'
-                          }`}>{PLANET_KEY_TO_NAME[transit.natalPlanetKey]?.substring(0, 4) || transit.natalPlanetKey.substring(0, 4)}</span>
-                      </div>
-                      <div className="flex items-center gap-2 w-full justify-center">
-                        <div className="w-9 h-9">
-                          <PlanetIcon name={transit.transitPlanetKey} className="w-full h-full" />
+                      <div className={`w-full h-full flex flex-col items-center justify-center gap-1 transition-all duration-300 ${isLocked ? 'blur-sm opacity-50' : ''}`}>
+                        <div className="flex items-center gap-2 w-full justify-center text-[8px] font-black uppercase tracking-wide">
+                          <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
+                            transit.effect === 'negative' ? 'text-rose-400/80' :
+                              'text-amber-400/80'
+                            }`}>{PLANET_KEY_TO_NAME[transit.transitPlanetKey]?.substring(0, 4) || transit.transitPlanetKey.substring(0, 4)}</span>
+                          <span className="text-white/30">×</span>
+                          <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
+                            transit.effect === 'negative' ? 'text-rose-400/80' :
+                              'text-amber-400/80'
+                            }`}>{PLANET_KEY_TO_NAME[transit.natalPlanetKey]?.substring(0, 4) || transit.natalPlanetKey.substring(0, 4)}</span>
                         </div>
-                        <span className={`text-2xl font-bold drop-shadow-[0_0_8px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                          transit.effect === 'negative' ? 'text-rose-500' :
-                            'text-amber-400'
-                          }`}>{transit.aspectSymbol}</span>
-                        <div className="w-9 h-9">
-                          <PlanetIcon name={transit.natalPlanetKey} className="w-full h-full" />
+                        <div className="flex items-center gap-2 w-full justify-center">
+                          <div className="w-9 h-9">
+                            <PlanetIcon name={transit.transitPlanetKey} className="w-full h-full" />
+                          </div>
+                          <span className={`text-2xl font-bold drop-shadow-[0_0_8px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                            transit.effect === 'negative' ? 'text-rose-500' :
+                              'text-amber-400'
+                            }`}>{transit.aspectSymbol}</span>
+                          <div className="w-9 h-9">
+                            <PlanetIcon name={transit.natalPlanetKey} className="w-full h-full" />
+                          </div>
+                        </div>
+                        <div className="flex w-full justify-between items-center text-[9px] px-2 absolute bottom-2 left-0 right-0">
+                          <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                            transit.effect === 'negative' ? 'text-rose-500' :
+                              'text-amber-400'
+                            }`}>{statusLabel}</span>
+                          <span className={`font-black whitespace-nowrap truncate max-w-[50%] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                            transit.effect === 'negative' ? 'text-rose-500' :
+                              'text-amber-400'
+                            }`}>{formatHouseNumber(transit.house, language)}</span>
                         </div>
                       </div>
-                      <div className="flex w-full justify-between items-center text-[9px] px-2 absolute bottom-2 left-0 right-0">
-                        <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                          transit.effect === 'negative' ? 'text-rose-500' :
-                            'text-amber-400'
-                          }`}>{statusLabel}</span>
-                        <span className={`font-black whitespace-nowrap truncate max-w-[50%] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                          transit.effect === 'negative' ? 'text-rose-500' :
-                            'text-amber-400'
-                          }`}>{formatHouseNumber(transit.house, language)}</span>
-                      </div>
+                      {isLocked && (
+                        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
+                          <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
+                            <PlayCircle className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
+                      )}
                     </button>
                   );
                 })

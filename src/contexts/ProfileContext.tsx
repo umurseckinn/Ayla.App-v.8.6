@@ -1,13 +1,18 @@
 "use client";
 import { safeJSONParse } from "@/lib/safe-utils";
+import { PersistenceManager } from "@/lib/persistence";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+
+export type SubscriptionStatus = 'free' | 'freemium' | 'premium';
 
 interface ProfileContextType {
     profile: any;
     loading: boolean;
+    subscriptionStatus: SubscriptionStatus;
     updateStarDust: (amount: number) => Promise<void>;
     updateProfile: (newData: any) => Promise<void>;
+    setSubscriptionStatus: (status: SubscriptionStatus) => Promise<void>;
     refreshProfile: () => Promise<void>;
 }
 
@@ -16,6 +21,7 @@ const ProfileContext = createContext<ProfileContextType | undefined>(undefined);
 export function ProfileProvider({ children }: { children: React.ReactNode }) {
     const [profile, setProfile] = useState<any>(null);
     const [loading, setLoading] = useState(true);
+    const [subscriptionStatus, setSubscriptionState] = useState<SubscriptionStatus>('free');
 
     const fetchProfile = async () => {
         try {
@@ -30,6 +36,9 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
                         star_dust: parsed.star_dust ?? 150,
                         aura_streak: parsed.aura_streak ?? 1,
                     });
+                    if (parsed.subscription_status) {
+                        setSubscriptionState(parsed.subscription_status as SubscriptionStatus);
+                    }
                 } catch (parseError) {
                     console.error('Failed to parse user data:', parseError);
                     setProfile(null);
@@ -47,6 +56,35 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         fetchProfile();
     }, []);
+
+    const setSubscriptionStatus = async (status: SubscriptionStatus) => {
+        setSubscriptionState(status);
+        
+        // Update persistent store
+        if (status === 'premium') {
+            PersistenceManager.setPremiumStatus(true);
+        }
+
+        if (profile) {
+            await updateProfile({ subscription_status: status });
+        } else {
+             // If no profile exists yet, create a partial one in local storage
+             const storageKey = 'ayla_user_data';
+             const existingData = localStorage.getItem(storageKey);
+             let newData = {};
+             if (existingData) {
+                 try {
+                     newData = safeJSONParse(existingData, {});
+                 } catch (e) { console.error(e); }
+             }
+             const updated = { ...newData, subscription_status: status };
+             localStorage.setItem(storageKey, JSON.stringify(updated));
+             
+             // We also need to update the profile state if it was null, but usually updateProfile handles that logic better
+             // Let's just use updateProfile logic which handles merging
+             await updateProfile({ subscription_status: status });
+        }
+    };
 
     const updateStarDust = async (amount: number) => {
         if (!profile) return;
@@ -99,7 +137,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <ProfileContext.Provider value={{ profile, loading, updateStarDust, updateProfile, refreshProfile: fetchProfile }}>
+        <ProfileContext.Provider value={{ profile, loading, subscriptionStatus, updateStarDust, updateProfile, setSubscriptionStatus, refreshProfile: fetchProfile }}>
             {children}
         </ProfileContext.Provider>
     );

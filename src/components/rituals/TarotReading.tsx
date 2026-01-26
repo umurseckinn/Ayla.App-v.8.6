@@ -16,6 +16,8 @@ import { AstroModifier } from "@/lib/tarot-engine-data";
 import { COSMIC_LOGIC } from "@/lib/astrology";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LOCAL_TAROT_CARDS } from "@/lib/tarot-cards-data";
+import { PremiumModal } from "../premium/PremiumModal";
+import { AdContentPopup } from "../ads/AdContentPopup";
 // TarotCard type matches LOCAL_TAROT_CARDS structure
 interface TarotCard {
   name: string;
@@ -59,7 +61,7 @@ const TarotCardImage = ({ nameShort, isReversed, className = "" }: { nameShort: 
 };
 
 export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend: (amount: number) => void }) {
-  const { profile } = useProfile();
+  const { profile, subscriptionStatus } = useProfile();
   const { t } = useLanguage();
   const [phase, setPhase] = useState<"niche" | "waiting" | "selecting" | "result">("niche");
   const [cards] = useState<TarotCard[]>(LOCAL_TAROT_CARDS as any);
@@ -68,6 +70,17 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
   const [loading] = useState(false);
   const [interpreting, setInterpreting] = useState(false);
   const [aiInterpretation, setAiInterpretation] = useState<string | null>(null);
+  const [showAdPopup, setShowAdPopup] = useState(false);
+  const [showPremiumModal, setShowPremiumModal] = useState(false);
+
+  const handleAdComplete = () => {
+    setShowAdPopup(false);
+    if (selectedCards.length === 3) {
+      onSpend(100);
+      setPhase("result");
+      getInterpretation(selectedCards);
+    }
+  };
 
   const intentions: Array<{ id: TarotTopic, label: string, icon: React.ReactNode }> = [
     { id: "love", label: t('intentLove'), icon: <Heart className="w-4 h-4" /> },
@@ -163,6 +176,10 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
     setSelectedCards(newSelected);
 
     if (newSelected.length === 3) {
+      if (subscriptionStatus !== 'premium') {
+        setShowAdPopup(true);
+        return;
+      }
       onSpend(100);
       setPhase("result");
       getInterpretation(newSelected);
@@ -255,6 +272,18 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
 
             </motion.div>
           )}
+
+          <AdContentPopup
+            isOpen={showAdPopup}
+            onClose={() => setShowAdPopup(false)}
+            onWatchAd={handleAdComplete}
+            onOpenPremium={() => {
+              setShowAdPopup(false);
+              setShowPremiumModal(true);
+            }}
+          />
+
+          <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />
 
           {phase === "waiting" && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="py-20 text-center space-y-8">

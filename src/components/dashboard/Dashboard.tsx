@@ -25,10 +25,8 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FeatureGrid, FeatureId } from "./FeatureGrid";
 import { AylaGreeting } from "./AylaGreeting";
 import { TarotReading } from "../rituals/TarotReading";
-import { DreamDictionary } from "../rituals/DreamDictionary";
 import { ArchetypeAnalysis } from "../rituals/ArchetypeAnalysis";
 import { EarnDust } from "../economy/EarnDust";
 import { useProfile } from "@/hooks/useProfile";
@@ -77,7 +75,9 @@ import { AppActionsDialog } from "./AppActionsDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Settings } from "lucide-react";
 import { PremiumModal } from "../premium/PremiumModal";
-
+import { PremiumUserModal } from "../premium/PremiumUserModal";
+import { AdContentPopup } from "../ads/AdContentPopup";
+import { PersistenceManager } from "@/lib/persistence";
 
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
@@ -98,7 +98,7 @@ type TabId = "home" | "birthchart" | "calendar" | "love_compatibility" | "tarot"
 
 export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const { t, language } = useLanguage();
-  const { profile, updateStarDust } = useProfile();
+  const { profile, updateStarDust, subscriptionStatus } = useProfile();
 
   const PLANET_KEY_TO_NAME: Record<string, string> = {
     Sun: t('Sun'),
@@ -114,7 +114,6 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   };
 
   const [activeTab, setActiveTab] = useState<TabId>("home");
-  const [activeFeature, setActiveFeature] = useState<FeatureId | null>(null);
   const [isEarning, setIsEarning] = useState(false);
   const [events, setEvents] = useState<CosmicEvent[]>([]);
   const [userSunSign, setUserSunSign] = useState<string>("");
@@ -139,9 +138,34 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const [isRetrogradesOpen, setIsRetrogradesOpen] = useState(true);
   const [isDailyTransitsOpenSection, setIsDailyTransitsOpenSection] = useState(true);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [showPremiumUserModal, setShowPremiumUserModal] = useState(false);
   const [showRateUsModal, setShowRateUsModal] = useState(false);
+  const [showAdPopup, setShowAdPopup] = useState(false);
+  const [adTarget, setAdTarget] = useState<string | null>(null);
+  const [unlockedPlanets, setUnlockedPlanets] = useState<string[]>([]);
 
   useEffect(() => {
+    setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+  }, []);
+
+  const handleShowAd = (planetKey: string) => {
+    setAdTarget(planetKey);
+    setShowAdPopup(true);
+  };
+
+  const handleAdComplete = () => {
+    if (adTarget) {
+      PersistenceManager.unlockContent(adTarget);
+      setUnlockedPlanets(PersistenceManager.getUnlockedContent());
+      setAdTarget(null);
+    }
+    setShowAdPopup(false);
+  };
+
+  useEffect(() => {
+    // If premium, don't show premium offer
+    if (subscriptionStatus === 'premium') return;
+
     const hasSeen = safeLocalStorage.getItem("hasSeenPremiumOffer");
     if (!hasSeen) {
       const timer = setTimeout(() => {
@@ -149,13 +173,16 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
       }, 1000);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [subscriptionStatus]);
 
   const handlePremiumClose = () => {
     setShowPremiumModal(false);
     safeLocalStorage.setItem("hasSeenPremiumOffer", "true");
-    // Open Rate Us modal after Premium closes
-    setTimeout(() => setShowRateUsModal(true), 500);
+    
+    // Open Rate Us modal after Premium closes only if NOT premium
+    if (subscriptionStatus !== 'premium') {
+        setTimeout(() => setShowRateUsModal(true), 500);
+    }
   };
 
 
@@ -254,8 +281,19 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   }, [profileId, profileBirthDate, profileBirthTime, profileBirthPlace, profileLatitude, profileLongitude, userLifeEvents, activeTab, refreshTrigger, userSunSign, language, currentProfile?.moon_sign]);
 
   const handlePlanetClick = (planet: any) => {
-    const house = userBirthChart ? getHouseForLongitude(planet.longitude, userBirthChart.houses) : null;
     const planetKey = Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
+
+    // Access Control: Sun and Moon are free. Others require Premium or Ad Unlock.
+    const isFreePlanet = planetKey === 'Sun' || planetKey === 'Moon';
+    const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || PersistenceManager.isContentUnlocked(planetKey);
+
+    if (!isUnlocked) {
+      setAdTarget(planetKey);
+      setShowAdPopup(true);
+      return;
+    }
+
+    const house = userBirthChart ? getHouseForLongitude(planet.longitude, userBirthChart.houses) : null;
     const planetTransits = personalTransits.filter(t => t.transitPlanetKey === planetKey);
     const posCount = planetTransits.filter(t => t.effect === 'positive').length;
     const negCount = planetTransits.filter(t => t.effect === 'negative').length;
@@ -369,7 +407,13 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             {/* Buttons Row */}
             <div className="flex items-center justify-end gap-2 w-full">
               <Button
-                onClick={() => setShowPremiumModal(true)}
+                onClick={() => {
+                  if (subscriptionStatus === 'premium') {
+                    setShowPremiumUserModal(true);
+                  } else {
+                    setShowPremiumModal(true);
+                  }
+                }}
                 className="h-8 px-3 bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#FFD700] text-indigo-950 font-black text-xs rounded-lg shadow-[0_0_10px_rgba(184,134,11,0.4)] border border-white/20 transition-all flex items-center gap-1.5"
               >
                 <Crown className="w-3.5 h-3.5" />
@@ -523,28 +567,34 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const borderClass = effectType === "positive" ? "border-emerald-500/30" : effectType === "negative" ? "border-rose-500/30" : "border-amber-500/30";
                         const shadowClass = effectType === "positive" ? "shadow-[0_0_30px_rgba(52,211,153,0.15)]" : effectType === "negative" ? "shadow-[0_0_30px_rgba(251,113,133,0.15)]" : "shadow-[0_0_30px_rgba(251,191,36,0.15)]";
 
+                        // Access Control Check
+                        const isFreePlanet = planetKey === 'Sun' || planetKey === 'Moon';
+                        const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || unlockedPlanets.includes(planetKey);
+
                         return (
                           <div
                             key={`planet-${planet.planet || 'unknown'}-${i}`}
                             onClick={() => handlePlanetClick(planet)}
-                            className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border ${borderClass} hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] ${shadowClass}`}
+                            className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border ${borderClass} hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] ${shadowClass} relative overflow-hidden`}
                           >
-                            <div className="flex items-center justify-center gap-1 mb-1">
-                              <div className={`w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center group-hover:scale-110 transition-transform filter drop-shadow-[0_0_15px_currentColor] ${colorClass}`}>
-                                <PlanetIcon name={planet.planet} className="w-full h-full" />
+                            <div className={`flex flex-col items-center justify-center w-full h-full`}>
+                              <div className="flex items-center justify-center gap-1 mb-1">
+                                <div className={`w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center group-hover:scale-110 transition-transform filter drop-shadow-[0_0_15px_currentColor] ${colorClass}`}>
+                                  <PlanetIcon name={planet.planet} className="w-full h-full" />
+                                </div>
+                                <div className="w-[clamp(1.5rem,4vw,2rem)] h-[clamp(1.5rem,4vw,2rem)] group-hover:scale-110 transition-transform">
+                                  <ZodiacImage sign={planet.sign} size={32} />
+                                </div>
                               </div>
-                              <div className="w-[clamp(1.5rem,4vw,2rem)] h-[clamp(1.5rem,4vw,2rem)] group-hover:scale-110 transition-transform">
-                                <ZodiacImage sign={planet.sign} size={32} />
+                              <div className="text-center">
+                                <div className="flex items-center justify-center gap-0.5">
+                                  <p className={`${colorClass} font-mystic text-[11px] font-black uppercase tracking-wider truncate`}>{t(planet.planet as any) || planet.planet}</p>
+                                  {planet.isRetrograde && (
+                                    <span className="text-rose-400 text-[9px] font-bold">℞</span>
+                                  )}
+                                </div>
+                                <p className={`${colorClass} opacity-60 text-[8px] mt-0.5 font-bold uppercase tracking-widest`}>{planet.sign}</p>
                               </div>
-                            </div>
-                            <div className="text-center">
-                              <div className="flex items-center justify-center gap-0.5">
-                                <p className={`${colorClass} font-mystic text-[11px] font-black uppercase tracking-wider truncate`}>{t(planet.planet as any) || planet.planet}</p>
-                                {planet.isRetrograde && (
-                                  <span className="text-rose-400 text-[9px] font-bold">℞</span>
-                                )}
-                              </div>
-                              <p className={`${colorClass} opacity-60 text-[8px] mt-0.5 font-bold uppercase tracking-widest`}>{planet.sign}</p>
                             </div>
                           </div>
                         );
@@ -619,39 +669,51 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     .length > 0 ? (
                     personalTransits
                       .filter(t => transitFilters.includes(t.effect || "neutral"))
-                      .map((transit, i) => (
-                        <button
-                          key={`dashboard-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
-                          onClick={() => setDetailedTransit(transit)}
-                          className={`p-2 rounded-[2.5rem] border-2 flex flex-col items-center justify-center gap-2 transition-all min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden bg-black shadow-2xl shrink-0 group hover:scale-105 active:scale-95 ${transit.effect === 'positive' ? 'border-emerald-400/50 shadow-emerald-400/20' :
-                            transit.effect === 'negative' ? 'border-rose-500/50 shadow-rose-500/20' :
-                              'border-amber-400/50 shadow-amber-400/20'
-                            }`}
-                        >
-                          <div className="flex items-center gap-2 w-full justify-center -mt-1 mb-2">
-                            <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
-                              <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
+                      .map((transit, i) => {
+                        const isUnlocked = subscriptionStatus === 'premium';
+                        
+                        return (
+                          <button
+                            key={`dashboard-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
+                            onClick={() => {
+                              if (!isUnlocked) {
+                                setShowPremiumModal(true);
+                              } else {
+                                setDetailedTransit(transit);
+                              }
+                            }}
+                            className={`p-2 rounded-[2.5rem] border-2 flex flex-col items-center justify-center gap-2 transition-all min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden bg-black shadow-2xl shrink-0 group hover:scale-105 active:scale-95 ${transit.effect === 'positive' ? 'border-emerald-400/50 shadow-emerald-400/20' :
+                              transit.effect === 'negative' ? 'border-rose-500/50 shadow-rose-500/20' :
+                                'border-amber-400/50 shadow-amber-400/20'
+                              }`}
+                          >
+                            <div className={`flex flex-col items-center justify-center w-full h-full`}>
+                              <div className="flex items-center gap-2 w-full justify-center -mt-1 mb-2">
+                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
+                                  <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
+                                </div>
+                                <span className={`text-[clamp(1rem,4vw,1.125rem)] font-black drop-shadow-[0_0_15px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
+                                  transit.effect === 'negative' ? 'text-rose-500' :
+                                    'text-amber-400'
+                                  }`}>{transit.aspectSymbol}</span>
+                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
+                                  <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
+                                </div>
+                              </div>
+                              <div className="flex w-full justify-center items-center text-[8px] px-3 absolute bottom-4 left-0 right-0">
+                                <span className={`font-black uppercase tracking-[0.2em] truncate ${transit.effect === 'positive' ? 'text-emerald-400' :
+                                  transit.effect === 'negative' ? 'text-rose-500' :
+                                    'text-amber-400'
+                                  }`}>{formatHouseNumber(transit.house, language)}</span>
+                              </div>
+                              <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none ${transit.effect === 'positive' ? 'bg-emerald-400' :
+                                transit.effect === 'negative' ? 'bg-rose-500' :
+                                  'bg-amber-400'
+                                }`} />
                             </div>
-                            <span className={`text-[clamp(1rem,4vw,1.125rem)] font-black drop-shadow-[0_0_15px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                              transit.effect === 'negative' ? 'text-rose-500' :
-                                'text-amber-400'
-                              }`}>{transit.aspectSymbol}</span>
-                            <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
-                              <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
-                            </div>
-                          </div>
-                          <div className="flex w-full justify-center items-center text-[8px] px-3 absolute bottom-4 left-0 right-0">
-                            <span className={`font-black uppercase tracking-[0.2em] truncate ${transit.effect === 'positive' ? 'text-emerald-400' :
-                              transit.effect === 'negative' ? 'text-rose-500' :
-                                'text-amber-400'
-                              }`}>{formatHouseNumber(transit.house, language)}</span>
-                          </div>
-                          <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none ${transit.effect === 'positive' ? 'bg-emerald-400' :
-                            transit.effect === 'negative' ? 'bg-rose-500' :
-                              'bg-amber-400'
-                            }`} />
-                        </button>
-                      ))
+                          </button>
+                        );
+                      })
                   ) : (
                     <div className="w-full flex items-center justify-center h-24">
                       <p className="text-white/20 text-[10px] uppercase tracking-widest italic text-center px-6">{t('noTransits')}</p>
@@ -673,14 +735,25 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
   return (
     <div className="w-full min-h-screen relative">
-      <PremiumModal isOpen={showPremiumModal} onClose={handlePremiumClose} />
+      <PremiumModal 
+        isOpen={showPremiumModal} 
+        onClose={handlePremiumClose} 
+        onPurchaseSuccess={() => {
+            setShowPremiumModal(false);
+            setShowPremiumUserModal(true);
+        }}
+      />
+      <PremiumUserModal 
+        isOpen={showPremiumUserModal} 
+        onClose={() => setShowPremiumUserModal(false)} 
+      />
       {/* Background layer - edge-to-edge */}
       <div className="fixed inset-0 bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple -z-10" />
 
       {/* Content layer - safe area aware */}
       <div className="relative flex-col w-full max-w-md mx-auto">
         <AnimatePresence mode="wait">
-          {activeTab === "home" && !activeFeature && (
+          {activeTab === "home" && (
             <motion.div
               key="home"
               initial={{ opacity: 0, y: 20 }}
@@ -767,9 +840,6 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
         </AnimatePresence>
 
         <AnimatePresence>
-          {activeFeature === "dreams" && (
-            <DreamDictionary onBack={() => setActiveFeature(null)} onSpend={handleSpend} />
-          )}
           {isEarning && (
             <EarnDust onComplete={handleEarn} onCancel={() => setIsEarning(false)} />
           )}
@@ -803,9 +873,21 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
           date={new Date()}
           transits={personalTransits}
           initialPlanetFilter={transitPlanetFilter}
+          subscriptionStatus={subscriptionStatus}
+          onShowPremium={() => setShowPremiumModal(true)}
+          onShowAd={handleShowAd}
+          unlockedPlanets={unlockedPlanets}
         />
 
-
+        <AdContentPopup
+          isOpen={showAdPopup}
+          onClose={() => setShowAdPopup(false)}
+          onWatchAd={handleAdComplete}
+          onOpenPremium={() => {
+            setShowAdPopup(false);
+            setShowPremiumModal(true);
+          }}
+        />
 
         <Dialog open={!!detailedTransit} onOpenChange={() => setDetailedTransit(null)}>
           <DialogContent
@@ -1080,7 +1162,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                 icon={<Home />}
                 label={t('navHome')}
                 active={activeTab === "home"}
-                onClick={() => { setActiveTab("home"); setActiveFeature(null); }}
+                onClick={() => { setActiveTab("home"); }}
                 activeColor="mystic-gold"
               />
               <NavButton
