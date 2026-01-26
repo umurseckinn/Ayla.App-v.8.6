@@ -63,9 +63,9 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
       selected.setHours(0, 0, 0, 0);
       
       if (selected.getTime() !== today.getTime()) {
-         toast.error(language === 'en' ? 'Free users can only add events for today' : 'Ücretsiz kullanıcılar sadece bugün için etkinlik ekleyebilir');
-         const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-         setSelectedDate(todayStr);
+          toast.error(language === 'en' ? 'Users without premium membership can only add events for today' : 'Premium üyeliği bulunmayan kullanıcılar sadece bugün için etkinlik ekleyebilir');
+          const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+          setSelectedDate(todayStr);
          return;
       }
     }
