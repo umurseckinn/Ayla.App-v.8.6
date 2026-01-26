@@ -423,7 +423,8 @@ function DayDetailDialog({
                           .filter(t => transitFilters.includes(t.effect || "neutral"))
                           .map((transit, i) => {
                             const statusLabel = getTransitStatusLabel(date, transit);
-                            const isLocked = subscriptionStatus !== 'premium' && !['Sun', 'Moon'].includes(transit.transitPlanetKey) && !unlockedPlanets.includes(transit.transitPlanetKey);
+                            // Transits are visible but click-locked for non-premium users (Strict Premium)
+                            const isLocked = subscriptionStatus !== 'premium';
 
                             return (
                               <button
@@ -431,11 +432,7 @@ function DayDetailDialog({
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   if (isLocked) {
-                                    if (onShowAd) {
-                                      onShowAd(transit.transitPlanetKey);
-                                    } else if (onShowPremium) {
-                                      onShowPremium();
-                                    }
+                                    onShowPremium();
                                     return;
                                   }
                                   onOpenDetailedTransit(transit);
@@ -445,7 +442,7 @@ function DayDetailDialog({
                                     'border-amber-400 shadow-amber-400/20'
                                   }`}
                               >
-                                <div className={`w-full h-full flex flex-col items-center justify-center ${isLocked ? 'blur-sm opacity-50' : ''}`}>
+                                <div className={`w-full h-full flex flex-col items-center justify-center`}>
                                   <div className="flex items-center gap-3 w-full justify-center -mt-2">
                                     <div className="w-10 h-10">
                                       <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
@@ -469,13 +466,6 @@ function DayDetailDialog({
                                       }`}>{formatHouseNumber(transit.house, language)}</span>
                                   </div>
                                 </div>
-                                {isLocked && (
-                                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
-                                    <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
-                                      <PlayCircle className="w-6 h-6 text-white" />
-                                    </div>
-                                  </div>
-                                )}
                               </button>
                             );
                           })
@@ -887,7 +877,8 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
   }, []);
 
   const handleShowPremium = () => {
-    if (PersistenceManager.getPremiumStatus()) return;
+    // We strictly check subscriptionStatus for locking, so if this is called, we should show the modal
+    // irrespective of PersistenceManager's local state (which might be out of sync or irrelevant for strict checks)
     setShowPremiumModal(true);
   };
 

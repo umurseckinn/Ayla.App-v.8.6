@@ -191,16 +191,15 @@ export function DailyTransitsDialog({
               {filteredTransits.length > 0 ? (
                 filteredTransits.map((transit, i) => {
                   const statusLabel = getTransitStatusLabel(date, transit);
-                  const isLocked = subscriptionStatus !== 'premium' && !['Sun', 'Moon'].includes(transit.transitPlanetKey) && !unlockedPlanets.includes(transit.transitPlanetKey);
+                  // Strict Premium: No blur, no lock icon, but click triggers premium
+                  const isLocked = subscriptionStatus !== 'premium';
 
                   return (
                       <button
                         key={`daily-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                         onClick={() => {
                           if (isLocked && !initialPlanetFilter) {
-                            if (onShowAd) {
-                              onShowAd(transit.transitPlanetKey);
-                            } else if (onShowPremium) {
+                            if (onShowPremium) {
                               onShowPremium();
                             }
                             return;
@@ -213,7 +212,7 @@ export function DailyTransitsDialog({
                           'border-amber-400 shadow-amber-400/20'
                         }`}
                     >
-                      <div className={`w-full h-full flex flex-col items-center justify-center gap-1 transition-all duration-300 ${isLocked && !initialPlanetFilter ? 'blur-sm opacity-50' : ''}`}>
+                      <div className={`w-full h-full flex flex-col items-center justify-center gap-1 transition-all duration-300`}>
                         <div className="flex items-center gap-2 w-full justify-center text-[8px] font-black uppercase tracking-wide">
                           <span className={`${transit.effect === 'positive' ? 'text-emerald-400/80' :
                             transit.effect === 'negative' ? 'text-rose-400/80' :
@@ -248,13 +247,6 @@ export function DailyTransitsDialog({
                             }`}>{formatHouseNumber(transit.house, language)}</span>
                         </div>
                       </div>
-                      {isLocked && !initialPlanetFilter && (
-                        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
-                          <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
-                            <PlayCircle className="w-6 h-6 text-white" />
-                          </div>
-                        </div>
-                      )}
                     </button>
                   );
                 })
