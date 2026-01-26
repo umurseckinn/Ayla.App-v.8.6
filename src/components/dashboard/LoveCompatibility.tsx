@@ -419,7 +419,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                 setShowPremiumModal(true);
               }}
               title={language === 'en' ? 'Love Compatibility' : 'Aşk Uyumu'}
-              backgroundImage="/Aşk uyumu ad pop up.png"
+              backgroundImage="/love-compatibility-ad-popup.png"
               imageClassName="object-center"
             />
 
