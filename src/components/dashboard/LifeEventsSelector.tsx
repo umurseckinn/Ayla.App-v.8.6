@@ -20,9 +20,12 @@ interface LifeEventsSelectorProps {
 }
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProfileContext } from "@/contexts/ProfileContext";
+import { toast } from "sonner";
 
 export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSelectorProps) {
   const { t, language } = useLanguage();
+  const { subscriptionStatus } = useProfileContext();
   const [isExpanded, setIsExpanded] = useState(false);
   const [showEventPicker, setShowEventPicker] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<LifeEvent | null>(null);
@@ -52,6 +55,21 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
     : [];
 
   const handleDateChange = (date: string) => {
+    if (subscriptionStatus !== 'premium') {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const [y, m, d] = date.split('-').map(Number);
+      const selected = new Date(y, m - 1, d);
+      selected.setHours(0, 0, 0, 0);
+      
+      if (selected.getTime() !== today.getTime()) {
+         toast.error(language === 'en' ? 'Free users can only add events for today' : 'Ücretsiz kullanıcılar sadece bugün için etkinlik ekleyebilir');
+         const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+         setSelectedDate(todayStr);
+         return;
+      }
+    }
+
     setSelectedDate(date);
     if (selectedEvent && isDateInFuture(date) && !selectedEvent.isPlannable) {
       setSelectedEvent(null);

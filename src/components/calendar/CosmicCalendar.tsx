@@ -329,6 +329,18 @@ function DayDetailDialog({
   };
 
   const toggleEvent = (eventId: string) => {
+    if (subscriptionStatus !== 'premium') {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const dialogDate = new Date(date);
+      dialogDate.setHours(0, 0, 0, 0);
+      
+      if (dialogDate.getTime() !== today.getTime()) {
+        onShowPremium();
+        return;
+      }
+    }
+
     let newEvents: UserLifeEvent[];
     const exists = userLifeEvents.find(e => e.event_id === eventId && e.event_date === dateKey);
 
