@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Settings, User, X, ChevronDown, ChevronLeft, Save, AlertTriangle, LogOut, Shield, ChevronRight, FileText, RefreshCw } from "lucide-react";
@@ -12,8 +12,13 @@ import { Label } from "@/components/ui/label";
 import { BirthTimeSlider } from "@/components/ui/astrology-inputs/BirthTimeSlider";
 import { CitySelector } from "@/components/ui/CitySelector";
 import { toast } from "sonner";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { safeLocalStorage } from "@/lib/safe-utils";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { format } from "date-fns";
+import { tr, enUS } from "date-fns/locale";
+import { cn } from "@/lib/utils";
+import { CalendarIcon } from "lucide-react";
 
 type SettingsView = "main" | "profile" | "legal" | "privacy" | "kvkk";
 
@@ -374,16 +379,54 @@ function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onL
 }
 
 function EditProfileContent({ t, language, editName, setEditName, editDate, setEditDate, editTime, setEditTime, editLocation, setEditLocation, onSave }: any) {
-    const [dateInputType, setDateInputType] = useState('text');
+    const [calendarView, setCalendarView] = useState<'year' | 'month' | 'day'>('year');
+    const [workingDate, setWorkingDate] = useState<Date>(editDate ? new Date(editDate) : new Date());
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+    const [yearPage, setYearPage] = useState(0);
 
-    const getFormattedDate = (dateStr: string) => {
-        if (!dateStr) return "";
-        const [year, month, day] = dateStr.split('-');
-        if (!year || !month || !day) return dateStr;
-        return language === 'tr' 
-            ? `${day}.${month}.${year}` 
-            : `${month}/${day}/${year}`;
+    const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i);
+    const YEARS_PER_PAGE = 9;
+
+    // Reset view when popover opens
+    useEffect(() => {
+        if (isPopoverOpen) {
+            setCalendarView('year');
+            const date = editDate ? new Date(editDate) : new Date();
+            setWorkingDate(date);
+            
+            // Calculate initial page to show selected year
+            const currentYear = new Date().getFullYear();
+            const selectedYear = date.getFullYear();
+            const yearIndex = years.indexOf(selectedYear);
+            if (yearIndex !== -1) {
+                setYearPage(Math.floor(yearIndex / YEARS_PER_PAGE));
+            } else {
+                setYearPage(0);
+            }
+        }
+    }, [isPopoverOpen, editDate]);
+
+    const months = language === 'tr' 
+        ? ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+        : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    const handleYearSelect = (year: number) => {
+        const newDate = new Date(workingDate);
+        newDate.setFullYear(year);
+        setWorkingDate(newDate);
+        setCalendarView('month');
     };
+
+    const handleMonthSelect = (monthIndex: number) => {
+        const newDate = new Date(workingDate);
+        newDate.setMonth(monthIndex);
+        setWorkingDate(newDate);
+        setCalendarView('day');
+    };
+
+    const currentYears = years.slice(yearPage * YEARS_PER_PAGE, (yearPage + 1) * YEARS_PER_PAGE);
+    const canGoPrevYears = yearPage > 0;
+    const canGoNextYears = (yearPage + 1) * YEARS_PER_PAGE < years.length;
 
     return (
         <motion.div
@@ -404,15 +447,144 @@ function EditProfileContent({ t, language, editName, setEditName, editDate, setE
                 </div>
                 <div className="space-y-2">
                     <Label className="text-white/70 text-xs uppercase tracking-wider">{t('birthDate')}</Label>
-                    <Input
-                        type={dateInputType}
-                        value={dateInputType === 'date' ? editDate : getFormattedDate(editDate)}
-                        onChange={(e) => setEditDate(e.target.value)}
-                        onFocus={() => setDateInputType('date')}
-                        onBlur={() => setDateInputType('text')}
-                        className="bg-white/5 border-white/10 text-white focus:border-mystic-gold/50 h-12 rounded-xl"
-                        placeholder={language === 'tr' ? 'GG.AA.YYYY' : 'MM/DD/YYYY'}
-                    />
+                    <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+                        <PopoverTrigger asChild>
+                            <Button
+                                variant={"outline"}
+                                className={cn(
+                                    "w-full justify-start text-left font-normal bg-white/5 border-white/10 text-white hover:bg-white/10 hover:text-white h-12 rounded-xl focus:border-mystic-gold/50",
+                                    !editDate && "text-muted-foreground"
+                                )}
+                            >
+                                <CalendarIcon className="mr-2 h-4 w-4 opacity-50" />
+                                {editDate ? (
+                                    language === 'tr' 
+                                    ? format(new Date(editDate), "dd.MM.yyyy")
+                                    : format(new Date(editDate), "MM/dd/yyyy")
+                                ) : (
+                                    <span className="opacity-50">{language === 'tr' ? 'GG.AA.YYYY' : 'MM/DD/YYYY'}</span>
+                                )}
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[280px] p-0 bg-[#111] border-white/10 text-white shadow-xl" align="start">
+                            {calendarView === 'year' && (
+                                <div className="flex flex-col">
+                                    <div className="flex items-center justify-between p-3 border-b border-white/10">
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            onClick={() => setYearPage(p => p + 1)}
+                                            disabled={!canGoNextYears}
+                                            className={cn("h-6 w-6 p-0 text-white/50 hover:text-white", !canGoNextYears && "opacity-0")}
+                                        >
+                                            <ChevronLeft className="h-4 w-4" />
+                                        </Button>
+                                        <div className="font-mystic text-mystic-gold">
+                                            {language === 'tr' ? 'Yıl Seçin' : 'Select Year'}
+                                        </div>
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            onClick={() => setYearPage(p => p - 1)}
+                                            disabled={!canGoPrevYears}
+                                            className={cn("h-6 w-6 p-0 text-white/50 hover:text-white", !canGoPrevYears && "opacity-0")}
+                                        >
+                                            <ChevronRight className="h-4 w-4" />
+                                        </Button>
+                                    </div>
+                                    <div className="grid grid-cols-3 gap-2 p-3">
+                                        {currentYears.map(year => (
+                                            <Button
+                                                key={year}
+                                                variant="ghost"
+                                                onClick={() => handleYearSelect(year)}
+                                                className={cn(
+                                                    "h-12 hover:bg-white/10 hover:text-white text-lg",
+                                                    workingDate.getFullYear() === year ? "bg-mystic-gold text-black hover:bg-mystic-gold/90" : "text-white/70"
+                                                )}
+                                            >
+                                                {year}
+                                            </Button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {calendarView === 'month' && (
+                                <div className="flex flex-col">
+                                    <div className="flex items-center justify-between p-3 border-b border-white/10">
+                                        <Button 
+                                            variant="ghost" 
+                                            size="sm" 
+                                            onClick={() => setCalendarView('year')}
+                                            className="h-6 w-6 p-0 text-white/50 hover:text-white"
+                                        >
+                                            <ChevronLeft className="h-4 w-4" />
+                                        </Button>
+                                        <div className="font-mystic text-mystic-gold">
+                                            {workingDate.getFullYear()}
+                                        </div>
+                                        <div className="w-6" />
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-2 p-3">
+                                        {months.map((month, index) => (
+                                            <Button
+                                                key={month}
+                                                variant="ghost"
+                                                onClick={() => handleMonthSelect(index)}
+                                                className={cn(
+                                                    "h-10 hover:bg-white/10 hover:text-white",
+                                                    workingDate.getMonth() === index ? "bg-mystic-gold text-black hover:bg-mystic-gold/90" : "text-white/70"
+                                                )}
+                                            >
+                                                {month}
+                                            </Button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {calendarView === 'day' && (
+                                <div>
+                                    <div className="flex items-center justify-between p-3 border-b border-white/10 bg-white/5">
+                                        <Button 
+                                            variant="ghost" 
+                                            size="sm" 
+                                            onClick={() => setCalendarView('month')}
+                                            className="h-6 w-auto px-2 text-xs text-white/50 hover:text-white flex items-center gap-1"
+                                        >
+                                            <ChevronLeft className="h-3 w-3" />
+                                            {months[workingDate.getMonth()]} {workingDate.getFullYear()}
+                                        </Button>
+                                    </div>
+                                    <Calendar
+                                        mode="single"
+                                        month={workingDate}
+                                        onMonthChange={setWorkingDate}
+                                        selected={editDate ? new Date(editDate) : undefined}
+                                        onSelect={(date) => {
+                                            if (date) {
+                                                const year = date.getFullYear();
+                                                const month = String(date.getMonth() + 1).padStart(2, '0');
+                                                const day = String(date.getDate()).padStart(2, '0');
+                                                setEditDate(`${year}-${month}-${day}`);
+                                                setIsPopoverOpen(false);
+                                            }
+                                        }}
+                                        disabled={(date) =>
+                                            date > new Date() || date < new Date("1900-01-01")
+                                        }
+                                        initialFocus
+                                        locale={language === 'tr' ? tr : enUS}
+                                        classNames={{
+                                            day_selected: "bg-mystic-gold text-black hover:bg-mystic-gold/90 focus:bg-mystic-gold focus:text-black",
+                                            day_today: "bg-white/10 text-white",
+                                        }}
+                                    />
+                                </div>
+                            )}
+                        </PopoverContent>
+                    </Popover>
                 </div>
                 <div className="space-y-2">
                     <Label className="text-white/70 text-xs uppercase tracking-wider">{t('birthTime')}</Label>
@@ -429,6 +601,7 @@ function EditProfileContent({ t, language, editName, setEditName, editDate, setE
                         value={editLocation}
                         onChange={setEditLocation}
                         placeholder={t('searchLocation')}
+                        direction="up"
                     />
                 </div>
             </div>

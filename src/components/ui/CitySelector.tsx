@@ -30,8 +30,9 @@ export function CitySelector({
   onChange, 
   onSelect, 
   onSearchStateChange,
-  placeholder = "Doğum yeri seçin..." 
-}: CitySelectorProps) {
+  placeholder = "Doğum yeri seçin...",
+  direction = "down"
+}: CitySelectorProps & { direction?: "up" | "down" }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -236,11 +237,11 @@ export function CitySelector({
       {open && (
         <motion.div
           id="city-selector-dropdown"
-          initial={{ opacity: 0, y: -8 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
+          exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.15 }}
-          className="absolute left-0 right-0 top-full mt-1 bg-[#111111] border border-[#444] rounded-xl shadow-2xl overflow-y-auto"
+          className={`absolute left-0 right-0 ${direction === 'up' ? 'bottom-full mb-1' : 'top-full mt-1'} bg-[#111111] border border-[#444] rounded-xl shadow-2xl overflow-y-auto`}
           style={{
             minHeight: '200px',
             maxHeight: '250px',

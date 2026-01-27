@@ -32,8 +32,7 @@ import {
   Trash2,
   Trash,
   Loader2,
-  Lock,
-  PlayCircle
+  Lock
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -575,9 +574,11 @@ function DayDetailDialog({
                                 </div>
                                 {isLocked && (
                                   <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
-                                    <div className="w-10 h-10 rounded-full bg-black/50 border border-white/20 flex items-center justify-center backdrop-blur-md shadow-xl">
-                                      <PlayCircle className="w-6 h-6 text-white" />
-                                    </div>
+                                    <img 
+                                      src="/Ad-symbol.png" 
+                                      alt="Unlock" 
+                                      className="w-40 h-40 object-contain drop-shadow-lg hover:scale-110 transition-transform" 
+                                    />
                                   </div>
                                 )}
                               </button>

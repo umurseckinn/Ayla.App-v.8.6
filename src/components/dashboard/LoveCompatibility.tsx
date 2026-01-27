@@ -422,8 +422,6 @@ export function LoveCompatibility({ profile }: { profile: any }) {
               backgroundImage="/love-compatibility-ad-popup.png"
               imageClassName="object-center"
             />
-
-            <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />
           </motion.div>
         )}
 
@@ -600,7 +598,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                                 <img 
                                   src="/Premium symbol.png" 
                                   alt="Premium Content" 
-                                  className="w-20 h-20 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] animate-pulse"
+                                  className="w-40 h-40 object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] animate-pulse"
                                 />
                               </div>
                             )}
@@ -644,6 +642,8 @@ export function LoveCompatibility({ profile }: { profile: any }) {
           />
         )}
       </AnimatePresence>
+
+      <PremiumModal isOpen={showPremiumModal} onClose={() => setShowPremiumModal(false)} />
     </div>
   );
 }
