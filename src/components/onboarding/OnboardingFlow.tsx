@@ -13,7 +13,7 @@ import { BirthTimeSlider } from "@/components/ui/astrology-inputs/BirthTimeSlide
 import { CosmicLocationInput } from "@/components/ui/astrology-inputs/CosmicLocationInput";
 import { safeLocalStorage } from "@/lib/safe-utils";
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 

@@ -117,7 +117,7 @@ export function AppActionsDialog({ open, onOpenChange }: { open?: boolean; onOpe
                     {/* Ayla Image - Background/Integrated */}
                     <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none">
                          <img 
-                            src="/assets/ayla/ayla-transparent.png" 
+                            src="/assets/ayla/ayla_character.png" 
                             alt="Ayla" 
                             className="w-full h-full object-contain object-bottom scale-125 translate-y-[5%]"
                         />

@@ -32,7 +32,7 @@ interface TarotCard {
   desc: string;
 }
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 const TarotCardImage = ({ nameShort, isReversed, className = "" }: { nameShort: string, isReversed?: boolean, className?: string }) => {
   const imageUrl = getTarotImageUrl(nameShort);

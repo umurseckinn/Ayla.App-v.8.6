@@ -16,7 +16,7 @@ import { EnergyInfoPopup } from "@/components/rituals/EnergyInfoPopup";
 import type { EnergyType } from "@/components/rituals/EnergyInfoPopup";
 import { safeLocalStorage } from "@/lib/safe-utils";
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 const SQUARE_IMAGE_KEYS = ["Z-R-F-D", "F-D-Z-R", "Z-F-D-R", "R-F-D-Z", "R-D-F-Z", "R-D-Z-F", "R-Z-D-F", "Z-F-R-D", "Z-D-R-F"];
 

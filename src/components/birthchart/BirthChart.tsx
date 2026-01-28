@@ -51,7 +51,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { formatHouseNumber } from "@/lib/transit-interpretations";
 import { EnergyInfoPopup, type EnergyType } from "@/components/rituals/EnergyInfoPopup";
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 interface BirthChartProps {
   onBack: () => void;

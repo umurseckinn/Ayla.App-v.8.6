@@ -77,7 +77,7 @@ import { PremiumModal } from "@/components/premium/PremiumModal";
 import { AdContentPopup } from "@/components/ads/AdContentPopup";
 import { PersistenceManager } from "@/lib/persistence";
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 
 const HAPPINESS_IMG = "/assets/moods/topic-12.png";

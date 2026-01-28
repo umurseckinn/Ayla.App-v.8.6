@@ -7,7 +7,7 @@ import { Dashboard } from "@/components/dashboard/Dashboard";
 import { AYLA_IMAGE as CONSTANT_AYLA_IMAGE } from "@/lib/constants";
 import { SplashScreen } from "@/components/splash/SplashScreenProps";
 
-const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/ayla-transparent.png";
+const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -43,9 +43,9 @@ export default function Home() {
         style={{ width: '100vw', height: '100dvh', overflow: 'hidden' }}
       >
         <img
-          src="/assets/ayla/ayla_splash_final.jpg"
+          src="/assets/ayla/IMG_1573.JPG"
           alt=""
-          className="w-full h-full object-contain object-center"
+          className="w-full h-full object-cover object-center"
           style={{ maxHeight: '100dvh', maxWidth: '100vw' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />

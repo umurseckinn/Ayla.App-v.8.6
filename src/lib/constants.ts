@@ -1,4 +1,4 @@
-export const AYLA_IMAGE = "/assets/ayla/ayla-transparent.png";
+export const AYLA_IMAGE = "/assets/ayla/ayla_character.png";
 
 export const PLANET_IMAGES: Record<string, string> = {
   "Güneş": "/assets/planets/gunes.png",
