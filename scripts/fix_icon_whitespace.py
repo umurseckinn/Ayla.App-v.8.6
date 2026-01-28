@@ -78,15 +78,15 @@ def zoom_to_fill_crop():
         logo_w, logo_h = logo.size
         print(f"Cropped Logo Size: {logo_w}x{logo_h}")
         
-        # 2. Zoom to Fill (Scale based on MIN dimension)
+        # 2. Zoom to Fill with BLEED (Over-zoom) to ensure edges are cut
         TARGET_SIZE = 1024
+        BLEED_FACTOR = 1.05 # Zoom 5% extra to cut off any potential edge artifacts
         
-        # We want the SMALLER dimension to match TARGET_SIZE
-        # This forces the LARGER dimension to be > TARGET_SIZE
-        # So we cover the whole square.
+        # We want the SMALLER dimension to match TARGET_SIZE * BLEED
+        # This forces the image to be slightly larger than the canvas
         
-        scale = TARGET_SIZE / min(logo_w, logo_h)
-        print(f"Scale Factor: {scale}")
+        scale = (TARGET_SIZE * BLEED_FACTOR) / min(logo_w, logo_h)
+        print(f"Scale Factor (with 5% bleed): {scale}")
         
         new_w = int(logo_w * scale)
         new_h = int(logo_h * scale)
