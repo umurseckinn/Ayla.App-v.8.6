@@ -6,7 +6,7 @@ interface SplashScreenProps {
     onComplete: () => void;
 }
 
-const SPLASH_BG = "/assets/ayla/ayla_splash_final.JPG";
+const SPLASH_BG = "/assets/ayla/ayla_splash_final.jpg";
 const AYLA_LOGO = "/assets/ayla/ayla_logo.png";
 const LOADING_TEXT = "Yıldızlar hizalanıyor...";
 

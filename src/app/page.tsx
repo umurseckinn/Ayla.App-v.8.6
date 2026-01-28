@@ -43,7 +43,7 @@ export default function Home() {
         style={{ width: '100vw', height: '100dvh', overflow: 'hidden' }}
       >
         <img
-          src="/assets/ayla/ayla_splash_final.JPG"
+          src="/assets/ayla/ayla_splash_final.jpg"
           alt=""
           className="w-full h-full object-contain object-center"
           style={{ maxHeight: '100dvh', maxWidth: '100vw' }}

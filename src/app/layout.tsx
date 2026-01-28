@@ -19,9 +19,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: '/assets/icons/ayla_final_icon.PNG',
-    apple: '/assets/icons/ayla_final_icon.PNG',
+    icon: '/assets/icons/ayla_icon_final.png',
+    apple: '/assets/icons/ayla_icon_final.png',
   },
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
