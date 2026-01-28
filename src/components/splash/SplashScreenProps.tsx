@@ -70,7 +70,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
                         <img
                             src={SPLASH_BG}
                             alt="Ayla"
-                            className="w-full h-full object-contain object-center"
+                            className="w-full h-full object-cover object-center"
                             style={{ maxHeight: '100dvh', maxWidth: '100vw' }}
                         />
                         {/* Gradient overlay at bottom */}
