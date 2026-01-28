@@ -19,7 +19,7 @@ interface ShareArchetypeModalProps {
   initialUserName?: string;
 }
 
-const AYLA_APP_LOGO = "/ayla-transparent.png";
+const AYLA_APP_LOGO = "/assets/ayla/ayla-transparent.PNG";
 const AYLA_TEXT_LOGO = "/ayla-text-logo.png";
 const SQUARE_IMAGE_KEYS = ["Z-R-F-D", "F-D-Z-R", "Z-F-D-R", "R-F-D-Z", "R-D-F-Z", "R-D-Z-F", "R-Z-D-F", "Z-F-R-D", "Z-D-R-F"];
 

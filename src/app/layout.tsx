@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  icons: {
+    icon: '/assets/icons/ayla_final_icon.PNG',
+    apple: '/assets/icons/ayla_final_icon.PNG',
+  },
 };
 
 export const viewport: Viewport = {

@@ -106,7 +106,7 @@ export function AppActionsDialog({ open, onOpenChange }: { open?: boolean; onOpe
                 </div>
 
                 {/* Title - Centered Top */}
-                <div className="w-full text-center pt-16 pb-2 z-20 relative">
+                <div className="w-full text-center pt-20 pb-2 z-20 relative">
                     <h2 className="text-xl font-mystic text-mystic-gold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                         Bizi Değerlendir
                     </h2>
@@ -117,9 +117,9 @@ export function AppActionsDialog({ open, onOpenChange }: { open?: boolean; onOpe
                     {/* Ayla Image - Background/Integrated */}
                     <div className="absolute inset-0 z-0 flex items-end justify-center pointer-events-none">
                          <img 
-                            src="/assets/ayla/ayla.png" 
+                            src="/assets/ayla/ayla-transparent.PNG" 
                             alt="Ayla" 
-                            className="w-full h-full object-contain object-bottom scale-125 translate-y-[10%]"
+                            className="w-full h-full object-contain object-bottom scale-125 translate-y-[5%]"
                         />
                     </div>
                     
