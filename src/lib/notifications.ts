@@ -149,10 +149,10 @@ const ENGAGEMENT_CYCLES = {
   en: [
     // Cycle 0: Base
     [
-      { title: "Love Compatibility & Tarot", body: "Are you sure they are the right person? Let's make a comprehensive evaluation by looking at your love compatibility and tarot reading." },
+      { title: "Love Compatibility & Tarot", body: "Are you sure he/she is the right person? Let's make a comprehensive evaluation by looking at your love compatibility and tarot reading." },
       { title: "Retro Effect", body: "Did you receive a message from an old acquaintance? Retro energy might be reviving the past. Let's immediately examine the retro effects in your chart to get through this period with minimal damage." },
       { title: "Moon Phase Effect", body: "The Moon's journey in the sky is opening a new door in your inner world today. What does this cycle want to tell you? Come, let's listen to its whispers together." },
-      { title: "General Planetary Transit", body: "The sky is changing places, what about you? Current planetary transits might be opening a new door in your life. Shall we see together what this cosmic traffic means for you?" }
+      { title: "General Planetary Transit", body: "The sky is shifting, what about you? Current planetary transits might be opening a new door in your life. Shall we see together what this cosmic traffic means for you?" }
     ],
     // Cycle 1: Variation A
     [
@@ -186,7 +186,7 @@ const ENGAGEMENT_CYCLES = {
     [
       { title: "Love Compatibility & Tarot", body: "How does your future look with that person in your mind? Come on, let's solve the mystery of love and the guidance of the cards together." },
       { title: "Retro Effect", body: "If life has slowed down a bit, the reason might be the retrograde motion in the sky. Discover the hidden opportunities this period offers you." },
-      { title: "Moon Phase Effect", body: "How compatible are your emotions with the sky today? Take a look at the Moon's instant position and its reflections on your sign, plan your day according to the cosmic flow." },
+      { title: "Moon Phase Effect", body: "How compatible are your emotions with the sky today? Take a look at the Moon's current position and its reflections on your sign, plan your day according to the cosmic flow." },
       { title: "General Planetary Transit", body: "Are you wondering about the new turns in your destiny? Read the effect of planetary transits on you now, be prepared." }
     ]
   ]
