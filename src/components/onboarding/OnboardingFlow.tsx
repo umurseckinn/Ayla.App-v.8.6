@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, Star, ChevronLeft } from "lucide-react";
+import { Sparkles, ArrowRight, Star, ChevronLeft, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 // Offline mode: No Supabase needed
@@ -12,6 +12,7 @@ import { BirthDateWheel } from "@/components/ui/astrology-inputs/BirthDateWheel"
 import { BirthTimeSlider } from "@/components/ui/astrology-inputs/BirthTimeSlider";
 import { CosmicLocationInput } from "@/components/ui/astrology-inputs/CosmicLocationInput";
 import { safeLocalStorage } from "@/lib/safe-utils";
+import { requestNotificationPermissions, scheduleEnergyNotifications } from "@/lib/notifications";
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
@@ -22,6 +23,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
   const [step, setStep] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [showContent, setShowContent] = useState(false);
+  const [notificationAllowed, setNotificationAllowed] = useState(false);
   const [formData, setFormData] = useState({
     full_name: "",
     birth_date: new Date().toISOString().split('T')[0],
@@ -60,6 +62,11 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
       description: t('kvkkConfirmation'),
     },
     {
+      id: "notifications",
+      title: t('notificationTitle'),
+      description: t('notificationDesc'),
+    },
+    {
       id: "calculating",
       title: t('calculatingTitle'),
       description: t('calculatingDesc'),
@@ -76,22 +83,25 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
       return;
     }
 
-    // New Step Logic: 0->1->2->3->4(KVKK)->5(Calculating)
-    if (step === 3) {
-      setStep(4);
-    } else if (step === 4) {
-      // KVKK step
-      setStep(5);
-      handleFinish();
-    } else if (step === 5) {
-      handleFinish();
-    } else {
+    // New Step Logic: 0->1->2->3->4(KVKK)->5(Notif)->6(Calculating)
+    if (step < 6) {
       setStep(step + 1);
+    } else {
+      handleFinish();
     }
   };
 
   const handleBack = () => {
     if (step > 0) setStep(step - 1);
+  };
+  
+  const handleNotificationRequest = async () => {
+    const granted = await requestNotificationPermissions();
+    if (granted) {
+      setNotificationAllowed(true);
+      toast.success(t('locationSelected') ? "Bildirimler açıldı" : "Notifications enabled"); // Fallback text if needed, though toast usually supports string
+    }
+    handleNext();
   };
 
   const handleFinish = async () => {
@@ -109,16 +119,33 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
       safeLocalStorage.setItem('ayla_onboarding_done', 'true');
       safeLocalStorage.setItem('ayla_user_data', JSON.stringify(userData));
 
+      // Schedule notifications if allowed
+      if (notificationAllowed) {
+        await scheduleEnergyNotifications(
+          new Date(formData.birth_date),
+          formData.birth_time,
+          formData.birth_place,
+          language
+        );
+      }
+
       setTimeout(() => {
         onComplete();
       }, 3500); // Cinematic delay
     } catch (error: any) {
       toast.error(t('error') + ": " + error.message);
-      setStep(5); // Keep on calculating screen to retry
+      setStep(6); // Keep on calculating screen to retry
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (step === 6) {
+      handleFinish();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-void-black px-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] overflow-y-auto">
@@ -131,7 +158,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
         animate={{
           background: step === 2
             ? "radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, rgba(5, 5, 5, 1) 100%)"
-            : step === 3 || step === 4
+            : step === 3 || step === 5
               ? "radial-gradient(circle at 50% 50%, rgba(45, 10, 78, 0.2) 0%, rgba(5, 5, 5, 1) 100%)"
               : "radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.3) 0%, rgba(5, 5, 5, 1) 100%)"
         }}
@@ -156,7 +183,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                 transition={{ delay: 0.4 }}
                 className="flex items-center justify-center relative"
               >
-                {step > 0 && step < 5 && (
+                {step > 0 && step < 6 && (
                   <Button
                     variant="ghost"
                     onClick={handleBack}
@@ -168,11 +195,13 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                 <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-mystic-gold to-transparent mb-2 md:mb-6" />
               </motion.div>
 
-              <h2 className="font-mystic text-mystic-gold tracking-[0.2em] uppercase leading-tight text-3xl md:text-4xl">
-                {steps[step].title}
-              </h2>
+              {step !== 5 && (
+                <h2 className="font-mystic text-mystic-gold tracking-[0.2em] uppercase leading-tight text-3xl md:text-4xl">
+                  {steps[step].title}
+                </h2>
+              )}
 
-              {step !== 3 && step !== 4 && (
+              {step !== 3 && step !== 4 && step !== 5 && (
                 <p className="text-white/60 font-serif italic text-base md:text-lg max-w-xs mx-auto leading-relaxed">
                   {steps[step].description}
                 </p>
@@ -282,6 +311,51 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                 </div>
               )}
 
+              {step === 5 && (
+                <div className="w-full flex flex-col items-center justify-center relative overflow-hidden rounded-2xl border border-mystic-gold/20 shadow-2xl shadow-mystic-gold/10" style={{
+                  backgroundImage: "url('/notification-popup-bg.png')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  minHeight: '450px'
+                }}>
+                  {/* Dark overlay for text readability */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  <div className="relative z-10 flex flex-col items-center p-8 space-y-6 text-center w-full">
+                    <div className="w-20 h-20 bg-mystic-gold/20 rounded-full flex items-center justify-center border border-mystic-gold/40 animate-pulse backdrop-blur-sm">
+                      <Bell className="w-10 h-10 text-mystic-gold" />
+                    </div>
+
+                    <div className="space-y-2">
+                        <h2 className="font-mystic text-mystic-gold tracking-[0.2em] uppercase leading-tight text-2xl md:text-3xl drop-shadow-lg">
+                            {steps[step].title}
+                        </h2>
+                        <p className="text-mystic-gold/90 font-serif italic text-base md:text-lg max-w-xs mx-auto leading-relaxed drop-shadow-md">
+                            {steps[step].description}
+                        </p>
+                    </div>
+                    
+                    <div className="w-full space-y-3 pt-4">
+                      <Button
+                        onClick={handleNotificationRequest}
+                        className="w-full bg-black text-mystic-gold border border-mystic-gold/50 hover:bg-black/80 font-mystic h-14 rounded-full group transition-all shadow-lg shadow-black/50"
+                      >
+                        <span className="text-xs tracking-[0.3em] uppercase">{t('allowNotifications')}</span>
+                        <ArrowRight className="ml-4 w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                      </Button>
+                      
+                      <Button
+                        variant="ghost"
+                        onClick={handleNext}
+                        className="w-full text-white/30 hover:text-white/60 font-serif h-12 rounded-full hover:bg-white/5"
+                      >
+                        {t('skipNotifications')}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {step === 4 && (
                 <div className="w-full space-y-6">
                   <div className="h-64 overflow-y-auto bg-white/5 border border-white/10 rounded-xl p-4 text-left">
@@ -307,7 +381,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                 </div>
               )}
 
-              {step === 5 && (
+              {step === 6 && (
                 <div className="relative flex flex-col items-center">
                   <motion.div
                     animate={{
@@ -347,7 +421,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
             </div>
 
             {/* Navigation Ritual */}
-            {step < 5 && (
+            {step < 6 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -356,7 +430,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
               >
                 {/* Progress Indicators */}
                 <div className="flex justify-center gap-3 mt-4">
-                  {steps.slice(0, 5).map((_, i) => (
+                  {steps.slice(0, 6).map((_, i) => (
                     <div
                       key={i}
                       className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === step ? 'bg-mystic-gold w-4' : 'bg-white/10'}`}
