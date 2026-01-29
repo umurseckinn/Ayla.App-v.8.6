@@ -313,13 +313,17 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
 
               {step === 5 && (
                 <div className="w-full flex flex-col items-center justify-center relative overflow-hidden rounded-2xl border border-mystic-gold/20 shadow-2xl shadow-mystic-gold/10" style={{
-                  backgroundImage: "url('/notification-popup-bg.png')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   minHeight: '450px'
                 }}>
+                  {/* Background Image - Using img tag for better iOS compatibility */}
+                  <img 
+                    src="/assets/notification-popup-bg.png" 
+                    alt="Notification Background" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  
                   {/* Dark overlay for text readability */}
-                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 bg-black/40 z-0" />
 
                   <div className="relative z-10 flex flex-col items-center p-8 space-y-6 text-center w-full">
                     <div className="w-20 h-20 bg-mystic-gold/20 rounded-full flex items-center justify-center border border-mystic-gold/40 animate-pulse backdrop-blur-sm">

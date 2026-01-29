@@ -224,98 +224,88 @@ export async function scheduleEnergyNotifications(
 
     const notifications = [];
     const today = new Date();
+    
+    // Flatten engagement messages for easier cyclic access
+    const engagementCyclesForLang = ENGAGEMENT_CYCLES[language];
+    const allEngagementMessages = engagementCyclesForLang.flat();
 
-    // 1. Schedule Energy Notifications (7 days at 12:00)
-    for (let i = 0; i < 7; i++) {
+    // Schedule for 30 days (Safe limit for local notifications to avoid OS limits)
+    // Both Energy and Engagement notifications will be scheduled for every single day.
+    const SCHEDULE_DAYS = 30;
+
+    for (let i = 0; i < SCHEDULE_DAYS; i++) {
       const targetDate = new Date(today);
       targetDate.setDate(today.getDate() + i);
-      targetDate.setHours(12, 0, 0, 0);
-
-      if (targetDate.getTime() < Date.now()) {
-         continue; 
-      }
-
-      const energyResult = await calculateDailyEnergy(
-        targetDate,
-        birthDate,
-        birthTime,
-        birthPlace,
-        undefined, // extraContext
-        language // Use the passed language
-      );
-
-      const score = energyResult.overallEnergy;
-      let content: NotificationContent;
-
-      // Select message based on score and language
-      const lowMsgs = LOW_ENERGY_MESSAGES[language](score);
-      const neutralMsgs = NEUTRAL_ENERGY_MESSAGES[language](score);
-      const highMsgs = HIGH_ENERGY_MESSAGES[language](score);
-
-      if (score <= 33) {
-        content = lowMsgs[Math.floor(Math.random() * lowMsgs.length)];
-      } else if (score <= 66) {
-        content = neutralMsgs[Math.floor(Math.random() * neutralMsgs.length)];
-      } else {
-        content = highMsgs[Math.floor(Math.random() * highMsgs.length)];
-      }
-
-      notifications.push({
-        id: i + 1, // IDs 1-7
-        title: content.title,
-        body: content.body,
-        schedule: { at: targetDate },
-        sound: undefined,
-        attachments: undefined,
-        actionTypeId: "",
-        extra: { type: 'energy' }
-      });
-    }
-
-    // 2. Schedule Engagement Notifications (24 days at 18:00)
-    // Cycle through Base, A, B, C, D, E (4 days each)
-    let dayOffset = 0;
-    const engagementCyclesForLang = ENGAGEMENT_CYCLES[language];
-    
-    // We iterate through each cycle (Base, A, B, C, D, E)
-    for (let cycleIndex = 0; cycleIndex < engagementCyclesForLang.length; cycleIndex++) {
-      const cycleMessages = engagementCyclesForLang[cycleIndex];
       
-      // Each cycle has 4 messages for 4 consecutive days
-      for (let msgIndex = 0; msgIndex < cycleMessages.length; msgIndex++) {
-        const message = cycleMessages[msgIndex];
-        
-        const targetDate = new Date(today);
-        targetDate.setDate(today.getDate() + dayOffset);
-        targetDate.setHours(18, 0, 0, 0);
+      // --- 1. Energy Notification (12:00) ---
+      const energyDate = new Date(targetDate);
+      energyDate.setHours(12, 0, 0, 0);
 
-        // If today is past 18:00, scheduling for today might be tricky, but let's assume it's fine or skip
-        if (targetDate.getTime() < Date.now()) {
-          // If we are late for today's 18:00, we skip this specific notification
-          // But we don't shift the cycle, so the user misses Day 1 of Base if they install at 19:00
-          // This keeps the calendar consistent with "Day 1, Day 2..." logic starting from "today"
-          dayOffset++;
-          continue; 
+      // Skip if time has already passed for today
+      if (energyDate.getTime() > Date.now()) {
+        const energyResult = await calculateDailyEnergy(
+          energyDate,
+          birthDate,
+          birthTime,
+          birthPlace,
+          undefined, // extraContext
+          language
+        );
+
+        const score = energyResult.overallEnergy;
+        let content: NotificationContent;
+
+        // Select message based on score and language
+        const lowMsgs = LOW_ENERGY_MESSAGES[language](score);
+        const neutralMsgs = NEUTRAL_ENERGY_MESSAGES[language](score);
+        const highMsgs = HIGH_ENERGY_MESSAGES[language](score);
+
+        if (score <= 33) {
+          content = lowMsgs[Math.floor(Math.random() * lowMsgs.length)];
+        } else if (score <= 66) {
+          content = neutralMsgs[Math.floor(Math.random() * neutralMsgs.length)];
+        } else {
+          content = highMsgs[Math.floor(Math.random() * highMsgs.length)];
         }
 
         notifications.push({
-          id: 100 + dayOffset + 1, // IDs 101-124
+          id: i + 1, // IDs 1-30
+          title: content.title,
+          body: content.body,
+          schedule: { at: energyDate },
+          sound: undefined,
+          attachments: undefined,
+          actionTypeId: "",
+          extra: { type: 'energy' }
+        });
+      }
+
+      // --- 2. Engagement Notification (18:00) ---
+      const engagementDate = new Date(targetDate);
+      engagementDate.setHours(18, 0, 0, 0);
+
+      if (engagementDate.getTime() > Date.now()) {
+        // Use modulo to cycle through messages indefinitely
+        // i=0 -> msg 0, i=23 -> msg 23, i=24 -> msg 0, etc.
+        const msgIndex = i % allEngagementMessages.length;
+        const message = allEngagementMessages[msgIndex];
+
+        notifications.push({
+          id: 100 + i + 1, // IDs 101-130
           title: message.title,
           body: message.body,
-          schedule: { at: targetDate },
+          schedule: { at: engagementDate },
           sound: undefined,
           attachments: undefined,
           actionTypeId: "",
           extra: { type: 'engagement' }
         });
-
-        dayOffset++;
       }
     }
 
     if (notifications.length > 0) {
       await LocalNotifications.schedule({ notifications });
-      console.log(`Scheduled ${notifications.length} notifications (Energy + Engagement) in ${language}.`);
+      console.log(`Scheduled ${notifications.length} notifications (Energy + Engagement) for next ${SCHEDULE_DAYS} days in ${language}.`);
     }
 
   } catch (error) {
