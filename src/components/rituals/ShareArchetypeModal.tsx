@@ -138,11 +138,11 @@ export function ShareArchetypeModal({ isOpen, onClose, archetype, energyData, ar
           <div className="w-full max-w-[450px] relative flex flex-col items-center">
             <div
               style={{
-                width: '100%',
-                aspectRatio: '9/16',
+                width: '450px',
+                height: '800px',
                 transform: `scale(${scale})`,
-                transformOrigin: 'center top',
-                marginBottom: `${-(1 - scale) * (window.innerWidth / 9 * 16)}px`
+                transformOrigin: 'top center',
+                marginBottom: `${-(800 * (1 - scale))}px`
               }}
             >
               <div
@@ -150,22 +150,36 @@ export function ShareArchetypeModal({ isOpen, onClose, archetype, energyData, ar
               >
                 <div
                   id="capture-card-content"
-                  className="w-full h-full bg-black text-mystic-gold relative flex flex-col items-center p-8 pt-4 text-center overflow-hidden"
+                  className="w-full h-full bg-black overflow-hidden relative"
                 >
-                  <CardContent
-                    archetype={archetype}
-                    archetypeKey={archetypeKey}
-                    userName={userName}
-                    energyData={energyData}
-                    archetypeSlogan={archetypeSlogan}
-                    language={language}
-                    archetypeImageUrl={archetypeImageUrl}
-                  />
+                  {/* Container for the 1080x1920 content, scaled down to fit 450x800 */}
+                  <div 
+                    style={{ 
+                      width: '1080px', 
+                      height: '1920px', 
+                      transform: 'scale(0.41666667)', // 450 / 1080
+                      transformOrigin: 'top left',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      pointerEvents: 'none' // Prevent interaction with the scaled content
+                    }}
+                  >
+                    <CardContent
+                      archetype={archetype}
+                      archetypeKey={archetypeKey}
+                      userName={userName}
+                      energyData={energyData}
+                      archetypeSlogan={archetypeSlogan}
+                      language={language}
+                      archetypeImageUrl={archetypeImageUrl}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-full flex flex-col gap-3 mt-6">
+            <div className="w-full flex flex-col gap-3 mt-6 pb-8">
               <Button
                 onClick={handleShare}
                 disabled={isExporting}
@@ -212,127 +226,229 @@ function CardContent({ archetype, archetypeKey, userName, energyData, archetypeS
     : { spiritual: "RUHSAL", mental: "ZİHİNSEL", physical: "FİZİKSEL", emotional: "DUYGUSAL" };
 
   const defaultUserName = isEn ? "TRAVELER" : "GEZGİN";
+  const safeUserName = userName || defaultUserName;
   const archetypeName = isEn ? (archetype.enName || archetype.name) : archetype.name;
   const archetypeGroup = isEn ? (archetype.enGroup || archetype.group) : archetype.group;
   const archetypeClassName = isEn ? (archetype.enClassName || archetype.className) : archetype.className;
   const archetypeDescription = isEn ? (archetype.enDescription || archetype.description) : archetype.description;
 
   const titleText = isEn
-    ? `${userName.toUpperCase() || defaultUserName}, THE ${archetypeName.toUpperCase()}`
-    : `${userName.toUpperCase() || defaultUserName}, ${archetypeName.toUpperCase()}`;
+    ? `${safeUserName.toUpperCase()}, THE ${archetypeName.toUpperCase()}`
+    : `${safeUserName.toUpperCase()}, ${archetypeName.toUpperCase()}`;
+
+  const sloganMain = archetypeSlogan.includes('(') ? archetypeSlogan.split('(')[0].trim() : archetypeSlogan;
+  const sloganSub = archetypeSlogan.includes('(') ? archetypeSlogan.split('(')[1]?.replace(')', '').trim() : null;
 
   return (
-    <>
-      <div
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background: 'radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, transparent 70%)',
-          border: 'none',
-          margin: '0',
-          padding: '0'
-        }}
-      />
-
-      <div
-        className="relative z-10 flex flex-col w-full h-full items-center"
-        style={{
-          border: 'none',
-          margin: '0',
-          boxSizing: 'border-box'
-        }}
-      >
-        <div className="w-full flex-1 flex items-center justify-center min-h-0 overflow-hidden mt-2">
-          <div className="w-[75%] h-full relative flex items-center justify-center">
-            <img
-              src={archetypeImageUrl}
-              alt={archetype.name}
-              className="w-full h-full object-contain"
-              crossOrigin="anonymous"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center gap-0.5 mb-4 px-4 text-center">
-          <h2 className="text-[18px] font-mystic uppercase tracking-wider leading-tight" style={{ color: '#FFD700' }}>
-            {titleText}
-          </h2>
-          <p className="text-[12px] font-mystic uppercase tracking-[0.2em] leading-tight" style={{ color: 'rgba(255,215,0,0.8)' }}>
-            {archetypeGroup?.toUpperCase()} • {archetypeKey}
-          </p>
-          <p className="text-[11px] font-mystic uppercase tracking-[0.15em] leading-tight mt-1" style={{ color: 'rgba(255,215,0,0.7)' }}>
-            {archetypeClassName?.toUpperCase()}
-          </p>
-        </div>
-
-        <div
-          className="w-full grid grid-cols-4 gap-3 mb-6 px-4"
-        >
-          <MiniStat label={energyLabels.spiritual} value={energyData.categories.spiritual.percentage} color="#A78BFA" />
-          <MiniStat label={energyLabels.mental} value={energyData.categories.mental.percentage} color="#60A5FA" />
-          <MiniStat label={energyLabels.physical} value={energyData.categories.physical.percentage} color="#FBBF24" />
-          <MiniStat label={energyLabels.emotional} value={energyData.categories.emotional.percentage} color="#FB7185" />
-        </div>
-
-        <div className="w-full flex flex-col items-center mt-auto pb-4">
-          <div className="px-6 text-center mb-2">
-            <p className="text-[16px] font-serif italic leading-tight" style={{ color: '#FFD700' }}>
-              &quot;{archetypeSlogan.includes('(') ? archetypeSlogan.split('(')[0].trim() : archetypeSlogan}&quot;
-            </p>
-            {archetypeSlogan.includes('(') && (
-              <p className="text-[10px] font-mystic uppercase tracking-widest italic leading-tight mt-0.5" style={{ color: 'rgba(255,215,0,0.7)' }}>
-                {archetypeSlogan.split('(')[1].replace(')', '').trim()}
-              </p>
-            )}
-          </div>
-          <div className="px-8">
-            <p className="text-[12.5px] leading-snug font-medium text-center" style={{ color: '#FFD700' }}>
-              {archetypeDescription}
-            </p>
-          </div>
-
-          <div
-            className="flex items-center justify-center gap-[1px]"
-            style={{ marginTop: '6px' }}
-          >
-            <img
-              src={AYLA_APP_LOGO}
-              alt="Ayla"
-              style={{ height: '48px', width: 'auto', objectFit: 'contain', filter: 'invert(1)' }}
-            />
-            <img
-              src={AYLA_TEXT_LOGO}
-              alt="ayla.app"
-              style={{ height: '142px', width: 'auto', objectFit: 'contain', filter: 'invert(1)' }}
-            />
-          </div>
-        </div>
+    <div style={{ 
+      width: '1080px', 
+      height: '1920px', 
+      backgroundColor: '#000000', 
+      position: 'relative', 
+      overflow: 'hidden', 
+      fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" 
+    }}>
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '1080px',
+        height: '1920px',
+        background: 'radial-gradient(circle at center, rgba(255,215,0,0.08) 0%, transparent 70%)',
+        pointerEvents: 'none'
+      }} />
+      
+      {/* Image Area - roughly matching the logic in useArchetypeShare but using flex for centering */}
+      <div style={{
+        position: 'absolute',
+        top: '40px',
+        left: '90px', // (1080 - 900) / 2
+        width: '900px',
+        height: '800px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <img 
+          src={archetypeImageUrl} 
+          alt={archetype.name} 
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            objectFit: 'contain'
+          }}
+          crossOrigin="anonymous"
+        />
       </div>
-    </>
-  );
-}
-
-function MiniStat({ label, value, color }: { label: string; value: number; color: string }) {
-  return (
-    <div
-      className="flex flex-col gap-1.5"
-    >
-      <div
-        className="flex justify-between items-center px-0.5"
-      >
-        <span className="text-[7.5px] font-black tracking-tighter" style={{ color }}>{label}</span>
-        <span className="text-[11px] font-bold" style={{ color: '#FFD700', textShadow: '0 0 3px rgba(255,215,0,0.5)' }}>%{value}</span>
+      
+      <div style={{
+        position: 'absolute',
+        top: '900px',
+        left: 0,
+        width: '1080px',
+        textAlign: 'center',
+        padding: '0 60px',
+        boxSizing: 'border-box'
+      }}>
+        <h2 style={{
+          fontSize: '42px',
+          fontWeight: 700,
+          color: '#FFD700',
+          textTransform: 'uppercase',
+          letterSpacing: '3px',
+          lineHeight: 1.2,
+          margin: '0 0 12px 0'
+        }}>{titleText}</h2>
+        <p style={{
+          fontSize: '24px',
+          fontWeight: 500,
+          color: 'rgba(255,215,0,0.8)',
+          textTransform: 'uppercase',
+          letterSpacing: '6px',
+          lineHeight: 1.2,
+          margin: '0 0 8px 0'
+        }}>{archetypeGroup?.toUpperCase()} • {archetypeKey}</p>
+        <p style={{
+          fontSize: '22px',
+          fontWeight: 500,
+          color: 'rgba(255,215,0,0.7)',
+          textTransform: 'uppercase',
+          letterSpacing: '4px',
+          lineHeight: 1.2,
+          margin: 0
+        }}>{archetypeClassName?.toUpperCase()}</p>
       </div>
-      <div
-        className="h-1.5 w-full rounded-full overflow-hidden"
-        style={{
-          backgroundColor: 'rgba(255,255,255,0.05)',
-        }}
-      >
-        <div
-          className="h-full rounded-full"
-          style={{ width: `${value}%`, backgroundColor: color, boxShadow: '0 0 8px rgba(255,215,0,0.4)' }}
+      
+      <div style={{
+        position: 'absolute',
+        top: '1080px',
+        left: '66px',
+        width: '948px',
+        height: '60px'
+      }}>
+        <StatBar label={energyLabels.spiritual} value={energyData.categories.spiritual.percentage} color="#A78BFA" left={0} />
+        <StatBar label={energyLabels.mental} value={energyData.categories.mental.percentage} color="#60A5FA" left={237} />
+        <StatBar label={energyLabels.physical} value={energyData.categories.physical.percentage} color="#FBBF24" left={474} />
+        <StatBar label={energyLabels.emotional} value={energyData.categories.emotional.percentage} color="#FB7185" left={711} />
+      </div>
+      
+      <div style={{
+        position: 'absolute',
+        top: '1200px',
+        left: '60px',
+        width: '960px',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          fontSize: '36px',
+          fontStyle: 'italic',
+          fontWeight: 400,
+          color: '#FFD700',
+          lineHeight: 1.3,
+          margin: '0 0 8px 0',
+          fontFamily: "Georgia,'Times New Roman',serif"
+        }}>"{sloganMain}"</p>
+        {sloganSub && (
+          <p style={{
+            fontSize: '20px',
+            fontStyle: 'italic',
+            fontWeight: 500,
+            color: 'rgba(255,215,0,0.7)',
+            textTransform: 'uppercase',
+            letterSpacing: '4px',
+            lineHeight: 1.2,
+            margin: 0
+          }}>{sloganSub}</p>
+        )}
+      </div>
+      
+      <div style={{
+        position: 'absolute',
+        top: '1340px',
+        left: '80px',
+        width: '920px',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          fontSize: '28px',
+          fontWeight: 500,
+          color: '#FFD700',
+          lineHeight: 1.5,
+          margin: 0
+        }}>{archetypeDescription}</p>
+      </div>
+      
+      <div style={{
+        position: 'absolute',
+        top: '1650px',
+        width: '1080px',
+        display: 'flex',
+        justifyContent: 'center',
+        left: 0
+      }}>
+        <img
+          src={AYLA_TEXT_LOGO}
+          alt="ayla.app"
+          style={{
+            height: '216px',
+            width: 'auto',
+            objectFit: 'contain',
+            filter: 'invert(1)'
+          }}
         />
       </div>
     </div>
   );
 }
+
+function StatBar({ label, value, color, left }: { label: string, value: number, color: string, left: number }) {
+  const barWidth = Math.round((value / 100) * 175);
+  
+  return (
+    <div style={{ position: 'absolute', left: `${left}px`, top: 0, width: '228px' }}>
+      <div style={{ position: 'relative', width: '228px', height: '32px' }}>
+        <span style={{
+          position: 'absolute',
+          left: '4px',
+          top: 0,
+          fontSize: '18px',
+          fontWeight: 800,
+          color: color,
+          letterSpacing: '-0.5px'
+        }}>{label}</span>
+        <span style={{
+          position: 'absolute',
+          right: '4px',
+          top: 0,
+          fontSize: '26px',
+          fontWeight: 700,
+          color: '#FFD700',
+          textShadow: '0 0 6px rgba(255,215,0,0.5)'
+        }}>%{value}</span>
+      </div>
+      <div style={{
+        position: 'absolute',
+        top: '40px',
+        left: 0,
+        width: '175px',
+        height: '12px',
+        backgroundColor: 'rgba(255,255,255,0.05)',
+        borderRadius: '6px',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: `${barWidth}px`,
+          height: '12px',
+          backgroundColor: color,
+          borderRadius: '6px',
+          boxShadow: '0 0 12px rgba(255,215,0,0.4)'
+        }}></div>
+      </div>
+    </div>
+  );
+}
+
+
