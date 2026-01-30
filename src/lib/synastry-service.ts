@@ -1,9 +1,40 @@
-import { calculateBirthChart, BirthChart, ZODIAC_SIGNS_TR } from "./astronomy-service";
+import { calculateBirthChart, BirthChart, ZODIAC_SIGNS_TR, ZODIAC_SIGNS_EN } from "./astronomy-service";
 import { houseInterpretations } from "./synastry-engine-data";
 import { synastryData } from "./astro-tarot-data";
 import { calculateEnergyPotential } from "./energy-potential-service";
 
 type Language = 'tr' | 'en';
+
+// Helper map: English -> Turkish
+const ENGLISH_TO_TURKISH_SIGNS: Record<string, string> = Object.entries(ZODIAC_SIGNS_EN).reduce((acc, [tr, en]) => {
+  acc[en] = tr;
+  return acc;
+}, {} as Record<string, string>);
+
+const TURKISH_SUFFIXES: Record<string, string> = {
+  "Koç": "'un", "Boğa": "'nın", "İkizler": "'in", "Yengeç": "'in",
+  "Aslan": "'ın", "Başak": "'ın", "Terazi": "'nin", "Akrep": "'in",
+  "Yay": "'ın", "Oğlak": "'ın", "Kova": "'nın", "Balık": "'ın"
+};
+
+function getLocalizedSign(sign: string, targetLang: Language): string {
+  if (targetLang === 'tr') {
+    // If sign is already Turkish (in ZODIAC_SIGNS_EN keys), return it.
+    if (ZODIAC_SIGNS_EN[sign]) return sign;
+    // If sign is English (in ENGLISH_TO_TURKISH_SIGNS keys), convert to Turkish.
+    if (ENGLISH_TO_TURKISH_SIGNS[sign]) return ENGLISH_TO_TURKISH_SIGNS[sign];
+    // Fallback
+    return sign;
+  } else {
+    // targetLang === 'en'
+    // If sign is English (in ENGLISH_TO_TURKISH_SIGNS keys), return it.
+    if (ENGLISH_TO_TURKISH_SIGNS[sign]) return sign;
+    // If sign is Turkish (in ZODIAC_SIGNS_EN keys), convert to English.
+    if (ZODIAC_SIGNS_EN[sign]) return ZODIAC_SIGNS_EN[sign];
+    // Fallback
+    return sign;
+  }
+}
 
 export interface SynastryAspect {
   planet1: string;
@@ -126,81 +157,85 @@ const signAttributes_EN: Record<string, { positive: string; challenging: string;
 };
 
 const houseLifeAreas_TR: Record<number, { area: string; dailyExample: string }> = {
-  1: { area: "kimlik ve ilk izlenim", dailyExample: "birbirinizi tanıştırırken" },
-  2: { area: "para ve maddi güvenlik", dailyExample: "birlikte alışveriş yaparken" },
-  3: { area: "iletişim ve günlük konuşmalar", dailyExample: "mesajlaşırken veya sohbet ederken" },
-  4: { area: "yuva ve aile", dailyExample: "evde birlikte vakit geçirirken" },
-  5: { area: "romantizm ve eğlence", dailyExample: "randevuya çıkarken veya birlikte eğlenirken" },
-  6: { area: "günlük rutinler ve sağlık", dailyExample: "ev işlerini paylaşırken" },
-  7: { area: "ortaklık ve bağlılık", dailyExample: "önemli kararlar alırken" },
-  8: { area: "derin paylaşım ve güven", dailyExample: "sırlarınızı açarken" },
-  9: { area: "hayaller ve uzak hedefler", dailyExample: "gelecek planları yaparken" },
-  10: { area: "kariyer ve toplumsal imaj", dailyExample: "iş hayatınızı konuşurken" },
-  11: { area: "arkadaşlık ve sosyal çevre", dailyExample: "arkadaşlarınızla birlikte olurken" },
-  12: { area: "ruhsallık ve iç dünya", dailyExample: "sessiz anları paylaşırken" }
+  1: { area: "Kimlik ve ilk izlenim", dailyExample: "birbirinizi tanıştırırken" },
+  2: { area: "Para ve maddi güvenlik", dailyExample: "birlikte alışveriş yaparken" },
+  3: { area: "İletişim ve günlük konuşmalar", dailyExample: "mesajlaşırken veya sohbet ederken" },
+  4: { area: "Yuva ve aile", dailyExample: "evde birlikte vakit geçirirken" },
+  5: { area: "Romantizm ve eğlence", dailyExample: "randevuya çıkarken veya birlikte eğlenirken" },
+  6: { area: "Günlük rutinler ve sağlık", dailyExample: "ev işlerini paylaşırken" },
+  7: { area: "Ortaklık ve bağlılık", dailyExample: "önemli kararlar alırken" },
+  8: { area: "Derin paylaşım ve güven", dailyExample: "sırlarınızı açarken" },
+  9: { area: "Hayaller ve uzak hedefler", dailyExample: "gelecek planları yaparken" },
+  10: { area: "Kariyer ve toplumsal imaj", dailyExample: "iş hayatınızı konuşurken" },
+  11: { area: "Arkadaşlık ve sosyal çevre", dailyExample: "arkadaşlarınızla birlikte olurken" },
+  12: { area: "Ruhsallık ve iç dünya", dailyExample: "sessiz anları paylaşırken" }
 };
 
 const houseLifeAreas_EN: Record<number, { area: string; dailyExample: string }> = {
-  1: { area: "identity and first impressions", dailyExample: "while introducing each other" },
-  2: { area: "money and material security", dailyExample: "while shopping together" },
-  3: { area: "communication and daily chats", dailyExample: "while texting or talking" },
-  4: { area: "home and family", dailyExample: "while spending time at home" },
-  5: { area: "romance and entertainment", dailyExample: "while on a date or having fun" },
-  6: { area: "daily routines and health", dailyExample: "while sharing chores" },
-  7: { area: "partnership and commitment", dailyExample: "while making important decisions" },
-  8: { area: "deep sharing and trust", dailyExample: "while sharing secrets" },
-  9: { area: "dreams and long-term goals", dailyExample: "while making future plans" },
-  10: { area: "career and social image", dailyExample: "while discussing work life" },
-  11: { area: "friendship and social circle", dailyExample: "while being with friends" },
-  12: { area: "spirituality and inner world", dailyExample: "while sharing quiet moments" }
+  1: { area: "Identity and first impressions", dailyExample: "while introducing each other" },
+  2: { area: "Money and material security", dailyExample: "while shopping together" },
+  3: { area: "Communication and daily chats", dailyExample: "while texting or talking" },
+  4: { area: "Home and family", dailyExample: "while spending time at home" },
+  5: { area: "Romance and entertainment", dailyExample: "while on a date or having fun" },
+  6: { area: "Daily routines and health", dailyExample: "while sharing chores" },
+  7: { area: "Partnership and commitment", dailyExample: "while making important decisions" },
+  8: { area: "Deep sharing and trust", dailyExample: "while sharing secrets" },
+  9: { area: "Dreams and long-term goals", dailyExample: "while making future plans" },
+  10: { area: "Career and social image", dailyExample: "while discussing work life" },
+  11: { area: "Friendship and social circle", dailyExample: "while being with friends" },
+  12: { area: "Spirituality and inner world", dailyExample: "while sharing quiet moments" }
 };
 
 export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string, score: number, language: Language = 'tr'): string {
   const tier = score <= 25 ? 1 : score <= 50 ? 2 : score <= 75 ? 3 : 4;
-  const p1Attr = (language === 'en' ? signAttributes_EN[p1Sign] : signAttributes_TR[p1Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
-  const p2Attr = (language === 'en' ? signAttributes_EN[p2Sign] : signAttributes_TR[p2Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
+  
+  const localizedP1Sign = getLocalizedSign(p1Sign, language);
+  const localizedP2Sign = getLocalizedSign(p2Sign, language);
+
+  const p1Attr = (language === 'en' ? signAttributes_EN[localizedP1Sign] : signAttributes_TR[localizedP1Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
+  const p2Attr = (language === 'en' ? signAttributes_EN[localizedP2Sign] : signAttributes_TR[localizedP2Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
   const houseInfo = (language === 'en' ? houseLifeAreas_EN[house] : houseLifeAreas_TR[house]) || (language === 'en' ? houseLifeAreas_EN[1] : houseLifeAreas_TR[1]);
   const houseDef = (language === 'en' ? houseDefinitions_EN[house] : houseDefinitions_TR[house]) || (language === 'en' ? houseDefinitions_EN[1] : houseDefinitions_TR[1]);
 
   const openings: Record<1 | 2 | 3 | 4, string[]> = language === 'en' ? {
     1: [
-      `In the area of ${houseDef.theme}, the sky reminds you of the value of independence.`,
+      `In the area of ${houseInfo.area}, the sky reminds you of the value of independence.`,
       `In this house, the stars say that giving each other space is a strength, not a weakness.`,
-      `You play different melodies regarding ${houseInfo.area}, but it's not a cacophony.`
+      `You play different melodies regarding ${houseInfo.area.toLowerCase()}, but it's not a cacophony.`
     ],
     2: [
-      `There are lessons to be learned in the area of ${houseDef.theme}, and that's a beautiful thing.`,
+      `There are lessons to be learned in the area of ${houseInfo.area}, and that's a beautiful thing.`,
       `This house asks for flexibility and patience; not a hardship, but an opportunity for growth.`,
-      `You speak different languages regarding ${houseInfo.area}, but you can learn each other's alphabet.`
+      `You speak different languages regarding ${houseInfo.area.toLowerCase()}, but you can learn each other's alphabet.`
     ],
     3: [
-      `There is a natural flow in the area of ${houseDef.theme}; things work out on their own.`,
+      `There is a natural flow in the area of ${houseInfo.area}; things work out on their own.`,
       `Your harmony is strong in this house; you support each other ${houseInfo.dailyExample}.`,
-      `You vibrate at similar frequencies regarding ${houseInfo.area}.`
+      `You vibrate at similar frequencies regarding ${houseInfo.area.toLowerCase()}.`
     ],
     4: [
-      `I see a strong cosmic bond in the area of ${houseDef.theme}; this is a rare energy.`,
+      `I see a strong cosmic bond in the area of ${houseInfo.area}; this is a rare energy.`,
       `There is a spiritual synergy in this house; you become like one soul ${houseInfo.dailyExample}.`,
-      `You carry a karmic resonance regarding ${houseInfo.area}.`
+      `You carry a karmic resonance regarding ${houseInfo.area.toLowerCase()}.`
     ]
   } : {
     1: [
-      `${houseDef.theme} alanında gökyüzü size bağımsızlığın değerini hatırlatıyor.`,
+      `${houseInfo.area} alanında gökyüzü size bağımsızlığın değerini hatırlatıyor.`,
       `Bu evde yıldızlar, birbirinize alan bırakmanın bir zayıflık değil güç olduğunu söylüyor.`,
       `${houseInfo.area} konusunda farklı melodiler çalıyorsunuz, ama bu bir kakofoni değil.`
     ],
     2: [
-      `${houseDef.theme} alanında öğrenilecek dersler var ve bu güzel bir şey.`,
+      `${houseInfo.area} alanında öğrenilecek dersler var ve bu güzel bir şey.`,
       `Bu ev, sizden esneklik ve sabır istiyor; zorluk değil, büyüme fırsatı.`,
       `${houseInfo.area} konusunda farklı dilleri konuşuyorsunuz ama birbirinizin alfabesini öğrenebilirsiniz.`
     ],
     3: [
-      `${houseDef.theme} alanında doğal bir akış var; işler kendiliğinden yürüyor.`,
+      `${houseInfo.area} alanında doğal bir akış var; işler kendiliğinden yürüyor.`,
       `Bu evde uyumunuz güçlü; ${houseInfo.dailyExample} birbirinizi destekliyorsunuz.`,
       `${houseInfo.area} konusunda benzer frekanslarda titreşiyorsunuz.`
     ],
     4: [
-      `${houseDef.theme} alanında güçlü bir kozmik bağ görüyorum; bu nadir bir energy.`,
+      `${houseInfo.area} alanında güçlü bir kozmik bağ görüyorum; bu nadir bir energy.`,
       `Bu evde ruhsal bir sinerji var; ${houseInfo.dailyExample} adeta tek beden oluyorsunuz.`,
       `${houseInfo.area} konusunda kadersel bir rezonans taşıyorsunuz.`
     ]
@@ -210,26 +245,40 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
   if (tier <= 2) {
     if (language === 'en') {
       signDynamics.push(
-        `While you (${p1Sign}) want ${p1Attr.keyword}, your partner (${p2Sign}) might want ${p2Attr.keyword}.`,
-        `While ${p1Sign} energy is ${p1Attr.positive.toLowerCase()}, ${p2Sign} energy is ${p2Attr.positive.toLowerCase()}.`
+        `While you (${localizedP1Sign}) want ${p1Attr.keyword}, your partner (${localizedP2Sign}) might want ${p2Attr.keyword}.`,
+        `While ${localizedP1Sign} energy is ${p1Attr.positive.toLowerCase()}, ${localizedP2Sign} energy is ${p2Attr.positive.toLowerCase()}.`
       );
     } else {
       signDynamics.push(
-        `Sen (${p1Sign}) ${p1Attr.keyword} isterken, partnerin (${p2Sign}) ${p2Attr.keyword} istiyor olabilir.`,
-        `${p1Sign} enerjisi ${p1Attr.positive.toLowerCase()} iken, ${p2Sign} enerjisi ${p2Attr.positive.toLowerCase()}.`
+        `Sen (${localizedP1Sign}) ${p1Attr.keyword} isterken, partnerin (${localizedP2Sign}) ${p2Attr.keyword} istiyor olabilir.`,
+        `${localizedP1Sign} enerjisi ${p1Attr.positive.toLowerCase()} iken, ${localizedP2Sign} enerjisi ${p2Attr.positive.toLowerCase()}.`
       );
     }
   } else {
-    if (language === 'en') {
-      signDynamics.push(
-        `You (${p1Sign}) and your partner (${p2Sign}) complement each other in this area.`,
-        `The ${p1Attr.positive.toLowerCase()} nature of ${p1Sign} is in harmony with the ${p2Attr.positive.toLowerCase()} energy of ${p2Sign}.`
-      );
+    if (localizedP1Sign === localizedP2Sign) {
+      if (language === 'en') {
+        signDynamics.push(
+          `You both share the energy of ${localizedP1Sign}, creating a natural resonance.`,
+          `The ${p1Attr.positive.toLowerCase()} nature of two ${localizedP1Sign} individuals creates a poetic harmony between you.`
+        );
+      } else {
+        signDynamics.push(
+          `Sen ve partnerin aynı burçtansınız (${localizedP1Sign}), bu da doğal bir rezonans yaratıyor.`,
+          `İki ${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} özellikleri, aranızda şiirsel bir uyum ortaya çıkarıyor.`
+        );
+      }
     } else {
-      signDynamics.push(
-        `Sen (${p1Sign}) ve partnerin (${p2Sign}) bu alanda birbirini tamamlıyor.`,
-        `${p1Sign}'in ${p1Attr.positive.toLowerCase()} yapısı, ${p2Sign}'in ${p2Attr.positive.toLowerCase()} enerjisiyle uyum içinde.`
-      );
+      if (language === 'en') {
+        signDynamics.push(
+          `You (${localizedP1Sign}) and your partner (${localizedP2Sign}) complement each other in this area.`,
+          `The ${p1Attr.positive.toLowerCase()} nature of ${localizedP1Sign} is in harmony with the ${p2Attr.positive.toLowerCase()} energy of ${localizedP2Sign}.`
+        );
+      } else {
+        signDynamics.push(
+          `Sen (${localizedP1Sign}) ve partnerin (${localizedP2Sign}) bu alanda birbirini tamamlıyor.`,
+          `${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} yapısı, ${localizedP2Sign}${TURKISH_SUFFIXES[localizedP2Sign] || "'in"} ${p2Attr.positive.toLowerCase()} enerjisiyle uyum içinde.`
+        );
+      }
     }
   }
 

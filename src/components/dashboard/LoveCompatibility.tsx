@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -77,10 +77,10 @@ function HouseDetailModal({
   userName: string;
   partnerName: string;
 }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { subscriptionStatus } = useProfile();
   const colors = getScoreColorHelper(house.score);
-  const aylaGuide = generateAylaGuide(house.houseNumber, house.person1Sign, house.person2Sign, house.score);
+  const aylaGuide = generateAylaGuide(house.houseNumber, house.person1Sign, house.person2Sign, house.score, language as 'tr' | 'en');
 
   // Security check - though parent handles it, double check here
   const isUnlocked = subscriptionStatus === 'premium' || house.houseNumber === 1 || house.houseNumber === 2;
@@ -231,6 +231,51 @@ export function LoveCompatibility({ profile }: { profile: any }) {
     birth_time: profile?.birth_time || "12:00",
     birth_place: profile?.birth_place || "",
   } : person1Data;
+
+  // Silent update when profile changes
+  const prevProfileRef = useRef(profile);
+
+  useEffect(() => {
+    const prev = prevProfileRef.current;
+    const curr = profile;
+    
+    // Check if meaningful changes occurred
+    const hasChanged = prev?.birth_date !== curr?.birth_date || 
+                       prev?.birth_time !== curr?.birth_time || 
+                       prev?.birth_place !== curr?.birth_place ||
+                       prev?.full_name !== curr?.full_name;
+
+    if (hasChanged && step === 'result' && useUserProfile && curr && partnerData.full_name) {
+       const updatedUserData = {
+         full_name: curr.full_name || t('you'),
+         birth_date: curr.birth_date || "",
+         birth_time: curr.birth_time || "12:00",
+         birth_place: curr.birth_place || "",
+       };
+
+       try {
+         const result = calculateSynastry(
+           {
+             birthDate: new Date(updatedUserData.birth_date),
+             birthTime: updatedUserData.birth_time,
+             birthPlace: updatedUserData.birth_place
+           },
+           {
+             birthDate: new Date(partnerData.birth_date),
+             birthTime: partnerData.birth_time,
+             birthPlace: partnerData.birth_place
+           },
+           language as 'tr' | 'en'
+         );
+         setSynastryResult(result);
+         stitchSynastry(updatedUserData, partnerData, result);
+         toast.success(language === 'en' ? 'Compatibility updated with new profile info.' : 'Uyumluluk yeni profil bilgileriyle güncellendi.');
+       } catch (e) {
+         console.error("Silent recalc error", e);
+       }
+    }
+    prevProfileRef.current = curr;
+  }, [profile, step, useUserProfile, partnerData, language, t]);
 
   const handleCalculate = async () => {
     if (!partnerData.full_name || !partnerData.birth_date || !partnerData.birth_place) {
