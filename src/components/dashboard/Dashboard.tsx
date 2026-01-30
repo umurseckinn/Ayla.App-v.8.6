@@ -73,6 +73,7 @@ import { DailyTransitsDialog } from "../calendar/DailyTransitsDialog";
 import { SettingsDialog } from "../settings/SettingsDialog";
 import { AppActionsDialog } from "./AppActionsDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { scheduleEnergyNotifications } from "@/lib/notifications";
 import { Settings } from "lucide-react";
 import { PremiumModal } from "../premium/PremiumModal";
 import { PremiumUserModal } from "../premium/PremiumUserModal";
@@ -143,6 +144,17 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [adTarget, setAdTarget] = useState<string | null>(null);
   const [unlockedPlanets, setUnlockedPlanets] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (profile?.birth_date) {
+      scheduleEnergyNotifications(
+        new Date(profile.birth_date),
+        profile.birth_time || "12:00",
+        profile.birth_place || "Istanbul",
+        language as 'tr' | 'en'
+      ).catch((err: any) => console.error("Failed to sync notifications:", err));
+    }
+  }, [profile, language]);
 
   useEffect(() => {
     setUnlockedPlanets(PersistenceManager.getUnlockedContent());

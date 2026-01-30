@@ -19,6 +19,7 @@ import { format } from "date-fns";
 import { tr, enUS } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { CalendarIcon } from "lucide-react";
+import { scheduleEnergyNotifications } from "@/lib/notifications";
 
 type SettingsView = "main" | "profile" | "legal" | "privacy" | "kvkk";
 
@@ -250,6 +251,27 @@ function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onL
         toast.success(language === 'en' ? 'Premium membership cancelled' : 'Premium üyelik iptal edildi');
     };
 
+    const handleLanguageChange = async (newLang: 'tr' | 'en') => {
+        setLanguage(newLang);
+        
+        if (profile) {
+            try {
+                const birthDateStr = profile.birth_date || profile.birthDate;
+                if (birthDateStr) {
+                    await scheduleEnergyNotifications(
+                        new Date(birthDateStr),
+                        profile.birth_time || profile.birthTime || "12:00",
+                        profile.birth_place || profile.birthPlace || "Istanbul",
+                        newLang
+                    );
+                    console.log(`Notifications rescheduled for language: ${newLang}`);
+                }
+            } catch (error) {
+                console.error("Error rescheduling notifications on language change:", error);
+            }
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -289,14 +311,14 @@ function MainMenuContent({ t, language, setLanguage, profile, onEditProfile, onL
                 <div className="p-1.5 rounded-2xl bg-black/40 border border-white/10 grid grid-cols-2 gap-1 backdrop-blur-sm">
                     <Button
                         variant="ghost"
-                        onClick={() => setLanguage('tr')}
+                        onClick={() => handleLanguageChange('tr')}
                         className={`h-11 rounded-xl transition-all font-medium ${language === 'tr' ? 'bg-mystic-gold text-black shadow-lg shadow-amber-500/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}
                     >
                         <span className="mr-2">🇹🇷</span> Türkçe
                     </Button>
                     <Button
                         variant="ghost"
-                        onClick={() => setLanguage('en')}
+                        onClick={() => handleLanguageChange('en')}
                         className={`h-11 rounded-xl transition-all font-medium ${language === 'en' ? 'bg-mystic-gold text-black shadow-lg shadow-amber-500/20' : 'text-white/40 hover:text-white hover:bg-white/5'}`}
                     >
                         <span className="mr-2">🇬🇧</span> English
