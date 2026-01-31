@@ -245,7 +245,10 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
 
   const signDynamics: string[] = [];
   
-  if (localizedP1Sign === localizedP2Sign) {
+  // Case-insensitive comparison for same-sign detection
+  const isSameSign = localizedP1Sign.toLocaleLowerCase(language === 'tr' ? 'tr' : 'en') === localizedP2Sign.toLocaleLowerCase(language === 'tr' ? 'tr' : 'en');
+  
+  if (isSameSign) {
     if (language === 'en') {
       signDynamics.push(
         `You both share the energy of ${localizedP1Sign}, creating a natural resonance.`,
