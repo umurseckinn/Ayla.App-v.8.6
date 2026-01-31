@@ -189,13 +189,15 @@ const houseLifeAreas_EN: Record<number, { area: string; dailyExample: string }> 
 export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string, score: number, language: Language = 'tr'): string {
   const tier = score <= 25 ? 1 : score <= 50 ? 2 : score <= 75 ? 3 : 4;
   
-  const localizedP1Sign = getLocalizedSign(p1Sign, language);
-  const localizedP2Sign = getLocalizedSign(p2Sign, language);
+  const cleanP1 = p1Sign.trim();
+  const cleanP2 = p2Sign.trim();
+
+  const localizedP1Sign = getLocalizedSign(cleanP1, language);
+  const localizedP2Sign = getLocalizedSign(cleanP2, language);
 
   const p1Attr = (language === 'en' ? signAttributes_EN[localizedP1Sign] : signAttributes_TR[localizedP1Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
   const p2Attr = (language === 'en' ? signAttributes_EN[localizedP2Sign] : signAttributes_TR[localizedP2Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
   const houseInfo = (language === 'en' ? houseLifeAreas_EN[house] : houseLifeAreas_TR[house]) || (language === 'en' ? houseLifeAreas_EN[1] : houseLifeAreas_TR[1]);
-  const houseDef = (language === 'en' ? houseDefinitions_EN[house] : houseDefinitions_TR[house]) || (language === 'en' ? houseDefinitions_EN[1] : houseDefinitions_TR[1]);
 
   const openings: Record<1 | 2 | 3 | 4, string[]> = language === 'en' ? {
     1: [
@@ -242,7 +244,20 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
   };
 
   const signDynamics: string[] = [];
-  if (tier <= 2) {
+  
+  if (localizedP1Sign === localizedP2Sign) {
+    if (language === 'en') {
+      signDynamics.push(
+        `You both share the energy of ${localizedP1Sign}, creating a natural resonance.`,
+        `The ${p1Attr.positive.toLowerCase()} nature of two ${localizedP1Sign} individuals creates a poetic harmony between you.`
+      );
+    } else {
+      signDynamics.push(
+        `Sen ve partnerin aynı burçtansınız (${localizedP1Sign}), bu da doğal bir rezonans yaratıyor.`,
+        `İki ${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} özellikleri, aranızda şiirsel bir uyum ortaya çıkarıyor.`
+      );
+    }
+  } else if (tier <= 2) {
     if (language === 'en') {
       signDynamics.push(
         `While you (${localizedP1Sign}) want ${p1Attr.keyword}, your partner (${localizedP2Sign}) might want ${p2Attr.keyword}.`,
@@ -255,30 +270,16 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
       );
     }
   } else {
-    if (localizedP1Sign === localizedP2Sign) {
-      if (language === 'en') {
-        signDynamics.push(
-          `You both share the energy of ${localizedP1Sign}, creating a natural resonance.`,
-          `The ${p1Attr.positive.toLowerCase()} nature of two ${localizedP1Sign} individuals creates a poetic harmony between you.`
-        );
-      } else {
-        signDynamics.push(
-          `Sen ve partnerin aynı burçtansınız (${localizedP1Sign}), bu da doğal bir rezonans yaratıyor.`,
-          `İki ${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} özellikleri, aranızda şiirsel bir uyum ortaya çıkarıyor.`
-        );
-      }
+    if (language === 'en') {
+      signDynamics.push(
+        `You (${localizedP1Sign}) and your partner (${localizedP2Sign}) complement each other in this area.`,
+        `The ${p1Attr.positive.toLowerCase()} nature of ${localizedP1Sign} is in harmony with the ${p2Attr.positive.toLowerCase()} energy of ${localizedP2Sign}.`
+      );
     } else {
-      if (language === 'en') {
-        signDynamics.push(
-          `You (${localizedP1Sign}) and your partner (${localizedP2Sign}) complement each other in this area.`,
-          `The ${p1Attr.positive.toLowerCase()} nature of ${localizedP1Sign} is in harmony with the ${p2Attr.positive.toLowerCase()} energy of ${localizedP2Sign}.`
-        );
-      } else {
-        signDynamics.push(
-          `Sen (${localizedP1Sign}) ve partnerin (${localizedP2Sign}) bu alanda birbirini tamamlıyor.`,
-          `${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} yapısı, ${localizedP2Sign}${TURKISH_SUFFIXES[localizedP2Sign] || "'in"} ${p2Attr.positive.toLowerCase()} enerjisiyle uyum içinde.`
-        );
-      }
+      signDynamics.push(
+        `Sen (${localizedP1Sign}) ve partnerin (${localizedP2Sign}) bu alanda birbirini tamamlıyor.`,
+        `${localizedP1Sign}${TURKISH_SUFFIXES[localizedP1Sign] || "'in"} ${p1Attr.positive.toLowerCase()} yapısı, ${localizedP2Sign}${TURKISH_SUFFIXES[localizedP2Sign] || "'in"} ${p2Attr.positive.toLowerCase()} enerjisiyle uyum içinde.`
+      );
     }
   }
 
