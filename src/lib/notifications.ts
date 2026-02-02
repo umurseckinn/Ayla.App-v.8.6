@@ -216,6 +216,16 @@ export async function scheduleEnergyNotifications(
       if (!granted) return;
     }
 
+    // Create a custom channel for Android to ensure high importance and proper timing
+    await LocalNotifications.createChannel({
+      id: 'ayla_daily_updates',
+      name: 'Ayla Günlük Rehberlik',
+      description: 'Günlük enerji ve kozmik rehberlik bildirimleri',
+      importance: 5, // High importance
+      visibility: 1, // Public
+      vibration: true,
+    });
+
     // Cancel existing notifications to avoid duplicates
     const pending = await LocalNotifications.getPending();
     if (pending.notifications.length > 0) {
@@ -224,6 +234,7 @@ export async function scheduleEnergyNotifications(
 
     const notifications = [];
     const today = new Date();
+    const now = Date.now();
     
     // Flatten engagement messages for easier cyclic access
     const engagementCyclesForLang = ENGAGEMENT_CYCLES[language];
@@ -241,8 +252,8 @@ export async function scheduleEnergyNotifications(
       const energyDate = new Date(targetDate);
       energyDate.setHours(12, 0, 0, 0);
 
-      // Skip if time has already passed for today
-      if (energyDate.getTime() > Date.now()) {
+      // Skip if time has already passed for today (with 1 min buffer)
+      if (energyDate.getTime() > now + 60000) {
         const energyResult = await calculateDailyEnergy(
           energyDate,
           birthDate,
@@ -272,7 +283,11 @@ export async function scheduleEnergyNotifications(
           id: i + 1, // IDs 1-30
           title: content.title,
           body: content.body,
-          schedule: { at: energyDate },
+          schedule: { 
+            at: energyDate,
+            allowWhileIdle: true, // Android: Fire even in Doze mode
+          },
+          channelId: 'ayla_daily_updates', // Android channel
           sound: undefined,
           attachments: undefined,
           actionTypeId: "",
@@ -284,7 +299,8 @@ export async function scheduleEnergyNotifications(
       const engagementDate = new Date(targetDate);
       engagementDate.setHours(18, 0, 0, 0);
 
-      if (engagementDate.getTime() > Date.now()) {
+      // Skip if time has already passed for today (with 1 min buffer)
+      if (engagementDate.getTime() > now + 60000) {
         // Use modulo to cycle through messages indefinitely
         // i=0 -> msg 0, i=23 -> msg 23, i=24 -> msg 0, etc.
         const msgIndex = i % allEngagementMessages.length;
@@ -294,7 +310,11 @@ export async function scheduleEnergyNotifications(
           id: 100 + i + 1, // IDs 101-130
           title: message.title,
           body: message.body,
-          schedule: { at: engagementDate },
+          schedule: { 
+            at: engagementDate,
+            allowWhileIdle: true, // Android: Fire even in Doze mode
+          },
+          channelId: 'ayla_daily_updates', // Android channel
           sound: undefined,
           attachments: undefined,
           actionTypeId: "",
