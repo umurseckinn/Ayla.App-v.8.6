@@ -69,6 +69,18 @@ export function SettingsDialog() {
             birth_place: editLocation
         });
 
+        try {
+            await scheduleEnergyNotifications(
+                new Date(editDate),
+                editTime,
+                editLocation,
+                language
+            );
+            console.log(`Notifications rescheduled for updated profile.`);
+        } catch (error) {
+            console.error("Error rescheduling notifications on profile update:", error);
+        }
+
         toast.success(t('saveSuccess'));
         setCurrentView("main");
     };
