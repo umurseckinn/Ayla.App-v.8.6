@@ -144,6 +144,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [adTarget, setAdTarget] = useState<string | null>(null);
   const [unlockedPlanets, setUnlockedPlanets] = useState<string[]>([]);
+  const [isRetrogradeListOpen, setIsRetrogradeListOpen] = useState(false);
 
   useEffect(() => {
     if (profile?.birth_date) {
@@ -252,7 +253,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
         const cosmicData = await getUnifiedCosmicData();
         setEvents(cosmicData);
-        setRetrogrades(getCurrentRetrogrades(undefined, language as 'tr' | 'en'));
+        setRetrogrades(getCurrentRetrogrades(today, language as 'tr' | 'en'));
 
         const transits = calculateTransits(today, language as 'tr' | 'en');
         setCurrentTransits(transits);
@@ -485,7 +486,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
           retrogrades.length > 0 && (
             <div id="tutorial-retrogrades" className="space-y-2">
               <button
-                onClick={() => setIsRetrogradesOpen(!isRetrogradesOpen)}
+                onClick={() => setIsRetrogradeListOpen(true)}
                 className="w-full flex items-center justify-between px-1 group"
               >
                 <div className="flex items-center gap-2">
@@ -494,7 +495,12 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     {t('activeRetrogrades')}
                   </h3>
                 </div>
-                <ChevronDown className={`w-4 h-4 text-rose-600/60 transition-transform ${isRetrogradesOpen ? 'rotate-180' : ''}`} />
+                <div className="flex items-center gap-1">
+                  <span className="text-[8px] text-rose-600/60 uppercase tracking-widest font-bold group-hover:text-rose-600 transition-colors">
+                    {language === 'tr' ? 'TÜMÜNÜ GÖR' : 'VIEW ALL'}
+                  </span>
+                  <ChevronDown className="w-4 h-4 text-rose-600/60 -rotate-90" />
+                </div>
               </button>
               <AnimatePresence>
                 {isRetrogradesOpen && (
@@ -877,6 +883,78 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             setSelectedTransit(null);
           }}
         />
+
+        <Dialog open={isRetrogradeListOpen} onOpenChange={setIsRetrogradeListOpen}>
+          <DialogContent
+            showCloseButton={false}
+            className="max-w-[min(90vw,24rem)] w-full bg-black border-rose-900/50 backdrop-blur-2xl text-white rounded-[2rem] shadow-[0_0_50px_rgba(225,29,72,0.3)] p-0 overflow-hidden flex flex-col"
+            style={{
+              maxHeight: 'calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem)',
+              height: 'auto',
+              top: 'calc(50% + env(safe-area-inset-top, 0px) / 2 - env(safe-area-inset-bottom, 0px) / 2)'
+            }}
+          >
+            <div className="flex flex-col h-full max-h-[calc(100dvh-env(safe-area-inset-top,0px)-env(safe-area-inset-bottom,0px)-2rem)]">
+              {/* Header */}
+              <div className="flex-shrink-0 text-center border-b border-rose-900/30 p-4 pt-[calc(1rem+env(safe-area-inset-top,0px))]">
+                <div className="flex items-center justify-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-rose-500" />
+                  <h3 className="text-base font-black uppercase tracking-wide text-rose-500">
+                    {t('activeRetrogrades')}
+                  </h3>
+                </div>
+              </div>
+
+              {/* List */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-3">
+                {retrogrades.map((r, i) => {
+                  const matchingPlanet = currentTransits?.planets.find(p => p.planet === r.planet);
+                  return (
+                    <button
+                      key={`retro-modal-${r.planet}-${i}`}
+                      onClick={() => {
+                        if (matchingPlanet) {
+                          setIsRetrogradeListOpen(false);
+                          handlePlanetClick(matchingPlanet);
+                        }
+                      }}
+                      className="w-full flex items-center gap-4 p-3 rounded-xl bg-rose-950/20 border border-rose-900/30 hover:bg-rose-900/30 transition-all group"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center text-rose-500 filter drop-shadow-[0_0_10px_rgba(225,29,72,0.4)] bg-black/50 rounded-full border border-rose-900/30">
+                        <PlanetIcon name={r.planet} className="w-8 h-8" />
+                      </div>
+                      
+                      <div className="flex-1 text-left">
+                         <div className="flex items-center gap-2">
+                           <span className="font-mystic font-bold text-rose-400 uppercase tracking-wider text-sm">{t(r.planet as any) || r.planet}</span>
+                           <span className="text-[9px] bg-rose-600 text-white px-1.5 py-0.5 rounded font-bold">Rx</span>
+                         </div>
+                         <div className="flex items-center gap-1 text-rose-400/60 text-xs uppercase tracking-widest mt-0.5">
+                            <span className="font-bold">{r.sign}</span>
+                            <span className="text-[10px] opacity-70">{language === 'tr' ? 'Burcunda' : 'in Sign'}</span>
+                          </div>
+                      </div>
+                      
+                      <div className="text-rose-500/50 group-hover:text-rose-500 transition-colors bg-black/30 p-2 rounded-full">
+                        <ChevronDown className="w-4 h-4 -rotate-90" />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+              
+              {/* Footer */}
+              <div className="p-4 border-t border-rose-900/30 pb-[calc(1rem+env(safe-area-inset-bottom,0px))]">
+                <Button 
+                  onClick={() => setIsRetrogradeListOpen(false)}
+                  className="w-full bg-rose-600 hover:bg-rose-500 text-white font-black uppercase tracking-widest shadow-[0_0_20px_rgba(225,29,72,0.4)]"
+                >
+                  {t('close') || (language === 'tr' ? 'KAPAT' : 'CLOSE')}
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <DailyTransitsDialog
           key={`daily-transits-${language}`}

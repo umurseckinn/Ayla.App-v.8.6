@@ -100,56 +100,24 @@ export async function fetchMoonPhases(startDate: Date, numPhases: number = 4): P
   return phases;
 }
 
+import { calculatePlanetPosition } from './astronomy-service';
+
 export function getCurrentRetrogrades(date: Date = new Date(), language: 'tr' | 'en' = 'tr'): Array<{ planet: string; sign: string }> {
-  const safeDateInput = date instanceof Date ? date : new Date(date);
-  const astroDate = safeDateInput;
-
-  const planetsTR = [
-    { name: "Merkür", body: Body.Mercury },
-    { name: "Venüs", body: Body.Venus },
-    { name: "Mars", body: Body.Mars },
-    { name: "Jüpiter", body: Body.Jupiter },
-    { name: "Satürn", body: Body.Saturn },
-    { name: "Uranüs", body: Body.Uranus },
-    { name: "Neptün", body: Body.Neptune },
-    { name: "Plüton", body: Body.Pluto }
-  ];
-
-  const planetsEN = [
-    { name: "Mercury", body: Body.Mercury },
-    { name: "Venus", body: Body.Venus },
-    { name: "Mars", body: Body.Mars },
-    { name: "Jupiter", body: Body.Jupiter },
-    { name: "Saturn", body: Body.Saturn },
-    { name: "Uranus", body: Body.Uranus },
-    { name: "Neptune", body: Body.Neptune },
-    { name: "Pluto", body: Body.Pluto }
-  ];
-
-  const planets = language === 'en' ? planetsEN : planetsTR;
-
+  const bodies = ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"];
+  
   const retrogrades: Array<{ planet: string; sign: string }> = [];
-
-  const date1 = new Date(astroDate.getTime());
-  const date2 = new Date(astroDate.getTime() + 24 * 60 * 60 * 1000);
-
-  planets.forEach(p => {
+  
+  bodies.forEach(body => {
     try {
-      const lon1 = getPlanetEclipticLongitude(p.body, date1);
-      const lon2 = getPlanetEclipticLongitude(p.body, date2);
-
-      let diff = lon2 - lon1;
-      if (diff > 180) diff -= 360;
-      if (diff < -180) diff += 360;
-
-      if (diff < 0) {
+      const position = calculatePlanetPosition(body, date, language);
+      if (position.isRetrograde) {
         retrogrades.push({
-          planet: p.name,
-          sign: getZodiacSign(lon1, language)
+          planet: position.planet,
+          sign: position.sign
         });
       }
     } catch (e) {
-      console.error(`Error calculating retrograde for ${p.name}:`, e);
+      console.error(`Error calculating retrograde for ${body}:`, e);
     }
   });
 
