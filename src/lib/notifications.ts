@@ -295,9 +295,9 @@ export async function scheduleEnergyNotifications(
         });
       }
 
-      // --- 2. Engagement Notification (18:00) ---
+      // --- 2. Engagement Notification (19:00) ---
       const engagementDate = new Date(targetDate);
-      engagementDate.setHours(18, 0, 0, 0);
+      engagementDate.setHours(19, 0, 0, 0);
 
       // Skip if time has already passed for today (with 1 min buffer)
       if (engagementDate.getTime() > now + 60000) {
