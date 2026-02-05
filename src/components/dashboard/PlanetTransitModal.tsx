@@ -10,6 +10,7 @@ import { getPlanetSignAIInterpretation, getMoonPhaseAIInterpretation, getPlanetT
 import { ZodiacImage } from "../ui/ZodiacImage";
 import { ElementModal } from "./ElementModal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getPlanetWithSuffix } from "@/lib/utils";
 
 interface PlanetTransitModalProps {
   isOpen: boolean;
@@ -341,7 +342,7 @@ export function PlanetTransitModal({
                             onClick={() => onShowTransits(planetName)}
                             className={`w-full h-10 text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all bg-black ${borderClass} ${textClass} hover:shadow-[0_0_25px_${colorHex}cc] hover:scale-[1.02] active:scale-[0.98]`}
                           >
-                            {t('whatDoesThisMean')}
+                            {t(('messageFrom' + planetKey) as any)}
                           </Button>
                         </div>
                       )}

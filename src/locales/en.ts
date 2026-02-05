@@ -124,6 +124,7 @@ You have the right to apply to the data controller to learn whether your persona
     neutralShort: "Neu",
     transitStatus: "Transit Status",
     current: "CURRENT",
+    natal: "NATAL",
     position: "Position",
     house: "HOUSE",
     cosmicComment: "Cosmic Comment",
@@ -253,9 +254,26 @@ You have the right to apply to the data controller to learn whether your persona
     elementAirDesc: "The air element symbolizes the freedom of the mind and the speed of communication. You can be the pioneer of new ideas with this light energy.",
     elementWaterDesc: "The water element represents the depth of emotions and the power of intuition. You will gain healing and sensitivity with this fluid energy.",
 
+    // Aspects
+    conjunction: "Conjunction",
+    square: "Square",
+    opposition: "Opposition",
+    trine: "Trine",
+    sextile: "Sextile",
+
     // Dashboard & Features
     lifeEvents: "My Events",
     planetaryPositions: "Cosmic Agenda",
+    messageFromSun: "Messages from the Sun",
+    messageFromMoon: "Messages from the Moon",
+    messageFromMercury: "Messages from Mercury",
+    messageFromVenus: "Messages from Venus",
+    messageFromMars: "Messages from Mars",
+    messageFromJupiter: "Messages from Jupiter",
+    messageFromSaturn: "Messages from Saturn",
+    messageFromUranus: "Messages from Uranus",
+    messageFromNeptune: "Messages from Neptune",
+    messageFromPluto: "Messages from Pluto",
 
     // Birth Chart
     tabSummary: "Summary",

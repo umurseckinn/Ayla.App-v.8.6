@@ -1031,11 +1031,17 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                 >
                   <div className="flex flex-col items-center gap-3 text-center">
                     <div className="flex items-center gap-[clamp(0.5rem,2vw,0.75rem)]">
-                      <div className="flex flex-col items-center gap-1">
+                      <div className="flex flex-col items-center gap-0">
                         <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
                           detailedTransit.effect === 'negative' ? 'text-rose-400' :
                             'text-amber-400'
-                          }`}>
+                          } mb-0.5`}>
+                          {t('current')}
+                        </span>
+                        <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                          detailedTransit.effect === 'negative' ? 'text-rose-400' :
+                            'text-amber-400'
+                          } mb-1`}>
                           {PLANET_KEY_TO_NAME[detailedTransit.transitPlanetKey] || detailedTransit.transitPlanetKey}
                         </span>
                         <div className={`p-[clamp(0.5rem,2vw,0.75rem)] rounded-[1.5rem] bg-black border shadow-xl transition-all ${detailedTransit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
@@ -1047,17 +1053,31 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                           </div>
                         </div>
                       </div>
-                      <span className={`text-[clamp(1.5rem,6vw,2rem)] font-black drop-shadow-[0_0_15px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
-                        detailedTransit.effect === 'negative' ? 'text-rose-500' :
-                          'text-amber-400'
-                        }`}>
-                        {detailedTransit.aspectSymbol}
-                      </span>
                       <div className="flex flex-col items-center gap-1">
+                        <span className={`text-[9px] font-black uppercase tracking-widest drop-shadow-[0_0_5px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                          detailedTransit.effect === 'negative' ? 'text-rose-500' :
+                            'text-amber-400'
+                          }`}>
+                          {t(detailedTransit.aspectType as any) || detailedTransit.aspectType}
+                        </span>
+                        <span className={`text-[clamp(1.5rem,6vw,2rem)] font-black drop-shadow-[0_0_15px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                          detailedTransit.effect === 'negative' ? 'text-rose-500' :
+                            'text-amber-400'
+                          }`}>
+                          {detailedTransit.aspectSymbol}
+                        </span>
+                      </div>
+                      <div className="flex flex-col items-center gap-0">
                         <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
                           detailedTransit.effect === 'negative' ? 'text-rose-400' :
                             'text-amber-400'
-                          }`}>
+                          } mb-0.5`}>
+                          {t('natal')}
+                        </span>
+                        <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                          detailedTransit.effect === 'negative' ? 'text-rose-400' :
+                            'text-amber-400'
+                          } mb-1`}>
                           {PLANET_KEY_TO_NAME[detailedTransit.natalPlanetKey] || detailedTransit.natalPlanetKey}
                         </span>
                         <div className={`p-[clamp(0.5rem,2vw,0.75rem)] rounded-[1.5rem] bg-black border shadow-xl transition-all ${detailedTransit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :

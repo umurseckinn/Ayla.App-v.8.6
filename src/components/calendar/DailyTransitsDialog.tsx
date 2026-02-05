@@ -17,6 +17,7 @@ import { getCosmicComment } from "@/lib/cosmic-comments";
 import { formatHouseNumber } from "@/lib/transit-interpretations";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getPlanetWithSuffix } from "@/lib/utils";
 import { AlertTriangle, CheckCircle, Target, Lightbulb, TrendingUp, TrendingDown, Activity } from "lucide-react";
 
 interface DailyTransitsDialogProps {
@@ -160,7 +161,11 @@ export function DailyTransitsDialog({
         <DialogContent className={`max-w-sm bg-black backdrop-blur-2xl text-white overflow-y-auto max-h-[90vh] custom-scrollbar rounded-[2rem] border shadow-2xl ${borderClass}`} style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 1rem)', paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 1rem)' }}>
           <DialogHeader>
             <DialogTitle className={`font-mystic text-xl flex items-center justify-between ${titleColorClass}`}>
-              <span>{t('dailyTransits')}</span>
+              <span>
+                {initialPlanetFilter 
+                  ? t(('messageFrom' + initialPlanetFilter) as any)
+                  : t('dailyTransits')}
+              </span>
             </DialogTitle>
             <p className="text-[10px] text-white/40 uppercase tracking-widest text-left">
               {date.toLocaleDateString(language === 'en' ? 'en-US' : 'tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -296,11 +301,17 @@ export function DailyTransitsDialog({
               <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3" style={{ WebkitOverflowScrolling: 'touch', overflowY: 'scroll', touchAction: 'pan-y' }}>
                 <div className="flex flex-col items-center gap-3 text-center">
                   <div className="flex items-center justify-center gap-3">
-                    <div className="flex flex-col items-center gap-1">
+                    <div className="flex flex-col items-center gap-0">
                       <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
                         detailedTransit.effect === 'negative' ? 'text-rose-400' :
                           'text-amber-400'
-                        }`}>
+                        } mb-0.5`}>
+                        {t('current')}
+                      </span>
+                      <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                        detailedTransit.effect === 'negative' ? 'text-rose-400' :
+                          'text-amber-400'
+                        } mb-1`}>
                         {PLANET_KEY_TO_NAME[detailedTransit.transitPlanetKey] || detailedTransit.transitPlanetKey}
                       </span>
                       <div className={`p-2 rounded-xl bg-black border shadow-lg transition-all ${detailedTransit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
@@ -312,17 +323,31 @@ export function DailyTransitsDialog({
                         </div>
                       </div>
                     </div>
-                    <span className={`text-3xl font-black drop-shadow-[0_0_15px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
-                      detailedTransit.effect === 'negative' ? 'text-rose-500' :
-                        'text-amber-400'
-                      }`}>
-                      {detailedTransit.aspectSymbol}
-                    </span>
                     <div className="flex flex-col items-center gap-1">
+                      <span className={`text-[10px] font-black uppercase tracking-widest drop-shadow-[0_0_5px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                        detailedTransit.effect === 'negative' ? 'text-rose-500' :
+                          'text-amber-400'
+                        }`}>
+                        {t(detailedTransit.aspectType as any) || detailedTransit.aspectType}
+                      </span>
+                      <span className={`text-3xl font-black drop-shadow-[0_0_15px_currentColor] ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                        detailedTransit.effect === 'negative' ? 'text-rose-500' :
+                          'text-amber-400'
+                        }`}>
+                        {detailedTransit.aspectSymbol}
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center gap-0">
                       <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
                         detailedTransit.effect === 'negative' ? 'text-rose-400' :
                           'text-amber-400'
-                        }`}>
+                        } mb-0.5`}>
+                        {t('natal')}
+                      </span>
+                      <span className={`text-[8px] font-black uppercase tracking-widest ${detailedTransit.effect === 'positive' ? 'text-emerald-400' :
+                        detailedTransit.effect === 'negative' ? 'text-rose-400' :
+                          'text-amber-400'
+                        } mb-1`}>
                         {PLANET_KEY_TO_NAME[detailedTransit.natalPlanetKey] || detailedTransit.natalPlanetKey}
                       </span>
                       <div className={`p-2 rounded-xl bg-black border shadow-lg transition-all ${detailedTransit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
