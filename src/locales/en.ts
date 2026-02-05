@@ -117,8 +117,8 @@ You have the right to apply to the data controller to learn whether your persona
     greeting: "Hello",
     dear: "Dear",
     activeRetrogrades: "Active Retrogrades",
-    planetPositions: "Planetary Positions & Effects",
-    dailyTransits: "Daily Planetary Transits",
+    planetPositions: "Cosmic Agenda",
+    dailyTransits: "Effects Specific To You",
     positiveShort: "Pos",
     negativeShort: "Neg",
     neutralShort: "Neu",
@@ -254,8 +254,8 @@ You have the right to apply to the data controller to learn whether your persona
     elementWaterDesc: "The water element represents the depth of emotions and the power of intuition. You will gain healing and sensitivity with this fluid energy.",
 
     // Dashboard & Features
-    lifeEvents: "My Life Events",
-    planetaryPositions: "Planetary Positions & Effects",
+    lifeEvents: "My Events",
+    planetaryPositions: "Cosmic Agenda",
 
     // Birth Chart
     tabSummary: "Summary",

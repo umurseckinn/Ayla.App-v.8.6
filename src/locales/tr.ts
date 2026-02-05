@@ -117,8 +117,8 @@ b) İşlenmişse buna ilişkin bilgi talep etme hakkına sahipsiniz.`,
     greeting: "Selam",
     dear: "Canım",
     activeRetrogrades: "Aktif Retrogradlar",
-    planetPositions: "Gezegen Konumları ve Etkileri",
-    dailyTransits: "Günlük Gezegen Transitleri",
+    planetPositions: "Kozmik Gündem",
+    dailyTransits: "Sana Özel Etkiler",
     positiveShort: "Poz",
     negativeShort: "Neg",
     neutralShort: "Nötr",
@@ -254,8 +254,8 @@ b) İşlenmişse buna ilişkin bilgi talep etme hakkına sahipsiniz.`,
     elementWaterDesc: "Su elementi duyguların derinliğini ve sezgilerin gücünü temsil eder. Bu akışkan enerjiyle şifa ve duyarlılık kazanacaksınız.",
 
     // Dashboard & Features
-    lifeEvents: "Yaşam Olaylarım",
-    planetaryPositions: "Gezegen Konumları & Etkileri",
+    lifeEvents: "Etkinliklerim",
+    planetaryPositions: "Kozmik Gündem",
 
     // Birth Chart
     tabSummary: "Özet",
