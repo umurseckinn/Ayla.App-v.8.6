@@ -223,20 +223,20 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-1.5 pb-2">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
-              className={`px-2 py-1.5 rounded-full text-[10px] font-bold transition-all border ${activeCategory === cat
-                ? "bg-black text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.5)]"
-                : "bg-black text-[#D4AF37] border-[#D4AF37] hover:text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_10px_rgba(212,175,55,0.3)]"
-                }`}
-            >
-              {getCategoryName(cat, language)}
-            </button>
-          ))}
-        </div>
+                  <div className="flex flex-wrap gap-1.5 pb-2 justify-start">
+                    {categories.map(cat => (
+                      <button
+                        key={cat}
+                        onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
+                        className={`px-2 py-1.5 rounded-full text-[10px] font-bold transition-all border ${activeCategory === cat
+                          ? "bg-black text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.5)]"
+                          : "bg-black text-[#D4AF37] border-[#D4AF37] hover:text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                          }`}
+                      >
+                        {getCategoryName(cat, language)}
+                      </button>
+                    ))}
+                  </div>
 
                   {activeCategory && (
                     <div className="grid grid-cols-4 gap-2 max-h-48 overflow-y-auto scrollbar-hide animate-in fade-in slide-in-from-top-2 duration-300">

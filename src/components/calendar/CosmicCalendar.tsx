@@ -648,7 +648,7 @@ function DayDetailDialog({
                     </div>
                   )}
 
-                  <div className="flex flex-wrap gap-2 pb-2 pt-1 w-full justify-center">
+                  <div className="flex flex-wrap gap-2 pb-2 pt-1 w-full justify-start">
                     {categories.map(cat => (
                       <Button
                         key={cat}
@@ -1214,12 +1214,25 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
                 className={`aspect-square rounded-lg flex flex-col items-center justify-center text-sm transition-all relative overflow-hidden ${selectedDay === day
                   ? 'ring-2 ring-mystic-gold'
                   : isToday
-                    ? 'ring-1 ring-white/30'
+                    ? 'ring-2 ring-mystic-gold/70 shadow-[0_0_10px_rgba(212,175,55,0.5)]'
                     : ''
                   }`}
                 style={{
                   backgroundColor: isLocked ? '#000000' : getInterpolatedEnergyColor(energy, 0.3)
                 } as any}
+                animate={isToday ? {
+                  scale: [1, 1.1, 1],
+                  boxShadow: [
+                    "0 0 0 2px rgba(212, 175, 55, 0.7), 0 0 10px rgba(212, 175, 55, 0.5)",
+                    "0 0 0 2px rgba(212, 175, 55, 1), 0 0 25px rgba(212, 175, 55, 0.9)",
+                    "0 0 0 2px rgba(212, 175, 55, 0.7), 0 0 10px rgba(212, 175, 55, 0.5)"
+                  ],
+                  transition: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                } : undefined}
                 whileTap={{ scale: 0.95 }}
               >
                 <div className={`flex flex-col items-center justify-center w-full h-full relative`}>

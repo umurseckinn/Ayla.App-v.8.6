@@ -124,6 +124,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
   const [currentTransits, setCurrentTransits] = useState<TransitData | null>(null);
   const [userBirthChart, setUserBirthChart] = useState<any>(null);
   const [todayEnergy, setTodayEnergy] = useState<number>(50);
+  const [baseEnergy, setBaseEnergy] = useState<number>(50);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const [userLifeEvents, setUserLifeEvents] = useState<UserLifeEvent[]>([]);
@@ -270,17 +271,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             profileBirthTime
           );
 
-          let finalEnergy = energyResult.overallEnergy;
-          const lifeEventImpact = calculateLifeEventImpact(today, userLifeEvents);
-
-          if (lifeEventImpact !== 0) {
-            finalEnergy = Math.max(0, Math.min(100, Math.round(finalEnergy * (1 + lifeEventImpact / 100))));
-          }
-
-          const happinessImpact = getHappinessImpact(today);
-          finalEnergy = Math.max(0, Math.min(100, finalEnergy + happinessImpact));
-
-          setTodayEnergy(finalEnergy);
+          setBaseEnergy(energyResult.overallEnergy);
           setPersonalTransits(energyResult.personalTransits || []);
           setTodayInfluences(energyResult.planetaryInfluences || []);
         }
@@ -291,7 +282,25 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
       }
     };
     loadData();
-  }, [profileId, profileBirthDate, profileBirthTime, profileBirthPlace, profileLatitude, profileLongitude, userLifeEvents, activeTab, refreshTrigger, userSunSign, language, currentProfile?.moon_sign]);
+  }, [profileId, profileBirthDate, profileBirthTime, profileBirthPlace, profileLatitude, profileLongitude, activeTab, userSunSign, language, currentProfile?.moon_sign]);
+
+  // Separate effect for quick energy updates (events, happiness) without full reload
+  useEffect(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let finalEnergy = baseEnergy;
+    const lifeEventImpact = calculateLifeEventImpact(today, userLifeEvents);
+
+    if (lifeEventImpact !== 0) {
+      finalEnergy = Math.max(0, Math.min(100, Math.round(finalEnergy * (1 + lifeEventImpact / 100))));
+    }
+
+    const happinessImpact = getHappinessImpact(today);
+    finalEnergy = Math.max(0, Math.min(100, finalEnergy + happinessImpact));
+
+    setTodayEnergy(finalEnergy);
+  }, [baseEnergy, userLifeEvents, refreshTrigger]);
 
   const handlePlanetClick = (planet: any) => {
     const planetKey = planet.planetKey || Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
