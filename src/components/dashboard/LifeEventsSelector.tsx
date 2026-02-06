@@ -80,6 +80,8 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
     if (!selectedEvent || !selectedDate) return;
 
     const newEvent: UserLifeEvent = {
+      id: crypto.randomUUID(),
+      created_at: Date.now(),
       event_id: selectedEvent.event_id,
       event_date: selectedDate
     };
@@ -160,7 +162,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
           >
             <Card className="p-4 bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border-mystic-gold/20">
               {userEvents.length > 0 && (
-                <div className="space-y-2 mb-4">
+                <div className="grid grid-cols-4 gap-2 mb-4">
                   {userEvents.map((ue, index) => {
                     const eventData = getEventData(ue.event_id);
                     if (!eventData) return null;
@@ -168,38 +170,33 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                     return (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/10 group hover:border-mystic-gold/30 transition-colors"
+                        className={`p-2 rounded-xl transition-all flex flex-col items-center justify-center gap-1 aspect-square border relative group ${
+                          eventData.polarity === "Positive" 
+                            ? "bg-black border-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]" 
+                            : "bg-black border-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.3)]"
+                        }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{eventData.icon}</span>
-                          <div>
-                            <p className="text-white text-sm font-medium">{getEventName(eventData, language)}</p>
-                            <div className="flex items-center gap-2">
-                              <span
-                                className="text-[9px] px-1.5 py-0.5 rounded-full"
-                                style={{
-                                  backgroundColor: `${getCategoryColor(eventData.category)}20`,
-                                  color: getCategoryColor(eventData.category)
-                                }}
-                              >
-                                {getCategoryName(eventData.category, language)}
-                              </span>
-                              <span className="text-white/40 text-[10px]">{formatDate(ue.event_date)}</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <span className={`text-[10px] font-medium ${eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-400"
+                        <button
+                          onClick={() => handleRemoveEvent(index)}
+                          className="absolute top-1 right-1 p-1 rounded-full text-white/40 hover:text-rose-500 hover:bg-white/10 transition-colors opacity-0 group-hover:opacity-100 z-10"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                        </button>
+
+                        <span className="text-xl block">{eventData.icon}</span>
+                        <span className={`text-[9px] font-black block leading-tight text-center line-clamp-2 ${
+                          eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                        }`}>{getEventName(eventData, language)}</span>
+                        
+                         <span className={`text-[9px] font-black ${
+                              eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
                             }`}>
-                            {getDaysUntil(ue.event_date)}
-                          </span>
-                          <button
-                            onClick={() => handleRemoveEvent(index)}
-                            className="p-1.5 rounded-lg text-white/30 hover:text-rose-400 hover:bg-rose-400/10 transition-colors opacity-0 group-hover:opacity-100"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
+                              {eventData.polarity === "Positive" ? "+" : ""}{eventData.base_impact_percent}%
+                         </span>
+
+                        <span className="text-[8px] text-white/60 font-medium">
+                           {getDaysUntil(ue.event_date)}
+                        </span>
                       </div>
                     );
                   })}
@@ -236,36 +233,39 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                   </div>
 
                   <div className="grid grid-cols-3 gap-1.5 pb-2">
-                    {categories.map(cat => (
-                      <button
-                        key={cat}
-                        onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
-                        className={`px-2 py-1.5 rounded-full text-[9px] font-medium transition-colors ${activeCategory === cat
-                          ? "bg-mystic-gold text-mystic-blue"
-                          : "bg-white/5 text-white/60 hover:bg-white/10"
-                          }`}
-                      >
-                        {getCategoryName(cat, language)}
-                      </button>
-                    ))}
-                  </div>
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(activeCategory === cat ? null : cat)}
+              className={`px-2 py-1.5 rounded-full text-[10px] font-bold transition-all border ${activeCategory === cat
+                ? "bg-black text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.5)]"
+                : "bg-black text-[#D4AF37] border-[#D4AF37] hover:text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                }`}
+            >
+              {getCategoryName(cat, language)}
+            </button>
+          ))}
+        </div>
 
                   {activeCategory && (
-                    <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto scrollbar-hide animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="grid grid-cols-4 gap-2 max-h-48 overflow-y-auto scrollbar-hide animate-in fade-in slide-in-from-top-2 duration-300">
                       {filteredEvents.map(event => (
                         <button
                           key={event.event_id}
                           onClick={() => setSelectedEvent(event)}
-                          className={`p-3 rounded-xl text-left transition-all ${selectedEvent?.event_id === event.event_id
-                            ? "bg-mystic-gold/20 border-mystic-gold/50 border-2"
-                            : "bg-white/5 border border-white/10 hover:bg-white/10"
+                          className={`p-2 rounded-xl transition-all flex flex-col items-center justify-center gap-1 aspect-square border ${selectedEvent?.event_id === event.event_id
+                            ? (event.polarity === "Positive" ? "bg-black border-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]" : "bg-black border-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.3)]")
+                            : (event.polarity === "Positive" ? "bg-black border-emerald-400/50 hover:border-emerald-400" : "bg-black border-rose-500/50 hover:border-rose-500")
                             }`}
                         >
-                          <span className="text-xl block mb-1">{event.icon}</span>
-                          <span className="text-white text-xs font-medium block leading-tight">{getEventName(event, language)}</span>
+                          <span className="text-xl block">{event.icon}</span>
+                          <span className={`text-[9px] font-black block leading-tight text-center ${
+                            event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                          }`}>{getEventName(event, language)}</span>
                           <span
-                            className="text-[9px] mt-1 inline-block"
-                            style={{ color: getCategoryColor(event.category) }}
+                            className={`text-[9px] font-black ${
+                              event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                            }`}
                           >
                             {event.polarity === "Positive" ? "+" : ""}{event.base_impact_percent}%
                           </span>

@@ -67,13 +67,13 @@ export function DailyTransitsDialog({
   const filteredTransits = transits.filter(t => {
     const matchesEffect = filters.includes(t.effect || "neutral");
     const matchesPlanet = initialPlanetFilter
-      ? t.transitPlanetKey === initialPlanetFilter || t.natalPlanetKey === initialPlanetFilter
+      ? t.transitPlanetKey === initialPlanetFilter
       : true;
     return matchesEffect && matchesPlanet;
   });
 
   const planetTransits = initialPlanetFilter
-    ? transits.filter(t => t.transitPlanetKey === initialPlanetFilter || t.natalPlanetKey === initialPlanetFilter)
+    ? transits.filter(t => t.transitPlanetKey === initialPlanetFilter)
     : [];
   const posCount = planetTransits.filter(t => t.effect === 'positive').length;
   const negCount = planetTransits.filter(t => t.effect === 'negative').length;

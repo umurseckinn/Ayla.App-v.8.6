@@ -347,7 +347,12 @@ function DayDetailDialog({
       newEvents = userLifeEvents.filter(e => !(e.event_id === eventId && e.event_date === dateKey));
     } else {
       newEvents = userLifeEvents.filter(e => e.event_date !== dateKey);
-      newEvents.push({ event_id: eventId, event_date: dateKey });
+      newEvents.push({
+        id: crypto.randomUUID(),
+        created_at: Date.now(),
+        event_id: eventId,
+        event_date: dateKey
+      });
     }
 
     onEventsUpdate(newEvents);
@@ -381,101 +386,6 @@ function DayDetailDialog({
             >
               %{energy}
             </div>
-          </div>
-
-          <div className={`space-y-3 p-3 rounded-[2rem] border transition-all ${sectionBorderClass} ${sectionBgClass}`}>
-            <button
-              onClick={() => setIsTransitsOpen(!isTransitsOpen)}
-              className={`w-full flex items-center justify-between text-base md:text-lg font-medium hover:opacity-80 transition-opacity ${sectionTextClass}`}
-            >
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5" /> {t('dailyTransits')}
-              </div>
-              <motion.div
-                animate={{ rotate: isTransitsOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <ChevronDown className="w-5 h-5" />
-              </motion.div>
-            </button>
-
-            <AnimatePresence>
-              {isTransitsOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="pt-1">
-                    <div className="flex justify-end mb-2 px-1">
-                      <FilterTool selected={transitFilters} onChange={toggleTransitFilter} />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {loading ? (
-                        Array.from({ length: 4 }).map((_, i) => (
-                          <div key={i} className="h-16 rounded-xl bg-white/5 animate-pulse" />
-                        ))
-                      ) : (
-                        personalTransits
-                          .filter(t => transitFilters.includes(t.effect || "neutral"))
-                          .map((transit, i) => {
-                            const statusLabel = getTransitStatusLabel(date, transit);
-                            // Transits are visible but click-locked for non-premium users (Strict Premium)
-                            const isLocked = subscriptionStatus !== 'premium';
-
-                            return (
-                              <button
-                                key={`transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  if (isLocked) {
-                                    onShowPremium();
-                                    return;
-                                  }
-                                  onOpenDetailedTransit(transit);
-                                }}
-                                className={`p-3 rounded-2xl border flex flex-col items-center justify-center gap-2 transition-all min-h-[110px] relative overflow-hidden bg-black shadow-lg ${transit.effect === 'positive' ? 'border-emerald-400 shadow-emerald-400/20' :
-                                  transit.effect === 'negative' ? 'border-rose-500 shadow-rose-500/20' :
-                                    'border-amber-400 shadow-amber-400/20'
-                                  }`}
-                              >
-                                <div className={`w-full h-full flex flex-col items-center justify-center`}>
-                                  <div className="flex items-center gap-3 w-full justify-center -mt-2">
-                                    <div className="w-10 h-10">
-                                      <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
-                                    </div>
-                                    <span className={`text-3xl font-bold drop-shadow-[0_0_8px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                      transit.effect === 'negative' ? 'text-rose-500' :
-                                        'text-amber-400'
-                                      }`}>{transit.aspectSymbol}</span>
-                                    <div className="w-10 h-10">
-                                      <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
-                                    </div>
-                                  </div>
-                                  <div className="flex w-full justify-between items-center text-[10px] px-3 absolute bottom-2 left-0 right-0">
-                                    <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                      transit.effect === 'negative' ? 'text-rose-500' :
-                                        'text-amber-400'
-                                      }`}>{statusLabel}</span>
-                                    <span className={`uppercase tracking-widest font-black drop-shadow-[0_0_5px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
-                                      transit.effect === 'negative' ? 'text-rose-500' :
-                                        'text-amber-400'
-                                      }`}>{formatHouseNumber(transit.house, language)}</span>
-                                  </div>
-                                </div>
-                              </button>
-                            );
-                          })
-
-                      )}
-
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
 
           <div className={`space-y-3 p-3 rounded-[2rem] border transition-all ${sectionBorderClass} ${sectionBgClass}`}>
@@ -592,6 +502,90 @@ function DayDetailDialog({
             </AnimatePresence>
           </div>
 
+          <div className={`space-y-3 p-3 rounded-[2rem] border transition-all ${sectionBorderClass} ${sectionBgClass}`}>
+            <button
+              onClick={() => setIsTransitsOpen(!isTransitsOpen)}
+              className={`w-full flex items-center justify-between text-base md:text-lg font-medium hover:opacity-80 transition-opacity ${sectionTextClass}`}
+            >
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5" /> {t('dailyTransits')}
+              </div>
+              <motion.div
+                animate={{ rotate: isTransitsOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown className="w-5 h-5" />
+              </motion.div>
+            </button>
+
+            <AnimatePresence>
+              {isTransitsOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-1">
+                    <div className="flex justify-end mb-2 px-1">
+                      <FilterTool selected={transitFilters} onChange={toggleTransitFilter} />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      {loading ? (
+                        Array.from({ length: 4 }).map((_, i) => (
+                          <div key={i} className="h-32 rounded-2xl bg-white/5 animate-pulse" />
+                        ))
+                      ) : (
+                        Array.from(new Set(personalTransits.map(t => t.transitPlanetKey)))
+                          .filter(planetKey => {
+                             const planetTransits = personalTransits.filter(t => t.transitPlanetKey === planetKey);
+                             return planetTransits.some(t => transitFilters.includes(t.effect || "neutral"));
+                          })
+                          .map((planetKey, i) => {
+                            const planetTransits = personalTransits.filter(t => t.transitPlanetKey === planetKey);
+                            const posCount = planetTransits.filter(t => t.effect === 'positive').length;
+                            const negCount = planetTransits.filter(t => t.effect === 'negative').length;
+                            const effectType = posCount > negCount ? "positive" : negCount > posCount ? "negative" : "neutral";
+
+                            const borderClass = effectType === "positive" ? "border-emerald-400 shadow-emerald-400/20" :
+                              effectType === "negative" ? "border-rose-500 shadow-rose-500/20" :
+                                "border-amber-400 shadow-amber-400/20";
+                            
+                            const textClass = effectType === "positive" ? "text-emerald-400" :
+                              effectType === "negative" ? "text-rose-400" :
+                                "text-amber-400";
+
+                            // Saturn specific scaling to match other planets visual size
+                            const isSaturn = planetKey === 'Saturn';
+                            const iconScaleClass = isSaturn ? "scale-[1.5]" : "scale-100";
+
+                            return (
+                              <button
+                                key={`transit-group-${planetKey}-${i}`}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  onOpenDailyTransits(personalTransits, planetKey);
+                                }}
+                                className={`p-4 rounded-xl border transition-all bg-black text-center w-full hover:scale-[1.02] active:scale-95 ${borderClass} relative overflow-hidden flex flex-col items-center justify-center gap-3`}
+                              >
+                                <div className={`w-16 h-16 filter drop-shadow-[0_0_10px_currentColor] ${textClass} ${iconScaleClass} transition-transform`}>
+                                  <PlanetIcon name={PLANET_KEY_TO_NAME[planetKey] || planetKey} className="w-full h-full" />
+                                </div>
+                                <span className={`text-[10px] font-black uppercase tracking-wider leading-tight ${textClass}`}>
+                                  {t(('messageFrom' + planetKey) as any)}
+                                </span>
+                              </button>
+                            );
+                          })
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <div className="space-y-4 pt-4 border-t border-white/10">
             <button
               onClick={() => setIsEventsOpen(!isEventsOpen)}
@@ -617,16 +611,16 @@ function DayDetailDialog({
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden space-y-4"
                 >
-                  <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar pt-1">
+                  <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar pt-1 w-full max-w-full">
                     {categories.map(cat => (
                       <Button
                         key={cat}
                         size="sm"
-                        variant={selectedCategory === cat ? "default" : "outline"}
+                        variant="outline"
                         onClick={() => setSelectedCategory(selectedCategory === (cat as any) ? null : (cat as any))}
-                        className={`whitespace-nowrap rounded-full px-4 h-8 text-[11px] ${selectedCategory === cat
-                          ? 'bg-mystic-gold text-indigo-950 border-mystic-gold'
-                          : 'bg-white/5 border-white/10 text-white/60'
+                        className={`whitespace-nowrap rounded-full px-4 h-8 text-xs font-bold border transition-all ${selectedCategory === cat
+                          ? 'bg-black text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.5)] hover:bg-black hover:text-[#FFD700]'
+                          : 'bg-black text-[#D4AF37] border-[#D4AF37] hover:text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_10px_rgba(212,175,55,0.3)] hover:bg-black'
                           }`}
                       >
                         {getCategoryName(cat as any, language)}
@@ -640,7 +634,7 @@ function DayDetailDialog({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="grid grid-cols-1 gap-2"
+                      className="grid grid-cols-4 gap-2"
                     >
                       {LIFE_EVENTS.filter(e => {
                         const isFuture = new Date(dateKey).getTime() > new Date().setHours(0, 0, 0, 0);
@@ -654,21 +648,22 @@ function DayDetailDialog({
                           <button
                             key={event.event_id}
                             onClick={() => toggleEvent(event.event_id)}
-                            className={`flex items-center gap-3 p-3 rounded-xl border transition-all text-left bg-black ${isSelected
-                              ? 'border-mystic-gold shadow-[0_0_15px_rgba(212,175,55,0.1)]'
-                              : 'border-white/10 hover:bg-white/5'
+                            className={`p-2 rounded-xl transition-all flex flex-col items-center justify-center gap-1 aspect-square border ${isSelected
+                              ? (event.polarity === "Positive" ? "bg-black border-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]" : "bg-black border-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.3)]")
+                              : (event.polarity === "Positive" ? "bg-black border-emerald-400/50 hover:border-emerald-400" : "bg-black border-rose-500/50 hover:border-rose-500")
                               }`}
                           >
-                            <span className="text-xl">{event.icon}</span>
-                            <div className="flex-1 min-w-0">
-                              <p className={`text-xs font-medium ${isSelected ? 'text-mystic-gold' : 'text-white'}`}>
-                                {language === 'en' ? event.event_name_en : event.event_name_tr}
-                              </p>
-                              <p className="text-[9px] text-white/40">
-                                {t('effect')}: {event.base_impact_percent > 0 ? '+' : ''}{event.base_impact_percent}%
-                              </p>
-                            </div>
-                            {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-mystic-gold" />}
+                            <span className="text-xl block">{event.icon}</span>
+                            <span className={`text-[9px] font-black block leading-tight text-center ${
+                              event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                            }`}>
+                              {language === 'en' ? event.event_name_en : event.event_name_tr}
+                            </span>
+                            <span className={`text-[9px] font-black ${
+                              event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                            }`}>
+                              {event.polarity === "Positive" ? '+' : ''}{event.base_impact_percent}%
+                            </span>
                           </button>
                         );
                       })}

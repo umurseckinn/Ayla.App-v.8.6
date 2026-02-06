@@ -161,7 +161,7 @@ b) İşlenmişse buna ilişkin bilgi talep etme hakkına sahipsiniz.`,
 
     // Cosmic Calendar
     energyOfTheDay: "Günün Enerjisi",
-    whatAreYouDoing: "O gün neler yapıyorsun?",
+    whatAreYouDoing: "Etkinliklerim",
     cosmicJournal: "Kozmik Günlük",
     journalPlaceholder: "Bugün nasıl hissediyorsun? Gökyüzünün enerjisi sana nasıl yansıdı?",
     effect: "Etki",

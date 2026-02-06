@@ -161,7 +161,7 @@ You have the right to apply to the data controller to learn whether your persona
 
     // Cosmic Calendar
     energyOfTheDay: "Energy of the Day",
-    whatAreYouDoing: "What are you doing that day?",
+    whatAreYouDoing: "My Events",
     cosmicJournal: "Cosmic Journal",
     journalPlaceholder: "How are you feeling today? How did the sky's energy reflect on you?",
     effect: "Effect",

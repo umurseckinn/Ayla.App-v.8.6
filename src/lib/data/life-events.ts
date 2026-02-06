@@ -16,6 +16,717 @@ export interface LifeEvent {
 export const LIFE_EVENTS: LifeEvent[] = [
   // SOCIAL
   {
+    event_id: "EVT_SOC_001",
+    event_name_tr: "Konser / Festival",
+    event_name_en: "Concert / Festival",
+    category: "Social",
+    polarity: "Positive",
+    base_impact_percent: 30,
+    anticipation_window: 14,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Slow",
+    icon: "🎸",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_SOC_002",
+    event_name_tr: "Aile Yemeği",
+    event_name_en: "Family Dinner",
+    category: "Social",
+    polarity: "Positive",
+    base_impact_percent: 15,
+    anticipation_window: 2,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🍲",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_SOC_003",
+    event_name_tr: "Evcil Hayvan Sahiplenme",
+    event_name_en: "Adopting a Pet",
+    category: "Social",
+    polarity: "Positive",
+    base_impact_percent: 40,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 30,
+    recovery_decay: "Slow",
+    icon: "🐾",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_SOC_004",
+    event_name_tr: "Oyun Gecesi",
+    event_name_en: "Game Night",
+    category: "Social",
+    polarity: "Positive",
+    base_impact_percent: 12,
+    anticipation_window: 1,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🎲",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_SOC_005",
+    event_name_tr: "Gönüllü Yardım Faaliyeti",
+    event_name_en: "Volunteering Activity",
+    category: "Social",
+    polarity: "Positive",
+    base_impact_percent: 25,
+    anticipation_window: 1,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Slow",
+    icon: "🤝",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_SOC_006",
+    event_name_tr: "Son Dakika Plan İptali",
+    event_name_en: "Last Minute Cancellation",
+    category: "Social",
+    polarity: "Negative",
+    base_impact_percent: -10,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🚫",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_SOC_007",
+    event_name_tr: "Sosyal Medya Linci / Tartışması",
+    event_name_en: "Social Media Argument",
+    category: "Social",
+    polarity: "Negative",
+    base_impact_percent: -25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "🤬",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_SOC_008",
+    event_name_tr: "Komşu Gürültüsü / Sorunu",
+    event_name_en: "Neighbor Noise / Issue",
+    category: "Social",
+    polarity: "Negative",
+    base_impact_percent: -12,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "📢",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_SOC_009",
+    event_name_tr: "Trafikte Kalmak",
+    event_name_en: "Stuck in Traffic",
+    category: "Social",
+    polarity: "Negative",
+    base_impact_percent: -8,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🚦",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_SOC_010",
+    event_name_tr: "Değerli Bir Eşyayı Kaybetmek",
+    event_name_en: "Losing a Valuable Item",
+    category: "Social",
+    polarity: "Negative",
+    base_impact_percent: -22,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "🎒",
+    isPlannable: false
+  },
+
+  // CAREER
+  {
+    event_id: "EVT_CAR_001",
+    event_name_tr: "Proje Teslimi / Deadline",
+    event_name_en: "Project Delivery / Deadline",
+    category: "Career",
+    polarity: "Positive",
+    base_impact_percent: 25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "🏁",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_CAR_002",
+    event_name_tr: "Yöneticiden Övgü",
+    event_name_en: "Praise from Manager",
+    category: "Career",
+    polarity: "Positive",
+    base_impact_percent: 18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Slow",
+    icon: "🌟",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_CAR_003",
+    event_name_tr: "Mesleki Eğitim / Sertifika",
+    event_name_en: "Vocational Training / Certificate",
+    category: "Career",
+    polarity: "Positive",
+    base_impact_percent: 22,
+    anticipation_window: 5,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "📜",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_CAR_004",
+    event_name_tr: "İş Gezisi",
+    event_name_en: "Business Trip",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -10,
+    anticipation_window: 2,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "✈️",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_CAR_005",
+    event_name_tr: "Teknik Arıza / Bilgisayar Çökmesi",
+    event_name_en: "Technical Failure / Crash",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "💻",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_CAR_006",
+    event_name_tr: "Fazla Mesai (Overtime)",
+    event_name_en: "Overtime",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "🌙",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_CAR_007",
+    event_name_tr: "Hatalı E-posta Gönderimi",
+    event_name_en: "Incorrect Email Sending",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -12,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "📤",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_CAR_008",
+    event_name_tr: "Müşteri Şikayeti",
+    event_name_en: "Customer Complaint",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -20,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Slow",
+    icon: "😤",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_CAR_009",
+    event_name_tr: "Sunum Yapmak",
+    event_name_en: "Giving a Presentation",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 3,
+    anticipation_slope: "Exponential",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "📊",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_CAR_010",
+    event_name_tr: "Ekip Arkadaşının Ayrılması",
+    event_name_en: "Teammate Leaving",
+    category: "Career",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "👋",
+    isPlannable: false
+  },
+
+  // LOVE
+  {
+    event_id: "EVT_LOV_001",
+    event_name_tr: "Nişanlanma",
+    event_name_en: "Engagement",
+    category: "Love",
+    polarity: "Positive",
+    base_impact_percent: 45,
+    anticipation_window: 10,
+    anticipation_slope: "Exponential",
+    recovery_window: 21,
+    recovery_decay: "Slow",
+    icon: "💍",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_LOV_002",
+    event_name_tr: "Sürpriz Hediye Almak",
+    event_name_en: "Receiving a Surprise Gift",
+    category: "Love",
+    polarity: "Positive",
+    base_impact_percent: 20,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "🎁",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_003",
+    event_name_tr: "Birlikte Tatil Planı",
+    event_name_en: "Holiday Plan Together",
+    category: "Love",
+    polarity: "Positive",
+    base_impact_percent: 30,
+    anticipation_window: 7,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "🏖️",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_LOV_004",
+    event_name_tr: "İlk Öpücük",
+    event_name_en: "First Kiss",
+    category: "Love",
+    polarity: "Positive",
+    base_impact_percent: 25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 4,
+    recovery_decay: "Rapid",
+    icon: "💋",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_005",
+    event_name_tr: "Barışma / Sorun Çözme",
+    event_name_en: "Making Up / Solving Problem",
+    category: "Love",
+    polarity: "Positive",
+    base_impact_percent: 18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "🫂",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_006",
+    event_name_tr: "Kıskançlık Krizi",
+    event_name_en: "Jealousy Crisis",
+    category: "Love",
+    polarity: "Negative",
+    base_impact_percent: -20,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "👀",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_007",
+    event_name_tr: "Aileyle Tanışma Gerginliği",
+    event_name_en: "Tension of Meeting Family",
+    category: "Love",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 3,
+    anticipation_slope: "Exponential",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "😰",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_LOV_008",
+    event_name_tr: "Ghosting (Cevapsız Kalma)",
+    event_name_en: "Ghosting",
+    category: "Love",
+    polarity: "Negative",
+    base_impact_percent: -18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "👻",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_009",
+    event_name_tr: "İlişkide Soğukluk / Mesafe",
+    event_name_en: "Coldness / Distance",
+    category: "Love",
+    polarity: "Negative",
+    base_impact_percent: -25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 10,
+    recovery_decay: "Slow",
+    icon: "❄️",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_LOV_010",
+    event_name_tr: "Unutulan Özel Gün",
+    event_name_en: "Forgotten Special Day",
+    category: "Love",
+    polarity: "Negative",
+    base_impact_percent: -30,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "📅",
+    isPlannable: false
+  },
+
+  // HEALTH
+  {
+    event_id: "EVT_HLT_001",
+    event_name_tr: "Düzenli Spora Başlama",
+    event_name_en: "Starting Regular Sports",
+    category: "Health",
+    polarity: "Positive",
+    base_impact_percent: 25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 14,
+    recovery_decay: "Slow",
+    icon: "🏋️‍♀️",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_HLT_002",
+    event_name_tr: "Masaj / Spa Günü",
+    event_name_en: "Massage / Spa Day",
+    category: "Health",
+    polarity: "Positive",
+    base_impact_percent: 22,
+    anticipation_window: 1,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Slow",
+    icon: "🧖",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_HLT_003",
+    event_name_tr: "Doğa Yürüyüşü",
+    event_name_en: "Nature Walk",
+    category: "Health",
+    polarity: "Positive",
+    base_impact_percent: 15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Slow",
+    icon: "🌲",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_HLT_004",
+    event_name_tr: "Kilo Verme Hedefine Ulaşma",
+    event_name_en: "Reaching Weight Loss Goal",
+    category: "Health",
+    polarity: "Positive",
+    base_impact_percent: 30,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 10,
+    recovery_decay: "Slow",
+    icon: "⚖️",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_HLT_005",
+    event_name_tr: "Meditasyon / Yoga",
+    event_name_en: "Meditation / Yoga",
+    category: "Health",
+    polarity: "Positive",
+    base_impact_percent: 12,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🧘",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_HLT_006",
+    event_name_tr: "Migren / Baş Ağrısı",
+    event_name_en: "Migraine / Headache",
+    category: "Health",
+    polarity: "Negative",
+    base_impact_percent: -12,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🤕",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_HLT_007",
+    event_name_tr: "Grip / Soğuk Algınlığı",
+    event_name_en: "Flu / Cold",
+    category: "Health",
+    polarity: "Negative",
+    base_impact_percent: -18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 4,
+    recovery_decay: "Slow",
+    icon: "🤒",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_HLT_008",
+    event_name_tr: "Ev Kazası (Ufak yaralanma)",
+    event_name_en: "Home Accident (Minor Injury)",
+    category: "Health",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "🩹",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_HLT_009",
+    event_name_tr: "Alerjik Reaksiyon",
+    event_name_en: "Allergic Reaction",
+    category: "Health",
+    polarity: "Negative",
+    base_impact_percent: -10,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "🤧",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_HLT_010",
+    event_name_tr: "Tahlil Sonucu Bekleme",
+    event_name_en: "Waiting for Test Results",
+    category: "Health",
+    polarity: "Negative",
+    base_impact_percent: -20,
+    anticipation_window: 2,
+    anticipation_slope: "Exponential",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "🔬",
+    isPlannable: true
+  },
+
+  // FINANCE
+  {
+    event_id: "EVT_FIN_001",
+    event_name_tr: "Piyango / Şans Oyunu Kazancı",
+    event_name_en: "Lottery / Game of Chance Win",
+    category: "Finance",
+    polarity: "Positive",
+    base_impact_percent: 30,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 7,
+    recovery_decay: "Slow",
+    icon: "🎰",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_002",
+    event_name_tr: "Yatırım Getirisi (Borsa/Coin)",
+    event_name_en: "Investment Return (Stock/Coin)",
+    category: "Finance",
+    polarity: "Positive",
+    base_impact_percent: 20,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 4,
+    recovery_decay: "Slow",
+    icon: "📈",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_003",
+    event_name_tr: "İndirim Yakalama / Fırsat",
+    event_name_en: "Catching a Discount",
+    category: "Finance",
+    polarity: "Positive",
+    base_impact_percent: 10,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "🏷️",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_004",
+    event_name_tr: "Kredi Onayı",
+    event_name_en: "Loan Approval",
+    category: "Finance",
+    polarity: "Positive",
+    base_impact_percent: 15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "🏦",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_005",
+    event_name_tr: "Ek Gelir / Freelance İş",
+    event_name_en: "Additional Income / Freelance Work",
+    category: "Finance",
+    polarity: "Positive",
+    base_impact_percent: 18,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "💰",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_006",
+    event_name_tr: "Araba Arızası / Masraf",
+    event_name_en: "Car Breakdown / Expense",
+    category: "Finance",
+    polarity: "Negative",
+    base_impact_percent: -25,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "🛠️",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_007",
+    event_name_tr: "Beklenmedik Fatura",
+    event_name_en: "Unexpected Bill",
+    category: "Finance",
+    polarity: "Negative",
+    base_impact_percent: -15,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 3,
+    recovery_decay: "Rapid",
+    icon: "🧾",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_008",
+    event_name_tr: "Vergi Ödemesi",
+    event_name_en: "Tax Payment",
+    category: "Finance",
+    polarity: "Negative",
+    base_impact_percent: -12,
+    anticipation_window: 3,
+    anticipation_slope: "Linear",
+    recovery_window: 1,
+    recovery_decay: "Rapid",
+    icon: "💸",
+    isPlannable: true
+  },
+  {
+    event_id: "EVT_FIN_009",
+    event_name_tr: "Borç Verme",
+    event_name_en: "Lending Money",
+    category: "Finance",
+    polarity: "Negative",
+    base_impact_percent: -10,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 2,
+    recovery_decay: "Rapid",
+    icon: "🤲",
+    isPlannable: false
+  },
+  {
+    event_id: "EVT_FIN_010",
+    event_name_tr: "Maaş Gecikmesi",
+    event_name_en: "Salary Delay",
+    category: "Finance",
+    polarity: "Negative",
+    base_impact_percent: -30,
+    anticipation_window: 0,
+    anticipation_slope: "Linear",
+    recovery_window: 5,
+    recovery_decay: "Slow",
+    icon: "⌛",
+    isPlannable: false
+  }
+,
+  // --- RESTORED OLD EVENTS ---
+// SOCIAL
+  {
     event_id: "EVT_001_SOC",
     event_name_tr: "Tatile Çıkış",
     event_name_en: "Going on Vacation",
@@ -530,55 +1241,11 @@ export const LIFE_EVENTS: LifeEvent[] = [
 ];
 
 export interface UserLifeEvent {
-  event_id: string;
-  event_date: string;
-}
-
-export function calculateLifeEventImpact(
-  targetDate: Date,
-  userEvents: UserLifeEvent[]
-): number {
-  let totalImpact = 0;
-
-  for (const userEvent of userEvents) {
-    const eventData = LIFE_EVENTS.find(e => e.event_id === userEvent.event_id);
-    if (!eventData) continue;
-
-    const eventDate = new Date(userEvent.event_date);
-    eventDate.setHours(0, 0, 0, 0);
-
-    const target = new Date(targetDate);
-    target.setHours(0, 0, 0, 0);
-
-    const daysDiff = Math.floor((target.getTime() - eventDate.getTime()) / (1000 * 60 * 60 * 24));
-
-    if (daysDiff === 0) {
-      totalImpact += eventData.base_impact_percent;
-    } else if (daysDiff < 0 && Math.abs(daysDiff) <= eventData.anticipation_window) {
-      const daysUntilEvent = Math.abs(daysDiff);
-      let factor: number;
-
-      if (eventData.anticipation_slope === "Exponential") {
-        factor = Math.pow(1 - (daysUntilEvent / eventData.anticipation_window), 2);
-      } else {
-        factor = 1 - (daysUntilEvent / eventData.anticipation_window);
-      }
-
-      totalImpact += eventData.base_impact_percent * factor;
-    } else if (daysDiff > 0 && daysDiff <= eventData.recovery_window) {
-      let factor: number;
-
-      if (eventData.recovery_decay === "Rapid") {
-        factor = Math.pow(1 - (daysDiff / eventData.recovery_window), 2);
-      } else {
-        factor = 1 - (daysDiff / eventData.recovery_window);
-      }
-
-      totalImpact += eventData.base_impact_percent * factor;
-    }
-  }
-
-  return Math.round(totalImpact);
+  id: string; // UUID
+  event_id: string; // Reference to LIFE_EVENTS
+  event_date: string; // YYYY-MM-DD
+  notes?: string;
+  created_at: number;
 }
 
 export function getCategoryColor(category: LifeEvent["category"]): string {
@@ -612,4 +1279,42 @@ export function getCategoryName(category: LifeEvent["category"], language: strin
 
 export function getEventName(event: LifeEvent, language: string = 'tr'): string {
   return language === 'en' ? event.event_name_en : event.event_name_tr;
+}
+
+export function calculateLifeEventImpact(date: Date, userEvents: UserLifeEvent[]): number {
+  if (!userEvents || userEvents.length === 0) return 0;
+
+  let totalImpact = 0;
+  const checkDate = new Date(date);
+  checkDate.setHours(0, 0, 0, 0);
+
+  userEvents.forEach(userEvent => {
+    const eventDef = LIFE_EVENTS.find(e => e.event_id === userEvent.event_id);
+    if (!eventDef) return;
+
+    const eventDate = new Date(userEvent.event_date);
+    eventDate.setHours(0, 0, 0, 0);
+
+    const diffTime = checkDate.getTime() - eventDate.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    // Event day
+    if (diffDays === 0) {
+      totalImpact += eventDef.base_impact_percent;
+    }
+    // Recovery (after event)
+    else if (diffDays > 0 && diffDays <= eventDef.recovery_window) {
+      // Simple linear decay for now
+      const decay = 1 - (diffDays / (eventDef.recovery_window + 1));
+      totalImpact += eventDef.base_impact_percent * decay;
+    }
+    // Anticipation (before event)
+    else if (diffDays < 0 && Math.abs(diffDays) <= eventDef.anticipation_window) {
+       // Simple linear ramp up
+       const ramp = 1 - (Math.abs(diffDays) / (eventDef.anticipation_window + 1));
+       totalImpact += eventDef.base_impact_percent * ramp;
+    }
+  });
+
+  return Math.max(-100, Math.min(100, totalImpact));
 }
