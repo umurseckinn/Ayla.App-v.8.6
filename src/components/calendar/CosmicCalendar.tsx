@@ -18,7 +18,6 @@ import {
   Smile,
   Meh,
   Frown,
-  Save,
   PenLine,
   Zap,
   Heart,
@@ -278,10 +277,7 @@ function DayDetailDialog({
   };
 
 
-  const currentDayEvents = useMemo(() =>
-
-    userLifeEvents.filter(e => e.event_date === dateKey),
-    [userLifeEvents, dateKey]);
+  const currentDayEvents = userLifeEvents.filter(e => e.event_date === dateKey);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -340,19 +336,18 @@ function DayDetailDialog({
       }
     }
 
+    const existingEvent = userLifeEvents.find(e => e.event_date === dateKey && e.event_id === eventId);
     let newEvents: UserLifeEvent[];
-    const exists = userLifeEvents.find(e => e.event_id === eventId && e.event_date === dateKey);
 
-    if (exists) {
-      newEvents = userLifeEvents.filter(e => !(e.event_id === eventId && e.event_date === dateKey));
+    if (existingEvent) {
+      newEvents = userLifeEvents.filter(e => e !== existingEvent);
     } else {
-      newEvents = userLifeEvents.filter(e => e.event_date !== dateKey);
-      newEvents.push({
+      newEvents = [...userLifeEvents, {
         id: crypto.randomUUID(),
         created_at: Date.now(),
         event_id: eventId,
         event_date: dateKey
-      });
+      }];
     }
 
     onEventsUpdate(newEvents);
@@ -593,6 +588,11 @@ function DayDetailDialog({
             >
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4" /> {t('whatAreYouDoing')}
+                {currentDayEvents.length > 0 && (
+                  <span className="flex items-center justify-center min-w-[1.25rem] h-5 text-[10px] font-black bg-mystic-gold/20 text-mystic-gold px-1 rounded-full">
+                    {currentDayEvents.length}
+                  </span>
+                )}
               </div>
               <motion.div
                 animate={{ rotate: isEventsOpen ? 180 : 0 }}
@@ -611,14 +611,51 @@ function DayDetailDialog({
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden space-y-4"
                 >
-                  <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar pt-1 w-full max-w-full">
+                  {currentDayEvents.length > 0 && (
+                    <div className="grid grid-cols-4 gap-2 px-1">
+                      {currentDayEvents.map((ue) => {
+                        const eventData = LIFE_EVENTS.find(e => e.event_id === ue.event_id);
+                        if (!eventData) return null;
+                        
+                        return (
+                          <div
+                            key={ue.event_id}
+                            className={`p-2 rounded-xl transition-all flex flex-col items-center justify-center gap-1 aspect-square border relative group ${
+                              eventData.polarity === "Positive" 
+                                ? "bg-black border-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.3)]" 
+                                : "bg-black border-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.3)]"
+                            }`}
+                          >
+                            <button
+                              onClick={() => toggleEvent(eventData.event_id)}
+                              className="absolute top-1 right-1 p-1 rounded-full text-rose-500 hover:text-rose-500 hover:bg-white/10 transition-colors z-10"
+                            >
+                              <Trash2 className="w-3 h-3" />
+                            </button>
+
+                            <span className="text-xl block">{eventData.icon}</span>
+                            <span className={`text-[9px] font-black block leading-tight text-center line-clamp-2 whitespace-pre-line ${
+                              eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                            }`}>{language === 'en' ? eventData.event_name_en : eventData.event_name_tr}</span>
+                            <span className={`text-[9px] font-black ${
+                              eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
+                            }`}>
+                              {eventData.polarity === "Positive" ? '+' : ''}{eventData.base_impact_percent}%
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  <div className="flex flex-wrap gap-2 pb-2 pt-1 w-full justify-center">
                     {categories.map(cat => (
                       <Button
                         key={cat}
                         size="sm"
                         variant="outline"
                         onClick={() => setSelectedCategory(selectedCategory === (cat as any) ? null : (cat as any))}
-                        className={`whitespace-nowrap rounded-full px-4 h-8 text-xs font-bold border transition-all ${selectedCategory === cat
+                        className={`whitespace-nowrap rounded-full px-4 h-8 text-xs font-bold border transition-all flex-grow-0 ${selectedCategory === cat
                           ? 'bg-black text-[#FFD700] border-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.5)] hover:bg-black hover:text-[#FFD700]'
                           : 'bg-black text-[#D4AF37] border-[#D4AF37] hover:text-[#FFD700] hover:border-[#FFD700] hover:shadow-[0_0_10px_rgba(212,175,55,0.3)] hover:bg-black'
                           }`}
@@ -637,10 +674,6 @@ function DayDetailDialog({
                       className="grid grid-cols-4 gap-2"
                     >
                       {LIFE_EVENTS.filter(e => {
-                        const isFuture = new Date(dateKey).getTime() > new Date().setHours(0, 0, 0, 0);
-                        if (isFuture) {
-                          return e.category === selectedCategory && e.isPlannable;
-                        }
                         return e.category === selectedCategory;
                       }).map(event => {
                         const isSelected = currentDayEvents.some(ce => ce.event_id === event.event_id);
@@ -654,7 +687,7 @@ function DayDetailDialog({
                               }`}
                           >
                             <span className="text-xl block">{event.icon}</span>
-                            <span className={`text-[9px] font-black block leading-tight text-center ${
+                            <span className={`text-[9px] font-black block leading-tight text-center whitespace-pre-line ${
                               event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
                             }`}>
                               {language === 'en' ? event.event_name_en : event.event_name_tr}

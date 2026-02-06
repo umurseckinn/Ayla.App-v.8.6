@@ -45,13 +45,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
   };
 
   const filteredEvents = activeCategory
-    ? LIFE_EVENTS.filter(e => {
-      if (e.category !== activeCategory) return false;
-      if (selectedDate && isDateInFuture(selectedDate)) {
-        return e.isPlannable;
-      }
-      return true;
-    })
+    ? LIFE_EVENTS.filter(e => e.category === activeCategory)
     : [];
 
   const handleDateChange = (date: string) => {
@@ -71,9 +65,6 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
     }
 
     setSelectedDate(date);
-    if (selectedEvent && isDateInFuture(date) && !selectedEvent.isPlannable) {
-      setSelectedEvent(null);
-    }
   };
 
   const handleAddEvent = () => {
@@ -143,7 +134,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
         </div>
         <div className="flex items-center gap-2">
           {userEvents.length > 0 && (
-            <span className="text-[10px] bg-mystic-gold/20 text-mystic-gold px-2 py-0.5 rounded-full">
+            <span className="flex items-center justify-center min-w-[1.25rem] h-5 text-[10px] bg-mystic-gold/20 text-mystic-gold px-1 rounded-full">
               {userEvents.length}
             </span>
           )}
@@ -178,13 +169,13 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                       >
                         <button
                           onClick={() => handleRemoveEvent(index)}
-                          className="absolute top-1 right-1 p-1 rounded-full text-white/40 hover:text-rose-500 hover:bg-white/10 transition-colors opacity-0 group-hover:opacity-100 z-10"
+                          className="absolute top-1 right-1 p-1 rounded-full text-rose-500 hover:text-rose-500 hover:bg-white/10 transition-colors z-10"
                         >
                           <Trash2 className="w-3 h-3" />
                         </button>
 
                         <span className="text-xl block">{eventData.icon}</span>
-                        <span className={`text-[9px] font-black block leading-tight text-center line-clamp-2 ${
+                        <span className={`text-[9px] font-black block leading-tight text-center line-clamp-2 whitespace-pre-line ${
                           eventData.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
                         }`}>{getEventName(eventData, language)}</span>
                         
@@ -259,7 +250,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                             }`}
                         >
                           <span className="text-xl block">{event.icon}</span>
-                          <span className={`text-[9px] font-black block leading-tight text-center ${
+                          <span className={`text-[9px] font-black block leading-tight text-center whitespace-pre-line ${
                             event.polarity === "Positive" ? "text-emerald-400" : "text-rose-500"
                           }`}>{getEventName(event, language)}</span>
                           <span
