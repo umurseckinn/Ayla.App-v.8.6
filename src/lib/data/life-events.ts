@@ -840,7 +840,7 @@ export const LIFE_EVENTS: LifeEvent[] = [
   },
   {
     event_id: "EVT_009_SOC",
-    event_name_tr: "Dedikodu / Mis-\nunderstanding",
+    event_name_tr: "Dedikodu / Yanlış\nAnlaşılma",
     event_name_en: "Gossip / Mis-\nunderstanding",
     category: "Social",
     polarity: "Negative",

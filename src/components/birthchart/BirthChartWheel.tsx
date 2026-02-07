@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZODIAC_IMAGES } from "@/lib/zodiac-images";
 import { PLANET_IMAGES } from "@/lib/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Planet {
   name: string;
@@ -21,18 +22,18 @@ interface BirthChartWheelProps {
 }
 
 const ZODIAC_SIGNS = [
-  { name: "Koç", symbol: "♈", color: "#ef4444" },
-  { name: "Boğa", symbol: "♉", color: "#10b981" },
-  { name: "İkizler", symbol: "♊", color: "#f59e0b" },
-  { name: "Yengeç", symbol: "♋", color: "#3b82f6" },
-  { name: "Aslan", symbol: "♌", color: "#ef4444" },
-  { name: "Başak", symbol: "♍", color: "#10b981" },
-  { name: "Terazi", symbol: "♎", color: "#f59e0b" },
-  { name: "Akrep", symbol: "♏", color: "#3b82f6" },
-  { name: "Yay", symbol: "♐", color: "#ef4444" },
-  { name: "Oğlak", symbol: "♑", color: "#10b981" },
-  { name: "Kova", symbol: "♒", color: "#f59e0b" },
-  { name: "Balık", symbol: "♓", color: "#3b82f6" },
+  { name: "Koç", nameEn: "Aries", symbol: "♈", color: "#ef4444" },
+  { name: "Boğa", nameEn: "Taurus", symbol: "♉", color: "#10b981" },
+  { name: "İkizler", nameEn: "Gemini", symbol: "♊", color: "#f59e0b" },
+  { name: "Yengeç", nameEn: "Cancer", symbol: "♋", color: "#3b82f6" },
+  { name: "Aslan", nameEn: "Leo", symbol: "♌", color: "#ef4444" },
+  { name: "Başak", nameEn: "Virgo", symbol: "♍", color: "#10b981" },
+  { name: "Terazi", nameEn: "Libra", symbol: "♎", color: "#f59e0b" },
+  { name: "Akrep", nameEn: "Scorpio", symbol: "♏", color: "#3b82f6" },
+  { name: "Yay", nameEn: "Sagittarius", symbol: "♐", color: "#ef4444" },
+  { name: "Oğlak", nameEn: "Capricorn", symbol: "♑", color: "#10b981" },
+  { name: "Kova", nameEn: "Aquarius", symbol: "♒", color: "#f59e0b" },
+  { name: "Balık", nameEn: "Pisces", symbol: "♓", color: "#3b82f6" },
 ];
 
 const ASPECT_COLORS: Record<string, string> = {
@@ -44,6 +45,7 @@ const ASPECT_COLORS: Record<string, string> = {
 };
 
 export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, onSignClick }: BirthChartWheelProps) {
+  const { language } = useLanguage();
   const [tooltip, setTooltip] = useState<{ text: string; x: number; y: number } | null>(null);
   const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null);
   const [isHeld, setIsHeld] = useState(false);
@@ -51,6 +53,9 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
   const holdTimerRef = React.useRef<NodeJS.Timeout | null>(null);
   const isHoldingRef = React.useRef(false);
   const startTimeRef = React.useRef<number>(0);
+
+  // Animation State
+  const [animStep, setAnimStep] = useState(0);
 
   const size = 400;
   const center = size / 2;
@@ -60,6 +65,15 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
 
   const ascendantLong = houseCusps[0] || 0;
   const rotationOffset = 180 - ascendantLong;
+  
+  // Helper to get position on circle
+  const getPos = React.useCallback((deg: number, r: number) => {
+    const rad = ((deg + rotationOffset) * Math.PI) / 180;
+    return {
+      x: center + r * Math.cos(rad),
+      y: center - r * Math.sin(rad)
+    };
+  }, [center, rotationOffset]);
 
   // Logic to prevent planet overlap by adjusting radii
   const planetsWithRadii = React.useMemo(() => {
@@ -95,6 +109,49 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
     return radiiMap;
   }, [planets, planetRadius]);
 
+  const sortedPlanets = React.useMemo(() => [...planets].sort((a, b) => {
+      if (a.name === selectedPlanet) return 1;
+      if (b.name === selectedPlanet) return -1;
+      // Stable sort by longitude if no selection
+      return a.longitude - b.longitude;
+    }), [planets, selectedPlanet]);
+
+  const animationSequence = React.useMemo(() => {
+    // Zodiac Indices starting from Aquarius (10) and going Clockwise (decreasing index visually)
+    // 10 (Aquarius) -> 9 (Capricorn) -> 8 (Sagittarius) -> ...
+    const zodiacIndices = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 11];
+    
+    const steps = [];
+    const maxSteps = 12; // Fixed to 12 steps for zodiacs, planets loop or stop? 
+    // User implies 1-to-1 pairing. "1. animasyon sekansında aynı anda aquarius ve sun... ikincide moon ve capricorn"
+    
+    for (let i = 0; i < maxSteps; i++) {
+      const signIndex = zodiacIndices[i];
+      const planet = sortedPlanets.length > 0 ? sortedPlanets[i % sortedPlanets.length] : null;
+      
+      steps.push({
+        sign: { index: signIndex, data: ZODIAC_SIGNS[signIndex] },
+        planet: planet ? { index: i % sortedPlanets.length, data: planet } : null
+      });
+    }
+    return steps;
+  }, [sortedPlanets]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimStep(prev => (prev + 1) % animationSequence.length);
+    }, 4000); // 4 seconds per item
+
+    return () => clearInterval(interval);
+  }, [animationSequence.length]);
+
+  const currentAnimStepData = animationSequence[animStep];
+
+  // Tooltip Logic removed from useEffect to be rendered directly
+
+
+
+
   useEffect(() => {
 
     if (selectedPlanet && !isHeld) {
@@ -109,25 +166,11 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
     };
   }, [selectedPlanet, isHeld]);
 
-  const getPos = (deg: number, r: number) => {
-    const rad = ((deg + rotationOffset) * Math.PI) / 180;
-    return {
-      x: center + r * Math.cos(rad),
-      y: center - r * Math.sin(rad),
-    };
-  };
-
   const handleItemClick = (e: React.MouseEvent, text: string, pos: { x: number, y: number }) => {
     e.stopPropagation();
     setTooltip({ text, x: pos.x, y: pos.y });
     setSelectedPlanet(text);
   };
-
-  const sortedPlanets = [...planets].sort((a, b) => {
-    if (a.name === selectedPlanet) return 1;
-    if (b.name === selectedPlanet) return -1;
-    return 0;
-  });
 
   return (
     <div className="relative w-full max-w-[400px] mx-auto aspect-square select-none">
@@ -170,9 +213,35 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
             <g
               key={sign.name}
               className="cursor-pointer group"
-              onClick={(e) => {
-                handleItemClick(e, sign.name, pos);
-                onSignClick?.(sign.name);
+              onPointerDown={(e) => {
+                startTimeRef.current = Date.now();
+                isHoldingRef.current = false;
+                if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
+
+                holdTimerRef.current = setTimeout(() => {
+                  isHoldingRef.current = true;
+                  handleItemClick(e as any, language === 'en' ? sign.nameEn : sign.name, pos);
+                  setIsHeld(true);
+                }, 250);
+              }}
+              onPointerUp={() => {
+                if (holdTimerRef.current) {
+                  clearTimeout(holdTimerRef.current);
+                  holdTimerRef.current = null;
+                }
+
+                const duration = Date.now() - startTimeRef.current;
+                if (duration < 250 && !isHoldingRef.current) {
+                  onSignClick?.(sign.name);
+                }
+                setIsHeld(false);
+              }}
+              onPointerLeave={() => {
+                if (holdTimerRef.current) {
+                  clearTimeout(holdTimerRef.current);
+                  holdTimerRef.current = null;
+                }
+                setIsHeld(false);
               }}
             >
               <path
@@ -266,7 +335,8 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
           const imageUrl = PLANET_IMAGES[planet.name];
 
           const isSelected = selectedPlanet === planet.name;
-          const pSize = 52; // Standardized size
+          const isSaturn = planet.name === 'Saturn' || planet.name === 'Satürn';
+          const pSize = isSaturn ? 80 : 52; // Standardized size, larger for Saturn
 
           return (
             <g
@@ -354,40 +424,205 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
         {/* Center Dot */}
         <circle cx={center} cy={center} r="4" fill="#fbbf24" className="animate-pulse" />
 
-        {/* Tooltip Render inside SVG */}
+        {/* Highlighting Overlay for Animations (Rendered last to be on top) */}
+        {currentAnimStepData && currentAnimStepData.sign && (() => {
+          const sign = currentAnimStepData.sign.data;
+          const i = currentAnimStepData.sign.index;
+          const startDeg = i * 30;
+          const midDeg = startDeg + 15;
+          const pos = getPos(midDeg, (radius + innerRadius) / 2);
+          const imageUrl = ZODIAC_IMAGES[sign.name];
+          
+          return (
+            <motion.g
+              key={`anim-sign-${sign.name}`}
+              className="pointer-events-none"
+              animate={{
+                scale: [1, 1.2, 1],
+                filter: [
+                  "drop-shadow(0 0 0px rgba(251,191,36,0))",
+                  "drop-shadow(0 0 10px rgba(251,191,36,0.8))",
+                  "drop-shadow(0 0 0px rgba(251,191,36,0))"
+                ]
+              }}
+              transition={{
+                duration: 4,
+                times: [0, 0.5, 1],
+                ease: "easeInOut"
+              }}
+            >
+              {imageUrl ? (
+                <image
+                  href={imageUrl}
+                  x={pos.x - 24}
+                  y={pos.y - 24}
+                  width="48"
+                  height="48"
+                  className="drop-shadow-md"
+                />
+              ) : (
+                <text
+                  x={pos.x}
+                  y={pos.y}
+                  textAnchor="middle"
+                  alignmentBaseline="middle"
+                  fontSize="24"
+                  fill={sign.color}
+                  className="pointer-events-none font-serif"
+                >
+                  {sign.symbol}
+                </text>
+              )}
+
+            </motion.g>
+          );
+        })()}
+
+        {currentAnimStepData && currentAnimStepData.planet && (() => {
+          const planet = currentAnimStepData.planet.data;
+          const r = planetsWithRadii[planet.name] || planetRadius;
+          const pos = getPos(planet.longitude, r);
+          const imageUrl = PLANET_IMAGES[planet.name];
+          const isSaturn = planet.name === 'Saturn' || planet.name === 'Satürn';
+          const pSize = isSaturn ? 80 : 52;
+          
+          return (
+            <motion.g
+              key={`anim-planet-${planet.name}`}
+              className="pointer-events-none"
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 4,
+                times: [0, 0.5, 1],
+                ease: "easeInOut"
+              }}
+            >
+              {imageUrl ? (
+                <motion.image
+                  href={imageUrl}
+                  x={pos.x - pSize / 2}
+                  y={pos.y - pSize / 2}
+                  width={pSize}
+                  height={pSize}
+                  animate={{
+                    filter: [
+                      "drop-shadow(0 0 4px rgba(0,0,0,0.4))",
+                      "drop-shadow(0 0 15px rgba(251,191,36,0.8))",
+                      "drop-shadow(0 0 4px rgba(0,0,0,0.4))"
+                    ]
+                  }}
+                  transition={{
+                    duration: 4,
+                    times: [0, 0.5, 1],
+                    ease: "easeInOut"
+                  }}
+                />
+              ) : (
+                <>
+                  <motion.circle
+                    cx={pos.x}
+                    cy={pos.y}
+                    r={22}
+                    fill="rgba(15, 12, 41, 0.95)"
+                    stroke={planet.color}
+                    strokeWidth="2.5"
+                    animate={{
+                      stroke: [planet.color, "#fbbf24", planet.color],
+                      strokeWidth: [2.5, 3.5, 2.5],
+                      filter: [
+                        "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                        "drop-shadow(0 0 8px rgba(251,191,36,0.6))",
+                        "drop-shadow(0 0 0px rgba(0,0,0,0))"
+                      ]
+                    }}
+                    transition={{
+                      duration: 4,
+                      times: [0, 0.5, 1],
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <text
+                    x={pos.x}
+                    y={pos.y}
+                    fill={planet.color}
+                    fontSize="22"
+                    fontWeight="bold"
+                    textAnchor="middle"
+                    alignmentBaseline="middle"
+                    className="pointer-events-none filter brightness-125"
+                  >
+                    {planet.symbol}
+                  </text>
+                </>
+              )}
+
+            </motion.g>
+          );
+        })()}
+
+        {/* Animation Tooltips (Always on top) */}
+        {currentAnimStepData && (
+          <>
+             {currentAnimStepData.sign && (() => {
+              const sign = currentAnimStepData.sign.data;
+              const i = currentAnimStepData.sign.index;
+              const startDeg = i * 30;
+              const midDeg = startDeg + 15;
+              const pos = getPos(midDeg, (radius + innerRadius) / 2);
+              return (
+                 <foreignObject key="anim-sign-tooltip" x={pos.x - 60} y={pos.y - 48} width="120" height="20" className="overflow-visible pointer-events-none">
+                    <div className="flex justify-center items-center w-full h-full">
+                       <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+                          <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
+                            {language === 'en' ? sign.nameEn : sign.name}
+                          </span>
+                       </div>
+                    </div>
+                 </foreignObject>
+              );
+            })()}
+            
+            {currentAnimStepData.planet && (() => {
+              const planet = currentAnimStepData.planet.data;
+              const r = planetsWithRadii[planet.name] || planetRadius;
+              const pos = getPos(planet.longitude, r);
+              return (
+                 <foreignObject key="anim-planet-tooltip" x={pos.x - 60} y={pos.y - 50} width="120" height="20" className="overflow-visible pointer-events-none">
+                    <div className="flex justify-center items-center w-full h-full">
+                       <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+                          <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
+                            {planet.name}
+                          </span>
+                       </div>
+                    </div>
+                 </foreignObject>
+              );
+            })()}
+          </>
+        )}
+
+        {/* Tooltip Render inside SVG (Hover/Click) */}
         <AnimatePresence>
           {tooltip && (
-            <motion.g
-              initial={{ opacity: 0, scale: 0.8, y: 5 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 5 }}
-              className="pointer-events-none"
-            >
-              {/* Dynamic width based on text length (rough estimation) */}
-              <rect
-                x={tooltip.x - (tooltip.text.length * 4 + 15)}
-                y={tooltip.y - 35}
-                width={tooltip.text.length * 8 + 30}
-                height="24"
-                rx="12"
-                fill="rgba(251, 191, 36, 0.95)"
-                className="drop-shadow-lg"
-              />
-              <text
-                x={tooltip.x}
-                y={tooltip.y - 23}
-                fill="#1e1b4b"
-                fontSize="11"
-                fontWeight="bold"
-                textAnchor="middle"
-                alignmentBaseline="middle"
-                className="font-mystic"
-              >
-                {tooltip.text}
-              </text>
-            </motion.g>
+             <foreignObject x={tooltip.x - 60} y={tooltip.y - 50} width="120" height="20" className="overflow-visible pointer-events-none">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8, y: 5 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.8, y: 5 }}
+                  className="flex justify-center items-center w-full h-full"
+                >
+                   <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+                      <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
+                        {tooltip.text}
+                      </span>
+                   </div>
+                </motion.div>
+             </foreignObject>
           )}
         </AnimatePresence>
+
       </svg>
     </div>
   );

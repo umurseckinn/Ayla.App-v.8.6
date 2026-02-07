@@ -428,19 +428,36 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
           <div className="flex flex-col gap-2 px-1 mb-1">
             {/* Buttons Row */}
             <div className="flex items-center justify-end gap-2 w-full">
-              <Button
-                onClick={() => {
-                  if (subscriptionStatus === 'premium') {
-                    setShowPremiumUserModal(true);
-                  } else {
-                    setShowPremiumModal(true);
-                  }
+              <motion.div
+                animate={{
+                  scale: [1, 1.1, 1],
+                  boxShadow: [
+                    "0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px rgba(184, 134, 11, 0.4)",
+                    "0 0 0 2px rgba(212, 175, 55, 1), 0 0 25px rgba(212, 175, 55, 0.9)",
+                    "0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px rgba(184, 134, 11, 0.4)"
+                  ]
                 }}
-                className="h-8 px-3 bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#FFD700] text-indigo-950 font-black text-xs rounded-lg shadow-[0_0_10px_rgba(184,134,11,0.4)] border border-white/20 transition-all flex items-center gap-1.5"
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="rounded-lg"
               >
-                <Crown className="w-3.5 h-3.5" />
-                PREMIUM
-              </Button>
+                <Button
+                  onClick={() => {
+                    if (subscriptionStatus === 'premium') {
+                      setShowPremiumUserModal(true);
+                    } else {
+                      setShowPremiumModal(true);
+                    }
+                  }}
+                  className="h-8 px-3 bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#FFD700] text-indigo-950 font-black text-xs rounded-lg border-none transition-all flex items-center gap-1.5"
+                >
+                  <Crown className="w-3.5 h-3.5" />
+                  PREMIUM
+                </Button>
+              </motion.div>
               <AppActionsDialog open={showRateUsModal} onOpenChange={setShowRateUsModal} />
               <SettingsDialog />
             </div>
@@ -525,14 +542,28 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         {retrogrades.map((r, i) => {
                           const matchingPlanet = currentTransits?.planets.find(p => p.planet === r.planet);
                           return (
-                            <button
+                            <motion.button
                               key={`retrograde-${r.planet}-${r.sign}-${i}`}
                               onClick={() => matchingPlanet && handlePlanetClick(matchingPlanet)}
-                              className="text-[9px] bg-rose-950/30 text-rose-600 px-2 py-0.5 rounded-full border border-rose-600/30 hover:bg-rose-600/20 transition-all cursor-pointer font-bold flex items-center gap-1"
+                              animate={{
+                                scale: [1, 1.1, 1],
+                                boxShadow: [
+                                  "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)",
+                                  "0 0 0 2px rgba(225, 29, 72, 1), 0 0 40px rgba(225, 29, 72, 0.8)",
+                                  "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)"
+                                ]
+                              }}
+                              transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                times: [0, 0.5, 1]
+                              }}
+                              className="text-[9px] bg-rose-950/30 text-rose-600 px-2 py-0.5 rounded-full border-none hover:bg-rose-600/20 transition-all cursor-pointer font-bold flex items-center gap-1"
                             >
                               <span>{t(r.planet as any) || r.planet}</span>
                               <span className="text-white/60 font-normal">({r.sign})</span>
-                            </button>
+                            </motion.button>
                           );
                         })}
                       </div>
@@ -570,10 +601,24 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     className="overflow-hidden"
                   >
                     <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide -mx-2 px-4 pt-2">
-                      <div
+                      <motion.div
                         id="tutorial-moon"
                         onClick={handleMoonClick}
-                        className="flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border border-amber-400/30 hover:bg-white/5 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] shadow-[0_0_30px_rgba(251,191,36,0.15)]"
+                        animate={{
+                          scale: [1, 1.1, 1],
+                          boxShadow: [
+                            "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)",
+                            "0 0 0 2px rgba(251, 191, 36, 1), 0 0 40px rgba(251, 191, 36, 0.8)",
+                            "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)"
+                          ]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          times: [0, 0.5, 1]
+                        }}
+                        className="flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border border-transparent hover:bg-white/5 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)]"
                       >
                         <div className="text-[clamp(2rem,8vw,2.5rem)] mb-1 filter drop-shadow-[0_0_15px_rgba(251,191,36,0.4)] group-hover:scale-110 transition-transform">
                           {currentTransits.moonPhase.emoji}
@@ -582,7 +627,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                           <p className="text-amber-400 font-mystic text-[11px] font-black uppercase tracking-wider">{t('Moon')}</p>
                           <p className="text-amber-400/60 text-[8px] mt-0.5 font-bold uppercase tracking-widest">{currentTransits.moonPhase.phaseName}</p>
                         </div>
-                      </div>
+                      </motion.div>
 
                       {currentTransits.planets.map((planet, i) => {
                         const planetKey = planet.planetKey || Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
@@ -591,18 +636,33 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const negCount = planetTransits.filter(t => t.effect === 'negative').length;
                         let effectType: "positive" | "negative" | "neutral" = posCount > negCount ? "positive" : negCount > posCount ? "negative" : "neutral";
                         const colorClass = effectType === "positive" ? "text-emerald-400" : effectType === "negative" ? "text-rose-400" : "text-amber-400";
-                        const borderClass = effectType === "positive" ? "border-emerald-500/30" : effectType === "negative" ? "border-rose-500/30" : "border-amber-500/30";
-                        const shadowClass = effectType === "positive" ? "shadow-[0_0_30px_rgba(52,211,153,0.15)]" : effectType === "negative" ? "shadow-[0_0_30px_rgba(251,113,133,0.15)]" : "shadow-[0_0_30px_rgba(251,191,36,0.15)]";
-
+                        // borderClass and shadowClass are replaced by animation
+                        
                         // Access Control Check
                         const isFreePlanet = planetKey === 'Sun';
                         const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || unlockedPlanets.includes(planetKey);
 
+                        const glowColor = effectType === "positive" ? "52, 211, 153" : effectType === "negative" ? "251, 113, 133" : "251, 191, 36";
+
                         return (
-                          <div
+                          <motion.div
                             key={`planet-${planet.planet || 'unknown'}-${i}`}
                             onClick={() => handlePlanetClick(planet)}
-                            className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border ${borderClass} hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] ${shadowClass} relative overflow-hidden`}
+                            animate={{
+                              scale: [1, 1.1, 1],
+                              boxShadow: [
+                                `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`,
+                                `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
+                                `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`
+                              ]
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              times: [0, 0.5, 1]
+                            }}
+                            className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border border-transparent hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden`}
                           >
                             <div className={`flex flex-col items-center justify-center w-full h-full`}>
                               <div className="flex items-center justify-center gap-1 mb-1">
@@ -623,7 +683,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                 <p className={`${colorClass} opacity-60 text-[8px] mt-0.5 font-bold uppercase tracking-widest`}>{planet.sign}</p>
                               </div>
                             </div>
-                          </div>
+                          </motion.div>
                         );
                       })}
                     </div>
@@ -699,8 +759,10 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                       .map((transit, i) => {
                         const isUnlocked = subscriptionStatus === 'premium';
                         
+                        const glowColor = transit.effect === "positive" ? "52, 211, 153" : transit.effect === "negative" ? "251, 113, 133" : "251, 191, 36";
+
                         return (
-                          <button
+                          <motion.button
                             key={`dashboard-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                             onClick={() => {
                               if (!isUnlocked) {
@@ -709,10 +771,20 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                 setDetailedTransit(transit);
                               }
                             }}
-                            className={`p-2 rounded-[2.5rem] border-2 flex flex-col items-center justify-center gap-2 transition-all min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden bg-black shadow-2xl shrink-0 group hover:scale-105 active:scale-95 ${transit.effect === 'positive' ? 'border-emerald-400/50 shadow-emerald-400/20' :
-                              transit.effect === 'negative' ? 'border-rose-500/50 shadow-rose-500/20' :
-                                'border-amber-400/50 shadow-amber-400/20'
-                              }`}
+                            animate={{
+                              scale: [1, 1.1, 1],
+                              boxShadow: [
+                                `0 0 0 2px rgba(${glowColor}, 0.5), 0 0 20px rgba(${glowColor}, 0.2)`,
+                                `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
+                                `0 0 0 2px rgba(${glowColor}, 0.5), 0 0 20px rgba(${glowColor}, 0.2)`
+                              ]
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                            className={`p-2 rounded-[2.5rem] border-none flex flex-col items-center justify-center gap-2 transition-all min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden bg-black shrink-0 group hover:scale-105 active:scale-95`}
                           >
                             <div className={`flex flex-col items-center justify-center w-full h-full`}>
                               <div className="flex items-center gap-2 w-full justify-center -mt-1 mb-2">
@@ -738,7 +810,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                   'bg-amber-400'
                                 }`} />
                             </div>
-                          </button>
+                          </motion.button>
                         );
                       })
                   ) : (

@@ -302,14 +302,14 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                             setSelectedDate("");
                           }}
                           variant="outline"
-                          className="flex-1 border-white/20 text-white/60"
+                          className="flex-1 bg-black text-[#D4AF37] border-white/20 hover:bg-black/80"
                         >
-                          {t('headersCancel')}
+                          {t('cancel')}
                         </Button>
                         <Button
                           onClick={handleAddEvent}
                           disabled={!selectedDate}
-                          className="flex-1 bg-mystic-gold text-mystic-blue hover:bg-mystic-gold/90 disabled:opacity-50"
+                          className="flex-1 bg-black text-[#D4AF37] border border-[#D4AF37]/50 hover:bg-black/80 disabled:opacity-50"
                         >
                           <Sparkles className="w-4 h-4 mr-2" />
                           {t('btnAdd')}

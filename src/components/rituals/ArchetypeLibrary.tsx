@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useTime, useTransform } from "framer-motion";
 import { X, Sparkles, Brain, Heart, Zap, Ghost, BookOpen, Check, ChevronLeft, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const MotionButton = motion(Button);
+
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ARCHETYPES } from "@/lib/data/archetypes";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -138,6 +141,28 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
   const [revealedArchetype, setRevealedArchetype] = useState(false);
   const [selectedEnergy, setSelectedEnergy] = useState<typeof ENERGY_TYPES[0] | null>(null);
 
+  // Synchronized animation values
+  const time = useTime();
+  const pulseScale = useTransform(time, (t) => {
+    const cycle = t % 4000;
+    if (cycle < 2000) {
+      return 1 + (0.02 * (cycle / 2000));
+    } else {
+      return 1.02 - (0.02 * ((cycle - 2000) / 2000));
+    }
+  });
+
+  const pulseFilter = useTransform(time, (t) => {
+    const cycle = t % 4000;
+    let progress;
+    if (cycle < 2000) progress = cycle / 2000;
+    else progress = 1 - ((cycle - 2000) / 2000);
+    
+    const blur = 5 * progress;
+    const alpha = 0.4 * progress;
+    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
+  });
+
   const filteredArchetypes = useMemo(() => {
     const all = Object.entries(ARCHETYPES);
     if (activeCategory === "ALL") return all;
@@ -200,19 +225,21 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
         {mode === "system" && (
           <div className="grid grid-cols-4 gap-2 mt-4">
             {ENERGY_TYPES.map((energy) => (
-              <button
+              <motion.button
                 key={energy.id}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   setSelectedEnergy(energy);
                 }}
-                className="flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border border-white/10 transition-all active:scale-95"
+                className="flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border border-white/10 transition-all"
+                style={{ scale: pulseScale, filter: pulseFilter }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className={`text-[10px] font-black uppercase tracking-wider ${energy.color}`}>
                   {t(energy.nameKey as any)}
                 </span>
-              </button>
+              </motion.button>
             ))}
           </div>
         )}
@@ -224,12 +251,14 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
         <div className="mt-8 flex flex-col flex-1 w-full">
           <div className="px-4 flex flex-col gap-6 w-full">
             {onStartDiscovery && (
-              <Button
+              <MotionButton
                 onClick={handleDiscoveryClick}
-                className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all active:translate-y-0.5"
+                className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all"
+                style={{ scale: pulseScale, filter: pulseFilter }}
+                whileTap={{ scale: 0.98 }}
               >
                 {t('whatIsYourArchetype')}
-              </Button>
+              </MotionButton>
             )}
 
             <div className="space-y-4">
@@ -274,12 +303,13 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                 <motion.div
                   key={key}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  style={{ scale: pulseScale, filter: pulseFilter }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedArchetype({ ...arch, key })}
                   className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-all snap-center ${shouldHighlight
-                    ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20 scale-[1.02]'
+                    ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
                     : 'border-white/10'
                     } bg-black/40 shadow-2xl`}
                 >
@@ -343,12 +373,13 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     return (
                       <motion.div
                         key={key}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        style={{ scale: pulseScale, filter: pulseFilter }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setSelectedArchetype({ ...arch, key })}
                         className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-all snap-center ${shouldHighlight
-                          ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20 scale-[1.02]'
+                          ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
                           : 'border-white/10'
                           } bg-black/40 shadow-2xl`}
                       >
