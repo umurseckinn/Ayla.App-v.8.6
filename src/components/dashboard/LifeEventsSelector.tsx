@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 import { CalendarDays, Plus, X, ChevronDown, Trash2, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -144,7 +145,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
 
       <AnimatePresence>
         {isExpanded && (
-          <motion.div
+          <InViewMotionDiv
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -326,7 +327,7 @@ export function LifeEventsSelector({ userEvents, onEventsChange }: LifeEventsSel
                 </p>
               )}
             </Card>
-          </motion.div>
+          </InViewMotionDiv>
         )}
       </AnimatePresence>
     </div>

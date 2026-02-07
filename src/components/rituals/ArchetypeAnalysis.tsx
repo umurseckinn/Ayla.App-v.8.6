@@ -18,10 +18,62 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { EnergyInfoPopup } from "@/components/rituals/EnergyInfoPopup";
 import type { EnergyType } from "@/components/rituals/EnergyInfoPopup";
 import { safeLocalStorage } from "@/lib/safe-utils";
+import { useInView } from "@/hooks/useInView";
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
 const SQUARE_IMAGE_KEYS = ["Z-R-F-D", "F-D-Z-R", "Z-F-D-R", "R-F-D-Z", "R-D-F-Z", "R-D-Z-F", "R-Z-D-F", "Z-F-R-D", "Z-D-R-F"];
+
+const PulsingShareButton = ({ onClick, children }: { onClick: () => void, children: React.ReactNode }) => {
+  const { ref, isInView } = useInView<HTMLButtonElement>({ threshold: 0.1 });
+  const time = useTime();
+  
+  const pulseScale = useTransform(time, (t) => {
+    const cycle = t % 2000;
+    if (cycle < 1000) {
+      return 1 + (0.05 * (cycle / 1000));
+    } else {
+      return 1.05 - (0.05 * ((cycle - 1000) / 1000));
+    }
+  });
+
+  const pulseFilter = useTransform(time, (t) => {
+    const cycle = t % 2000;
+    let progress;
+    if (cycle < 1000) progress = cycle / 1000;
+    else progress = 1 - ((cycle - 1000) / 1000);
+    
+    const blur = 15 * progress;
+    const alpha = 0.6 * progress;
+    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
+  });
+
+  const innerPulseScale = useTransform(time, (t) => {
+    const cycle = t % 2000;
+    let progress;
+    if (cycle < 1000) progress = cycle / 1000;
+    else progress = 1 - ((cycle - 1000) / 1000);
+    
+    return 1 + (0.05 * progress);
+  });
+
+  return (
+    <MotionButton
+      ref={ref}
+      onClick={onClick}
+      className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all flex items-center justify-center gap-3 overflow-hidden brightness-110"
+      style={isInView ? { scale: pulseScale, filter: pulseFilter } : {}}
+      whileTap={{ scale: 0.98 }}
+    >
+      <motion.div 
+        className="flex items-center justify-center gap-3"
+        style={isInView ? { scale: innerPulseScale } : {}}
+      >
+        {children}
+      </motion.div>
+    </MotionButton>
+  );
+};
 
 const capitalizeEveryWord = (str: string, locale: string = 'tr-TR') => {
   return str
@@ -58,37 +110,6 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
   const [selectedEnergy, setSelectedEnergy] = useState<EnergyType | null>(null);
 
   const currentLocale = language === 'en' ? 'en-US' : 'tr-TR';
-
-  // Synchronized animation values
-  const time = useTime();
-  const pulseScale = useTransform(time, (t) => {
-    const cycle = t % 4000;
-    if (cycle < 2000) {
-      return 1 + (0.02 * (cycle / 2000));
-    } else {
-      return 1.02 - (0.02 * ((cycle - 2000) / 2000));
-    }
-  });
-
-  const pulseFilter = useTransform(time, (t) => {
-    const cycle = t % 4000;
-    let progress;
-    if (cycle < 2000) progress = cycle / 2000;
-    else progress = 1 - ((cycle - 2000) / 2000);
-    
-    const blur = 5 * progress;
-    const alpha = 0.4 * progress;
-    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
-  });
-
-  const innerPulseScale = useTransform(time, (t) => {
-    const cycle = t % 4000;
-    let progress;
-    if (cycle < 2000) progress = cycle / 2000;
-    else progress = 1 - ((cycle - 2000) / 2000);
-    
-    return 1 + (0.15 * progress);
-  });
 
   useEffect(() => {
     const seen = safeLocalStorage.getItem("ayla_archetype_intro_seen");
@@ -243,20 +264,10 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
 
           {/* Archetype Buttons */}
           <div className="space-y-3 pt-2">
-            <MotionButton
-              onClick={() => setIsShareModalOpen(true)}
-              className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all flex items-center justify-center gap-3 overflow-hidden brightness-110"
-              style={{ scale: pulseScale, filter: pulseFilter }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <motion.div 
-                className="flex items-center justify-center gap-3"
-                style={{ scale: innerPulseScale }}
-              >
-                <Share2 className="w-4 h-4" />
-                {t('shareArchetype')}
-              </motion.div>
-            </MotionButton>
+            <PulsingShareButton onClick={() => setIsShareModalOpen(true)}>
+              <Share2 className="w-4 h-4" />
+              {t('shareArchetype')}
+            </PulsingShareButton>
 
             <Button
               onClick={() => setShowLibrary(true)}

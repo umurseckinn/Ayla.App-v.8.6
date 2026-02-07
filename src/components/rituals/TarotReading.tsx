@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
+import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
 import { Moon, Sparkles, RefreshCw, Star, Wand2, Heart, Coins, Activity, Briefcase } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -271,7 +273,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
                       </div>
                       <span className="text-sm font-bold tracking-wide">{niyet.label}</span>
                     </div>
-                    {selectedTopic === niyet.id && <Sparkles className="w-4 h-4 animate-pulse" />}
+                    {selectedTopic === niyet.id && <InViewAnimatedWrapper animationClass="animate-pulse" as="span"><Sparkles className="w-4 h-4" /></InViewAnimatedWrapper>}
                   </button>
                 ))}
               </div>
@@ -304,10 +306,10 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
           {phase === "waiting" && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="py-20 text-center space-y-8">
               <div className="relative w-32 h-32 mx-auto">
-                <div className="absolute inset-0 border-4 border-[#D4AF37]/20 rounded-full animate-ping" />
-                <div className="absolute inset-0 border-4 border-[#D4AF37] rounded-full animate-spin border-t-transparent" />
+                <InViewAnimatedWrapper animationClass="animate-ping" className="absolute inset-0 border-4 border-[#D4AF37]/20 rounded-full" />
+                <InViewAnimatedWrapper animationClass="animate-spin" className="absolute inset-0 border-4 border-[#D4AF37] rounded-full border-t-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Star className="w-10 h-10 text-[#D4AF37] animate-pulse" />
+                  <InViewAnimatedWrapper animationClass="animate-pulse" as="span"><Star className="w-10 h-10 text-[#D4AF37]" /></InViewAnimatedWrapper>
                 </div>
               </div>
               <div className="space-y-2">
@@ -388,7 +390,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
                 <Card className="p-6 bg-gradient-to-br from-[#D4AF37]/10 to-black/90 border-[#D4AF37]/30 rounded-3xl relative overflow-hidden backdrop-blur-md">
                   <div className="flex flex-col items-center gap-6">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-xl animate-pulse" />
+                      <InViewAnimatedWrapper animationClass="animate-pulse" className="absolute inset-0 bg-[#D4AF37]/20 rounded-full blur-xl" />
                       <div className="w-20 h-20 rounded-full border-2 border-[#D4AF37] overflow-hidden bg-black relative z-10 p-1">
                         <img src={AYLA_IMAGE} alt="Ayla" className="w-full h-full object-contain" />
                       </div>

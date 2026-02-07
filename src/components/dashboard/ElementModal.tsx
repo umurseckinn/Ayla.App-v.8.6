@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 import { X, Sparkles, Zap } from "lucide-react";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
@@ -51,7 +52,7 @@ export function ElementModal({
   const startTimeRef = useRef<number>(0);
   const isHoldingRef = useRef(false);
 
-  const displayElementName = t((ELEMENT_NAME_TO_KEY[elementName] || elementName) as keyof TranslationKeys);
+  const displayElementName = t((ELEMENT_NAME_TO_KEY[elementName] || elementName) as any);
 
   const handlePointerDown = (e: React.PointerEvent, sign: string) => {
     startTimeRef.current = Date.now();
@@ -95,7 +96,7 @@ export function ElementModal({
     <>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <InViewMotionDiv
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -166,13 +167,13 @@ export function ElementModal({
                 </Button>
               </div>
             </motion.div>
-          </motion.div>
+          </InViewMotionDiv>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {tooltip && (
-          <motion.div
+          <InViewMotionDiv
             initial={{ opacity: 0, scale: 0.8, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -10 }}
@@ -184,7 +185,7 @@ export function ElementModal({
             }}
           >
             {tooltip}
-          </motion.div>
+          </InViewMotionDiv>
         )}
       </AnimatePresence>
 

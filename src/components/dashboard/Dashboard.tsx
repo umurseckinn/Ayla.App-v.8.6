@@ -79,6 +79,10 @@ import { PremiumModal } from "../premium/PremiumModal";
 import { PremiumUserModal } from "../premium/PremiumUserModal";
 import { AdContentPopup } from "../ads/AdContentPopup";
 import { PersistenceManager } from "@/lib/persistence";
+import { useInView } from "@/hooks/useInView";
+import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
+import { InViewMotionDiv, InViewMotionButton } from "@/components/ui/InViewMotionDiv";
+import { RetrogradePlanetButton, CosmicAgendaMoon, CosmicAgendaPlanet } from "./AnimatedElements";
 
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
@@ -424,25 +428,27 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
     return (
       <div className="px-[clamp(0.75rem,4vw,1rem)] pt-[calc(clamp(0.75rem,4vw,1rem)+var(--sat))] space-y-[clamp(0.75rem,3vw,1rem)] pb-[calc(56px+env(safe-area-inset-bottom)+1.5rem)]">
-        <div id="tutorial-guidance" className="space-y-2">
-          <div className="flex flex-col gap-2 px-1 mb-1">
-            {/* Buttons Row */}
-            <div className="flex items-center justify-end gap-2 w-full">
-              <motion.div
-                animate={{
-                  scale: [1, 1.1, 1],
-                  boxShadow: [
-                    "0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px rgba(184, 134, 11, 0.4)",
-                    "0 0 0 2px rgba(212, 175, 55, 1), 0 0 25px rgba(212, 175, 55, 0.9)",
-                    "0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px rgba(184, 134, 11, 0.4)"
-                  ]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
+        <div id="tutorial-guidance" className="space-y-0 relative z-30">
+          <div className="flex items-center justify-between w-full px-1 mb-[-1.5rem] relative min-h-[3rem] z-30">
+            {/* Logo Container - Flex Centered between left and buttons */}
+            <div className="flex-1 flex justify-center items-center pl-2 pr-4 z-10">
+              <button
+                onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
+                className="relative group transition-transform hover:scale-105 active:scale-95 translate-y-[-0.25rem]"
+              >
+                <img 
+                  src="/assets/IMG_1557.PNG" 
+                  alt="Ayla Logo" 
+                  className="h-[clamp(8.25rem,24vw,11.25rem)] w-auto object-contain" 
+                />
+              </button>
+            </div>
+
+            {/* Buttons Container - Right aligned */}
+            <div className="flex items-center justify-end gap-2 shrink-0 z-20">
+              <InViewAnimatedWrapper
                 className="rounded-lg"
+                animationClass="animate-pulse-premium"
               >
                 <Button
                   onClick={() => {
@@ -457,22 +463,9 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                   <Crown className="w-3.5 h-3.5" />
                   PREMIUM
                 </Button>
-              </motion.div>
+              </InViewAnimatedWrapper>
               <AppActionsDialog open={showRateUsModal} onOpenChange={setShowRateUsModal} />
               <SettingsDialog />
-            </div>
-
-            {/* Greeting Row */}
-            <div className="flex items-center justify-between w-full">
-              <button
-                onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
-                className="flex flex-col relative z-10 text-left group flex-1"
-              >
-                <h1 className="text-[clamp(1.25rem,4vw,1.5rem)] font-mystic gold-text">{t('greeting')} {currentProfile?.name || t('dear')},</h1>
-                <p className="text-muted-foreground font-serif text-[clamp(0.75rem,2.5vw,0.875rem)] italic mt-0.5 opacity-80">
-                  {t('dailyRitualDesc')}
-                </p>
-              </button>
               <button
                 onClick={() => setIsGuidanceOpen(!isGuidanceOpen)}
                 className="p-1"
@@ -483,7 +476,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
           </div>
           <AnimatePresence>
             {isGuidanceOpen && (
-              <motion.div
+              <InViewMotionDiv
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -503,7 +496,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     setActiveTab("calendar");
                   }}
                 />
-              </motion.div>
+              </InViewMotionDiv>
             )}
           </AnimatePresence>
         </div >
@@ -530,7 +523,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               </button>
               <AnimatePresence>
                 {isRetrogradesOpen && (
-                  <motion.div
+                  <InViewMotionDiv
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -542,33 +535,17 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         {retrogrades.map((r, i) => {
                           const matchingPlanet = currentTransits?.planets.find(p => p.planet === r.planet);
                           return (
-                            <motion.button
+                            <RetrogradePlanetButton
                               key={`retrograde-${r.planet}-${r.sign}-${i}`}
+                              planetName={r.planet}
+                              sign={r.sign}
                               onClick={() => matchingPlanet && handlePlanetClick(matchingPlanet)}
-                              animate={{
-                                scale: [1, 1.1, 1],
-                                boxShadow: [
-                                  "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)",
-                                  "0 0 0 2px rgba(225, 29, 72, 1), 0 0 40px rgba(225, 29, 72, 0.8)",
-                                  "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)"
-                                ]
-                              }}
-                              transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                times: [0, 0.5, 1]
-                              }}
-                              className="text-[9px] bg-rose-950/30 text-rose-600 px-2 py-0.5 rounded-full border-none hover:bg-rose-600/20 transition-all cursor-pointer font-bold flex items-center gap-1"
-                            >
-                              <span>{t(r.planet as any) || r.planet}</span>
-                              <span className="text-white/60 font-normal">({r.sign})</span>
-                            </motion.button>
+                            />
                           );
                         })}
                       </div>
                     </Card>
-                  </motion.div>
+                  </InViewMotionDiv>
                 )}
               </AnimatePresence>
             </div>
@@ -593,7 +570,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
               <AnimatePresence>
                 {isCosmicAgendaOpen && (
-                  <motion.div
+                  <InViewMotionDiv
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -601,33 +578,18 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     className="overflow-hidden"
                   >
                     <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide -mx-2 px-4 pt-2">
-                      <motion.div
+                      <CosmicAgendaMoon
                         id="tutorial-moon"
                         onClick={handleMoonClick}
-                        animate={{
-                          scale: [1, 1.1, 1],
-                          boxShadow: [
-                            "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)",
-                            "0 0 0 2px rgba(251, 191, 36, 1), 0 0 40px rgba(251, 191, 36, 0.8)",
-                            "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)"
-                          ]
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          times: [0, 0.5, 1]
-                        }}
-                        className="flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border border-transparent hover:bg-white/5 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)]"
                       >
-                        <div className="text-[clamp(2rem,8vw,2.5rem)] mb-1 filter drop-shadow-[0_0_15px_rgba(251,191,36,0.4)] group-hover:scale-110 transition-transform">
+                        <div className="text-[clamp(2rem,8vw,2.5rem)] mb-1 filter drop-shadow-[0_0_15px_rgba(251,191,36,0.4)] group-hover:scale-105 transition-transform">
                           {currentTransits.moonPhase.emoji}
                         </div>
                         <div className="text-center">
                           <p className="text-amber-400 font-mystic text-[11px] font-black uppercase tracking-wider">{t('Moon')}</p>
                           <p className="text-amber-400/60 text-[8px] mt-0.5 font-bold uppercase tracking-widest">{currentTransits.moonPhase.phaseName}</p>
                         </div>
-                      </motion.div>
+                      </CosmicAgendaMoon>
 
                       {currentTransits.planets.map((planet, i) => {
                         const planetKey = planet.planetKey || Object.keys(PLANET_KEY_TO_NAME).find(key => PLANET_KEY_TO_NAME[key] === planet.planet) || planet.planet;
@@ -645,31 +607,18 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const glowColor = effectType === "positive" ? "52, 211, 153" : effectType === "negative" ? "251, 113, 133" : "251, 191, 36";
 
                         return (
-                          <motion.div
+                          <CosmicAgendaPlanet
                             key={`planet-${planet.planet || 'unknown'}-${i}`}
                             onClick={() => handlePlanetClick(planet)}
-                            animate={{
-                              scale: [1, 1.1, 1],
-                              boxShadow: [
-                                `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`,
-                                `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
-                                `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`
-                              ]
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              ease: "easeInOut",
-                              times: [0, 0.5, 1]
-                            }}
+                            glowColor={glowColor}
                             className={`flex flex-col items-center justify-center group transition-all cursor-pointer p-2 bg-black rounded-[2.5rem] border border-transparent hover:bg-white/10 min-w-[clamp(100px,28vw,130px)] h-[clamp(100px,28vw,130px)] relative overflow-hidden`}
                           >
                             <div className={`flex flex-col items-center justify-center w-full h-full`}>
                               <div className="flex items-center justify-center gap-1 mb-1">
-                                <div className={`w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center group-hover:scale-110 transition-transform filter drop-shadow-[0_0_15px_currentColor] ${colorClass}`}>
+                                <div className={`w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center group-hover:scale-105 transition-transform filter drop-shadow-[0_0_15px_currentColor] ${colorClass}`}>
                                   <PlanetIcon name={planet.planet} className="w-full h-full" />
                                 </div>
-                                <div className="w-[clamp(1.5rem,4vw,2rem)] h-[clamp(1.5rem,4vw,2rem)] group-hover:scale-110 transition-transform">
+                                <div className="w-[clamp(1.5rem,4vw,2rem)] h-[clamp(1.5rem,4vw,2rem)] group-hover:scale-105 transition-transform">
                                   <ZodiacImage sign={planet.sign} size={32} />
                                 </div>
                               </div>
@@ -683,11 +632,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                 <p className={`${colorClass} opacity-60 text-[8px] mt-0.5 font-bold uppercase tracking-widest`}>{planet.sign}</p>
                               </div>
                             </div>
-                          </motion.div>
+                          </CosmicAgendaPlanet>
                         );
                       })}
                     </div>
-                  </motion.div>
+                  </InViewMotionDiv>
                 )}
               </AnimatePresence>
             </div>
@@ -709,7 +658,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
             <AnimatePresence>
               {isDailyTransitsOpenSection && (
-                <motion.div
+                <InViewMotionDiv
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
@@ -736,14 +685,14 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                       {filter === "positive" ? t('positiveShort') : filter === "negative" ? t('negativeShort') : t('neutralShort')}
                     </button>
                   ))}
-                </motion.div>
+                </InViewMotionDiv>
               )}
             </AnimatePresence>
           </div>
 
           <AnimatePresence>
             {isDailyTransitsOpenSection && (
-              <motion.div
+              <InViewMotionDiv
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -762,7 +711,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const glowColor = transit.effect === "positive" ? "52, 211, 153" : transit.effect === "negative" ? "251, 113, 133" : "251, 191, 36";
 
                         return (
-                          <motion.button
+                          <InViewMotionButton
                             key={`dashboard-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                             onClick={() => {
                               if (!isUnlocked) {
@@ -772,7 +721,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                               }
                             }}
                             animate={{
-                              scale: [1, 1.1, 1],
+                              scale: [1, 1.05, 1],
                               boxShadow: [
                                 `0 0 0 2px rgba(${glowColor}, 0.5), 0 0 20px rgba(${glowColor}, 0.2)`,
                                 `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
@@ -788,14 +737,14 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                           >
                             <div className={`flex flex-col items-center justify-center w-full h-full`}>
                               <div className="flex items-center gap-2 w-full justify-center -mt-1 mb-2">
-                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
+                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-105 transition-transform">
                                   <PlanetIcon name={PLANET_KEY_TO_NAME[transit.transitPlanetKey] || transit.transitPlanetKey} className="w-full h-full" />
                                 </div>
                                 <span className={`text-[clamp(1rem,4vw,1.125rem)] font-black drop-shadow-[0_0_15px_currentColor] ${transit.effect === 'positive' ? 'text-emerald-400' :
                                   transit.effect === 'negative' ? 'text-rose-500' :
                                     'text-amber-400'
                                   }`}>{transit.aspectSymbol}</span>
-                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-110 transition-transform">
+                                <div className="w-[clamp(1.5rem,4vw,1.75rem)] h-[clamp(1.5rem,4vw,1.75rem)] group-hover:scale-105 transition-transform">
                                   <PlanetIcon name={PLANET_KEY_TO_NAME[transit.natalPlanetKey] || transit.natalPlanetKey} className="w-full h-full" />
                                 </div>
                               </div>
@@ -810,7 +759,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                   'bg-amber-400'
                                 }`} />
                             </div>
-                          </motion.button>
+                          </InViewMotionButton>
                         );
                       })
                   ) : (
@@ -819,7 +768,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </InViewMotionDiv>
             )}
           </AnimatePresence>
         </div>
@@ -853,7 +802,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
       <div className="relative flex-col w-full max-w-md mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === "home" && (
-            <motion.div
+            <InViewMotionDiv
               key="home"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -863,11 +812,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             >
 
               {renderHomeContent()}
-            </motion.div>
+            </InViewMotionDiv>
           )}
 
           {activeTab === "birthchart" && (
-            <motion.div
+            <InViewMotionDiv
               key="birthchart"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -876,11 +825,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <BirthChart onBack={() => setActiveTab("home")} onTabChange={(tab) => setActiveTab(tab)} />
-            </motion.div>
+            </InViewMotionDiv>
           )}
 
           {activeTab === "calendar" && (
-            <motion.div
+            <InViewMotionDiv
               key="calendar"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -895,11 +844,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                 onHappinessUpdate={() => setRefreshTrigger(prev => prev + 1)}
                 initialDate={calendarInitialDate}
               />
-            </motion.div>
+            </InViewMotionDiv>
           )}
 
           {activeTab === "love_compatibility" && (
-            <motion.div
+            <InViewMotionDiv
               key="love_compatibility"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -908,11 +857,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <LoveCompatibility profile={currentProfile} />
-            </motion.div>
+            </InViewMotionDiv>
           )}
 
           {activeTab === "archetype" && (
-            <motion.div
+            <InViewMotionDiv
               key="archetype"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -921,11 +870,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <ArchetypeAnalysis profile={currentProfile} onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </motion.div>
+            </InViewMotionDiv>
           )}
 
           {activeTab === "tarot" && (
-            <motion.div
+            <InViewMotionDiv
               key="tarot"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -934,7 +883,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <TarotReading onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </motion.div>
+            </InViewMotionDiv>
           )}
         </AnimatePresence>
 

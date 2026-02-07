@@ -140,7 +140,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimStep(prev => (prev + 1) % animationSequence.length);
-    }, 4000); // 4 seconds per item
+    }, 2000); // 2 seconds per item
 
     return () => clearInterval(interval);
   }, [animationSequence.length]);
@@ -446,7 +446,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                 ]
               }}
               transition={{
-                duration: 4,
+                duration: 2,
                 times: [0, 0.5, 1],
                 ease: "easeInOut"
               }}
@@ -494,7 +494,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                 scale: [1, 1.2, 1],
               }}
               transition={{
-                duration: 4,
+                duration: 2,
                 times: [0, 0.5, 1],
                 ease: "easeInOut"
               }}
@@ -514,7 +514,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                     ]
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 2,
                     times: [0, 0.5, 1],
                     ease: "easeInOut"
                   }}
@@ -538,7 +538,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                       ]
                     }}
                     transition={{
-                      duration: 4,
+                      duration: 2,
                       times: [0, 0.5, 1],
                       ease: "easeInOut"
                     }}
@@ -571,16 +571,36 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
               const startDeg = i * 30;
               const midDeg = startDeg + 15;
               const pos = getPos(midDeg, (radius + innerRadius) / 2);
+              const text = language === 'en' ? sign.nameEn : sign.name;
+              
+              // Calculate text width approx (or use fixed width)
+              const textWidth = text.length * 6 + 10; 
+              
               return (
-                 <foreignObject key="anim-sign-tooltip" x={pos.x - 60} y={pos.y - 48} width="120" height="20" className="overflow-visible pointer-events-none">
-                    <div className="flex justify-center items-center w-full h-full">
-                       <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
-                          <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
-                            {language === 'en' ? sign.nameEn : sign.name}
-                          </span>
-                       </div>
-                    </div>
-                 </foreignObject>
+                 <g key="anim-sign-tooltip" pointerEvents="none">
+                    <rect 
+                        x={pos.x - 30} 
+                        y={pos.y - 45} 
+                        width="60" 
+                        height="18" 
+                        rx="4"
+                        fill="black" 
+                        stroke="rgba(212,175,55,0.3)"
+                        strokeWidth="1"
+                        filter="drop-shadow(0 0 4px rgba(212,175,55,0.3))"
+                    />
+                    <text
+                        x={pos.x}
+                        y={pos.y - 36}
+                        textAnchor="middle"
+                        alignmentBaseline="middle"
+                        fill="#D4AF37"
+                        fontSize="9"
+                        fontWeight="bold"
+                    >
+                        {text}
+                    </text>
+                 </g>
               );
             })()}
             
@@ -588,16 +608,33 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
               const planet = currentAnimStepData.planet.data;
               const r = planetsWithRadii[planet.name] || planetRadius;
               const pos = getPos(planet.longitude, r);
+              const text = planet.name;
+              
               return (
-                 <foreignObject key="anim-planet-tooltip" x={pos.x - 60} y={pos.y - 50} width="120" height="20" className="overflow-visible pointer-events-none">
-                    <div className="flex justify-center items-center w-full h-full">
-                       <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
-                          <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
-                            {planet.name}
-                          </span>
-                       </div>
-                    </div>
-                 </foreignObject>
+                 <g key="anim-planet-tooltip" pointerEvents="none">
+                    <rect 
+                        x={pos.x - 30} 
+                        y={pos.y - 45} 
+                        width="60" 
+                        height="18" 
+                        rx="4"
+                        fill="black" 
+                        stroke="rgba(212,175,55,0.3)"
+                        strokeWidth="1"
+                        filter="drop-shadow(0 0 4px rgba(212,175,55,0.3))"
+                    />
+                    <text
+                        x={pos.x}
+                        y={pos.y - 36}
+                        textAnchor="middle"
+                        alignmentBaseline="middle"
+                        fill="#D4AF37"
+                        fontSize="9"
+                        fontWeight="bold"
+                    >
+                        {text}
+                    </text>
+                 </g>
               );
             })()}
           </>
@@ -606,20 +643,35 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
         {/* Tooltip Render inside SVG (Hover/Click) */}
         <AnimatePresence>
           {tooltip && (
-             <foreignObject x={tooltip.x - 60} y={tooltip.y - 50} width="120" height="20" className="overflow-visible pointer-events-none">
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8, y: 5 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, y: 5 }}
-                  className="flex justify-center items-center w-full h-full"
+             <motion.g
+                initial={{ opacity: 0, scale: 0.8, y: 5 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 5 }}
+                pointerEvents="none"
+             >
+                <rect 
+                    x={tooltip.x - 30} 
+                    y={tooltip.y - 45} 
+                    width="60" 
+                    height="18" 
+                    rx="4"
+                    fill="black" 
+                    stroke="rgba(212,175,55,0.3)"
+                    strokeWidth="1"
+                    filter="drop-shadow(0 0 4px rgba(212,175,55,0.3))"
+                />
+                <text
+                    x={tooltip.x}
+                    y={tooltip.y - 36}
+                    textAnchor="middle"
+                    alignmentBaseline="middle"
+                    fill="#D4AF37"
+                    fontSize="9"
+                    fontWeight="bold"
                 >
-                   <div className="px-1.5 py-[1px] bg-black rounded border border-[#D4AF37]/30 shadow-[0_0_10px_rgba(212,175,55,0.3)]">
-                      <span className="text-[9px] font-bold text-[#D4AF37] whitespace-nowrap leading-none">
-                        {tooltip.text}
-                      </span>
-                   </div>
-                </motion.div>
-             </foreignObject>
+                    {tooltip.text}
+                </text>
+             </motion.g>
           )}
         </AnimatePresence>
 

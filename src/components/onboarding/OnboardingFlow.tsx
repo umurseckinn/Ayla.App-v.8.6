@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
+import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
 import { Sparkles, ArrowRight, Star, ChevronLeft, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -387,7 +389,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
 
               {step === 6 && (
                 <div className="relative flex flex-col items-center">
-                  <motion.div
+                  <InViewMotionDiv
                     animate={{
                       rotate: 360,
                       scale: [1, 1.1, 1]
@@ -400,15 +402,17 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                   >
                     <div className="w-40 h-40 border border-mystic-gold/40 rounded-full flex items-center justify-center">
                       <div className="w-32 h-32 border border-mystic-gold/60 rounded-full flex items-center justify-center">
-                        <img src={AYLA_IMAGE} alt="Ayla" className="w-20 h-20 ayla-isolated animate-pulse" />
+                        <InViewAnimatedWrapper animationClass="animate-pulse">
+                          <img src={AYLA_IMAGE} alt="Ayla" className="w-20 h-20 ayla-isolated" />
+                        </InViewAnimatedWrapper>
                       </div>
                     </div>
-                  </motion.div>
+                  </InViewMotionDiv>
 
                   {/* Data points merging effect */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     {[...Array(3)].map((_, i) => (
-                      <motion.div
+                      <InViewMotionDiv
                         key={i}
                         animate={{
                           x: [Math.random() * 200 - 100, 0],

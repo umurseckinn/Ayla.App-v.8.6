@@ -478,7 +478,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
             <div className="relative w-48 h-48 mb-12">
               <motion.div
                 animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-                transition={{ rotate: { duration: 15, repeat: Infinity, ease: "linear" }, scale: { duration: 4, repeat: Infinity } }}
+                transition={{ rotate: { duration: 15, repeat: Infinity, ease: "linear" }, scale: { duration: 2, repeat: Infinity } }}
                 className="absolute inset-0 border border-mystic-gold/20 rounded-full"
               />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -535,7 +535,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   <div className="text-center relative">
                     <motion.div
                       animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 4, repeat: Infinity }}
+                      transition={{ duration: 2, repeat: Infinity }}
                       className="relative z-10"
                     >
                       <span className="text-5xl font-mystic text-mystic-gold">{synastryResult.score}%</span>

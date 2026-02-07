@@ -298,28 +298,137 @@
   background: linear-gradient(135deg, #0f172a 0%, #2d0a4e 50%, #050505 100%);
 }
 
-.gold-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500;
+/* ===========================================
+   Performance Optimized Animations
+   Replaces JS-heavy Framer Motion loops
+   =========================================== */
+
+@keyframes pulse-scale-glow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(212, 175, 55, 0));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4));
+  }
 }
 
-.ayla-isolated {
-  @apply object-contain;
+.animate-pulse-gold {
+  animation: pulse-scale-glow 2s ease-in-out infinite;
+  /* Enable hardware acceleration */
+  will-change: transform, filter;
+  /* Ensure it doesn't blur text too much */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-.star-field {
-  background-image: 
-    radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: stars-drift 100s linear infinite;
+@keyframes pulse-scale-only {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger for buttons */
+  }
 }
 
-@keyframes stars-drift {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 1000px; }
+.animate-pulse-scale {
+  animation: pulse-scale-only 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes pulse-premium {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 10px rgba(184, 134, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 1), 0 0 25px rgba(212, 175, 55, 0.9);
+  }
+}
+
+.animate-pulse-premium {
+  animation: pulse-premium 2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+/* Dynamic color pulse for planets and transits */
+@keyframes pulse-glow-dynamic {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(var(--glow-color), 0.3), 0 0 30px rgba(var(--glow-color), 0.15);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(var(--glow-color), 1), 0 0 40px rgba(var(--glow-color), 0.8);
+  }
+}
+
+.animate-pulse-glow-dynamic {
+  animation: pulse-glow-dynamic 2s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* SVG Specific Animations */
+@keyframes svg-pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(251, 191, 36, 0));
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));
+  }
+}
+
+.animate-svg-pulse {
+  animation: svg-pulse-scale 2s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes svg-stroke-pulse {
+  0%, 100% {
+    stroke-width: 2.5px;
+    filter: drop-shadow(0 0 0px rgba(0,0,0,0));
+    stroke: var(--original-stroke);
+  }
+  50% {
+    stroke-width: 3.5px;
+    filter: drop-shadow(0 0 8px rgba(251,191,36,0.6));
+    stroke: #fbbf24;
+  }
+}
+
+.animate-svg-stroke {
+  animation: svg-stroke-pulse 2s ease-in-out infinite;
+}
+
+@keyframes svg-filter-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(251,191,36,0.8));
+  }
+}
+
+.animate-svg-filter {
+  animation: svg-filter-pulse 2s ease-in-out infinite;
 }

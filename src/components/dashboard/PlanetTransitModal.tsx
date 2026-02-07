@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 import { X, Sparkles, Zap, Droplets, Wind, Flame, Loader2 } from "lucide-react";
 import { PlanetIcon } from "../ui/PlanetIcon";
 import { Card } from "../ui/card";
@@ -195,7 +196,7 @@ export function PlanetTransitModal({
   return (
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <InViewMotionDiv
               key="transit-modal-content"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -415,7 +416,7 @@ export function PlanetTransitModal({
                 </div>
               </motion.div>
               </div>
-            </motion.div>
+            </InViewMotionDiv>
           )}
         <ElementModal
           isOpen={!!selectedElement}

@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
+import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 
 interface SplashScreenProps {
     onComplete: () => void;
@@ -113,7 +114,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
                     {/* Subtle star particles */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
                         {Array.from({ length: 15 }, (_, i) => (
-                            <motion.div
+                            <InViewMotionDiv
                                 key={i}
                                 className="absolute w-1 h-1 bg-white/40 rounded-full"
                                 style={{

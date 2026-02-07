@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence, useTime, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Brain, Heart, Zap, Ghost, BookOpen, Check, ChevronLeft, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const MotionButton = motion(Button);
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ARCHETYPES } from "@/lib/data/archetypes";
@@ -141,28 +139,6 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
   const [revealedArchetype, setRevealedArchetype] = useState(false);
   const [selectedEnergy, setSelectedEnergy] = useState<typeof ENERGY_TYPES[0] | null>(null);
 
-  // Synchronized animation values
-  const time = useTime();
-  const pulseScale = useTransform(time, (t) => {
-    const cycle = t % 4000;
-    if (cycle < 2000) {
-      return 1 + (0.02 * (cycle / 2000));
-    } else {
-      return 1.02 - (0.02 * ((cycle - 2000) / 2000));
-    }
-  });
-
-  const pulseFilter = useTransform(time, (t) => {
-    const cycle = t % 4000;
-    let progress;
-    if (cycle < 2000) progress = cycle / 2000;
-    else progress = 1 - ((cycle - 2000) / 2000);
-    
-    const blur = 5 * progress;
-    const alpha = 0.4 * progress;
-    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
-  });
-
   const filteredArchetypes = useMemo(() => {
     const all = Object.entries(ARCHETYPES);
     if (activeCategory === "ALL") return all;
@@ -207,10 +183,8 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
         </div>
 
         {mode === "system" && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white/5 border border-white/10 rounded-[2rem] p-6 space-y-4"
+          <div
+            className="bg-white/5 border border-white/10 rounded-[2rem] p-6 space-y-4 animate-fade-in-up"
           >
             <div className="flex items-center gap-2 text-mystic-gold">
               <Sparkles className="w-4 h-4" />
@@ -219,27 +193,25 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
             <p className="text-white text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
               {t('aboutSystemDesc')}
             </p>
-          </motion.div>
+          </div>
         )}
 
         {mode === "system" && (
           <div className="grid grid-cols-4 gap-2 mt-4">
             {ENERGY_TYPES.map((energy) => (
-              <motion.button
+              <button
                 key={energy.id}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   setSelectedEnergy(energy);
                 }}
-                className="flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border border-white/10 transition-all"
-                style={{ scale: pulseScale, filter: pulseFilter }}
-                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border border-white/10 transition-transform animate-pulse-gold active:scale-95"
               >
                 <span className={`text-[10px] font-black uppercase tracking-wider ${energy.color}`}>
                   {t(energy.nameKey as any)}
                 </span>
-              </motion.button>
+              </button>
             ))}
           </div>
         )}
@@ -251,14 +223,12 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
         <div className="mt-8 flex flex-col flex-1 w-full">
           <div className="px-4 flex flex-col gap-6 w-full">
             {onStartDiscovery && (
-              <MotionButton
+              <Button
                 onClick={handleDiscoveryClick}
-                className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all"
-                style={{ scale: pulseScale, filter: pulseFilter }}
-                whileTap={{ scale: 0.98 }}
+                className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-transform animate-pulse-gold active:scale-[0.98]"
               >
                 {t('whatIsYourArchetype')}
-              </MotionButton>
+              </Button>
             )}
 
             <div className="space-y-4">
@@ -300,46 +270,45 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
               const shouldHighlight = isUserArchetype && revealedArchetype;
 
               return (
-                <motion.div
+                <div
                   key={key}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  style={{ scale: pulseScale, filter: pulseFilter }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setSelectedArchetype({ ...arch, key })}
-                  className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-all snap-center ${shouldHighlight
-                    ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
-                    : 'border-white/10'
-                    } bg-black/40 shadow-2xl`}
+                  className="relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] snap-center animate-fade-in-up"
                 >
-                  <img
-                    src={arch.image}
-                    alt={arch.name}
-                    className={`w-full h-full object-cover opacity-70 ${(key === 'R-D-Z-F' || key === 'R-D-F-Z') ? 'object-[center_30%]' : 'object-[center_15%]'}`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+                  <div
+                    onClick={() => setSelectedArchetype({ ...arch, key })}
+                    className={`w-full h-full rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-transform animate-pulse-gold active:scale-[0.98] ${shouldHighlight
+                      ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
+                      : 'border-white/10'
+                      } bg-black/40 shadow-2xl`}
+                  >
+                    <img
+                      src={arch.image}
+                      alt={arch.name}
+                      className={`w-full h-full object-cover opacity-70 ${(key === 'R-D-Z-F' || key === 'R-D-F-Z') ? 'object-[center_30%]' : 'object-[center_15%]'}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-                  <div className="absolute bottom-0 left-0 right-0 p-5 space-y-2">
-                    {shouldHighlight && (
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <div className="bg-mystic-gold text-mystic-blue text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest flex items-center gap-1">
-                          <Check className="w-2.5 h-2.5" />
-                          {t('yourArchetype')}
+                    <div className="absolute bottom-0 left-0 right-0 p-5 space-y-2">
+                      {shouldHighlight && (
+                        <div className="flex items-center gap-1.5 mb-2">
+                          <div className="bg-mystic-gold text-mystic-blue text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest flex items-center gap-1">
+                            <Check className="w-2.5 h-2.5" />
+                            {t('yourArchetype')}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    <div className="space-y-0.5">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block">
-                        {key}
-                      </span>
-                      <h4 className="text-lg font-mystic text-white leading-tight uppercase gold-text">
-                        {arch.name}
-                      </h4>
+                      <div className="space-y-0.5">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block">
+                          {key}
+                        </span>
+                        <h4 className="text-lg font-mystic text-white leading-tight uppercase gold-text">
+                          {arch.name}
+                        </h4>
+                      </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -371,14 +340,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     const shouldHighlight = isUserArchetype; // In library mode, highlight if it's user's archetype
 
                     return (
-                      <motion.div
+                      <div
                         key={key}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        style={{ scale: pulseScale, filter: pulseFilter }}
-                        whileTap={{ scale: 0.98 }}
                         onClick={() => setSelectedArchetype({ ...arch, key })}
-                        className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-all snap-center ${shouldHighlight
+                        className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-transform animate-pulse-gold active:scale-[0.98] snap-center ${shouldHighlight
                           ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
                           : 'border-white/10'
                           } bg-black/40 shadow-2xl`}
@@ -409,7 +374,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                             </h4>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </div>

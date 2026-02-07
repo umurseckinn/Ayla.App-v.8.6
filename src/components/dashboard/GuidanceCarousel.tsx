@@ -7,6 +7,7 @@ import { GuidanceData } from "@/lib/dynamic-affirmation-service";
 import { getInterpolatedEnergyColor } from "@/lib/planetary-energy-service";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Capacitor } from "@capacitor/core";
+import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -181,7 +182,7 @@ export function GuidanceCarousel({ data, loading, todayEnergy, luckyColor, lucky
             <SwiperSlide key={idx} className="h-full">
               <Card
                 onClick={card.onClick}
-                className={`p-3 min-h-[90px] h-full flex flex-col justify-between border backdrop-blur-md relative overflow-hidden group ${card.gradient ? `bg-gradient-to-br ${card.gradient}` : ''} ${card.borderColor} ${card.onClick ? 'cursor-pointer hover:scale-[1.01] active:scale-[0.99] transition-all' : ''}`}
+                className={`p-3 min-h-[90px] h-full flex flex-col justify-between border backdrop-blur-md relative overflow-hidden group ${card.backgroundColor ? '' : '!bg-transparent'} ${card.gradient ? `bg-gradient-to-br ${card.gradient}` : ''} ${card.borderColor} ${card.onClick ? 'cursor-pointer hover:scale-[1.01] active:scale-[0.99] transition-all' : ''}`}
                 style={{
                   backgroundColor: card.backgroundColor || undefined,
                 }}
@@ -202,8 +203,8 @@ export function GuidanceCarousel({ data, loading, todayEnergy, luckyColor, lucky
 
                   {loading ? (
                     <div className="space-y-2 flex-1 flex flex-col justify-center">
-                      <div className="h-3 w-full bg-white/5 animate-pulse rounded" />
-                      <div className="h-3 w-2/3 bg-white/5 animate-pulse rounded" />
+                      <InViewAnimatedWrapper className="h-3 w-full bg-white/5 rounded" animationClass="animate-pulse" />
+                      <InViewAnimatedWrapper className="h-3 w-2/3 bg-white/5 rounded" animationClass="animate-pulse" />
                     </div>
                   ) : (
                     <div className="flex-1 flex flex-col justify-center">
@@ -222,14 +223,14 @@ export function GuidanceCarousel({ data, loading, todayEnergy, luckyColor, lucky
         </Swiper>
 
         {!isEnd && (
-          <div className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 opacity-60 animate-pulse pointer-events-none">
+          <InViewAnimatedWrapper animationClass="animate-pulse" className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 opacity-60 pointer-events-none">
             <ChevronRight className="w-5 h-5 text-mystic-gold" />
-          </div>
+          </InViewAnimatedWrapper>
         )}
         {!isBeginning && (
-          <div className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 opacity-60 animate-pulse pointer-events-none">
+          <InViewAnimatedWrapper animationClass="animate-pulse" className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 opacity-60 pointer-events-none">
             <ChevronLeft className="w-5 h-5 text-mystic-gold" />
-          </div>
+          </InViewAnimatedWrapper>
         )}
       </div>
     </div>
