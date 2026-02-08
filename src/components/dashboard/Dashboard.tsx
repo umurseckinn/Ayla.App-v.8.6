@@ -81,7 +81,6 @@ import { AdContentPopup } from "../ads/AdContentPopup";
 import { PersistenceManager } from "@/lib/persistence";
 import { useInView } from "@/hooks/useInView";
 import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
-import { InViewMotionDiv, InViewMotionButton } from "@/components/ui/InViewMotionDiv";
 import { RetrogradePlanetButton, CosmicAgendaMoon, CosmicAgendaPlanet } from "./AnimatedElements";
 
 
@@ -476,7 +475,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
           </div>
           <AnimatePresence>
             {isGuidanceOpen && (
-              <InViewMotionDiv
+              <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -496,7 +495,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     setActiveTab("calendar");
                   }}
                 />
-              </InViewMotionDiv>
+              </motion.div>
             )}
           </AnimatePresence>
         </div >
@@ -523,7 +522,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               </button>
               <AnimatePresence>
                 {isRetrogradesOpen && (
-                  <InViewMotionDiv
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -545,7 +544,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         })}
                       </div>
                     </Card>
-                  </InViewMotionDiv>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
@@ -570,7 +569,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
               <AnimatePresence>
                 {isCosmicAgendaOpen && (
-                  <InViewMotionDiv
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -604,7 +603,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         const isFreePlanet = planetKey === 'Sun';
                         const isUnlocked = isFreePlanet || subscriptionStatus === 'premium' || unlockedPlanets.includes(planetKey);
 
-                        const glowColor = effectType === "positive" ? "52, 211, 153" : effectType === "negative" ? "251, 113, 133" : "251, 191, 36";
+                        const glowColor = effectType === "positive" ? "16, 185, 129" : effectType === "negative" ? "244, 63, 94" : "251, 191, 36";
 
                         return (
                           <CosmicAgendaPlanet
@@ -636,7 +635,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                         );
                       })}
                     </div>
-                  </InViewMotionDiv>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
@@ -658,7 +657,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
             <AnimatePresence>
               {isDailyTransitsOpenSection && (
-                <InViewMotionDiv
+                <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
@@ -685,14 +684,14 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                       {filter === "positive" ? t('positiveShort') : filter === "negative" ? t('negativeShort') : t('neutralShort')}
                     </button>
                   ))}
-                </InViewMotionDiv>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
 
           <AnimatePresence>
             {isDailyTransitsOpenSection && (
-              <InViewMotionDiv
+              <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -708,10 +707,10 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                       .map((transit, i) => {
                         const isUnlocked = subscriptionStatus === 'premium';
                         
-                        const glowColor = transit.effect === "positive" ? "52, 211, 153" : transit.effect === "negative" ? "251, 113, 133" : "251, 191, 36";
+                        const glowColor = transit.effect === "positive" ? "16, 185, 129" : transit.effect === "negative" ? "244, 63, 94" : "251, 191, 36";
 
                         return (
-                          <InViewMotionButton
+                          <motion.button
                             key={`dashboard-transit-${transit.transitPlanetKey}-${transit.natalPlanetKey}-${transit.aspectType}-${i}`}
                             onClick={() => {
                               if (!isUnlocked) {
@@ -723,9 +722,9 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                             animate={{
                               scale: [1, 1.05, 1],
                               boxShadow: [
-                                `0 0 0 2px rgba(${glowColor}, 0.5), 0 0 20px rgba(${glowColor}, 0.2)`,
+                                `0 0 0 2px rgba(${glowColor}, 0.6), 0 0 20px rgba(${glowColor}, 0.3)`,
                                 `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
-                                `0 0 0 2px rgba(${glowColor}, 0.5), 0 0 20px rgba(${glowColor}, 0.2)`
+                                `0 0 0 2px rgba(${glowColor}, 0.6), 0 0 20px rgba(${glowColor}, 0.3)`
                               ]
                             }}
                             transition={{
@@ -759,7 +758,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                                   'bg-amber-400'
                                 }`} />
                             </div>
-                          </InViewMotionButton>
+                          </motion.button>
                         );
                       })
                   ) : (
@@ -768,7 +767,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                     </div>
                   )}
                 </div>
-              </InViewMotionDiv>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>
@@ -802,7 +801,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
       <div className="relative flex-col w-full max-w-md mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === "home" && (
-            <InViewMotionDiv
+            <motion.div
               key="home"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -812,11 +811,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             >
 
               {renderHomeContent()}
-            </InViewMotionDiv>
+            </motion.div>
           )}
 
           {activeTab === "birthchart" && (
-            <InViewMotionDiv
+            <motion.div
               key="birthchart"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -825,11 +824,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <BirthChart onBack={() => setActiveTab("home")} onTabChange={(tab) => setActiveTab(tab)} />
-            </InViewMotionDiv>
+            </motion.div>
           )}
 
           {activeTab === "calendar" && (
-            <InViewMotionDiv
+            <motion.div
               key="calendar"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -844,11 +843,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                 onHappinessUpdate={() => setRefreshTrigger(prev => prev + 1)}
                 initialDate={calendarInitialDate}
               />
-            </InViewMotionDiv>
+            </motion.div>
           )}
 
           {activeTab === "love_compatibility" && (
-            <InViewMotionDiv
+            <motion.div
               key="love_compatibility"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -857,11 +856,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <LoveCompatibility profile={currentProfile} />
-            </InViewMotionDiv>
+            </motion.div>
           )}
 
           {activeTab === "archetype" && (
-            <InViewMotionDiv
+            <motion.div
               key="archetype"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -870,11 +869,11 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <ArchetypeAnalysis profile={currentProfile} onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </InViewMotionDiv>
+            </motion.div>
           )}
 
           {activeTab === "tarot" && (
-            <InViewMotionDiv
+            <motion.div
               key="tarot"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -883,7 +882,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               className="w-full h-full"
             >
               <TarotReading onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </InViewMotionDiv>
+            </motion.div>
           )}
         </AnimatePresence>
 

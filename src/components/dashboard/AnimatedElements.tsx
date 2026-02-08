@@ -63,13 +63,13 @@ export const CosmicAgendaMoon = ({ onClick, children, id }: CosmicAgendaMoonProp
       animate={isInView ? {
         scale: [1, 1.05, 1],
         boxShadow: [
-          "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)",
+          "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)",
           "0 0 0 2px rgba(251, 191, 36, 1), 0 0 40px rgba(251, 191, 36, 0.8)",
-          "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)"
+          "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)"
         ]
       } : {
         scale: 1,
-        boxShadow: "0 0 0 1px rgba(251, 191, 36, 0.3), 0 0 30px rgba(251, 191, 36, 0.15)"
+        boxShadow: "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)"
       }}
       transition={{
         duration: 2,
@@ -101,13 +101,13 @@ export const CosmicAgendaPlanet = ({ onClick, children, glowColor, className }: 
       animate={isInView ? {
         scale: [1, 1.05, 1],
         boxShadow: [
-          `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`,
+          `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`,
           `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
-          `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`
+          `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`
         ]
       } : {
         scale: 1,
-        boxShadow: `0 0 0 1px rgba(${glowColor}, 0.3), 0 0 30px rgba(${glowColor}, 0.15)`
+        boxShadow: `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`
       }}
       transition={{
         duration: 2,

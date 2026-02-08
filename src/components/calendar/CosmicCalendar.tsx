@@ -75,9 +75,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { PremiumModal } from "@/components/premium/PremiumModal";
 import { AdContentPopup } from "@/components/ads/AdContentPopup";
 import { PersistenceManager } from "@/lib/persistence";
-import { useInView } from "@/hooks/useInView";
-import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
-import { InViewMotionDiv, InViewMotionButton } from "@/components/ui/InViewMotionDiv";
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 
@@ -394,17 +391,17 @@ function DayDetailDialog({
               <div className="flex items-center gap-2">
                 <Orbit className="w-5 h-5" /> {t('planetPositions')}
               </div>
-              <InViewMotionDiv
+              <motion.div
                 animate={{ rotate: isPlanetsOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <ChevronDown className="w-5 h-5" />
-              </InViewMotionDiv>
+              </motion.div>
             </button>
 
             <AnimatePresence>
               {isPlanetsOpen && (
-                <InViewMotionDiv
+                <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -418,7 +415,7 @@ function DayDetailDialog({
                     <div className="grid grid-cols-1 gap-3">
                       {loading ? (
                         Array.from({ length: 4 }).map((_, i) => (
-                          <InViewAnimatedWrapper key={i} className="h-24 rounded-xl bg-white/5" animationClass="animate-pulse" />
+                          <div key={i} className="h-24 rounded-xl bg-white/5 animate-pulse" />
                         ))
                       ) : (
                         influences
@@ -495,7 +492,7 @@ function DayDetailDialog({
                       )}
                     </div>
                   </div>
-                </InViewMotionDiv>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
@@ -518,7 +515,7 @@ function DayDetailDialog({
 
             <AnimatePresence>
               {isTransitsOpen && (
-                <InViewMotionDiv
+                <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -532,7 +529,7 @@ function DayDetailDialog({
                     <div className="grid grid-cols-2 gap-3">
                       {loading ? (
                         Array.from({ length: 4 }).map((_, i) => (
-                          <InViewAnimatedWrapper key={i} className="h-32 rounded-2xl bg-white/5" animationClass="animate-pulse" />
+                          <div key={i} className="h-32 rounded-2xl bg-white/5 animate-pulse" />
                         ))
                       ) : (
                         Array.from(new Set(personalTransits.map(t => t.transitPlanetKey)))
@@ -579,7 +576,7 @@ function DayDetailDialog({
                       )}
                     </div>
                   </div>
-                </InViewMotionDiv>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
@@ -607,7 +604,7 @@ function DayDetailDialog({
 
             <AnimatePresence>
               {isEventsOpen && (
-                <InViewMotionDiv
+                <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -669,7 +666,7 @@ function DayDetailDialog({
                   </div>
 
                   {selectedCategory && (
-                    <InViewMotionDiv
+                    <motion.div
                       key={selectedCategory}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -703,9 +700,9 @@ function DayDetailDialog({
                           </button>
                         );
                       })}
-                    </InViewMotionDiv>
+                    </motion.div>
                   )}
-                </InViewMotionDiv>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
@@ -729,7 +726,7 @@ function DayDetailDialog({
 
               <AnimatePresence>
                 {isJournalOpen && (
-                  <InViewMotionDiv
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -743,7 +740,7 @@ function DayDetailDialog({
                       placeholder={t('journalPlaceholder')}
                       className="bg-black border-white/10 focus:border-mystic-gold/50 min-h-[100px] text-sm"
                     />
-                  </InViewMotionDiv>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
@@ -781,7 +778,7 @@ function DayDetailDialog({
                           const isActive = (happiness >= zoneMin && happiness < zoneMax) || (key === 'very_happy' && happiness === 100);
 
                           return (
-                            <InViewMotionDiv
+                            <motion.div
                               key={key}
                               initial={false}
                               animate={{
@@ -799,7 +796,7 @@ function DayDetailDialog({
                                 alt={key}
                                 className="w-full h-full object-contain opacity-90"
                               />
-                            </InViewMotionDiv>
+                            </motion.div>
                           );
                         })}
                       </div>
@@ -1205,7 +1202,7 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
             const isLocked = isFuture && profile?.subscription_status !== 'premium' && !unlockedDays.includes(formatDateToKey(date));
 
             return (
-              <InViewMotionButton
+              <motion.button
                 key={day}
                 onClick={() => {
                   if (isLocked) {
@@ -1254,7 +1251,7 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
                     <span className="text-[8px] text-white/60">{energy}%</span>
                   )}
                 </div>
-              </InViewMotionButton>
+              </motion.button>
             );
           })}
         </div>

@@ -15,7 +15,7 @@ export const InViewAnimatedWrapper = ({
   as: Component = 'div',
   ...props
 }: InViewAnimatedWrapperProps) => {
-  const { ref, isInView } = useInView({ threshold: 0.1 });
+  const { ref, isInView } = useInView({ threshold: 0 });
 
   return (
     <Component

@@ -27,7 +27,7 @@ export const InViewMotionDiv = ({
   style,
   ...props
 }: InViewMotionDivProps) => {
-  const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.1 });
+  const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0 });
 
   return (
     <motion.div
@@ -68,7 +68,7 @@ export const InViewMotionButton = ({
   style,
   ...props
 }: InViewMotionButtonProps) => {
-  const { ref, isInView } = useInView<HTMLButtonElement>({ threshold: 0.1 });
+  const { ref, isInView } = useInView<HTMLButtonElement>({ threshold: 0 });
 
   return (
     <motion.button

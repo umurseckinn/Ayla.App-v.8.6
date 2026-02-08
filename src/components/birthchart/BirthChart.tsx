@@ -51,35 +51,18 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { formatHouseNumber } from "@/lib/transit-interpretations";
 import { EnergyInfoPopup, type EnergyType } from "@/components/rituals/EnergyInfoPopup";
 import { useInView } from "@/hooks/useInView";
-import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 
 const AYLA_IMAGE = CONSTANT_AYLA_IMAGE || "/assets/ayla/ayla_character.png";
 import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
 
 const MotionCardBase = motion(Card);
 const MotionCard = React.forwardRef(({ animate, style, children, ...props }: any, ref) => {
-  const { ref: localRef, isInView } = useInView();
-  
-  React.useImperativeHandle(ref, () => localRef.current);
-  
-  const activeAnimate = isInView ? animate : undefined;
-  
-  // Handle style specifically for scale/filter animations used in this file
-  const activeStyle = React.useMemo(() => {
-    if (isInView) return style;
-    if (!style) return style;
-    
-    // When out of view, sanitize style to remove motion values if they exist
-    // and default to static values
-    const { scale, filter, ...rest } = style;
-    return { ...rest, scale: 1, filter: 'none' };
-  }, [isInView, style]);
-
+  // Removed lazy loading for better performance on mobile
   return (
     <MotionCardBase
-      ref={localRef}
-      animate={activeAnimate}
-      style={activeStyle}
+      ref={ref}
+      animate={animate}
+      style={style}
       {...props}
     >
       {children}
@@ -308,7 +291,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
 
   if (!chartData) {
     return (
-        <InViewMotionDiv
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -321,7 +304,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           </InViewAnimatedWrapper>
           <p className="font-mystic text-xl">{t('computingChart')}</p>
         </div>
-      </InViewMotionDiv>
+      </motion.div>
     );
   }
 
@@ -354,7 +337,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
       const risingInfo = chartData.risingSign !== "Bilinmiyor" ? (astroKnowledge.interpretations.ascendant as any)[risingSignKey] : null;
 
       return (
-        <InViewMotionDiv
+        <motion.div
           key="overview"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -425,12 +408,12 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             {chartData.birthTime && <p>{t('birthTime')}: {chartData.birthTime}</p>}
             {chartData.birthPlace && <p>{t('birthCity')}: {chartData.birthPlace}</p>}
           </div>
-        </InViewMotionDiv>
+        </motion.div>
       );
     };
 
   const renderPlanets = () => (
-    <InViewMotionDiv
+    <motion.div
       key="planets"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -465,7 +448,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
               );
             }}
           >
-            <InViewMotionDiv 
+            <motion.div 
               className={`w-full flex flex-col items-center`}
               animate={INNER_PULSE_ANIMATION}
               transition={PULSE_TRANSITION}
@@ -485,17 +468,17 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   })()}
                 </p>
               </div>
-            </InViewMotionDiv>
+            </motion.div>
           </MotionCard>
         );
       })}
-    </InViewMotionDiv>
+    </motion.div>
   );
 
   const renderHouses = () => {
     if (!interpretation) return null;
     return (
-      <InViewMotionDiv
+      <motion.div
         key="houses"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -523,19 +506,17 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   }
                 }}
               >
-                <InViewMotionDiv 
+                <motion.div 
                   className={`flex items-center justify-center w-full relative ${isLocked ? 'blur-sm select-none' : ''}`}
                   style={{
                     scale: (!isLocked && selectedHouse !== Number(num)) ? innerPulseScale : 1
                   } as any}
                 >
-                    <div className="relative flex items-center justify-center">
-                      <div className="absolute right-full mr-4 flex items-center">
+                    <div className="flex items-center justify-center gap-4">
                       <ZodiacImage sign={houseSign} size={40} className="shrink-0" />
+                      <p className="text-white font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
                     </div>
-                    <p className="text-white font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
-                    </div>
-                </InViewMotionDiv>
+                </motion.div>
 
                 {isLocked && (
                   <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -549,7 +530,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 )}
 
               {!isLocked && selectedHouse === Number(num) && (
-                <InViewMotionDiv
+                <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -558,13 +539,12 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   <p className="text-gray-100 font-sans text-sm leading-relaxed text-center">
                     &quot;{text}&quot;
                   </p>
-                </InViewMotionDiv>
+                </motion.div>
               )}
             </MotionCard>
           );
         })}
-
-      </InViewMotionDiv>
+      </motion.div>
     );
   };
 
@@ -580,7 +560,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
     ];
 
     return (
-      <InViewMotionDiv
+      <motion.div
         key="interpretation"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -624,19 +604,17 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 }}
                 className="w-full p-4 flex items-center justify-center relative text-left transition-colors hover:bg-white/5"
               >
-                <InViewMotionDiv 
+                <motion.div 
                   className={`flex items-center justify-center w-full relative ${isLocked ? 'blur-sm select-none' : ''}`}
                   style={{
                     scale: (!isLocked && !isOpen) ? innerPulseScale : 1
                   } as any}
                 >
-                  <div className="relative flex items-center justify-center">
-                    <div className="absolute right-full mr-4 flex items-center">
-                      <ZodiacImage sign={cat.sign} size={40} className="shrink-0" />
-                    </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <ZodiacImage sign={cat.sign} size={40} className="shrink-0" />
                     <p className="text-white font-mystic">{cat.label}</p>
                   </div>
-                </InViewMotionDiv>
+                </motion.div>
                 {!isLocked && (
                   <div className="absolute right-4">
                     {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
@@ -657,7 +635,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
 
               <AnimatePresence>
                 {!isLocked && isOpen && (
-                      <InViewMotionDiv
+                      <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -676,14 +654,14 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                             ))}
                           </div>
                         </div>
-                      </InViewMotionDiv>
+                      </motion.div>
                 )}
               </AnimatePresence>
             </MotionCard>
           );
         })}
 
-      </InViewMotionDiv>
+      </motion.div>
     );
   };
 

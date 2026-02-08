@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 import { InViewAnimatedWrapper } from "@/components/ui/InViewAnimatedWrapper";
 import { Moon, Sparkles, RefreshCw, Star, Wand2, Heart, Coins, Activity, Briefcase } from "lucide-react";
 import { Card } from "@/components/ui/card";
