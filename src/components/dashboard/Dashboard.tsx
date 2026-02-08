@@ -720,12 +720,10 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
                               }
                             }}
                             animate={{
-                              scale: [1, 1.05, 1],
-                              boxShadow: [
-                                `0 0 0 2px rgba(${glowColor}, 0.6), 0 0 20px rgba(${glowColor}, 0.3)`,
-                                `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
-                                `0 0 0 2px rgba(${glowColor}, 0.6), 0 0 20px rgba(${glowColor}, 0.3)`
-                              ]
+                              scale: [1, 1.05, 1]
+                            }}
+                            style={{
+                              boxShadow: `0 0 0 2px rgba(${glowColor}, 0.6), 0 0 20px rgba(${glowColor}, 0.3)`
                             }}
                             transition={{
                               duration: 2,

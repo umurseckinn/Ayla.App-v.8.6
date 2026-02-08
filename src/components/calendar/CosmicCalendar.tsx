@@ -1222,11 +1222,6 @@ export function CosmicCalendar({ onBack, userLifeEvents, onEventsUpdate, onHappi
                 } as any}
                 animate={isToday ? {
                   scale: [1, 1.1, 1],
-                  boxShadow: [
-                    "0 0 0 2px rgba(212, 175, 55, 0.7), 0 0 10px rgba(212, 175, 55, 0.5)",
-                    "0 0 0 2px rgba(212, 175, 55, 1), 0 0 25px rgba(212, 175, 55, 0.9)",
-                    "0 0 0 2px rgba(212, 175, 55, 0.7), 0 0 10px rgba(212, 175, 55, 0.5)"
-                  ],
                   transition: {
                     duration: 2,
                     repeat: Infinity,

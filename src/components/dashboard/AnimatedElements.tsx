@@ -22,15 +22,12 @@ export const RetrogradePlanetButton = ({
       ref={ref}
       onClick={onClick}
       animate={isInView ? {
-        scale: [1, 1.05, 1],
-        boxShadow: [
-          "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)",
-          "0 0 0 2px rgba(225, 29, 72, 1), 0 0 40px rgba(225, 29, 72, 0.8)",
-          "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)"
-        ]
+        scale: [1, 1.05, 1]
       } : {
-        scale: 1,
-        boxShadow: "0 0 0 1px rgba(225, 29, 72, 1), 0 0 0 0 rgba(225, 29, 72, 0)"
+        scale: 1
+      }}
+      style={{
+        boxShadow: "0 0 0 1px rgba(225, 29, 72, 1), 0 0 20px rgba(225, 29, 72, 0.5)"
       }}
       transition={{
         duration: 2,
@@ -61,14 +58,11 @@ export const CosmicAgendaMoon = ({ onClick, children, id }: CosmicAgendaMoonProp
       ref={ref}
       onClick={onClick}
       animate={isInView ? {
-        scale: [1, 1.05, 1],
-        boxShadow: [
-          "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)",
-          "0 0 0 2px rgba(251, 191, 36, 1), 0 0 40px rgba(251, 191, 36, 0.8)",
-          "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)"
-        ]
+        scale: [1, 1.05, 1]
       } : {
-        scale: 1,
+        scale: 1
+      }}
+      style={{
         boxShadow: "0 0 0 1px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.3)"
       }}
       transition={{
@@ -99,14 +93,11 @@ export const CosmicAgendaPlanet = ({ onClick, children, glowColor, className }: 
       ref={ref}
       onClick={onClick}
       animate={isInView ? {
-        scale: [1, 1.05, 1],
-        boxShadow: [
-          `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`,
-          `0 0 0 2px rgba(${glowColor}, 1), 0 0 40px rgba(${glowColor}, 0.8)`,
-          `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`
-        ]
+        scale: [1, 1.05, 1]
       } : {
-        scale: 1,
+        scale: 1
+      }}
+      style={{
         boxShadow: `0 0 0 1px rgba(${glowColor}, 0.6), 0 0 30px rgba(${glowColor}, 0.3)`
       }}
       transition={{

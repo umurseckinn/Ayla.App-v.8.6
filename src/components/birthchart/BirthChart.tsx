@@ -93,12 +93,7 @@ const MotionButton = React.forwardRef(({ animate, style, children, ...props }: a
 MotionButton.displayName = "MotionButton";
 
 const PULSE_ANIMATION = {
-  scale: [1, 1.025, 1],
-  filter: [
-    "drop-shadow(0 0 0px rgba(212,175,55,0))",
-    "drop-shadow(0 0 15px rgba(212,175,55,0.6))",
-    "drop-shadow(0 0 0px rgba(212,175,55,0))"
-  ]
+  scale: [1, 1.025, 1]
 };
 
 const PULSE_TRANSITION = {
@@ -226,17 +221,6 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
     } else {
       return 1.025 - (0.025 * ((cycle - 1000) / 1000));
     }
-  });
-
-  const pulseFilter = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    let progress;
-    if (cycle < 1000) progress = cycle / 1000;
-    else progress = 1 - ((cycle - 1000) / 1000);
-    
-    const blur = 15 * progress;
-    const alpha = 0.6 * progress;
-    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
   });
 
   const innerPulseScale = useTransform(time, (t) => {
@@ -495,8 +479,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 key={num}
                 className={`p-4 !bg-white/5 border-mystic-gold/20 cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden ${isLocked ? 'opacity-90' : ''}`}
                 style={{
-                  scale: (selectedHouse === Number(num)) ? 1 : pulseScale,
-                  filter: (selectedHouse === Number(num)) ? "drop-shadow(0 0 0px rgba(212,175,55,0))" : pulseFilter
+                  scale: (selectedHouse === Number(num)) ? 1 : pulseScale
                 }}
                 onClick={() => {
                   if (isLocked) {
@@ -590,12 +573,11 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
               key={cat.id} 
               className={`overflow-hidden !bg-white/5 border-mystic-gold/20 relative ${isLocked ? 'opacity-90' : ''}`}
               style={{
-                scale: isOpen ? 1 : pulseScale,
-                filter: isOpen ? "drop-shadow(0 0 0px rgba(212,175,55,0))" : pulseFilter
-              }}
-            >
-              <button
-                onClick={() => {
+                  scale: isOpen ? 1 : pulseScale
+                }}
+              >
+                <button
+                  onClick={() => {
                   if (isLocked) {
                     setShowPremiumModal(true);
                   } else {
@@ -896,12 +878,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                     : "bg-black text-mystic-gold/70 border border-mystic-gold/30 hover:text-mystic-gold hover:border-mystic-gold"
                 }`}
                 animate={!isActive ? {
-                   scale: [1, 1.05, 1],
-                   filter: [
-                     "drop-shadow(0 0 0px rgba(212,175,55,0))",
-                     "drop-shadow(0 0 5px rgba(212,175,55,0.4))",
-                     "drop-shadow(0 0 0px rgba(212,175,55,0))"
-                   ]
+                   scale: [1, 1.05, 1]
                 } : {}}
                 transition={{
                   duration: 2,

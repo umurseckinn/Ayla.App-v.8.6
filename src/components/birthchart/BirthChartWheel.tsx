@@ -438,12 +438,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
               key={`anim-sign-${sign.name}`}
               className="pointer-events-none"
               animate={{
-                scale: [1, 1.2, 1],
-                filter: [
-                  "drop-shadow(0 0 0px rgba(251,191,36,0))",
-                  "drop-shadow(0 0 10px rgba(251,191,36,0.8))",
-                  "drop-shadow(0 0 0px rgba(251,191,36,0))"
-                ]
+                scale: [1, 1.2, 1]
               }}
               transition={{
                 duration: 2,
@@ -507,11 +502,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                   width={pSize}
                   height={pSize}
                   animate={{
-                    filter: [
-                      "drop-shadow(0 0 4px rgba(0,0,0,0.4))",
-                      "drop-shadow(0 0 15px rgba(251,191,36,0.8))",
-                      "drop-shadow(0 0 4px rgba(0,0,0,0.4))"
-                    ]
+                    // Removed filter animation for performance
                   }}
                   transition={{
                     duration: 2,
@@ -530,12 +521,7 @@ export function BirthChartWheel({ planets, houseCusps, aspects, onPlanetClick, o
                     strokeWidth="2.5"
                     animate={{
                       stroke: [planet.color, "#fbbf24", planet.color],
-                      strokeWidth: [2.5, 3.5, 2.5],
-                      filter: [
-                        "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                        "drop-shadow(0 0 8px rgba(251,191,36,0.6))",
-                        "drop-shadow(0 0 0px rgba(0,0,0,0))"
-                      ]
+                      strokeWidth: [2.5, 3.5, 2.5]
                     }}
                     transition={{
                       duration: 2,
