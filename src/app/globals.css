@@ -298,6 +298,14 @@
   background: linear-gradient(135deg, #0f172a 0%, #2d0a4e 50%, #050505 100%);
 }
 
+.gold-text {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ===========================================
    Performance Optimized Animations
    Replaces JS-heavy Framer Motion loops
