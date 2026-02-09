@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useTime, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
   Sparkles,
@@ -94,6 +94,14 @@ MotionButton.displayName = "MotionButton";
 
 const PULSE_ANIMATION = {
   scale: [1, 1.025, 1]
+};
+
+const STRONG_PULSE_ANIMATION = {
+  scale: [1, 1.05, 1]
+};
+
+const GLOW_ANIMATION = {
+  opacity: [0.3, 0.8, 0.3],
 };
 
 const PULSE_TRANSITION = {
@@ -213,33 +221,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
   const [selectedEnergyType, setSelectedEnergyType] = useState<EnergyType | null>(null);
 
   // Synchronized animation values
-  const time = useTime();
-  const pulseScale = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    if (cycle < 1000) {
-      return 1 + (0.025 * (cycle / 1000));
-    } else {
-      return 1.025 - (0.025 * ((cycle - 1000) / 1000));
-    }
-  });
-
-  const innerPulseScale = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    let progress;
-    if (cycle < 1000) progress = cycle / 1000;
-    else progress = 1 - ((cycle - 1000) / 1000);
-    
-    return 1 + (0.025 * progress);
-  });
-
-  const premiumPulseScale = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    let progress;
-    if (cycle < 1000) progress = cycle / 1000;
-    else progress = 1 - ((cycle - 1000) / 1000);
-    
-    return 1 + (0.05 * progress);
-  });
+  // Removed JS-based animations for performance
 
   useEffect(() => {
     const loadData = async () => {
@@ -478,9 +460,6 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
               <MotionCard
                 key={num}
                 className={`p-4 !bg-white/5 border-mystic-gold/20 cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden ${isLocked ? 'opacity-90' : ''}`}
-                style={{
-                  scale: (selectedHouse === Number(num)) ? 1 : pulseScale
-                }}
                 onClick={() => {
                   if (isLocked) {
                     setShowPremiumModal(true);
@@ -489,25 +468,27 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   }
                 }}
               >
-                <motion.div 
+                <div 
                   className={`flex items-center justify-center w-full relative ${isLocked ? 'blur-sm select-none' : ''}`}
-                  style={{
-                    scale: (!isLocked && selectedHouse !== Number(num)) ? innerPulseScale : 1
-                  } as any}
                 >
                     <div className="flex items-center justify-center gap-4">
                       <ZodiacImage sign={houseSign} size={40} className="shrink-0" />
                       <p className="text-white font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
                     </div>
-                </motion.div>
+                </div>
+
+                {!isLocked && (
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                    {selectedHouse === Number(num) ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
+                  </div>
+                )}
 
                 {isLocked && (
                   <div className="absolute inset-0 flex items-center justify-center z-10">
                     <motion.img 
                       src="/Premium symbol.png" 
                       alt="Premium" 
-                      className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
-                      style={{ scale: premiumPulseScale }}
+                      className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.5)] animate-pulse-premium"
                     />
                   </div>
                 )}
@@ -572,9 +553,6 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             <MotionCard 
               key={cat.id} 
               className={`overflow-hidden !bg-white/5 border-mystic-gold/20 relative ${isLocked ? 'opacity-90' : ''}`}
-              style={{
-                  scale: isOpen ? 1 : pulseScale
-                }}
               >
                 <button
                   onClick={() => {
@@ -586,17 +564,14 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 }}
                 className="w-full p-4 flex items-center justify-center relative text-left transition-colors hover:bg-white/5"
               >
-                <motion.div 
+                <div 
                   className={`flex items-center justify-center w-full relative ${isLocked ? 'blur-sm select-none' : ''}`}
-                  style={{
-                    scale: (!isLocked && !isOpen) ? innerPulseScale : 1
-                  } as any}
                 >
                   <div className="flex items-center justify-center gap-4">
                     <ZodiacImage sign={cat.sign} size={40} className="shrink-0" />
                     <p className="text-white font-mystic">{cat.label}</p>
                   </div>
-                </motion.div>
+                </div>
                 {!isLocked && (
                   <div className="absolute right-4">
                     {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
@@ -609,8 +584,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   <motion.img 
                     src="/Premium symbol.png" 
                     alt="Premium" 
-                    className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
-                    style={{ scale: premiumPulseScale }}
+                    className="w-12 h-12 object-contain drop-shadow-[0_0_15px_rgba(251,191,36,0.5)] animate-pulse-premium"
                   />
                 </div>
               )}
@@ -729,12 +703,18 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{t('totalEnergyPotential')}</p>
             <div className="text-4xl font-mystic text-mystic-gold">{energyLevels.overall_energy}%</div>
             <MotionButton
-              animate={PULSE_ANIMATION}
+              animate={STRONG_PULSE_ANIMATION}
               transition={PULSE_TRANSITION}
               onClick={() => onTabChange?.("archetype")}
-              className="mt-4 px-6 py-2 bg-black text-[#00ffff] border border-[#00ffff]/30 rounded-xl font-mystic text-[10px] tracking-[0.15em] shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all"
+              className="relative mt-4 px-6 py-2 bg-black text-[#00ffff] border border-[#00ffff] rounded-xl font-mystic text-[10px] tracking-[0.15em] hover:text-white transition-all overflow-visible group"
             >
-              {t('showArchetype')}
+              <motion.div
+                animate={GLOW_ANIMATION}
+                transition={PULSE_TRANSITION}
+                className="absolute inset-0 rounded-xl bg-[#00ffff] blur-md"
+                style={{ zIndex: -1 }}
+              />
+              <span className="relative z-10">{t('showArchetype')}</span>
             </MotionButton>
           </div>
 

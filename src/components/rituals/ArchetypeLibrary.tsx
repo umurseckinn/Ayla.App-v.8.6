@@ -17,6 +17,8 @@ const ENERGY_TYPES = [
     nameKey: "energySpiritual",
     descKey: "spiritualEnergyDesc",
     color: "text-purple-400",
+    borderColor: "border-purple-400",
+    pulseColor: "192, 132, 252",
     bgColor: "bg-purple-500/20",
     planets: [
       { emoji: "🔱", name: "Neptune", weight: 29 },
@@ -34,6 +36,8 @@ const ENERGY_TYPES = [
     nameKey: "energyMental",
     descKey: "mentalEnergyDesc",
     color: "text-blue-400",
+    borderColor: "border-blue-400",
+    pulseColor: "96, 165, 250",
     bgColor: "bg-blue-500/20",
     planets: [
       { emoji: "☿", name: "Mercury", weight: 45 },
@@ -50,6 +54,8 @@ const ENERGY_TYPES = [
     nameKey: "energyPhysical",
     descKey: "physicalEnergyDesc",
     color: "text-amber-500",
+    borderColor: "border-amber-500",
+    pulseColor: "245, 158, 11",
     bgColor: "bg-amber-500/20",
     planets: [
       { emoji: "☉", name: "Sun", weight: 36 },
@@ -66,6 +72,8 @@ const ENERGY_TYPES = [
     nameKey: "energyEmotional",
     descKey: "emotionalEnergyDesc",
     color: "text-rose-400",
+    borderColor: "border-rose-400",
+    pulseColor: "251, 113, 133",
     bgColor: "bg-rose-500/20",
     planets: [
       { emoji: "☽", name: "Moon", weight: 41 },
@@ -84,40 +92,44 @@ const CATEGORIES_KEYS = [
     id: "VİZYONERLER",
     nameKey: "visionaries",
     descKey: "visionariesDesc",
-    color: "text-purple-400",
+    color: "text-purple-600",
     bgColor: "bg-purple-500/10",
-    activeBg: "bg-purple-500",
-    activeBorder: "border-purple-500",
+    activeBg: "bg-purple-700",
+    activeBorder: "border-purple-700",
+    glow: "shadow-[0_0_20px_rgba(126,34,206,0.4)]",
     icon: <Ghost className="w-4 h-4" />
   },
   {
     id: "STRATEJİSTLER",
     nameKey: "strategists",
     descKey: "strategistsDesc",
-    color: "text-blue-400",
+    color: "text-blue-600",
     bgColor: "bg-blue-500/10",
-    activeBg: "bg-blue-500",
-    activeBorder: "border-blue-500",
+    activeBg: "bg-blue-700",
+    activeBorder: "border-blue-700",
+    glow: "shadow-[0_0_20px_rgba(29,78,216,0.4)]",
     icon: <Brain className="w-4 h-4" />
   },
   {
     id: "MUHAFIZLAR",
     nameKey: "sentinels",
     descKey: "sentinelsDesc",
-    color: "text-amber-600",
-    bgColor: "bg-amber-600/10",
-    activeBg: "bg-amber-600",
-    activeBorder: "border-amber-600",
+    color: "text-amber-700",
+    bgColor: "bg-amber-700/10",
+    activeBg: "bg-amber-700",
+    activeBorder: "border-amber-700",
+    glow: "shadow-[0_0_20px_rgba(180,83,9,0.4)]",
     icon: <Zap className="w-4 h-4" />
   },
   {
     id: "DİPLOMATLAR",
     nameKey: "diplomats",
     descKey: "diplomatsDesc",
-    color: "text-rose-400",
-    bgColor: "bg-rose-500/10",
-    activeBg: "bg-rose-500",
-    activeBorder: "border-rose-500",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10",
+    activeBg: "bg-pink-600",
+    activeBorder: "border-pink-600",
+    glow: "shadow-[0_0_20px_rgba(219,39,119,0.4)]",
     icon: <Heart className="w-4 h-4" />
   }
 ];
@@ -206,7 +218,8 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                   e.stopPropagation();
                   setSelectedEnergy(energy);
                 }}
-                className="flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border border-white/10 transition-transform animate-pulse-gold active:scale-95"
+                className={`flex flex-col items-center justify-center py-3 px-1 rounded-xl bg-black border ${energy.borderColor} transition-transform animate-pulse-colored active:scale-95`}
+                style={{ '--pulse-color': energy.pulseColor } as React.CSSProperties}
               >
                 <span className={`text-[10px] font-black uppercase tracking-wider ${energy.color}`}>
                   {t(energy.nameKey as any)}
@@ -268,6 +281,9 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
               const arch = getLocalizedArchetypeData(rawArch);
               const isUserArchetype = key === userArchetypeKey;
               const shouldHighlight = isUserArchetype && revealedArchetype;
+              const category = CATEGORIES_KEYS.find(c => c.id === arch.group);
+              const categoryBorder = category ? category.activeBorder : 'border-white/10';
+              const categoryGlow = category ? category.glow : 'shadow-2xl';
 
               return (
                 <div
@@ -276,10 +292,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                 >
                   <div
                     onClick={() => setSelectedArchetype({ ...arch, key })}
-                    className={`w-full h-full rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-transform animate-pulse-gold active:scale-[0.98] ${shouldHighlight
+                    className={`w-full h-full rounded-[2.5rem] overflow-hidden cursor-pointer border transition-transform animate-pulse-gold active:scale-[0.98] ${shouldHighlight
                       ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
-                      : 'border-white/10'
-                      } bg-black/40 shadow-2xl`}
+                      : `${categoryBorder} ${categoryGlow}`
+                      } bg-black/40`}
                   >
                     <img
                       src={arch.image}
@@ -343,10 +359,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                       <div
                         key={key}
                         onClick={() => setSelectedArchetype({ ...arch, key })}
-                        className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border-2 transition-transform animate-pulse-gold active:scale-[0.98] snap-center ${shouldHighlight
+                        className={`relative flex-shrink-0 w-[85%] md:w-[280px] aspect-[4/5] rounded-[2.5rem] overflow-hidden cursor-pointer border transition-transform animate-pulse-gold active:scale-[0.98] snap-center ${shouldHighlight
                           ? 'border-mystic-gold ring-4 ring-mystic-gold/20 shadow-[0_0_30px_rgba(212,175,55,0.6)] z-20'
-                          : 'border-white/10'
-                          } bg-black/40 shadow-2xl`}
+                          : `${category.activeBorder} ${category.glow}`
+                          } bg-black/40`}
                       >
                         <img
                           src={arch.image}

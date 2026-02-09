@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useTime, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Brain, Heart, Zap, Ghost, BookOpen, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -26,51 +26,18 @@ const SQUARE_IMAGE_KEYS = ["Z-R-F-D", "F-D-Z-R", "Z-F-D-R", "R-F-D-Z", "R-D-F-Z"
 
 const PulsingShareButton = ({ onClick, children }: { onClick: () => void, children: React.ReactNode }) => {
   const { ref, isInView } = useInView<HTMLButtonElement>({ threshold: 0.1 });
-  const time = useTime();
   
-  const pulseScale = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    if (cycle < 1000) {
-      return 1 + (0.05 * (cycle / 1000));
-    } else {
-      return 1.05 - (0.05 * ((cycle - 1000) / 1000));
-    }
-  });
-
-  const pulseFilter = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    let progress;
-    if (cycle < 1000) progress = cycle / 1000;
-    else progress = 1 - ((cycle - 1000) / 1000);
-    
-    const blur = 15 * progress;
-    const alpha = 0.6 * progress;
-    return `drop-shadow(0 0 ${blur}px rgba(212,175,55,${alpha}))`;
-  });
-
-  const innerPulseScale = useTransform(time, (t) => {
-    const cycle = t % 2000;
-    let progress;
-    if (cycle < 1000) progress = cycle / 1000;
-    else progress = 1 - ((cycle - 1000) / 1000);
-    
-    return 1 + (0.05 * progress);
-  });
-
   return (
     <MotionButton
       ref={ref}
       onClick={onClick}
-      className="w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all flex items-center justify-center gap-3 overflow-hidden brightness-110"
-      style={isInView ? { scale: pulseScale, filter: pulseFilter } : {}}
+      className={`w-full bg-mystic-gold hover:bg-mystic-gold/90 text-black border-none shadow-none font-black uppercase tracking-[0.2em] py-5 rounded-2xl text-xs transition-all flex items-center justify-center gap-3 overflow-hidden brightness-110 ${isInView ? 'animate-pulse-gold' : ''}`}
+      initial={{ scale: 1 }}
       whileTap={{ scale: 0.98 }}
     >
-      <motion.div 
-        className="flex items-center justify-center gap-3"
-        style={isInView ? { scale: innerPulseScale } : {}}
-      >
+      <div className="flex items-center justify-center gap-3 animate-pulse-scale">
         {children}
-      </motion.div>
+      </div>
     </MotionButton>
   );
 };
