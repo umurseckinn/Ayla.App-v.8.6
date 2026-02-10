@@ -797,27 +797,24 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
 
       {/* Content layer - safe area aware */}
       <div className="relative flex-col w-full max-w-md mx-auto">
-        <AnimatePresence mode="wait">
-          {activeTab === "home" && (
-            <motion.div
+        {/* Persistent Home Tab - Always mounted to preserve state */}
+        <div className={activeTab === "home" ? "block w-full relative" : "hidden"}>
+           <motion.div
               key="home"
-              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
               className="w-full relative"
             >
-
               {renderHomeContent()}
             </motion.div>
-          )}
+        </div>
 
+        <AnimatePresence mode="wait">
           {activeTab === "birthchart" && (
             <motion.div
               key="birthchart"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              exit={{ opacity: 0, x: -20, position: "absolute", top: 0, width: "100%", zIndex: 20 }}
               transition={{ duration: 0.3 }}
               className="w-full h-full"
             >
@@ -830,7 +827,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               key="calendar"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              exit={{ opacity: 0, x: -20, position: "absolute", top: 0, width: "100%", zIndex: 20 }}
               transition={{ duration: 0.3 }}
               className="w-full h-full"
             >
@@ -849,7 +846,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               key="love_compatibility"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              exit={{ opacity: 0, x: -20, position: "absolute", top: 0, width: "100%", zIndex: 20 }}
               transition={{ duration: 0.3 }}
               className="w-full h-full"
             >
@@ -862,7 +859,7 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               key="archetype"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
+              exit={{ opacity: 0, x: -20, position: "absolute", top: 0, width: "100%", zIndex: 20 }}
               transition={{ duration: 0.3 }}
               className="w-full h-full"
             >

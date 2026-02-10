@@ -103,11 +103,11 @@ function HouseDetailModal({
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 20 }}
         onClick={(e) => e.stopPropagation()}
-        className={`relative w-full max-w-md bg-void-black/95 ${colors.border} border-2 rounded-3xl p-6 ${colors.glow} max-h-[80vh] flex flex-col`}
+        className={`relative w-full max-w-md bg-black ${colors.border} border-2 rounded-3xl p-6 ${colors.glow} max-h-[80vh] flex flex-col`}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors z-10"
+          className="absolute top-4 right-4 text-mystic-gold/60 hover:text-mystic-gold transition-colors z-10"
         >
           <X className="w-5 h-5" />
         </button>
@@ -135,7 +135,7 @@ function HouseDetailModal({
               <span className={`text-xs font-bold uppercase tracking-wider ${colors.text}`}>{house.tierLabel}</span>
               <span className={`text-2xl font-mystic font-bold ${colors.text}`}>%{house.score}</span>
             </div>
-            <div className="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-mystic-gold/10 h-2 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${house.score}%` }}
@@ -372,11 +372,11 @@ export function LoveCompatibility({ profile }: { profile: any }) {
             <div className="text-center space-y-4">
               <h2 className="text-3xl font-mystic text-mystic-gold uppercase tracking-[0.2em]">{t('loveCompatibility')}</h2>
               <div className="w-16 h-[1px] bg-mystic-gold/30 mx-auto" />
-              <p className="text-white/60 font-serif italic">{t('loveCompatDesc')}</p>
+              <p className="text-mystic-gold/60 font-serif italic">{t('loveCompatDesc')}</p>
             </div>
 
-            <Card className="p-8 bg-void-black/40 border-mystic-gold/20 backdrop-blur-xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-white/5">
+            <Card className="p-8 bg-black border-mystic-gold/20 backdrop-blur-xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-mystic-gold/10">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${(inputStep / 3) * 100}%` }}
@@ -395,10 +395,10 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   {inputStep === 0 && (
                     <div className="space-y-6 text-center">
                       <span className="text-[10px] uppercase tracking-[0.3em] text-mystic-gold/50 font-mystic">{t('step1Name')}</span>
-                      <h3 className="text-xl text-white font-mystic">{t('whoAreWeChecking')}</h3>
+                      <h3 className="text-xl text-mystic-gold font-mystic">{t('whoAreWeChecking')}</h3>
                       <Input
                         placeholder={t('whatsTheirName')}
-                        className="bg-transparent border-0 border-b border-mystic-gold/30 text-center text-2xl font-mystic text-white placeholder:text-white/10 h-16 rounded-none focus-visible:ring-0 focus-visible:border-mystic-gold transition-all"
+                        className="bg-transparent border-0 border-b border-mystic-gold/30 text-center text-2xl font-mystic text-mystic-gold placeholder:text-mystic-gold/20 h-16 rounded-none focus-visible:ring-0 focus-visible:border-mystic-gold transition-all"
                         value={partnerData.full_name}
                         onChange={(e) => setPartnerData({ ...partnerData, full_name: e.target.value })}
                       />
@@ -408,7 +408,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   {inputStep === 1 && (
                     <div className="space-y-6 text-center">
                       <span className="text-[10px] uppercase tracking-[0.3em] text-mystic-gold/50 font-mystic">{t('step2Date')}</span>
-                      <h3 className="text-xl text-white font-mystic">{t('whenBorn', { name: partnerData.full_name })}</h3>
+                      <h3 className="text-xl text-mystic-gold font-mystic">{t('whenBorn', { name: partnerData.full_name })}</h3>
                       <BirthDateWheel
                         value={partnerData.birth_date}
                         onChange={(val) => setPartnerData({ ...partnerData, birth_date: val })}
@@ -419,7 +419,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   {inputStep === 2 && (
                     <div className="space-y-6 text-center">
                       <span className="text-[10px] uppercase tracking-[0.3em] text-mystic-gold/50 font-mystic">{t('step3Time')}</span>
-                      <h3 className="text-xl text-white font-mystic">{t('whatTimeBorn')}</h3>
+                      <h3 className="text-xl text-mystic-gold font-mystic">{t('whatTimeBorn')}</h3>
                       <BirthTimeSlider
                         value={partnerData.birth_time}
                         onChange={(val) => setPartnerData({ ...partnerData, birth_time: val })}
@@ -435,7 +435,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                   {inputStep === 3 && (
                     <div className="space-y-6 text-center">
                       <span className="text-[10px] uppercase tracking-[0.3em] text-mystic-gold/50 font-mystic">{t('step4Place')}</span>
-                      <h3 className="text-xl text-white font-mystic">{t('whereBorn')}</h3>
+                      <h3 className="text-xl text-mystic-gold font-mystic">{t('whereBorn')}</h3>
                       <CosmicLocationInput
                         value={partnerData.birth_place}
                         onChange={(val) => setPartnerData({ ...partnerData, birth_place: val })}
@@ -522,7 +522,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                     {t('calculatingLoveCompatibility')}
                     <span className="inline-block w-[2ch] text-left">{dots}</span>
                   </h3>
-                  <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+                  <p className="text-sm text-mystic-gold/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
                     {loadingText}
                   </p>
                 </div>
@@ -543,10 +543,10 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                 <img src={AYLA_IMAGE} alt="Ayla" className="w-28 h-28 relative z-10 ayla-isolated object-contain" />
               </div>
               <h2 className="text-3xl font-mystic text-mystic-gold tracking-widest uppercase">{t('cosmicLoveAnalysis')}</h2>
-              <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] mt-2">{t('starsWrittenForYou')}</p>
+              <p className="text-mystic-gold/50 text-[10px] uppercase tracking-[0.3em] mt-2">{t('starsWrittenForYou')}</p>
             </div>
 
-            <Card className="p-8 bg-mystic-purple/20 border-mystic-gold/30 relative overflow-hidden glass-morphism">
+            <Card className="p-8 bg-black border-mystic-gold/30 relative overflow-hidden glass-morphism">
               <div className="absolute top-0 right-0 p-4 opacity-5">
                 <Heart className="w-48 h-48 text-mystic-gold fill-mystic-gold" />
               </div>
@@ -555,10 +555,10 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                 <div className="flex items-center justify-center gap-12">
                   <div className="text-center group">
                     <div className="relative mb-3">
-                      <div className="absolute inset-0 bg-white/5 rounded-full group-hover:scale-125 transition-transform" />
+                      <div className="absolute inset-0 bg-mystic-gold/10 rounded-full group-hover:scale-125 transition-transform" />
                       <ZodiacImage sign={synastryResult.person1Signs.sun} size={64} />
                     </div>
-                    <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{t('you')}</p>
+                    <p className="text-[10px] text-mystic-gold/50 uppercase font-bold tracking-widest">{t('you')}</p>
                   </div>
 
                   <div className="text-center relative">
@@ -575,10 +575,10 @@ export function LoveCompatibility({ profile }: { profile: any }) {
 
                   <div className="text-center group">
                     <div className="relative mb-3">
-                      <div className="absolute inset-0 bg-white/5 rounded-full group-hover:scale-125 transition-transform" />
+                      <div className="absolute inset-0 bg-mystic-gold/10 rounded-full group-hover:scale-125 transition-transform" />
                       <ZodiacImage sign={synastryResult.person2Signs.sun} size={64} />
                     </div>
-                    <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest">{partnerData.full_name}</p>
+                    <p className="text-[10px] text-mystic-gold/50 uppercase font-bold tracking-widest">{partnerData.full_name}</p>
                   </div>
                 </div>
 
@@ -588,12 +588,12 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                     return (
                       <div key={key} className={`${colors.bg} p-4 rounded-2xl border ${colors.border} backdrop-blur-md`}>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="text-[9px] uppercase tracking-widest text-white/50">
+                          <span className="text-[9px] uppercase tracking-widest text-mystic-gold/50">
                           {t(key as any)}
                         </span>
                           <span className={`text-xs font-bold ${colors.text}`}>{value}%</span>
                         </div>
-                        <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                        <div className="w-full bg-mystic-gold/10 h-1.5 rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${value}%` }}
@@ -632,7 +632,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                             }
                           }}
                         >
-                          <Card className={`p-6 bg-void-black/60 ${colors.border} border backdrop-blur-xl h-full flex flex-col justify-between group hover:scale-[1.02] transition-all ${colors.glow} relative overflow-hidden`}>
+                          <Card className={`p-6 bg-black ${colors.border} border backdrop-blur-xl h-full flex flex-col justify-between group hover:scale-[1.02] transition-all ${colors.glow} relative overflow-hidden`}>
                             <div className={`space-y-4 ${!isUnlocked ? "blur-md opacity-60 pointer-events-none" : ""}`}>
                               <div className="flex justify-between items-start">
                                 <div className="flex items-center gap-3">
@@ -652,7 +652,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                                 </div>
                               </div>
 
-                              <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                              <div className="w-full bg-mystic-gold/10 h-1.5 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${house.score}%` }}

@@ -310,58 +310,58 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           exit={{ opacity: 0, x: 20 }}
           className="space-y-4"
         >
-          <Card className="p-4 !bg-white/5 border-mystic-gold/20">
+          <Card className="p-4 !bg-black border-mystic-gold">
             <div className="flex items-center gap-4">
               <ZodiacImage sign={chartData.sunSign} size={56} className="shrink-0" />
               <div className="flex-1">
                 <div className="mb-2">
-                  <p className="text-white/50 text-xs">{t('sunSign')}</p>
-                  <p className="text-white font-mystic text-lg">{getTranslatedSign(chartData.sunSign, language)}</p>
+                  <p className="text-mystic-gold/70 text-xs">{t('sunSign')}</p>
+                  <p className="text-mystic-gold font-mystic text-lg">{getTranslatedSign(chartData.sunSign, language)}</p>
                   <p className="text-mystic-gold/70 text-xs">{getTranslatedElement(getZodiacElement(chartData.sunSign), language)} {t('element')}</p>
                 </div>
 
-                <p className="text-white/90 text-xs leading-relaxed border-t border-white/5 pt-2">
+                <p className="text-mystic-gold/90 text-xs leading-relaxed border-t border-mystic-gold/20 pt-2">
                     {language === 'en' ? sunInfo?.textEn : sunInfo?.text}
                   </p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-4 !bg-white/5 border-mystic-gold/20">
+          <Card className="p-4 !bg-black border-mystic-gold">
             <div className="flex items-center gap-4">
               <ZodiacImage sign={chartData.moonSign} size={56} className="shrink-0" />
               <div className="flex-1">
                 <div className="mb-2">
-                  <p className="text-white/50 text-xs">{t('moonSign')}</p>
-                  <p className="text-white font-mystic text-lg">{getTranslatedSign(chartData.moonSign, language)}</p>
+                  <p className="text-mystic-gold/70 text-xs">{t('moonSign')}</p>
+                  <p className="text-mystic-gold font-mystic text-lg">{getTranslatedSign(chartData.moonSign, language)}</p>
                   <p className="text-mystic-gold/70 text-xs">{getTranslatedElement(getZodiacElement(chartData.moonSign), language)} {t('element')}</p>
                 </div>
 
-                <p className="text-white/90 text-xs leading-relaxed border-t border-white/5 pt-2">
+                <p className="text-mystic-gold/90 text-xs leading-relaxed border-t border-mystic-gold/20 pt-2">
                     {language === 'en' ? moonInfo?.textEn : moonInfo?.text}
                   </p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-4 !bg-white/5 border-mystic-gold/20">
+          <Card className="p-4 !bg-black border-mystic-gold">
             <div className="flex items-center gap-4">
               {chartData.risingSign !== "Bilinmiyor" ? (
                 <ZodiacImage sign={chartData.risingSign} size={56} className="shrink-0" />
               ) : (
-                <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                  <Compass className="w-8 h-8 text-white/20" />
+                <div className="w-14 h-14 rounded-full bg-mystic-gold/5 flex items-center justify-center shrink-0">
+                  <Compass className="w-8 h-8 text-mystic-gold/30" />
                 </div>
               )}
               <div className="flex-1">
                 <div className="mb-2">
-                  <p className="text-white/50 text-xs">{t('risingSign')}</p>
-                  <p className="text-white font-mystic text-lg">{getTranslatedSign(chartData.risingSign, language)}</p>
+                  <p className="text-mystic-gold/70 text-xs">{t('risingSign')}</p>
+                  <p className="text-mystic-gold font-mystic text-lg">{getTranslatedSign(chartData.risingSign, language)}</p>
                   <p className="text-mystic-gold/70 text-xs">{chartData.risingSign !== "Bilinmiyor" ? getTranslatedElement(getZodiacElement(chartData.risingSign), language) + " " + t('element') : t('unknownTime')}</p>
                 </div>
 
                 {risingInfo && (
-                    <p className="text-white/90 text-xs leading-relaxed border-t border-white/5 pt-2">
+                    <p className="text-mystic-gold/90 text-xs leading-relaxed border-t border-mystic-gold/20 pt-2">
                       {language === 'en' ? risingInfo?.textEn : risingInfo?.text}
                     </p>
                   )}
@@ -369,7 +369,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             </div>
           </Card>
 
-          <div className="text-center text-white/40 text-xs mt-4">
+          <div className="text-center text-mystic-gold/40 text-xs mt-4">
             <p>{t('birthDate')}: {new Date(chartData.birthDate).toLocaleDateString(language === 'en' ? 'en-US' : 'tr-TR')}</p>
             {chartData.birthTime && <p>{t('birthTime')}: {chartData.birthTime}</p>}
             {chartData.birthPlace && <p>{t('birthCity')}: {chartData.birthPlace}</p>}
@@ -404,7 +404,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
             animate={PULSE_ANIMATION}
             transition={PULSE_TRANSITION}
             key={planet.key}
-            className={`p-3 !bg-white/5 border-mystic-gold/20 flex flex-col items-center text-center cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden`}
+            className={`p-3 !bg-black border-mystic-gold flex flex-col items-center text-center cursor-pointer hover:bg-mystic-gold/10 transition-colors relative overflow-hidden`}
             onClick={() => {
               const planetData = chartData.planets[planet.key as keyof typeof chartData.planets];
               handlePlanetSelection(
@@ -424,7 +424,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   <PlanetIcon name={t(planet.nameKey as keyof typeof import('@/locales/tr').tr)} className="w-full h-full" />
                 </div>
               </div>
-              <p className="text-white/50 text-[10px] uppercase">{t(planet.nameKey as keyof typeof import('@/locales/tr').tr)}</p>
+              <p className="text-mystic-gold/70 text-[10px] uppercase">{t(planet.nameKey as keyof typeof import('@/locales/tr').tr)}</p>
               <div className="flex items-center gap-1">
                 <p className="text-mystic-gold font-mystic text-sm">
                   {(() => {
@@ -459,7 +459,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           return (
               <MotionCard
                 key={num}
-                className={`p-4 !bg-white/5 border-mystic-gold/20 cursor-pointer hover:bg-white/10 transition-colors relative overflow-hidden ${isLocked ? 'opacity-90' : ''}`}
+                className={`p-4 !bg-black border-mystic-gold cursor-pointer hover:bg-mystic-gold/10 transition-colors relative overflow-hidden ${isLocked ? 'opacity-90' : ''}`}
                 onClick={() => {
                   if (isLocked) {
                     setShowPremiumModal(true);
@@ -473,13 +473,13 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 >
                     <div className="flex items-center justify-center gap-4">
                       <ZodiacImage sign={houseSign} size={40} className="shrink-0" />
-                      <p className="text-white font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
+                      <p className="text-mystic-gold font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
                     </div>
                 </div>
 
                 {!isLocked && (
                   <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                    {selectedHouse === Number(num) ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
+                    {selectedHouse === Number(num) ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-mystic-gold/50" />}
                   </div>
                 )}
 
@@ -498,9 +498,9 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="mt-3 pt-3 border-t border-white/10"
+                  className="mt-3 pt-3 border-t border-mystic-gold/20"
                 >
-                  <p className="text-gray-100 font-sans text-sm leading-relaxed text-center">
+                  <p className="text-mystic-gold/90 font-sans text-sm leading-relaxed text-center">
                     &quot;{text}&quot;
                   </p>
                 </motion.div>
@@ -531,13 +531,13 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
         exit={{ opacity: 0, x: 20 }}
         className="space-y-3"
       >
-        <div className="flex items-center gap-3 mb-4 bg-white/5 p-4 rounded-2xl border border-mystic-gold/20">
+        <div className="flex items-center gap-3 mb-4 bg-black p-4 rounded-2xl border border-mystic-gold">
           <div className="w-12 h-12 shrink-0">
             <img src={AYLA_IMAGE} alt="Ayla" className="w-full h-full ayla-isolated" />
           </div>
           <div>
             <h3 className="text-mystic-gold font-mystic text-lg">{t('interpretationTitle')}</h3>
-            <p className="text-white/40 text-[10px] uppercase tracking-widest">{t('aylaGuidanceDesc')}</p>
+            <p className="text-mystic-gold/60 text-[10px] uppercase tracking-widest">{t('aylaGuidanceDesc')}</p>
           </div>
         </div>
 
@@ -552,7 +552,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
           return (
             <MotionCard 
               key={cat.id} 
-              className={`overflow-hidden !bg-white/5 border-mystic-gold/20 relative ${isLocked ? 'opacity-90' : ''}`}
+              className={`overflow-hidden !bg-black border-mystic-gold relative ${isLocked ? 'opacity-90' : ''}`}
               >
                 <button
                   onClick={() => {
@@ -562,19 +562,19 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                     setOpenAccordion(isOpen ? null : cat.id);
                   }
                 }}
-                className="w-full p-4 flex items-center justify-center relative text-left transition-colors hover:bg-white/5"
+                className="w-full p-4 flex items-center justify-center relative text-left transition-colors hover:bg-mystic-gold/10"
               >
                 <div 
                   className={`flex items-center justify-center w-full relative ${isLocked ? 'blur-sm select-none' : ''}`}
                 >
                   <div className="flex items-center justify-center gap-4">
                     <ZodiacImage sign={cat.sign} size={40} className="shrink-0" />
-                    <p className="text-white font-mystic">{cat.label}</p>
+                    <p className="text-mystic-gold font-mystic">{cat.label}</p>
                   </div>
                 </div>
                 {!isLocked && (
                   <div className="absolute right-4">
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-white/20" />}
+                    {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-mystic-gold/50" />}
                   </div>
                 )}
               </button>
@@ -597,14 +597,14 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                         exit={{ height: 0, opacity: 0 }}
                         className="px-4 pb-4"
                       >
-                        <div className="pt-3 border-t border-white/10">
+                        <div className="pt-3 border-t border-mystic-gold/20">
                           <h4 className="text-mystic-gold font-mystic mb-2">{language === 'en' ? data.titleEn : data.title}</h4>
-                          <p className="text-gray-100 font-sans text-sm leading-relaxed mb-4 not-italic">
+                          <p className="text-mystic-gold/90 font-sans text-sm leading-relaxed mb-4 not-italic">
                             {language === 'en' ? data.textEn : data.text}
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {(language === 'en' ? data.keywordsEn : data.keywords)?.map((kw: string) => (
-                              <span key={kw} className="text-[10px] bg-white/5 text-white/80 px-2 py-1 rounded-full border border-white/10">
+                              <span key={kw} className="text-[10px] bg-mystic-gold/10 text-mystic-gold px-2 py-1 rounded-full border border-mystic-gold/20">
                                 #{kw}
                               </span>
                             ))}

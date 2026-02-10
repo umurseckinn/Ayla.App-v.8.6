@@ -180,7 +180,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
   };
 
   return (
-    <div className="flex-1 flex flex-col relative min-h-screen bg-mystic-blue/95 overflow-y-auto pb-20 scrollbar-hide pt-[env(safe-area-inset-top)] w-full">
+    <div className="fixed inset-0 z-50 flex flex-col bg-black overflow-y-auto scrollbar-hide pb-20 pt-[env(safe-area-inset-top)]">
       <div className="star-field absolute inset-0 opacity-10 pointer-events-none" />
 
       {/* Header */}
@@ -196,13 +196,13 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
 
         {mode === "system" && (
           <div
-            className="bg-white/5 border border-white/10 rounded-[2rem] p-6 space-y-4 animate-fade-in-up"
+            className="bg-black border border-mystic-gold rounded-[2rem] p-6 space-y-4 animate-fade-in-up"
           >
             <div className="flex items-center gap-2 text-mystic-gold">
               <Sparkles className="w-4 h-4" />
               <h4 className="text-[10px] font-black uppercase tracking-widest">{t('aboutSystem')}</h4>
             </div>
-            <p className="text-white text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
+            <p className="text-mystic-gold text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(212,175,55,0.15)' }}>
               {t('aboutSystemDesc')}
             </p>
           </div>
@@ -255,7 +255,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
               <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide -mx-4 px-4 w-[calc(100%+2rem)]">
                 <button
                   onClick={() => setActiveCategory("ALL")}
-                  className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all whitespace-nowrap ${activeCategory === "ALL" ? "bg-mystic-gold border-mystic-gold text-black" : "bg-white/5 border-white/10 text-white/40"
+                  className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all whitespace-nowrap ${activeCategory === "ALL" ? "bg-mystic-gold border-mystic-gold text-black" : "bg-mystic-gold/5 border-mystic-gold/10 text-mystic-gold/40"
                     }`}
                 >
                   {t('all')}
@@ -266,7 +266,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     onClick={() => setActiveCategory(cat.id)}
                     className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all whitespace-nowrap ${activeCategory === cat.id
                       ? `${cat.activeBg} ${cat.activeBorder} text-white`
-                      : "bg-white/5 border-white/10 text-white/40"
+                      : "bg-mystic-gold/5 border-mystic-gold/10 text-mystic-gold/40"
                       }`}
                   >
                     {t(cat.nameKey as any)}
@@ -282,7 +282,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
               const isUserArchetype = key === userArchetypeKey;
               const shouldHighlight = isUserArchetype && revealedArchetype;
               const category = CATEGORIES_KEYS.find(c => c.id === arch.group);
-              const categoryBorder = category ? category.activeBorder : 'border-white/10';
+              const categoryBorder = category ? category.activeBorder : 'border-mystic-gold/10';
               const categoryGlow = category ? category.glow : 'shadow-2xl';
 
               return (
@@ -315,10 +315,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                       )}
 
                       <div className="space-y-0.5">
-                        <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-mystic-gold/40 block">
                           {key}
                         </span>
-                        <h4 className="text-lg font-mystic text-white leading-tight uppercase gold-text">
+                        <h4 className="text-lg font-mystic text-mystic-gold leading-tight uppercase gold-text">
                           {arch.name}
                         </h4>
                       </div>
@@ -344,7 +344,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                       {t(category.nameKey as any)}
                     </h4>
                   </div>
-                  <p className="text-white text-[13px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(255,255,255,0.15)' }}>
+                  <p className="text-mystic-gold/90 text-[13px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(212,175,55,0.15)' }}>
                     {t(category.descKey as any)}
                   </p>
                 </div>
@@ -382,10 +382,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                           )}
 
                           <div className="space-y-0.5">
-                            <span className="text-[9px] font-black uppercase tracking-widest text-white/40 block">
+                            <span className="text-[9px] font-black uppercase tracking-widest text-mystic-gold/40 block">
                               {key}
                             </span>
-                            <h4 className="text-lg font-mystic text-white leading-tight uppercase gold-text">
+                            <h4 className="text-lg font-mystic text-mystic-gold leading-tight uppercase gold-text">
                               {arch.name}
                             </h4>
                           </div>
@@ -424,17 +424,17 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
 
               <div className="px-8 pt-4 pb-0 text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/10 backdrop-blur-md border border-white/20">
+                  <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-mystic-gold/10 backdrop-blur-md border border-mystic-gold/20 text-mystic-gold/70">
                     {selectedArchetype.key}
                   </div>
-                  <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-white/10 backdrop-blur-md border border-white/20">
+                  <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-mystic-gold/10 backdrop-blur-md border border-mystic-gold/20 text-mystic-gold/70">
                     {selectedArchetype.group}
                   </div>
                 </div>
                 <h2 className="text-3xl font-mystic gold-text leading-none uppercase">
                   {selectedArchetype.name}
                 </h2>
-                <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-2 font-bold">
+                <p className="text-mystic-gold/40 text-[10px] uppercase tracking-[0.2em] mt-2 font-bold">
                   {selectedArchetype.className}
                 </p>
               </div>
@@ -445,13 +445,13 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     <BookOpen className="w-4 h-4" />
                     <h4 className="text-[10px] font-black uppercase tracking-widest">{t('characterAnalysis')}</h4>
                   </div>
-                  <p className="text-white text-[16px] leading-relaxed font-serif text-left italic font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
+                  <p className="text-mystic-gold text-[16px] leading-relaxed font-serif text-left italic font-semibold" style={{ textShadow: '0 0 20px rgba(212,175,55,0.15)' }}>
                     {selectedArchetype.description}
                   </p>
                 </div>
 
                 <div className="space-y-4 pt-4">
-                  <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'light' ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-white/5 border-white/10'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'light' ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-mystic-gold/5 border-mystic-gold/10'}`}>
                     <button
                       onClick={() => setActiveSection(activeSection === 'light' ? null : 'light')}
                       className="w-full px-6 py-5 flex items-center justify-between group"
@@ -460,10 +460,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeSection === 'light' ? 'bg-emerald-500 text-mystic-blue' : 'bg-emerald-500/20 text-emerald-400'}`}>
                           <Sparkles className="w-4 h-4" />
                         </div>
-                        <span className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors ${activeSection === 'light' ? 'text-emerald-400' : 'text-white/40'}`}>{t('lightSide')}</span>
+                        <span className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors ${activeSection === 'light' ? 'text-emerald-400' : 'text-mystic-gold/50'}`}>{t('lightSide')}</span>
                       </div>
-                      <div className={`w-6 h-6 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'light' ? 'rotate-180 bg-white/5' : ''}`}>
-                        <ChevronLeft className="w-3 h-3 text-white/40 -rotate-90" />
+                      <div className={`w-6 h-6 rounded-full border border-mystic-gold/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'light' ? 'rotate-180 bg-mystic-gold/5' : ''}`}>
+                        <ChevronLeft className="w-3 h-3 text-mystic-gold/50 -rotate-90" />
                       </div>
                     </button>
                     <AnimatePresence>
@@ -476,9 +476,9 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                         >
                           <div className="px-6 pb-6 space-y-3">
                             {selectedArchetype.light.split(/\n/).filter(Boolean).map((line: string, idx: number) => (
-                              <div key={idx} className="flex gap-3 text-white group/item items-start">
+                              <div key={idx} className="flex gap-3 text-mystic-gold group/item items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
-                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(255,255,255,0.15)' }}>
+                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(212,175,55,0.15)' }}>
                                   {line.replace(/^[•\-\s]+/, '').trim().split(' ').map(word => word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR')).join(' ')}
                                 </p>
                               </div>
@@ -489,7 +489,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                     </AnimatePresence>
                   </div>
 
-                  <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'shadow' ? 'bg-rose-500/10 border-rose-500/30' : 'bg-white/5 border-white/10'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'shadow' ? 'bg-rose-500/10 border-rose-500/30' : 'bg-mystic-gold/5 border-mystic-gold/10'}`}>
                     <button
                       onClick={() => setActiveSection(activeSection === 'shadow' ? null : 'shadow')}
                       className="w-full px-6 py-5 flex items-center justify-between group"
@@ -498,10 +498,10 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeSection === 'shadow' ? 'bg-rose-500 text-mystic-blue' : 'bg-rose-500/20 text-rose-400'}`}>
                           <Ghost className="w-4 h-4" />
                         </div>
-                        <span className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors ${activeSection === 'shadow' ? 'text-rose-400' : 'text-white/40'}`}>{t('shadowSide')}</span>
+                        <span className={`text-[11px] font-black uppercase tracking-[0.2em] transition-colors ${activeSection === 'shadow' ? 'text-rose-400' : 'text-mystic-gold/50'}`}>{t('shadowSide')}</span>
                       </div>
-                      <div className={`w-6 h-6 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'shadow' ? 'rotate-180 bg-white/5' : ''}`}>
-                        <ChevronLeft className="w-3 h-3 text-white/40 -rotate-90" />
+                      <div className={`w-6 h-6 rounded-full border border-mystic-gold/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'shadow' ? 'rotate-180 bg-mystic-gold/5' : ''}`}>
+                        <ChevronLeft className="w-3 h-3 text-mystic-gold/50 -rotate-90" />
                       </div>
                     </button>
                     <AnimatePresence>
@@ -514,9 +514,9 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                         >
                           <div className="px-6 pb-6 space-y-3">
                             {selectedArchetype.shadow.split(/\n/).filter(Boolean).map((line: string, idx: number) => (
-                              <div key={idx} className="flex gap-3 text-white group/item items-start">
+                              <div key={idx} className="flex gap-3 text-mystic-gold group/item items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(251,113,133,0.6)]" />
-                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(255,255,255,0.15)' }}>
+                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(212,175,55,0.15)' }}>
                                   {line.replace(/^[•\-\s]+/, '').trim().split(' ').map(word => word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR')).join(' ')}
                                 </p>
                               </div>
@@ -528,16 +528,16 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-2 pt-4 border-t border-white/10">
+                <div className="grid grid-cols-4 gap-2 pt-4 border-t border-mystic-gold/10">
                   {selectedArchetype.key.split("-").map((code: string, i: number) => {
                     const icons: any = { "R": <Ghost className="w-3 h-3" />, "Z": <Brain className="w-3 h-3" />, "F": <Zap className="w-3 h-3" />, "D": <Heart className="w-3 h-3" /> };
                     const labels: any = { "R": t('elementSpirit'), "Z": t('elementMind'), "F": t('elementBody'), "D": t('elementEmotion') };
                     return (
                       <div key={i} className="flex flex-col items-center gap-2 opacity-90">
-                        <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-mystic-gold/5 border border-mystic-gold/10 flex items-center justify-center">
                           {icons[code]}
                         </div>
-                        <span className="text-[8px] font-black uppercase">{labels[code]}</span>
+                        <span className="text-[8px] font-black uppercase text-mystic-gold/70">{labels[code]}</span>
                       </div>
                     );
                   })}
@@ -545,7 +545,7 @@ export function ArchetypeLibrary({ userArchetypeKey, onBack, mode = "system", on
 
                 <Button
                   onClick={() => setSelectedArchetype(null)}
-                  className="w-full bg-white/5 hover:bg-white/10 text-white/60 font-black uppercase tracking-widest py-6 rounded-2xl border border-white/10"
+                  className="w-full bg-mystic-gold/5 hover:bg-mystic-gold/10 text-mystic-gold/60 font-black uppercase tracking-widest py-6 rounded-2xl border border-mystic-gold/10"
                 >
                   {t('close')}
                 </Button>

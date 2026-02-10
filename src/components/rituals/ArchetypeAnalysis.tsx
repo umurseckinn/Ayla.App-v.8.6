@@ -179,7 +179,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
               {t('determiningArchetype')}
               <span className="inline-block w-[2ch] text-left">{dots}</span>
             </h3>
-            <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+            <p className="text-sm text-mystic-gold/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
               {t('calculatingEnergies')}
             </p>
           </div>
@@ -201,7 +201,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
 
   return (
     <div
-      className="flex-1 flex flex-col relative overflow-y-auto scrollbar-hide"
+      className="fixed inset-0 z-50 flex flex-col bg-black overflow-y-auto scrollbar-hide pb-20 pt-[env(safe-area-inset-top)]"
     >
       <div className="star-field absolute inset-0 opacity-10 pointer-events-none" />
 
@@ -229,7 +229,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
             <h3 className="font-mystic text-3xl gold-text leading-tight uppercase tracking-tight">
               {language === 'en' ? archetype?.enName : archetype?.name}
             </h3>
-            <p className="text-white/40 text-[14px] uppercase tracking-[0.25em] font-bold">
+            <p className="text-mystic-gold/50 text-[14px] uppercase tracking-[0.25em] font-bold">
               {language === 'en' ? archetype?.enClassName : archetype?.className}
             </p>
           </div>
@@ -284,12 +284,12 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
               </div>
 
               {/* Character Analysis */}
-              <div className="bg-white/5 border border-white/10 rounded-[2rem] p-5 space-y-2">
+              <div className="bg-black border border-mystic-gold rounded-[2rem] p-5 space-y-2">
                 <div className="flex items-center gap-2 text-mystic-gold">
                   <Sparkles className="w-4 h-4" />
                   <h4 className="text-[11px] font-black uppercase tracking-widest">{t('characterAnalysis')}</h4>
                 </div>
-                <p className="text-white text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(255,255,255,0.15)' }}>
+                <p className="text-mystic-gold text-[16px] leading-relaxed font-serif italic text-left font-semibold" style={{ textShadow: '0 0 20px rgba(212,175,55,0.15)' }}>
                   {language === 'en' ? archetype.enDescription : archetype.description}
                 </p>
               </div>
@@ -297,7 +297,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
               {/* Light & Shadow Accordion */}
               <div className="space-y-2">
                 {/* Light Side */}
-                <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'light' ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-white/5 border-white/10'}`}>
+                <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'light' ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-mystic-gold/5 border-mystic-gold/10'}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 'light' ? null : 'light')}
                     className="w-full px-6 py-5 flex items-center justify-between group"
@@ -306,10 +306,10 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeSection === 'light' ? 'bg-emerald-500 text-mystic-blue' : 'bg-emerald-500/20 text-emerald-400'}`}>
                         <Sparkles className="w-4 h-4" />
                       </div>
-                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-colors ${activeSection === 'light' ? 'text-emerald-400' : 'text-white/40'}`}>{t('lightSide')}</span>
+                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-colors ${activeSection === 'light' ? 'text-emerald-400' : 'text-mystic-gold/50'}`}>{t('lightSide')}</span>
                     </div>
-                    <div className={`w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'light' ? 'rotate-180 bg-white/5' : ''}`}>
-                      <ChevronLeft className="w-3.5 h-3.5 text-white/40 -rotate-90" />
+                    <div className={`w-7 h-7 rounded-full border border-mystic-gold/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'light' ? 'rotate-180 bg-mystic-gold/5' : ''}`}>
+                      <ChevronLeft className="w-3.5 h-3.5 text-mystic-gold/50 -rotate-90" />
                     </div>
                   </button>
                   <AnimatePresence>
@@ -327,9 +327,9 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
                               ? lightText.split('\n').filter(Boolean)
                               : lightText.split(/[,،]\s*/).filter(Boolean);
                             return items.map((line: string, idx: number) => (
-                              <div key={idx} className="flex gap-3 text-white group/item items-start">
+                              <div key={idx} className="flex gap-3 text-mystic-gold group/item items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 flex-shrink-0 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
-                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(255,255,255,0.15)' }}>
+                                <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(212,175,55,0.15)' }}>
                                   {capitalizeEveryWord(line.replace(/^[•\-\s]+/, '').trim(), currentLocale)}
                                 </p>
                               </div>
@@ -343,7 +343,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
                 </div>
 
                 {/* Shadow Side */}
-                <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'shadow' ? 'bg-rose-500/10 border-rose-500/30' : 'bg-white/5 border-white/10'}`}>
+                <div className={`overflow-hidden transition-all duration-300 rounded-[2rem] border ${activeSection === 'shadow' ? 'bg-rose-500/10 border-rose-500/30' : 'bg-mystic-gold/5 border-mystic-gold/10'}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 'shadow' ? null : 'shadow')}
                     className="w-full px-6 py-5 flex items-center justify-between group"
@@ -352,10 +352,10 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeSection === 'shadow' ? 'bg-rose-500 text-mystic-blue' : 'bg-rose-500/20 text-rose-400'}`}>
                         <Ghost className="w-4 h-4" />
                       </div>
-                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-colors ${activeSection === 'shadow' ? 'text-rose-400' : 'text-white/40'}`}>{t('shadowSide')}</span>
+                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-colors ${activeSection === 'shadow' ? 'text-rose-400' : 'text-mystic-gold/50'}`}>{t('shadowSide')}</span>
                     </div>
-                    <div className={`w-7 h-7 rounded-full border border-white/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'shadow' ? 'rotate-180 bg-white/5' : ''}`}>
-                      <ChevronLeft className="w-3.5 h-3.5 text-white/40 -rotate-90" />
+                    <div className={`w-7 h-7 rounded-full border border-mystic-gold/10 flex items-center justify-center transition-transform duration-300 ${activeSection === 'shadow' ? 'rotate-180 bg-mystic-gold/5' : ''}`}>
+                      <ChevronLeft className="w-3.5 h-3.5 text-mystic-gold/50 -rotate-90" />
                     </div>
                   </button>
                   <AnimatePresence>
@@ -373,7 +373,7 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
                               ? shadowText.split('\n').filter(Boolean)
                               : shadowText.split(/[,،]\s*/).filter(Boolean);
                             return items.map((line: string, idx: number) => (
-                              <div key={idx} className="flex gap-3 text-white group/item items-start">
+                              <div key={idx} className="flex gap-3 text-mystic-gold group/item items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0 shadow-[0_0_10px_rgba(251,113,133,0.6)]" />
                                 <p className="text-[15px] leading-relaxed font-serif italic font-semibold" style={{ textShadow: '0 0 15px rgba(255,255,255,0.15)' }}>
                                   {capitalizeEveryWord(line.replace(/^[•\-\s]+/, '').trim(), currentLocale)}
@@ -431,17 +431,17 @@ function MiniStat({ label, value, icon, color, onClick }: { label: string, value
   return (
     <button
       onClick={onClick}
-      className="bg-black border border-white/10 rounded-2xl p-3 flex flex-col gap-2 shadow-xl hover:border-white/20 transition-colors cursor-pointer"
+      className="bg-black border border-mystic-gold/10 rounded-2xl p-3 flex flex-col gap-2 shadow-xl hover:border-mystic-gold/20 transition-colors cursor-pointer"
     >
       <div className={`flex items-center justify-between text-[9px] uppercase tracking-widest font-black ${fontColorMap[color] || color}`}>
         <span className="flex items-center gap-1.5">{icon} {label}</span>
         <span className={`font-bold ${fontColorMap[color] || color}`}>%{value}</span>
       </div>
-      <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+      <div className="h-1 w-full bg-mystic-gold/5 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${value}%` }}
-          className={`h-full ${bgColorMap[color] || 'bg-white'}`}
+          className={`h-full ${bgColorMap[color] || 'bg-mystic-gold'}`}
         />
       </div>
     </button>
