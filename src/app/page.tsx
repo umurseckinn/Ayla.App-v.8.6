@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import { useProfile } from "@/hooks/useProfile";
 import { OnboardingFlow } from "@/components/onboarding/OnboardingFlow";
 import { Dashboard } from "@/components/dashboard/Dashboard";
@@ -18,6 +19,7 @@ export default function Home() {
   const [splashDone, setSplashDone] = useState(false);
   const [localOnboardingDone, setLocalOnboardingDone] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [appReady, setAppReady] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -30,6 +32,15 @@ export default function Home() {
       setLocalOnboardingDone(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      const timer = setTimeout(() => {
+        setAppReady(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   const handleSplashComplete = () => {
     setSplashDone(true);
@@ -53,39 +64,46 @@ export default function Home() {
     );
   }
 
-  if (!splashDone) {
-    return <SplashScreen onComplete={handleSplashComplete} />;
-  }
-
   const isDone = profile || onboardingComplete || localOnboardingDone;
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple flex flex-col items-center justify-center">
-        <div className="relative mb-6">
-          <div className="absolute inset-0 bg-mystic-gold/20 rounded-full blur-3xl animate-pulse" />
-          <img
-            src={AYLA_IMAGE}
-            alt="Ayla"
-            className="w-32 h-32 relative z-10 animate-pulse ayla-isolated"
-          />
-        </div>
-        <p className="font-mystic text-xl text-mystic-gold animate-pulse">{t('calculatingDesc')}</p>
-      </div>
-    );
-  }
-
-  if (!isDone) {
-    return <OnboardingFlow onComplete={() => {
-      setOnboardingComplete(true);
-      refreshProfile();
-    }} />;
-  }
+  const showContent = !loading;
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple relative overflow-hidden">
       <div className="star-field absolute inset-0 opacity-10 pointer-events-none" />
-      <Dashboard profile={profile} />
+      
+      {showContent && (
+        isDone ? (
+          <Dashboard profile={profile} />
+        ) : (
+          <OnboardingFlow onComplete={() => {
+            setOnboardingComplete(true);
+            refreshProfile();
+          }} />
+        )
+      )}
+
+      {loading && splashDone && (
+        <div className="fixed inset-0 z-50 min-h-screen bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple flex flex-col items-center justify-center">
+          <div className="relative mb-6">
+            <div className="absolute inset-0 bg-mystic-gold/20 rounded-full blur-3xl animate-pulse" />
+            <img
+              src={AYLA_IMAGE}
+              alt="Ayla"
+              className="w-32 h-32 relative z-10 animate-pulse ayla-isolated"
+            />
+          </div>
+          <p className="font-mystic text-xl text-mystic-gold animate-pulse">{t('calculatingDesc')}</p>
+        </div>
+      )}
+
+      <AnimatePresence>
+        {!splashDone && (
+          <SplashScreen 
+            onComplete={handleSplashComplete} 
+            canFinish={appReady}
+          />
+        )}
+      </AnimatePresence>
     </main>
   );
 }

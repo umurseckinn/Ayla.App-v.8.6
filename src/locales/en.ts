@@ -25,6 +25,11 @@ export const en: TranslationKeys = {
     navCompatibility: "Matches",
     navArchetype: "Archetype",
 
+    // Waiting Screens
+    calculatingLoveCompatibility: "CALCULATING LOVE COMPATIBILITY",
+    determiningArchetype: "DETERMINING YOUR ARCHETYPE",
+    preparingReading: "PREPARING YOUR READING",
+
     // Settings
     settingsTitle: "Settings",
     language: "Language",

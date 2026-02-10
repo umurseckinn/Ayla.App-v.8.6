@@ -23,6 +23,11 @@ export const tr = {
     navCompatibility: "Uyum",
     navArchetype: "Arketip",
 
+    // Waiting Screens
+    calculatingLoveCompatibility: "AŞK UYUMUNUZ HESAPLANIYOR",
+    determiningArchetype: "ARKETİPİN BELİRLENİYOR",
+    preparingReading: "FALIN HAZIRLANIYOR",
+
     // Settings
     settingsTitle: "Ayarlar",
     language: "Dil Seçimi",

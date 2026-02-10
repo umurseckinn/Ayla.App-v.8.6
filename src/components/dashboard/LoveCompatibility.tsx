@@ -194,6 +194,16 @@ export function LoveCompatibility({ profile }: { profile: any }) {
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [isWaitingForPremium, setIsWaitingForPremium] = useState(false);
+  const [dots, setDots] = useState("");
+
+  useEffect(() => {
+    if (step === "loading") {
+      const interval = setInterval(() => {
+        setDots(prev => prev.length >= 3 ? "" : prev + ".");
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, [step]);
 
   // Auto-open logic
   useEffect(() => {
@@ -473,31 +483,50 @@ export function LoveCompatibility({ profile }: { profile: any }) {
         {step === "loading" && (
           <motion.div
             key="loading"
-            className="flex flex-col items-center justify-center py-20 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden"
           >
-            <div className="relative w-48 h-48 mb-12">
-              <motion.div
-                animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-                transition={{ rotate: { duration: 15, repeat: Infinity, ease: "linear" }, scale: { duration: 2, repeat: Infinity } }}
-                className="absolute inset-0 border border-mystic-gold/20 rounded-full"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Heart className="w-16 h-16 text-mystic-gold animate-pulse fill-mystic-gold/10" />
-              </div>
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={{
-                    opacity: [0, 1, 0],
-                    scale: [0, 1.5],
-                    rotate: [0, 180]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.6 }}
-                  className="absolute inset-0 border border-mystic-gold/5 rounded-full"
-                />
-              ))}
-            </div>
-            <h3 className="text-xl font-mystic text-mystic-gold mb-4 tracking-widest animate-pulse uppercase">{loadingText}</h3>
+             {/* Full Screen Background Image */}
+             <div className="absolute inset-0 z-0">
+               <img
+                 src="/assets/ayla/love_compat_wait.png"
+                 alt="Love Compatibility Waiting"
+                 className="w-full h-full object-cover opacity-80"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
+             </div>
+
+             {/* Center Content */}
+             <div className="relative z-10 flex flex-col items-center justify-center space-y-12 w-full h-full pb-20">
+                {/* Abstract Loader Rings with Heart */}
+                <div className="relative w-40 h-40 flex items-center justify-center">
+                   <motion.div
+                     animate={{ rotate: 360 }}
+                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                     className="absolute inset-0 border border-mystic-gold/30 rounded-full"
+                   />
+                   <motion.div
+                     animate={{ rotate: -360 }}
+                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                     className="absolute inset-4 border border-mystic-gold/20 rounded-full"
+                   />
+                   <div className="absolute inset-0 flex items-center justify-center">
+                      <Heart className="w-8 h-8 text-mystic-gold animate-pulse fill-mystic-gold/50 shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
+                   </div>
+                </div>
+
+               <div className="space-y-4 text-center px-6">
+                  <h3 className="font-mystic text-2xl text-mystic-gold uppercase tracking-[0.2em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                    {t('calculatingLoveCompatibility')}
+                    <span className="inline-block w-[2ch] text-left">{dots}</span>
+                  </h3>
+                  <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+                    {loadingText}
+                  </p>
+                </div>
+             </div>
           </motion.div>
         )}
 
@@ -511,7 +540,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
             <div className="text-center">
               <div className="inline-block relative mb-6">
                 <div className="absolute inset-0 bg-mystic-gold/20 rounded-full blur-2xl animate-pulse" />
-                <img src={AYLA_IMAGE} alt="Ayla" className="w-28 h-28 relative z-10 ayla-isolated" />
+                <img src={AYLA_IMAGE} alt="Ayla" className="w-28 h-28 relative z-10 ayla-isolated object-contain" />
               </div>
               <h2 className="text-3xl font-mystic text-mystic-gold tracking-widest uppercase">{t('cosmicLoveAnalysis')}</h2>
               <p className="text-white/40 text-[10px] uppercase tracking-[0.3em] mt-2">{t('starsWrittenForYou')}</p>

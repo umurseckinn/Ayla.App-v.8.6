@@ -869,20 +869,26 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
               <ArchetypeAnalysis profile={currentProfile} onBack={() => setActiveTab("home")} onSpend={handleSpend} />
             </motion.div>
           )}
-
-          {activeTab === "tarot" && (
-            <motion.div
-              key="tarot"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3 }}
-              className="w-full h-full"
-            >
-              <TarotReading onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </motion.div>
-          )}
         </AnimatePresence>
+
+        {/* Persistent Tarot Tab - Always mounted for instant loading */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ 
+            opacity: activeTab === "tarot" ? 1 : 0,
+            x: activeTab === "tarot" ? 0 : 20,
+            pointerEvents: activeTab === "tarot" ? 'auto' : 'none',
+            zIndex: activeTab === "tarot" ? 50 : -1
+          }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 w-full h-full"
+          style={{ visibility: activeTab === "tarot" || activeTab === "home" ? 'visible' : 'hidden' }} // Optimization: hide when far away, but keep visible during transition
+        >
+           <TarotReading 
+             onBack={() => setActiveTab("home")} 
+             onSpend={handleSpend} 
+           />
+        </motion.div>
 
         <AnimatePresence>
           {isEarning && (

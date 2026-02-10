@@ -5,17 +5,19 @@ import { InViewMotionDiv } from "@/components/ui/InViewMotionDiv";
 
 interface SplashScreenProps {
     onComplete: () => void;
+    canFinish?: boolean;
 }
 
 const SPLASH_BG = "/assets/ayla/IMG_1573.JPG";
 const AYLA_LOGO = "/assets/ayla/ayla_logo.png";
 const LOADING_TEXT = "Yıldızlar hizalanıyor...";
 
-export function SplashScreen({ onComplete }: SplashScreenProps) {
+export function SplashScreen({ onComplete, canFinish = true }: SplashScreenProps) {
     const [isEnding, setIsEnding] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [displayedText, setDisplayedText] = useState("");
     const [charIndex, setCharIndex] = useState(0);
+    const [minTimePassed, setMinTimePassed] = useState(false);
 
     useEffect(() => {
         const img = new window.Image();
@@ -40,21 +42,27 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
         if (!imageLoaded) return;
         
         const minDisplayTime = setTimeout(() => {
+            setMinTimePassed(true);
+        }, 4000);
+
+        return () => clearTimeout(minDisplayTime);
+    }, [imageLoaded]);
+
+    useEffect(() => {
+        if (minTimePassed && canFinish && !isEnding) {
             setIsEnding(true);
             setTimeout(() => {
                 onComplete();
             }, 800);
-        }, 4000);
-
-        return () => clearTimeout(minDisplayTime);
-    }, [imageLoaded, onComplete]);
+        }
+    }, [minTimePassed, canFinish, isEnding, onComplete]);
 
     return (
         <AnimatePresence mode="wait">
             {!isEnding && (
                 <motion.div
                     key="splash"
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -63,8 +71,8 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
                 >
                     {/* Background Image - telefon ekranına uygun */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 1.05 }}
-                        animate={{ opacity: imageLoaded ? 1 : 0, scale: 1 }}
+                        initial={{ opacity: 1, scale: 1 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                         className="absolute inset-0 flex items-center justify-center"
                     >

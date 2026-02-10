@@ -75,6 +75,16 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
   const [activeSection, setActiveSection] = useState<"light" | "shadow" | null>("light");
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [selectedEnergy, setSelectedEnergy] = useState<EnergyType | null>(null);
+  const [dots, setDots] = useState("");
+
+  useEffect(() => {
+    if (isCalculating) {
+      const interval = setInterval(() => {
+        setDots(prev => prev.length >= 3 ? "" : prev + ".");
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, [isCalculating]);
 
   const currentLocale = language === 'en' ? 'en-US' : 'tr-TR';
 
@@ -136,29 +146,43 @@ export function ArchetypeAnalysis({ profile, onBack, onSpend }: { profile: any, 
 
   if (isCalculating) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center bg-mystic-blue/95 p-8 text-center space-y-8 min-h-screen">
-        <div className="relative">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[-40px] border border-mystic-gold/10 rounded-full"
-          />
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[-20px] border border-mystic-gold/5 rounded-full"
-          />
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden">
+        {/* Full Screen Background Image */}
+        <div className="absolute inset-0 z-0">
           <img
-            src={AYLA_IMAGE}
-            alt="Ayla"
-            className="w-40 h-40 relative z-10 animate-pulse ayla-isolated"
+            src="/assets/ayla/archetype_waiting.png"
+            alt="Archetype Waiting"
+            className="w-full h-full object-cover opacity-80"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
         </div>
-        <div className="space-y-2">
-          <h3 className="font-mystic text-xl text-mystic-gold uppercase tracking-[0.2em] animate-pulse">{t('calculatingEnergies')}</h3>
-          <p className="text-[11px] text-white/50 italic font-serif max-w-[240px] mx-auto">
-            {t('calculatingEnergiesDesc')}
-          </p>
+
+        {/* Center Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center space-y-12 w-full h-full pb-20">
+           {/* Abstract Loader Rings */}
+           <div className="relative w-40 h-40 flex items-center justify-center">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 border border-mystic-gold/30 rounded-full"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-4 border border-mystic-gold/20 rounded-full"
+              />
+              <div className="w-2 h-2 bg-mystic-gold/50 rounded-full animate-pulse shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
+           </div>
+
+          <div className="space-y-4 text-center px-6">
+            <h3 className="font-mystic text-2xl text-mystic-gold uppercase tracking-[0.2em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+              {t('determiningArchetype')}
+              <span className="inline-block w-[2ch] text-left">{dots}</span>
+            </h3>
+            <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+              {t('calculatingEnergies')}
+            </p>
+          </div>
         </div>
       </div>
     );

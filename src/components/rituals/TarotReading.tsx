@@ -62,10 +62,10 @@ const TarotCardImage = ({ nameShort, isReversed, className = "" }: { nameShort: 
   );
 };
 
-export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend: (amount: number) => void }) {
+export function TarotReading({ onBack, onSpend, className }: { onBack: () => void, onSpend: (amount: number) => void, className?: string }) {
   const { profile, subscriptionStatus } = useProfile();
   const { t } = useLanguage();
-  const [phase, setPhase] = useState<"niche" | "waiting" | "selecting" | "result">("niche");
+  const [phase, setPhase] = useState<"niche" | "waiting" | "selecting" | "analyzing" | "result">("niche");
   const [cards] = useState<TarotCard[]>(LOCAL_TAROT_CARDS as any);
   const [selectedCards, setSelectedCards] = useState<Array<{ card: TarotCard, isReversed: boolean }>>([]);
   const [selectedTopic, setSelectedTopic] = useState<TarotTopic | null>(null);
@@ -75,14 +75,34 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
   const [showAdPopup, setShowAdPopup] = useState(false);
   const [showPremiumModal, setShowPremiumModal] = useState(false);
   const [isWaitingForPremium, setIsWaitingForPremium] = useState(false);
+  const [dots, setDots] = useState("");
+
+  // Typewriter effect for analyzing phase
+  useEffect(() => {
+    if (phase === "analyzing") {
+      const interval = setInterval(() => {
+        setDots(prev => prev.length >= 3 ? "" : prev + ".");
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, [phase]);
+
+  const startAnalysis = (cards: Array<{ card: TarotCard, isReversed: boolean }>) => {
+    setPhase("analyzing");
+    getInterpretation(cards);
+    
+    // Ensure minimum 3s delay for the waiting screen
+    setTimeout(() => {
+      setPhase("result");
+    }, 3000);
+  };
 
   // Auto-open logic when premium is acquired
   useEffect(() => {
     if (subscriptionStatus === 'premium' && isWaitingForPremium && selectedCards.length === 3 && phase === "selecting") {
       setIsWaitingForPremium(false);
       onSpend(100);
-      setPhase("result");
-      getInterpretation(selectedCards);
+      startAnalysis(selectedCards);
     }
   }, [subscriptionStatus, isWaitingForPremium, selectedCards, phase]);
 
@@ -90,8 +110,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
     setShowAdPopup(false);
     if (selectedCards.length === 3) {
       onSpend(100);
-      setPhase("result");
-      getInterpretation(selectedCards);
+      startAnalysis(selectedCards);
     }
   };
 
@@ -195,8 +214,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
         return;
       }
       onSpend(100);
-      setPhase("result");
-      getInterpretation(newSelected);
+      startAnalysis(newSelected);
     }
   };
 
@@ -217,7 +235,7 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
 
     return (
             <div 
-              className="fixed inset-0 z-50 bg-black flex flex-col text-[#D4AF37]"
+              className={`fixed inset-0 z-50 bg-black flex flex-col text-[#D4AF37] ${className || ''}`}
             >
               <div className="star-field absolute inset-0 opacity-20 pointer-events-none" />
 
@@ -352,6 +370,56 @@ export function TarotReading({ onBack, onSpend }: { onBack: () => void, onSpend:
                 ))}
               </div>
 
+            </motion.div>
+          )}
+
+          {phase === "analyzing" && (
+            <motion.div
+              key="analyzing"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden"
+            >
+               {/* Full Screen Background Image */}
+               <div className="absolute inset-0 z-0">
+                 <img
+                   src="/Tarot ad pop-up.png"
+                   alt="Tarot Analysis Waiting"
+                   className="w-full h-full object-cover opacity-80"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
+               </div>
+
+               {/* Center Content */}
+               <div className="relative z-10 flex flex-col items-center justify-center space-y-12 w-full h-full pb-20">
+                  {/* Abstract Loader Rings with Star */}
+                  <div className="relative w-40 h-40 flex items-center justify-center">
+                     <motion.div
+                       animate={{ rotate: 360 }}
+                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                       className="absolute inset-0 border border-mystic-gold/30 rounded-full"
+                     />
+                     <motion.div
+                       animate={{ rotate: -360 }}
+                       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                       className="absolute inset-4 border border-mystic-gold/20 rounded-full"
+                     />
+                     <div className="absolute inset-0 flex items-center justify-center">
+                        <Star className="w-8 h-8 text-mystic-gold animate-pulse fill-mystic-gold/50 shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
+                     </div>
+                  </div>
+
+                 <div className="space-y-4 text-center px-6">
+                    <h3 className="font-mystic text-2xl text-mystic-gold uppercase tracking-[0.2em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                      {t('preparingReading')}
+                      <span className="inline-block w-[2ch] text-left">{dots}</span>
+                    </h3>
+                    <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+                      {t('starsAligning')}
+                    </p>
+                  </div>
+               </div>
             </motion.div>
           )}
 

@@ -403,7 +403,7 @@ export function OnboardingFlow({ onComplete }: { onComplete: () => void }) {
                     <div className="w-40 h-40 border border-mystic-gold/40 rounded-full flex items-center justify-center">
                       <div className="w-32 h-32 border border-mystic-gold/60 rounded-full flex items-center justify-center">
                         <InViewAnimatedWrapper animationClass="animate-pulse">
-                          <img src={AYLA_IMAGE} alt="Ayla" className="w-20 h-20 ayla-isolated" />
+                          <img src={AYLA_IMAGE} alt="Ayla" className="w-20 h-20 ayla-isolated object-contain" />
                         </InViewAnimatedWrapper>
                       </div>
                     </div>
