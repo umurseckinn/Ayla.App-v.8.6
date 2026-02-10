@@ -114,6 +114,28 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
     }
   };
 
+  const handleReset = () => {
+    setPhase("niche");
+    setSelectedCards([]);
+    setSelectedTopic(null);
+    setAiInterpretation(null);
+    setInterpreting(false);
+    setIsWaitingForPremium(false);
+    setShowAdPopup(false);
+    setShowPremiumModal(false);
+    setDots("");
+  };
+
+  const handleBack = () => {
+    handleReset();
+    onBack();
+  };
+
+  const handleComplete = () => {
+    handleReset();
+    onBack();
+  };
+
   const intentions: Array<{ id: TarotTopic, label: string, icon: React.ReactNode }> = [
     { id: "love", label: t('intentLove'), icon: <Heart className="w-4 h-4" /> },
     { id: "health", label: t('intentHealth'), icon: <Activity className="w-4 h-4" /> },
@@ -233,10 +255,61 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
     );
   }
 
+  if (phase === "analyzing") {
     return (
-            <div 
-              className={`fixed inset-0 z-50 bg-black flex flex-col text-[#D4AF37] ${className || ''}`}
-            >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden"
+      >
+        {/* Full Screen Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/Tarot ad pop-up.png"
+            alt="Tarot Analysis Waiting"
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
+        </div>
+
+        {/* Center Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center space-y-12 w-full h-full pb-20">
+          {/* Abstract Loader Rings with Star */}
+          <div className="relative w-40 h-40 flex items-center justify-center">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border border-mystic-gold/30 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-4 border border-mystic-gold/20 rounded-full"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Star className="w-8 h-8 text-mystic-gold animate-pulse fill-mystic-gold/50 shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
+            </div>
+          </div>
+
+          <div className="space-y-4 text-center px-6">
+            <h3 className="font-mystic text-2xl text-mystic-gold uppercase tracking-[0.2em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+              {t('preparingReading')}
+              <span className="inline-block w-[2ch] text-left">{dots}</span>
+            </h3>
+            <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
+              {t('starsAligning')}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div 
+      className={`fixed inset-0 z-50 bg-black flex flex-col text-[#D4AF37] ${className || ''}`}
+    >
               <div className="star-field absolute inset-0 opacity-20 pointer-events-none" />
 
 {/* Fixed Header - with proper safe area spacing */}
@@ -246,7 +319,7 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
               >
                 <div className="max-w-md mx-auto w-full space-y-2">
                   <div className="flex items-center justify-start">
-                    <Button variant="ghost" onClick={onBack} className="text-[#D4AF37]/50 hover:text-[#D4AF37] -ml-2 text-sm">{t('headersCancel')}</Button>
+                    <Button variant="ghost" onClick={handleBack} className="text-[#D4AF37]/50 hover:text-[#D4AF37] -ml-2 text-sm">{t('headersCancel')}</Button>
                   </div>
                   <h1 className="font-mystic text-2xl text-[#D4AF37] text-center">{t('cosmicTarot')}</h1>
                 </div>
@@ -301,9 +374,10 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
                     
                     {/* Bottom spacer for safe scrolling */}
                     <div className="h-8" />
-
             </motion.div>
           )}
+
+
 
           <AdContentPopup
             isOpen={showAdPopup}
@@ -373,55 +447,7 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
             </motion.div>
           )}
 
-          {phase === "analyzing" && (
-            <motion.div
-              key="analyzing"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden"
-            >
-               {/* Full Screen Background Image */}
-               <div className="absolute inset-0 z-0">
-                 <img
-                   src="/Tarot ad pop-up.png"
-                   alt="Tarot Analysis Waiting"
-                   className="w-full h-full object-cover opacity-80"
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
-               </div>
 
-               {/* Center Content */}
-               <div className="relative z-10 flex flex-col items-center justify-center space-y-12 w-full h-full pb-20">
-                  {/* Abstract Loader Rings with Star */}
-                  <div className="relative w-40 h-40 flex items-center justify-center">
-                     <motion.div
-                       animate={{ rotate: 360 }}
-                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                       className="absolute inset-0 border border-mystic-gold/30 rounded-full"
-                     />
-                     <motion.div
-                       animate={{ rotate: -360 }}
-                       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                       className="absolute inset-4 border border-mystic-gold/20 rounded-full"
-                     />
-                     <div className="absolute inset-0 flex items-center justify-center">
-                        <Star className="w-8 h-8 text-mystic-gold animate-pulse fill-mystic-gold/50 shadow-[0_0_10px_rgba(212,175,55,0.8)]" />
-                     </div>
-                  </div>
-
-                 <div className="space-y-4 text-center px-6">
-                    <h3 className="font-mystic text-2xl text-mystic-gold uppercase tracking-[0.2em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                      {t('preparingReading')}
-                      <span className="inline-block w-[2ch] text-left">{dots}</span>
-                    </h3>
-                    <p className="text-sm text-white/90 italic font-serif max-w-[280px] mx-auto drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)] leading-relaxed">
-                      {t('starsAligning')}
-                    </p>
-                  </div>
-               </div>
-            </motion.div>
-          )}
 
           {phase === "result" && selectedCards.length === 3 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
@@ -538,7 +564,7 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
                   </div>
                 </Card>
 
-                <Button onClick={onBack} className="w-full py-4 rounded-full bg-[#D4AF37] text-black font-bold hover:bg-[#D4AF37]/90 transition-all shadow-lg shadow-[#D4AF37]/20">
+                <Button onClick={handleComplete} className="w-full py-4 rounded-full bg-[#D4AF37] text-black font-bold hover:bg-[#D4AF37]/90 transition-all shadow-lg shadow-[#D4AF37]/20">
                     {t('completeClose')}
                   </Button>
                   
