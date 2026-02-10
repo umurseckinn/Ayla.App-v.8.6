@@ -854,19 +854,28 @@ export function Dashboard({ profile: initialProfile }: { profile: any }) {
             </motion.div>
           )}
 
-          {activeTab === "archetype" && (
-            <motion.div
-              key="archetype"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20, position: "absolute", top: 0, width: "100%", zIndex: 20 }}
-              transition={{ duration: 0.3 }}
-              className="w-full h-full"
-            >
-              <ArchetypeAnalysis profile={currentProfile} onBack={() => setActiveTab("home")} onSpend={handleSpend} />
-            </motion.div>
-          )}
+
         </AnimatePresence>
+
+        {/* Persistent Archetype Tab - Always mounted for instant loading */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ 
+            opacity: activeTab === "archetype" ? 1 : 0,
+            x: activeTab === "archetype" ? 0 : 20,
+            pointerEvents: activeTab === "archetype" ? 'auto' : 'none',
+            zIndex: activeTab === "archetype" ? 50 : -1
+          }}
+          transition={{ duration: 0.3 }}
+          className="fixed inset-0 w-full h-full"
+          style={{ visibility: activeTab === "archetype" || activeTab === "home" ? 'visible' : 'hidden' }}
+        >
+           <ArchetypeAnalysis 
+             profile={currentProfile} 
+             onBack={() => setActiveTab("home")} 
+             onSpend={handleSpend} 
+           />
+        </motion.div>
 
         {/* Persistent Tarot Tab - Always mounted for instant loading */}
         <motion.div
