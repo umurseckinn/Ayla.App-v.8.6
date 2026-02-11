@@ -44,14 +44,11 @@ export function NatalSignModal({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
     } else {
       document.body.style.overflow = 'unset';
-      document.body.style.touchAction = 'auto';
     }
     return () => {
       document.body.style.overflow = 'unset';
-      document.body.style.touchAction = 'auto';
     };
   }, [isOpen]);
 
@@ -73,24 +70,24 @@ export function NatalSignModal({
   return (
     <AnimatePresence>
       {isOpen && (
+        <>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] flex flex-col bg-black/95 backdrop-blur-xl"
+            className="fixed inset-0 z-[150] bg-black/95 backdrop-blur-xl"
             onClick={onClose}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-[151] max-w-md mx-auto pointer-events-none"
           >
             <div 
-              className="flex-1 flex items-end sm:items-center justify-center px-4 overflow-hidden"
-              style={{
-                paddingTop: 'max(1rem, env(safe-area-inset-top))',
-                paddingBottom: 'max(1rem, env(safe-area-inset-bottom))'
-              }}
+              className="w-full bg-black relative rounded-3xl border border-mystic-gold p-6 md:p-8 shadow-2xl flex flex-col max-h-[85vh] pointer-events-auto"
+              onClick={e => e.stopPropagation()}
             >
-            <div 
-                className="w-full max-w-md bg-black relative rounded-t-3xl sm:rounded-3xl border border-mystic-gold p-6 md:p-8 shadow-2xl flex flex-col max-h-[90vh] sm:max-h-[85vh]"
-                onClick={e => e.stopPropagation()}
-              >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-mystic-gold/50 to-transparent z-20" />
               
               <button
@@ -146,8 +143,8 @@ export function NatalSignModal({
                 </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
