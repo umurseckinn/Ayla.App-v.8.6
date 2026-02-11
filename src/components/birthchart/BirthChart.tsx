@@ -41,7 +41,7 @@ import { PlanetIcon } from "../ui/PlanetIcon";
 import { NatalPlanetModal } from "./NatalPlanetModal";
 import { NatalSignModal } from "./NatalSignModal";
 import { PremiumModal } from "@/components/premium/PremiumModal";
-import { getNatalPlanetInterpretation } from "@/lib/natal-interpretations";
+import { getNatalPlanetInterpretation, getHouseInterpretation } from "@/lib/natal-interpretations";
 import { SIGN_INTERPRETATIONS } from "@/lib/sign-interpretations";
 import { getEnergyDescription } from "@/lib/energy-potential-service";
 import astroKnowledge from "@/lib/data/astro_knowledge_base.json";
@@ -475,13 +475,13 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                       <ZodiacImage sign={houseSign} size={40} className="shrink-0" />
                       <p className="text-mystic-gold font-mystic">{formatHouseNumber(Number(num), language)}: {getTranslatedSign(houseSign, language)}</p>
                     </div>
-                </div>
 
-                {!isLocked && (
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                    {selectedHouse === Number(num) ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-mystic-gold/50" />}
-                  </div>
-                )}
+                    {!isLocked && (
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2">
+                        {selectedHouse === Number(num) ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-mystic-gold/50" />}
+                      </div>
+                    )}
+                </div>
 
                 {isLocked && (
                   <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -494,17 +494,17 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                 )}
 
               {!isLocked && selectedHouse === Number(num) && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="mt-3 pt-3 border-t border-mystic-gold/20"
-                >
-                  <p className="text-mystic-gold/90 font-sans text-sm leading-relaxed text-center">
-                    &quot;{text}&quot;
-                  </p>
-                </motion.div>
-              )}
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="mt-3 pt-3 border-t border-mystic-gold/20"
+                  >
+                    <p className="text-mystic-gold/90 font-sans text-sm leading-relaxed text-center">
+                      &quot;{getHouseInterpretation(Number(num), houseSign, language)}&quot;
+                    </p>
+                  </motion.div>
+                )}
             </MotionCard>
           );
         })}
@@ -573,7 +573,7 @@ export function BirthChart({ onBack, onTabChange }: BirthChartProps) {
                   </div>
                 </div>
                 {!isLocked && (
-                  <div className="absolute right-4">
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2">
                     {isOpen ? <ChevronUp className="w-5 h-5 text-mystic-gold" /> : <ChevronDown className="w-5 h-5 text-mystic-gold/50" />}
                   </div>
                 )}
