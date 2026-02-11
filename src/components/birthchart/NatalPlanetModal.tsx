@@ -67,27 +67,27 @@ export function NatalPlanetModal({
           onClick={onClose}
         >
           <div 
-            className="flex-1 flex items-center justify-center px-4"
+            className="flex-1 flex items-center justify-center px-4 overflow-hidden"
             style={{
-              paddingTop: 'calc(var(--sat, env(safe-area-inset-top, 0px)) + 0.75rem)',
-              paddingBottom: 'calc(var(--sab, env(safe-area-inset-bottom, 0px)) + 0.75rem)'
+              paddingTop: 'max(1rem, env(safe-area-inset-top))',
+              paddingBottom: 'max(1rem, env(safe-area-inset-bottom))'
             }}
           >
             <div 
-              className="w-full max-w-md bg-gradient-to-b from-mystic-blue via-indigo-950 to-mystic-purple relative rounded-3xl border border-mystic-gold/30 p-8 shadow-2xl overflow-hidden"
+              className="w-full max-w-md bg-black relative rounded-3xl border border-mystic-gold p-6 md:p-8 shadow-2xl flex flex-col max-h-[85vh] overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-mystic-gold/50 to-transparent" />
               
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 text-white/50 hover:bg-white/10 transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/5 text-white/50 hover:bg-white/10 transition-colors z-20"
               >
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="flex flex-col items-center text-center space-y-6">
-                <div id="natal-planet-details" className="relative w-full max-w-[280px] h-32 flex items-center justify-center gap-4">
+              <div className="flex flex-col space-y-6 overflow-hidden">
+                <div id="natal-planet-details" className="relative w-full h-32 shrink-0 flex items-center justify-center gap-4">
                   <div className="absolute inset-0 bg-mystic-gold/10 rounded-full blur-3xl animate-pulse" />
                   
                   <motion.div 
@@ -112,7 +112,7 @@ export function NatalPlanetModal({
                   </motion.div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 text-center shrink-0">
                   <h2 className="text-3xl font-mystic text-mystic-gold tracking-widest uppercase">
                     {planetName}
                   </h2>
@@ -121,21 +121,23 @@ export function NatalPlanetModal({
                   </p>
                 </div>
 
-                <Card className="p-6 bg-white/5 border-mystic-gold/20 relative overflow-hidden w-full">
-                  <div className="absolute -top-4 -right-4 opacity-5">
-                    <Sparkles className="w-20 h-20 text-mystic-gold" />
-                  </div>
-                  <h4 className="text-mystic-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 flex items-center justify-center gap-2">
-                    <Zap className="w-4 h-4" /> {cosmicLegacyText}
-                  </h4>
-                  <p className="text-white/95 text-base leading-relaxed font-medium text-center">
-                    {interpretation}
-                  </p>
-                </Card>
+                <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-4">
+                  <Card className="p-6 bg-white/5 border-mystic-gold/20 relative overflow-hidden w-full">
+                    <div className="absolute -top-4 -right-4 opacity-5">
+                      <Sparkles className="w-20 h-20 text-mystic-gold" />
+                    </div>
+                    <h4 className="text-mystic-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 flex items-center justify-start gap-2">
+                      <Zap className="w-4 h-4" /> {cosmicLegacyText}
+                    </h4>
+                    <p className="text-mystic-gold text-base leading-relaxed font-medium text-left">
+                      {interpretation}
+                    </p>
+                  </Card>
+                </div>
 
                 <Button 
                   onClick={onClose}
-                  className="w-full bg-mystic-gold text-mystic-purple hover:bg-mystic-gold/90 h-14 text-lg font-mystic rounded-2xl shadow-lg shadow-mystic-gold/10"
+                  className="w-full bg-mystic-gold text-mystic-purple hover:bg-mystic-gold/90 h-14 text-lg font-mystic rounded-2xl shadow-lg shadow-mystic-gold/10 shrink-0"
                 >
                   {understoodText}
                 </Button>
