@@ -12,6 +12,8 @@ import {
   CONCLUSION_FRAGMENTS_EN
 } from "./tarot-engine-data-en";
 import { formatHouseNumber } from "./transit-interpretations";
+import { getTurkishTarotCardData } from "./tarot-tr-engine-data";
+import { getEnglishTarotCardData } from "./tarot-en-engine-data";
 
 export type TarotTopic = "love" | "career" | "health" | "money" | "general";
 export type TarotPosition = "past" | "present" | "future";
@@ -99,6 +101,64 @@ export function generatePersonalizedReading({
 
   cards.forEach((card, idx) => {
     const position: TarotPosition = idx === 0 ? "past" : idx === 1 ? "present" : "future";
+    
+    // Check for language-specific data
+    if (language === 'tr') {
+      const trCardData = getTurkishTarotCardData(card.id);
+      if (trCardData) {
+        const topicMap: Record<string, string> = {
+          love: "ask",
+          career: "is",
+          money: "para",
+          health: "saglik",
+          general: "hepsi"
+        };
+        const posMap: Record<string, string> = {
+          past: "gecmis",
+          present: "simdi",
+          future: "gelecek"
+        };
+        
+        const trTopic = topicMap[topic] || "hepsi";
+        const trPos = posMap[position];
+        const stateData = card.isReversed ? trCardData.reversed : trCardData.upright;
+        
+        // @ts-ignore
+        const cardText = stateData[trTopic][trPos];
+        
+        interpretation += `### ${card.englishName} (${card.name})${card.isReversed ? ' (Ters)' : ''}\n`;
+        interpretation += `${cardText}\n\n`;
+        return; // Skip the generic logic for this card
+      }
+    } else if (language === 'en') {
+      const enCardData = getEnglishTarotCardData(card.id);
+      if (enCardData) {
+        const topicMap: Record<string, string> = {
+          love: "ask",
+          career: "is",
+          money: "para",
+          health: "saglik",
+          general: "hepsi"
+        };
+        const posMap: Record<string, string> = {
+          past: "gecmis",
+          present: "simdi",
+          future: "gelecek"
+        };
+        
+        const enTopic = topicMap[topic] || "hepsi";
+        const enPos = posMap[position];
+        const stateData = card.isReversed ? enCardData.reversed : enCardData.upright;
+        
+        // @ts-ignore
+        const cardText = stateData[enTopic][enPos];
+        
+        interpretation += `### ${card.englishName}${card.isReversed ? ' (Reversed)' : ''}\n`;
+        interpretation += `${cardText}\n\n`;
+        return; // Skip the generic logic for this card
+      }
+    }
+
     const cardData = getCardData(card.id, language === 'en' ? card.englishName : card.name);
 
     let topicMeaning = "";

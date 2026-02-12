@@ -112,62 +112,45 @@ function HouseDetailModal({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="text-center space-y-6 overflow-y-auto flex-1 pb-4 no-scrollbar">
-          <div className="flex justify-center items-center gap-6">
-            <div className="text-center">
-              <ZodiacImage sign={house.person1Sign} size={64} className="mb-1 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] mx-auto" />
-              <p className={`text-[10px] ${colors.text} font-medium`}>{userName}</p>
-            </div>
-            <span className="text-5xl drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">{house.icon}</span>
-            <div className="text-center">
-              <ZodiacImage sign={house.person2Sign} size={64} className="mb-1 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] mx-auto" />
-              <p className={`text-[10px] ${colors.text} font-medium`}>{partnerName}</p>
-            </div>
-          </div>
+                <div className="text-center space-y-6 overflow-y-auto flex-1 pb-4 no-scrollbar">
+                  <div className="flex justify-center items-center gap-6">
+                    <div className="text-center">
+                      <ZodiacImage sign={house.person1Sign} size={64} className="mb-1 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] mx-auto" />
+                      <p className={`text-[10px] ${colors.text} font-medium`}>{userName}</p>
+                    </div>
+                    <span className="text-5xl drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]">{house.icon}</span>
+                    <div className="text-center">
+                      <ZodiacImage sign={house.person2Sign} size={64} className="mb-1 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] mx-auto" />
+                      <p className={`text-[10px] ${colors.text} font-medium`}>{partnerName}</p>
+                    </div>
+                  </div>
 
-          <div>
-            <h3 className={`text-2xl font-mystic ${colors.text} font-bold`}>{house.title}</h3>
-            <p className={`text-sm ${colors.text} opacity-70 uppercase tracking-[0.2em] font-semibold px-4`}>{house.theme}</p>
-          </div>
+                  <div>
+                    <h3 className={`text-2xl font-mystic ${colors.text} font-bold`}>{house.title}</h3>
+                    <p className={`text-sm ${colors.text} opacity-70 uppercase tracking-[0.2em] font-semibold px-4`}>{house.theme}</p>
+                  </div>
 
-          <div className="space-y-2">
-            <div className="flex justify-between items-center px-1">
-              <span className={`text-xs font-bold uppercase tracking-wider ${colors.text}`}>{house.tierLabel}</span>
-              <span className={`text-2xl font-mystic font-bold ${colors.text}`}>%{house.score}</span>
-            </div>
-            <div className="w-full bg-mystic-gold/10 h-2 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${house.score}%` }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`h-full ${getBarColorHelper(house.score)}`}
-              />
-            </div>
-          </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center px-1">
+                      <span className={`text-xs font-bold uppercase tracking-wider ${colors.text}`}>{house.tierLabel}</span>
+                      <span className={`text-2xl font-mystic font-bold ${colors.text}`}>%{house.score}</span>
+                    </div>
+                    <div className="w-full bg-mystic-gold/10 h-2 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${house.score}%` }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className={`h-full ${getBarColorHelper(house.score)}`}
+                      />
+                    </div>
+                  </div>
 
-          <div className={`${colors.bg} rounded-2xl p-5 border ${colors.border}`}>
-            <p className={`text-lg ${colors.text} font-bold leading-relaxed font-serif italic`}>
-              {house.description}
-            </p>
-          </div>
-
-          <div className="pt-4 space-y-4">
-            <div className="flex items-center justify-center gap-2">
-              <div className={`h-[1px] flex-1 ${colors.border.replace('border-', 'bg-')}`} />
-              <div className="flex items-center gap-2">
-                <img src={AYLA_IMAGE} alt="Ayla" className="w-6 h-6 ayla-isolated" />
-                <span className={`text-[10px] uppercase tracking-widest ${colors.text} font-mystic font-bold`}>{t('aylaGuidance')}</span>
-              </div>
-              <div className={`h-[1px] flex-1 ${colors.border.replace('border-', 'bg-')}`} />
-            </div>
-
-            <div className={`${colors.bg} rounded-2xl p-5 border ${colors.border}`}>
-              <p className={`text-lg ${colors.text} font-bold leading-relaxed font-serif`}>
-                {aylaGuide}
-              </p>
-            </div>
-          </div>
-        </div>
+                  <div className={`${colors.bg} rounded-2xl p-5 border ${colors.border}`}>
+                    <p className={`text-lg ${colors.text} font-bold leading-relaxed font-serif`}>
+                      {generateAylaGuide(house.houseNumber, house.person1Sign, house.person2Sign, house.score, language as 'tr' | 'en')}
+                    </p>
+                  </div>
+                </div>
 
         <div className="pt-4 pb-[env(safe-area-inset-bottom)]">
           <Button
@@ -661,7 +644,7 @@ export function LoveCompatibility({ profile }: { profile: any }) {
                               </div>
 
                               <p className={`text-[15px] ${colors.text} font-bold leading-relaxed font-serif italic line-clamp-3`}>
-                                {house.description}
+                                {generateAylaGuide(house.houseNumber, house.person1Sign, house.person2Sign, house.score, language as 'tr' | 'en')}
                               </p>
 
                               <p className={`text-[9px] ${colors.text} opacity-40 text-center pt-2`}>{t('tapForDetails')}</p>

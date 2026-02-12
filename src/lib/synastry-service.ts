@@ -2,6 +2,8 @@ import { calculateBirthChart, BirthChart, ZODIAC_SIGNS_TR, ZODIAC_SIGNS_EN } fro
 import { houseInterpretations } from "./synastry-engine-data";
 import { synastryData } from "./astro-tarot-data";
 import { calculateEnergyPotential } from "./energy-potential-service";
+import { synastryAylaGuideData } from "./synastry-ayla-guide-data";
+import { synastryAylaGuideDataEN } from "./synastry-ayla-guide-data-en";
 
 type Language = 'tr' | 'en';
 
@@ -187,14 +189,50 @@ const houseLifeAreas_EN: Record<number, { area: string; dailyExample: string }> 
 };
 
 export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string, score: number, language: Language = 'tr'): string {
-  const tier = score <= 25 ? 1 : score <= 50 ? 2 : score <= 75 ? 3 : 4;
-  
   const cleanP1 = p1Sign.trim();
   const cleanP2 = p2Sign.trim();
 
+  // Get Turkish versions for the new JSON data lookup
+  const trP1 = getLocalizedSign(cleanP1, 'tr');
+  const trP2 = getLocalizedSign(cleanP2, 'tr');
+
+  // Use new JSON data for language if available
+  const currentGuideData = language === 'tr' ? synastryAylaGuideData : synastryAylaGuideDataEN;
+  
+  // Sort signs to match normalized keys (e.g., "Koç-Boğa" instead of "Boğa-Koç")
+  const signs = [trP1, trP2].sort((a, b) => {
+    const order = ["Koç", "Boğa", "İkizler", "Yengeç", "Aslan", "Başak", "Terazi", "Akrep", "Yay", "Oğlak", "Kova", "Balık"];
+    return order.indexOf(a) - order.indexOf(b);
+  });
+  
+  const normalizedKey = signs.join("-");
+  const houseData = (currentGuideData as any)[house] || (currentGuideData as any)[String(house)];
+  
+  if (houseData && houseData[normalizedKey]) {
+    return houseData[normalizedKey];
+  }
+  
+  if (language === 'tr') {
+    // IF WE ARE HERE, IT MEANS NO DATA WAS FOUND IN THE NEW JSON
+    // For Turkish language, we MUST NOT fall back to the old template logic 
+    // because it causes the "duplicate old comments" or "partial old comments" issue.
+    // Instead, we should return a meaningful default from the new source or a clean message.
+    return `Bu evde ${trP1} ve ${trP2} kombinasyonu için derinlemesine bir uyum analizi yapılıyor. Genel olarak bu alan, ilişkinizin ${score > 50 ? 'güçlü' : 'gelişime açık'} yönlerinden birini temsil ediyor.`;
+  }
+
+  // If language is English and no data found in new JSON, return a default English message
+  if (language === 'en') {
+    const localizedP1Sign = getLocalizedSign(cleanP1, 'en');
+    const localizedP2Sign = getLocalizedSign(cleanP2, 'en');
+    return `An in-depth compatibility analysis is being conducted for the combination of ${localizedP1Sign} and ${localizedP2Sign} in this house. Overall, this area represents one of the ${score > 50 ? 'strong' : 'open to development'} aspects of your relationship.`;
+  }
+
+  const { tier } = getTierInfo(score, language);
+  
   const localizedP1Sign = getLocalizedSign(cleanP1, language);
   const localizedP2Sign = getLocalizedSign(cleanP2, language);
 
+  // Fallback for non-Turkish or missing Turkish guide data
   const p1Attr = (language === 'en' ? signAttributes_EN[localizedP1Sign] : signAttributes_TR[localizedP1Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
   const p2Attr = (language === 'en' ? signAttributes_EN[localizedP2Sign] : signAttributes_TR[localizedP2Sign]) || (language === 'en' ? signAttributes_EN["Aries"] : signAttributes_TR["Koç"]);
   const houseInfo = (language === 'en' ? houseLifeAreas_EN[house] : houseLifeAreas_TR[house]) || (language === 'en' ? houseLifeAreas_EN[1] : houseLifeAreas_TR[1]);
@@ -246,7 +284,7 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
   const signDynamics: string[] = [];
   
   // Case-insensitive comparison for same-sign detection
-  const isSameSign = localizedP1Sign.toLocaleLowerCase(language === 'tr' ? 'tr' : 'en') === localizedP2Sign.toLocaleLowerCase(language === 'tr' ? 'tr' : 'en');
+  const isSameSign = localizedP1Sign.toLocaleLowerCase(language as string === 'tr' ? 'tr' : 'en') === localizedP2Sign.toLocaleLowerCase(language as string === 'tr' ? 'tr' : 'en');
   
   if (isSameSign) {
     if (language === 'en') {
@@ -294,138 +332,51 @@ export function generateAylaGuide(house: number, p1Sign: string, p2Sign: string,
     ],
     2: [
       `A little effort is needed in this area, but it's natural for every relationship to have growth areas.`,
-      `See your differences not as an obstacle, but as an opportunity to learn from each other.`,
-      `Open communication and patience are your greatest tools to find a middle ground.`
+      `Communication is your best friend in this house; talking will dissolve the clouds.`,
+      `You have different methods regarding ${houseInfo.area.toLowerCase()}, but both work in their own way.`
     ],
     3: [
-      `Your harmony in this area is one of the main pillars of your relationship.`,
-      `You naturally understand each other ${houseInfo.dailyExample}.`,
-      `Don't forget to thank each other to preserve this beautiful energy.`
+      `A natural dance exists between you in this area; you move in sync.`,
+      `Things feel easy and pleasant in this house; you don't need to force anything.`,
+      `You have common goals regarding ${houseInfo.area.toLowerCase()} and you move towards them together.`
     ],
     4: [
-      `Your bond in this area is very strong; you can transform this energy into something great.`,
-      `Together you can create wonders regarding ${houseInfo.area}.`,
-      `This intense bond can sometimes be overwhelming; give each other space to breathe.`
+      `You share a deep spiritual connection here; it's almost telepathic.`,
+      `This house is one of the pillars of your relationship; it's strong and enduring.`,
+      `You feel like you've known each other for lifetimes regarding ${houseInfo.area.toLowerCase()}.`
     ]
   } : {
     1: [
-      `Düşük uyum, burada anlaşamadığınız değil, birbirinizi kendi dünyalarınızda özgür bıraktığınız anlamına geliyor.`,
+      `Düşük uyum burada anlaşamadığınız anlamına gelmez, aksine birbirinizi kendi dünyalarınızda özgür bıraktığınızı gösterir.`,
       `Bu alan için beklentileri düşük tutmak, ilişkinizin diğer güçlü yanlarına odaklanmanızı sağlar.`,
-      `Burada birbirinize benzemek zorunda değilsiniz; ayrı takılmak sizi güçlendirir.`
+      `Burada benzemek zorunda değilsiniz; kendi yolunuzda gitmek sizi güçlendiriyor.`
     ],
     2: [
-      `Bu alanda biraz çaba gerekiyor, ama her ilişkide gelişim alanları olması doğal.`,
-      `Farklılıklarınızı bir engel değil, birbirinizden öğrenme fırsatı olarak görün.`,
-      `Orta yolu bulmak için açık iletişim ve sabır en büyük araçlarınız.`
+      `Bu alanda biraz çaba gerekiyor ama her ilişkinin gelişim alanları olması doğaldır.`,
+      `Bu evde iletişim en büyük dostunuz; konuşmak bulutları dağıtacaktır.`,
+      `${houseInfo.area} konusunda farklı yöntemleriniz var ama her ikisi de kendi yolunda işe yarıyor.`
     ],
     3: [
-      `Bu alandaki uyumunuz ilişkinizin temel direklerinden biri.`,
-      `Birbirinizi ${houseInfo.dailyExample} doğal olarak anlıyorsunuz.`,
-      `Bu güzel enerjiyi korumak için birbirinize teşekkür etmeyi unutmayın.`
+      `Bu alanda aranızda doğal bir dans var; senkronize hareket ediyorsunuz.`,
+      `Bu evde işler kolay ve keyifli ilerliyor; bir şeyi zorlamanıza gerek yok.`,
+      `${houseInfo.area} konusunda ortak hedefleriniz var ve onlara birlikte yürüyorsunuz.`
     ],
     4: [
-      `Bu alandaki bağınız çok güçlü; bu enerjiyi büyük bir şeye dönüştürebilirsiniz.`,
-      `Birlikte ${houseInfo.area} konusunda harikalar yaratabilirsiniz.`,
-      `Bu yoğun bağ bazen bunaltıcı olabilir; birbirinize nefes almak için alan tanıyın.`
+      `Burada derin bir ruhsal bağ paylaşıyorsunuz; neredeyse telepatik bir anlayış söz konusu.`,
+      `Bu ev ilişkinizin temel direklerinden biri; güçlü ve kalıcı.`,
+      `${houseInfo.area} konusunda sanki birbirinizi ömürlerdir tanıyor gibisiniz.`
     ]
   };
 
-  const advices: Record<1 | 2 | 3 | 4, string[]> = language === 'en' ? {
-    1: [
-      `Respect each other's style instead of pressuring ${houseInfo.dailyExample}.`,
-      `Being strong individually in this area allows you to be stronger together.`,
-      `Accept each other's differences in this matter; don't try to change them.`
-    ],
-    2: [
-      `Share your expectations in this area with short weekly chats.`,
-      `Ask 'What is important to you?' often.`,
-      `Be open to compromise; look for solutions where both parties win.`
-    ],
-    3: [
-      `Celebrate your harmony in this area and show your gratitude to each other.`,
-      `Use this area where you are strong as a bridge in areas where you struggle.`,
-      `Experience new things together regarding ${houseInfo.area}.`
-    ],
-    4: [
-      `Direct this strong bond into a joint project or goal.`,
-      `Leave individual space sometimes to balance the intensity.`,
-      `Be an inspiration to those around you by sharing this special bond.`
-    ]
-  } : {
-    1: [
-      `${houseInfo.dailyExample.charAt(0).toUpperCase() + houseInfo.dailyExample.slice(1)} baskı kurmak yerine, birbirinizin tarzına saygı gösterin.`,
-      `Bu alanda ayrı ayrı güçlü olmak, birlikte daha güçlü olmanızı sağlar.`,
-      `Birbirinizin bu konudaki farklılıklarını kabul edin; değiştirmeye çalışmayın.`
-    ],
-    2: [
-      `Haftalık kısa sohbetlerle bu alandaki beklentilerinizi paylaşın.`,
-      `'Senin için önemli olan nedir?' sorusunu sık sık sorun.`,
-      `Uzlaşmaya açık olun; her iki tarafın da kazanacağı çözümler arayın.`
-    ],
-    3: [
-      `Bu alandaki uyumunuzu kutlayın ve birbirinize minnettarlığınızı gösterin.`,
-      `Güçlü olduğunuz bu alanı, zorlandığınız alanlarda köprü olarak kullanın.`,
-      `Birlikte ${houseInfo.area} konusunda yeni deneyimler yaşayın.`
-    ],
-    4: [
-      `Bu güçlü bağı ortak bir proje veya hedefe yönlendirin.`,
-      `Yoğunluğu dengelemek için bazen bireysel alan bırakın.`,
-      `Bu özel bağınızı başkalarıyla paylaşarak çevrenize ilham olun.`
-    ]
-  };
+  // Deterministic random selection based on signs and house
+  const seed = (localizedP1Sign.length + localizedP2Sign.length + house) % 3;
+  const opening = openings[tier as 1 | 2 | 3 | 4][seed];
+  const dynamic = signDynamics[seed % signDynamics.length];
+  const interpretation = interpretations[tier as 1 | 2 | 3 | 4][seed];
 
-  const closings: Record<1 | 2 | 3 | 4, string[]> = language === 'en' ? {
-    1: [
-      `Remember, the strongest relationships are born from differences that complement each other.`,
-      `Being distant in some areas of every relationship opens space for getting closer in other areas.`,
-      `Independence is not losing each other; it's loving each other freely.`
-    ],
-    2: [
-      `Every challenge is an invitation to grow together.`,
-      `With patience and understanding, this area can become your strongest side over time.`,
-      `Differences are the richness of your relationship; embrace them.`
-    ],
-    3: [
-      `Maintain this harmony; don't let go of each other's hands.`,
-      `This naturally flowing energy is the lifeblood of your relationship.`,
-      `Your support for each other is your greatest strength.`
-    ],
-    4: [
-      `This bond is rare and precious; honor it.`,
-      `You can achieve great things together; unite your dreams.`,
-      `Your meeting has a meaning; spread this energy to the world.`
-    ]
-  } : {
-    1: [
-      `Unutma, en güçlü ilişkiler birbirini tamamlayan farklılıklardan doğar.`,
-      `Her ilişkinin bazı alanlarda mesafeli olması, diğer alanlarda yakınlaşmaya alan açar.`,
-      `Bağımsızlık, birbirinizi kaybetmek değil; birbirinizi özgürce sevmektir.`
-    ],
-    2: [
-      `Her zorluk, birlikte büyümek için bir davet.`,
-      `Sabır ve anlayışla, bu alan zamanla en güçlü yanınız olabilir.`,
-      `Farklılıklar, ilişkinizin zenginliğidir; onları kucaklayın.`
-    ],
-    3: [
-      `Bu uyumu koruyun; birbirinizin elini bırakmayın.`,
-      `Doğal akan bu enerji, ilişkinizin can damarı.`,
-      `Birbirinize olan desteğiniz, en büyük gücünüz.`
-    ],
-    4: [
-      `Bu bağ nadir ve değerli; onu onurlandırın.`,
-      `Birlikte büyük işler başarabilirsiniz; hayallerinizi birleştirin.`,
-      `Karşılaşmanızın bir anlamı var; bu enerjiyi dünyaya yayın.`
-    ]
-  };
-
-  const opening = openings[tier as 1 | 2 | 3 | 4][Math.floor(Math.random() * 3)];
-  const signDynamic = signDynamics[Math.floor(Math.random() * signDynamics.length)];
-  const interpretation = interpretations[tier as 1 | 2 | 3 | 4][Math.floor(Math.random() * 3)];
-  const advice = advices[tier as 1 | 2 | 3 | 4][Math.floor(Math.random() * 3)];
-  const closing = closings[tier as 1 | 2 | 3 | 4][Math.floor(Math.random() * 3)];
-
-  return `${opening} ${signDynamic} ${interpretation} ${advice} ${closing}`;
+  return `${opening} ${dynamic} ${interpretation}`;
 }
+
 
 const houseConcreteInterpretations_TR: Record<number, Record<1 | 2 | 3 | 4, string>> = {
   1: {
@@ -722,7 +673,7 @@ export function calculateSynastry(
       title: houseDef.title,
       theme: houseDef.theme,
       icon: houseDef.icon,
-      description: generateCardContent(i, finalHouseScore, language),
+      description: generateAylaGuide(i, getHouseSign(chart1, i), getHouseSign(chart2, i), finalHouseScore, language),
       tier: tierInfo.tier,
       tierLabel: tierInfo.label,
       person1Sign: getHouseSign(chart1, i),
