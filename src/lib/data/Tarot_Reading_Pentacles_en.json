@@ -1,6 +1,63 @@
 [
   {
-    "card_id": 59,
+    "card_id": 64,
+    "card_name": "Ace of Pentacles",
+    "upright": {
+      "ask": {
+        "gecmis": "My dear, you laid such a solid and realistic foundation in your love life in the past that you understood back then that love is not just words. Perhaps that first concrete promise you made to someone or that valuable gift you received showed you how precious your relationship was. This material and spiritual wholeness you experienced during that period is the biggest reason for seeking trust in love even today. You discovered in those miraculous days how love is planted like a seed and how it flourishes. You still carry the peace of that safe harbor in the deepest part of your soul, darling.",
+        "simdi": "Honey, a complete period of 'abundance' is starting in your love life right now; it's as if a golden key has been left at the door of your heart! You are moving into a much more realistic, trust-filled, and peaceful phase in your relationship, as if everything is falling into place. If you are single, the person who will come across you will offer not only love but also great trust and comfort. This card heralds that the time has come for your emotions to bear fruit and that you will soon encounter a concrete proposal. You are currently in the most productive and lucky period of love, enjoy it, dear.",
+        "gelecek": "In your future, that immense opportunity waiting for you in the name of love looks concrete and valuable enough to radically change your life, darling. A soul will come across you such that together you will build not just a love but almost an unshakable fortress. Perhaps a marriage decision, or perhaps a house you will buy together, will lay the solidest foundation of your life. While living the most peaceful and richest state of love in the future, you will see that the big reward you've been waiting for was actually right at your fingertips. Get ready, dear, a golden age in love is starting for you."
+      },
+      "is": {
+        "gecmis": "In your past, you experienced the abundance of that first step you took by trusting your intuition in a material sense and settled your financial situation into a peaceful balance. Perhaps while making an investment you just said 'it felt right' and that decision brought you an unexpected abundance. Those days when you saw money not as a show of power but as a tool to build your future were very productive. This 'abundance consciousness' from those days allows you to look at money more calmly and safely even today. You discovered back then that financial freedom starts with a seed, darling.",
+        "simdi": "Honey, you are currently in a complete 'golden opportunity' period in your business life; you are literally surrounded by the abundance of a new project or job offer! Everything you touch turns to gold and you are at the right time to make that big breakthrough you've been waiting for in your career. Everyone admires your hard work and vision, you are literally holding success with your hands. This card says that the universe supports you to the fullest to make a new venture or take on a big responsibility in your current job right now. Keep shining, darling, you are currently on the most profitable page of your professional life.",
+        "gelecek": "In your future, there is news of an immense rise regarding your career goals and a very important financial success, darling. You will reach such a position that a source of income that will keep you comfortable for a lifetime, not just prestige, will open up there. Perhaps you will establish your own company or sit in that highest position of your dreams using only your talents. In the future, you will do everything called 'impossible' in business life and receive the reward of your efforts more than enough. Success will be the brightest fruit of your unshakable work ethic and honesty, believe in this."
+      },
+      "para": {
+        "simdi": "Darling, a huge gate of abundance is opening in your wallet right now, you will feel as if it's raining gold from the sky! Everything you touch turns into a concrete gain and you are making one of the luckiest financial starts of your life. This card whispers that that big money or investment opportunity you've been waiting for is right at your door right now. Now is the time to put your financial worries aside and enjoy this abundance, dear. The universe is impatient to offer you that valuable gift you deserve.",
+        "gelecek": "In your future, a very important source of income appears that will relieve you a lot in a material sense and register your financial freedom. Perhaps an inheritance, or perhaps a very profitable business partnership, will take your life to the peak financially. Days are very near when you will win almost a victory financially and multiply your money in the smartest ways. In the future, while gaining your financial independence, you will achieve this without being dependent on anyone and just with your own vision. A very bright, powerful, and wealth-filled future awaits you for your wallet, darling."
+      },
+      "saglik": {
+        "gecmis": "In your past, you laid a very solid foundation regarding your health and personally experienced how you can heal your body with the right habits, darling. Those days when you felt very fit, energetic, and physically fresh showed you how strong your body is. Perhaps you took that radical decision that would radically change your lifestyle and reaped the fruits all at once. This 'physical resistance' you gained during that period has been the biggest architect of your solid and glowing state today. You understood back then that the way to take good care of your body is through treating it with care like a temple, darling.",
+        "simdi": "Honey, your health energy is currently at its peak; you feel literally fit and full of life as if you've been reborn! You are in a magnificent period where all the fatigues in your body subside, your cells are renewed with a fresh energy. If you have an ailment, this card gives you the good news that the most correct treatment will yield results and a very successful healing process has begun. Starting a new diet, making time for sports, or taking good care of your body will be the greatest medicine for you right now. Your light is noticeable even from the outside, you are literally shining with health and that fresh life energy.",
+        "gelecek": "The health picture waiting for you in the future promises perfect vitality and physical peace, darling. You are entering a very powerful period where you achieve complete harmony with your body and your resistance against all diseases increases. Perhaps you will experience a healing miracle or completely establish that disciplined lifestyle that will take your body to the highest level. Those concrete decisions you will take to protect your health in the future will give you an energy everyone will envy even in your old age. Days when every kind of physical weakness will be replaced by an unquenchable fire of life will be with you very soon."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general 'luck and abundance' energy; life has dragged you toward concrete and enlightening opportunities many times. You lived that clear start in love, that immense success in work, and that unshakable vitality in your health at the same time, literally writing your fate with a golden pen. Those days when you always approached life realistically and as a visionary like a sage have been the biggest supporters of your self-confidence today. You literally rebuilt your fate in the past with your abundant intelligence and correct moves, dear. That abundance you lived continues to light your way even today.",
+        "simdi": "Darling, an atmosphere of 'breakthrough and abundance' prevails in every area of your life right now; literally everything is being shaped by those lucky touches of yours! Your heart is surrounded with peace, your mind with profitable projects, and your body with strength so much that there is no obstacle that can stand before you. It is the perfect time to bring out that productive soul within you to evaluate these new and concrete opportunities life offers you. Everything started with a seed and now that seed is about to turn into a giant tree of abundance that illuminates your whole world. Just believe and accept those golden opportunities life offers you without fearing anyone, darling.",
+        "gelecek": "Your future looks full of miraculous riches, clear decisions, and great successes in every area of life, darling! You will shine like a luck magnet in love, work, and personal development, being a symbol of abundance in your entire circle. Those concrete and profitable opportunities you will encounter will make you so happy that you will throw all the confusion of the past aside and run toward the future with shouts of gratitude. In this new journey full of success, happiness, and health, the universe will be your biggest supporter and luck your greatest guide. Get ready, dear, the most abundant, most productive, and most powerful period of your life is starting very soon for you!"
+      }
+    },
+    "reversed": {
+      "ask": {
+        "gecmis": "Darling, in your past, just when an opportunity came into your hands in love, you might have missed that chance due to financial concerns or insecurity. Perhaps you couldn't be sure of the other person's intention or couldn't show the necessary effort at that moment to put the relationship on a solid foundation. This imbalance experienced in that period left a bit of fear of 'what if the same thing happens again' in your heart. Understanding the value of opportunities only when they slip through your hands must have worn you out emotionally quite a bit. This instability in those days causes you to look at love more cautiously but equally suspiciously today.",
+        "simdi": "Darling, you might be experiencing a 'timing error' or fear of 'missing an opportunity' in your love life right now; it's as if something is always slipping away. You want to start a relationship but financial obstacles or the feeling of inadequacy within yourself might be blocking your way. Perhaps someone comes across you but you are late in understanding that person's value or you judge them with material criteria. This card says you need to stop for a moment right now, silence that greedy or fearful side, and focus on true love. There is an abundance right now but you can't see it because you closed your eyes, dear.",
+        "gelecek": "In your future, in some situations you will experience in the name of love, you have the risk of pushing away a great happiness due to excessive materialism or insecurity. That 'lucky' start you will encounter might remain only as a dream if you are not ready or act too suspiciously. Instead of asking 'what does this person add to me?' in your relationships, you will enter a period where you need to think 'what can I give?'. However, this process will be a lesson given for you to learn what true value is in love. If you want to find peace in the future, you should love that golden heart not just for material gain, but for spiritual wholeness."
+      },
+      "is": {
+        "gecmis": "In your past, you unfortunately wasted a very profitable offer or a project that came into your hands in business life due to lack of planning or inexperience, darling. Perhaps you were on the verge of a very big investment but succumbed to your fears and withdrew, and therefore you experienced a standstill in your career. This 'missed opportunity' and 'material error' from that period still cast a shadow on your professional self-confidence today and make you nervous in every new job. You lost your biggest chance in the business world perhaps because you caught it too early or unprepared. The regret of those days still restricts you somewhere inside, darling.",
+        "simdi": "Darling, you might be dealing with a 'investment error' or the situation of 'expected news not coming' in business life right now; things are not going as you want. While expecting a rise materially, mistakes in calculations or unplanned spending might be blocking your way. This card whispers that you should completely change your strategy right now and think twice especially when making new beginnings. Your motivation might be low but the real problem is in your wrong evaluation of opportunities. There is a 'caution' warning for your wallet right now, you need to make a more realistic plan immediately.",
+        "gelecek": "In your future, some material losses, postponed projects, and big disappointments appear regarding your career plans, darling. If you are expecting an important business offer, the fact that this offer is withdrawn or the conditions turn completely against you might annoy you quite a bit. You have a risk of losing a great opportunity to your rivals because of your greed or wrong analyses in business life. If you want to achieve success, don't give up on your dreams but take more modest and solid steps on how to protect them. If you want to be successful in the future, you must give up that 'everything will be very easy' air from now on, darling."
+      },
+      "para": {
+        "gecmis": "In your past, you unfortunately took a financial blow because you mismanaged a large amount of money or a lucky opportunity that came into your hands materially, darling. In that period when you used money as a show of power or spent it without calculation, your wallet must have weakened considerably and your peace fled. Perhaps the lack of abundance of an investment tired you quite a bit back then, and the places where you said 'I will get rich from this business' let you down. This material disappointment from those days causes you to approach money always with a fear of 'will it go again?' today. You took risks not for your financial freedom, but only for your momentary pleasures in those days, darling.",
+        "simdi": "Darling, a period of 'abundance leak' and 'unplannedness' prevails in your wallet right now; it's as if money seems to be coming but you can't track where it goes. You might be inclined to believe groundless investment advice or enter wrong property purchases/sales in financial matters, please be careful! This period says the conditions are not suitable at all for making a financial agreement and the risk of a fraud is high. You are in a time frame where you need to act with concrete data, not your greed, to protect your money. You should master your spending and protect your wallet from external influences.",
+        "gelecek": "In your future, some losses you will experience in a material sense might shake you due to a wrong investment or a fraud story. Believing in that fake offer that looks like a financial opportunity could bring you to the brink of a major bankruptcy in the future. If you avoid the disciplined struggle you must give to protect your money, your financial independence will not go beyond a dream. In this process, it is essential to learn to be patient and use your logic, not your greed, while managing money. To prosper in the future, you must close those holes in your wallet now and cut your coat according to your cloth."
+      },
+      "saglik": {
+        "gecmis": "In your past, you neglected an opportunity regarding your health, that is, a correct treatment method or a sports discipline because you were 'lazy', and you made the healing process difficult, darling. While your body was giving alarms, you were so attached to that comfort or bad habits that you couldn't lay the necessary foundation for your health. Perhaps you interrupted a very promising diet program and therefore your body never reached that expected vitality. This 'negligence' state from that period triggers the fear of 'is there a permanent problem?' even at the slightest fatigue today. Back then, you listened to the voice of your laziness, not the voice of your body, darling.",
+        "simdi": "Darling, your body is currently in 'energy waste' and 'poor nutrition'; your unending negligence is exhausting every cell! You give yourself so much to the outside world or your work that you pass off the pains in your body saying 'it'll pass' but it doesn't. This card cries out that you urgently need to take a break, get a check-up, or at least transition to a healthy life right now. The real problem is this 'nothing happens to me' attitude of yours, darling, your body just needs real attention and discipline. Please put those bad habits aside; otherwise this instability will really make you sick.",
+        "gelecek": "In your future, a process that will challenge you quite a bit regarding health and where you will deal especially with nutrition or inactivity-related problems awaits you, darling. As long as you see taking care of yourself as a 'waste of time,' reaching full vitality will be that much more difficult and painful. The physical fatigues you will encounter in the future will be a result of your current wrong decisions and lack of interest in your body. You might have to enter a very restrictive treatment program to regain your health in the future. If you don't discipline that 'comfort-loving' soul within you now, your body will one day force you to stop."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general 'missed opportunities' and 'lack of appreciation' energy; life has dragged you toward abundance many times but you weren't ready. Not being able to establish that secure bond in love, blowing that profitable business in work, and saying 'I'll look later' in your health might have led you to some regrets today. Those days when you envied others' lives while losing those unique golden opportunities in your own hands have left a deep void in your soul. You were like a warrior who took their guard against life but swung their sword in the wrong place for a period. This 'loss of blessing' from that period still makes you restless today.",
+        "simdi": "Darling, you are currently in a phase of 'chaos' and 'worthlessness' in your general life; it's as if you don't appreciate anything or you break everything. Whichever job you touch, it stays in your hand; the news you expect always comes incomplete or negative; your energy is crawling on the floor. This card whispers that this current 'scattered and greedy' state has extinguished that bright abundance within you. Why did you fall apart so easily and why did you take the real values in your hand so lightly? You must pull yourself together immediately, determine your priorities, and hold the ropes of your life not with your ego, but only with your common sense. You might be a champion but your crown is very rusty right now, time to clean it.",
+        "gelecek": "In your future, some major obstacles, material losses, and wrong decisions in the general rhythm of life might be waiting for you, darling. Much more discipline and honesty than you expect will be needed for those big changes you planned to happen. Instead of thinking 'everything will be very easy' in love and work, you should make a more realistic defense plan against the difficulties you will encounter. The golden opportunity life will offer you will not come immediately, or it might burn you when it comes, so you must be very careful. If you learn to be patient and appreciate what you have, that true big victory will be yours."
+      }
+    }
+  },
+  {
+    "card_id": 65,
     "card_name": "Two of Pentacles",
     "upright": {
       "ask": {
@@ -58,7 +115,7 @@
     }
   },
   {
-    "card_id": 60,
+    "card_id": 66,
     "card_name": "Three of Pentacles",
     "upright": {
       "ask": {
@@ -116,7 +173,7 @@
     }
   },
   {
-    "card_id": 61,
+    "card_id": 67,
     "card_name": "Four of Pentacles",
     "upright": {
       "ask": {
@@ -174,7 +231,7 @@
     }
   },
   {
-    "card_id": 62,
+    "card_id": 68,
     "card_name": "Five of Pentacles",
     "upright": {
       "ask": {
@@ -216,7 +273,7 @@
     }
   },
   {
-    "card_id": 63,
+    "card_id": 69,
     "card_name": "Six of Pentacles",
     "upright": {
       "ask": {
@@ -274,7 +331,7 @@
     }
   },
   {
-    "card_id": 64,
+    "card_id": 70,
     "card_name": "Seven of Pentacles",
     "upright": {
       "ask": {
@@ -332,7 +389,7 @@
     }
   },
   {
-    "card_id": 65,
+    "card_id": 71,
     "card_name": "Eight of Pentacles",
     "upright": {
       "ask": {
@@ -390,7 +447,7 @@
     }
   },
   {
-    "card_id": 66,
+    "card_id": 72,
     "card_name": "Nine of Pentacles",
     "upright": {
       "ask": {
@@ -448,7 +505,7 @@
     }
   },
   {
-    "card_id": 67,
+    "card_id": 73,
     "card_name": "Ten of Pentacles",
     "upright": {
       "ask": {
@@ -506,7 +563,7 @@
     }
   },
   {
-    "card_id": 68,
+    "card_id": 74,
     "card_name": "Talisman Courtier (Page of Pentacles)",
     "upright": {
       "ask": {
@@ -564,7 +621,7 @@
     }
   },
   {
-    "card_id": 69,
+    "card_id": 75,
     "card_name": "Knight of Pentacles",
     "upright": {
       "ask": {
@@ -622,7 +679,7 @@
     }
   },
   {
-    "card_id": 70,
+    "card_id": 76,
     "card_name": "Queen of Pentacles",
     "upright": {
       "ask": {
@@ -680,7 +737,7 @@
     }
   },
   {
-    "card_id": 71,
+    "card_id": 77,
     "card_name": "King of Pentacles",
     "upright": {
       "ask": {

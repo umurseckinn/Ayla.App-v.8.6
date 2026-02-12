@@ -12,7 +12,7 @@ import { getTurkishCardInfo } from "@/lib/tarot-data";
 import { useProfile } from "@/hooks/useProfile";
 import { TarotCardBack } from "@/components/ui/TarotCardBack";
 import { getTarotImageUrl } from "@/lib/tarot-assets";
-import { generatePersonalizedReading, TarotTopic } from "@/lib/tarot-engine";
+import { TarotTopic } from "@/lib/tarot-engine";
 import { AstroModifier } from "@/lib/tarot-engine-data";
 import { COSMIC_LOGIC } from "@/lib/astrology";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -149,7 +149,7 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
   const getInterpretation = async (selected: Array<{ card: TarotCard, isReversed: boolean }>) => {
     setInterpreting(true);
 
-    setTimeout(() => {
+    setTimeout(async () => {
       try {
         const elementMap: Record<string, keyof AstroModifier> = {
           "Ateş": "Fire",
@@ -185,21 +185,30 @@ export function TarotReading({ onBack, onSpend, className }: { onBack: () => voi
         // Get current language from localStorage
         const currentLanguage = (typeof window !== 'undefined' ? localStorage.getItem('ayla_language') : 'tr') as 'tr' | 'en' || 'tr';
 
-        const interpretation = generatePersonalizedReading({
-          cards: selected.map(s => ({
-            id: s.card.name_short,
-            name: getTurkishCardInfo(s.card.name_short, s.card.name).name,
-            englishName: s.card.name,
-            isReversed: s.isReversed
-          })),
-          topic: selectedTopic || "general",
-          dominantElement,
-          birthChartHouses,
-          language: currentLanguage
+        const response = await fetch('/api/tarot-reading', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            cards: selected.map(s => ({
+              id: s.card.name_short,
+              name: getTurkishCardInfo(s.card.name_short, s.card.name).name,
+              englishName: s.card.name,
+              isReversed: s.isReversed
+            })),
+            topic: selectedTopic || "general",
+            dominantElement,
+            birthChartHouses,
+            language: currentLanguage
+          }),
         });
 
+        if (!response.ok) {
+          throw new Error('API request failed');
+        }
 
-
+        const { interpretation } = await response.json();
         setAiInterpretation(interpretation);
       } catch (error) {
         console.error("Interpretation Error:", error);

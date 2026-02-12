@@ -1,6 +1,6 @@
 [
   {
-    "card_id": 32,
+    "card_id": 36,
     "card_name": "Kupa Ası (Ace of Cups)",
     "upright": {
       "ask": {
@@ -58,7 +58,7 @@
     }
   },
   {
-    "card_id": 33,
+    "card_id": 37,
     "card_name": "Kupa İkilisi (Two of Cups)",
     "upright": {
       "ask": {
@@ -116,7 +116,7 @@
     }
   },
   {
-    "card_id": 34,
+    "card_id": 38,
     "card_name": "Kupa Üçlüsü (Three of Cups)",
     "upright": {
       "ask": {
@@ -174,7 +174,7 @@
     }
   },
   {
-    "card_id": 35,
+    "card_id": 39,
     "card_name": "Kupa Dörtlüsü (Four of Cups)",
     "upright": {
       "ask": {
@@ -232,7 +232,7 @@
     }
   },
   {
-    "card_id": 36,
+    "card_id": 40,
     "card_name": "Kupa Beşlisi (Five of Cups)",
     "upright": {
       "ask": {
@@ -290,7 +290,7 @@
     }
   },
   {
-    "card_id": 37,
+    "card_id": 41,
     "card_name": "Kupa Altılısı (Six of Cups)",
     "upright": {
       "ask": {
@@ -348,7 +348,7 @@
     }
   },
   {
-    "card_id": 38,
+    "card_id": 42,
     "card_name": "Kupa Yedilisi (Seven of Cups)",
     "upright": {
       "ask": {
@@ -406,7 +406,7 @@
     }
   },
   {
-    "card_id": 39,
+    "card_id": 43,
     "card_name": "Kupa Sekizlisi (Eight of Cups)",
     "upright": {
       "ask": {
@@ -464,7 +464,7 @@
     }
   },
   {
-    "card_id": 40,
+    "card_id": 44,
     "card_name": "Kupa Dokuzlusu (Nine of Cups)",
     "upright": {
       "ask": {
@@ -522,7 +522,7 @@
     }
   },
   {
-    "card_id": 41,
+    "card_id": 45,
     "card_name": "Kupa Onlusu (Ten of Cups)",
     "upright": {
       "ask": {
@@ -580,7 +580,7 @@
     }
   },
   {
-    "card_id": 42,
+    "card_id": 46,
     "card_name": "Kupa Saraylısı (Page of Cups)",
     "upright": {
       "ask": {
@@ -638,7 +638,123 @@
     }
   },
   {
-    "card_id": 43,
+    "card_id": 47,
+    "card_name": "Kupa Şövalyesi (Knight of Cups)",
+    "upright": {
+      "ask": {
+        "gecmis": "Canım, geçmişinde kapını çalan o romantik ve duygusal teklifi hatırlıyor musun, hani kalbin adeta yerinden çıkacakmış gibi hissetmiştin? Hayallerindeki beyaz atlı prensin ya da o çok özel ruhun sana sunduğu sevgi dolu sözler, senin dünyanı bir masal diyarına çevirmişti. O dönemde mantığından çok duygularınla hareket etmiş ve aşkın o naif, şiirsel dokusuna kendini tamamen bırakmıştın. Yaşadığın bu romantizm rüzgarı, senin hala aşka olan o saf inancını besleyen en büyük kaynağın. Sen sevginin bir sanat gibi işlendiği o günlerde, ruhunun ne kadar derin olduğunu bir kez daha keşfettin.",
+        "simdi": "Tatlım, şu an tam bir aşk sarhoşu gibisin; ya çok romantik bir teklif alıyorsun ya da içindeki o yoğun sevgi selini birine akıtmak için can atıyorsun! Kalbinin sesini dinlediğin bu dönemde, hayatına giren veya girecek olan kişi sana çiçeklerle, şiirlerle ve muazzam bir nezaketle yaklaşıyor. Eğer yalnızsan, çok yakında karşına çıkacak olan o duygusal ruh, senin tüm yalnızlığını bir anda silip süpürecek kadar etkili olacak. Bu kart, şu an duygularını ifade etmekten korkmamanı ve aşkın getirdiği o tatlı melankoliye kapılmanı fısıldıyor. Sen şu an aşkın en nazik ve en şifalı haliyle sarmalanmış durumdasın.",
+        "gelecek": "Geleceğinde seni bekleyen aşk, adeta bir masal kitabından fırlamış gibi romantik ve tekliflerle dolu görünüyor canım. Karşına çıkacak olan o kişi, sadece kalbini çalmakla kalmayacak, aynı zamanda sana hayalini kurduğun o huzurlu ve duygusal dünyayı sunacak. Belki bir evlilik teklifi, belki de çok derin bir bağlılık sözüyle hayatın bir anda güzelleşecek ve tüm bekleyişine değecek. Gelecekte aşkın en saf halini yaşarken, ruh eşini bulduğuna dair o içsel huzuru iliklerine kadar hissedeceksin. Hazır ol tatlım, hayatının en romantik dönemi çok yakında senin için başlıyor."
+      },
+      "is": {
+        "gecmis": "Geçmişinde iş hayatında çok yaratıcı ve sana ilham veren bir teklifle karşılaşmış, kariyerinde duygularını katarak ilerlediğin bir dönem yaşamışsın. Belki de sevdiğin bir hobini işe dönüştürdün ya da çok naif bir çalışma ortamında yeteneklerini sergileme şansı buldun. O günlerdeki bu vizyoner ve hayalperest duruşun, senin profesyonel kimliğine çok zarif bir dokunuş eklemişti. İnsanlarla kurduğun o empati odaklı bağlar, bugün bile kariyerinde saygınlık görmeni sağlayan en büyük özelliğin. Sen iş dünyasında mantık kadar duyguların da önemli olduğunu o zamanlar herkese kanıtlamışsın.",
+        "simdi": "Canım, şu an iş hayatında çok heyecan verici ve yaratıcılığını konuşturabileceğin yeni bir teklif veya proje gündeminde! İş yerindeki ilişkilerinde diplomasiyi ve zarafeti öyle iyi kullanıyorsun ki, herkes seninle çalışmak için can atıyor resmen. Bu dönem, kariyerinde sadece para için değil, ruhunu beslemek için de adımlar attığın muazzam bir zaman dilimi. Eğer bir iş değişikliği düşünüyorsan, karşına çıkacak fırsatlar tam da hayallerine hizmet edecek cinsten olacak. Işığını parlat ve o yaratıcı fikirlerini dünyaya sunmaktan asla çekinme tatlım.",
+        "gelecek": "Geleceğinde kariyer planlarınla ilgili seni çok mutlu edecek, adeta bir müjde niteliğinde olan teklifler seni bekliyor. Öyle bir projeye veya konuma davet edileceksin ki, orada hem yeteneklerini sergileyecek hem de çok huzurlu bir çalışma ortamı bulacaksın. Belki de bir sanat dalında ya da yaratıcılık gerektiren bir alanda ismini geniş kitlelere duyuracağın o şanslı kapı aralanacak. Gelecekte iş hayatında sadece başarılı değil, aynı zamanda çok sevilen ve saygı duyulan bir figür haline geleceksin. Başarı sana sadece kazanç değil, muazzam bir ruhsal tatmin de getirecek, buna inan."
+      },
+      "para": {
+        "gecmis": "Geçmişinde maddi anlamda sezgilerine güvenerek attığın adımların meyvesini toplamış ve taze bir kazanç kapısı aralamışsın canım. Belki de bir arkadaşının veya bir yakınının vesilesiyle gelen o nazik yatırım fırsatı, cüzdanına beklemediğin bir bereket getirmişti. Paranın sana sunduğu o huzurlu dönemde, finansal kaygılarından arınıp hayatın güzelliklerine odaklanabilmiştin. O günlerdeki bu 'şanslı ve akışta' halin, bugün bile paraya karşı daha umutlu ve rahat bakmanı sağlıyor. Sen bolluğun sadece hırsla değil, bazen de sadece hayal ederek gelebileceğini o zamanlar keşfetmişsin.",
+        "simdi": "Tatlım, şu an cüzdanında yeni bir hareketlilik ve finansal konularda çok sevineceğin küçük ama umut verici haberler dolaşıyor. Belki bir alacağın tahsil ediliyor ya da beklemediğin bir yerden sana bir miktar para takdim ediliyor. Bu dönem, maddi konularda çok hırslı olmak yerine akışta kalmanın ve fırsatları sakince beklemenin ödülünü alma zamanı. Paranın bereketi senin o pozitif ve hayalperest enerjinle doğru orantılı olarak artıyor, bunu unutma. Şu an cüzdanın için çok tatlı ve huzurlu bir akış var, tadını çıkar.",
+        "gelecek": "Geleceğinde maddi anlamda seni çok rahatlatacak ve hayallerini gerçekleştirmeni sağlayacak zarif fırsatlar görünüyor. Belki bir miras, belki de yaratıcı bir işinden gelecek yüksek bir telif ücreti hayatını bir anda ferahlatacak. Finansal olarak adeta bir çiçek gibi açacağın ve parayı sadece ihtiyaçların için değil, ruhunu şımartmak için de harcayacağın günler çok yakın. Gelecekte maddi bağımsızlığını kazanırken, bunu hiç yorulmadan ve sadece yeteneklerini kullanarak başaracaksın. Cüzdanın için çok parlak ve sevinç dolu bir gelecek seni bekliyor canım."
+      },
+      "saglik": {
+        "gecmis": "Geçmişinde sağlığınla ilgili bir uyanış yaşamış ve bedenini ruhsal yollarla şifalandırmanın ne kadar önemli olduğunu keşfetmişsin tatlım. Kendini fiziksel olarak değil, daha çok duygusal olarak yenilediğin o günler, sana vücudunun ne kadar hassas bir dengesi olduğunu hatırlatmıştı. Belki de meditasyon, yoga ya da sanat terapisi gibi yollarla iç huzurunu bulmuş ve bu sayede tüm hastalıklarından arınmıştın. O dönemde kazandığın bu zihinsel dinginlik, senin bugünkü sağlam duruşunun en büyük şifacısı olmuş. Sen bedenine iyi bakmanın yolunun ruhunu sevmekten geçtiğini o zamanlar anlamışsın.",
+        "simdi": "Canım, şu an sağlık enerjin tam da istediğin o huzurlu seviyede; kendini çok zinde ve ruhsal olarak dengeli hissediyorsun. Bedeninle ruhun arasındaki o muazzam uyum, sana müthiş bir dinginlik ve yaşam sevinci veriyor. Eğer bir yorgunluğun varsa, bu kart sana hemen toparlanacağının ve taze bir şifa enerjisinin damarlarına dolduğunun müjdesini veriyor. Şu an kendine zaman ayırmak, doğada vakit geçirmek veya bir hobiyle uğraşmak senin için en büyük ilaç olacak. Işığın dışarıdan bile fark ediliyor, sağlıkla ve huzurla parlıyorsun resmen.",
+        "gelecek": "Geleceğinde seni bekleyen sağlık tablosu kusursuz bir zindelik ve ruhsal bir doyum vaat ediyor tatlım. Bedeninle tam bir barış sağladığın, stresin ve kaygının hayatından tamamen silindiği çok huzurlu bir döneme giriyorsun. Belki bir mucizevi iyileşme süreci yaşayacaksın ya da yaşam kaliteni zirveye taşıyacak o ruhsal uzmanla tanışacaksın. Gelecekte sağlığını korumak adına edineceğin o naif alışkanlıklar, sana uzun ve kaliteli bir yaşamın kapısını aralayacak. Her türlü fiziksel yorgunluğun yerini sönmek bilmeyen bir yaşam sevincine bırakacağı o günler çok yakında seninle olacak."
+      },
+      "hepsi": {
+        "gecmis": "Geçmişine baktığımda genel bir 'romantizm' ve 'hayallerin gerçekleşmesi' enerjisi görüyorum; hayatın seni birçok kez taze ve umut dolu yollara sürüklemiş. Aşkta o ilk heyecan, işte o yaratıcı ilham ve sağlığında o ruhsal huzur aynı anda hayatına dokunmuş ve seni canlandırmış. Hayata karşı hep bir şövalye gibi nezaketli ve umutlu yaklaştığın o günler, senin bugünkü vizyonunun en büyük destekçisi olmuş. Sen resmen geçmişte kaderini taptaze duygularla ve büyük bir hayal gücüyle yeniden inşa etmişsin canım. Yaşadığın o güzel anılar, bugün bile senin yolunu aydınlatmaya devam ediyor.",
+        "simdi": "Tatlım, şu an hayatının her alanında bir 'bahar havası' hakim; resmen her şey taptaze bir heyecan ve nezaketle dolup taşıyor! Kalbin aşkla, zihnin yeni projelerle ve bedenin huzurla öyle bir parlıyor ki, seni durdurabilene aşk olsun. Hayatın sana sunduğu bu yeni ve zarif fırsatları değerlendirmek için içindeki o hayalperest ruhu dışarı çıkarmanın tam zamanı. Her şey bir teklifle veya küçük bir adımla başladı ve şimdi o adımlar senin tüm dünyanı güzelleştiren dev bir masal karesine dönüşmek üzere. Sadece inan ve hayatın sana sunduğu o kupa dolusu sevgiyi kabul et canım.",
+        "gelecek": "Geleceğin, hayatının her alanında mucizevi başlangıçlar, romantik teklifler ve büyük ruhsal doyumlarla dolu görünüyor tatlım! Aşkta, işte ve kişisel gelişiminde adeta bir rönesans yaşayacak, yepyeni ve çok daha mutlu bir 'sen' inşa edeceksin. Karşına çıkacak olan o zarif fırsatlar seni öyle bir heyecanlandıracak ki, geçmişin tüm yorgunluğunu bir kenara atıp geleceğe umutla koşacaksın. Başarı, mutluluk ve sağlık dolu bu yeni yolculukta evren senin en büyük destekçin ve ilham kaynağın olacak. Hazır ol canım, hayatının en duygusal, en verimli ve en huzurlu dönemi çok yakında senin için başlıyor!"
+      }
+    },
+    "reversed": {
+      "ask": {
+        "gecmis": "Canım, geçmişinde aşk hayatında çok büyük umutlar beslediğin o kişi maalesef sadece hayal satmış ve seni hayal kırıklığına uğratmış. Belki de sana çok romantik sözler verdi ama eyleme dökemedi, ya da sadece kendi duygusal boşluğunu doldurmak için seni kullandı. O dönemdeki bu 'yanıltıcı romantizm', senin aşka olan o saf inancını bir miktar zedelemiş ve seni savunmacı bir hale getirmiş olmalı. Kendi duygularının suistimal edildiğini hissettiğin o günler, bugün yeni birine kalbini açmanı zorlaştırıyor. Sen aşkın o naif kokusunu alırken, bir anda hayallerin sönmüş o günlerde tatlım.",
+        "simdi": "Tatlım, şu an aşk hayatında bir 'duygusal karmaşa' ve 'gerçeklerden kaçma' durumu yaşıyor olabilirsin; sanki her şeyi toz pembe görmeye çalışıyorsun ama içten içe bir şeylerin yanlış olduğunu biliyorsun. Karşındaki kişi sana çok tatlı sözler söylüyor olabilir ama sadakati veya samimiyeti konusunda ciddi şüphelerin var. Belki de şu an çok melankolik ve pasif davranıyorsun, bu da ilişkini çıkmaza sokuyor olabilir. Bu kart, şu an her duyduğuna hemen inanmaman ve duygularını biraz daha mantık süzgecinden geçirmen gerektiğini söylüyor. Şu an bir illüzyon içindesin, gerçeği görmek için o pembe gözlükleri çıkarman gerek.",
+        "gelecek": "Geleceğinde aşk adına yaşayacağın bazı durumlarda, aşırı duygusallık ve hayalcilik yüzünden yanlış kişilere kalbini açma riskin var. Karşına çıkacak olan o 'şövalye' görünümlü kişi, aslında sorumluluk almaktan kaçan ve sadece anlık hazlar peşinde olan biri olabilir. İlişkilerinde 'acaba?' dediğin soruların cevabı beklediğin kadar net olmayabilir, bu yüzden temkinli olmalısın. Ancak bu süreç, senin aşkta daha seçici ve daha ayakları yere basan biri olman için verilen bir ders olacak. Gelecekte gerçek bir bağ kurmak istiyorsan, her tatlı söze hemen kanmamayı ve zamanı bir sınav olarak kullanmayı öğrenmen gerekecek."
+      },
+      "is": {
+        "gecmis": "Geçmişinde iş hayatında çok büyük bir hevesle atıldığın o proje veya güvendiğin o ortaklık, maalesef ciddiyetsizlik ve asılsız vaatler yüzünden başarısızlıkla sonuçlanmış. Belki de sana kariyerinde devrim yapacaklarını söylediler ama seni sadece oyalamaktan başka bir şey yapmadılar. Kariyerinde bir sıçrama beklerken hayal kırıklığıyla sonuçlanan o dönem, seni yaratıcılık konusunda bir küskünlüğe itmiş olabilir. Sanki yeteneklerin suistimal edilmiş ve emeğin hak ettiği değeri görmemiş gibi hissetmişsin. O dönemdeki bu 'yarım kalan vaatler', seni bugün profesyonel anlamda daha şüpheci kılıyor tatlım.",
+        "simdi": "Tatlım, şu an iş hayatında kendini resmen bir 'motivasyon kaybı' ve 'kararsızlık' içinde hissediyor olabilirsin; bin tane hayalin var ama hiçbirini eyleme dökemiyorsun. Belki de iş yerinde sana sunulan tekliflerin altının boş olduğunu fark ettin ya da birilerinin arkandan iş çevirdiğinden şüpheleniyorsun. Duyguların iş kararlarını o kadar çok etkiliyor ki, mantıklı bir çıkış yolu bulmakta zorlanıyorsun. Bu kart, şu an profesyonel olman ve özellikle sanatsal veya yaratıcı işlerde disiplini elden bırakmaman gerektiğini fısıldıyor. Şu an bir belirsizlik içindesin, somut verilere odaklanmalısın.",
+        "gelecek": "Geleceğinde kariyer planlarınla ilgili bazı asılsız teklifler veya projelerin askıya alınması gibi can sıkıcı durumlar görünüyor canım. Önemli bir iş haberi bekliyorsan, bu haberin içeriği seni hayal ettiğin kadar tatmin etmeyebilir ya da çok geç gelebilir. Kariyerinde yeni bir sayfa açmak isterken tecrübesizliğin veya aşırı duygusallığın getirdiği hatalarla karşılaşma riskin var. Bu süreçte pes etmemeli ama daha gerçekçi ve stratejik bir yol izlemelisin. Başarıya ulaşmak için hayallerinden vazgeçme ama onları nasıl hayata geçireceğin konusunda daha disiplinli olmalısın."
+      },
+      "para": {
+        "gecmis": "Geçmişinde maddi anlamda büyük bir kazanç beklerken son anda işlerin ters gitmesiyle veya birinin seni yanıltmasıyla finansal bir darbe almışsın. Belki de 'bu işten çok para kazanacağız' diyen birine güvendin ve cüzdanını ona teslim ettin ama sonuç hüsran oldu. Paranın geleceğine o kadar emindin ki, sonuç hüsran olunca finansal dengelerin bir miktar sarsılmış ve özgüvenin kırılmış olmalı. O günlerdeki bu maddi hayal kırıklığı, bugün paraya karşı hep bir şüpheyle ve korkuyla yaklaşmana sebey oluyor. Sen maddi konularda hayallerinin kurbanı olmuşsun bir dönem tatlım.",
+        "simdi": "Tatlım, şu an cüzdanında bir 'bereket kaçağı' var gibi; sanki para geliyormuş gibi görünüyor ama bir türlü eline geçmiyor. Maddi konularda asılsız haberlere veya çok karlı görünen riskli işlere atılma eğiliminde olabilirsin, lütfen çok dikkat et! Bu dönem, finansal bir anlaşma yapmak için şartların hiç de uygun olmadığını ve bir dolandırıcılık riskinin yüksek olduğunu söylüyor. Paranı korumak için duygularınla değil, hesap makinenle hareket etmen gereken bir zaman dilimindesin. Harcamalarına hakim olmalı ve özellikle internet üzerinden yapacağın işlemlerde temkinli olmalısın.",
+        "gelecek": "Geleceğinde maddi anlamda beklediğin o büyük kazanç haberinin biraz daha gecikeceği veya beklediğin kadar büyük olmayacağı görülüyor. Bir yatırım veya miras konusuyla ilgili yanlış bilgilendirilme veya birilerinin seni oyalama ihtimali canını sıkabilir. Maddi olarak bir ferahlama beklerken, tam tersi plansız harcamalarla karşılaşma riskin var. Zenginlik kapısı henüz tam aralanmış değil, bu yüzden temkinli ilerlemeli ve özellikle yeni tanıştığın kişilerin yatırım tavsiyelerine kulak asmamalısın. Bolluk enerjisine ulaşman için önce maddi konularda daha rasyonel olmayı öğrenmelisin."
+      },
+      "saglik": {
+        "gecmis": "Geçmişinde sağlığınla ilgili bir uyarıyı 'ben iyiyim' diyerek veya duygusal bir boşluğa düşerek ihmal etmiş ve iyileşme sürecini geciktirmişsin tatlım. Bedenin alarm verirken sen zihnindeki karmaşayla veya melankoliyle o kadar meşguldün ki, sağlığına gereken özeni gösteremedin. Belki de bir tedaviye başladın ama ciddiye almayıp yarıda bıraktığın için hastalık daha sonra tekrar nüksetti. O dönemdeki bu 'ihmalkarlık' hali, bugün en küçük bir yorgunlukta bile 'acaba ciddi bir şey mi?' korkusunu tetikliyor. Sen o zamanlar ruhsal sağlığını fiziksel sağlığının önüne koyup dengeyi bozmuşsun canım.",
+        "simdi": "Canım, şu an sağlığın konusunda tam bir 'duygusal yorgunluk' ve 'enerji dağınıklığı' içindesin; sanki ruhun bedeninden kopmuş gibi. Bedenin sana bazı sinyaller veriyor, uykusuzluk veya iştahsızlık yaşıyorsun ama sen bunları 'geçicidir' diyerek geçiştiriyorsun. Bu kart, şu an bağışıklığının zayıf olduğunu ve özellikle strese bağlı mide veya baş ağrılarına karşı daha savunmasız olduğunu söylüyor. Lütfen duygusal yüklerini bir kenara bırakıp sağlığını ciddiye almalı ve bedenine bir tapınak gibi özen göstermelisin. Şifa ancak sen zihnini susturup bedenine kulak verdiğinde gelecek.",
+        "gelecek": "Geleceğinde sağlıkla ilgili konularda bazı yanlış teşhisler veya tedavide gereksiz gecikmeler gibi can sıkıcı süreçler yaşama riskin var canım. Kendine bakmayı bir 'zorunluluk' olarak görüp stres yaptığın sürece, tam zindeliğe kavuşman da o kadar zorlaşacak. İleride karşına çıkacak olan bedensel yorgunluklar, senin şu anki o bastırılmış duygularının bir patlaması olacak. Gelecekte sağlığını korumak adına daha ciddi ve daha az melankolik bir yol izlemezsen, bedenin seni bir gün zorla yatağa bağlayacak. Kendine olan şefkatini artırmalı ve şifayı sadece dışarıda değil, içsel huzurunda aramısın."
+      },
+      "hepsi": {
+        "gecmis": "Geçmişine baktığımda genel bir 'aldanış' ve 'yarım kalan hayaller' enerjisi görüyorum; hayatın seni birçok kez yanlış duygusal yollara sürüklemiş. Aşkta hayal kırıklığı, işte asılsız vaatler ve maddi konularda kayıplar arasında geçen o günler, seni bugün daha temkinli ve bir o kadar da yorgun yapmış. Başkalarının lafıyla hareket ettiğin veya sadece duygularının peşinden gittiğin o günler, bugün hayatında bazı eksiklikler bırakmış durumda. Sen hayata karşı asanı bir şövalye gibi değil, bir kurban gibi sallamışsın ve bu da seni savunmasız bırakmış. O dönemdeki bu 'yön kaybı' bugün bile içindeki o çocuğu korkutuyor.",
+        "simdi": "Tatlım, şu an hayatının genelinde bir 'kaos' ve 'yanlış anlaşılmalar' evresindesin; sanki hiçbir şey senin istediğin gibi ilerlemiyor. Hangi işe el atsan bir pürüz çıkıyor, beklediğin mesajlar hep eksik veya yalan dolu geliyor, enerjin ise yerlerde sürünüyor. Bu kart, şu anki bu 'duygusal dağınıklık' halinin senin içindeki o yaratıcı ateşi söndürdüğünü fısıldıyor. Neden bu kadar kolay dağıldın ve neden her şeyi bu kadar melankolik hale getirdin? Hemen toparlanmalı, önceliklerini belirlemeli ve hayatının iplerini duygularınla değil, mantığınla tutmalısın. Sen bir masal kahramanı değil, kendi hayatının yöneticisisin.",
+        "gelecek": "Geleceğinde hayatının genel ritminde bazı engeller, kötü haberler ve duygusal hayal kırıklıkları seni bekliyor olabilir canım. Planladığın o büyük değişimlerin gerçekleşmesi için beklediğinden çok daha fazla disiplin ve mantık harcaman gerekecek. Aşkta ve işte 'her şey mükemmel olacak' diye düşünmek yerine, karşına çıkacak olan o 'tatlı dilli ama boş' vaatlere karşı gardını almalısın. Hayatın sana sunacağı kupa dolu mutluluk hemen gelmeyecek veya geldiğinde seni yanıltabilir, bu yüzden çok dikkatli olmalısın. Sabretmeyi ve olaylara daha olgun bir pencereden bakmayı öğrenirsen, o asıl büyük huzur senin olacak."
+      }
+    }
+  },
+  {
+    "card_id": 48,
+    "card_name": "Kupa Kraliçesi (Queen of Cups)",
+    "upright": {
+      "ask": {
+        "gecmis": "Canım, geçmişinde aşk hayatında tam bir şefkat abidesi olmuş, ilişkini derin bir sezgi ve bitmek bilmeyen bir sevgiyle beslemişsin. Karşı tarafın her duygusunu hissedebildiğin, adeta ruhsal bir bağ kurduğun o muazzam dönem sana aşkın en saf halini öğretmiş. Belki de bir anne şefkatiyle partnerini kucakladın ya da onun tüm yaralarını kendi sevginle iyileştirdin. O dönemde yaşadığın bu duygusal derinlik, senin bugün bile ilişkilerinde neden bu kadar anlam ve huzur aradığının en büyük sebebi. Sen sevginin sadece bir duygu değil, bir şifa gücü olduğunu o günlerde keşfettin.",
+        "simdi": "Tatlım, şu an aşk hayatında tam bir 'duygusal olgunluk' ve 'sezgi' dönemindesin; adeta partnerinin aklından geçenleri bile okuyorsun! Kalbinin kapıları ardına kadar açık ve çevrendekilere öyle bir huzur veriyorsun ki, herkes senin bu şefkatli enerjine sığınmak istiyor. Eğer yalnızsan, sezgilerin sana doğru kişinin çok yakın olduğunu fısıldıyor olabilir; sadece iç sesine güvenmen yeterli. Bu kart, şu an aşkı bir kraliçe gibi, yani hem güçlü hem de sonsuz bir sevgiyle yönettiğini söylüyor. Sen şu an duygusal anlamda bir liman gibisin, hem kendine hem de sevdiklerine şifa veriyorsun.",
+        "gelecek": "Geleceğinde aşk adına seni bekleyen huzur, adeta bir okyanus kadar derin ve sonsuz bir bağlılık vaat ediyor canım. Karşına çıkacak olan o kişiyle öyle bir ruhsal uyum yakalayacaksın ki, kelimelere bile gerek duymadan birbirinizi anlayacaksınız. Belki de bir aile kurma veya mevcut ilişkini çok daha şefkatli ve kalıcı bir temele oturtma kararı alacaksın. Gelecekte aşkın en olgun ve en sezgisel halini yaşarken, ruhunun bu dünyada neden var olduğunu bir kez daha derinden hissedeceksin. Hazır ol tatlım, hayatının en duygusal ve en doyurucu sayfası açılmak üzere."
+      },
+      "is": {
+        "gecmis": "Geçmişinde iş hayatında sezgilerini ve empati yeteneğini kullanarak çok büyük başarılar elde etmiş, çalışma arkadaşların için adeta bir rehber olmuşsun. Belki de insan odaklı bir işte çalışıyordun ve oradaki herkesin dert ortağı, yol göstericisiydin. O günlerdeki bu vizyoner ve şefkatli duruşun, kariyerinde sana sarsılmaz bir saygınlık ve güven kazandırmıştı. Mantığının yanında her zaman kalbinin sesini de dinlediğin için, aldığın kararların sonuçları hep hayırlı ve bereketli oldu. Sen iş dünyasında nezaketin ne kadar büyük bir güç olduğunu geçmişte herkese gösterdin.",
+        "simdi": "Canım, şu an iş hayatında sezgilerinin zirve yaptığı bir dönemdesin; hangi projenin tutup hangisinin tutmayacağını resmen kalbinden hissediyorsun! Çalışma ortamında yarattığın o huzurlu ve yapıcı enerji sayesinde, krizleri bile sadece gülümsemenle çözebiliyorsun. Bu dönem, özellikle yaratıcılık, sanat veya şifa gerektiren bir iş yapıyorsan, yeteneklerinin en çok takdir edileceği zaman dilimi. Eğer bir karar vermen gerekiyorsa, analizlere değil, o içindeki fısıltıya kulak ver; o seni asla yanıltmayacak. Sen şu an iş hayatının şefkatli ve bilge kraliçesisin, parlamaya devam et.",
+        "gelecek": "Geleceğinde kariyer hedeflerinle ilgili muazzam bir ruhsal tatmin ve çok saygın bir konuma ulaşma müjdesi var tatlım. Öyle bir makama geleceksin ki, orada sadece işleri yönetmekle kalmayacak, aynı zamanda birçok insanın hayatına dokunacak ve onlara ilham vereceksin. Belki de kendi şifa merkezin veya yaratıcı atölyen gibi, ruhunu yansıtan bir işin sahibi olacaksın. Gelecekte iş hayatında sadece maddi başarı değil, aynı zamanda büyük bir manevi huzur da seninle olacak. Başarı senin o derin sezgilerinin ve bitmek bilmeyen sabrının en güzel meyvesi olacak, buna inan."
+      },
+      "para": {
+        "gecmis": "Geçmişinde maddi anlamda sezgilerine güvenerek attığın adımların bereketini yaşamış ve finansal durumunu huzurlu bir dengeye oturtmuşsun. Belki de bir yatırım yaparken sadece 'içimden geldi' dedin ve o karar sana hiç beklemediğin bir bolluk getirdi. Parayı bir güç gösterisi olarak değil, sevdiklerine bakmak ve ruhunu doyurmak için bir araç olarak gördüğün o günler çok verimliydi. O günlerdeki bu 'şükür ve bolluk' bilinci, bugün bile paraya karşı daha sakin ve güvenli bakmanı sağlıyor. Sen bolluğun sadece hırsla değil, bazen de sadece sevgiyle gelebileceğini o zamanlar keşfettin tatlım.",
+        "simdi": "Tatlım, şu an cüzdanında çok huzurlu bir akış var; maddi konularda kendini güvende hissediyor ve bereketine şükrediyorsun. Belki çok büyük bir zenginlik değil ama elindekiyle öyle güzel bir dünya kurmuşsun ki, hiçbir eksiğin kalmamış gibi hissediyorsun. Bu dönem, finansal konularda sezgilerinin seni en doğru yatırımlara veya tasarruf planlarına yönlendirdiği bir zaman dilimi. Paranın sadece rakamlardan ibaret olmadığını, bir enerji olduğunu bildiğin için cüzdanının bereketi hiç eksilmiyor. Şu an finansal olarak tam bir 'bolluk kraliçesi' gibi hissediyor ve bunu sevdiklerinle paylaşıyorsun.",
+        "gelecek": "Geleceğinde maddi anlamda seni çok rahatlatacak ve hayallerindeki o konforlu, huzurlu hayatı sunacak bir zenginlik görünüyor. Belki bir yaratıcılığın meyvesi, belki de bir kadın figüründen gelecek büyük bir destek finansal durumunu kökten değiştirecek. Finansal olarak adeta bir okyanusun bereketi gibi çoğalacağın ve parayı sadece huzur satın almak için kullanacağın günler kapıda. Gelecekte maddi bağımsızlığını kazanırken, bunu hiç yorulmadan ve sadece içindeki o zenginlik bilinciyle başaracaksın. Cüzdanın için çok parlak, bereketli ve sevinç dolu bir gelecek seni bekliyor canım."
+      },
+      "saglik": {
+        "gecmis": "Geçmişinde sağlığınla ilgili bir şifa dönemi yaşamış ve bedenini ruhunla nasıl iyileştirebileceğini bizzat deneyimlemişsin tatlım. Kendini çok dingin ve zinde hissettiğin o günler, sana meditasyonun veya duygusal dengenin ne kadar hayati olduğunu öğretmişti. Belki de bir hastalığı sadece iç huzurunu bularak yendin ya da bedenine bir tapınak gibi özen göstererek kendini yeniden doğmuş gibi hissettin. O dönemde kazandığın bu sezgisel şifa gücü, senin bugünkü dirençli ve ışıltılı halinin en sağlam temeli olmuş. Sen bedenine iyi bakmanın yolunun önce kalbini sevmekten geçtiğini o zamanlar çok iyi anlamışsın.",
+        "simdi": "Canım, şu an sağlık enerjin tam da istediğin o 'ruh ve beden bütünlüğü' seviyesinde; resmen şifa saçıyorsun! Bedeninle ruhun arasındaki o muazzam uyum, sana müthiş bir dinginlik ve içsel bir ışık veriyor; aynaya baktığında o kraliçe enerjisini görüyorsun. Eğer bir rahatsızlığın varsa, bu kart sana sevgiyle ve şefkatle kendini iyileştireceğinin müjdesini veriyor. Şu an bitki çayları, meditasyon veya sadece sevdiklerinle vakit geçirmek senin için en büyük ilaç olacak. Işığın dışarıdan bile fark ediliyor, sağlıkla ve o kraliçelere layık huzurla parlıyorsun resmen tatlım.",
+        "gelecek": "Geleceğinde seni bekleyen sağlık tablosu kusursuz bir zindelik ve uzun, şifa dolu bir yaşam vaat ediyor tatlım. Bedeninle tam bir barış sağladığın, her hücrenin sevgiyle yenilendiği çok huzurlu bir döneme giriyorsun. Belki bir şifa uzmanı olacaksın ya da yaşam kaliteni zirveye taşıyacak o ruhsal uyanışı yaşayacaksın. Gelecekte sağlığını korumak adına edineceğin o naif alışkanlıklar, sana yaşlılığında bile herkesin imreneceği bir enerji verecek. Her türlü fiziksel yorgunluğun yerini sönmek bilmeyen bir huzur ateşine bırakacağı o günler çok yakında seninle olacak, buna inan."
+      },
+      "hepsi": {
+        "gecmis": "Geçmişine baktığımda genel bir 'duygusal tatmin' ve 'sezgilerin gücü' enerjisi görüyorum; hayatın seni birçok kez şefkatli yollara sürüklemiş. Aşkta o derin bağı, işte o yaratıcı ilhamı ve sağlığında o ruhsal huzuru aynı anda yaşamış, resmen evrenle bir bütün olmuşsun. Hayata karşı hep bir kraliçe gibi bilge ve sevgi dolu yaklaştığın o günler, senin bugünkü vizyonunun en büyük mimarı olmuş. Sen resmen geçmişte kaderini o derin sezgilerinle ve bitmek bilmeyen sabrınla yeniden inşa etmişsin canım. Yaşadığın o güzel anılar, bugün bile senin yolunu aydınlatmaya devam ediyor.",
+        "simdi": "Tatlım, şu an hayatının her alanında bir 'huzur ve bereket' havası hakim; resmen her şey o sezgisel dokunuşunla güzelleşiyor! Kalbin aşkla, zihnin yaratıcı projelerle ve bedenin şifayla öyle bir sarmalanmış ki, sana dokunan herkes senin bu huzurundan pay alıyor. Hayatın sana sunduğu bu derin ve anlamlı fırsatları değerlendirmek için içindeki o bilge kadını dışarı çıkarmanın tam zamanı. Her şey bir hisle başladı ve şimdi o his senin tüm dünyanı aydınlatan dev bir şifa meşalesine dönüşmek üzere. Sadece inan ve hayatın sana sunduğu o kupa dolusu mutluluğu kraliçelere layık bir zarafetle kabul et canım.",
+        "gelecek": "Geleceğin, hayatının her alanında mucizevi başlangıçlar, ruhsal doyumlar ve büyük başarılarla dolu görünüyor tatlım! Aşkta, işte ve kişisel gelişiminde adeta bir bilge kraliçe gibi parlayacak, çevrene şifa dağıtan bir figür olacaksın. Karşına çıkacak olan o derin ve anlamlı fırsatlar seni öyle bir mutlu edecek ki, geçmişin tüm tozunu bir kenara atıp geleceğe huzurla koşacaksın. Başarı, mutluluk ve sağlık dolu bu yeni yolculukta evren senin en büyük destekçin ve sezgilerin en büyük rehberin olacak. Hazır ol canım, hayatının en duygusal, en verimli ve en huzurlu dönemi çok yakında senin için başlıyor!"
+      }
+    },
+    "reversed": {
+      "ask": {
+        "gecmis": "Canım, geçmişinde aşk hayatında aşırı duygusallık ve fedakarlık yüzünden kendini ihmal etmiş, adeta başkalarının mutluluğu için kendi ruhunu tüketmişsin. Partnerinin her dert ortağı olmaya çalışırken kendi yaralarını sarmayı unuttuğun o günler, seni duygusal bir tükenmişliğe sürüklemiş olabilir. Belki de sezgilerin sana bir şeylerin yanlış olduğunu söylüyordu ama sen sevginin hatırına onları susturdun. O dönemdeki bu 'kendinden vazgeçiş' hali, bugün ilişkilerinde neden bu kadar güvensiz ve yorgun olduğunun en büyük sebebi. Sen aşkın içinde kendi benliğini kaybetmişsin bir dönem tatlım.",
+        "simdi": "Tatlım, şu an aşk hayatında bir 'duygusal dengesizlik' ve 'aşırı hassasiyet' dönemi yaşıyor olabilirsin; her şeyi çok kişisel algılıyor ve çabuk kırılıyorsun. Sezgilerin şu an bir miktar bulanık ve korkuların yüzünden partnerine karşı haksız bir güvensizlik besliyor olabilirsin. Belki de sevgi beklerken manipülasyona maruz kalıyorsun ya da sen karşı tarafı duygusal olarak kısıtlıyorsun. Bu kart, şu an bir durup kendi iç huzurunu bulman ve başkalarından beklediğin o şefkati önce kendine göstermen gerektiğini söylüyor. Şu an bir duygusal fırtınanın içindesin, sakinleşmeden karar verme.",
+        "gelecek": "Geleceğinde aşk adına yaşayacağın bazı durumlarda, aşırı kıskançlık veya duygusal bağımlılık yüzünden büyük huzursuzluklar yaşama riskin var. Karşına çıkacak olan o 'şefkatli' görünümlü kişi, aslında senin sınırlarını zorlayan ve seni duygusal olarak sömüren biri olabilir. İlişkilerinde 'ben daha çok seviyorum' diyerek kendini kurban etme eğilimin, gelecekte seni yine aynı hayal kırıklıklarına sürükleyebilir. Ancak bu süreç, senin aşkta önce 'kendini sevmeyi' öğrenmen için verilen bir ders olacak. Gelecekte gerçek bir bağ kurmak istiyorsan, asanı değil kalbini doğru korumayı öğrenmen gerekecek."
+      },
+      "is": {
+        "gecmis": "Geçmişinde iş hayatında sezgilerine değil, korkularına ve insanların manipülasyonlarına göre hareket ettiğin için büyük fırsatları kaçırmışsın canım. Belki de çok yetenekliydin ama 'yapamam' ya da 'herkes benden daha iyi' diyerek kendini hep geride tuttun. Kariyerinde bir yükseliş beklerken, başkalarının dertlerini dinlemekten kendi işine odaklanamadığın o günler seni çok yıpratmış olmalı. İş yerindeki dedikodulara veya duygusal karmaşalara çok fazla kapıldığın o dönem, bugün bile profesyonel özgüvenine gölge düşürüyor. Sen iş dünyasında kalbinin sesini değil, başkalarının fısıltılarını dinlemişsin tatlım.",
+        "simdi": "Tatlım, şu an iş hayatında kendini resmen bir 'duygusal dağınıklık' içinde hissediyor olabilirsin; hiçbir işe odaklanamıyor ve sürekli birilerinin seni üzeceğinden korkuyorsun. Belki de iş yerinde çok fazla empati kurduğun için suistimal ediliyor veya projelerinde sezgilerini kullanamıyorsun. Motivasyonun o kadar düşük ki, önüne gelen harika fırsatları bile 'başaramam' diyerek elinin tersiyle itiyorsun. Bu kart, şu an profesyonel olman ve özellikle yaratıcı işlerde disiplini elden bırakmaman gerektiğini fısıldıyor. Şu an bir kurban psikolojisindesin, hemen o tahtına geri dönmeli ve gücünü ele almalısın.",
+        "gelecek": "Geleceğinde kariyer planlarınla ilgili bazı duygusal engeller ve kadın figürleriyle yaşayacağın büyük çatışmalar görünüyor canım. Önemli bir proje veya makam için çok heveslenebilirsin ama birilerinin senin duygularınla oynaması veya ayağını kaydırması canını sıkabilir. İş hayatında sezgilerini yanlış kullanarak yanlış kişilere güvenme ve bu yüzden maddi/manevi kayıplar yaşama riskin var. Başarıya ulaşmak istiyorsan, hayallerinden vazgeçme ama onları nasıl koruyacağın konusunda daha sert ve rasyonel olmalısın. Gelecekte başarılı olmak istiyorsan, şimdiden o 'herkese güvenme' huyundan vazgeçmelisin."
+      },
+      "para": {
+        "gecmis": "Geçmişinde maddi anlamda sezgilerine değil, duygusal boşluklarını doldurmak için yaptığın aşırı harcamalara yenik düşmüşsün tatlım. Parayı bir huzur kaynağı değil, sanki bir teselli aracı olarak kullandığın o dönemde cüzdanın bir hayli zayıflamış olabilir. Birilerinin 'paraya ihtiyacım var' yalanına inanıp elindekini avucundakini verdiğin o günler bugün seni maddi olarak zorluyor olabilir. O dönemdeki bu 'duygusal cömertlik', bugün paraya karşı hep bir 'asla birikmeyecek' korkusuyla yaklaşmana sebep oluyor. Sen maddi özgürlüğün için değil, başkalarının takdiri için para harcamışsın o günlerde tatlım.",
+        "simdi": "Tatlım, şu an cüzdanında bir 'plansızlık' ve 'duygusal harcama' dönemi hakim; sanki moralin bozuldukça alışveriş yaparak kendini rahatlatmaya çalışıyorsun. Maddi durumunu bir türlü düzene sokamamanın sebebi, parayı rakamlarla değil, hislerinle yönetmeye çalışman. Bu kart, şu an maddi kaynaklarını korumak yerine onları bir okyanusa döker gibi savurduğunu fısıldıyor. Acilen bir bütçe planı yapmalı ve paranın geçici bir huzur değil, sağlam bir gelecek aracı olduğunu anlamalısın. Şu an cüzdanındaki o 'acıyıp para verme' huyunu bir kenara bırakmalısın, yoksa her şey tükenecek.",
+        "gelecek": "Geleceğinde maddi anlamda yaşayacağın bazı kayıplar, bir kadın figürüne duyduğun aşırı güven veya yanlış bir yatırım tavsiyesi yüzünden daha da büyüyebilir. Finansal bir kriz anında sezgilerine güveneyim derken duygularınla hareket etmek seni büyük bir borç batağına götürebilir. Paranı korumak için vermen gereken o mantıklı mücadeleden kaçarsan, gelecekte tüm maddi gücünü kaybedebilirsin. Bu süreçte sabırlı olmayı ve parayı yönetirken merhametini değil, zekanı kullanmayı öğrenmen şart. Gelecekte zenginleşmek istiyorsan, şimdiden o cüzdanındaki duygusal delikleri kapatmalısın."
+      },
+      "saglik": {
+        "gecmis": "Geçmişinde sağlığınla ilgili bir uyarıyı 'yorgunum ama geçer' diyerek veya psikolojik sorunlarını fizikselmiş gibi algılayarak ihmal etmişsin tatlım. Aşırı stres, melankoli ve başkalarının dertlerini dert edinmenin bedenine yüklediği o ağır yükler, bir noktada seni tamamen durdurmuş olabilir. Belki de bir dönem hormonal sorunlar veya uyku bozukluklarıyla uğraştın çünkü ruhun o kadar ağırlaşmıştı ki bedenin buna dayanamadı. O dönemde sağlığını ne kadar ihmal ettiğini ve ruhunun sesini nasıl susturduğunu şimdi daha iyi anlıyorsun. Sen o zamanlar vücudunun sesini değil, korkularının sesini dinlemişsin canım.",
+        "simdi": "Canım, şu an bedenin resmen 'duygusal zehirlenme' içinde; o bitmek bilmeyen üzüntün ve kaygın her hücreni bitkin düşürüyor resmen! Kendini o kadar çok başkalarının yerine koyuyorsun ki, kendi bedenindeki ağrıları bile onlardan bulaşmış sanıyorsun. Bu kart, şu an acilen bir mola vermen, meditasyon yapman veya en azından biraz yalnız kalman gerektiğini haykırıyor. Tüm dünyayı sen iyileştiremezsin, önce kendi bedenindeki o şifa ışığını yeniden yakmalısın. Lütfen o kupayı yere bırak ve sadece derin bir nefes al; yoksa çok yakında psikolojik bir çöküş yaşaman kaçınılmaz.",
+        "gelecek": "Geleceğinde sağlığınla ilgili seni bir hayli zorlayacak ama sorumluluk almazsan iyice kötüleşecek bir süreç seni bekliyor tatlım. Kendine bakmayı bir 'lütuf' olarak gördüğün sürece, şifalanman da o kadar gecikecek ve acılı olacak. İleride karşına çıkacak olan bedensel yorgunluklar ve özellikle üreme/hormon kaynaklı hastalıklar, senin şu anki o bastırılmış duygularının bir sonucu olacak. Gelecekte sağlığını geri kazanmak için çok ağır ve kısıtlayıcı bir ruhsal/fiziksel tedavi programına girmek zorunda kalabilirsin. Şimdiden o içindeki üzgün kraliçeyi susturmayı öğrenmezsen, bedenin seni bir gün zorla susturacak."
+      },
+      "hepsi": {
+        "gecmis": "Geçmişine baktığımda genel bir 'kendini feda etme' ve 'duygusal karmaşa' enerjisi görüyorum; hayatın seni birçok kez merhametinle test etmiş. Aşkta bencilce davranılmana izin vermek, işte insanlara çok güvenmek ve sağlığında 'başkaları daha önemli' demek seni bugün bazı pişmanlıklara sürüklemiş olabilir. Başkalarının hayatını güzelleştirmeye çalışırken kendi içindeki o huzuru kaybettiğin o günler, ruhunda derin bir boşluk bırakmış durumda. Sen hayata karşı asanı bir kraliçe gibi değil, bir kurban gibi sallamışsın ve bu da seni savunmasız bırakmış. O dönemdeki bu 'yanlış merhamet' kullanımı bugün bile seni huzursuz ediyor canım.",
+        "simdi": "Tatlım, şu an hayatının genelinde bir 'melankoli' ve 'hoşgörüsüzlük' evresindesin; sanki her şey senin aleyhine işliyormuş gibi hissediyorsun. Ama içten içe öyle yalnız ve öyle hassassın ki, ruhun resmen duygularının o boğucu sularında boğuluyor. Bu kart, şu anki bu 'dağınık ve mutsuz' halinin seni uçurumun kenarına sürüklediğini fısıldıyor. Neden bu kadar hırçınlaştın ve neden gerçeklerden kaçıyorsun? Hemen toparlanmalı, mantıklı olmayı öğrenmeli ve hayatının iplerini duygularınla değil, iradenle tutmalısın. Sen bir kraliçe olabilirsin ama unutma ki gerçek krallar/kraliçeler duygularına hakim olanlardır.",
+        "gelecek": "Geleceğinde hayatının genelinde seni bekleyen sınavlar karşısında aşırı duygusal ve kırılgan davranma riskin var canım. Eğer içindeki o rasyonel gücü ve özgüveni yeniden canlandırmazsan, hayat seni dilediği gibi savuracak ve seni tek başına bırakacak. Kariyerinde, aşkında ve maddi durumunda saflığın yüzünden büyük kayıplar yaşayabilir ve kendi ellerinle kurduğun o huzuru yine kendi ellerinle yıkabilirsin. Ancak bu durum senin seçimin; sezgilerini bir ışık olarak mı yoksa bir sis bulutu olarak mı kullanacağın tamamen senin elinde. Gelecekte huzur bulmak istiyorsan, şimdiden o kurban psikolojisinden arınmalısın."
+      }
+    }
+  },
+  {
+    "card_id": 49,
     "card_name": "Kupa Kralı (King of Cups)",
     "upright": {
       "ask": {

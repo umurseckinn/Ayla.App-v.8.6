@@ -1,6 +1,6 @@
 [
   {
-    "card_id": 32,
+    "card_id": 36,
     "card_name": "Ace of Cups",
     "upright": {
       "ask": {
@@ -58,7 +58,7 @@
     }
   },
   {
-    "card_id": 33,
+    "card_id": 37,
     "card_name": "Two of Cups",
     "upright": {
       "ask": {
@@ -116,7 +116,7 @@
     }
   },
   {
-    "card_id": 34,
+    "card_id": 38,
     "card_name": "Three of Cups",
     "upright": {
       "ask": {
@@ -174,7 +174,7 @@
     }
   },
   {
-    "card_id": 35,
+    "card_id": 39,
     "card_name": "Four of Cups",
     "upright": {
       "ask": {
@@ -232,7 +232,7 @@
     }
   },
   {
-    "card_id": 36,
+    "card_id": 40,
     "card_name": "Five of Cups",
     "upright": {
       "ask": {
@@ -290,7 +290,7 @@
     }
   },
   {
-    "card_id": 37,
+    "card_id": 41,
     "card_name": "Six of Cups",
     "upright": {
       "ask": {
@@ -348,7 +348,7 @@
     }
   },
   {
-    "card_id": 38,
+    "card_id": 42,
     "card_name": "Seven of Cups",
     "upright": {
       "ask": {
@@ -406,7 +406,7 @@
     }
   },
   {
-    "card_id": 39,
+    "card_id": 43,
     "card_name": "Eight of Cups",
     "upright": {
       "ask": {
@@ -464,7 +464,7 @@
     }
   },
   {
-    "card_id": 40,
+    "card_id": 44,
     "card_name": "Nine of Cups",
     "upright": {
       "ask": {
@@ -522,7 +522,7 @@
     }
   },
   {
-    "card_id": 41,
+    "card_id": 45,
     "card_name": "Ten of Cups",
     "upright": {
       "ask": {
@@ -580,7 +580,7 @@
     }
   },
   {
-    "card_id": 42,
+    "card_id": 46,
     "card_name": "Cup Palace (Page of Cups)",
     "upright": {
       "ask": {
@@ -638,7 +638,123 @@
     }
   },
   {
-    "card_id": 43,
+    "card_id": 47,
+    "card_name": "Knight of Cups",
+    "upright": {
+      "ask": {
+        "gecmis": "Darling, do you remember that romantic and emotional proposal that knocked on your door in your past, making your heart feel like it would burst? The loving words offered by that special soul turned your world into a fairy tale land. In that period, you acted more with your emotions than your logic, completely surrendering to the poetic texture of love. This romantic breeze you experienced is the greatest source nourishing your pure faith in love even today. In those days when love was crafted like art, you rediscovered how deep your soul truly is.",
+        "simdi": "Honey, you are like a love-drunk person right now; you are either receiving a very romantic proposal or longing to pour your intense love onto someone! In this period where you listen to your heart, the person entering or already in your life approaches you with flowers, poems, and immense kindness. If you are single, the emotional soul you will soon meet will be effective enough to wipe away all your loneliness. This card whispers for you not to be afraid to express your feelings and to dive into the sweet melancholy of love. You are currently surrounded by the gentlest and most healing form of love.",
+        "gelecek": "The love waiting for you in your future appears as romantic and full of proposals as if it stepped out of a fairy tale book. That person will not only steal your heart but also offer you the peaceful and emotional world you have always dreamed of. Perhaps with a marriage proposal or a promise of deep commitment, your life will suddenly become beautiful and all your waiting will be worth it. In the future, while living the purest form of love, you will feel the inner peace of finding your soulmate to your very core. Get ready darling, the most romantic period of your life is starting very soon."
+      },
+      "is": {
+        "gecmis": "In your past, you encountered a very creative and inspiring offer in business, experiencing a period where you progressed by involving your emotions. Perhaps you turned a hobby you loved into a job or found a chance to showcase your talents in a very naive work environment. This visionary and dreamy stance in those days added a very elegant touch to your professional identity. The empathy-oriented bonds you established with people are your greatest features that still earn you respect in your career today. You proved to everyone back then that emotions are as important as logic in the business world.",
+        "simdi": "Honey, a very exciting new offer or project where you can show off your creativity is on your agenda in business life right now! You use diplomacy and elegance so well in your workplace relationships that everyone is literally dying to work with you. This is a magnificent time frame in your career where you take steps not just for money, but to feed your soul. If you are considering a job change, the opportunities that come your way will be exactly the kind that serve your dreams. Shine your light and never hesitate to present your creative ideas to the world, darling.",
+        "gelecek": "In your future, offers that will make you very happy, almost like a piece of good news, await you regarding your career plans. You will be invited to such a project or position that you will both showcase your talents and find a very peaceful working environment there. Perhaps that lucky door will open where you will make your name known to large audiences in a branch of art or a field requiring creativity. In the future, you will become not only successful but also a very loved and respected figure in business life. Success will bring you not only gain but also immense spiritual satisfaction, believe in this."
+      },
+      "para": {
+        "gecmis": "In your past, you reaped the fruits of the steps you took by trusting your intuition financially and opened a fresh income gate. Perhaps that gentle investment opportunity, coming through a friend or relative, brought unexpected abundance to your wallet. In that peaceful period money provided you, you were able to free yourself from financial worries and focus on the beauties of life. This 'lucky and in-the-flow' state from those days allows you to look at money more hopefully and comfortably even today. You discovered back then that abundance can come not only through ambition but sometimes just by dreaming, darling.",
+        "simdi": "Honey, there is a new movement in your wallet right now and small but promising news in financial matters that will make you very happy. Perhaps a debt is being collected or an amount of money is being presented to you from an unexpected place. This period is the time to receive the reward of staying in the flow and waiting for opportunities calmly rather than being very ambitious. The abundance of money increases in direct proportion to your positive and dreamy energy, don't forget this. There is a very sweet and peaceful flow for your wallet right now, enjoy it.",
+        "gelecek": "In your future, elegant opportunities appear that will relieve you financially and allow you to realize your dreams. Perhaps an inheritance or a high royalty fee from a creative work will suddenly refresh your life. Days are near when you will flourish financially and use money not just for needs, but to spoil your soul. In the future, while gaining your financial independence, you will achieve this without getting tired and just by using your talents. A very bright and joy-filled future awaits you for your wallet, darling."
+      },
+      "saglik": {
+        "gecmis": "In your past, you experienced an awakening regarding your health and discovered how important it is to heal your body through spiritual ways. Those days when you renewed yourself emotionally rather than physically reminded you what a sensitive balance your body has. Perhaps you found your inner peace through ways like meditation, yoga, or art therapy and were cleansed of your ailments. This mental serenity you gained became the greatest healer of your solid stance today. You understood back then that the way to take good care of your body is through loving your soul.",
+        "simdi": "Honey, your health energy is currently at that peaceful level you desire; you feel very fit and spiritually balanced. That magnificent harmony between your body and soul gives you a great serenity and joy of life. If you have any fatigue, this card gives you the good news that you will recover immediately and a fresh healing energy is filling your veins. Right now, taking time for yourself, spending time in nature, or dealing with a hobby will be the greatest medicine for you. Your light is noticeable even from the outside; you are literally shining with health and peace.",
+        "gelecek": "The health picture waiting for you in the future promises perfect vitality and spiritual fulfillment. You are entering a very peaceful period where you achieve complete harmony with your body and stress and anxiety are completely erased from your life. Perhaps you will experience a miraculous healing process or meet that spiritual expert who will take your quality of life to the peak. Those naive habits you will acquire to protect your health in the future will open the door to a long and high-quality life for you. Those days when physical fatigue will be replaced by unquenchable joy of life will be with you very soon."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general energy of 'romance' and 'realization of dreams'; life has dragged you toward fresh and hopeful paths many times. That first excitement in love, that creative inspiration in work, and that spiritual peace in health touched your life at the same time. Those days when you approached life with kindness and hope like a knight have been the greatest supporters of your vision today. You literally rebuilt your fate in the past with fresh emotions and a great imagination, darling. Those beautiful memories continue to light your way even today.",
+        "simdi": "Honey, a 'spring atmosphere' prevails in every area of your life right now; everything is literally overflowing with fresh excitement and kindness! Your heart is glowing with love, your mind with new projects, and your body with peace so much that let anyone who can stop you try. It is the perfect time to bring out that dreamy soul within you to evaluate these new and elegant opportunities life offers you. Everything started with a proposal or a small step, and now those steps are about to turn into a giant fairy tale scene that beautifies your whole world. Just believe and accept that cup full of love life offers you, darling.",
+        "gelecek": "Your future looks full of miraculous beginnings, romantic proposals, and great spiritual fulfillment in every area of life! You will experience a renaissance in love, work, and personal development, building a brand-new and much happier 'you.' Those elegant opportunities will excite you so much that you will throw all the fatigue of the past aside and run toward the future with hope. In this new journey full of success, happiness, and health, the universe will be your biggest supporter and inspiration. Get ready darling, the most emotional, productive, and peaceful period of your life is starting very soon!"
+      }
+    },
+    "reversed": {
+      "ask": {
+        "gecmis": "Darling, in your past, that person you had great hopes for in your love life unfortunately only sold dreams and disappointed you. Perhaps they made very romantic promises but couldn't put them into action, or they just used you to fill their own emotional void. This 'misleading romance' in that period somewhat damaged your pure faith in love and made you defensive. Those days when you felt your emotions were exploited make it difficult for you to open your heart to someone new today. You were catching that naive scent of love when suddenly your dreams faded, darling.",
+        "simdi": "Honey, you might be experiencing 'emotional confusion' and 'escaping from reality' in your love life right now; it's as if you're trying to see everything through rose-colored glasses but deep down you know something is wrong. The person across from you might be saying very sweet words, but you have serious doubts about their loyalty or sincerity. Perhaps you are being very melancholic and passive right now, which might be leading your relationship to a deadlock. This card says you shouldn't believe everything you hear right now and should pass your emotions through a filter of logic. You are in an illusion; you need to take off those pink glasses to see the truth.",
+        "gelecek": "In your future, in some situations you will experience regarding love, there is a risk of opening your heart to the wrong people due to excessive emotionality and daydreaming. That person who looks like a 'knight' might actually be someone who avoids responsibility and is only after momentary pleasures. The answer to the questions where you say 'I wonder?' in your relationships might not be as clear as you expect, so you should be cautious. However, this process will be a lesson given for you to be more selective and grounded in love. If you want to establish a real bond in the future, you must learn not to fall for every sweet word immediately."
+      },
+      "is": {
+        "gecmis": "In your past, that project you entered with great enthusiasm or that partnership you trusted unfortunately resulted in failure due to lack of seriousness and groundless promises. Perhaps they told you they would revolutionize your career, but they did nothing but stall you. That period, which resulted in disappointment while expecting a leap in your career, might have pushed you into resentment regarding creativity. You felt as if your talents were exploited and your labor didn't see the value it deserved. These 'unfinished promises' from that period make you more skeptical professionally today, darling.",
+        "simdi": "Honey, you might feel yourself in a 'loss of motivation' and 'indecision' in business life right now; you have a thousand dreams but you can't put any of them into action. Perhaps you realized the offers given to you at work are empty, or you suspect someone is going behind your back. Your emotions affect your business decisions so much that you are having difficulty finding a logical way out. This card whispers that you should be professional and not let go of discipline, especially in artistic or creative works. You are in an uncertainty right now; you must focus on concrete data.",
+        "gelecek": "In your future, some groundless offers regarding your career plans or annoying situations like projects being put on hold appear. If you are expecting an important job news, the content of this news may not satisfy you as much as you dreamed or it may come very late. While wanting to open a brand-new page in your career, you have a risk of encountering mistakes brought by inexperience or excessive emotionality. You shouldn't give up in this process but follow a more realistic and strategic path. To achieve success, don't give up on your dreams but be more disciplined about how to realize them."
+      },
+      "para": {
+        "gecmis": "In your past, you took a financial blow when things went wrong at the last moment or when someone misled you while you were expecting a big gain. Perhaps you trusted someone who said 'we will make a lot of money from this' and handed your wallet to them, but the result was a disaster. You were so sure money would come that when it didn't, your financial balance must have been shaken and your confidence broken. This financial disappointment causes you to approach money always with suspicion and fear today. You became a victim of your dreams in financial matters for a while, darling.",
+        "simdi": "Honey, there is a 'leak of abundance' in your wallet right now; it's as if money appears to be coming but never reaches your hand. You might be inclined to jump into groundless news or risky businesses that look very profitable in financial matters; please be very careful! This period says the conditions are not suitable at all for making a financial agreement and the risk of fraud is high. You are in a time frame where you need to act with your calculator, not your emotions. You should master your expenses and be cautious especially in transactions you make over the internet.",
+        "gelecek": "In your future, it appears that the big news of gain you expect regarding money will be a bit more delayed or not as big as you expected. The possibility of being misinformed about an investment or inheritance issue, or someone stalling you, might annoy you. While expecting financial relief, you have a risk of encountering unplanned expenses instead. The gate of wealth is not yet fully ajar, so you should progress cautiously and not listen to the investment advice of people you have just met. To reach the energy of abundance, you must first learn to be more rational in financial matters."
+      },
+      "saglik": {
+        "gecmis": "In your past, you neglected a health warning by saying 'I'm fine' or by falling into an emotional void, and you delayed the healing process, darling. While your body was giving alarms, you were so busy with the confusion or melancholy in your mind that you couldn't show the necessary care to your health. Perhaps you started a treatment but didn't take it seriously and left it halfway, so the disease recurred later. This state of 'negligence' triggers the fear of 'I wonder if it's something serious?' even at the slightest fatigue today. Back then, you put your spiritual health ahead of your physical health and disrupted the balance.",
+        "simdi": "Honey, you are currently in a state of 'emotional fatigue' and 'energy scattering' regarding your health; it's as if your soul has detached from your body. Your body is giving you some signals, you are experiencing sleeplessness or loss of appetite, but you dismiss them as 'temporary.' This card says your immunity is weak right now and you are more vulnerable especially to stress-related stomach or headaches. Please put your emotional burdens aside, take your health seriously, and show care to your body like a temple. Healing will only come when you silence your mind and listen to your body.",
+        "gelecek": "In your future, you have a risk of experiencing some annoying processes like wrong diagnoses or unnecessary delays in treatment regarding health issues. As long as you see taking care of yourself as a 'necessity' and get stressed, it will be that much more difficult to reach full vitality. The physical fatigues you will encounter in the future will be an explosion of your current suppressed emotions. If you don't follow a more serious and less melancholic path to protect your health in the future, your body will one day force you to stay in bed. You should increase your self-compassion and seek healing in your inner peace."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general energy of 'deception' and 'half-finished dreams'; life has dragged you toward wrong emotional paths many times. Those days spent among disappointment in love, groundless promises in work, and losses in financial matters made you more cautious and equally tired today. Those days when you acted on the words of others or just followed your emotions have left some deficiencies in your life today. You shook your wand against life not like a knight but like a victim, which left you vulnerable. This 'loss of direction' back then still scares that child within you today.",
+        "simdi": "Honey, you are currently in a phase of 'chaos' and 'misunderstandings' in your general life; it's as if nothing is progressing as you want. Whichever job you touch, a glitch appears; the messages you expect always come incomplete or full of lies; your energy is crawling on the floor. This card whispers that this 'emotional scattering' has extinguished the creative fire within you. Why did you fall apart so easily and why did you make everything so melancholic? You must pull yourself together immediately and take the ropes of your life not with your emotions, but with your logic. You are not a fairy tale character, but the manager of your own life.",
+        "gelecek": "In your future, some obstacles, bad news, and emotional disappointments in the general rhythm of life might be waiting for you, darling. Much more discipline and logic than you expect will be needed for those big changes you planned to happen. Instead of thinking 'everything will be perfect' in love and work, take your guard against those 'sweet-talking but empty' promises. The cup full of happiness life will offer you will not come immediately, or it might mislead you when it comes, so you must be very careful. If you learn to be patient and look at events from a more mature window, that true big peace will be yours."
+      }
+    }
+  },
+  {
+    "card_id": 48,
+    "card_name": "Queen of Cups",
+    "upright": {
+      "ask": {
+        "gecmis": "Darling, in your past, you were a monument of compassion in your love life, nourishing your relationship with deep intuition and unending love. That magnificent period where you could feel every emotion of the other party and established a spiritual bond taught you the purest form of love. Perhaps you embraced your partner with a motherly affection or healed all their wounds with your own love. This emotional depth you experienced back then is the biggest reason why you still seek meaning and peace in your relationships today. You discovered back then that love is not just an emotion, but a healing power.",
+        "simdi": "Honey, you are currently in a period of 'emotional maturity' and 'intuition' in your love life; you are almost reading your partner's mind! Your heart's doors are wide open and you give such peace to those around you that everyone wants to take refuge in your compassionate energy. If you are single, your intuition might be whispering that the right person is very close; just trust your inner voice. This card says you are currently managing love like a queen—that is, with both strength and infinite love. You are currently like a harbor emotionally, providing healing to both yourself and your loved ones.",
+        "gelecek": "The peace waiting for you in your future in the name of love promises a bond as deep and eternal as an ocean. You will catch such a spiritual harmony with that person that you will understand each other without even needing words. Perhaps you will take the decision to start a family or place your current relationship on a much more compassionate and permanent foundation. In the future, while living the most mature and intuitive form of love, you will feel deeply once again why your soul exists in this world. Get ready darling, the most emotional and satisfying page of your life is about to open."
+      },
+      "is": {
+        "gecmis": "In your past, you achieved great success by using your intuition and empathy skills in business life, becoming almost a guide for your colleagues. Perhaps you were working in a people-oriented job and were the confidant and pathfinder for everyone there. This visionary and compassionate stance in those days earned you unshakable respect and trust in your career. Because you always listened to your heart alongside your logic, the results of the decisions you took were always auspicious and fruitful. You showed everyone back then how great a power kindness is in the business world.",
+        "simdi": "Honey, you are in a period where your intuition peaks in business life; you literally feel from your heart which project will succeed and which won't! Thanks to the peaceful and constructive energy you create in the work environment, you can solve even crises with just a smile. This period is the time frame where your talents will be most appreciated, especially if you are doing a job that requires creativity, art, or healing. If you need to make a decision, don't listen to analyses, but to that whisper within; it will never mislead you. You are the compassionate and wise queen of business life right now, keep shining.",
+        "gelecek": "In your future, there is news of immense spiritual satisfaction regarding your career goals and reaching a very respected position. You will reach such a level that you will not only manage the works but also touch many people's lives and inspire them. Perhaps you will be the owner of a business that reflects your soul, like your own healing center or creative workshop. In the future, not only material success but also great spiritual peace will be with you in business life. Success will be the most beautiful fruit of your deep intuition and endless patience, believe in this."
+      },
+      "para": {
+        "gecmis": "In your past, you experienced the abundance of the steps you took by trusting your intuition financially and put your financial situation into a peaceful balance. Perhaps you just said 'it felt right' when making an investment, and that decision brought you unexpected abundance. Those days when you saw money not as a show of power but as a tool to take care of your loved ones and feed your soul were very productive. This 'gratitude and abundance' consciousness back then allows you to look at money more calmly and safely even today. You discovered back then that abundance comes not only with ambition but sometimes just with love, darling.",
+        "simdi": "Honey, there is a very peaceful flow in your wallet right now; you feel safe in financial matters and grateful for your abundance. Perhaps it's not a huge wealth, but you've built such a beautiful world with what you have that you feel as if nothing is missing. This period is a time frame where your intuition leads you to the most correct investments or saving plans in financial matters. Because you know money is not just about numbers but an energy, the abundance of your wallet is never lacking. You currently feel like a complete 'abundance queen' financially and share this with your loved ones.",
+        "gelecek": "In your future, a wealth appears that will relieve you financially and offer that comfortable, peaceful life you've dreamed of. Perhaps the fruit of your creativity or great support from a female figure will radically change your financial situation. Days are at the door when you will multiply like the abundance of an ocean financially and use money only to buy peace. In the future, while gaining your financial independence, you will achieve this without getting tired and just with the consciousness of wealth within you. A very bright, abundant, and joy-filled future awaits you for your wallet, darling."
+      },
+      "saglik": {
+        "gecmis": "In your past, you experienced a healing period regarding your health and personally experienced how you can heal your body with your soul, darling. Those days when you felt very serene and fit taught you how vital meditation or emotional balance is. Perhaps you defeated a disease just by finding your inner peace or felt reborn by taking care of your body like a temple. This intuitive healing power you gained back then has been the solidest foundation of your resilient and glowing state today. You understood back then that the way to take good care of your body is through loving your heart first.",
+        "simdi": "Honey, your health energy is currently at that level of 'soul and body integrity' you desire; you are literally radiating healing! That magnificent harmony between your body and soul gives you great serenity and an internal light; when you look in the mirror, you see that queen energy. If you have an ailment, this card gives you the good news that you will heal yourself with love and compassion. Right now, herbal teas, meditation, or just spending time with loved ones will be the greatest medicine for you. Your light is noticeable even from the outside; you are literally shining with health and queenly peace.",
+        "gelecek": "The health picture waiting for you in the future promises perfect vitality and a long, healing-filled life. You are entering a very peaceful period where you achieve complete harmony with your body and every cell is renewed with love. Perhaps you will become a healing expert or experience that spiritual awakening that will take your quality of life to the peak. Those naive habits you will acquire to protect your health in the future will give you an energy everyone will envy even in your old age. Days when physical fatigue is replaced by an unquenchable fire of peace will be with you very soon, believe in this."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general energy of 'emotional satisfaction' and 'the power of intuition'; life has dragged you toward compassionate paths many times. You lived that deep bond in love, that creative inspiration in work, and that spiritual peace in health at the same time, literally becoming one with the universe. Those days when you approached life like a wise and loving queen have been the greatest architect of your vision today. You literally rebuilt your fate in the past with your deep intuition and never-ending patience, darling. Those beautiful memories continue to light your way today.",
+        "simdi": "Honey, a 'peace and abundance' atmosphere prevails in every area of your life right now; literally everything becomes more beautiful with your intuitive touch! Your heart is so surrounded by love, your mind by creative projects, and your body by healing that everyone who touches you gets a share of your peace. It is the perfect time to bring out the wise woman within you to evaluate these deep and meaningful opportunities life offers you. Everything started with a feeling, and now that feeling is about to turn into a giant healing torch that illuminates your whole world. Just believe and accept that cup full of happiness with a grace worthy of queens.",
+        "gelecek": "Your future looks full of miraculous beginnings, spiritual fulfillments, and great successes in every area of life! You will shine like a wise queen in love, work, and personal development, becoming a figure who spreads healing to those around you. Those deep and meaningful opportunities will make you so happy that you will throw all the dust of the past aside and run toward peace with joy. In this new journey full of success, happiness, and health, the universe will be your biggest supporter and intuition your greatest guide. Get ready darling, the most emotional, productive, and peaceful period of your life is starting very soon!"
+      }
+    },
+    "reversed": {
+      "ask": {
+        "gecmis": "Darling, in your past, you neglected yourself due to excessive emotionality and sacrifice in your love life, literally consuming your own soul for the happiness of others. Those days when you tried to be the confidant for your partner while forgetting to heal your own wounds might have dragged you into emotional burnout. Perhaps your intuition was telling you something was wrong, but you silenced it for the sake of love. This 'giving up on oneself' state is the biggest reason why you are so insecure and tired in your relationships today. You lost your own identity within love for a while, darling.",
+        "simdi": "Honey, you might be experiencing a period of 'emotional imbalance' and 'excessive sensitivity' in your love life right now; you take everything very personally and are easily hurt. Your intuition is a bit blurry right now and you might be harboring an unfair distrust toward your partner because of your fears. Perhaps you are being subjected to manipulation while waiting for love, or you are emotionally restricting the other party. This card says you need to stop for a moment, find your own inner peace, and show yourself the compassion you expect from others. You are in an emotional storm; don't make decisions before you calm down.",
+        "gelecek": "In your future, in some situations you will experience regarding love, there is a risk of experiencing great unrest due to excessive jealousy or emotional dependency. That person who looks 'compassionate' might actually be someone who pushes your boundaries and drains you emotionally. Your tendency to sacrifice yourself by saying 'I love more' might drag you into the same disappointments again in the future. However, this process will be a lesson given for you to learn to 'love yourself' first in love. If you want to establish a real bond in the future, you must learn to protect your heart correctly, not your wand."
+      },
+      "is": {
+        "gecmis": "In your past, you missed big opportunities because you acted according to your fears and people's manipulation rather than your intuition, darling. Perhaps you were very talented but you always held yourself back saying 'I can't do it' or 'everyone is better than me.' Those days when you couldn't focus on your own work from listening to others' troubles while expecting a rise in your career must have worn you out. That period when you got too caught up in office gossip or emotional turmoil still casts a shadow on your professional self-confidence today. You listened to others' whispers, not the voice of your heart, in the business world, darling.",
+        "simdi": "Honey, you might feel yourself in a 'emotional scattering' in business life right now; you can't focus on any work and you are constantly afraid that someone will hurt you. Perhaps you are being exploited because you empathize too much at work or you can't use your intuition in your projects. Your motivation is so low that you push away the great opportunities that come your way by saying 'I can't succeed.' This card whispers that you should be professional and not let go of discipline, especially in creative works. You are in a victim psychology; you must return to your throne immediately and take back your power.",
+        "gelecek": "In your future, some emotional obstacles regarding your career plans and major conflicts with female figures appear. You might be very enthusiastic about an important project or position, but someone playing with your emotions or tripping you up might annoy you. You have a risk of using your intuition wrongly, trusting the wrong people, and thus experiencing material/spiritual losses in business life. If you want to achieve success, don't give up on your dreams but be more firm and rational about how to protect them. If you want to be successful in the future, you must give up that 'trust everyone' habit from now on."
+      },
+      "para": {
+        "gecmis": "In your past, you succumbed to excessive spending to fill emotional voids rather than your intuition in financial matters, darling. In that period when you used money not as a source of peace but as a means of consolation, your wallet might have weakened considerably. Those days when you believed someone's lie of 'I need money' and gave away what you had are challenging you financially today. This 'emotional generosity' back then causes you to approach money always with the fear that 'it will never accumulate.' You spent money for the appreciation of others, not for your financial freedom, back then, darling.",
+        "simdi": "Honey, a period of 'unplanned' and 'emotional spending' prevails in your wallet right now; it's as if you're trying to relieve yourself by shopping as your morale breaks. The reason you can't put your financial situation in order is because you try to manage money with your feelings, not with numbers. This card whispers that instead of protecting your financial resources, you are pouring them like into an ocean. You should urgently make a budget plan and understand that money is not a temporary peace but a tool for a solid future. You should put aside that 'giving money out of pity' habit in your wallet right now, or everything will be consumed.",
+        "gelecek": "In your future, some losses you will experience in financial sense might grow further due to an excessive trust in a female figure or wrong investment advice. Trying to trust your intuition in a financial crisis and acting with your emotions might lead you to a major debt trap. If you avoid that logical struggle you must give to protect your money, you might lose all your financial power in the future. In this process, it is essential to learn to be patient and use your intelligence, not your mercy, while managing money. To prosper in the future, you must close the emotional holes in your wallet now."
+      },
+      "saglik": {
+        "gecmis": "In your past, you ignored a health warning by saying 'I'm tired but it'll pass' or by perceiving psychological problems as physical, darling. Those heavy loads that excessive stress, melancholy, and worrying about others' troubles put on your body stopped you completely at one point. Perhaps you dealt with hormonal problems or sleep disorders for a period because your soul was so heavy that your body couldn't handle it. You understand better now how much you neglected your health back then and how you silenced the voice of your soul. You listened to the voice of your fears, not the voice of your body back then, honey.",
+        "simdi": "Honey, your body is currently in 'emotional poisoning'; your unending sadness and anxiety are exhausting every cell! You put yourself in others' shoes so much that you think even the pains in your body were caught from them. This card cries out that you urgently need to take a break, meditate, or at least be alone for a bit. You cannot heal the whole world; you must first relight that healing light in your own body. Please put that cup down and just take a deep breath; otherwise a psychological collapse is inevitable very soon.",
+        "gelecek": "In your future, a process that will challenge you regarding your health and where it will worsen if you don't take responsibility awaits you. As long as you see taking care of yourself as a 'blessing,' your healing will be that much delayed and painful. The physical fatigues you will encounter in the future and especially reproductive/hormone-related diseases will be a result of your current suppressed emotions. You might have to enter a very heavy and restrictive spiritual/physical treatment program to regain your health in the future. If you don't learn to silence that sad queen within you now, your body will stop you one day by force."
+      },
+      "hepsi": {
+        "gecmis": "When I look at your past, I see a general energy of 'self-sacrifice' and 'emotional confusion'; life has tested you many times with your mercy. Letting yourself be treated selfishly in love, trusting people too much in work, and saying 'others are more important' in health might have led you to some regrets today. Those days when you lost your inner peace while trying to beautify others' lives have left a deep void in your soul. You shook your wand against life not like a queen but like a victim, which left you vulnerable. This 'wrong mercy' use still makes you restless today, honey.",
+        "simdi": "Darling, you are currently in a phase of 'melancholy' and 'intolerance' in your general life; it feels as if everything is working against you. But deep down you are so alone and so sensitive that your soul is literally drowning in the suffocating waters of your emotions. This card whispers that this 'scattered and unhappy' state is dragging you to the edge of the abyss. Why did you become so aggressive and why are you running away from reality? You must pull yourself together immediately, learn to be logical, and hold the ropes of your life not with your emotions, but with your will. You can be a queen but remember that real kings/queens are those who master their emotions.",
+        "gelecek": "In your future, you have the risk of acting excessively emotional and fragile in the face of the tests that await you in your general life. If you don't revitalize that rational power and self-confidence within you, life will toss you as it wishes and leave you alone. You might experience big losses in your career, love, and financial situation due to your naivety and destroy the peace you built with your own hands. However, this situation is your choice; whether to use your intuition as a light or as a fog bank is completely in your hands. If you want to find peace in the future, you should be cleansed of that victim psychology now."
+      }
+    }
+  },
+  {
+    "card_id": 49,
     "card_name": "King of Cups",
     "upright": {
       "ask": {

@@ -25,11 +25,11 @@ export interface TurkishTarotCard {
 }
 
 const ALL_TR_CARDS: TurkishTarotCard[] = [
-  ...(arcanaTr as TurkishTarotCard[]),
-  ...(cupsTr as TurkishTarotCard[]),
-  ...(wandsTr as TurkishTarotCard[]),
-  ...(swordsTr as TurkishTarotCard[]),
-  ...(pentaclesTr as TurkishTarotCard[])
+  ...(arcanaTr as any[] as TurkishTarotCard[]),
+  ...(cupsTr as any[] as TurkishTarotCard[]),
+  ...(wandsTr as any[] as TurkishTarotCard[]),
+  ...(swordsTr as any[] as TurkishTarotCard[]),
+  ...(pentaclesTr as any[] as TurkishTarotCard[])
 ];
 
 // Mapping from name_short to card_id in JSON
@@ -38,14 +38,14 @@ const ID_MAP: Record<string, number> = {
   "ar00": 0, "ar01": 1, "ar02": 2, "ar03": 3, "ar04": 4, "ar05": 5, "ar06": 6, "ar07": 7,
   "ar08": 8, "ar09": 9, "ar10": 10, "ar11": 11, "ar12": 12, "ar13": 13, "ar14": 14, "ar15": 15,
   "ar16": 16, "ar17": 17, "ar18": 18, "ar19": 19, "ar20": 20, "ar21": 21,
-  // Wands
-  "waac": 22, "wa02": 23, "wa03": 24, "wa04": 25, "wa05": 26, "wa08": 27, "wa09": 28, "wakn": 29, "waqu": 30, "waki": 31,
-  // Cups
-  "cuac": 32, "cu02": 33, "cu03": 34, "cu04": 35, "cu05": 36, "cu06": 37, "cu07": 38, "cu08": 39, "cu09": 40, "cu10": 41, "cupa": 42, "cuki": 43,
-  // Swords
-  "swac": 44, "sw02": 45, "sw03": 46, "sw04": 47, "sw05": 48, "sw06": 49, "sw07": 50, "sw08": 51, "sw09": 52, "sw10": 53, "swpa": 54, "swkn": 55, "swqu": 56, "swki": 57,
-  // Pentacles
-  "peac": 58, "pe02": 59, "pe03": 60, "pe04": 61, "pe05": 62, "pe06": 63, "pe07": 64, "pe08": 65, "pe09": 66, "pe10": 67, "pepa": 68, "pekn": 69, "pequ": 70, "peki": 71
+  // Wands (22-35)
+  "waac": 22, "wa02": 23, "wa03": 24, "wa04": 25, "wa05": 26, "wa06": 27, "wa07": 28, "wa08": 29, "wa09": 30, "wa10": 31, "wapa": 32, "wakn": 33, "waqu": 34, "waki": 35,
+  // Cups (36-49)
+  "cuac": 36, "cu02": 37, "cu03": 38, "cu04": 39, "cu05": 40, "cu06": 41, "cu07": 42, "cu08": 43, "cu09": 44, "cu10": 45, "cupa": 46, "cukn": 47, "cuqu": 48, "cuki": 49,
+  // Swords (50-63)
+  "swac": 50, "sw02": 51, "sw03": 52, "sw04": 53, "sw05": 54, "sw06": 55, "sw07": 56, "sw08": 57, "sw09": 58, "sw10": 59, "swpa": 60, "swkn": 61, "swqu": 62, "swki": 63,
+  // Pentacles (64-77)
+  "peac": 64, "pe02": 65, "pe03": 66, "pe04": 67, "pe05": 68, "pe06": 69, "pe07": 70, "pe08": 71, "pe09": 72, "pe10": 73, "pepa": 74, "pekn": 75, "pequ": 76, "peki": 77
 };
 
 export function getTurkishTarotCardData(id: string): TurkishTarotCard | undefined {
