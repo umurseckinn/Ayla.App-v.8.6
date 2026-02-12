@@ -1,0 +1,54 @@
+SYNASTRY MISSING PAIRS REPORT
+=============================
+
+--- HOUSE 1: Benlik Evi / House of Self ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 2: Maddi Değerler Evi / House of Values ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 3: İletişim Evi / House of Communication ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 4: Yuva ve Kökler Evi / Nest House ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 5: Aşk ve Yaratıcılık Evi / House of Creativity and Love ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 6: Sağlık ve Hizmet Evi / House of Health and Daily Life ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 7: Ortaklık ve Evlilik Evi / House of Partnership and Marriage ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 8: Dönüşüm ve Ortak Kaynaklar Evi / Deep Bond and Passion House ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 9: Felsefe ve Uzak Yollar Evi / House of Vision and Faith ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 10: Kariyer ve Toplum Evi / House of Career and Success ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 11: Sosyal Çevre ve Hayaller Evi / Social Environment and House of Hopes ---
+Turkish Missing (0): None
+English Missing (0): None
+
+--- HOUSE 12: Ruhsal Bütünleşme ve Bilinçaltı Evi / Spiritual Integration and Subconscious House ---
+Turkish Missing (0): None
+English Missing (0): None
+
+==============================
+TOTAL MISSING TURKISH: 0
+TOTAL MISSING ENGLISH: 0

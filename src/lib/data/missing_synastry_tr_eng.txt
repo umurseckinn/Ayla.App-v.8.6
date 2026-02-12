@@ -1,0 +1,398 @@
+{
+    "ozellik": "Yuva ve Kökler Evi",
+    "burc_eslesmesi": "Aslan-İkizler",
+    "dil": "Türkçe",
+    "yorum": "Bu yuva, çocuksu bir neşeyle dolup taşan ve kahkahaların eksik olmadığı dinamik bir sahne gibidir. Aslan'ın görkemli sıcaklığı ile İkizler'in bitmek bilmeyen merakı, ev hayatınızı her an hareketli bir festivale dönüştürür. Geleneksel bir aile yapısından ziyade, sürekli misafirlerin ağırlandığı ve yeni fikirlerin uçuştuğu enerjik bir kök salma hikayesi yazarsınız. İkiniz de rutinden çabuk sıkıldığınız için eviniz, dekorasyondan sohbete kadar her an değişen canlı bir organizma gibidir. Kökleriniz, birbirinize duyduğunuz zihinsel hayranlık ve birlikte eğlenebilme yeteneğiniz üzerine çok sağlam bir şekilde inşa edilir. Bu çatı altında sıkılmaya yer yoktur; çünkü sevginiz her gün yeniden keşfedilen neşeli bir oyun gibidir."
+}
+{
+    "ozellik": "House 4: Home and Roots",
+    "burc_eslesmesi": "Leo-Gemini",
+    "dil": "English",
+    "yorum": "This home is like a dynamic stage overflowing with childlike joy, where laughter is never missing from the halls. The majestic warmth of Leo combined with Gemini's endless curiosity transforms your domestic life into a vibrant festival. Rather than a traditional family structure, you write a story of energetic roots where guests are constantly welcomed and new ideas take flight. Since both of you bore easily with routine, your home is like a living organism, changing everything from its decor to the topics of conversation. Your roots are built firmly upon your intellectual admiration for one another and your shared ability to have fun. Under this roof, there is no room for boredom; for your love is like a joyful game rediscovered every single day."
+}
+{
+    "ozellik": "Yuva ve Kökler Evi",
+    "burc_eslesmesi": "Balık-Başak",
+    "dil": "Türkçe",
+    "yorum": "Biri ruhu, diğeri ise bedeni temsil eden bu eşleşmede yuva, hem bir tapınak hem de kusursuz bir düzen alanıdır. Başak’ın pratikliği evin fiziksel ihtiyaçlarını mükemmel bir işleyişe sokarken, Balık’ın sezgiselliği bu dört duvara ruhani bir derinlik katar. Kökenlerinizde, kaos ile düzenin birbirini terbiye ettiği ve sonunda huzuru bulduğu mistik bir denge gizlidir. Evinizde hem şifalı bitkilerin kokusu hem de her eşyanın yerli yerinde olduğu o güven verici disiplin bir aradadır. Birbirinizin eksiklerini tamamlayan bu yapıda, dış dünyanın fırtınalarına karşı sığınılacak en güvenli limanı birlikte inşa edersiniz. Bu yuva, fedakarlık ve sadakatin en somut haliyle yaşandığı, kutsal bir aidiyet duygusu barındırır."
+}
+{
+    "ozellik": "House 4: Home and Roots",
+    "burc_eslesmesi": "Pisces-Virgo",
+    "dil": "English",
+    "yorum": "In this pairing where one represents the soul and the other the body, the home is both a temple and a space of perfect order. Virgo's practicality puts the physical needs of the home into perfect operation, while Pisces' intuitiveness adds spiritual depth to these four walls. Hidden in your roots is a mystical balance where chaos and order refine each other and eventually find peace. In your home, the scent of healing herbs coexists with that reassuring discipline where every item has its rightful place. In this structure that completes each other's deficiencies, you build together the safest harbor to take refuge in against the storms of the outside world. This home contains a sense of sacred belonging, where sacrifice and loyalty are experienced in their most concrete form."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Aslan",
+    "dil": "Türkçe",
+    "yorum": "Günlük yaşamda iki dev gücün karşılaşması, bu evde gizli bir iktidar savaşına ama aynı zamanda muazzam bir verimliliğe dönüşür. Akrep’in stratejik derinliği ile Aslan’ın yönetme arzusu, iş bölümünde başta gerilim yaratsa da sonuç her zaman görkemlidir. Birbirinizin çalışma disiplinine duyduğunuz saygı, en zorlu günlük görevleri bile tutkulu birer projeye dönüştürmenizi sağlar. Sağlık ve alışkanlıklar konusunda birbirinizi denetlemekten çekinmez, adeta birbirinizin yaşam koçu gibi davranırsınız. Aranızdaki bu hizmet bağı, karşılıklı sadakat ve yüksek standartlar üzerine kurulu sarsılmaz bir disiplin barındırır. Eğer egolarınızı bir kenara bırakırsanız, hayatın pratik yüklerini omuz omuza vererek bir imparatorluk titizliğiyle yönetirsiniz."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Leo",
+    "dil": "English",
+    "yorum": "The meeting of two giant powers in daily life turns into a secret power struggle in this house, but also into immense productivity. Although Scorpio's strategic depth and Leo's desire to lead create tension in the division of labor at first, the result is always magnificent. Your respect for each other's work discipline allows you to turn even the most challenging daily tasks into passionate projects. You do not hesitate to monitor each other regarding health and habits, acting almost as each other's life coaches. This bond of service between you contains an unwavering discipline built on mutual loyalty and high standards. If you set your egos aside, you manage the practical burdens of life side by side with the meticulousness of an empire."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Balık",
+    "dil": "Türkçe",
+    "yorum": "Günlük rutinleriniz ve çalışma hayatınız, rasyonel bir süreçten ziyade sezgisel ve ruhsal bir akış içinde şekillenir. Akrep’in dönüştürücü gücü ile Balık’ın şifacı doğası birleşince, birbirinize hizmet etmek en saf sevgi diline dönüşür. İş ortamında veya evdeki sorumluluklarda, birbirinizin yorgunluğunu kelimeler olmadan anlar ve sessiz bir yardımlaşma ağı kurarsınız. Sağlık konusunda hem ruhu hem bedeni iyileştirmeye odaklanan, mistik ve alternatif yöntemlere açık bir yaklaşım sergilersiniz. Birbirinizin hayatını kolaylaştırmak için sergilediğiniz bu fedakarlık, ilişkinizin en derin ve sessiz kutsal bağıdır. Bu ikili, kaosun içinde bile birbirinin ruhuna hizmet ederek huzurlu bir günlük yaşam ritmi oluşturmayı başarır."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Pisces",
+    "dil": "English",
+    "yorum": "Your daily routines and work life are shaped more by an intuitive and spiritual flow than by a rational process. When Scorpio's transformative power combines with Pisces' healing nature, serving each other turns into the purest language of love. In the work environment or in domestic responsibilities, you understand each other's fatigue without words and build a silent network of mutual aid. Regarding health, you exhibit an approach open to mystical and alternative methods, focusing on healing both the soul and the body. This sacrifice you show to make each other's lives easier is the deepest and most silent sacred bond of your relationship. This duo manages to create a peaceful daily life rhythm by serving each other's souls even in the midst of chaos."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Başak",
+    "dil": "Türkçe",
+    "yorum": "Bu eşleşme, detayların efendisi olan Başak ile odaklanmanın ustası olan Akrep’in mükemmel bir 'operasyonel' uyumudur. Günlük işleri organize ederken bir cerrah titizliğiyle çalışır, hiçbir pürüzü gözden kaçırmadan mükemmele ulaşırsınız. Başak'ın analiz yeteneği Akrep'in kararlılığıyla birleşince, en karmaşık sorunlar bile pratik birer çözüme kavuşur. Sağlık ve beslenme konularında birbirinizi disipline eden, oldukça bilinçli ve bazen fazla eleştirel olabilen bir çiftsiniz. Hizmet etmek sizin için bir görevden ziyade, hayatı daha kaliteli hale getirmek için yürütülen ortak bir stratejidir. Birbirinizin çalışma alanına saygı duyduğunuz sürece, verimliliğin zirvesine çıkan sarsılmaz bir ekip olursunuz."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Virgo",
+    "dil": "English",
+    "yorum": "This pairing is a perfect 'operational' harmony between Virgo, the master of details, and Scorpio, the master of focus. You work with surgical precision when organizing daily tasks, reaching perfection without missing a single flaw. When Virgo's analytical ability combines with Scorpio's determination, even the most complex problems find practical solutions. You are a very conscious and sometimes overly critical couple who discipline each other regarding health and nutrition. For you, serving is more than a duty; it is a shared strategy carried out to improve the quality of life. As long as you respect each other's workspace, you become an unwavering team that reaches the peak of productivity."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Kova",
+    "dil": "Türkçe",
+    "yorum": "Geleneksel rutinlerin dışına çıkan bu ikili, günlük hayatı ve çalışma yöntemlerini adeta yeniden icat ederler. Akrep'in odaklanmış derinliği ile Kova'nın yenilikçi zihni, alışılagelmişin çok ötesinde bir hizmet anlayışı geliştirir. Birbirinizin özgürlük alanlarına saygı duyarak, kimsenin kimseden emir almadığı ancak her işin tıkır tıkır yürüdüğü bir düzen kurarsınız. Sağlık ve yaşam tarzı konusunda teknolojik yeniliklere ve sıra dışı tedavi yöntemlerine olan ilginiz sizi modern bir çift yapar. Aranızdaki bu hizmet bağı, duygusal bağımlılıktan ziyade entelektüel bir iş birliği ve toplumsal bir vizyon üzerine kuruludur. Birlikte çalıştığınızda, sadece kendi hayatınızı değil, çevrenizdeki sistemleri de dönüştürecek bir güç ortaya koyarsınız."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Aquarius",
+    "dil": "English",
+    "yorum": "Going beyond traditional routines, this duo almost reinvents daily life and work methods. Scorpio's focused depth and Aquarius's innovative mind develop a sense of service far beyond the conventional. By respecting each other's spheres of freedom, you establish an order where no one takes orders from anyone but every task runs smoothly. Your interest in technological innovations and unusual treatment methods regarding health and lifestyle makes you a modern couple. This bond of service between you is built on intellectual cooperation and a social vision rather than emotional dependency. When you work together, you demonstrate a power that transforms not only your own lives but also the systems around you."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Oğlak",
+    "dil": "Türkçe",
+    "yorum": "Bu evde, ciddiyetin ve sarsılmaz bir sorumluluk bilincinin hakim olduğu profesyonel bir aşk hikayesi yaşanır. Akrep’in sarsılmaz iradesi ile Oğlak’ın sarsılmaz disiplini, günlük hayatın tüm zorluklarını aşan bir kale inşa eder. Birbirinizin hedeflerine ulaşması için verdiğiniz destek, romantizmden çok daha derin bir sadakat ve saygı içerir. Sağlık ve rutinler konusunda geleneksel ama çok sıkı kurallarınız vardır; ikiniz de boş durmaktan hoşlanmazsınız. Birbirinize hizmet ederken sessiz bir anlaşma içindesinizdir; bu, kelimelere dökülmeyen ama her eylemde hissedilen bir 'yanındayım' mesajıdır. Hayatın pratik yüklerini omuzlarken gösterdiğiniz bu dayanıklılık, ilişkinizi zamanla yıkılmaz bir imparatorluğa dönüştürür."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Capricorn",
+    "dil": "English",
+    "yorum": "In this house, a professional love story takes place, dominated by seriousness and an unwavering sense of responsibility. Scorpio's unshakeable will and Capricorn's unshakeable discipline build a fortress that overcomes all the challenges of daily life. The support you give to help each other achieve goals involves a loyalty and respect much deeper than romance. You have traditional but very strict rules regarding health and routines; neither of you enjoys being idle. While serving each other, you are in a silent agreement; this is an 'I am with you' message that is not put into words but felt in every action. This resilience you show while shouldering the practical burdens of life turns your relationship into an indestructible empire over time."
+}
+{
+    "ozellik": "Sosyal Çevre ve Hayaller Evi",
+    "burc_eslesmesi": "Balık-İkizler",
+    "dil": "Türkçe",
+    "yorum": "Hayaller evinde bu ikili, biri okyanus derinliğinde diğeri ise rüzgarın hızında iki farklı evreni birleştirir. Balık’ın sınırsız imajinasyonu ile İkizler’in çok yönlü zekası, sosyal çevrenizde 'masalsı ama entelektüel' bir hava estirir. Gelecek planlarınız genellikle gerçeküstü başlar ancak İkizler’in iletişim yeteneği sayesinde bu hayaller somut çevrelere ulaşır. Arkadaş grupları içinde hem çok sevilen hem de gizemli bir şekilde merak uyandıran, değişken enerjili bir çift olarak tanınırsınız. Birlikte kurduğunuz idealler, mantık ile sezginin dans ettiği, sınırları olmayan bir gökyüzü gibidir. Birbirinizin vizyonuna alan tanıdığınızda, imkansız görünen hayalleri bile sosyal bir başarıya dönüştürebilirsiniz."
+}
+{
+    "ozellik": "House 11: Social Circle and Dreams",
+    "burc_eslesmesi": "Pisces-Gemini",
+    "dil": "English",
+    "yorum": "In the house of dreams, this duo combines two different universes—one in the depths of the ocean and the other at the speed of the wind. Pisces' limitless imagination and Gemini's versatile intelligence create a 'fairytale yet intellectual' atmosphere in your social circle. Your future plans often start out surreal, but through Gemini's communication skills, these dreams reach concrete social circles. Within friend groups, you are known as a couple with variable energy, both well-loved and mysteriously intriguing. The ideals you build together are like a sky without boundaries, where logic and intuition dance. When you grant space to each other's visions, you can transform even seemingly impossible dreams into social achievements."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Akrep'in her şeyi derinlemesine deşme arzusu ile Terazi'nin her şeye estetik ve denge katma çabası, bu evde ilginç bir uyum yakalar. Günlük rutinlerinizde adaleti sağlamak ve krizleri sessizce çözmek sizin en büyük gücünüzdür. Terazi ortamı yumuşatırken, Akrep gözden kaçan o can alıcı sorunu bulup kökten halleder. Sağlık konusunda hem ruhsal arınmaya hem de bedensel zarafete önem veren, dengeli bir yaşam tarzı benimsersiniz. Birbirinize hizmet ederken nazik ama kararlı bir duruş sergileyerek, kaosun ortasında bile zarafeti korumayı başarırsınız. Bu eşleşme, iş birliğinin stratejiyle harmanlandığı, her detayın hem şık hem de etkili olduğu bir yaşam ritmi sunar."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Libra",
+    "dil": "English",
+    "yorum": "Scorpio's desire to dig deep into everything and Libra's effort to add aesthetics and balance to everything find an interesting harmony in this house. Your greatest strength is ensuring justice in your daily routines and solving crises quietly. While Libra softens the environment, Scorpio finds the crucial overlooked issue and handles it from the root. Regarding health, you adopt a balanced lifestyle that values both spiritual purification and physical grace. While serving each other, you display a kind yet determined stance, managing to maintain elegance even in the midst of chaos. This pairing offers a life rhythm where cooperation is blended with strategy, and every detail is both stylish and effective."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Akrep-Yay",
+    "dil": "Türkçe",
+    "yorum": "Akrep'in odaklanmış derinliği ile Yay'ın özgür ruhlu keşif arzusu, günlük yaşamda sınırları zorlayan bir dinamizm yaratır. Sizler için rutin, sadece bir sonraki büyük maceraya hazırlık yapmak için kullanılan bir araçtır. Akrep ayrıntılarda saklı olan gerçeği ararken, Yay bu bilgiyi alıp uzak ufuklara taşıyacak motivasyonu sağlar. Sağlık ve hizmet konularında felsefi ve bazen de uçlarda gezinen bir yaklaşım sergileyerek, bedeninizi bir keşif alanı olarak görürsünüz. Birbirinizin çalışma alanlarına müdahale etmediğinizde, karanlığı aydınlığa kavuşturan cesur bir ekip ruhu oluşturursunuz. Bu ilişki, hayatın pratik yanlarını bile bir bilgelik arayışına dönüştüren, dönüştürücü ve büyüleyici bir yolculuktur."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Scorpio-Sagittarius",
+    "dil": "English",
+    "yorum": "Scorpio's focused depth and Sagittarius's free-spirited desire for discovery create a dynamism that pushes boundaries in daily life. For you, routine is merely a tool used to prepare for the next big adventure. While Scorpio searches for the truth hidden in details, Sagittarius provides the motivation to take that information to far horizons. By exhibiting a philosophical and sometimes extreme approach to health and service, you see your body as a field of exploration. When you do not interfere with each other's workspaces, you create a brave team spirit that brings light to the darkness. This relationship is a transformative and fascinating journey that turns even the practical aspects of life into a quest for wisdom."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Balık",
+    "dil": "Türkçe",
+    "yorum": "Aslan'ın parlayan enerjisi ile Balık'ın fedakar ruhu, bu evde sanatsal ve şifalı bir hizmet alanı yaratır. Günlük işlerde Aslan yönetmeyi ve sahne önünde olmayı severken, Balık perde arkasında ruhsal desteği ve ince ayarları sessizce halleder. Biriniz yaşamı bir kutlama gibi organize ederken, diğeriniz bu kutlamaya o derin anlamı ve duygusal dokuyu katar. Sağlık konularında bazen aşırılıklara kaçsanız da, birbirinizin enerjisini yükseltmek için gösterdiğiniz çaba paha biçilemezdir. Birbirinize hizmet etmek, sizin için bir görevden ziyade kalpten gelen bir sevgi gösterisi ve yaratıcı bir ifade biçimidir. Bu ikili, hayatın sıradan görevlerini bile birer seremoniyel güzelliğe dönüştürmeyi başarabilen nadir bir uyum sergiler."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Pisces",
+    "dil": "English",
+    "yorum": "Leo's shining energy and Pisces' self-sacrificing soul create an artistic and healing field of service in this house. In daily tasks, Leo likes to manage and be in the spotlight, while Pisces quietly handles spiritual support and fine-tuning behind the scenes. While one of you organizes life like a celebration, the other adds deep meaning and emotional texture to that celebration. Although you may sometimes go to extremes in health matters, the effort you show to raise each other's energy is priceless. For you, serving each other is more of a heartfelt show of love and a form of creative expression than a duty. This duo exhibits a rare harmony that manages to transform even the most mundane life tasks into ceremonial beauty."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Başak",
+    "dil": "Türkçe",
+    "yorum": "Aslan'ın yaratıcı vizyonu ile Başak'ın kusursuz işleme yeteneği, günlük hayatta harikalar yaratan bir üretim mekanizması kurar. Aslan büyük resmi çizip heyecan yaratırken, Başak o resmin her bir pikselini titizlikle boyayarak somut bir mükemmelliğe ulaştırır. İş bölümünde biri liderlik ederken diğeri sistemin aksamadan yürümesini sağlar, bu da sizi yenilmez bir iş ortağı yapar. Sağlık ve rutinler konusunda Başak’ın titizliği, Aslan’ın bazen kendini fazla yoran enerjisini dengeler ve bedensel huzuru getirir. Birbirinize hizmet ederken gösterdiğiniz bu disiplin, aranızdaki saygıyı ve takdir duygusunu her geçen gün daha da besler. Bu çatı altında her şey hem göz alıcı bir parlaklığa hem de saat gibi işleyen bir düzene sahiptir."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Virgo",
+    "dil": "English",
+    "yorum": "Leo's creative vision and Virgo's flawless processing ability establish a production mechanism that works wonders in daily life. While Leo draws the big picture and creates excitement, Virgo meticulously paints every single pixel of that picture to reach a concrete perfection. In the division of labor, one leads while the other ensures the system runs smoothly, making you an invincible business partner. Regarding health and routines, Virgo's meticulousness balances Leo's energy, which sometimes overexerts itself, bringing physical peace. This discipline you show while serving each other further nurtures the respect and appreciation between you every day. Under this roof, everything has both an eye-catching brilliance and a clockwork order."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Kova",
+    "dil": "Türkçe",
+    "yorum": "Karşıt burçların bu evdeki karşılaşması, günlük hayatta hem çatışmalı hem de son derece ilham verici bir rutin yaratır. Aslan geleneksel bir takdir beklerken, Kova tamamen özgün ve toplumsal fayda odaklı bir hizmet anlayışı geliştirir. Birbirinizin çalışma tarzına alışmak zaman alsa da, birlikte en sıradan işleri bile devrimsel bir yenilikle taçlandırabilirsiniz. Sağlık ve yaşam tarzı konusunda ikiniz de standartların dışına çıkmayı sever, modern ve bazen tuhaf yöntemleri denemekten çekinmezsiniz. Birbirinize hizmet ederken özgürlüğünüzü korumak en büyük kuralınızdır; bu da ilişkinize sürekli taze bir hava katar. Bu ikili, egonun ve toplumsal zekanın birleştiği, her gün yeni bir icadın peşinde koşan heyecan verici bir ritim yakalar."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Aquarius",
+    "dil": "English",
+    "yorum": "The meeting of opposite signs in this house creates a routine that is both conflicting and extremely inspiring in daily life. While Leo expects traditional appreciation, Aquarius develops a sense of service that is completely original and focused on social benefit. Although it takes time to get used to each other's work styles, together you can crown even the most mundane tasks with revolutionary innovation. Regarding health and lifestyle, you both like to go outside the standards and do not hesitate to try modern and sometimes quirky methods. Maintaining your freedom while serving each other is your golden rule; this adds a constantly fresh air to your relationship. This duo catches an exciting rhythm where ego and social intelligence combine, chasing a new invention every day."
+}
+{
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Oğlak",
+    "dil": "Türkçe",
+    "yorum": "Aslan'ın görkemli enerjisi ile Oğlak'ın sarsılmaz otoritesi, bu evde disiplinli bir başarı hikayesi yazar. Günlük hayatta ikiniz de kontrolü elinde tutmak istersiniz ancak görev dağılımı yapıldığında ortaya profesyonel bir sonuç çıkar. Oğlak’ın sabrı Aslan’ın sabırsızlığını törpülerken, Aslan’ın motivasyonu Oğlak’ın bazen karamsarlaşan çalışma ruhuna neşe katar. Sağlık ve rutinler konusunda son derece planlı, hırslı ve sonuç odaklı bir yaklaşım benimseyerek birbirinizi zirveye taşırsınız. Birbirinize hizmet etmek sizin için saygınlığı korumanın ve ortak geleceği inşa etmenin en somut yoludur. Bu ilişki, hayatın pratik yanlarını birer stratejik hamle gibi yöneten, oldukça güçlü ve prestijli bir ekip çalışmasıdır."
+}
+{
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Capricorn",
+    "dil": "English",
+    "yorum": "Leo's magnificent energy and Capricorn's unwavering authority write a disciplined success story in this house. In daily life, both of you want to be in control, but when the division of duties is made, a professional result emerges. While Capricorn's patience tones down Leo's impatience, Leo's motivation adds joy to Capricorn's sometimes pessimistic working spirit. Regarding health and routines, you carry each other to the top by adopting a highly planned, ambitious, and result-oriented approach. Serving each other is the most concrete way for you to maintain dignity and build a common future. This relationship is a very strong and prestigious teamwork that manages the practical aspects of life like strategic moves."
+}
+{
+    "ozellik": "Sosyal Çevre ve Hayaller Evi",
+    "burc_eslesmesi": "Aslan-Balık",
+    "dil": "Türkçe",
+    "yorum": "Aslan'ın görkemli hayalleri ile Balık'ın sınırsız ilhamı, sosyal çevrenizde büyüleyici bir auraya sahip olmanızı sağlar. Gelecek ideallerinizde hem büyük bir başarı arzusu hem de derin bir ruhsal tatmin arayışı bir aradadır. Arkadaş ortamlarında Aslan popülerliği ve neşesiyle parlarken, Balık bu çevrelere gizemli bir derinlik ve duygusal bir bağ katar. Birlikte kurduğunuz hayaller, sadece sizin için değil, çevrenizdeki insanlar için de umut verici ve vizyoner bir nitelik taşır. Sosyal sorumluluk projelerinde veya yaratıcı kolektif işlerde birbirinizi tamamlayan, mucizelere inanan bir çift olursunuz. Bu evde sevginiz, dünyayı daha güzel bir yer haline getirme arzusuna dönüşen evrensel bir ışığa benzer."
+}
+{
+    "ozellik": "House 11: Social Circle and Dreams",
+    "burc_eslesmesi": "Leo-Pisces",
+    "dil": "English",
+    "yorum": "Leo's magnificent dreams and Pisces' limitless inspiration give you a fascinating aura in your social circle. In your future ideals, a desire for great success and a search for deep spiritual satisfaction coexist. While Leo shines with popularity and joy in friend groups, Pisces adds a mysterious depth and emotional bond to these circles. The dreams you build together have a hopeful and visionary quality not just for you, but for the people around you. In social responsibility projects or creative collective works, you become a couple who complete each other and believe in miracles. In this house, your love is like a universal light that turns into a desire to make the world a more beautiful place."
+}
+{
+    "ozellik": "Sosyal Çevre ve Hayaller Evi",
+    "burc_eslesmesi": "Balık-Başak",
+    "dil": "Türkçe",
+    "yorum": "Hayaller evinde bu ikili, biri gökyüzünü diğeri ise toprağı temsil ederek inanılmaz bir denge kurar. Balık’ın imkansız görünen düşlerini Başak, gerçekçi ve uygulanabilir projelere dönüştürme yeteneğine sahiptir. Sosyal çevrenizde yardımseverliğiniz ve alçakgönüllülüğünüzle tanınan, güven veren bir imaj sergilersiniz. Gelecek planlarınızda hem ruhsal bir huzur hem de her detayı düşünülmüş bir güvenlik arayışı ön plandadır. Arkadaşlıklarınızda fedakarlık ve sadakat en önemli unsurdur; birbirinizin hayallerine olan inancınız sarsılmazdır. Bu eşleşme, hayallerin sadece havada kalmadığı, titizlikle inşa edilerek gerçeğe dönüştürüldüğü kutsal bir yol arkadaşlığıdır."
+}
+{
+    "ozellik": "House 11: Social Circle and Dreams",
+    "burc_eslesmesi": "Pisces-Virgo",
+    "dil": "English",
+    "yorum": "In the house of dreams, this duo establishes an incredible balance, one representing the sky and the other the earth. Virgo has the ability to transform Pisces' seemingly impossible dreams into realistic and applicable projects. In your social circle, you display a reassuring image known for your helpfulness and humility. In your future plans, both spiritual peace and a search for security with every detail considered are at the forefront. Sacrifice and loyalty are the most important elements in your friendships; your belief in each other's dreams is unwavering. This pairing is a sacred companionship where dreams do not just stay in the air but are meticulously built and turned into reality."
+}
+[
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Bu evde Aslan’ın parıltısı ile Terazi’nin estetik anlayışı birleşerek günlük hayatı adeta şık bir davete dönüştürür. Hizmet etmek sizin için birbirinizin moralini yükseltmek ve hayatı daha konforlu hale getirmek demektir. Aslan’ın onaylanma ihtiyacı Terazi’nin nazik takdirleriyle beslenirken, aranızdaki iş bölümü her zaman adil bir zemin üzerine kurulur. Sağlık ve bakım konularında güzelliğin ön planda olduğu, kendinizi şımartmayı ihmal etmediğiniz bir rutin benimsersiniz. Birbirinizin çalışma alanlarına zarafet katarken, çatışmalardan kaçınmak için sessiz bir uyum politikası izlersiniz. Bu birliktelik, sıradan sorumlulukların bile sosyal birer başarıya ve görsel bir şölene dönüştüğü ışıltılı bir yaşam tarzı sunar."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Libra",
+    "dil": "English",
+    "yorum": "In this house, Leo's radiance and Libra's sense of aesthetics combine to transform daily life into a stylish gala. For you, serving means boosting each other's morale and making life more comfortable. Leo's need for validation is fed by Libra's gentle appreciation, while your division of labor is always built on fair ground. Regarding health and care, you adopt a routine where beauty is at the forefront and you don't neglect to pamper yourselves. While adding elegance to each other's workspaces, you follow a policy of quiet harmony to avoid conflicts. This union offers a sparkling lifestyle where even ordinary responsibilities turn into social achievements and visual feasts."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Aslan-Yay",
+    "dil": "Türkçe",
+    "yorum": "Ateş elementinin bu iki enerjik burcu, günlük rutinleri sıkıcı bir görevden ziyade heyecan verici bir serüvene dönüştürür. Aslan’ın yönetme becerisi Yay’ın bitmek bilmeyen keşif arzusuyla birleşince, çalışma hayatınızda durdurulamaz bir tempo kazanırsınız. Sağlık ve spor konularında birbirinizi motive eden, sınırları zorlamayı seven ve birlikte aktif kalmaktan keyif alan bir çiftsiniz. Birbirinize hizmet ederken özgürlük alanlarınıza saygı duyar, monotonluğun ilişkinizi ele geçirmesine asla izin vermezsiniz. İşleri hallederken gösterdiğiniz o iyimser tavır, en zorlu sorumlulukların bile altından neşeyle kalkmanızı sağlar. Bu eşleşme, hayatın pratik yanlarını bile birer büyüme fırsatı olarak gören, coşkulu bir ekip çalışmasının ürünüdür."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Leo-Sagittarius",
+    "dil": "English",
+    "yorum": "These two energetic signs of the fire element transform daily routines into an exciting adventure rather than a boring task. When Leo's management skills combine with Sagittarius's endless desire for discovery, you gain an unstoppable pace in your work life. Regarding health and sports, you are a couple who motivate each other, like to push boundaries, and enjoy staying active together. While serving each other, you respect your zones of freedom and never let monotony take over your relationship. That optimistic attitude you show while getting things done allows you to overcome even the most difficult responsibilities with joy. This pairing is the product of an enthusiastic teamwork that sees even the practical sides of life as opportunities for growth."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Balık-Başak",
+    "dil": "Türkçe",
+    "yorum": "Zıt burçların bu evdeki karşılaşması, mükemmel düzen ile ruhsal şifanın bir araya geldiği kutsal bir denge yaratır. Başak’ın titiz detaycılığı günlük hayatın her çarkını yağlarken, Balık bu pratikliğe anlamlı bir ruh ve derinlik katar. Sağlık konularında hem somut verilere hem de sezgisel yöntemlere güvenen, bütünsel bir iyilik halini amaçlayan bir çiftsiniz. Birbirinize hizmet ederken gösterdiğiniz fedakarlık, kelimelere dökülmeyen ama her jestte hissedilen derin bir sadakat içerir. Başak’ın endişeli zihnini Balık’ın huzuru sakinleştirir; Balık’ın dağınıklığını ise Başak’ın disiplini toparlar. Bu ikili, kaosun içinden huzurlu bir vaha yaratmayı başaran, birbirini tamlayan en güçlü hizmet ortaklığıdır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Pisces-Virgo",
+    "dil": "English",
+    "yorum": "The meeting of opposite signs in this house creates a sacred balance where perfect order and spiritual healing come together. While Virgo's meticulous detailing oils every wheel of daily life, Pisces adds a meaningful soul and depth to this practicality. Regarding health, you are a couple who trust both concrete data and intuitive methods, aiming for holistic well-being. The sacrifice you show while serving each other involves a deep loyalty that is not put into words but felt in every gesture. Pisces' peace calms Virgo's anxious mind, while Virgo's discipline tidies up Pisces' clutter. This duo is the strongest service partnership that completes each other, succeeding in creating a peaceful oasis out of chaos."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Balık-Kova",
+    "dil": "Türkçe",
+    "yorum": "Sınırları aşmayı seven Kova ile akışta kalmayı tercih eden Balık, günlük hayatta alışılmışın dışında bir hizmet dili geliştirir. Modern teknoloji ile ruhsal öğretileri harmanladığınız rutinleriniz, çevrenizdekiler tarafından oldukça sıra dışı ve ilham verici bulunabilir. Sağlık konusunda hem yenilikçi tedavilere hem de enerji çalışmalarına açık, keşfetmeyi seven bir yaklaşım benimsersiniz. Birbirinize hizmet ederken kurallar koymak yerine, birbirinizin o anki ihtiyaçlarına ve özgürlüklerine odaklanmayı seçersiniz. Kova’nın toplumsal vizyonu Balık’ın merhametiyle birleşince, sadece kendinize değil, başkalarına da hizmet eden bir yapı kurarsınız. Bu ilişki, pratik hayatın gri tonlarını, hayallerin ve yeniliklerin renkleriyle boyayan özgün bir serüvendir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Pisces-Aquarius",
+    "dil": "English",
+    "yorum": "Aquarius, who loves to cross boundaries, and Pisces, who prefers to stay in the flow, develop an extraordinary language of service in daily life. Your routines, blending modern technology with spiritual teachings, can be found quite unusual and inspiring by those around you. Regarding health, you adopt an approach that loves to explore, open to both innovative treatments and energy work. Rather than setting rules while serving each other, you choose to focus on each other's immediate needs and freedoms. When Aquarius's social vision combines with Pisces' compassion, you build a structure that serves not only yourselves but also others. This relationship is an original adventure that paints the gray tones of practical life with the colors of dreams and innovations."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Balık-Oğlak",
+    "dil": "Türkçe",
+    "yorum": "Gerçekçiliğin temsilcisi Oğlak ile hayallerin temsilcisi Balık, bu evde disiplini ve şifayı muazzam bir ciddiyetle harmanlar. Oğlak’ın günlük işlerdeki sarsılmaz planlaması, Balık’ın esnek ve yaratıcı dokunuşlarıyla birleşerek hayatınızı hem sağlam hem de huzurlu kılar. Sağlık ve rutinler konusunda geleneksel yöntemlere saygı duyan ancak ruhsal dengeyi de ihmal etmeyen, çok bilinçli bir çiftsiniz. Birbirinize hizmet ederken gösterdiğiniz karşılıklı güven, en zorlu hayat şartlarında bile birbirinize dayandığınız bir kale gibidir. Oğlak’ın bazen katılaşan dünyasını Balık yumuşatırken, Balık’ın belirsizliklerini Oğlak’ın netliği giderir. Bu birliktelik, somut başarıların içine gizlenmiş derin bir duygusal tatminin yaşandığı, köklü bir hizmet bağıdır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Pisces-Capricorn",
+    "dil": "English",
+    "yorum": "Capricorn, the representative of realism, and Pisces, the representative of dreams, blend discipline and healing with immense seriousness in this house. Capricorn's unwavering planning in daily tasks, combined with Pisces' flexible and creative touches, makes your life both solid and peaceful. Regarding health and routines, you are a very conscious couple who respect traditional methods but do not neglect spiritual balance. The mutual trust you show while serving each other is like a fortress you lean on even in the most difficult life conditions. While Pisces softens Capricorn's sometimes hardening world, Capricorn's clarity removes Pisces' uncertainties. This union is a deep-rooted bond of service where deep emotional satisfaction is hidden within concrete achievements."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Balık-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Zarafet ve şefkatin buluştuğu bu evde, günlük hayatınız nazik bir dans gibi akıcı ve huzur doludur. Terazi’nin denge arayışı ile Balık’ın fedakar doğası, birbirinize hizmet ederken çatışmalardan arınmış, uyumlu bir ortam yaratmanızı sağlar. Sağlık ve bakım rutinlerinizde güzelliğe, huzura ve ruhsal arınmaya yönelik bir yaşam tarzını önemsersiniz. Birbirinizin moralini düzeltmek ve günlük işlerin yükünü hafifletmek için gösterdiğiniz çaba, ilişkinizin en naif parçasıdır. İş bölümünde kimin ne yaptığına takılmak yerine, sürecin ikinizi de mutlu etmesine odaklanırsınız. Bu eşleşme, hayatın sıradan dertlerini bile sevginin o yumuşak süzgecinden geçirerek hafifleten, şifa dolu ve romantik bir hizmet bağı sunar."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Pisces-Libra",
+    "dil": "English",
+    "yorum": "In this house where elegance and compassion meet, your daily life is fluid and peaceful like a gentle dance. Libra's search for balance and Pisces' self-sacrificing nature allow you to create a harmonious environment free from conflicts while serving each other. In your health and care routines, you value a lifestyle aimed at beauty, peace, and spiritual purification. The effort you show to improve each other's morale and lighten the burden of daily tasks is the most naive part of your relationship. Rather than getting hung up on who does what in the division of labor, you focus on the process making you both happy. This pairing offers a healing and romantic bond of service that lightens even the ordinary troubles of life by passing them through the soft filter of love."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Balık-Yay",
+    "dil": "Türkçe",
+    "yorum": "İki Jüpiter karakterinin bu evdeki birleşimi, günlük hayatı felsefi bir derinlik ve vizyoner bir arayışla doldurur. Yay’ın iyimserliği ile Balık’ın sezgiselliği, hizmet ve rutin konularında kuralları yıkan, genişleme odaklı bir yapı oluşturur. Sağlık konusunda hem doğaya hem de ruhsal öğretilere yönelen, bedeni ve ruhu bir bütün olarak gören bir anlayışa sahipsiniz. Birbirinize hizmet ederken özgürlük ve anlam arayışını ön planda tutar, birbirinizin büyümesine her zaman destek olursunuz. Günlük işler sizin için sadece yapılması gerekenler değil, hayatın anlamını keşfetmek için kullanılan birer araçtır. Bu birliktelik, kaosun içinde bile inancı ve neşeyi koruyan, her günü yeni bir umutla karşılayan bilge bir ekip ruhu yaratır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Pisces-Sagittarius",
+    "dil": "English",
+    "yorum": "The combination of two Jupiter characters in this house fills daily life with philosophical depth and a visionary quest. Sagittarius's optimism and Pisces' intuitiveness create an expansion-oriented structure that breaks the rules in service and routines. Regarding health, you have an understanding that turns towards both nature and spiritual teachings, seeing the body and soul as a whole. While serving each other, you prioritize the search for freedom and meaning, always supporting each other's growth. For you, daily tasks are not just things to be done but tools used to discover the meaning of life. This union creates a wise team spirit that maintains faith and joy even in chaos, welcoming each day with new hope."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Başak-Kova",
+    "dil": "Türkçe",
+    "yorum": "Başak’ın analitik zekası ile Kova’nın yenilikçi vizyonu, günlük hayatta adeta kusursuz işleyen teknolojik bir sistem kurar. Rutinlerinizde verimlilik en önemli kuraldır ve birbirinizin yöntemlerine saygı duyarak işleri son derece modern bir şekilde yönetirsiniz. Sağlık ve beslenme konularında araştırmacı, rasyonel ve alışılmışın dışındaki yöntemleri bilimsel süzgeçten geçiren bir çiftsiniz. Hizmet etmek sizin için mantıklı bir görev paylaşımı ve birbirinizin zihinsel kapasitesini artırma sürecidir. Başak ayrıntıları düzenleyip hataları ayıklarken, Kova bu düzene geniş bir perspektif ve özgürlük katar. Bu ikili, pratik dünyada zekanın ve sistemin en somut halini yaşayan, sürekli kendini güncelleyen profesyonel bir ekip gibidir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Virgo-Aquarius",
+    "dil": "English",
+    "yorum": "Virgo's analytical intelligence and Aquarius's innovative vision establish a technological system that works almost flawlessly in daily life. Efficiency is the most important rule in your routines, and you manage things in a highly modern way by respecting each other's methods. Regarding health and nutrition, you are a couple who are investigative, rational, and pass unusual methods through a scientific filter. For you, serving is a logical sharing of duties and a process of increasing each other's mental capacity. While Virgo organizes details and sorts out errors, Aquarius adds a broad perspective and freedom to this order. This duo is like a professional team that lives the most concrete form of intelligence and system in the practical world, constantly updating itself."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Başak-Oğlak",
+    "dil": "Türkçe",
+    "yorum": "Toprak elementinin bu iki devi, hizmet evinde birleştiğinde ortaya aşılması imkansız bir disiplin ve verimlilik kalesi çıkar. Günlük hayatta ikiniz de somut sonuçlara odaklanır, hiçbir işi yarım bırakmadan büyük bir titizlikle tamamlarsınız. Sağlık, hijyen ve çalışma rutinleri konusunda son derece yüksek standartlara sahip, birbirini sürekli daha iyiye teşvik eden bir çiftsiniz. Birbirinize hizmet etmek, sizin için sadakatin en sessiz ama en güçlü kanıtıdır; çünkü emek vermeyi sevginin temeli görürsünüz. Başak’ın organizasyon yeteneği Oğlak’ın stratejik planlarıyla birleşince, hayatınızdaki her detay bir başarı öyküsüne dönüşür. Bu ilişki, sorumlulukların paylaşıldıkça hafiflediği ve mükemmelliğin bir yaşam biçimi haline geldiği sarsılmaz bir iş birliğidir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Virgo-Capricorn",
+    "dil": "English",
+    "yorum": "When these two giants of the earth element combine in the house of service, an insurmountable fortress of discipline and productivity emerges. In daily life, both of you focus on concrete results and complete every task with great meticulousness without leaving anything half-finished. Regarding health, hygiene, and work routines, you are a couple with extremely high standards, constantly encouraging each other to be better. Serving each other is the silent but strongest proof of loyalty for you, as you see putting in effort as the foundation of love. When Virgo's organizational skills combine with Capricorn's strategic plans, every detail in your life turns into a success story. This relationship is an unwavering cooperation where responsibilities lighten as they are shared and perfection becomes a way of life."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Başak-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Başak’ın işlevselliği ile Terazi’nin estetik kaygıları, bu evde hem verimli hem de göze hitap eden bir günlük yaşam düzeni yaratır. İş bölümünde Terazi uyumu sağlarken, Başak her şeyin kusursuz bir titizlikle ve zamanında hallolmasını sağlar. Sağlık ve kişisel bakım rutinlerinizde dengeyi koruyan, nezaketi ve temizliği hayatın merkezine alan bir yaklaşım benimsersiniz. Birbirinize hizmet ederken eleştirileri bile yumuşatarak sunar, birbirinizin hayatını kolaylaştırmak için adeta birer yardımcı gibi hareket edersiniz. Başak ayrıntılara odaklanırken Terazi büyük resimdeki huzuru korur, böylece evde ve işte mükemmel bir senkron yakalarsınız. Bu birliktelik, pratikliğin zarafetle taçlandığı, her günün huzur ve düzen içinde geçtiği kaliteli bir yaşam ritmidir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Virgo-Libra",
+    "dil": "English",
+    "yorum": "Virgo's functionality and Libra's aesthetic concerns create a daily life order in this house that is both efficient and pleasing to the eye. While Libra ensures harmony in the division of labor, Virgo ensures that everything is handled with perfect meticulousness and on time. In your health and personal care routines, you adopt an approach that maintains balance and puts kindness and cleanliness at the center of life. While serving each other, you present even criticisms by softening them and act almost as assistants to make each other's lives easier. While Virgo focuses on details, Libra maintains the peace in the big picture, thus achieving perfect sync at home and work. This union is a quality life rhythm where practicality is crowned with elegance and every day passes in peace and order."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Başak-Yay",
+    "dil": "Türkçe",
+    "yorum": "Sınırlarını bilen Başak ile sınırları aşmak isteyen Yay arasındaki bu ilişki, hizmet evinde ilginç bir öğrenme süreci yaratır. Başak hayata büyüteçle bakıp kusurları ayıklarken, Yay teleskopla bakıp ufuktaki hedeflere odaklanır; bu durum günlük rutinlerinizde sürekli bir denge ihtiyacı doğurur. Sağlık konusunda Başak’ın disiplini, Yay’ın bazen aşırıya kaçan yaşam tarzını dizginleyen en iyi ilaçtır. Birbirinize hizmet ederken biri organizasyonu kusursuzca yaparken, diğeri bu sürece neşe ve vizyon katarak monotonluğu engeller. Aranızdaki bu 'mikro ve makro' çatışması, birbirinizi değiştirmek yerine yöntemlerinizi birleştirdiğinizde harika bir verimliliğe dönüşür. Bu, bilginin pratiğe döküldüğü ve her işin bir hayat dersi niteliği taşıdığı öğretici bir iş birliğidir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Virgo-Sagittarius",
+    "dil": "English",
+    "yorum": "This relationship between Virgo, who knows their boundaries, and Sagittarius, who wants to exceed them, creates an interesting learning process in the house of service. While Virgo looks at life with a magnifying glass and sorts out flaws, Sagittarius looks through a telescope and focuses on goals on the horizon; this creates a constant need for balance in your daily routines. Regarding health, Virgo's discipline is the best medicine to restrain Sagittarius's sometimes excessive lifestyle. While serving each other, one does the organization flawlessly while the other adds joy and vision to this process, preventing monotony. This 'micro and macro' conflict between you turns into great productivity when you combine your methods instead of trying to change each other. This is an educational cooperation where knowledge is put into practice and every task has the quality of a life lesson."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Kova-Oğlak",
+    "dil": "Türkçe",
+    "yorum": "Geleneksel Oğlak ile yenilikçi Kova, hizmet evinde ciddiyet ve vizyonu birleştiren profesyonel bir yaşam ritmi kurarlar. Günlük rutinlerinizde kurallara saygı duyarken bir yandan da sistemi nasıl daha ileriye taşıyabileceğinizi sürekli tartışırsınız. Sağlık ve yaşam tarzı konusunda disiplinli ama teknolojik yeniliklere açık, uzun vadeli hedefleri olan bir yaklaşım sergilersiniz. Birbirinize hizmet etmek, sizin için karşılıklı saygıyı pekiştiren ve ortak geleceğinizi inşa eden stratejik bir iş birliğidir. Oğlak’ın pratik çözümleri Kova’nın sıra dışı fikirleriyle birleşince, aşılması zor görünen günlük engeller bile birer birer ortadan kalkar. Bu eşleşme, dayanıklılığın ve zekanın birleştiği, her detayın bir amaca hizmet ettiği çok güçlü ve kararlı bir yapı sunar."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Aquarius-Capricorn",
+    "dil": "English",
+    "yorum": "Traditional Capricorn and innovative Aquarius establish a professional life rhythm in the house of service that combines seriousness and vision. While respecting rules in your daily routines, you constantly discuss how to take the system further. Regarding health and lifestyle, you exhibit an approach that is disciplined but open to technological innovations, with long-term goals. Serving each other is a strategic cooperation for you that reinforces mutual respect and builds your shared future. When Capricorn's practical solutions combine with Aquarius's extraordinary ideas, even daily obstacles that seem difficult to overcome disappear one by one. This pairing offers a very strong and determined structure where resilience and intelligence combine and every detail serves a purpose."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Kova-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Hava elementinin bu iki burcu, günlük hayatta zihinsel bir uyum ve sosyal bir nezaket üzerine kurulu bir düzen oluşturur. Rutinlerinizde katı kurallar yerine, karşılıklı rızaya ve mantıklı açıklamalara dayanan esnek bir iş birliği hakimdir. Sağlık ve bakım konularında güncel trendleri takip eden, zihinsel dengenizi korumayı en az bedensel sağlık kadar önemseyen bir çiftsiniz. Birbirinize hizmet ederken arkadaşlık bağı ön plandadır; birbirinizin hayatını kolaylaştırmak sizin için entelektüel bir keyiftir. Terazi’nin arabuluculuğu Kova’nın bağımsız ruhuyla birleşince, kimsenin kısıtlanmadığı ama her işin neşeyle yapıldığı bir ortam doğar. Bu ilişki, pratik hayatın sorumluluklarını bile sosyal bir paylaşım ve zihinsel bir oyun gibi gören, hafif ve özgürleştirici bir ritimdir."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Aquarius-Libra",
+    "dil": "English",
+    "yorum": "These two signs of the air element establish an order based on mental harmony and social courtesy in daily life. Instead of rigid rules in your routines, a flexible cooperation based on mutual consent and logical explanations prevails. Regarding health and care, you are a couple who follow current trends and value maintaining your mental balance as much as physical health. While serving each other, the bond of friendship is at the forefront; making each other's lives easier is an intellectual pleasure for you. When Libra's mediation combines with Aquarius's independent soul, an environment is born where no one is restricted but every task is done with joy. This relationship is a light and liberating rhythm that sees even the responsibilities of practical life as a social sharing and a mental game."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Kova-Yay",
+    "dil": "Türkçe",
+    "yorum": "Özgürlüğüne düşkün bu iki burç, günlük hayatta monotonluğu reddeden, deneysel ve oldukça hareketli bir rutin geliştirir. Hizmet etmek sizin için birbirinizin ufkunu açmak ve yaşamı daha ilginç hale getirmek için sunulan bir destektir. Sağlık konusunda geleneksel tıbbın ötesine geçen, bazen ekstrem sporları veya sıra dışı beslenme şekillerini deneyen cesur bir yaklaşımınız vardır. İş bölümünde hiyerarşiyi asla kabul etmez, her işi birlikte keşfettiğiniz yeni bir proje gibi ele alırsınız. Yay’ın iyimser vizyonu Kova’nın toplumsal zekasıyla birleşince, hayatın pratik dertleri sizin için aşılması kolay, küçük ayrıntılara dönüşür. Bu birliktelik, bağımsızlığın ve keşif arzusunun günlük hayatın her anına sızdığı, heyecan verici ve modern bir hizmet bağıdır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Aquarius-Sagittarius",
+    "dil": "English",
+    "yorum": "These two freedom-loving signs develop an experimental and very active routine in daily life that rejects monotony. For you, serving is a support offered to broaden each other's horizons and make life more interesting. Regarding health, you have a brave approach that goes beyond traditional medicine, sometimes trying extreme sports or unusual diets. You never accept hierarchy in the division of labor, treating every task as a new project you explore together. When Sagittarius's optimistic vision combines with Aquarius's social intelligence, the practical troubles of life turn into small details that are easy for you to overcome. This union is an exciting and modern bond of service where independence and the desire for discovery seep into every moment of daily life."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Oğlak-Terazi",
+    "dil": "Türkçe",
+    "yorum": "Oğlak’ın ciddiyeti ile Terazi’nin uyum arayışı, bu evde son derece saygın ve planlı bir günlük yaşam estetiği oluşturur. Hizmet etmek sizin için toplumsal statünüzü ve yaşam kalitenizi artırmak adına yürütülen, profesyonelce kurgulanmış bir süreçtir. Sağlık ve kişisel bakımda hem klasik yöntemlere güvenen hem de sunuma önem veren, disiplinli bir rutin izlersiniz. Oğlak işlerin sağlam temelini atarken, Terazi bu sürece zarafet ve diplomatik bir denge katarak gerilimi önler. Birbirinizin hayatını kolaylaştırmak için gösterdiğiniz çaba, karşılıklı saygı ve görev bilinciyle harmanlanmış sağlam bir yapıdadır. Bu eşleşme, sorumlulukların şık bir şekilde yerine getirildiği ve her detayın bir başarıyı simgelediği, prestijli bir yaşam ritmi sunar."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Capricorn-Libra",
+    "dil": "English",
+    "yorum": "Capricorn's seriousness and Libra's search for harmony create a highly respected and planned daily life aesthetic in this house. For you, serving is a professionally designed process carried out to increase your social status and quality of life. In health and personal care, you follow a disciplined routine that both trusts classic methods and values presentation. While Capricorn lays the solid foundation of tasks, Libra prevents tension by adding elegance and a diplomatic balance to this process. The effort you show to make each other's lives easier is in a solid structure blended with mutual respect and a sense of duty. This pairing offers a prestigious life rhythm where responsibilities are fulfilled stylishly and every detail symbolizes a success."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Oğlak-Yay",
+    "dil": "Türkçe",
+    "yorum": "Disiplinli Oğlak ile maceracı Yay arasındaki bu zıtlık, günlük hayatta biri fren diğeri gaz gibi çalışan dinamik bir denge kurar. Oğlak rutinleri belirleyip güvenliği sağlarken, Yay bu düzenin içinde yeni fırsatlar ve heyecan verici hedefler bulur. Sağlık konusunda Oğlak’ın dayanıklılığı Yay’ın enerjisiyle birleşince, fiziksel sınırlarınızı zorlayan ama sağlam bir yaşam tarzı benimsersiniz. Birbirinize hizmet ederken biri somut ihtiyaçları karşılarken, diğeri ruhsal ve zihinsel motivasyonu yüksek tutarak dengeyi kurar. Yay’ın bazen dağınıklaşan enerjisini Oğlak’ın netliği toplarken, Oğlak’ın katı kurallarını Yay’ın neşesi esnetir. Bu ilişki, sorumlulukların birer macera gibi görüldüğü ve somut hedeflere doğru birlikte ilerlendiği, öğretici bir hizmet bağıdır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Capricorn-Sagittarius",
+    "dil": "English",
+    "yorum": "This contrast between disciplined Capricorn and adventurous Sagittarius establishes a dynamic balance in daily life that works like a brake and an accelerator. While Capricorn sets routines and ensures security, Sagittarius finds new opportunities and exciting goals within this order. Regarding health, when Capricorn's endurance combines with Sagittarius's energy, you adopt a solid lifestyle that pushes your physical boundaries. While serving each other, one meets concrete needs while the other establishes balance by keeping spiritual and mental motivation high. While Capricorn's clarity gathers Sagittarius's sometimes scattered energy, Sagittarius's joy stretches Capricorn's rigid rules. This relationship is an educational bond of service where responsibilities are seen as adventures and you progress together toward concrete goals."
+  },
+  {
+    "ozellik": "Sağlık ve Hizmet Evi",
+    "burc_eslesmesi": "Terazi-Yay",
+    "dil": "Türkçe",
+    "yorum": "Terazi’nin uyum tutkusu ile Yay’ın neşeli keşif arzusu, günlük yaşamı her anı keyifli bir sosyal etkinliğe dönüştüren bir enerjiyle doldurur. Hizmet etmek sizin için birbirinizi kısıtlamak değil, aksine birbirinizin hayatını daha renkli ve paylaşıma açık hale getirmektir. Sağlık ve rutinler konusunda katı kurallar yerine, sizi iyi hissettiren ve özgür kılan bir yaşam tarzını benimsersiniz. İş bölümünde adaleti ve eğlenceyi ön planda tutarak, en sıkıcı görevleri bile sohbet ve kahkahayla tamamlamayı başarırsınız. Terazi’nin nezaketi Yay’ın dürüst ve patavatsız enerjisini yumuşatırken, Yay’ın enerjisi Terazi’nin kararsızlıklarını harekete geçirir. Bu eşleşme, hayatın pratik dertlerini hafife alan, nezaket ve neşenin her işe sızdığı ilham verici bir ekip çalışmasıdır."
+  },
+  {
+    "ozellik": "House 6: Health and Service",
+    "burc_eslesmesi": "Libra-Sagittarius",
+    "dil": "English",
+    "yorum": "Libra's passion for harmony and Sagittarius's joyful desire for discovery fill daily life with an energy that transforms every moment into an enjoyable social activity. For you, serving is not about restricting each other, but rather making each other's lives more colorful and open to sharing. Regarding health and routines, you adopt a lifestyle that makes you feel good and free instead of rigid rules. By prioritizing justice and fun in the division of labor, you manage to complete even the most boring tasks with conversation and laughter. While Libra's kindness softens Sagittarius's honest and blunt energy, Sagittarius's energy activates Libra's indecisiveness. This pairing is an inspiring teamwork that makes light of practical troubles, where kindness and joy seep into every task."
+  }
+]
